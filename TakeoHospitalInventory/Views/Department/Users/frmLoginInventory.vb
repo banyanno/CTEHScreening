@@ -187,9 +187,7 @@ Public Class frmLoginInventory
     Private Function CheckConnectionStatus() As Boolean
         Try
             Dim conn As SqlConnection = ModGlobleVariable.GENERAL_DAO.getConnection
-            If conn.State = 0 Then
-
-            End If
+            conn.Open()
             Return True
         Catch ex As Exception
             Return False
