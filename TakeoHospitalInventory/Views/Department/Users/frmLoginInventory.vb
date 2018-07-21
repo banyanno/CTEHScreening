@@ -174,19 +174,31 @@ Public Class frmLoginInventory
     '    Me.cmdCancel.Text = "&Cancel"
     'End Sub
     Dim SubMain As MainTakeoInventory
-    Private Sub BtnOk_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
-
-
-    End Sub
+    
 
    
 
     Private Sub frmLogin_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
 
         Me.UpdateLabelStatus("Checking user permission", False)
-        Label2.Text = "Copyright 2012. All rights reserved by KTG Version " & version.ToString & "  " & GetDateServer.Date.ToString("MMM-yyyy")
-
+        Label2.Text = "Copyright 2012. All rights reserved by KTG Version " & version.ToString '& "  " & GetDateServer.Date.ToString("MMM-yyyy")
+        Timer1.Start()
     End Sub
+    Private Function CheckConnectionStatus() As Boolean
+        Try
+            Dim conn As SqlConnection = ModGlobleVariable.GENERAL_DAO.getConnection
+            If conn.State = 0 Then
+
+            End If
+            Return True
+        Catch ex As Exception
+            Return False
+        End Try
+
+       
+
+
+    End Function
 
     Sub IntialPARAMS_INVEN()
 
@@ -261,5 +273,15 @@ Public Class frmLoginInventory
         'Else
         '    MessageBox.Show("Sorry, this user name and password is not valid.", "Login Confirm", MessageBoxButtons.OK, MessageBoxIcon.Warning)
         'End If
+    End Sub
+
+    Private Sub Timer1_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer1.Tick
+        If CheckConnectionStatus() = False Then
+            btnDisconect.Visible = True
+            BtnConnected.Visible = False
+        Else
+            btnDisconect.Visible = False
+            BtnConnected.Visible = True
+        End If
     End Sub
 End Class

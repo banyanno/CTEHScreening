@@ -53,6 +53,9 @@ Partial Class frmLoginInventory
         Me.JanusSuperTip1 = New Janus.Windows.Common.JanusSuperTip(Me.components)
         Me.PictureBox1 = New System.Windows.Forms.PictureBox
         Me.Label3 = New System.Windows.Forms.Label
+        Me.btnDisconect = New System.Windows.Forms.Button
+        Me.BtnConnected = New System.Windows.Forms.Button
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.GroupBox1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -141,7 +144,9 @@ Partial Class frmLoginInventory
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.Panel1.Controls.Add(Me.BtnConnected)
         Me.Panel1.Controls.Add(Me.BtnExit)
+        Me.Panel1.Controls.Add(Me.btnDisconect)
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
@@ -160,9 +165,9 @@ Partial Class frmLoginInventory
         Me.BtnExit.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnExit.ForeColor = System.Drawing.Color.White
         Me.BtnExit.Image = CType(resources.GetObject("BtnExit.Image"), System.Drawing.Image)
-        Me.BtnExit.Location = New System.Drawing.Point(1216, 0)
+        Me.BtnExit.Location = New System.Drawing.Point(1229, 0)
         Me.BtnExit.Name = "BtnExit"
-        Me.BtnExit.Size = New System.Drawing.Size(52, 42)
+        Me.BtnExit.Size = New System.Drawing.Size(39, 42)
         Me.BtnExit.TabIndex = 14
         Me.BtnExit.UseVisualStyleBackColor = False
         '
@@ -267,6 +272,44 @@ Partial Class frmLoginInventory
         Me.Label3.Text = "Please Login First"
         Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
+        'btnDisconect
+        '
+        Me.btnDisconect.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnDisconect.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.btnDisconect.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnDisconect.FlatAppearance.BorderSize = 0
+        Me.btnDisconect.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnDisconect.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnDisconect.ForeColor = System.Drawing.Color.White
+        Me.btnDisconect.Image = CType(resources.GetObject("btnDisconect.Image"), System.Drawing.Image)
+        Me.btnDisconect.Location = New System.Drawing.Point(1177, 0)
+        Me.btnDisconect.Name = "btnDisconect"
+        Me.btnDisconect.Size = New System.Drawing.Size(39, 38)
+        Me.btnDisconect.TabIndex = 15
+        Me.btnDisconect.UseVisualStyleBackColor = False
+        Me.btnDisconect.Visible = False
+        '
+        'BtnConnected
+        '
+        Me.BtnConnected.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.BtnConnected.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.BtnConnected.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnConnected.FlatAppearance.BorderSize = 0
+        Me.BtnConnected.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnConnected.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnConnected.ForeColor = System.Drawing.Color.White
+        Me.BtnConnected.Image = CType(resources.GetObject("BtnConnected.Image"), System.Drawing.Image)
+        Me.BtnConnected.Location = New System.Drawing.Point(1177, 1)
+        Me.BtnConnected.Name = "BtnConnected"
+        Me.BtnConnected.Size = New System.Drawing.Size(39, 38)
+        Me.BtnConnected.TabIndex = 16
+        Me.BtnConnected.UseVisualStyleBackColor = False
+        Me.BtnConnected.Visible = False
+        '
+        'Timer1
+        '
+        Me.Timer1.Interval = 1000
+        '
         'frmLoginInventory
         '
         Me.AcceptButton = Me.BtnOk
@@ -318,4 +361,7 @@ Partial Class frmLoginInventory
     Friend WithEvents BtnOk As System.Windows.Forms.Button
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents BtnExit As System.Windows.Forms.Button
+    Friend WithEvents btnDisconect As System.Windows.Forms.Button
+    Friend WithEvents BtnConnected As System.Windows.Forms.Button
+    Friend WithEvents Timer1 As System.Windows.Forms.Timer
 End Class
