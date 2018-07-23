@@ -17,6 +17,7 @@ Public Class frmLoginInventory
     Dim version As Version = GetExecutingAssembly.GetName.Version
     Dim MsgLogin As Integer
     Dim DAParams_Inven As New DSDepartmentTableAdapters.PARAMS_INVENTableAdapter
+
     Function LogIn() As Integer
         Return ModUserLogin.checkPassword(UCase(txtUserName.Text.Trim), UCase(txtPassword.Text.Trim))
     End Function
@@ -79,10 +80,12 @@ Public Class frmLoginInventory
             UserGlobleVariable.USER_PWD = Me.txtPassword.Text.ToUpper.Trim
             Me.UpdateLabelStatus("Log in successful.", True)
             Application.DoEvents()
-            SubMain = New MainTakeoInventory(Me)
+            '''===================== Show old version interface ============================
+            'SubMain = New MainTakeoInventory(Me)
             'SubMain.InitUserControl()
+            UIScreening = New MainScreening(Me)
             Me.Hide()
-            SubMain.Show()
+            UIScreening.Show()
             ' Me.PictLoading.Visible = True
             ' Me.UpdateLabelStatus("Connectiong to database...", False)
             LOG_ON_TIME = Today
@@ -113,6 +116,7 @@ Public Class frmLoginInventory
         DoLoginComplete()
         BtnOk.Enabled = True
         BtnExit.Enabled = True
+        Timer1.Stop()
         Me.UpdateLabelStatus("", False)
         UpdateLoaingPic(False)
     End Sub
@@ -174,6 +178,7 @@ Public Class frmLoginInventory
     '    Me.cmdCancel.Text = "&Cancel"
     'End Sub
     Dim SubMain As MainTakeoInventory
+    Dim UIScreening As MainScreening
     
 
    
@@ -185,17 +190,37 @@ Public Class frmLoginInventory
         Timer1.Start()
     End Sub
     Private Function CheckConnectionStatus() As Boolean
+        'If My.Computer.Network.Ping("172.16.5.120") = True Then
+        '    MsgBox("Ping echo")
+        '    Return True
+        'Else
+        '    MsgBox("No ping echo")
+        '    Return False
+        'End If
+        If IsSQLServerAvailable("172.16.5.120", "1433") = True Then
+            ' MsgBox("Tested OK")
+            Return True
+        Else
+            'MsgBox("Tested Not OK")
+            Return False
+        End If
+
+    End Function
+    Dim tcpCli1 As Sockets.TcpClient
+    Private Function IsSQLServerAvailable(ByVal ipaddress As String, ByVal Port As String) As Boolean
         Try
-            Dim conn As SqlConnection = ModGlobleVariable.GENERAL_DAO.getConnection
-            conn.Open()
+            tcpCli1 = New Sockets.TcpClient
+            tcpCli1.SendTimeout = 15
+            Application.DoEvents()
+            tcpCli1.Connect(ipaddress, Port)
+            tcpCli1.Close()
+            tcpCli1 = Nothing
             Return True
         Catch ex As Exception
+            tcpCli1.Close()
+            tcpCli1 = Nothing
             Return False
         End Try
-
-       
-
-
     End Function
 
     Sub IntialPARAMS_INVEN()
@@ -244,7 +269,7 @@ Public Class frmLoginInventory
             Exit Sub
         Else
             BtnOk.Enabled = False
-            BtnExit.Enabled = False
+            'BtnExit.Enabled = False
             PictLoading.Visible = True
             'LblConnecting.Visible = True
             'Me.UpdateLabelStatus("Connecting to database...", True)
@@ -255,22 +280,7 @@ Public Class frmLoginInventory
         End If
 
 
-        'If CheckUseAndPwd(Me.txtUserName.Text, txtPassword.Text) = True Then
-        '    Me.UpdateLabelStatus("Connected to database successful...", True)
-        '    Application.DoEvents()
-        '    Me.Cursor = Cursors.WaitCursor
-        '    Dim SubMain As New MainTakeoInventory(Me)
-        '    Me.UpdateLabelStatus("Check user permission on form...", True)
-        '    SubMain.CheckPermistionOnForm()
-
-        '    Application.DoEvents()
-        '    Me.Hide()
-        '    SubMain.Show()
-        '    Me.Cursor = Cursors.Default
-        '    Me.UpdateLabelStatus("Connectiong to database...", False)
-        'Else
-        '    MessageBox.Show("Sorry, this user name and password is not valid.", "Login Confirm", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-        'End If
+      
     End Sub
 
     Private Sub Timer1_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer1.Tick

@@ -76,6 +76,16 @@ Module ModCommon
         '    If Not Msg = "" Then myCharacter.Speak(Msg)
         'End If
     End Sub
+    Public Sub AddUserControl(ByVal PanelHeader As Panel, ByVal PanelMain As Panel, ByVal UI As UserControl, ByVal Info As String, ByVal VisHeader As Boolean)
+        PanelMain.Cursor = Cursors.WaitCursor
+        PanelHeader.Visible = VisHeader
+        PanelMain.Controls.Clear()
+        PanelMain.AutoScroll = True
+        'PMainContainer.AutoScrollMinSize = New Size(UI.Width, UI.Height)
+        UI.Dock = DockStyle.Fill
+        PanelMain.Controls.Add(UI)
+        PanelMain.Cursor = Cursors.Default
+    End Sub
     Public Sub showMerlin(ByVal x As Short, ByVal y As Short)
         'If frmMain.mnuAgent.Checked Then
         'myCharacter.Show()

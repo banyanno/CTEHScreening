@@ -36,6 +36,7 @@ Public Class MainTakeoInventory
     Dim UItemExpiredDate As UCItemExpiredDate
 
     'User Control for Takeo Eye hospital
+    Public UIScreen As New UIScreening
     Public ReceivePayemtn As DashbordReceiveReceipt
     Public PatientPayment As UCPatientPayment
     Public examinationForm As UCRegistrationForm
@@ -45,6 +46,7 @@ Public Class MainTakeoInventory
     Public CashCollection As UCashCollection
     Public WeeklySummary As UWeeklyCashCollection
     Public NewOldPatientBook As UCMainNew_Outpatient
+
     Public OldOutpatient As UCMainOld_Outpatient
     Public Inpatient As UCMainInpatient
     Public ConsultEachProvince As UCEachProvinceAndDistrict
@@ -362,6 +364,7 @@ Public Class MainTakeoInventory
         BtnDateTimeServer.Text = "Server Date: " & Format(ModGlobleVariable.GeteDateServer, "dd-MM-yyyy") & " Version:20151108"
         Timer1.Start()
         LblDepartmentLogin.Text = "User in department: " & UserGlobleVariable.DEPART_NAME.ToUpper
+        CreatDashboardScreening()
 
     End Sub
 
@@ -732,6 +735,9 @@ Public Class MainTakeoInventory
                 'Tab user close
         End Select
     End Sub
+    Sub CreatDashboardScreening()
+        GeneralAddControl(uiPanelMainContainer, UIScreen, "Old Patient Books...")
+    End Sub
     Sub CreateNewOut_patientForm()
         GeneralAddControl(uiPanelMainContainer, NewOldPatientBook, "Old Patient Books...")
     End Sub
@@ -804,6 +810,7 @@ Public Class MainTakeoInventory
     Sub CreateReceivePayment()
         GeneralAddControl(uiPanelMainContainer, ReceivePayemtn, "Takeo Eye Hospital...")
     End Sub
+
     Sub CreatePaymentForm()
         GeneralAddControl(uiPanelMainContainer, PatientPayment, "Takeo Eye Hospital...")
     End Sub

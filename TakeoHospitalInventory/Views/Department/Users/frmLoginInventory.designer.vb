@@ -56,6 +56,10 @@ Partial Class frmLoginInventory
         Me.btnDisconect = New System.Windows.Forms.Button
         Me.BtnConnected = New System.Windows.Forms.Button
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.Button1 = New System.Windows.Forms.Button
+        Me.Button2 = New System.Windows.Forms.Button
+        Me.Label4 = New System.Windows.Forms.Label
+        Me.Label5 = New System.Windows.Forms.Label
         Me.GroupBox1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -144,11 +148,16 @@ Partial Class frmLoginInventory
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.Panel1.Controls.Add(Me.Label4)
+        Me.Panel1.Controls.Add(Me.Label5)
+        Me.Panel1.Controls.Add(Me.Button1)
+        Me.Panel1.Controls.Add(Me.Button2)
         Me.Panel1.Controls.Add(Me.BtnConnected)
         Me.Panel1.Controls.Add(Me.BtnExit)
         Me.Panel1.Controls.Add(Me.btnDisconect)
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel1.ForeColor = System.Drawing.Color.White
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1268, 42)
@@ -251,7 +260,7 @@ Partial Class frmLoginInventory
         '
         Me.PictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(570, 81)
+        Me.PictureBox1.Location = New System.Drawing.Point(570, 80)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(149, 146)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -284,7 +293,7 @@ Partial Class frmLoginInventory
         Me.btnDisconect.Image = CType(resources.GetObject("btnDisconect.Image"), System.Drawing.Image)
         Me.btnDisconect.Location = New System.Drawing.Point(1177, 0)
         Me.btnDisconect.Name = "btnDisconect"
-        Me.btnDisconect.Size = New System.Drawing.Size(39, 38)
+        Me.btnDisconect.Size = New System.Drawing.Size(50, 39)
         Me.btnDisconect.TabIndex = 15
         Me.btnDisconect.UseVisualStyleBackColor = False
         Me.btnDisconect.Visible = False
@@ -299,9 +308,9 @@ Partial Class frmLoginInventory
         Me.BtnConnected.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnConnected.ForeColor = System.Drawing.Color.White
         Me.BtnConnected.Image = CType(resources.GetObject("BtnConnected.Image"), System.Drawing.Image)
-        Me.BtnConnected.Location = New System.Drawing.Point(1177, 1)
+        Me.BtnConnected.Location = New System.Drawing.Point(1173, 1)
         Me.BtnConnected.Name = "BtnConnected"
-        Me.BtnConnected.Size = New System.Drawing.Size(39, 38)
+        Me.BtnConnected.Size = New System.Drawing.Size(50, 39)
         Me.BtnConnected.TabIndex = 16
         Me.BtnConnected.UseVisualStyleBackColor = False
         Me.BtnConnected.Visible = False
@@ -309,6 +318,59 @@ Partial Class frmLoginInventory
         'Timer1
         '
         Me.Timer1.Interval = 1000
+        '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.Button1.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button1.FlatAppearance.BorderSize = 0
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.ForeColor = System.Drawing.Color.White
+        Me.Button1.Image = CType(resources.GetObject("Button1.Image"), System.Drawing.Image)
+        Me.Button1.Location = New System.Drawing.Point(5, 5)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(35, 29)
+        Me.Button1.TabIndex = 18
+        Me.Button1.UseVisualStyleBackColor = False
+        '
+        'Button2
+        '
+        Me.Button2.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.Button2.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button2.FlatAppearance.BorderSize = 0
+        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.ForeColor = System.Drawing.Color.White
+        Me.Button2.Image = CType(resources.GetObject("Button2.Image"), System.Drawing.Image)
+        Me.Button2.Location = New System.Drawing.Point(5, 5)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(35, 29)
+        Me.Button2.TabIndex = 17
+        Me.Button2.UseVisualStyleBackColor = False
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.Color.Cyan
+        Me.Label4.Location = New System.Drawing.Point(48, 14)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(215, 17)
+        Me.Label4.TabIndex = 14
+        Me.Label4.Text = "CTEH DB Production Connection"
+        '
+        'Label5
+        '
+        Me.Label5.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.Color.Cyan
+        Me.Label5.Location = New System.Drawing.Point(959, 14)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(211, 17)
+        Me.Label5.TabIndex = 15
+        Me.Label5.Text = "CTEH DB Screening Connection"
         '
         'frmLoginInventory
         '
@@ -364,4 +426,8 @@ Partial Class frmLoginInventory
     Friend WithEvents btnDisconect As System.Windows.Forms.Button
     Friend WithEvents BtnConnected As System.Windows.Forms.Button
     Friend WithEvents Timer1 As System.Windows.Forms.Timer
+    Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents Button2 As System.Windows.Forms.Button
+    Friend WithEvents Label5 As System.Windows.Forms.Label
+    Friend WithEvents Label4 As System.Windows.Forms.Label
 End Class
