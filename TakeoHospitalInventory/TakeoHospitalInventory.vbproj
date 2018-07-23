@@ -94,6 +94,7 @@
       <HintPath>..\..\..\..\..\Softwares\External Project\softs\Janus.WinForms.3.5\Patch\Janus.Windows.ButtonBar.v3.dll</HintPath>
     </Reference>
     <Reference Include="Janus.Windows.Common.v3, Version=3.5.0.0, Culture=neutral, PublicKeyToken=null" />
+    <Reference Include="Janus.Windows.ExplorerBar.v3, Version=3.5.0.0, Culture=neutral, processorArchitecture=MSIL" />
     <Reference Include="Janus.Windows.FilterEditor.v3, Version=3.5.0.0, Culture=neutral, processorArchitecture=MSIL" />
     <Reference Include="Janus.Windows.GridEX.v3, Version=3.5.0.0, Culture=neutral, PublicKeyToken=null" />
     <Reference Include="Janus.Windows.Ribbon.v3, Version=3.5.0.0, Culture=neutral, PublicKeyToken=null" />
@@ -149,6 +150,12 @@
       <DependentUpon>frmWelcome.vb</DependentUpon>
     </Compile>
     <Compile Include="frmWelcome.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainScreening.Designer.vb">
+      <DependentUpon>MainScreening.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MainScreening.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MainTakeoInventory.designer.vb">
@@ -1967,6 +1974,12 @@
     <Compile Include="Takeo_Eye_Hopspital\ViewsEye\ward\Operation\Report\Operation\UCOperationReport.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="UIScreening.Designer.vb">
+      <DependentUpon>UIScreening.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UIScreening.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Views\AccountPayable\CryAccountPayable.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -3037,6 +3050,9 @@
       <DependentUpon>frmWelcome.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="MainScreening.resx">
+      <DependentUpon>MainScreening.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainTakeoInventory.resx">
       <DependentUpon>MainTakeoInventory.vb</DependentUpon>
       <SubType>Designer</SubType>
@@ -3929,6 +3945,9 @@
     <EmbeddedResource Include="Takeo_Eye_Hopspital\ViewsEye\ward\Operation\Report\Operation\UCOperationReport.resx">
       <DependentUpon>UCOperationReport.vb</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UIScreening.resx">
+      <DependentUpon>UIScreening.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\AccountPayable\CryAccountPayable.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

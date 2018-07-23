@@ -437,7 +437,7 @@ Partial Class MainTakeoInventory
         'Design Time Panel Info:
         '
         Me.UiPanelManager1.BeginPanelInfo()
-        Me.UiPanelManager1.AddDockPanelInfo(New System.Guid("65cb48f6-3b85-4e71-bdbc-e2a196562407"), Janus.Windows.UI.Dock.PanelGroupStyle.OutlookNavigator, Janus.Windows.UI.Dock.PanelDockStyle.Left, True, New System.Drawing.Size(171, 555), True)
+        Me.UiPanelManager1.AddDockPanelInfo(New System.Guid("65cb48f6-3b85-4e71-bdbc-e2a196562407"), Janus.Windows.UI.Dock.PanelGroupStyle.OutlookNavigator, Janus.Windows.UI.Dock.PanelDockStyle.Left, True, New System.Drawing.Size(170, 555), True)
         Me.UiPanelManager1.AddDockPanelInfo(New System.Guid("1283c2e3-b1fd-4377-bb50-473168b9e63c"), New System.Guid("65cb48f6-3b85-4e71-bdbc-e2a196562407"), Janus.Windows.UI.Dock.PanelGroupStyle.HorizontalTiles, True, 35, True)
         Me.UiPanelManager1.AddDockPanelInfo(New System.Guid("1b49dac7-0160-4f43-bdd7-29f8b3394d47"), New System.Guid("1283c2e3-b1fd-4377-bb50-473168b9e63c"), 109, True)
         Me.UiPanelManager1.AddDockPanelInfo(New System.Guid("28f734a9-a108-41ab-b4ec-82aebee20d9c"), New System.Guid("65cb48f6-3b85-4e71-bdbc-e2a196562407"), Janus.Windows.UI.Dock.PanelGroupStyle.HorizontalTiles, True, 35, True)
@@ -449,7 +449,7 @@ Partial Class MainTakeoInventory
         Me.UiPanelManager1.AddDockPanelInfo(New System.Guid("d3857c71-39f3-4397-824a-a8d0396cc6ac"), New System.Guid("65cb48f6-3b85-4e71-bdbc-e2a196562407"), 35, True)
         Me.UiPanelManager1.AddDockPanelInfo(New System.Guid("5ebe18f4-de20-4fe2-974d-b3085b19601e"), New System.Guid("65cb48f6-3b85-4e71-bdbc-e2a196562407"), Janus.Windows.UI.Dock.PanelGroupStyle.HorizontalTiles, True, 35, True)
         Me.UiPanelManager1.AddDockPanelInfo(New System.Guid("a7450d47-7798-4b19-a4ab-387f858fc45e"), New System.Guid("5ebe18f4-de20-4fe2-974d-b3085b19601e"), 358, True)
-        Me.UiPanelManager1.AddDockPanelInfo(New System.Guid("b9208dc4-e67b-48d6-b795-0e17bb88ceb4"), Janus.Windows.UI.Dock.PanelGroupStyle.HorizontalTiles, Janus.Windows.UI.Dock.PanelDockStyle.Fill, True, New System.Drawing.Size(859, 555), True)
+        Me.UiPanelManager1.AddDockPanelInfo(New System.Guid("b9208dc4-e67b-48d6-b795-0e17bb88ceb4"), Janus.Windows.UI.Dock.PanelGroupStyle.HorizontalTiles, Janus.Windows.UI.Dock.PanelDockStyle.Fill, True, New System.Drawing.Size(860, 555), True)
         Me.UiPanelManager1.AddDockPanelInfo(New System.Guid("33756979-3bc8-4c3c-a345-44e21413c642"), New System.Guid("b9208dc4-e67b-48d6-b795-0e17bb88ceb4"), 519, True)
         Me.UiPanelManager1.AddFloatingPanelInfo(New System.Guid("65cb48f6-3b85-4e71-bdbc-e2a196562407"), Janus.Windows.UI.Dock.PanelGroupStyle.OutlookNavigator, True, New System.Drawing.Point(-1, -1), New System.Drawing.Size(-1, -1), False)
         Me.UiPanelManager1.AddFloatingPanelInfo(New System.Guid("1283c2e3-b1fd-4377-bb50-473168b9e63c"), Janus.Windows.UI.Dock.PanelGroupStyle.HorizontalTiles, True, New System.Drawing.Point(-1, -1), New System.Drawing.Size(-1, -1), False)
@@ -494,13 +494,14 @@ Partial Class MainTakeoInventory
         Me.MenuBarLeft.Margin = New System.Windows.Forms.Padding(2)
         Me.MenuBarLeft.Name = "MenuBarLeft"
         Me.MenuBarLeft.SelectedPanel = Me.TakeoEyeHospital
-        Me.MenuBarLeft.Size = New System.Drawing.Size(171, 555)
+        Me.MenuBarLeft.Size = New System.Drawing.Size(170, 555)
         Me.MenuBarLeft.SplitterSize = 2
         Me.MenuBarLeft.TabDisplay = Janus.Windows.UI.Dock.TabDisplayMode.ImageAndText
         Me.MenuBarLeft.TabIndex = 4
         Me.MenuBarLeft.Text = "Main Inventory"
         Me.MenuBarLeft.TextAlignment = Janus.Windows.UI.Dock.PanelTextAlignment.Center
         Me.ToolTip1.SetToolTip(Me.MenuBarLeft, "Test Tooltip")
+        Me.MenuBarLeft.Visible = False
         '
         'uiMainInventory
         '
@@ -509,7 +510,7 @@ Partial Class MainTakeoInventory
         Me.uiMainInventory.Location = New System.Drawing.Point(0, 0)
         Me.uiMainInventory.Margin = New System.Windows.Forms.Padding(2)
         Me.uiMainInventory.Name = "uiMainInventory"
-        Me.uiMainInventory.Size = New System.Drawing.Size(167, 325)
+        Me.uiMainInventory.Size = New System.Drawing.Size(166, 325)
         Me.uiMainInventory.TabIndex = 4
         Me.uiMainInventory.Text = "Main Inventory"
         Me.ToolTip1.SetToolTip(Me.uiMainInventory, "Main Inventory")
@@ -521,7 +522,7 @@ Partial Class MainTakeoInventory
         Me.uiPanel1.Location = New System.Drawing.Point(0, 24)
         Me.uiPanel1.Margin = New System.Windows.Forms.Padding(2)
         Me.uiPanel1.Name = "uiPanel1"
-        Me.uiPanel1.Size = New System.Drawing.Size(167, 301)
+        Me.uiPanel1.Size = New System.Drawing.Size(166, 301)
         Me.uiPanel1.TabIndex = 4
         Me.uiPanel1.Text = "Panel 1"
         '
@@ -531,7 +532,7 @@ Partial Class MainTakeoInventory
         Me.uiPanel1Container.Location = New System.Drawing.Point(1, 1)
         Me.uiPanel1Container.Margin = New System.Windows.Forms.Padding(2)
         Me.uiPanel1Container.Name = "uiPanel1Container"
-        Me.uiPanel1Container.Size = New System.Drawing.Size(165, 299)
+        Me.uiPanel1Container.Size = New System.Drawing.Size(164, 299)
         Me.uiPanel1Container.TabIndex = 0
         '
         'ButtonMainInventory
@@ -624,7 +625,7 @@ Partial Class MainTakeoInventory
         Me.ButtonMainInventory.Location = New System.Drawing.Point(0, 0)
         Me.ButtonMainInventory.Margin = New System.Windows.Forms.Padding(2)
         Me.ButtonMainInventory.Name = "ButtonMainInventory"
-        Me.ButtonMainInventory.Size = New System.Drawing.Size(165, 299)
+        Me.ButtonMainInventory.Size = New System.Drawing.Size(164, 299)
         Me.ButtonMainInventory.SmallImageSize = New System.Drawing.Size(30, 30)
         Me.ButtonMainInventory.TabIndex = 0
         Me.ButtonMainInventory.Text = "ButtonBar1"
@@ -643,7 +644,7 @@ Partial Class MainTakeoInventory
         Me.uiDepartmentRequest.Location = New System.Drawing.Point(0, 0)
         Me.uiDepartmentRequest.Margin = New System.Windows.Forms.Padding(2)
         Me.uiDepartmentRequest.Name = "uiDepartmentRequest"
-        Me.uiDepartmentRequest.Size = New System.Drawing.Size(167, 325)
+        Me.uiDepartmentRequest.Size = New System.Drawing.Size(166, 325)
         Me.uiDepartmentRequest.TabDisplay = Janus.Windows.UI.Dock.TabDisplayMode.ImageAndTextOnSelected
         Me.uiDepartmentRequest.TabIndex = 4
         Me.uiDepartmentRequest.Text = "Department Inventory"
@@ -656,7 +657,7 @@ Partial Class MainTakeoInventory
         Me.uiPanel6.Location = New System.Drawing.Point(0, 24)
         Me.uiPanel6.Margin = New System.Windows.Forms.Padding(2)
         Me.uiPanel6.Name = "uiPanel6"
-        Me.uiPanel6.Size = New System.Drawing.Size(167, 301)
+        Me.uiPanel6.Size = New System.Drawing.Size(166, 301)
         Me.uiPanel6.TabIndex = 4
         Me.uiPanel6.Text = "Panel 6"
         '
@@ -666,7 +667,7 @@ Partial Class MainTakeoInventory
         Me.uiPanel6Container.Location = New System.Drawing.Point(1, 1)
         Me.uiPanel6Container.Margin = New System.Windows.Forms.Padding(2)
         Me.uiPanel6Container.Name = "uiPanel6Container"
-        Me.uiPanel6Container.Size = New System.Drawing.Size(165, 299)
+        Me.uiPanel6Container.Size = New System.Drawing.Size(164, 299)
         Me.uiPanel6Container.TabIndex = 0
         '
         'MainuDepartmentInventory
@@ -718,7 +719,7 @@ Partial Class MainTakeoInventory
         Me.MainuDepartmentInventory.Location = New System.Drawing.Point(0, 0)
         Me.MainuDepartmentInventory.Margin = New System.Windows.Forms.Padding(2)
         Me.MainuDepartmentInventory.Name = "MainuDepartmentInventory"
-        Me.MainuDepartmentInventory.Size = New System.Drawing.Size(165, 299)
+        Me.MainuDepartmentInventory.Size = New System.Drawing.Size(164, 299)
         Me.MainuDepartmentInventory.SmallImageSize = New System.Drawing.Size(30, 30)
         Me.MainuDepartmentInventory.TabIndex = 0
         Me.MainuDepartmentInventory.Text = "ButtonBar1"
@@ -731,7 +732,7 @@ Partial Class MainTakeoInventory
         Me.uiOpticalshop.Location = New System.Drawing.Point(0, 0)
         Me.uiOpticalshop.Margin = New System.Windows.Forms.Padding(2)
         Me.uiOpticalshop.Name = "uiOpticalshop"
-        Me.uiOpticalshop.Size = New System.Drawing.Size(167, 325)
+        Me.uiOpticalshop.Size = New System.Drawing.Size(166, 325)
         Me.uiOpticalshop.TabDisplay = Janus.Windows.UI.Dock.TabDisplayMode.ImageAndTextOnSelected
         Me.uiOpticalshop.TabIndex = 4
         Me.uiOpticalshop.Text = "Optical Shop"
@@ -744,7 +745,7 @@ Partial Class MainTakeoInventory
         Me.uiPanel9.Location = New System.Drawing.Point(0, 24)
         Me.uiPanel9.Margin = New System.Windows.Forms.Padding(2)
         Me.uiPanel9.Name = "uiPanel9"
-        Me.uiPanel9.Size = New System.Drawing.Size(167, 301)
+        Me.uiPanel9.Size = New System.Drawing.Size(166, 301)
         Me.uiPanel9.TabIndex = 4
         Me.uiPanel9.Text = "Panel 9"
         '
@@ -756,7 +757,7 @@ Partial Class MainTakeoInventory
         Me.uiPanel9Container.Location = New System.Drawing.Point(1, 1)
         Me.uiPanel9Container.Margin = New System.Windows.Forms.Padding(2)
         Me.uiPanel9Container.Name = "uiPanel9Container"
-        Me.uiPanel9Container.Size = New System.Drawing.Size(165, 299)
+        Me.uiPanel9Container.Size = New System.Drawing.Size(164, 299)
         Me.uiPanel9Container.TabIndex = 0
         '
         'ButtonBarOpticalShop
@@ -816,7 +817,7 @@ Partial Class MainTakeoInventory
         Me.ButtonBarOpticalShop.Location = New System.Drawing.Point(0, 0)
         Me.ButtonBarOpticalShop.Margin = New System.Windows.Forms.Padding(2)
         Me.ButtonBarOpticalShop.Name = "ButtonBarOpticalShop"
-        Me.ButtonBarOpticalShop.Size = New System.Drawing.Size(165, 299)
+        Me.ButtonBarOpticalShop.Size = New System.Drawing.Size(164, 299)
         Me.ButtonBarOpticalShop.SmallImageSize = New System.Drawing.Size(30, 30)
         Me.ButtonBarOpticalShop.TabIndex = 5
         Me.ButtonBarOpticalShop.VisualStyle = Janus.Windows.ButtonBar.VisualStyle.VS2005
@@ -835,7 +836,7 @@ Partial Class MainTakeoInventory
         Me.uiPharmacy.LargeImageKey = "pharmacy.png"
         Me.uiPharmacy.Location = New System.Drawing.Point(0, 0)
         Me.uiPharmacy.Name = "uiPharmacy"
-        Me.uiPharmacy.Size = New System.Drawing.Size(167, 325)
+        Me.uiPharmacy.Size = New System.Drawing.Size(166, 325)
         Me.uiPharmacy.TabDisplay = Janus.Windows.UI.Dock.TabDisplayMode.ImageAndTextOnSelected
         Me.uiPharmacy.TabIndex = 4
         Me.uiPharmacy.Text = "Pharmacy"
@@ -847,7 +848,7 @@ Partial Class MainTakeoInventory
         Me.uiPanel0.InnerContainer = Me.uiPanel0Container
         Me.uiPanel0.Location = New System.Drawing.Point(0, 24)
         Me.uiPanel0.Name = "uiPanel0"
-        Me.uiPanel0.Size = New System.Drawing.Size(167, 301)
+        Me.uiPanel0.Size = New System.Drawing.Size(166, 301)
         Me.uiPanel0.TabIndex = 4
         Me.uiPanel0.Text = "Panel 0"
         '
@@ -856,7 +857,7 @@ Partial Class MainTakeoInventory
         Me.uiPanel0Container.Controls.Add(Me.ButtonBarPharmacy)
         Me.uiPanel0Container.Location = New System.Drawing.Point(1, 1)
         Me.uiPanel0Container.Name = "uiPanel0Container"
-        Me.uiPanel0Container.Size = New System.Drawing.Size(165, 299)
+        Me.uiPanel0Container.Size = New System.Drawing.Size(164, 299)
         Me.uiPanel0Container.TabIndex = 0
         '
         'ButtonBarPharmacy
@@ -889,7 +890,7 @@ Partial Class MainTakeoInventory
         Me.ButtonBarPharmacy.Location = New System.Drawing.Point(0, 0)
         Me.ButtonBarPharmacy.Margin = New System.Windows.Forms.Padding(2)
         Me.ButtonBarPharmacy.Name = "ButtonBarPharmacy"
-        Me.ButtonBarPharmacy.Size = New System.Drawing.Size(165, 299)
+        Me.ButtonBarPharmacy.Size = New System.Drawing.Size(164, 299)
         Me.ButtonBarPharmacy.SmallImageSize = New System.Drawing.Size(30, 30)
         Me.ButtonBarPharmacy.TabIndex = 6
         Me.ButtonBarPharmacy.VisualStyle = Janus.Windows.ButtonBar.VisualStyle.VS2005
@@ -908,17 +909,18 @@ Partial Class MainTakeoInventory
         Me.TakeoEyeHospital.LargeImageIndex = 7
         Me.TakeoEyeHospital.Location = New System.Drawing.Point(0, 0)
         Me.TakeoEyeHospital.Name = "TakeoEyeHospital"
-        Me.TakeoEyeHospital.Size = New System.Drawing.Size(167, 325)
+        Me.TakeoEyeHospital.Size = New System.Drawing.Size(166, 325)
         Me.TakeoEyeHospital.TabIndex = 4
         Me.TakeoEyeHospital.Text = "Takeo-Hos-Operation"
         Me.ToolTip1.SetToolTip(Me.TakeoEyeHospital, "Takeo Eye Hospital")
+        Me.TakeoEyeHospital.Visible = False
         '
         'uiPanel4Container
         '
         Me.uiPanel4Container.Controls.Add(Me.BottonBarMain)
         Me.uiPanel4Container.Location = New System.Drawing.Point(1, 25)
         Me.uiPanel4Container.Name = "uiPanel4Container"
-        Me.uiPanel4Container.Size = New System.Drawing.Size(165, 300)
+        Me.uiPanel4Container.Size = New System.Drawing.Size(164, 300)
         Me.uiPanel4Container.TabIndex = 0
         '
         'BottonBarMain
@@ -1122,7 +1124,7 @@ Partial Class MainTakeoInventory
         Me.BottonBarMain.LargeImageList = Me.ImageList1
         Me.BottonBarMain.Location = New System.Drawing.Point(0, 0)
         Me.BottonBarMain.Name = "BottonBarMain"
-        Me.BottonBarMain.Size = New System.Drawing.Size(165, 300)
+        Me.BottonBarMain.Size = New System.Drawing.Size(164, 300)
         Me.BottonBarMain.SmallImageList = Me.ImageList1
         Me.BottonBarMain.TabIndex = 1
         Me.BottonBarMain.Text = "ButtonBar1"
@@ -1135,7 +1137,7 @@ Partial Class MainTakeoInventory
         Me.uiPreferences.Location = New System.Drawing.Point(0, 0)
         Me.uiPreferences.Margin = New System.Windows.Forms.Padding(2)
         Me.uiPreferences.Name = "uiPreferences"
-        Me.uiPreferences.Size = New System.Drawing.Size(167, 325)
+        Me.uiPreferences.Size = New System.Drawing.Size(166, 325)
         Me.uiPreferences.TabDisplay = Janus.Windows.UI.Dock.TabDisplayMode.ImageAndTextOnSelected
         Me.uiPreferences.TabIndex = 4
         Me.uiPreferences.Text = "Preferences"
@@ -1150,7 +1152,7 @@ Partial Class MainTakeoInventory
         Me.uiPanel7.Location = New System.Drawing.Point(0, 24)
         Me.uiPanel7.Margin = New System.Windows.Forms.Padding(2)
         Me.uiPanel7.Name = "uiPanel7"
-        Me.uiPanel7.Size = New System.Drawing.Size(167, 301)
+        Me.uiPanel7.Size = New System.Drawing.Size(166, 301)
         Me.uiPanel7.TabIndex = 4
         Me.uiPanel7.Text = "Panel 7"
         '
@@ -1160,7 +1162,7 @@ Partial Class MainTakeoInventory
         Me.uiPanel7Container.Location = New System.Drawing.Point(1, 1)
         Me.uiPanel7Container.Margin = New System.Windows.Forms.Padding(2)
         Me.uiPanel7Container.Name = "uiPanel7Container"
-        Me.uiPanel7Container.Size = New System.Drawing.Size(165, 299)
+        Me.uiPanel7Container.Size = New System.Drawing.Size(164, 299)
         Me.uiPanel7Container.TabIndex = 0
         '
         'ButtonBarPreferences
@@ -1276,7 +1278,7 @@ Partial Class MainTakeoInventory
         Me.ButtonBarPreferences.Location = New System.Drawing.Point(0, 0)
         Me.ButtonBarPreferences.Margin = New System.Windows.Forms.Padding(2)
         Me.ButtonBarPreferences.Name = "ButtonBarPreferences"
-        Me.ButtonBarPreferences.Size = New System.Drawing.Size(165, 299)
+        Me.ButtonBarPreferences.Size = New System.Drawing.Size(164, 299)
         Me.ButtonBarPreferences.SmallImageSize = New System.Drawing.Size(30, 30)
         Me.ButtonBarPreferences.TabIndex = 0
         Me.ButtonBarPreferences.Text = "ButtonBar1"
@@ -1286,10 +1288,10 @@ Partial Class MainTakeoInventory
         '
         Me.uiPanel2.AutoHideButtonVisible = Janus.Windows.UI.InheritableBoolean.[False]
         Me.uiPanel2.CloseButtonVisible = Janus.Windows.UI.InheritableBoolean.[False]
-        Me.uiPanel2.Location = New System.Drawing.Point(174, 3)
+        Me.uiPanel2.Location = New System.Drawing.Point(173, 3)
         Me.uiPanel2.Margin = New System.Windows.Forms.Padding(2)
         Me.uiPanel2.Name = "uiPanel2"
-        Me.uiPanel2.Size = New System.Drawing.Size(859, 555)
+        Me.uiPanel2.Size = New System.Drawing.Size(860, 555)
         Me.uiPanel2.TabIndex = 4
         Me.uiPanel2.Text = "Main Information"
         '
@@ -1300,7 +1302,7 @@ Partial Class MainTakeoInventory
         Me.uiPanel8.Location = New System.Drawing.Point(0, 23)
         Me.uiPanel8.Margin = New System.Windows.Forms.Padding(2)
         Me.uiPanel8.Name = "uiPanel8"
-        Me.uiPanel8.Size = New System.Drawing.Size(859, 532)
+        Me.uiPanel8.Size = New System.Drawing.Size(860, 532)
         Me.uiPanel8.TabIndex = 4
         Me.uiPanel8.Text = "Panel 8"
         '
@@ -1313,7 +1315,7 @@ Partial Class MainTakeoInventory
         Me.uiPanelMainContainer.Location = New System.Drawing.Point(1, 1)
         Me.uiPanelMainContainer.Margin = New System.Windows.Forms.Padding(2)
         Me.uiPanelMainContainer.Name = "uiPanelMainContainer"
-        Me.uiPanelMainContainer.Size = New System.Drawing.Size(857, 530)
+        Me.uiPanelMainContainer.Size = New System.Drawing.Size(858, 530)
         Me.uiPanelMainContainer.TabIndex = 0
         '
         'PictureBox3
@@ -1322,7 +1324,7 @@ Partial Class MainTakeoInventory
         Me.PictureBox3.Image = Global.TakeoHospitalInventory.My.Resources.Resources.RegisBG
         Me.PictureBox3.Location = New System.Drawing.Point(0, 0)
         Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(857, 530)
+        Me.PictureBox3.Size = New System.Drawing.Size(858, 530)
         Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox3.TabIndex = 0
         Me.PictureBox3.TabStop = False
@@ -1394,7 +1396,7 @@ Partial Class MainTakeoInventory
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "MainTakeoInventory"
-        Me.Text = "Takeo Inventory"
+        Me.Text = "CTEH Screening System"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.UiPanelManager1, System.ComponentModel.ISupportInitialize).EndInit()

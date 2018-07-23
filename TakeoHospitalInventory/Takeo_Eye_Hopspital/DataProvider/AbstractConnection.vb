@@ -17,17 +17,12 @@ Public MustInherit Class AbstractConnection
         Try
             cnn = New SqlConnection(CnnString)
             ' Case connect 1 error will change to connection 2
-
-            If cnn.State = 0 Then
-                Return Nothing
-            Else
-                cnn.Open()
-                Return cnn
-            End If
+            cnn.Open()
+        
 
         Catch ex As Exception
             MsgBox(ex.Message)
-            Return Nothing
+            'Return Nothing
             'MsgBox("First Server is error connection. it will chage to second server.", MsgBoxStyle.Information, "Change connection server")
             'ChangeConnectionStringProvider(CnnString1)
             'Try
@@ -38,7 +33,7 @@ Public MustInherit Class AbstractConnection
             '    MsgBox("Second server error too. Please contact IT suport.", MsgBoxStyle.Critical, "Error")
             'End Try
         End Try
-
+        Return cnn
     End Function
 
     ' This method use to do sql transaction
