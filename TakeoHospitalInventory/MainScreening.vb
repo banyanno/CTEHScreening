@@ -1,6 +1,6 @@
 ﻿Public Class MainScreening
     Dim Login As frmLoginInventory
-    Dim UIMainMenu As New UIScreening
+    Dim UIMainMenu As New UIScreening(Me)
     Sub New(ByVal login As frmLoginInventory)
         ' This call is required by the Windows Form Designer.
         InitializeComponent()
@@ -17,11 +17,13 @@
         AddUserControl(PanelHeader, PanelDedail, UIMainMenu, "", True)
     End Sub
 
-    Private Sub PanelHeader_MouseMove(ByVal sender As System.Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles PanelHeader.MouseMove
-
-    End Sub
 
     Private Sub BtnExit_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnExit.Click
         Application.Exit()
+    End Sub
+
+
+    Private Sub BtnHome_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnHome.Click
+        AddUserControl(PanelHeader, PanelDedail, UIMainMenu, "", True)
     End Sub
 End Class

@@ -36,7 +36,7 @@ Public Class MainTakeoInventory
     Dim UItemExpiredDate As UCItemExpiredDate
 
     'User Control for Takeo Eye hospital
-    Public UIScreen As New UIScreening
+    'Public UIScreen As New UIScreening
     Public ReceivePayemtn As DashbordReceiveReceipt
     Public PatientPayment As UCPatientPayment
     Public examinationForm As UCRegistrationForm
