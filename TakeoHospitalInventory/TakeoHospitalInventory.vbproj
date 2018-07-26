@@ -1157,6 +1157,18 @@
     <Compile Include="Takeo_Eye_Hopspital\ViewsEye\Registration\MecicalCertificate\ViewMedicalCertificat.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Takeo_Eye_Hopspital\ViewsEye\Registration\PatientPayment\PatientUtility\FindPatient.Designer.vb">
+      <DependentUpon>FindPatient.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Takeo_Eye_Hopspital\ViewsEye\Registration\PatientPayment\PatientUtility\FindPatient.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Takeo_Eye_Hopspital\ViewsEye\Registration\PatientPayment\PatientUtility\UpdatePatient.Designer.vb">
+      <DependentUpon>UpdatePatient.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Takeo_Eye_Hopspital\ViewsEye\Registration\PatientPayment\PatientUtility\UpdatePatient.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Takeo_Eye_Hopspital\ViewsEye\Registration\PatientPayment\UCPatientPayment.designer.vb">
       <DependentUpon>UCPatientPayment.vb</DependentUpon>
     </Compile>
@@ -3489,6 +3501,12 @@
     <EmbeddedResource Include="Takeo_Eye_Hopspital\ViewsEye\Registration\NewUpdate\frmPaymentList.resx">
       <DependentUpon>frmPaymentList.vb</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Takeo_Eye_Hopspital\ViewsEye\Registration\PatientPayment\PatientUtility\FindPatient.resx">
+      <DependentUpon>FindPatient.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Takeo_Eye_Hopspital\ViewsEye\Registration\PatientPayment\PatientUtility\UpdatePatient.resx">
+      <DependentUpon>UpdatePatient.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Takeo_Eye_Hopspital\ViewsEye\Registration\RateExchange_Value\FDefaulOldPatient.resx">
       <DependentUpon>FDefaulOldPatient.vb</DependentUpon>

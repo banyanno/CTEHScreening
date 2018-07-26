@@ -33,6 +33,7 @@ Public Class UCPatientPayment
     Dim DateTo As String
 
     Dim mainForm As MainTakeoInventory
+    Dim MScreening As MainScreening
     Dim SQlDataAdapter As New SqlDataAdapter
     Dim SqlComman As New SqlCommand
     '' Form Declaration 
@@ -58,14 +59,23 @@ Public Class UCPatientPayment
         ' Add any initialization after the InitializeComponent() call.
 
     End Sub
-    Sub New()
+    Sub New(ByVal MScreening As MainScreening)
 
         ' This call is required by the Windows Form Designer.
         InitializeComponent()
+        Me.MScreening = MScreening
 
+        With CboOccupation
+            .DataSource = ModOccupation.SelectAllOccupation()
+            .ValueMember = "Occupation"
+            .SelectedValue = "OccNo"
+            .Text = Nothing
+        End With
+        Me.SplitContainer1.SplitterDistance = Me.Height / 2
         ' Add any initialization after the InitializeComponent() call.
 
     End Sub
+  
 
 
     Private Sub btnFind_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnFind.Click
@@ -143,13 +153,13 @@ Public Class UCPatientPayment
         Catch ex As Exception
 
         End Try
-        mainForm.StatusLoading(False)
+        ModGlobleVariable.UIMainScreening.StatusLoading(False)
         Cursor = Cursors.Default
 
     End Sub
     'End Sub
     Private Sub FillPatientInformation()
-        mainForm.StatusLoading(True)
+        ModGlobleVariable.UIMainScreening.StatusLoading(True)
         Dim Cnn As SqlConnection = ModGlobleVariable.GENERAL_DAO.getConnection
         Try
             SqlComman.CommandText = SearchPatient(patientNoSearh, OldPatientNo, DateFrom, DateTo, patientEngName, patientKhName, patientAge, patientSex, patientProvince, patientDistrict, patientCommune)
@@ -611,15 +621,7 @@ Public Class UCPatientPayment
         End If
     End Sub
 
-    Private Sub BtnNew_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnNew.Click
-
-        Dim FNewPatientPay As New NewPatientPayment
-        FNewPatientPay.ShowDialog()
-        FNewPatientPay.Dispose()
-        FNewPatientPay.Close()
-        ' NewPatientPayment.ShowDialog()
-
-    End Sub
+    
     Sub ClearForm()
         TxtPatientNo.Text = ""
         TxtNameEng.Text = ""
@@ -1428,7 +1430,97 @@ Public Class UCPatientPayment
     End Sub
 
    
-    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
+   
+
+    Private Sub BtnFindPatient_Click(ByVal sender As System.Object, ByVal e As Janus.Windows.Ribbon.CommandEventArgs) Handles BtnFindPatient.Click
+        Dim FFindePatient As New FindPatient
+        FFindePatient.ShowDialog()
+    End Sub
+
+    Private Sub BtnUpdatePatient_Click(ByVal sender As System.Object, ByVal e As Janus.Windows.Ribbon.CommandEventArgs) Handles BtnUpdatePatient.Click
+        Dim FUpdatePatient As New UpdatePatient
+        FUpdatePatient.Show()
+    End Sub
+
+    Private Sub BtnNewV1_Click(ByVal sender As System.Object, ByVal e As Janus.Windows.Ribbon.CommandEventArgs) Handles BtnNewV1.Click
+        Dim FNewPatientPay As New NewPatientPayment
+        FNewPatientPay.ShowDialog()
+        FNewPatientPay.Dispose()
+        FNewPatientPay.Close()
+    End Sub
+
+    Private Sub BtnOldOutPatientReceiptV1_Click(ByVal sender As System.Object, ByVal e As Janus.Windows.Ribbon.CommandEventArgs) Handles BtnOldOutPatientReceiptV1.Click
+        If GridPatientInformation.SelectedItems.Count > 0 Then
+            If GridPatientInformation.SelectedItems(0).Table.Key = "PatientInfo" Then
+                'Dim TblTemTblReceitp As DataTable = DAPatientReceipt.GetDataByCheckDatin(GridPatientInformation.GetRow.Cells("PatientNo").Value, GetDateServer.Date)
+                If ModOld_Outpatient.CheckDuplicatePatientOneDay(GridPatientInformation.GetRow.Cells("PatientNo").Value, ModGlobleVariable.CheckMarkEOD.Date, 1) > 0 Then
+                    MessageBox.Show("Can not registration patient for Old patient book on the same day. Could you check old patient book agian.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    Exit Sub
+                End If
+                If ModOld_Outpatient.CheckDuplicatePatientOneDay(GridPatientInformation.GetRow.Cells("PatientNo").Value, ModGlobleVariable.CheckMarkEOD.Date, 0) > 0 Then
+                    MessageBox.Show("Can not registration patient for Old patient book on the same day. Could you check old patient book agian.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    Exit Sub
+                    'End If
+                    'If TblTemTblReceitp.Rows.Count > 0 Then
+                    '    MessageBox.Show("This Patient No " & GridPatientInformation.GetRow.Cells("PatientNo").Value & " is already register for old patient book receipt, Could you check again.", "existing", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    '    Exit Sub
+                Else
+                    Dim FOldPatientReceipt As New frmOldOutPatientReceipt
+                    FOldPatientReceipt.IS_UPDATE = False
+                    FOldPatientReceipt.txtHN.Text = TxtPatientNo.Text
+                    FOldPatientReceipt.txtPatient.Text = TxtNameKhmer.Text
+                    If FOldPatientReceipt.ShowDialog() = DialogResult.OK Then
+                        UpdatetFollowupInnewPatient(TxtPatientNo.Text)
+                        ActionFindPatien(TxtPatientNo.Text, "0", "", "", "", "", "", "", "", "")
+                        CheckIsPatientConsult(GridPatientInformation.GetRow.Cells("PatientNo").Value, 0)
+
+                    End If
+                    FOldPatientReceipt.Dispose()
+                    FOldPatientReceipt.Close()
+                End If
+
+
+            End If
+
+
+        Else
+            MessageBox.Show("Please select patient in list.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End If
+    End Sub
+
+    Private Sub BtnInpatientReceiptV1_Click(ByVal sender As System.Object, ByVal e As Janus.Windows.Ribbon.CommandEventArgs) Handles BtnInpatientReceiptV1.Click
+        If GridPatientInformation.SelectedItems.Count > 0 Then
+            Dim FForInpatientReceipt As New FormForInpatientReceiptFront
+            FForInpatientReceipt.txtHN.Text = TxtPatientNo.Text
+            FForInpatientReceipt.txtPatient.Text = TxtNameKhmer.Text
+            FForInpatientReceipt.LblPatientEn.Text = TxtNameEng.Text
+            FForInpatientReceipt.LblSex.Text = CboSexPatien.Text
+            FForInpatientReceipt.LblAge.Text = TxtAgePatient.Text
+            FForInpatientReceipt.LblAddress.Text = TxtAddress.Text
+            FForInpatientReceipt.dtpDateIn.Checked = True
+
+            If GridConsult.GetRows.Count > 0 Then
+                FForInpatientReceipt.dtpDateIn.Value = GridConsult.GetRow.Cells("CONSULING_DATE").Value
+                FForInpatientReceipt.lblConsutIDv.Text = GridConsult.GetRow.Cells("CONSULING_ID").Value
+            Else
+
+            End If
+
+            If FForInpatientReceipt.ShowDialog = DialogResult.OK Then
+                ActionFindPatien(TxtPatientNo.Text, "0", "", "", "", "", "", "", "", "")
+                CheckIsPatientConsult(GridPatientInformation.GetRow.Cells("PatientNo").Value, 0)
+            End If
+            FForInpatientReceipt.Dispose()
+            FForInpatientReceipt.Close()
+            'FormForInpatientReceiptFront.ShowDialog()
+            'LoadInPatientReceipat(TxtPatientNo.Text, TxtNameKhmer.Text, TxtNameEng.Text, TxtAgePatient.Text, Me.CboSexPatien.Text, TxtAddress.Text)
+        Else
+            MessageBox.Show("Please select patient in list.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+
+        End If
+    End Sub
+
+    Private Sub BtnViewSupInvoice_Click(ByVal sender As System.Object, ByVal e As Janus.Windows.Ribbon.CommandEventArgs) Handles BtnViewSupInvoice.Click
         Me.V_NewoutpatientTableAdapter.Fill(Me.DSPatient.V_Newoutpatient)
         Me.V_OldOutpatientTableAdapter.Fill(Me.DSPatient.V_OldOutpatient)
         Me.V_InpatientTableAdapter.Fill(Me.DSPatient.V_Inpatient)

@@ -1,6 +1,7 @@
 ﻿Public Class MainScreening
     Dim Login As frmLoginInventory
     Dim UIMainMenu As New UIScreening(Me)
+    Private Delegate Sub DelShowLoadingPicture(ByVal visible As Boolean)
     Sub New(ByVal login As frmLoginInventory)
         ' This call is required by the Windows Form Designer.
         InitializeComponent()
@@ -25,5 +26,13 @@
 
     Private Sub BtnHome_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnHome.Click
         AddUserControl(PanelHeader, PanelDedail, UIMainMenu, "", True)
+    End Sub
+    Public Sub StatusLoading(ByVal v As Boolean)
+        If Me.Created Then
+            RibboStatusBar.Invoke(New DelShowLoadingPicture(AddressOf UpdateVisibleLoading), New Object() {v})
+        End If
+    End Sub
+    Private Sub UpdateVisibleLoading(ByVal v As Boolean)
+        ContainerPicloading.Visible = v
     End Sub
 End Class

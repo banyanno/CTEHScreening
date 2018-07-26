@@ -35,23 +35,21 @@ Partial Class MainScreening
         Me.Label2 = New System.Windows.Forms.Label
         Me.PictureBox1 = New System.Windows.Forms.PictureBox
         Me.PanelDedail = New System.Windows.Forms.Panel
-        Me.ToolStrip1 = New System.Windows.Forms.ToolStrip
-        Me.ToolStripSplitButton1 = New System.Windows.Forms.ToolStripSplitButton
-        Me.ToolStripMenuItem3 = New System.Windows.Forms.ToolStripSeparator
-        Me.ChangePasswordToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripSeparator
-        Me.LockSystemToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripSeparator
-        Me.SwichUserToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator
-        Me.ToolStripLabel1 = New System.Windows.Forms.ToolStripLabel
         Me.RibboStatusBar = New Janus.Windows.Ribbon.RibbonStatusBar
+        Me.DropDownCommand1 = New Janus.Windows.Ribbon.DropDownCommand
+        Me.DropDownCommand2 = New Janus.Windows.Ribbon.DropDownCommand
+        Me.SeparatorCommand1 = New Janus.Windows.Ribbon.SeparatorCommand
+        Me.DropDownCommand3 = New Janus.Windows.Ribbon.DropDownCommand
+        Me.SeparatorCommand2 = New Janus.Windows.Ribbon.SeparatorCommand
+        Me.DropDownCommand4 = New Janus.Windows.Ribbon.DropDownCommand
+        Me.LabelCommand1 = New Janus.Windows.Ribbon.LabelCommand
+        Me.PictureBox3 = New System.Windows.Forms.PictureBox
+        Me.ContainerPicloading = New Janus.Windows.Ribbon.ContainerControlCommand
         Me.PanelHeader.SuspendLayout()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.PanelDedail.SuspendLayout()
-        Me.ToolStrip1.SuspendLayout()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PanelHeader
@@ -199,113 +197,106 @@ Partial Class MainScreening
         'PanelDedail
         '
         Me.PanelDedail.BackColor = System.Drawing.Color.White
-        Me.PanelDedail.Controls.Add(Me.RibboStatusBar)
         Me.PanelDedail.Dock = System.Windows.Forms.DockStyle.Fill
         Me.PanelDedail.Location = New System.Drawing.Point(0, 143)
         Me.PanelDedail.Name = "PanelDedail"
         Me.PanelDedail.Size = New System.Drawing.Size(1300, 554)
         Me.PanelDedail.TabIndex = 1
         '
-        'ToolStrip1
-        '
-        Me.ToolStrip1.AccessibleRole = System.Windows.Forms.AccessibleRole.Application
-        Me.ToolStrip1.BackColor = System.Drawing.Color.DarkSeaGreen
-        Me.ToolStrip1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ToolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.ToolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden
-        Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
-        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripSplitButton1, Me.ToolStripSeparator1, Me.ToolStripLabel1})
-        Me.ToolStrip1.Location = New System.Drawing.Point(0, 697)
-        Me.ToolStrip1.Name = "ToolStrip1"
-        Me.ToolStrip1.Size = New System.Drawing.Size(1300, 27)
-        Me.ToolStrip1.TabIndex = 2
-        Me.ToolStrip1.Text = "ToolStrip1"
-        '
-        'ToolStripSplitButton1
-        '
-        Me.ToolStripSplitButton1.DropDownButtonWidth = 15
-        Me.ToolStripSplitButton1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem3, Me.ChangePasswordToolStripMenuItem, Me.ToolStripMenuItem2, Me.LockSystemToolStripMenuItem, Me.ToolStripMenuItem1, Me.SwichUserToolStripMenuItem})
-        Me.ToolStripSplitButton1.Font = New System.Drawing.Font("Segoe UI", 11.0!)
-        Me.ToolStripSplitButton1.ForeColor = System.Drawing.Color.Blue
-        Me.ToolStripSplitButton1.Image = CType(resources.GetObject("ToolStripSplitButton1.Image"), System.Drawing.Image)
-        Me.ToolStripSplitButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.ToolStripSplitButton1.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.ToolStripSplitButton1.Name = "ToolStripSplitButton1"
-        Me.ToolStripSplitButton1.Size = New System.Drawing.Size(121, 24)
-        Me.ToolStripSplitButton1.Text = "User Utility"
-        '
-        'ToolStripMenuItem3
-        '
-        Me.ToolStripMenuItem3.Name = "ToolStripMenuItem3"
-        Me.ToolStripMenuItem3.Size = New System.Drawing.Size(190, 6)
-        '
-        'ChangePasswordToolStripMenuItem
-        '
-        Me.ChangePasswordToolStripMenuItem.ForeColor = System.Drawing.Color.Blue
-        Me.ChangePasswordToolStripMenuItem.Image = CType(resources.GetObject("ChangePasswordToolStripMenuItem.Image"), System.Drawing.Image)
-        Me.ChangePasswordToolStripMenuItem.Name = "ChangePasswordToolStripMenuItem"
-        Me.ChangePasswordToolStripMenuItem.Size = New System.Drawing.Size(193, 24)
-        Me.ChangePasswordToolStripMenuItem.Text = "Change Password"
-        '
-        'ToolStripMenuItem2
-        '
-        Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
-        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(190, 6)
-        '
-        'LockSystemToolStripMenuItem
-        '
-        Me.LockSystemToolStripMenuItem.ForeColor = System.Drawing.Color.Blue
-        Me.LockSystemToolStripMenuItem.Image = CType(resources.GetObject("LockSystemToolStripMenuItem.Image"), System.Drawing.Image)
-        Me.LockSystemToolStripMenuItem.Name = "LockSystemToolStripMenuItem"
-        Me.LockSystemToolStripMenuItem.Size = New System.Drawing.Size(193, 24)
-        Me.LockSystemToolStripMenuItem.Text = "Lock System"
-        '
-        'ToolStripMenuItem1
-        '
-        Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(190, 6)
-        '
-        'SwichUserToolStripMenuItem
-        '
-        Me.SwichUserToolStripMenuItem.ForeColor = System.Drawing.Color.Blue
-        Me.SwichUserToolStripMenuItem.Image = CType(resources.GetObject("SwichUserToolStripMenuItem.Image"), System.Drawing.Image)
-        Me.SwichUserToolStripMenuItem.Name = "SwichUserToolStripMenuItem"
-        Me.SwichUserToolStripMenuItem.Size = New System.Drawing.Size(193, 24)
-        Me.SwichUserToolStripMenuItem.Text = "Swtich User"
-        '
-        'ToolStripSeparator1
-        '
-        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
-        Me.ToolStripSeparator1.Size = New System.Drawing.Size(6, 27)
-        '
-        'ToolStripLabel1
-        '
-        Me.ToolStripLabel1.Font = New System.Drawing.Font("Segoe UI", 11.0!)
-        Me.ToolStripLabel1.ForeColor = System.Drawing.Color.Blue
-        Me.ToolStripLabel1.Image = CType(resources.GetObject("ToolStripLabel1.Image"), System.Drawing.Image)
-        Me.ToolStripLabel1.Name = "ToolStripLabel1"
-        Me.ToolStripLabel1.Size = New System.Drawing.Size(106, 24)
-        Me.ToolStripLabel1.Text = "Date Server"
-        '
         'RibboStatusBar
         '
-        Me.RibboStatusBar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RibboStatusBar.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RibboStatusBar.ImageSize = New System.Drawing.Size(24, 24)
-        Me.RibboStatusBar.Location = New System.Drawing.Point(0, 530)
+        Me.RibboStatusBar.LeftPanelCommands.AddRange(New Janus.Windows.Ribbon.CommandBase() {Me.DropDownCommand1, Me.LabelCommand1})
+        Me.RibboStatusBar.Location = New System.Drawing.Point(0, 697)
         Me.RibboStatusBar.Margin = New System.Windows.Forms.Padding(2)
         Me.RibboStatusBar.Name = "RibboStatusBar"
         Me.RibboStatusBar.Office2007ColorScheme = Janus.Windows.Ribbon.Office2007ColorScheme.Custom
-        Me.RibboStatusBar.Office2007CustomColor = System.Drawing.Color.Gray
+        Me.RibboStatusBar.Office2007CustomColor = System.Drawing.Color.Green
+        Me.RibboStatusBar.RightPanelCommands.AddRange(New Janus.Windows.Ribbon.CommandBase() {Me.ContainerPicloading})
         Me.RibboStatusBar.ShowToolTips = False
-        Me.RibboStatusBar.Size = New System.Drawing.Size(1300, 24)
+        Me.RibboStatusBar.Size = New System.Drawing.Size(1300, 27)
         '
         '
         '
         Me.RibboStatusBar.SuperTipComponent.AutoPopDelay = 2000
+        Me.RibboStatusBar.SuperTipComponent.BackColor = System.Drawing.Color.Green
         Me.RibboStatusBar.SuperTipComponent.ImageList = Nothing
         Me.RibboStatusBar.TabIndex = 2
         Me.RibboStatusBar.Text = "RibbonStatusBar1"
         Me.RibboStatusBar.UseCompatibleTextRendering = False
+        '
+        'DropDownCommand1
+        '
+        Me.DropDownCommand1.Commands.AddRange(New Janus.Windows.Ribbon.CommandBase() {Me.DropDownCommand2, Me.SeparatorCommand1, Me.DropDownCommand3, Me.SeparatorCommand2, Me.DropDownCommand4})
+        Me.DropDownCommand1.ForegroundStyle.ForeColor = System.Drawing.Color.Blue
+        Me.DropDownCommand1.Image = CType(resources.GetObject("DropDownCommand1.Image"), System.Drawing.Image)
+        Me.DropDownCommand1.Key = "DropDownCommand1"
+        Me.DropDownCommand1.Name = "DropDownCommand1"
+        Me.DropDownCommand1.SizeStyle = Janus.Windows.Ribbon.CommandSizeStyle.Small
+        Me.DropDownCommand1.Text = " User Utility   "
+        '
+        'DropDownCommand2
+        '
+        Me.DropDownCommand2.ForegroundStyle.ForeColor = System.Drawing.Color.Blue
+        Me.DropDownCommand2.Image = CType(resources.GetObject("DropDownCommand2.Image"), System.Drawing.Image)
+        Me.DropDownCommand2.Key = "DropDownCommand2"
+        Me.DropDownCommand2.Name = "DropDownCommand2"
+        Me.DropDownCommand2.Text = "Switch User:"
+        '
+        'SeparatorCommand1
+        '
+        Me.SeparatorCommand1.Key = "SeparatorCommand1"
+        Me.SeparatorCommand1.Name = "SeparatorCommand1"
+        '
+        'DropDownCommand3
+        '
+        Me.DropDownCommand3.ForegroundStyle.ForeColor = System.Drawing.Color.Blue
+        Me.DropDownCommand3.Image = CType(resources.GetObject("DropDownCommand3.Image"), System.Drawing.Image)
+        Me.DropDownCommand3.Key = "DropDownCommand3"
+        Me.DropDownCommand3.Name = "DropDownCommand3"
+        Me.DropDownCommand3.Text = "Lock System"
+        '
+        'SeparatorCommand2
+        '
+        Me.SeparatorCommand2.Key = "SeparatorCommand2"
+        Me.SeparatorCommand2.Name = "SeparatorCommand2"
+        '
+        'DropDownCommand4
+        '
+        Me.DropDownCommand4.ForegroundStyle.ForeColor = System.Drawing.Color.Blue
+        Me.DropDownCommand4.Image = CType(resources.GetObject("DropDownCommand4.Image"), System.Drawing.Image)
+        Me.DropDownCommand4.Key = "DropDownCommand4"
+        Me.DropDownCommand4.Name = "DropDownCommand4"
+        Me.DropDownCommand4.Text = "Change Password"
+        '
+        'LabelCommand1
+        '
+        Me.LabelCommand1.ForegroundStyle.ForeColor = System.Drawing.Color.Blue
+        Me.LabelCommand1.Image = CType(resources.GetObject("LabelCommand1.Image"), System.Drawing.Image)
+        Me.LabelCommand1.Key = "LabelCommand1"
+        Me.LabelCommand1.Name = "LabelCommand1"
+        Me.LabelCommand1.Text = " Date Server:   "
+        '
+        'PictureBox3
+        '
+        Me.PictureBox3.Image = Global.TakeoHospitalInventory.My.Resources.Resources.loadingNew3
+        Me.PictureBox3.Location = New System.Drawing.Point(1120, -1)
+        Me.PictureBox3.Name = "PictureBox3"
+        Me.PictureBox3.Size = New System.Drawing.Size(180, 30)
+        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox3.TabIndex = 19
+        Me.PictureBox3.TabStop = False
+        '
+        'ContainerPicloading
+        '
+        Me.ContainerPicloading.Control = Me.PictureBox3
+        Me.ContainerPicloading.ControlWidth = 180
+        Me.ContainerPicloading.ForegroundStyle.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.ContainerPicloading.Key = "ContainerControlCommand1"
+        Me.ContainerPicloading.Name = "ContainerPicloading"
+        Me.ContainerPicloading.Text = "Loading"
+        Me.ContainerPicloading.Visible = False
         '
         'MainScreening
         '
@@ -313,7 +304,7 @@ Partial Class MainScreening
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1300, 724)
         Me.Controls.Add(Me.PanelDedail)
-        Me.Controls.Add(Me.ToolStrip1)
+        Me.Controls.Add(Me.RibboStatusBar)
         Me.Controls.Add(Me.PanelHeader)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "MainScreening"
@@ -324,11 +315,8 @@ Partial Class MainScreening
         Me.Panel1.PerformLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.PanelDedail.ResumeLayout(False)
-        Me.ToolStrip1.ResumeLayout(False)
-        Me.ToolStrip1.PerformLayout()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
     Friend WithEvents PanelHeader As System.Windows.Forms.Panel
@@ -343,15 +331,14 @@ Partial Class MainScreening
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents PictureBox2 As System.Windows.Forms.PictureBox
-    Friend WithEvents ToolStrip1 As System.Windows.Forms.ToolStrip
-    Friend WithEvents ToolStripSplitButton1 As System.Windows.Forms.ToolStripSplitButton
-    Friend WithEvents ToolStripSeparator1 As System.Windows.Forms.ToolStripSeparator
-    Friend WithEvents SwichUserToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents ChangePasswordToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem2 As System.Windows.Forms.ToolStripSeparator
-    Friend WithEvents LockSystemToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem1 As System.Windows.Forms.ToolStripSeparator
-    Friend WithEvents ToolStripMenuItem3 As System.Windows.Forms.ToolStripSeparator
-    Friend WithEvents ToolStripLabel1 As System.Windows.Forms.ToolStripLabel
     Friend WithEvents RibboStatusBar As Janus.Windows.Ribbon.RibbonStatusBar
+    Friend WithEvents DropDownCommand1 As Janus.Windows.Ribbon.DropDownCommand
+    Friend WithEvents DropDownCommand2 As Janus.Windows.Ribbon.DropDownCommand
+    Friend WithEvents SeparatorCommand1 As Janus.Windows.Ribbon.SeparatorCommand
+    Friend WithEvents DropDownCommand3 As Janus.Windows.Ribbon.DropDownCommand
+    Friend WithEvents SeparatorCommand2 As Janus.Windows.Ribbon.SeparatorCommand
+    Friend WithEvents DropDownCommand4 As Janus.Windows.Ribbon.DropDownCommand
+    Friend WithEvents LabelCommand1 As Janus.Windows.Ribbon.LabelCommand
+    Friend WithEvents PictureBox3 As System.Windows.Forms.PictureBox
+    Friend WithEvents ContainerPicloading As Janus.Windows.Ribbon.ContainerControlCommand
 End Class

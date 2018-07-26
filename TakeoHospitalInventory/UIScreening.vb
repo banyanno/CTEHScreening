@@ -1,6 +1,6 @@
 ﻿Public Class UIScreening
     Dim MScreening As MainScreening
-    Public PatientRegisAndPayment As New UCPatientPayment
+
     Sub New(ByVal MScreening As MainScreening)
 
         ' This call is required by the Windows Form Designer.
@@ -9,6 +9,7 @@
         ' Add any initialization after the InitializeComponent() call.
 
     End Sub
+    Public PatientRegisAndPayment As New UCPatientPayment(Me.MScreening)
     Public Sub SetVisibleEnvisibleMenu()
         If MenuVertical.Width = 0 Then
             MenuVertical.Width = 242
