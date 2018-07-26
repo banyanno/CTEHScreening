@@ -78,26 +78,16 @@ Public Class UCPatientPayment
   
 
 
-    Private Sub btnFind_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnFind.Click
-        'showMerlin(1000, 100)
-        'Merlin("", "Alert") 
+   
+    Public Function FindingPatient()
+
+    End Function
+
+    Public Sub ActionFindPatien(ByVal PatientNo As String, ByVal OldPatient As String, ByVal DFrom As String, ByVal DTo As String, ByVal PEngName As String, ByVal PKh As String, ByVal Sex As String, ByVal Province As String, ByVal District As String, ByVal Commune As String)
 
         Me.Cursor = Cursors.WaitCursor
         Me.DSPatient.Clear()
         GridPatientInformation.Refresh()
-        ActionFindPatien(EmptyString(TxtPatientSearchNo.Text.Trim), EmptyString(TxtOldPatientNo.Text.Trim), DateRFrom.Value, DateRTo.Value, _
-            txtEngName.Text.Trim, _
-            txtKhmerName.Text.Trim, _
-            cboSex.Text.Trim, _
-            cboProvince.Text.Trim, _
-            cboDistrict.Text.Trim, _
-            cboCommune.Text.Trim)
-        'GridPatientInformation.Select()
-        'GridPatientInformation.Focus()
-    End Sub
-
-
-    Sub ActionFindPatien(ByVal PatientNo As String, ByVal OldPatient As String, ByVal DFrom As String, ByVal DTo As String, ByVal PEngName As String, ByVal PKh As String, ByVal Sex As String, ByVal Province As String, ByVal District As String, ByVal Commune As String)
         DateFrom = DFrom
         DateTo = DTo
         patientNoSearh = PatientNo
@@ -109,7 +99,7 @@ Public Class UCPatientPayment
         patientProvince = Province
         patientDistrict = District
         patientCommune = Commune
-        btnFind.Enabled = False
+
         'startDate = DateTime.Now
         ' ProgrestData.Visible = True
 
@@ -142,7 +132,7 @@ Public Class UCPatientPayment
            
          
             'ProgrestData.Value = 100
-            btnFind.Enabled = True
+
             'ProgrestData.Visible = False
             ProgrestData.Value = 0
             'Dim PatientNo As Integer = GridPatientInformation.SelectedItems(0).GetRow.Cells(1).Text
@@ -295,17 +285,7 @@ Public Class UCPatientPayment
         End Select
     End Sub
 
-    Private Sub txtPatienNo_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TxtPatientSearchNo.KeyPress
-        Select Case Asc(e.KeyChar)
-            Case 48 To 57
-            Case 46, 8, 13
-            Case Else
-                e.Handled = True
-        End Select
-        If Asc(e.KeyChar) = Keys.Enter Then
-            Me.txtEngName.Focus()
-        End If
-    End Sub
+  
 
 
     Private Sub txtPatientNoFee_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs)
@@ -449,44 +429,7 @@ Public Class UCPatientPayment
         SetDisableKey(e)
     End Sub
     Dim DAPatientReceipt As New DSDashboardPatientTableAdapters.tblPatientReceiptTableAdapter
-    Private Sub BtnOldOutPatientReceipt_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnOldOutPatientReceipt.Click
-        If GridPatientInformation.SelectedItems.Count > 0 Then
-            If GridPatientInformation.SelectedItems(0).Table.Key = "PatientInfo" Then
-                'Dim TblTemTblReceitp As DataTable = DAPatientReceipt.GetDataByCheckDatin(GridPatientInformation.GetRow.Cells("PatientNo").Value, GetDateServer.Date)
-                If ModOld_Outpatient.CheckDuplicatePatientOneDay(GridPatientInformation.GetRow.Cells("PatientNo").Value, ModGlobleVariable.CheckMarkEOD.Date, 1) > 0 Then
-                    MessageBox.Show("Can not registration patient for Old patient book on the same day. Could you check old patient book agian.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                    Exit Sub
-                End If
-                If ModOld_Outpatient.CheckDuplicatePatientOneDay(GridPatientInformation.GetRow.Cells("PatientNo").Value, ModGlobleVariable.CheckMarkEOD.Date, 0) > 0 Then
-                    MessageBox.Show("Can not registration patient for Old patient book on the same day. Could you check old patient book agian.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                    Exit Sub
-                    'End If
-                    'If TblTemTblReceitp.Rows.Count > 0 Then
-                    '    MessageBox.Show("This Patient No " & GridPatientInformation.GetRow.Cells("PatientNo").Value & " is already register for old patient book receipt, Could you check again.", "existing", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                    '    Exit Sub
-                Else
-                    Dim FOldPatientReceipt As New frmOldOutPatientReceipt
-                    FOldPatientReceipt.IS_UPDATE = False
-                    FOldPatientReceipt.txtHN.Text = TxtPatientNo.Text
-                    FOldPatientReceipt.txtPatient.Text = TxtNameKhmer.Text
-                    If FOldPatientReceipt.ShowDialog() = DialogResult.OK Then
-                        UpdatetFollowupInnewPatient(TxtPatientNo.Text)
-                        ActionFindPatien(TxtPatientNo.Text, "0", "", "", "", "", "", "", "", "")
-                        CheckIsPatientConsult(GridPatientInformation.GetRow.Cells("PatientNo").Value, 0)
-
-                    End If
-                    FOldPatientReceipt.Dispose()
-                    FOldPatientReceipt.Close()
-                End If
-
-
-            End If
-
-            
-        Else
-            MessageBox.Show("Please select patient in list.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        End If
-    End Sub
+   
     Public Function CheckIsPatientConsult(ByVal PatientNo As Double, ByVal Status As Integer) As Boolean
         Dim DataTbl As DataTable = DA_Consult_Detail.GetDataByCheckTotalConsult(PatientNo, Status, True)
         'Dim strConsultfor As String = ""
@@ -562,7 +505,7 @@ Public Class UCPatientPayment
         End If
     End Function
 
-    Private Sub BtnInpatientReceipt_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnInpatientReceipt.Click
+    Private Sub BtnInpatientReceipt_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         If GridPatientInformation.SelectedItems.Count > 0 Then
             Dim FForInpatientReceipt As New FormForInpatientReceiptFront
             FForInpatientReceipt.txtHN.Text = TxtPatientNo.Text
@@ -592,7 +535,7 @@ Public Class UCPatientPayment
             MessageBox.Show("Please select patient in list.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
 
         End If
-       
+
     End Sub
     Sub LoadInPatientReceipat(ByVal PatientNo As String, ByVal KhName As String, ByVal EngName As String, ByVal Age As String, ByVal Sex As String, ByVal Address As String)
         If PatientNo <> String.Empty Then
@@ -646,21 +589,33 @@ Public Class UCPatientPayment
     Private Sub UCPatientPayment_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Dim tblPermistion As DataTable = ModUser.GetMenuPermission(USER_NAME)
 
-        For Each obj As Object In GroupPayment.Controls
-            If TypeOf obj Is Button Then
-                Dim Btn As Button = CType(obj, Button)
+        'For Each obj As Object In GroupPayment.Controls
+        '    If TypeOf obj Is Button Then
+        '        Dim Btn As Button = CType(obj, Button)
 
-                For indexMenu = 0 To tblPermistion.Rows.Count - 1
-                    'MsgBox(tblPermistion.Rows(indexMenu).Item(0))
-                    If tblPermistion.Rows(indexMenu).Item(0) = "Phone Number" Then
-                        ' TxtTel.Visible = True
-                    Else
-                        'TxtTel.Visible = False
-                    End If
-                    If Btn.Tag = tblPermistion.Rows(indexMenu).Item(0) Then
-                        Btn.Enabled = True
-                    End If
-                Next
+        '        For indexMenu = 0 To tblPermistion.Rows.Count - 1
+        '            'MsgBox(tblPermistion.Rows(indexMenu).Item(0))
+        '            If tblPermistion.Rows(indexMenu).Item(0) = "Phone Number" Then
+        '                ' TxtTel.Visible = True
+        '            Else
+        '                'TxtTel.Visible = False
+        '            End If
+        '            If Btn.Tag = tblPermistion.Rows(indexMenu).Item(0) Then
+        '                Btn.Enabled = True
+        '            End If
+        '        Next
+        '    End If
+        'Next
+        For Each rows As DataRow In tblPermistion.Rows
+            'MsgBox(rows("MenuNo"))
+            If BtnNew.Key = rows("MenuNo") Then
+                BtnNew.Enabled = True
+            End If
+            If BtnOldOutPatientReceipt.Key = rows("MenuNo") Then
+                BtnOldOutPatientReceipt.Enabled = True
+            End If
+            If BtnInpatientReceipt.Key = rows("MenuNo") Then
+                BtnInpatientReceipt.Enabled = True
             End If
         Next
 
@@ -737,43 +692,7 @@ Public Class UCPatientPayment
         Me.CboCommNo.SelectAll()
     End Sub
 
-    Private Sub cboProvince_GotFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles cboProvince.GotFocus
-        With cboProvince
-            .DataSource = ModProvince.SelectProvice()
-            .DisplayMember = "Province"
-            .ValueMember = "IDProvCode"
-            .SelectAll()
-        End With
-        'cboProvince.Text = ""
-        'cboDistrict.Text = ""
-        cboCommune.Text = ""
-    End Sub
-
-    Private Sub cboProvince_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cboProvince.SelectedIndexChanged
-
-    End Sub
-
-    Private Sub cboDistrict_GotFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles cboDistrict.GotFocus
-        With cboDistrict
-            .DataSource = ModProvince.SelectDistrict(CInt(cboProvince.SelectedValue))
-            .DisplayMember = "DISTRICT"
-            .ValueMember = "SrokCode"
-            .SelectAll()
-        End With
-        'cboDistrict.Text = ""
-        'cboCommune.Text = ""
-    End Sub
-
-    Private Sub cboCommune_GotFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles cboCommune.GotFocus
-        With cboCommune
-            .DataSource = ModProvince.SelectCommune(CInt(cboDistrict.SelectedValue))
-            .DisplayMember = "Commune"
-            .ValueMember = "KhumCode"
-            .SelectAll()
-        End With
-    End Sub
-
-
+ 
     Private Sub TxtPatientNo_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TxtPatientNo.KeyPress
         If Asc(e.KeyChar) = Keys.Enter Then
             Me.TxtNameEng.Focus()
@@ -808,29 +727,26 @@ Public Class UCPatientPayment
     End Sub
 
 
-    Private Sub txtEngName_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtEngName.KeyPress
-        If Asc(e.KeyChar) = Keys.Enter Then
-            Me.txtKhmerName.Focus()
-        End If
-    End Sub
+   
 
 
-    Private Sub txtKhmerName_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtKhmerName.KeyPress
-        If Asc(e.KeyChar) = Keys.Enter Then
-            Me.cboSex.Focus()
-        End If
+    Public Sub ViewPatientDetail(ByVal lblSaveOption As String, ByVal TxtPatientNo As String, ByVal TxtNameKhmer As String, ByVal TxtNameEng As String, ByVal TxtAgePatient As String, ByVal CboSexPatien As String, ByVal TxtAddress As String, ByVal CboOccupation As String, ByVal TxtTel As String, ByVal CboProNo As String, ByVal CboDisNo As String, ByVal CboCommNo As String, ByVal DateRegis As Date)
+        lblSaveOption = GridPatientInformation.SelectedItems(0).GetRow.Cells(0).Text
+        TxtPatientNo = GridPatientInformation.SelectedItems(0).GetRow.Cells(1).Text
+        TxtNameKhmer = GridPatientInformation.SelectedItems(0).GetRow.Cells(2).Text
+        TxtNameEng = GridPatientInformation.SelectedItems(0).GetRow.Cells(3).Text
+        TxtAgePatient = GridPatientInformation.SelectedItems(0).GetRow.Cells(4).Text
+        CboSexPatien = GridPatientInformation.SelectedItems(0).GetRow.Cells(5).Text
+        TxtAddress = GridPatientInformation.SelectedItems(0).GetRow.Cells(6).Text
+        CboOccupation = GridPatientInformation.SelectedItems(0).GetRow.Cells(7).Text
+        TxtTel = IIf(UserGlobleVariable.DEPART_NAME.ToUpper = "ADMINISTRATOR", GridPatientInformation.SelectedItems(0).GetRow.Cells(8).Text, "")
+        CboProNo = GridPatientInformation.SelectedItems(0).GetRow.Cells(9).Text
+        CboDisNo = GridPatientInformation.SelectedItems(0).GetRow.Cells(10).Text
+        CboCommNo = GridPatientInformation.SelectedItems(0).GetRow.Cells(11).Text
+        DateRegis = GridPatientInformation.SelectedItems(0).GetRow.Cells(12).Value
+        CheckIsPatientConsult(GridPatientInformation.GetRow.Cells("PatientNo").Value, 0)
     End Sub
 
-    Private Sub cboSex_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles cboSex.KeyDown
-        Select Case e.KeyCode
-            Case Keys.F
-                Me.cboSex.Text = "F"
-            Case Keys.M
-                Me.cboSex.Text = "M"
-            Case Else
-                e.SuppressKeyPress = True
-        End Select
-    End Sub
 
     Private Sub GridPatientInformation_SelectionChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles GridPatientInformation.SelectionChanged
         Try
@@ -850,20 +766,7 @@ Public Class UCPatientPayment
                 BtnUpdateRegistrationForm.Enabled = True
                 BtnShowBook.Enabled = True
                 MFree.Enabled = True
-                lblSaveOption.Text = GridPatientInformation.SelectedItems(0).GetRow.Cells(0).Text
-                TxtPatientNo.Text = GridPatientInformation.SelectedItems(0).GetRow.Cells(1).Text
-                TxtNameKhmer.Text = GridPatientInformation.SelectedItems(0).GetRow.Cells(2).Text
-                TxtNameEng.Text = GridPatientInformation.SelectedItems(0).GetRow.Cells(3).Text
-                TxtAgePatient.Text = GridPatientInformation.SelectedItems(0).GetRow.Cells(4).Text
-                CboSexPatien.Text = GridPatientInformation.SelectedItems(0).GetRow.Cells(5).Text
-                TxtAddress.Text = GridPatientInformation.SelectedItems(0).GetRow.Cells(6).Text
-                CboOccupation.Text = GridPatientInformation.SelectedItems(0).GetRow.Cells(7).Text
-                TxtTel.Text = IIf(UserGlobleVariable.DEPART_NAME.ToUpper = "ADMINISTRATOR", GridPatientInformation.SelectedItems(0).GetRow.Cells(8).Text, "")
-                CboProNo.Text = GridPatientInformation.SelectedItems(0).GetRow.Cells(9).Text
-                CboDisNo.Text = GridPatientInformation.SelectedItems(0).GetRow.Cells(10).Text
-                CboCommNo.Text = GridPatientInformation.SelectedItems(0).GetRow.Cells(11).Text
-                DateRegis.Value = GridPatientInformation.SelectedItems(0).GetRow.Cells(12).Value
-                CheckIsPatientConsult(GridPatientInformation.GetRow.Cells("PatientNo").Value, 0)
+                ViewPatientDetail(lblSaveOption.Text, TxtPatientNo.Text, TxtNameKhmer.Text, TxtNameEng.Text, TxtAgePatient.Text, CboSexPatien.Text, TxtAddress.Text, CboOccupation.Text, TxtTel.Text, CboProNo.Text, CboDisNo.Text, CboCommNo.Text, DateRegis.Value)
             Else
                 MainBtnPrintRegistrationForm.Enabled = False
                 BtnReferToOtherHospital.Enabled = False
@@ -1229,17 +1132,7 @@ Public Class UCPatientPayment
     End Sub
 
 
-    Private Sub TxtOldPatientNo_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TxtOldPatientNo.KeyPress
-        Select Case Asc(e.KeyChar)
-            Case 48 To 57
-            Case 46, 8, 13
-            Case Else
-                e.Handled = True
-        End Select
-        If Asc(e.KeyChar) = Keys.Enter Then
-            Me.txtEngName.Focus()
-        End If
-    End Sub
+ 
 
     Private Sub CreateNewoutPatientBookToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CreateNewoutPatientBook.Click
         If GridPatientInformation.SelectedItems.Count = 0 Then
@@ -1433,7 +1326,7 @@ Public Class UCPatientPayment
    
 
     Private Sub BtnFindPatient_Click(ByVal sender As System.Object, ByVal e As Janus.Windows.Ribbon.CommandEventArgs) Handles BtnFindPatient.Click
-        Dim FFindePatient As New FindPatient
+        Dim FFindePatient As New FindPatient(Me)
         FFindePatient.ShowDialog()
     End Sub
 
@@ -1442,14 +1335,14 @@ Public Class UCPatientPayment
         FUpdatePatient.Show()
     End Sub
 
-    Private Sub BtnNewV1_Click(ByVal sender As System.Object, ByVal e As Janus.Windows.Ribbon.CommandEventArgs) Handles BtnNewV1.Click
+    Private Sub BtnNewV1_Click(ByVal sender As System.Object, ByVal e As Janus.Windows.Ribbon.CommandEventArgs) Handles BtnNew.Click
         Dim FNewPatientPay As New NewPatientPayment
         FNewPatientPay.ShowDialog()
         FNewPatientPay.Dispose()
         FNewPatientPay.Close()
     End Sub
 
-    Private Sub BtnOldOutPatientReceiptV1_Click(ByVal sender As System.Object, ByVal e As Janus.Windows.Ribbon.CommandEventArgs) Handles BtnOldOutPatientReceiptV1.Click
+    Private Sub BtnOldOutPatientReceiptV1_Click(ByVal sender As System.Object, ByVal e As Janus.Windows.Ribbon.CommandEventArgs) Handles BtnOldOutPatientReceipt.Click
         If GridPatientInformation.SelectedItems.Count > 0 Then
             If GridPatientInformation.SelectedItems(0).Table.Key = "PatientInfo" Then
                 'Dim TblTemTblReceitp As DataTable = DAPatientReceipt.GetDataByCheckDatin(GridPatientInformation.GetRow.Cells("PatientNo").Value, GetDateServer.Date)
@@ -1488,7 +1381,7 @@ Public Class UCPatientPayment
         End If
     End Sub
 
-    Private Sub BtnInpatientReceiptV1_Click(ByVal sender As System.Object, ByVal e As Janus.Windows.Ribbon.CommandEventArgs) Handles BtnInpatientReceiptV1.Click
+    Private Sub BtnInpatientReceiptV1_Click(ByVal sender As System.Object, ByVal e As Janus.Windows.Ribbon.CommandEventArgs) Handles BtnInpatientReceipt.Click
         If GridPatientInformation.SelectedItems.Count > 0 Then
             Dim FForInpatientReceipt As New FormForInpatientReceiptFront
             FForInpatientReceipt.txtHN.Text = TxtPatientNo.Text

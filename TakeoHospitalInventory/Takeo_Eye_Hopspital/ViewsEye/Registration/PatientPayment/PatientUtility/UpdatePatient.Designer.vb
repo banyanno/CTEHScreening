@@ -22,6 +22,7 @@ Partial Class UpdatePatient
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(UpdatePatient))
         Me.Label12 = New System.Windows.Forms.Label
         Me.CboOccupation = New System.Windows.Forms.ComboBox
@@ -49,7 +50,9 @@ Partial Class UpdatePatient
         Me.Label1 = New System.Windows.Forms.Label
         Me.lblSaveOption = New System.Windows.Forms.Label
         Me.BntClose = New System.Windows.Forms.Button
+        Me.ErrPatient = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.GroupBox4.SuspendLayout()
+        CType(Me.ErrPatient, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label12
@@ -337,8 +340,13 @@ Partial Class UpdatePatient
         Me.BntClose.Text = "Close"
         Me.BntClose.UseVisualStyleBackColor = False
         '
+        'ErrPatient
+        '
+        Me.ErrPatient.ContainerControl = Me
+        '
         'UpdatePatient
         '
+        Me.AcceptButton = Me.btnSave
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(183, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(183, Byte), Integer))
@@ -371,6 +379,7 @@ Partial Class UpdatePatient
         Me.TopMost = True
         Me.GroupBox4.ResumeLayout(False)
         Me.GroupBox4.PerformLayout()
+        CType(Me.ErrPatient, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -401,4 +410,5 @@ Partial Class UpdatePatient
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents lblSaveOption As System.Windows.Forms.Label
     Friend WithEvents BntClose As System.Windows.Forms.Button
+    Friend WithEvents ErrPatient As System.Windows.Forms.ErrorProvider
 End Class

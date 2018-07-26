@@ -334,6 +334,7 @@ Partial Class FindPatient
         '
         'FindPatient
         '
+        Me.AcceptButton = Me.btnFind
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(183, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(183, Byte), Integer))
