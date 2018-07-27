@@ -1318,4 +1318,12 @@ Public Class frmOldOutPatientReceipt
         ' MsgBox("Save old out patient receipt successfully", MsgBoxStyle.Information, "Old-Out Patient")
         Me.DialogResult = Windows.Forms.DialogResult.OK
     End Sub
+
+    Private Sub frmOldOutPatientReceipt_MouseDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles MyBase.MouseDown
+        MoveFormOnMouseDown(e)
+    End Sub
+
+    Private Sub frmOldOutPatientReceipt_MouseMove(ByVal sender As System.Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles MyBase.MouseMove
+        MoveFormOnMouseMove(e, Me)
+    End Sub
 End Class

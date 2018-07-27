@@ -20,11 +20,11 @@ Partial Class UCRegistrationForm
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
+        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
+        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(UCRegistrationForm))
         Me.GroupPatientInformation = New System.Windows.Forms.GroupBox
         Me.GroupBox2 = New System.Windows.Forms.GroupBox
@@ -265,44 +265,44 @@ Partial Class UCRegistrationForm
         '
         Me.GridPatientFollowUp.AllowUserToAddRows = False
         Me.GridPatientFollowUp.AllowUserToDeleteRows = False
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.GridPatientFollowUp.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.GridPatientFollowUp.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle6
         Me.GridPatientFollowUp.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
         Me.GridPatientFollowUp.BackgroundColor = System.Drawing.Color.White
         Me.GridPatientFollowUp.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.GridPatientFollowUp.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle7.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.GridPatientFollowUp.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle7
         Me.GridPatientFollowUp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.GridPatientFollowUp.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.HistoryNO, Me.PatientNo, Me.CreateDate, Me.Hearing, Me.Understand, Me.Seeing, Me.Physical, Me.BOV, Me.Diplopia, Me.EyePain, Me.Floaters, Me.EyeRedness, Me.FBSensation, Me.Tering, Me.EyeDischarge, Me.Photophobia, Me.OtherComplaint, Me.Duration, Me.OD, Me.OS, Me.OU, Me.CDMDPatient, Me.ScreeningKV, Me.EyeSreening, Me.Self, Me.PatientReferal, Me.Friend_Relation, Me.OtherNGO, Me.Church, Me.HealthWorker, Me.OtherReferal, Me.PlainDate, Me.PlainVAR, Me.PlainVAL, Me.ICPHDate, Me.ICPHVAR, Me.ICPHVAL, Me.ICG1Date, Me.ICG1VAR, Me.ICG1VAL, Me.Initial_R_E, Me.Initial_L_E, Me.PrimDiag_RE, Me.PrimDiag_LE, Me.PrimDiag_RE_Code, Me.PrimDiag_LE_Code, Me.HistoryIllness, Me.BlindNess, Me.Hypertension, Me.Diabetes, Me.Asthma, Me.Glaucoma, Me.Cataract, Me.AIDS, Me.TB, Me.Syphilis, Me.Treatment, Me.OperationType, Me.Spectacles, Me.FollowUpStatus, Me.PreyKabasVC, Me.PreyScreening, Me.SchoolScreening, Me.MoPoCho})
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.GridPatientFollowUp.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle8.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.GridPatientFollowUp.DefaultCellStyle = DataGridViewCellStyle8
         Me.GridPatientFollowUp.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GridPatientFollowUp.Location = New System.Drawing.Point(3, 16)
         Me.GridPatientFollowUp.Name = "GridPatientFollowUp"
         Me.GridPatientFollowUp.ReadOnly = True
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.GridPatientFollowUp.RowHeadersDefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle9.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.GridPatientFollowUp.RowHeadersDefaultCellStyle = DataGridViewCellStyle9
         Me.GridPatientFollowUp.RowHeadersWidth = 25
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GridPatientFollowUp.RowsDefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle10.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GridPatientFollowUp.RowsDefaultCellStyle = DataGridViewCellStyle10
         Me.GridPatientFollowUp.RowTemplate.Height = 35
         Me.GridPatientFollowUp.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.GridPatientFollowUp.Size = New System.Drawing.Size(1195, 752)
@@ -965,6 +965,7 @@ Partial Class UCRegistrationForm
         Me.BtnCancelForm.TabIndex = 8
         Me.BtnCancelForm.Text = "&Close"
         Me.BtnCancelForm.UseVisualStyleBackColor = True
+        Me.BtnCancelForm.Visible = False
         '
         'BtnPrintRegistration
         '
@@ -994,7 +995,7 @@ Partial Class UCRegistrationForm
         Me.BtnNew.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
                     Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.BtnNew.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnNew.Location = New System.Drawing.Point(602, 30)
+        Me.BtnNew.Location = New System.Drawing.Point(600, 25)
         Me.BtnNew.Name = "BtnNew"
         Me.BtnNew.Size = New System.Drawing.Size(222, 58)
         Me.BtnNew.TabIndex = 6
@@ -1083,23 +1084,23 @@ Partial Class UCRegistrationForm
         '
         Me.MenuStartStop.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.StartLoadDataToolStripMenuItem, Me.ToolStripMenuItem1, Me.StopLoadDataToolStripMenuItem})
         Me.MenuStartStop.Name = "MenuStartStop"
-        Me.MenuStartStop.Size = New System.Drawing.Size(147, 54)
+        Me.MenuStartStop.Size = New System.Drawing.Size(151, 54)
         '
         'StartLoadDataToolStripMenuItem
         '
         Me.StartLoadDataToolStripMenuItem.Name = "StartLoadDataToolStripMenuItem"
-        Me.StartLoadDataToolStripMenuItem.Size = New System.Drawing.Size(146, 22)
+        Me.StartLoadDataToolStripMenuItem.Size = New System.Drawing.Size(150, 22)
         Me.StartLoadDataToolStripMenuItem.Text = "Start load data"
         '
         'ToolStripMenuItem1
         '
         Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(143, 6)
+        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(147, 6)
         '
         'StopLoadDataToolStripMenuItem
         '
         Me.StopLoadDataToolStripMenuItem.Name = "StopLoadDataToolStripMenuItem"
-        Me.StopLoadDataToolStripMenuItem.Size = New System.Drawing.Size(146, 22)
+        Me.StopLoadDataToolStripMenuItem.Size = New System.Drawing.Size(150, 22)
         Me.StopLoadDataToolStripMenuItem.Text = "Stop load data"
         '
         'lblExamID
@@ -1222,7 +1223,7 @@ Partial Class UCRegistrationForm
         Me.PanelExamination.Dock = System.Windows.Forms.DockStyle.Fill
         Me.PanelExamination.Location = New System.Drawing.Point(3, 16)
         Me.PanelExamination.Name = "PanelExamination"
-        Me.PanelExamination.Size = New System.Drawing.Size(106, 18)
+        Me.PanelExamination.Size = New System.Drawing.Size(144, 27)
         Me.PanelExamination.TabIndex = 1
         '
         'GrpReferal
@@ -2285,7 +2286,7 @@ Partial Class UCRegistrationForm
         Me.GroupBox4.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GroupBox4.Location = New System.Drawing.Point(0, 0)
         Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(112, 37)
+        Me.GroupBox4.Size = New System.Drawing.Size(150, 46)
         Me.GroupBox4.TabIndex = 2
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "Registration Form"

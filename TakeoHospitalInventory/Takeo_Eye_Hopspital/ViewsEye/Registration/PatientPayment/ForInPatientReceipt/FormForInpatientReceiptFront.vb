@@ -1055,4 +1055,12 @@ Public Class FormForInpatientReceiptFront
     Private Sub cmdAddRate_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdAddRate.Click
 
     End Sub
+
+    Private Sub FormForInpatientReceiptFront_MouseDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles MyBase.MouseDown
+        MoveFormOnMouseDown(e)
+    End Sub
+
+    Private Sub FormForInpatientReceiptFront_MouseMove(ByVal sender As System.Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles MyBase.MouseMove
+        MoveFormOnMouseMove(e, Me)
+    End Sub
 End Class

@@ -388,14 +388,14 @@ Public Class UCPatientPayment
         If GridPatientInformation.SelectedItems.Count = 0 Then
             Exit Sub
         End If
-        mainForm.CreateRegisForm()
-        mainForm.examinationForm.TxtPatientNo.Text = GridPatientInformation.SelectedItems(0).GetRow.Cells(1).Text
-        mainForm.examinationForm.TxtPatientName.Text = GridPatientInformation.SelectedItems(0).GetRow.Cells(2).Text
-        mainForm.examinationForm.TxtAge.Text = GridPatientInformation.SelectedItems(0).GetRow.Cells(4).Text
-        mainForm.examinationForm.TxtSex.Text = GridPatientInformation.SelectedItems(0).GetRow.Cells(5).Text
-        mainForm.examinationForm.TxtAddress.Text = GridPatientInformation.SelectedItems(0).GetRow.Cells(6).Text
+        ModGlobleVariable.UIMainScreening.CreateRegisForm()
+        ModGlobleVariable.UIMainScreening.examinationForm.TxtPatientNo.Text = GridPatientInformation.SelectedItems(0).GetRow.Cells(1).Text
+        ModGlobleVariable.UIMainScreening.examinationForm.TxtPatientName.Text = GridPatientInformation.SelectedItems(0).GetRow.Cells(2).Text
+        ModGlobleVariable.UIMainScreening.examinationForm.TxtAge.Text = GridPatientInformation.SelectedItems(0).GetRow.Cells(4).Text
+        ModGlobleVariable.UIMainScreening.examinationForm.TxtSex.Text = GridPatientInformation.SelectedItems(0).GetRow.Cells(5).Text
+        ModGlobleVariable.UIMainScreening.examinationForm.TxtAddress.Text = GridPatientInformation.SelectedItems(0).GetRow.Cells(6).Text
         'mainForm.examinationForm.TxtPatientNo.Focus()
-        mainForm.examinationForm.FindPatientRegistration()
+        ModGlobleVariable.UIMainScreening.examinationForm.FindPatientRegistration()
     End Sub
 
     Private Sub CboAgePatient_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TxtAgePatient.KeyPress
@@ -730,21 +730,21 @@ Public Class UCPatientPayment
    
 
 
-    Public Sub ViewPatientDetail(ByVal lblSaveOption As String, ByVal TxtPatientNo As String, ByVal TxtNameKhmer As String, ByVal TxtNameEng As String, ByVal TxtAgePatient As String, ByVal CboSexPatien As String, ByVal TxtAddress As String, ByVal CboOccupation As String, ByVal TxtTel As String, ByVal CboProNo As String, ByVal CboDisNo As String, ByVal CboCommNo As String, ByVal DateRegis As Date)
-        lblSaveOption = GridPatientInformation.SelectedItems(0).GetRow.Cells(0).Text
-        TxtPatientNo = GridPatientInformation.SelectedItems(0).GetRow.Cells(1).Text
-        TxtNameKhmer = GridPatientInformation.SelectedItems(0).GetRow.Cells(2).Text
-        TxtNameEng = GridPatientInformation.SelectedItems(0).GetRow.Cells(3).Text
-        TxtAgePatient = GridPatientInformation.SelectedItems(0).GetRow.Cells(4).Text
-        CboSexPatien = GridPatientInformation.SelectedItems(0).GetRow.Cells(5).Text
-        TxtAddress = GridPatientInformation.SelectedItems(0).GetRow.Cells(6).Text
-        CboOccupation = GridPatientInformation.SelectedItems(0).GetRow.Cells(7).Text
-        TxtTel = IIf(UserGlobleVariable.DEPART_NAME.ToUpper = "ADMINISTRATOR", GridPatientInformation.SelectedItems(0).GetRow.Cells(8).Text, "")
-        CboProNo = GridPatientInformation.SelectedItems(0).GetRow.Cells(9).Text
-        CboDisNo = GridPatientInformation.SelectedItems(0).GetRow.Cells(10).Text
-        CboCommNo = GridPatientInformation.SelectedItems(0).GetRow.Cells(11).Text
-        DateRegis = GridPatientInformation.SelectedItems(0).GetRow.Cells(12).Value
-        CheckIsPatientConsult(GridPatientInformation.GetRow.Cells("PatientNo").Value, 0)
+    Public Sub ViewPatientDetail(ByVal FPatientUpdate As UpdatePatient)
+        FPatientUpdate.lblSaveOption.Text = GridPatientInformation.SelectedItems(0).GetRow.Cells(0).Text
+        FPatientUpdate.TxtPatientNo.Text = GridPatientInformation.SelectedItems(0).GetRow.Cells(1).Text
+        FPatientUpdate.TxtNameKhmer.Text = GridPatientInformation.SelectedItems(0).GetRow.Cells(2).Text
+        FPatientUpdate.TxtNameEng.Text = GridPatientInformation.SelectedItems(0).GetRow.Cells(3).Text
+        FPatientUpdate.TxtAgePatient.Text = GridPatientInformation.SelectedItems(0).GetRow.Cells(4).Text
+        FPatientUpdate.CboSexPatien.Text = GridPatientInformation.SelectedItems(0).GetRow.Cells(5).Text
+        FPatientUpdate.TxtAddress.Text = GridPatientInformation.SelectedItems(0).GetRow.Cells(6).Text
+        FPatientUpdate.CboOccupation.Text = GridPatientInformation.SelectedItems(0).GetRow.Cells(7).Text
+        FPatientUpdate.TxtTel.Text = IIf(UserGlobleVariable.DEPART_NAME.ToUpper = "ADMINISTRATOR", GridPatientInformation.SelectedItems(0).GetRow.Cells(8).Text, "")
+        FPatientUpdate.CboProNo.Text = GridPatientInformation.SelectedItems(0).GetRow.Cells(9).Text
+        FPatientUpdate.CboDisNo.Text = GridPatientInformation.SelectedItems(0).GetRow.Cells(10).Text
+        FPatientUpdate.CboCommNo.Text = GridPatientInformation.SelectedItems(0).GetRow.Cells(11).Text
+        FPatientUpdate.DateRegis.Value = GridPatientInformation.SelectedItems(0).GetRow.Cells(12).Value
+
     End Sub
 
 
@@ -760,30 +760,32 @@ Public Class UCPatientPayment
                 MenuOldPatientBook.Enabled = False
                 MInPateintBook.Enabled = False
                 MenuRegistrationForm.Enabled = True
-                BtnReferToOtherHospital.Enabled = True
-                BtnPrintRegistrationFormAgain.Enabled = True
-                BtnPrintRegisV2.Enabled = True
-                BtnUpdateRegistrationForm.Enabled = True
-                BtnShowBook.Enabled = True
+                BtnReferToOtherHospitalV1.Enabled = True
+                BtnPrintRegistrationFormAgainV1.Enabled = True
+                BtnPrintRegisV21.Enabled = True
+                BtnUpdateRegistrationFormv1.Enabled = True
+                BtnShowBookV1.Enabled = True
                 MFree.Enabled = True
-                ViewPatientDetail(lblSaveOption.Text, TxtPatientNo.Text, TxtNameKhmer.Text, TxtNameEng.Text, TxtAgePatient.Text, CboSexPatien.Text, TxtAddress.Text, CboOccupation.Text, TxtTel.Text, CboProNo.Text, CboDisNo.Text, CboCommNo.Text, DateRegis.Value)
+                BtnUpdatePatient.Enabled = True
+                CheckIsPatientConsult(GridPatientInformation.GetRow.Cells("PatientNo").Value, 0)
+                ' ViewPatientDetail(lblSaveOption.Text, TxtPatientNo.Text, TxtNameKhmer.Text, TxtNameEng.Text, TxtAgePatient.Text, CboSexPatien.Text, TxtAddress.Text, CboOccupation.Text, TxtTel.Text, CboProNo.Text, CboDisNo.Text, CboCommNo.Text, DateRegis.Value)
             Else
                 MainBtnPrintRegistrationForm.Enabled = False
-                BtnReferToOtherHospital.Enabled = False
-                BtnPrintRegistrationFormAgain.Enabled = False
-                BtnPrintRegisV2.Enabled = False
-                BtnUpdateRegistrationForm.Enabled = False
-                BtnShowBook.Enabled = False
-               
+                BtnReferToOtherHospitalV1.Enabled = False
+                BtnPrintRegistrationFormAgainV1.Enabled = False
+                BtnPrintRegisV21.Enabled = False
+                BtnUpdateRegistrationFormv1.Enabled = False
+                BtnShowBookV1.Enabled = False
+                BtnUpdatePatient.Enabled = False
             End If
             If GridPatientInformation.SelectedItems(0).Table.Key = "NewOutPatient" Then
-                BtnPrintNewOutPatient.Enabled = True
+                BtnPrintNewOutPatientV1.Enabled = True
                 MNewPatientBook.Enabled = True
                 MainBtnNewPatientBook.Enabled = True
                 CreateNewoutPatientBook.Enabled = True
                 MPrintPatientNewReceipt.Enabled = True
             Else
-                BtnPrintNewOutPatient.Enabled = False
+                BtnPrintNewOutPatientV1.Enabled = False
                 MainBtnNewPatientBook.Enabled = False
                 MNewPatientBook.Enabled = False
                 CreateNewoutPatientBook.Enabled = False
@@ -791,13 +793,13 @@ Public Class UCPatientPayment
             End If
             If GridPatientInformation.SelectedItems(0).Table.Key = "OldOutPatient" Then
                 MenuOldPatientBook.Enabled = True
-                BtnPrintOldOutPatient.Enabled = True
+                BtnPrintOldOutPatientV1.Enabled = True
                 MainBtnOldPatientBook.Enabled = True
                 MCreateOldPatient.Enabled = True
                 MPrintOldPatientReceipt.Enabled = True
 
             Else
-                BtnPrintOldOutPatient.Enabled = False
+                BtnPrintOldOutPatientV1.Enabled = False
                 MainBtnOldPatientBook.Enabled = False
                 MenuOldPatientBook.Enabled = False
                 MCreateOldPatient.Enabled = False
@@ -805,14 +807,14 @@ Public Class UCPatientPayment
 
             End If
             If GridPatientInformation.SelectedItems(0).Table.Key = "Inpatient" Then
-                BtnPrintInPatient.Enabled = True
+                BtnPrintInPatientV1.Enabled = True
                 MaintBtnPrintInPatient.Enabled = True
                 MInPateintBook.Enabled = True
                 MCreateInpatientBook.Enabled = True
                 MPrintInpatientReceipt.Enabled = True
             Else
                 MInPateintBook.Enabled = False
-                BtnPrintInPatient.Enabled = False
+                BtnPrintInPatientV1.Enabled = False
                 MaintBtnPrintInPatient.Enabled = False
                 MCreateInpatientBook.Enabled = False
                 MPrintInpatientReceipt.Enabled = False
@@ -1331,8 +1333,10 @@ Public Class UCPatientPayment
     End Sub
 
     Private Sub BtnUpdatePatient_Click(ByVal sender As System.Object, ByVal e As Janus.Windows.Ribbon.CommandEventArgs) Handles BtnUpdatePatient.Click
-        Dim FUpdatePatient As New UpdatePatient
-        FUpdatePatient.Show()
+        Dim FUpdatePatient As New UpdatePatient(Me)
+        ViewPatientDetail(FUpdatePatient)
+        FUpdatePatient.ShowDialog()
+
     End Sub
 
     Private Sub BtnNewV1_Click(ByVal sender As System.Object, ByVal e As Janus.Windows.Ribbon.CommandEventArgs) Handles BtnNew.Click
@@ -1384,12 +1388,12 @@ Public Class UCPatientPayment
     Private Sub BtnInpatientReceiptV1_Click(ByVal sender As System.Object, ByVal e As Janus.Windows.Ribbon.CommandEventArgs) Handles BtnInpatientReceipt.Click
         If GridPatientInformation.SelectedItems.Count > 0 Then
             Dim FForInpatientReceipt As New FormForInpatientReceiptFront
-            FForInpatientReceipt.txtHN.Text = TxtPatientNo.Text
-            FForInpatientReceipt.txtPatient.Text = TxtNameKhmer.Text
-            FForInpatientReceipt.LblPatientEn.Text = TxtNameEng.Text
-            FForInpatientReceipt.LblSex.Text = CboSexPatien.Text
-            FForInpatientReceipt.LblAge.Text = TxtAgePatient.Text
-            FForInpatientReceipt.LblAddress.Text = TxtAddress.Text
+            FForInpatientReceipt.txtHN.Text = GridPatientInformation.GetRow.Cells("PatientNo").Value  'TxtPatientNo.Text
+            FForInpatientReceipt.txtPatient.Text = GridPatientInformation.GetRow.Cells("NameKhmer").Value 'TxtNameKhmer.Text
+            FForInpatientReceipt.LblPatientEn.Text = GridPatientInformation.GetRow.Cells("NameEng").Value ' TxtNameEng.Text
+            FForInpatientReceipt.LblSex.Text = GridPatientInformation.GetRow.Cells("Sex").Value ' CboSexPatien.Text
+            FForInpatientReceipt.LblAge.Text = GridPatientInformation.GetRow.Cells("Age").Value 'TxtAgePatient.Text
+            FForInpatientReceipt.LblAddress.Text = GridPatientInformation.GetRow.Cells("Address").Value 'TxtAddress.Text
             FForInpatientReceipt.dtpDateIn.Checked = True
 
             If GridConsult.GetRows.Count > 0 Then
@@ -1417,5 +1421,125 @@ Public Class UCPatientPayment
         Me.V_NewoutpatientTableAdapter.Fill(Me.DSPatient.V_Newoutpatient)
         Me.V_OldOutpatientTableAdapter.Fill(Me.DSPatient.V_OldOutpatient)
         Me.V_InpatientTableAdapter.Fill(Me.DSPatient.V_Inpatient)
+    End Sub
+
+    Private Sub BtnShowBookV1_Click(ByVal sender As System.Object, ByVal e As Janus.Windows.Ribbon.CommandEventArgs) Handles BtnShowBookV1.Click
+        If CheckPanel = False Then
+            If GridPatientInformation.SelectedItems(0).Table.Key = "PatientInfo" Then
+                SplitContainer2.Panel2Collapsed = False
+                CheckPanel = True
+                Dim PatientNo As Long = GridPatientInformation.GetRow.Cells(1).Text
+                LoadPatientBooks(PatientNo)
+            End If
+
+        Else
+            SplitContainer2.Panel2Collapsed = True
+            CheckPanel = False
+        End If
+    End Sub
+
+    Private Sub BtnReferToOtherHospitalV1_Click(ByVal sender As System.Object, ByVal e As Janus.Windows.Ribbon.CommandEventArgs) Handles BtnReferToOtherHospitalV1.Click
+        If GridPatientInformation.SelectedItems.Count = 0 Then
+            Exit Sub
+        End If
+        If GridPatientInformation.SelectedItems(0).Table.Key = "PatientInfo" Then
+            Dim FRefer As New FrmRefer
+            FRefer.TxtPatientNo.Text = GridPatientInformation.SelectedItems(0).GetRow.Cells(1).Text
+            FRefer.TxtPatientName.Text = GridPatientInformation.SelectedItems(0).GetRow.Cells(2).Text
+            FRefer.TxtAge.Text = GridPatientInformation.SelectedItems(0).GetRow.Cells(4).Text
+            FRefer.TxtSex.Text = GridPatientInformation.SelectedItems(0).GetRow.Cells(5).Text
+            FRefer.TxtAddress.Text = GridPatientInformation.SelectedItems(0).GetRow.Cells(6).Text
+            FRefer.ShowDialog()
+            FRefer.Close()
+            FRefer.Dispose()
+        End If
+    End Sub
+
+    Private Sub ButtonCommand3_Click(ByVal sender As System.Object, ByVal e As Janus.Windows.Ribbon.CommandEventArgs) Handles ButtonCommand3.Click
+        Dim FMoPoTsypo As New FormMainPoMoSypo
+        FMoPoTsypo.ShowDialog()
+        FMoPoTsypo.Close()
+        FMoPoTsypo.Dispose()
+    End Sub
+
+    Private Sub BtnPrintNewOutPatientV1_Click(ByVal sender As System.Object, ByVal e As Janus.Windows.Ribbon.CommandEventArgs) Handles BtnPrintNewOutPatientV1.Click
+        If GridPatientInformation.SelectedItems.Count = 0 Then
+            Exit Sub
+        End If
+        If GridPatientInformation.SelectedItems(0).Table.Key = "NewOutPatient" Then
+            Dim ReceiptNo = GridPatientInformation.SelectedItems(0).GetRow.Cells(1).Text
+            Try
+                ReportNOPR.SetDataSource(MNewOutpatientReceipt.ReportNewOutpatientReceipt(ReceiptNo).Tables(1))
+                ReportNOPR.Refresh()
+                frmReportNOPR.crvReportNewOutPatientReceipt.ReportSource = ReportNOPR
+                frmReportNOPR.ShowDialog()
+            Catch ex As Exception
+                MsgBox(ex.Message, MsgBoxStyle.Critical, "error")
+            End Try
+        End If
+    End Sub
+
+    Private Sub BtnPrintOldOutPatientV1_Click(ByVal sender As System.Object, ByVal e As Janus.Windows.Ribbon.CommandEventArgs) Handles BtnPrintOldOutPatientV1.Click
+        If GridPatientInformation.SelectedItems.Count = 0 Then
+            Exit Sub
+        End If
+        If GridPatientInformation.SelectedItems(0).Table.Key = "OldOutPatient" Then
+            Dim ReceiptNo = GridPatientInformation.SelectedItems(0).GetRow.Cells(0).Text
+            ReportOOPR.SetDataSource(MOldOutpatientReceipt.ReportOldOutpatientReceipt(ReceiptNo).Tables(1))
+            frmReportOOPR.crvReportOldOutPatientReceipt.ReportSource = ReportOOPR
+            ReportOOPR.Refresh()
+            frmReportOOPR.ShowDialog()
+        End If
+    End Sub
+
+    Private Sub BtnPrintInPatientV1_Click(ByVal sender As System.Object, ByVal e As Janus.Windows.Ribbon.CommandEventArgs) Handles BtnPrintInPatientV1.Click
+        If GridPatientInformation.SelectedItems.Count = 0 Then
+            Exit Sub
+        End If
+        If GridPatientInformation.SelectedItems(0).Table.Key = "Inpatient" Then
+            Dim ReceiptNo = GridPatientInformation.SelectedItems(0).GetRow.Cells(1).Text
+            ReportInPR.SetDataSource(MInpatientReceipt.ReportInpatientReceipt(ReceiptNo).Tables(1))
+            frmReportInPR.crvInpatientReceipt.ReportSource = ReportInPR
+            ReportInPR.Refresh()
+            frmReportInPR.ShowDialog()
+        End If
+    End Sub
+
+    Private Sub BtnPrintRegisV21_Click(ByVal sender As System.Object, ByVal e As Janus.Windows.Ribbon.CommandEventArgs) Handles BtnPrintRegisV21.Click
+        Try
+            If GridPatientInformation.SelectedItems(0).Table.Key = "PatientInfo" Then
+                Dim frmReportForm As New ReportForm
+                'Dim rowIndex As Int16 = GridPatientInformation.GetRow.Cells("").Value
+                GLOBLE_PATIENT_NO = GridPatientInformation.GetRow.Cells("PatientNo").Value 'GridPatientFollowUp.Rows(rowIndex).Cells(1).Value
+                frmReportForm.LoadRegistrationFormV2()
+                frmReportForm.ShowDialog()
+                frmReportForm.Close()
+                frmReportForm.Dispose()
+            End If
+        Catch ex As Exception
+            MsgBox("Please select follow up.", MsgBoxStyle.Critical)
+        End Try
+    End Sub
+
+    Private Sub BtnPrintRegistrationFormAgainV1_Click(ByVal sender As System.Object, ByVal e As Janus.Windows.Ribbon.CommandEventArgs) Handles BtnPrintRegistrationFormAgainV1.Click
+        Try
+            If GridPatientInformation.SelectedItems(0).Table.Key = "PatientInfo" Then
+                Dim frmReportForm As New ReportForm
+                'Dim rowIndex As Int16 = GridPatientInformation.GetRow.Cells("").Value
+                GLOBLE_PATIENT_NO = GridPatientInformation.GetRow.Cells("PatientNo").Value 'GridPatientFollowUp.Rows(rowIndex).Cells(1).Value
+                frmReportForm.LoadRegistrationForm()
+                frmReportForm.ShowDialog()
+                frmReportForm.Close()
+                frmReportForm.Dispose()
+            End If
+        Catch ex As Exception
+            MsgBox("Please select follow up.", MsgBoxStyle.Critical)
+        End Try
+    End Sub
+
+    Private Sub BtnUpdateRegistrationFormv1_Click(ByVal sender As System.Object, ByVal e As Janus.Windows.Ribbon.CommandEventArgs) Handles BtnUpdateRegistrationFormv1.Click
+        If GridPatientInformation.SelectedItems(0).Table.Key = "PatientInfo" Then
+            ShowRegistrationFormByNew()
+        End If
     End Sub
 End Class

@@ -106,6 +106,7 @@ Partial Class frmOldOutPatientReceipt
         Me.Label17 = New System.Windows.Forms.Label
         Me.LblConsultType = New System.Windows.Forms.Label
         Me.Label18 = New System.Windows.Forms.Label
+        Me.Panel2 = New System.Windows.Forms.Panel
         Me.GroupBox1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -116,6 +117,7 @@ Partial Class frmOldOutPatientReceipt
         Me.GroupBox6.SuspendLayout()
         Me.GroupBox7.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
+        Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
         '
         'lblFees
@@ -467,11 +469,12 @@ Partial Class frmOldOutPatientReceipt
         '
         'Label1
         '
+        Me.Label1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Times New Roman", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.Blue
-        Me.Label1.Location = New System.Drawing.Point(180, 5)
+        Me.Label1.Location = New System.Drawing.Point(390, 5)
         Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(350, 36)
@@ -588,51 +591,64 @@ Partial Class frmOldOutPatientReceipt
         '
         'cmdSave
         '
+        Me.cmdSave.BackColor = System.Drawing.Color.FromArgb(CType(CType(151, Byte), Integer), CType(CType(197, Byte), Integer), CType(CType(249, Byte), Integer))
         Me.cmdSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.cmdSave.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.cmdSave.FlatAppearance.BorderSize = 0
+        Me.cmdSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.cmdSave.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmdSave.Image = Global.TakeoHospitalInventory.My.Resources.Resources.Floppy_s2
+        Me.cmdSave.ForeColor = System.Drawing.Color.White
+        Me.cmdSave.Image = CType(resources.GetObject("cmdSave.Image"), System.Drawing.Image)
         Me.cmdSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.cmdSave.Location = New System.Drawing.Point(12, 558)
+        Me.cmdSave.Location = New System.Drawing.Point(17, 603)
         Me.cmdSave.Name = "cmdSave"
-        Me.cmdSave.Size = New System.Drawing.Size(193, 53)
+        Me.cmdSave.Size = New System.Drawing.Size(159, 53)
         Me.cmdSave.TabIndex = 15
         Me.cmdSave.Text = "&Save"
-        Me.cmdSave.UseVisualStyleBackColor = True
+        Me.cmdSave.UseVisualStyleBackColor = False
         '
         'cmdCashierSave
         '
+        Me.cmdCashierSave.BackColor = System.Drawing.Color.FromArgb(CType(CType(151, Byte), Integer), CType(CType(197, Byte), Integer), CType(CType(249, Byte), Integer))
         Me.cmdCashierSave.Cursor = System.Windows.Forms.Cursors.Hand
         Me.cmdCashierSave.Enabled = False
+        Me.cmdCashierSave.FlatAppearance.BorderSize = 0
+        Me.cmdCashierSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.cmdCashierSave.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        Me.cmdCashierSave.Image = Global.TakeoHospitalInventory.My.Resources.Resources.welcome_bg
-        Me.cmdCashierSave.Location = New System.Drawing.Point(562, 559)
+        Me.cmdCashierSave.ForeColor = System.Drawing.Color.White
+        Me.cmdCashierSave.Image = CType(resources.GetObject("cmdCashierSave.Image"), System.Drawing.Image)
+        Me.cmdCashierSave.Location = New System.Drawing.Point(423, 601)
         Me.cmdCashierSave.Name = "cmdCashierSave"
-        Me.cmdCashierSave.Size = New System.Drawing.Size(172, 53)
+        Me.cmdCashierSave.Size = New System.Drawing.Size(159, 53)
         Me.cmdCashierSave.TabIndex = 138
         Me.cmdCashierSave.Text = "&Cashier Save"
-        Me.cmdCashierSave.UseVisualStyleBackColor = True
+        Me.cmdCashierSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.cmdCashierSave.UseVisualStyleBackColor = False
         '
         'cmdPrint
         '
+        Me.cmdPrint.BackColor = System.Drawing.Color.FromArgb(CType(CType(151, Byte), Integer), CType(CType(197, Byte), Integer), CType(CType(249, Byte), Integer))
         Me.cmdPrint.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.cmdPrint.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.cmdPrint.FlatAppearance.BorderSize = 0
+        Me.cmdPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.cmdPrint.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmdPrint.Image = Global.TakeoHospitalInventory.My.Resources.Resources.printer
+        Me.cmdPrint.ForeColor = System.Drawing.Color.White
+        Me.cmdPrint.Image = CType(resources.GetObject("cmdPrint.Image"), System.Drawing.Image)
         Me.cmdPrint.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.cmdPrint.Location = New System.Drawing.Point(224, 558)
+        Me.cmdPrint.Location = New System.Drawing.Point(189, 603)
         Me.cmdPrint.Name = "cmdPrint"
-        Me.cmdPrint.Size = New System.Drawing.Size(169, 53)
+        Me.cmdPrint.Size = New System.Drawing.Size(159, 53)
         Me.cmdPrint.TabIndex = 16
         Me.cmdPrint.Text = "&Print"
-        Me.cmdPrint.UseVisualStyleBackColor = True
+        Me.cmdPrint.UseVisualStyleBackColor = False
         '
         'cmdSearchReceipt
         '
         Me.cmdSearchReceipt.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmdSearchReceipt.Image = Global.TakeoHospitalInventory.My.Resources.Resources.search
         Me.cmdSearchReceipt.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.cmdSearchReceipt.Location = New System.Drawing.Point(686, 48)
+        Me.cmdSearchReceipt.Location = New System.Drawing.Point(686, 51)
         Me.cmdSearchReceipt.Name = "cmdSearchReceipt"
         Me.cmdSearchReceipt.Size = New System.Drawing.Size(31, 32)
         Me.cmdSearchReceipt.TabIndex = 1
@@ -640,17 +656,21 @@ Partial Class frmOldOutPatientReceipt
         '
         'cmdClose
         '
+        Me.cmdClose.BackColor = System.Drawing.Color.FromArgb(CType(CType(151, Byte), Integer), CType(CType(197, Byte), Integer), CType(CType(249, Byte), Integer))
         Me.cmdClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.cmdClose.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.cmdClose.FlatAppearance.BorderSize = 0
+        Me.cmdClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.cmdClose.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmdClose.Image = Global.TakeoHospitalInventory.My.Resources.Resources.cross_circle
+        Me.cmdClose.ForeColor = System.Drawing.Color.White
+        Me.cmdClose.Image = CType(resources.GetObject("cmdClose.Image"), System.Drawing.Image)
         Me.cmdClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.cmdClose.Location = New System.Drawing.Point(399, 559)
+        Me.cmdClose.Location = New System.Drawing.Point(588, 602)
         Me.cmdClose.Name = "cmdClose"
-        Me.cmdClose.Size = New System.Drawing.Size(157, 53)
+        Me.cmdClose.Size = New System.Drawing.Size(159, 53)
         Me.cmdClose.TabIndex = 17
         Me.cmdClose.Text = "&Close"
-        Me.cmdClose.UseVisualStyleBackColor = True
+        Me.cmdClose.UseVisualStyleBackColor = False
         '
         'lblCashierLogin
         '
@@ -668,7 +688,7 @@ Partial Class frmOldOutPatientReceipt
         Me.ChPrintPreveiw.AutoSize = True
         Me.ChPrintPreveiw.BackColor = System.Drawing.Color.Transparent
         Me.ChPrintPreveiw.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChPrintPreveiw.Location = New System.Drawing.Point(748, 532)
+        Me.ChPrintPreveiw.Location = New System.Drawing.Point(768, 584)
         Me.ChPrintPreveiw.Name = "ChPrintPreveiw"
         Me.ChPrintPreveiw.Size = New System.Drawing.Size(162, 24)
         Me.ChPrintPreveiw.TabIndex = 151
@@ -678,7 +698,7 @@ Partial Class frmOldOutPatientReceipt
         'cmdFindHN
         '
         Me.cmdFindHN.Image = Global.TakeoHospitalInventory.My.Resources.Resources.preview
-        Me.cmdFindHN.Location = New System.Drawing.Point(684, 90)
+        Me.cmdFindHN.Location = New System.Drawing.Point(684, 92)
         Me.cmdFindHN.Name = "cmdFindHN"
         Me.cmdFindHN.Size = New System.Drawing.Size(33, 31)
         Me.cmdFindHN.TabIndex = 152
@@ -703,9 +723,9 @@ Partial Class frmOldOutPatientReceipt
         Me.GroupDisability.Controls.Add(Me.ChPhysical)
         Me.GroupDisability.Controls.Add(Me.ChUnderstand)
         Me.GroupDisability.Controls.Add(Me.ChSeeing)
-        Me.GroupDisability.Location = New System.Drawing.Point(750, 42)
+        Me.GroupDisability.Location = New System.Drawing.Point(17, 6)
         Me.GroupDisability.Name = "GroupDisability"
-        Me.GroupDisability.Size = New System.Drawing.Size(494, 46)
+        Me.GroupDisability.Size = New System.Drawing.Size(730, 46)
         Me.GroupDisability.TabIndex = 158
         Me.GroupDisability.TabStop = False
         Me.GroupDisability.Text = "Difficulty"
@@ -933,7 +953,7 @@ Partial Class frmOldOutPatientReceipt
         'PictLoading
         '
         Me.PictLoading.Image = Global.TakeoHospitalInventory.My.Resources.Resources.loadgraphic
-        Me.PictLoading.Location = New System.Drawing.Point(745, 562)
+        Me.PictLoading.Location = New System.Drawing.Point(765, 614)
         Me.PictLoading.Name = "PictLoading"
         Me.PictLoading.Size = New System.Drawing.Size(212, 25)
         Me.PictLoading.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -945,9 +965,9 @@ Partial Class frmOldOutPatientReceipt
         '
         Me.GReferralFrom.Controls.Add(Me.ChListReferral)
         Me.GReferralFrom.Font = New System.Drawing.Font("Khmer OS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GReferralFrom.Location = New System.Drawing.Point(748, 100)
+        Me.GReferralFrom.Location = New System.Drawing.Point(756, 6)
         Me.GReferralFrom.Name = "GReferralFrom"
-        Me.GReferralFrom.Size = New System.Drawing.Size(287, 426)
+        Me.GReferralFrom.Size = New System.Drawing.Size(287, 399)
         Me.GReferralFrom.TabIndex = 204
         Me.GReferralFrom.TabStop = False
         Me.GReferralFrom.Text = "Referral From:"
@@ -956,7 +976,7 @@ Partial Class frmOldOutPatientReceipt
         '
         Me.ChListReferral.CheckOnClick = True
         Me.ChListReferral.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.ChListReferral.Font = New System.Drawing.Font("Khmer OS", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ChListReferral.Font = New System.Drawing.Font("Khmer OS", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ChListReferral.FormattingEnabled = True
         Me.ChListReferral.HorizontalScrollbar = True
         Me.ChListReferral.Location = New System.Drawing.Point(3, 36)
@@ -985,7 +1005,7 @@ Partial Class frmOldOutPatientReceipt
         Me.GroupBox6.Controls.Add(Me.cmdSearchReceipt)
         Me.GroupBox6.Controls.Add(Me.Panel1)
         Me.GroupBox6.Controls.Add(Me.Label10)
-        Me.GroupBox6.Location = New System.Drawing.Point(12, 40)
+        Me.GroupBox6.Location = New System.Drawing.Point(17, 58)
         Me.GroupBox6.Name = "GroupBox6"
         Me.GroupBox6.Size = New System.Drawing.Size(730, 347)
         Me.GroupBox6.TabIndex = 205
@@ -1013,7 +1033,7 @@ Partial Class frmOldOutPatientReceipt
         Me.GroupBox7.Controls.Add(Me.rdFollowUpR)
         Me.GroupBox7.Controls.Add(Me.rdFollowUpD)
         Me.GroupBox7.Controls.Add(Me.lblRielDolar)
-        Me.GroupBox7.Location = New System.Drawing.Point(12, 390)
+        Me.GroupBox7.Location = New System.Drawing.Point(17, 411)
         Me.GroupBox7.Name = "GroupBox7"
         Me.GroupBox7.Size = New System.Drawing.Size(730, 163)
         Me.GroupBox7.TabIndex = 206
@@ -1033,9 +1053,9 @@ Partial Class frmOldOutPatientReceipt
         Me.GroupBox2.Controls.Add(Me.Label18)
         Me.GroupBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox2.ForeColor = System.Drawing.Color.Red
-        Me.GroupBox2.Location = New System.Drawing.Point(1038, 116)
+        Me.GroupBox2.Location = New System.Drawing.Point(759, 407)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(212, 136)
+        Me.GroupBox2.Size = New System.Drawing.Size(284, 165)
         Me.GroupBox2.TabIndex = 207
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Information From Consult"
@@ -1138,32 +1158,42 @@ Partial Class frmOldOutPatientReceipt
         Me.Label18.TabIndex = 0
         Me.Label18.Text = "Consult Type:"
         '
+        'Panel2
+        '
+        Me.Panel2.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Panel2.BackColor = System.Drawing.Color.White
+        Me.Panel2.Controls.Add(Me.GroupBox6)
+        Me.Panel2.Controls.Add(Me.PictLoading)
+        Me.Panel2.Controls.Add(Me.GroupBox2)
+        Me.Panel2.Controls.Add(Me.GroupDisability)
+        Me.Panel2.Controls.Add(Me.GReferralFrom)
+        Me.Panel2.Controls.Add(Me.cmdCashierSave)
+        Me.Panel2.Controls.Add(Me.GroupBox7)
+        Me.Panel2.Controls.Add(Me.cmdPrint)
+        Me.Panel2.Controls.Add(Me.cmdClose)
+        Me.Panel2.Controls.Add(Me.ChPrintPreveiw)
+        Me.Panel2.Controls.Add(Me.cmdSave)
+        Me.Panel2.Location = New System.Drawing.Point(35, 44)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(1061, 682)
+        Me.Panel2.TabIndex = 208
+        '
         'frmOldOutPatientReceipt
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
-        Me.BackColor = System.Drawing.SystemColors.Control
-        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(1264, 665)
-        Me.Controls.Add(Me.GroupBox2)
-        Me.Controls.Add(Me.GroupBox7)
-        Me.Controls.Add(Me.GroupBox6)
-        Me.Controls.Add(Me.GReferralFrom)
-        Me.Controls.Add(Me.PictLoading)
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(151, Byte), Integer), CType(CType(197, Byte), Integer), CType(CType(249, Byte), Integer))
+        Me.ClientSize = New System.Drawing.Size(1130, 742)
+        Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.GrpReferal)
         Me.Controls.Add(Me.lblHistoryNo)
-        Me.Controls.Add(Me.GroupDisability)
         Me.Controls.Add(Me.lblID)
-        Me.Controls.Add(Me.ChPrintPreveiw)
         Me.Controls.Add(Me.lblCashierLogin)
-        Me.Controls.Add(Me.cmdCashierSave)
-        Me.Controls.Add(Me.cmdPrint)
         Me.Controls.Add(Me.lblReceiptToPrintID)
-        Me.Controls.Add(Me.cmdClose)
-        Me.Controls.Add(Me.cmdSave)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.GroupBox3)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "frmOldOutPatientReceipt"
         Me.ShowInTaskbar = False
@@ -1186,6 +1216,8 @@ Partial Class frmOldOutPatientReceipt
         Me.GroupBox7.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
+        Me.Panel2.ResumeLayout(False)
+        Me.Panel2.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1276,4 +1308,5 @@ Partial Class frmOldOutPatientReceipt
     Friend WithEvents Label17 As System.Windows.Forms.Label
     Friend WithEvents LblConsultType As System.Windows.Forms.Label
     Friend WithEvents Label18 As System.Windows.Forms.Label
+    Friend WithEvents Panel2 As System.Windows.Forms.Panel
 End Class

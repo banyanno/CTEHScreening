@@ -37,14 +37,14 @@ Partial Class MainScreening
         Me.PanelDedail = New System.Windows.Forms.Panel
         Me.RibboStatusBar = New Janus.Windows.Ribbon.RibbonStatusBar
         Me.DropDownCommand1 = New Janus.Windows.Ribbon.DropDownCommand
-        Me.DropDownCommand2 = New Janus.Windows.Ribbon.DropDownCommand
+        Me.DBtnSwitchUser = New Janus.Windows.Ribbon.DropDownCommand
         Me.SeparatorCommand1 = New Janus.Windows.Ribbon.SeparatorCommand
         Me.DropDownCommand3 = New Janus.Windows.Ribbon.DropDownCommand
         Me.SeparatorCommand2 = New Janus.Windows.Ribbon.SeparatorCommand
-        Me.DropDownCommand4 = New Janus.Windows.Ribbon.DropDownCommand
-        Me.LabelCommand1 = New Janus.Windows.Ribbon.LabelCommand
-        Me.PictureBox3 = New System.Windows.Forms.PictureBox
+        Me.DBtnChangePassword = New Janus.Windows.Ribbon.DropDownCommand
+        Me.BtnDateTimeServer = New Janus.Windows.Ribbon.LabelCommand
         Me.ContainerPicloading = New Janus.Windows.Ribbon.ContainerControlCommand
+        Me.PictureBox3 = New System.Windows.Forms.PictureBox
         Me.PanelHeader.SuspendLayout()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -207,7 +207,7 @@ Partial Class MainScreening
         '
         Me.RibboStatusBar.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RibboStatusBar.ImageSize = New System.Drawing.Size(24, 24)
-        Me.RibboStatusBar.LeftPanelCommands.AddRange(New Janus.Windows.Ribbon.CommandBase() {Me.DropDownCommand1, Me.LabelCommand1})
+        Me.RibboStatusBar.LeftPanelCommands.AddRange(New Janus.Windows.Ribbon.CommandBase() {Me.DropDownCommand1, Me.BtnDateTimeServer})
         Me.RibboStatusBar.Location = New System.Drawing.Point(0, 697)
         Me.RibboStatusBar.Margin = New System.Windows.Forms.Padding(2)
         Me.RibboStatusBar.Name = "RibboStatusBar"
@@ -228,7 +228,7 @@ Partial Class MainScreening
         '
         'DropDownCommand1
         '
-        Me.DropDownCommand1.Commands.AddRange(New Janus.Windows.Ribbon.CommandBase() {Me.DropDownCommand2, Me.SeparatorCommand1, Me.DropDownCommand3, Me.SeparatorCommand2, Me.DropDownCommand4})
+        Me.DropDownCommand1.Commands.AddRange(New Janus.Windows.Ribbon.CommandBase() {Me.DBtnSwitchUser, Me.SeparatorCommand1, Me.DropDownCommand3, Me.SeparatorCommand2, Me.DBtnChangePassword})
         Me.DropDownCommand1.ForegroundStyle.ForeColor = System.Drawing.Color.Blue
         Me.DropDownCommand1.Image = CType(resources.GetObject("DropDownCommand1.Image"), System.Drawing.Image)
         Me.DropDownCommand1.Key = "DropDownCommand1"
@@ -236,13 +236,13 @@ Partial Class MainScreening
         Me.DropDownCommand1.SizeStyle = Janus.Windows.Ribbon.CommandSizeStyle.Small
         Me.DropDownCommand1.Text = " User Utility   "
         '
-        'DropDownCommand2
+        'DBtnSwitchUser
         '
-        Me.DropDownCommand2.ForegroundStyle.ForeColor = System.Drawing.Color.Blue
-        Me.DropDownCommand2.Image = CType(resources.GetObject("DropDownCommand2.Image"), System.Drawing.Image)
-        Me.DropDownCommand2.Key = "DropDownCommand2"
-        Me.DropDownCommand2.Name = "DropDownCommand2"
-        Me.DropDownCommand2.Text = "Switch User:"
+        Me.DBtnSwitchUser.ForegroundStyle.ForeColor = System.Drawing.Color.Blue
+        Me.DBtnSwitchUser.Image = CType(resources.GetObject("DBtnSwitchUser.Image"), System.Drawing.Image)
+        Me.DBtnSwitchUser.Key = "DropDownCommand2"
+        Me.DBtnSwitchUser.Name = "DBtnSwitchUser"
+        Me.DBtnSwitchUser.Text = "Switch User:"
         '
         'SeparatorCommand1
         '
@@ -262,31 +262,21 @@ Partial Class MainScreening
         Me.SeparatorCommand2.Key = "SeparatorCommand2"
         Me.SeparatorCommand2.Name = "SeparatorCommand2"
         '
-        'DropDownCommand4
+        'DBtnChangePassword
         '
-        Me.DropDownCommand4.ForegroundStyle.ForeColor = System.Drawing.Color.Blue
-        Me.DropDownCommand4.Image = CType(resources.GetObject("DropDownCommand4.Image"), System.Drawing.Image)
-        Me.DropDownCommand4.Key = "DropDownCommand4"
-        Me.DropDownCommand4.Name = "DropDownCommand4"
-        Me.DropDownCommand4.Text = "Change Password"
+        Me.DBtnChangePassword.ForegroundStyle.ForeColor = System.Drawing.Color.Blue
+        Me.DBtnChangePassword.Image = CType(resources.GetObject("DBtnChangePassword.Image"), System.Drawing.Image)
+        Me.DBtnChangePassword.Key = "DropDownCommand4"
+        Me.DBtnChangePassword.Name = "DBtnChangePassword"
+        Me.DBtnChangePassword.Text = "Change Password"
         '
-        'LabelCommand1
+        'BtnDateTimeServer
         '
-        Me.LabelCommand1.ForegroundStyle.ForeColor = System.Drawing.Color.Blue
-        Me.LabelCommand1.Image = CType(resources.GetObject("LabelCommand1.Image"), System.Drawing.Image)
-        Me.LabelCommand1.Key = "LabelCommand1"
-        Me.LabelCommand1.Name = "LabelCommand1"
-        Me.LabelCommand1.Text = " Date Server:   "
-        '
-        'PictureBox3
-        '
-        Me.PictureBox3.Image = Global.TakeoHospitalInventory.My.Resources.Resources.loadingNew3
-        Me.PictureBox3.Location = New System.Drawing.Point(1120, -1)
-        Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(180, 30)
-        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox3.TabIndex = 19
-        Me.PictureBox3.TabStop = False
+        Me.BtnDateTimeServer.ForegroundStyle.ForeColor = System.Drawing.Color.Blue
+        Me.BtnDateTimeServer.Image = CType(resources.GetObject("BtnDateTimeServer.Image"), System.Drawing.Image)
+        Me.BtnDateTimeServer.Key = "LabelCommand1"
+        Me.BtnDateTimeServer.Name = "BtnDateTimeServer"
+        Me.BtnDateTimeServer.Text = " Date Server:   "
         '
         'ContainerPicloading
         '
@@ -298,6 +288,16 @@ Partial Class MainScreening
         Me.ContainerPicloading.Text = "Loading"
         Me.ContainerPicloading.Visible = False
         '
+        'PictureBox3
+        '
+        Me.PictureBox3.Image = Global.TakeoHospitalInventory.My.Resources.Resources.loadingNew3
+        Me.PictureBox3.Location = New System.Drawing.Point(1120, -1)
+        Me.PictureBox3.Name = "PictureBox3"
+        Me.PictureBox3.Size = New System.Drawing.Size(180, 30)
+        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox3.TabIndex = 19
+        Me.PictureBox3.TabStop = False
+        '
         'MainScreening
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -307,6 +307,7 @@ Partial Class MainScreening
         Me.Controls.Add(Me.RibboStatusBar)
         Me.Controls.Add(Me.PanelHeader)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "MainScreening"
         Me.Text = "MainScreening"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
@@ -333,12 +334,12 @@ Partial Class MainScreening
     Friend WithEvents PictureBox2 As System.Windows.Forms.PictureBox
     Friend WithEvents RibboStatusBar As Janus.Windows.Ribbon.RibbonStatusBar
     Friend WithEvents DropDownCommand1 As Janus.Windows.Ribbon.DropDownCommand
-    Friend WithEvents DropDownCommand2 As Janus.Windows.Ribbon.DropDownCommand
+    Friend WithEvents DBtnSwitchUser As Janus.Windows.Ribbon.DropDownCommand
     Friend WithEvents SeparatorCommand1 As Janus.Windows.Ribbon.SeparatorCommand
     Friend WithEvents DropDownCommand3 As Janus.Windows.Ribbon.DropDownCommand
     Friend WithEvents SeparatorCommand2 As Janus.Windows.Ribbon.SeparatorCommand
-    Friend WithEvents DropDownCommand4 As Janus.Windows.Ribbon.DropDownCommand
-    Friend WithEvents LabelCommand1 As Janus.Windows.Ribbon.LabelCommand
+    Friend WithEvents DBtnChangePassword As Janus.Windows.Ribbon.DropDownCommand
+    Friend WithEvents BtnDateTimeServer As Janus.Windows.Ribbon.LabelCommand
     Friend WithEvents PictureBox3 As System.Windows.Forms.PictureBox
     Friend WithEvents ContainerPicloading As Janus.Windows.Ribbon.ContainerControlCommand
 End Class

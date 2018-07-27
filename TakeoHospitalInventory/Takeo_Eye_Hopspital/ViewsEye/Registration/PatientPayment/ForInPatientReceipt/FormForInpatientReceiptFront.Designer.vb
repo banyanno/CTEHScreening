@@ -118,6 +118,7 @@ Partial Class FormForInpatientReceiptFront
         Me.Label27 = New System.Windows.Forms.Label
         Me.LblConsultID = New System.Windows.Forms.Label
         Me.lblConsutIDv = New System.Windows.Forms.Label
+        Me.Panel1 = New System.Windows.Forms.Panel
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -130,6 +131,7 @@ Partial Class FormForInpatientReceiptFront
         Me.GroupBox7.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
         Me.GroupBox6.SuspendLayout()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'cmdAddRate
@@ -161,7 +163,7 @@ Partial Class FormForInpatientReceiptFront
         '
         Me.ChPrintPreveiw.AutoSize = True
         Me.ChPrintPreveiw.BackColor = System.Drawing.Color.Transparent
-        Me.ChPrintPreveiw.Location = New System.Drawing.Point(665, 188)
+        Me.ChPrintPreveiw.Location = New System.Drawing.Point(18, 388)
         Me.ChPrintPreveiw.Name = "ChPrintPreveiw"
         Me.ChPrintPreveiw.Size = New System.Drawing.Size(118, 17)
         Me.ChPrintPreveiw.TabIndex = 8
@@ -207,7 +209,7 @@ Partial Class FormForInpatientReceiptFront
         Me.lblCashier.AutoSize = True
         Me.lblCashier.BackColor = System.Drawing.Color.Transparent
         Me.lblCashier.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblCashier.Location = New System.Drawing.Point(209, 59)
+        Me.lblCashier.Location = New System.Drawing.Point(215, 83)
         Me.lblCashier.Name = "lblCashier"
         Me.lblCashier.Size = New System.Drawing.Size(0, 20)
         Me.lblCashier.TabIndex = 198
@@ -218,7 +220,7 @@ Partial Class FormForInpatientReceiptFront
         Me.GroupBox2.Controls.Add(Me.cmdAddRate)
         Me.GroupBox2.Controls.Add(Me.txtRate)
         Me.GroupBox2.Font = New System.Drawing.Font("Limon S1", 21.75!)
-        Me.GroupBox2.Location = New System.Drawing.Point(419, 12)
+        Me.GroupBox2.Location = New System.Drawing.Point(425, 36)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(223, 83)
         Me.GroupBox2.TabIndex = 1
@@ -258,7 +260,7 @@ Partial Class FormForInpatientReceiptFront
         Me.lblRielDolar.AutoSize = True
         Me.lblRielDolar.BackColor = System.Drawing.Color.Transparent
         Me.lblRielDolar.Font = New System.Drawing.Font("Limon S1", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblRielDolar.Location = New System.Drawing.Point(397, 295)
+        Me.lblRielDolar.Location = New System.Drawing.Point(403, 319)
         Me.lblRielDolar.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblRielDolar.Name = "lblRielDolar"
         Me.lblRielDolar.Size = New System.Drawing.Size(74, 31)
@@ -298,7 +300,7 @@ Partial Class FormForInpatientReceiptFront
         Me.rdOperationD.AutoSize = True
         Me.rdOperationD.BackColor = System.Drawing.Color.Transparent
         Me.rdOperationD.Font = New System.Drawing.Font("Limon S1", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.rdOperationD.Location = New System.Drawing.Point(452, 256)
+        Me.rdOperationD.Location = New System.Drawing.Point(458, 280)
         Me.rdOperationD.Name = "rdOperationD"
         Me.rdOperationD.Size = New System.Drawing.Size(57, 31)
         Me.rdOperationD.TabIndex = 12
@@ -311,7 +313,7 @@ Partial Class FormForInpatientReceiptFront
         Me.rdOperationR.AutoSize = True
         Me.rdOperationR.BackColor = System.Drawing.Color.Transparent
         Me.rdOperationR.Font = New System.Drawing.Font("Limon S1", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.rdOperationR.Location = New System.Drawing.Point(397, 256)
+        Me.rdOperationR.Location = New System.Drawing.Point(403, 280)
         Me.rdOperationR.Name = "rdOperationR"
         Me.rdOperationR.Size = New System.Drawing.Size(55, 31)
         Me.rdOperationR.TabIndex = 11
@@ -321,37 +323,45 @@ Partial Class FormForInpatientReceiptFront
         '
         'cmdClose
         '
+        Me.cmdClose.BackColor = System.Drawing.Color.FromArgb(CType(CType(151, Byte), Integer), CType(CType(197, Byte), Integer), CType(CType(249, Byte), Integer))
         Me.cmdClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.cmdClose.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.cmdClose.FlatAppearance.BorderSize = 0
+        Me.cmdClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.cmdClose.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmdClose.Image = Global.TakeoHospitalInventory.My.Resources.Resources.cross_circle
+        Me.cmdClose.ForeColor = System.Drawing.Color.White
+        Me.cmdClose.Image = CType(resources.GetObject("cmdClose.Image"), System.Drawing.Image)
         Me.cmdClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.cmdClose.Location = New System.Drawing.Point(394, 189)
+        Me.cmdClose.Location = New System.Drawing.Point(670, 189)
         Me.cmdClose.Name = "cmdClose"
         Me.cmdClose.Size = New System.Drawing.Size(116, 40)
         Me.cmdClose.TabIndex = 7
         Me.cmdClose.Text = "&Close"
-        Me.cmdClose.UseVisualStyleBackColor = True
+        Me.cmdClose.UseVisualStyleBackColor = False
         '
         'cmdSave
         '
+        Me.cmdSave.BackColor = System.Drawing.Color.FromArgb(CType(CType(151, Byte), Integer), CType(CType(197, Byte), Integer), CType(CType(249, Byte), Integer))
         Me.cmdSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.cmdSave.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.cmdSave.FlatAppearance.BorderSize = 0
+        Me.cmdSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.cmdSave.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmdSave.Image = Global.TakeoHospitalInventory.My.Resources.Resources.Floppy_s2
+        Me.cmdSave.ForeColor = System.Drawing.Color.White
+        Me.cmdSave.Image = CType(resources.GetObject("cmdSave.Image"), System.Drawing.Image)
         Me.cmdSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.cmdSave.Location = New System.Drawing.Point(272, 189)
+        Me.cmdSave.Location = New System.Drawing.Point(547, 189)
         Me.cmdSave.Name = "cmdSave"
         Me.cmdSave.Size = New System.Drawing.Size(116, 40)
         Me.cmdSave.TabIndex = 6
         Me.cmdSave.Text = "&Save"
-        Me.cmdSave.UseVisualStyleBackColor = True
+        Me.cmdSave.UseVisualStyleBackColor = False
         '
         'lblID
         '
         Me.lblID.AutoSize = True
         Me.lblID.BackColor = System.Drawing.Color.Transparent
-        Me.lblID.Location = New System.Drawing.Point(727, 52)
+        Me.lblID.Location = New System.Drawing.Point(733, 76)
         Me.lblID.Name = "lblID"
         Me.lblID.Size = New System.Drawing.Size(13, 13)
         Me.lblID.TabIndex = 206
@@ -374,7 +384,7 @@ Partial Class FormForInpatientReceiptFront
         Me.GroupBox1.Controls.Add(Me.txtAritificialEyeFee)
         Me.GroupBox1.Controls.Add(Me.txtOtherFee)
         Me.GroupBox1.Font = New System.Drawing.Font("Limon S1", 21.75!)
-        Me.GroupBox1.Location = New System.Drawing.Point(912, 135)
+        Me.GroupBox1.Location = New System.Drawing.Point(795, 44)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(222, 186)
         Me.GroupBox1.TabIndex = 19
@@ -475,7 +485,7 @@ Partial Class FormForInpatientReceiptFront
         Me.txtHN.BackColor = System.Drawing.SystemColors.Control
         Me.txtHN.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtHN.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.txtHN.Location = New System.Drawing.Point(141, 97)
+        Me.txtHN.Location = New System.Drawing.Point(147, 121)
         Me.txtHN.Name = "txtHN"
         Me.txtHN.ReadOnly = True
         Me.txtHN.Size = New System.Drawing.Size(207, 31)
@@ -485,7 +495,7 @@ Partial Class FormForInpatientReceiptFront
         '
         Me.txtReceiptNumber.BackColor = System.Drawing.SystemColors.Control
         Me.txtReceiptNumber.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtReceiptNumber.Location = New System.Drawing.Point(141, 53)
+        Me.txtReceiptNumber.Location = New System.Drawing.Point(147, 77)
         Me.txtReceiptNumber.Name = "txtReceiptNumber"
         Me.txtReceiptNumber.ReadOnly = True
         Me.txtReceiptNumber.Size = New System.Drawing.Size(207, 31)
@@ -497,7 +507,7 @@ Partial Class FormForInpatientReceiptFront
         Me.dtpDateIn.CustomFormat = "dd/MM/yyyy"
         Me.dtpDateIn.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.dtpDateIn.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.dtpDateIn.Location = New System.Drawing.Point(485, 97)
+        Me.dtpDateIn.Location = New System.Drawing.Point(491, 121)
         Me.dtpDateIn.Name = "dtpDateIn"
         Me.dtpDateIn.ShowCheckBox = True
         Me.dtpDateIn.Size = New System.Drawing.Size(157, 29)
@@ -508,7 +518,7 @@ Partial Class FormForInpatientReceiptFront
         Me.chkDollar.AutoSize = True
         Me.chkDollar.BackColor = System.Drawing.Color.Transparent
         Me.chkDollar.Font = New System.Drawing.Font("Limon S1", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.chkDollar.Location = New System.Drawing.Point(705, 213)
+        Me.chkDollar.Location = New System.Drawing.Point(711, 237)
         Me.chkDollar.Name = "chkDollar"
         Me.chkDollar.Size = New System.Drawing.Size(62, 35)
         Me.chkDollar.TabIndex = 9
@@ -520,7 +530,7 @@ Partial Class FormForInpatientReceiptFront
         Me.chkRiel.AutoSize = True
         Me.chkRiel.BackColor = System.Drawing.Color.Transparent
         Me.chkRiel.Font = New System.Drawing.Font("Limon S1", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.chkRiel.Location = New System.Drawing.Point(645, 212)
+        Me.chkRiel.Location = New System.Drawing.Point(651, 236)
         Me.chkRiel.Margin = New System.Windows.Forms.Padding(6, 3, 6, 3)
         Me.chkRiel.Name = "chkRiel"
         Me.chkRiel.Size = New System.Drawing.Size(60, 35)
@@ -533,7 +543,7 @@ Partial Class FormForInpatientReceiptFront
         Me.txtTotal.BackColor = System.Drawing.SystemColors.InactiveBorder
         Me.txtTotal.Font = New System.Drawing.Font("Arial Black", 16.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtTotal.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.txtTotal.Location = New System.Drawing.Point(141, 291)
+        Me.txtTotal.Location = New System.Drawing.Point(147, 315)
         Me.txtTotal.Margin = New System.Windows.Forms.Padding(6, 3, 6, 3)
         Me.txtTotal.Name = "txtTotal"
         Me.txtTotal.ReadOnly = True
@@ -547,7 +557,7 @@ Partial Class FormForInpatientReceiptFront
         Me.txtOperationFee.BackColor = System.Drawing.Color.Azure
         Me.txtOperationFee.Enabled = False
         Me.txtOperationFee.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtOperationFee.Location = New System.Drawing.Point(141, 253)
+        Me.txtOperationFee.Location = New System.Drawing.Point(147, 277)
         Me.txtOperationFee.Margin = New System.Windows.Forms.Padding(6, 3, 6, 3)
         Me.txtOperationFee.Name = "txtOperationFee"
         Me.txtOperationFee.Size = New System.Drawing.Size(247, 32)
@@ -561,7 +571,7 @@ Partial Class FormForInpatientReceiptFront
         Me.txtAmountFigureD.Enabled = False
         Me.txtAmountFigureD.Font = New System.Drawing.Font("Arial Black", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtAmountFigureD.ForeColor = System.Drawing.Color.Navy
-        Me.txtAmountFigureD.Location = New System.Drawing.Point(395, 213)
+        Me.txtAmountFigureD.Location = New System.Drawing.Point(401, 237)
         Me.txtAmountFigureD.Margin = New System.Windows.Forms.Padding(6, 3, 6, 3)
         Me.txtAmountFigureD.Name = "txtAmountFigureD"
         Me.txtAmountFigureD.Size = New System.Drawing.Size(247, 32)
@@ -574,7 +584,7 @@ Partial Class FormForInpatientReceiptFront
         Me.txtAmountFigureR.BackColor = System.Drawing.Color.PaleGoldenrod
         Me.txtAmountFigureR.Enabled = False
         Me.txtAmountFigureR.Font = New System.Drawing.Font("Arial Black", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtAmountFigureR.Location = New System.Drawing.Point(141, 213)
+        Me.txtAmountFigureR.Location = New System.Drawing.Point(147, 237)
         Me.txtAmountFigureR.Margin = New System.Windows.Forms.Padding(6, 3, 6, 3)
         Me.txtAmountFigureR.Name = "txtAmountFigureR"
         Me.txtAmountFigureR.Size = New System.Drawing.Size(247, 32)
@@ -586,7 +596,7 @@ Partial Class FormForInpatientReceiptFront
         '
         Me.txtAmountWord.BackColor = System.Drawing.Color.Linen
         Me.txtAmountWord.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtAmountWord.Location = New System.Drawing.Point(141, 180)
+        Me.txtAmountWord.Location = New System.Drawing.Point(147, 204)
         Me.txtAmountWord.Margin = New System.Windows.Forms.Padding(6, 3, 6, 3)
         Me.txtAmountWord.Name = "txtAmountWord"
         Me.txtAmountWord.ReadOnly = True
@@ -598,7 +608,7 @@ Partial Class FormForInpatientReceiptFront
         Me.txtPatient.BackColor = System.Drawing.Color.White
         Me.txtPatient.Font = New System.Drawing.Font("Wat Phnom T3", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtPatient.ForeColor = System.Drawing.Color.Black
-        Me.txtPatient.Location = New System.Drawing.Point(141, 133)
+        Me.txtPatient.Location = New System.Drawing.Point(147, 157)
         Me.txtPatient.Margin = New System.Windows.Forms.Padding(6, 3, 6, 3)
         Me.txtPatient.Name = "txtPatient"
         Me.txtPatient.ReadOnly = True
@@ -610,7 +620,7 @@ Partial Class FormForInpatientReceiptFront
         Me.Label12.AutoSize = True
         Me.Label12.BackColor = System.Drawing.Color.Transparent
         Me.Label12.Font = New System.Drawing.Font("Limon S1", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.Location = New System.Drawing.Point(8, 302)
+        Me.Label12.Location = New System.Drawing.Point(14, 326)
         Me.Label12.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(40, 31)
@@ -622,7 +632,7 @@ Partial Class FormForInpatientReceiptFront
         Me.Label8.AutoSize = True
         Me.Label8.BackColor = System.Drawing.Color.Transparent
         Me.Label8.Font = New System.Drawing.Font("Limon S1", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(8, 256)
+        Me.Label8.Location = New System.Drawing.Point(14, 280)
         Me.Label8.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(128, 31)
@@ -634,7 +644,7 @@ Partial Class FormForInpatientReceiptFront
         Me.Label7.AutoSize = True
         Me.Label7.BackColor = System.Drawing.Color.Transparent
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(8, 223)
+        Me.Label7.Location = New System.Drawing.Point(14, 247)
         Me.Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(125, 20)
@@ -646,7 +656,7 @@ Partial Class FormForInpatientReceiptFront
         Me.Label6.AutoSize = True
         Me.Label6.BackColor = System.Drawing.Color.Transparent
         Me.Label6.Font = New System.Drawing.Font("Limon S1", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(8, 175)
+        Me.Label6.Location = New System.Drawing.Point(14, 199)
         Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(81, 31)
@@ -658,7 +668,7 @@ Partial Class FormForInpatientReceiptFront
         Me.Label5.AutoSize = True
         Me.Label5.BackColor = System.Drawing.Color.Transparent
         Me.Label5.Font = New System.Drawing.Font("Limon S1", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(8, 139)
+        Me.Label5.Location = New System.Drawing.Point(14, 163)
         Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(72, 31)
@@ -670,7 +680,7 @@ Partial Class FormForInpatientReceiptFront
         Me.Label4.AutoSize = True
         Me.Label4.BackColor = System.Drawing.Color.Transparent
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(8, 102)
+        Me.Label4.Location = New System.Drawing.Point(14, 126)
         Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(36, 20)
@@ -682,7 +692,7 @@ Partial Class FormForInpatientReceiptFront
         Me.Label3.AutoSize = True
         Me.Label3.BackColor = System.Drawing.Color.Transparent
         Me.Label3.Font = New System.Drawing.Font("Limon S1", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(403, 96)
+        Me.Label3.Location = New System.Drawing.Point(409, 120)
         Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(75, 31)
@@ -694,7 +704,7 @@ Partial Class FormForInpatientReceiptFront
         Me.Label2.AutoSize = True
         Me.Label2.BackColor = System.Drawing.Color.Transparent
         Me.Label2.Font = New System.Drawing.Font("Limon S1", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(8, 52)
+        Me.Label2.Location = New System.Drawing.Point(14, 76)
         Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(90, 31)
@@ -707,7 +717,7 @@ Partial Class FormForInpatientReceiptFront
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Times New Roman", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Label1.Location = New System.Drawing.Point(6, 7)
+        Me.Label1.Location = New System.Drawing.Point(12, 15)
         Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(265, 36)
@@ -723,14 +733,13 @@ Partial Class FormForInpatientReceiptFront
         Me.GroupBox3.Controls.Add(Me.lblCashierLogin)
         Me.GroupBox3.Controls.Add(Me.GroupBox4)
         Me.GroupBox3.Controls.Add(Me.CboDiagnosis)
-        Me.GroupBox3.Controls.Add(Me.ChPrintPreveiw)
         Me.GroupBox3.Controls.Add(Me.Label9)
         Me.GroupBox3.Controls.Add(Me.Label16)
         Me.GroupBox3.Controls.Add(Me.txtOperation)
         Me.GroupBox3.Controls.Add(Me.cmdClose)
         Me.GroupBox3.Controls.Add(Me.cmdSave)
         Me.GroupBox3.Controls.Add(Me.GroupBox8)
-        Me.GroupBox3.Location = New System.Drawing.Point(14, 397)
+        Me.GroupBox3.Location = New System.Drawing.Point(13, 423)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Size = New System.Drawing.Size(792, 238)
         Me.GroupBox3.TabIndex = 21
@@ -739,7 +748,7 @@ Partial Class FormForInpatientReceiptFront
         '
         'TxtDonateNote
         '
-        Me.TxtDonateNote.Location = New System.Drawing.Point(540, 196)
+        Me.TxtDonateNote.Location = New System.Drawing.Point(184, 177)
         Me.TxtDonateNote.Margin = New System.Windows.Forms.Padding(2)
         Me.TxtDonateNote.Multiline = True
         Me.TxtDonateNote.Name = "TxtDonateNote"
@@ -750,7 +759,7 @@ Partial Class FormForInpatientReceiptFront
         'Label22
         '
         Me.Label22.AutoSize = True
-        Me.Label22.Location = New System.Drawing.Point(511, 214)
+        Me.Label22.Location = New System.Drawing.Point(155, 195)
         Me.Label22.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label22.Name = "Label22"
         Me.Label22.Size = New System.Drawing.Size(33, 13)
@@ -761,10 +770,10 @@ Partial Class FormForInpatientReceiptFront
         'PicLoading
         '
         Me.PicLoading.Image = Global.TakeoHospitalInventory.My.Resources.Resources.loadgraphic
-        Me.PicLoading.Location = New System.Drawing.Point(665, 208)
+        Me.PicLoading.Location = New System.Drawing.Point(5, 210)
         Me.PicLoading.Margin = New System.Windows.Forms.Padding(2)
         Me.PicLoading.Name = "PicLoading"
-        Me.PicLoading.Size = New System.Drawing.Size(112, 20)
+        Me.PicLoading.Size = New System.Drawing.Size(136, 23)
         Me.PicLoading.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PicLoading.TabIndex = 209
         Me.PicLoading.TabStop = False
@@ -1083,7 +1092,7 @@ Partial Class FormForInpatientReceiptFront
         '
         Me.GroupBox7.Controls.Add(Me.chkSocialFee)
         Me.GroupBox7.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox7.Location = New System.Drawing.Point(659, 102)
+        Me.GroupBox7.Location = New System.Drawing.Point(665, 126)
         Me.GroupBox7.Margin = New System.Windows.Forms.Padding(2)
         Me.GroupBox7.Name = "GroupBox7"
         Me.GroupBox7.Padding = New System.Windows.Forms.Padding(2)
@@ -1102,7 +1111,7 @@ Partial Class FormForInpatientReceiptFront
         Me.GroupBox5.Controls.Add(Me.LblAge)
         Me.GroupBox5.Controls.Add(Me.LblSex)
         Me.GroupBox5.Controls.Add(Me.LblPatientEn)
-        Me.GroupBox5.Location = New System.Drawing.Point(749, 12)
+        Me.GroupBox5.Location = New System.Drawing.Point(787, 15)
         Me.GroupBox5.Name = "GroupBox5"
         Me.GroupBox5.Size = New System.Drawing.Size(116, 131)
         Me.GroupBox5.TabIndex = 207
@@ -1149,7 +1158,7 @@ Partial Class FormForInpatientReceiptFront
         'LblComBindRefferal
         '
         Me.LblComBindRefferal.AutoSize = True
-        Me.LblComBindRefferal.Location = New System.Drawing.Point(468, 350)
+        Me.LblComBindRefferal.Location = New System.Drawing.Point(474, 374)
         Me.LblComBindRefferal.Name = "LblComBindRefferal"
         Me.LblComBindRefferal.Size = New System.Drawing.Size(86, 13)
         Me.LblComBindRefferal.TabIndex = 208
@@ -1168,9 +1177,9 @@ Partial Class FormForInpatientReceiptFront
         Me.GroupBox6.Controls.Add(Me.Label27)
         Me.GroupBox6.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox6.ForeColor = System.Drawing.Color.Red
-        Me.GroupBox6.Location = New System.Drawing.Point(554, 259)
+        Me.GroupBox6.Location = New System.Drawing.Point(560, 280)
         Me.GroupBox6.Name = "GroupBox6"
-        Me.GroupBox6.Size = New System.Drawing.Size(212, 136)
+        Me.GroupBox6.Size = New System.Drawing.Size(245, 136)
         Me.GroupBox6.TabIndex = 209
         Me.GroupBox6.TabStop = False
         Me.GroupBox6.Text = "Information From Consult"
@@ -1266,7 +1275,7 @@ Partial Class FormForInpatientReceiptFront
         'LblConsultID
         '
         Me.LblConsultID.AutoSize = True
-        Me.LblConsultID.Location = New System.Drawing.Point(434, 345)
+        Me.LblConsultID.Location = New System.Drawing.Point(440, 369)
         Me.LblConsultID.Name = "LblConsultID"
         Me.LblConsultID.Size = New System.Drawing.Size(13, 13)
         Me.LblConsultID.TabIndex = 8
@@ -1276,53 +1285,66 @@ Partial Class FormForInpatientReceiptFront
         'lblConsutIDv
         '
         Me.lblConsutIDv.AutoSize = True
-        Me.lblConsutIDv.Location = New System.Drawing.Point(384, 350)
+        Me.lblConsutIDv.Location = New System.Drawing.Point(390, 374)
         Me.lblConsutIDv.Name = "lblConsutIDv"
         Me.lblConsutIDv.Size = New System.Drawing.Size(13, 13)
         Me.lblConsutIDv.TabIndex = 9
         Me.lblConsutIDv.Text = "0"
         Me.lblConsutIDv.Visible = False
         '
+        'Panel1
+        '
+        Me.Panel1.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Panel1.BackColor = System.Drawing.Color.White
+        Me.Panel1.Controls.Add(Me.GroupBox3)
+        Me.Panel1.Controls.Add(Me.GroupBox5)
+        Me.Panel1.Controls.Add(Me.LblConsultID)
+        Me.Panel1.Controls.Add(Me.GroupBox1)
+        Me.Panel1.Controls.Add(Me.Label1)
+        Me.Panel1.Controls.Add(Me.lblConsutIDv)
+        Me.Panel1.Controls.Add(Me.txtPatient)
+        Me.Panel1.Controls.Add(Me.ChPrintPreveiw)
+        Me.Panel1.Controls.Add(Me.GroupBox6)
+        Me.Panel1.Controls.Add(Me.rdOperationD)
+        Me.Panel1.Controls.Add(Me.LblComBindRefferal)
+        Me.Panel1.Controls.Add(Me.Label12)
+        Me.Panel1.Controls.Add(Me.txtAmountWord)
+        Me.Panel1.Controls.Add(Me.GroupBox7)
+        Me.Panel1.Controls.Add(Me.rdOperationR)
+        Me.Panel1.Controls.Add(Me.txtAmountFigureR)
+        Me.Panel1.Controls.Add(Me.Label2)
+        Me.Panel1.Controls.Add(Me.lblRielDolar)
+        Me.Panel1.Controls.Add(Me.chkDollar)
+        Me.Panel1.Controls.Add(Me.txtAmountFigureD)
+        Me.Panel1.Controls.Add(Me.dtpDateIn)
+        Me.Panel1.Controls.Add(Me.Label8)
+        Me.Panel1.Controls.Add(Me.Label3)
+        Me.Panel1.Controls.Add(Me.txtOperationFee)
+        Me.Panel1.Controls.Add(Me.chkRiel)
+        Me.Panel1.Controls.Add(Me.lblID)
+        Me.Panel1.Controls.Add(Me.txtReceiptNumber)
+        Me.Panel1.Controls.Add(Me.Label7)
+        Me.Panel1.Controls.Add(Me.Label4)
+        Me.Panel1.Controls.Add(Me.GroupBox2)
+        Me.Panel1.Controls.Add(Me.txtTotal)
+        Me.Panel1.Controls.Add(Me.Label6)
+        Me.Panel1.Controls.Add(Me.Label5)
+        Me.Panel1.Controls.Add(Me.lblCashier)
+        Me.Panel1.Controls.Add(Me.txtHN)
+        Me.Panel1.Location = New System.Drawing.Point(19, 25)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(818, 674)
+        Me.Panel1.TabIndex = 210
+        '
         'FormForInpatientReceiptFront
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
-        Me.ClientSize = New System.Drawing.Size(1146, 655)
-        Me.Controls.Add(Me.LblConsultID)
-        Me.Controls.Add(Me.lblConsutIDv)
-        Me.Controls.Add(Me.GroupBox6)
-        Me.Controls.Add(Me.LblComBindRefferal)
-        Me.Controls.Add(Me.GroupBox5)
-        Me.Controls.Add(Me.GroupBox7)
-        Me.Controls.Add(Me.GroupBox3)
-        Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.chkDollar)
-        Me.Controls.Add(Me.dtpDateIn)
-        Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.chkRiel)
-        Me.Controls.Add(Me.txtReceiptNumber)
-        Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.txtTotal)
-        Me.Controls.Add(Me.Label5)
-        Me.Controls.Add(Me.txtHN)
-        Me.Controls.Add(Me.lblCashier)
-        Me.Controls.Add(Me.Label6)
-        Me.Controls.Add(Me.GroupBox1)
-        Me.Controls.Add(Me.GroupBox2)
-        Me.Controls.Add(Me.Label7)
-        Me.Controls.Add(Me.lblID)
-        Me.Controls.Add(Me.txtOperationFee)
-        Me.Controls.Add(Me.Label8)
-        Me.Controls.Add(Me.txtAmountFigureD)
-        Me.Controls.Add(Me.lblRielDolar)
-        Me.Controls.Add(Me.txtAmountFigureR)
-        Me.Controls.Add(Me.rdOperationR)
-        Me.Controls.Add(Me.txtAmountWord)
-        Me.Controls.Add(Me.Label12)
-        Me.Controls.Add(Me.rdOperationD)
-        Me.Controls.Add(Me.txtPatient)
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(151, Byte), Integer), CType(CType(197, Byte), Integer), CType(CType(249, Byte), Integer))
+        Me.ClientSize = New System.Drawing.Size(857, 740)
+        Me.Controls.Add(Me.Panel1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FormForInpatientReceiptFront"
         Me.ShowInTaskbar = False
@@ -1349,8 +1371,9 @@ Partial Class FormForInpatientReceiptFront
         Me.GroupBox5.PerformLayout()
         Me.GroupBox6.ResumeLayout(False)
         Me.GroupBox6.PerformLayout()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
     Friend WithEvents cmdAddRate As System.Windows.Forms.Button
@@ -1450,4 +1473,5 @@ Partial Class FormForInpatientReceiptFront
     Friend WithEvents Label27 As System.Windows.Forms.Label
     Friend WithEvents GroupBox9 As System.Windows.Forms.GroupBox
     Friend WithEvents lblConsutIDv As System.Windows.Forms.Label
+    Friend WithEvents Panel1 As System.Windows.Forms.Panel
 End Class

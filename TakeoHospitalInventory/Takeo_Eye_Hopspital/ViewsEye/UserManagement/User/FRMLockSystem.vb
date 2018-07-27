@@ -6,12 +6,21 @@ Public Class FRMLockSystem
     Dim isAltF4 As Boolean = False
     Dim LoginCount As Integer
     Dim StrUserName As String
-    Dim MainForm As MainTakeoInventory
+    'Dim MainForm As MainTakeoInventory
+    Dim MScreening As MainScreening
     Sub New(ByVal main As MainTakeoInventory)
 
         ' This call is required by the Windows Form Designer.
         InitializeComponent()
-        Me.MainForm = main
+        ' Me.MainForm = main
+        ' Add any initialization after the InitializeComponent() call.
+
+    End Sub
+    Sub New(ByVal MScreening As MainScreening)
+
+        ' This call is required by the Windows Form Designer.
+        InitializeComponent()
+        Me.MScreening = MScreening
         ' Add any initialization after the InitializeComponent() call.
 
     End Sub

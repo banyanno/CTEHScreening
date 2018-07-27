@@ -32,9 +32,9 @@ Partial Class FindPatient
         Me.Label18 = New System.Windows.Forms.Label
         Me.Label4 = New System.Windows.Forms.Label
         Me.cboSex = New System.Windows.Forms.ComboBox
-        Me.cboCommune = New System.Windows.Forms.ComboBox
-        Me.cboDistrict = New System.Windows.Forms.ComboBox
-        Me.cboProvince = New System.Windows.Forms.ComboBox
+        Me.CboCommNo = New System.Windows.Forms.ComboBox
+        Me.CboDisNo = New System.Windows.Forms.ComboBox
+        Me.CboProNo = New System.Windows.Forms.ComboBox
         Me.Label8 = New System.Windows.Forms.Label
         Me.lblDistric = New System.Windows.Forms.Label
         Me.txtProvice = New System.Windows.Forms.Label
@@ -47,8 +47,11 @@ Partial Class FindPatient
         Me.txtEnglishNameddd = New System.Windows.Forms.Label
         Me.btnFind = New System.Windows.Forms.Button
         Me.BtnClose = New System.Windows.Forms.Button
+        Me.Panel1 = New System.Windows.Forms.Panel
+        Me.Label1 = New System.Windows.Forms.Label
         Me.GroupBox3.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'GroupBox3
@@ -57,9 +60,9 @@ Partial Class FindPatient
         Me.GroupBox3.Controls.Add(Me.Label2)
         Me.GroupBox3.Controls.Add(Me.GroupBox2)
         Me.GroupBox3.Controls.Add(Me.cboSex)
-        Me.GroupBox3.Controls.Add(Me.cboCommune)
-        Me.GroupBox3.Controls.Add(Me.cboDistrict)
-        Me.GroupBox3.Controls.Add(Me.cboProvince)
+        Me.GroupBox3.Controls.Add(Me.CboCommNo)
+        Me.GroupBox3.Controls.Add(Me.CboDisNo)
+        Me.GroupBox3.Controls.Add(Me.CboProNo)
         Me.GroupBox3.Controls.Add(Me.Label8)
         Me.GroupBox3.Controls.Add(Me.lblDistric)
         Me.GroupBox3.Controls.Add(Me.txtProvice)
@@ -72,7 +75,7 @@ Partial Class FindPatient
         Me.GroupBox3.Controls.Add(Me.txtEnglishNameddd)
         Me.GroupBox3.Font = New System.Drawing.Font("Khmer OS Battambang", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox3.ForeColor = System.Drawing.Color.Navy
-        Me.GroupBox3.Location = New System.Drawing.Point(7, 4)
+        Me.GroupBox3.Location = New System.Drawing.Point(13, 13)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Size = New System.Drawing.Size(353, 373)
         Me.GroupBox3.TabIndex = 9
@@ -164,38 +167,38 @@ Partial Class FindPatient
         Me.cboSex.Size = New System.Drawing.Size(43, 28)
         Me.cboSex.TabIndex = 3
         '
-        'cboCommune
+        'CboCommNo
         '
-        Me.cboCommune.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
-        Me.cboCommune.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
-        Me.cboCommune.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cboCommune.FormattingEnabled = True
-        Me.cboCommune.Location = New System.Drawing.Point(99, 330)
-        Me.cboCommune.Name = "cboCommune"
-        Me.cboCommune.Size = New System.Drawing.Size(242, 28)
-        Me.cboCommune.TabIndex = 6
+        Me.CboCommNo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.CboCommNo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
+        Me.CboCommNo.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CboCommNo.FormattingEnabled = True
+        Me.CboCommNo.Location = New System.Drawing.Point(99, 330)
+        Me.CboCommNo.Name = "CboCommNo"
+        Me.CboCommNo.Size = New System.Drawing.Size(242, 28)
+        Me.CboCommNo.TabIndex = 6
         '
-        'cboDistrict
+        'CboDisNo
         '
-        Me.cboDistrict.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
-        Me.cboDistrict.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
-        Me.cboDistrict.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cboDistrict.FormattingEnabled = True
-        Me.cboDistrict.Location = New System.Drawing.Point(99, 296)
-        Me.cboDistrict.Name = "cboDistrict"
-        Me.cboDistrict.Size = New System.Drawing.Size(242, 28)
-        Me.cboDistrict.TabIndex = 5
+        Me.CboDisNo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.CboDisNo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
+        Me.CboDisNo.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CboDisNo.FormattingEnabled = True
+        Me.CboDisNo.Location = New System.Drawing.Point(99, 296)
+        Me.CboDisNo.Name = "CboDisNo"
+        Me.CboDisNo.Size = New System.Drawing.Size(242, 28)
+        Me.CboDisNo.TabIndex = 5
         '
-        'cboProvince
+        'CboProNo
         '
-        Me.cboProvince.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
-        Me.cboProvince.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
-        Me.cboProvince.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cboProvince.FormattingEnabled = True
-        Me.cboProvince.Location = New System.Drawing.Point(99, 262)
-        Me.cboProvince.Name = "cboProvince"
-        Me.cboProvince.Size = New System.Drawing.Size(242, 28)
-        Me.cboProvince.TabIndex = 4
+        Me.CboProNo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.CboProNo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
+        Me.CboProNo.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CboProNo.FormattingEnabled = True
+        Me.CboProNo.Location = New System.Drawing.Point(99, 262)
+        Me.CboProNo.Name = "CboProNo"
+        Me.CboProNo.Size = New System.Drawing.Size(242, 28)
+        Me.CboProNo.TabIndex = 4
         '
         'Label8
         '
@@ -296,16 +299,16 @@ Partial Class FindPatient
         '
         'btnFind
         '
-        Me.btnFind.BackColor = System.Drawing.Color.FromArgb(CType(CType(183, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(183, Byte), Integer))
+        Me.btnFind.BackColor = System.Drawing.Color.FromArgb(CType(CType(151, Byte), Integer), CType(CType(197, Byte), Integer), CType(CType(249, Byte), Integer))
         Me.btnFind.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnFind.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnFind.FlatAppearance.BorderSize = 0
         Me.btnFind.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver
         Me.btnFind.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnFind.Font = New System.Drawing.Font("Khmer OS", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnFind.ForeColor = System.Drawing.Color.Navy
+        Me.btnFind.ForeColor = System.Drawing.Color.White
         Me.btnFind.Image = CType(resources.GetObject("btnFind.Image"), System.Drawing.Image)
-        Me.btnFind.Location = New System.Drawing.Point(256, 382)
+        Me.btnFind.Location = New System.Drawing.Point(262, 394)
         Me.btnFind.Name = "btnFind"
         Me.btnFind.Size = New System.Drawing.Size(104, 37)
         Me.btnFind.TabIndex = 7
@@ -315,16 +318,16 @@ Partial Class FindPatient
         '
         'BtnClose
         '
-        Me.BtnClose.BackColor = System.Drawing.Color.FromArgb(CType(CType(183, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(183, Byte), Integer))
+        Me.BtnClose.BackColor = System.Drawing.Color.FromArgb(CType(CType(151, Byte), Integer), CType(CType(197, Byte), Integer), CType(CType(249, Byte), Integer))
         Me.BtnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.BtnClose.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BtnClose.FlatAppearance.BorderSize = 0
         Me.BtnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver
         Me.BtnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnClose.Font = New System.Drawing.Font("Khmer OS", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnClose.ForeColor = System.Drawing.Color.Navy
+        Me.BtnClose.ForeColor = System.Drawing.Color.White
         Me.BtnClose.Image = CType(resources.GetObject("BtnClose.Image"), System.Drawing.Image)
-        Me.BtnClose.Location = New System.Drawing.Point(7, 382)
+        Me.BtnClose.Location = New System.Drawing.Point(13, 394)
         Me.BtnClose.Name = "BtnClose"
         Me.BtnClose.Size = New System.Drawing.Size(104, 37)
         Me.BtnClose.TabIndex = 10
@@ -332,16 +335,37 @@ Partial Class FindPatient
         Me.BtnClose.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.BtnClose.UseVisualStyleBackColor = False
         '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.Color.White
+        Me.Panel1.Controls.Add(Me.GroupBox3)
+        Me.Panel1.Controls.Add(Me.btnFind)
+        Me.Panel1.Controls.Add(Me.BtnClose)
+        Me.Panel1.Location = New System.Drawing.Point(22, 48)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(378, 447)
+        Me.Panel1.TabIndex = 11
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.White
+        Me.Label1.Location = New System.Drawing.Point(110, 12)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(206, 24)
+        Me.Label1.TabIndex = 12
+        Me.Label1.Text = "Find Patient Information"
+        '
         'FindPatient
         '
         Me.AcceptButton = Me.btnFind
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(183, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(183, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(369, 429)
-        Me.Controls.Add(Me.BtnClose)
-        Me.Controls.Add(Me.GroupBox3)
-        Me.Controls.Add(Me.btnFind)
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(151, Byte), Integer), CType(CType(197, Byte), Integer), CType(CType(249, Byte), Integer))
+        Me.ClientSize = New System.Drawing.Size(427, 506)
+        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.MaximizeBox = False
         Me.MinimizeBox = False
@@ -354,7 +378,9 @@ Partial Class FindPatient
         Me.GroupBox3.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
+        Me.Panel1.ResumeLayout(False)
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents GroupBox3 As System.Windows.Forms.GroupBox
@@ -367,9 +393,9 @@ Partial Class FindPatient
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents btnFind As System.Windows.Forms.Button
     Friend WithEvents cboSex As System.Windows.Forms.ComboBox
-    Friend WithEvents cboCommune As System.Windows.Forms.ComboBox
-    Friend WithEvents cboDistrict As System.Windows.Forms.ComboBox
-    Friend WithEvents cboProvince As System.Windows.Forms.ComboBox
+    Friend WithEvents CboCommNo As System.Windows.Forms.ComboBox
+    Friend WithEvents CboDisNo As System.Windows.Forms.ComboBox
+    Friend WithEvents CboProNo As System.Windows.Forms.ComboBox
     Friend WithEvents Label8 As System.Windows.Forms.Label
     Friend WithEvents lblDistric As System.Windows.Forms.Label
     Friend WithEvents txtProvice As System.Windows.Forms.Label
@@ -381,4 +407,6 @@ Partial Class FindPatient
     Friend WithEvents Labeltest As System.Windows.Forms.Label
     Friend WithEvents txtEnglishNameddd As System.Windows.Forms.Label
     Friend WithEvents BtnClose As System.Windows.Forms.Button
+    Friend WithEvents Panel1 As System.Windows.Forms.Panel
+    Friend WithEvents Label1 As System.Windows.Forms.Label
 End Class
