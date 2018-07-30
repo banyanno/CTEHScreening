@@ -7,11 +7,20 @@ Public Class DashbordReceiveReceipt
     Dim DSWaitingPayment As New DSPaymentList
     Dim SQlDataAdapter As New SqlDataAdapter
     Dim SqlComman As New SqlCommand
+    Dim MScreening As MainScreening
     Sub New(ByVal mainSubForm As MainTakeoInventory)
 
         ' This call is required by the Windows Form Designer.
         InitializeComponent()
         Me.mainForm = mainSubForm
+        ' Add any initialization after the InitializeComponent() call.
+
+    End Sub
+    Sub New(ByVal MScreening As MainScreening)
+
+        ' This call is required by the Windows Form Designer.
+        InitializeComponent()
+        Me.MScreening = MScreening
         ' Add any initialization after the InitializeComponent() call.
 
     End Sub
@@ -26,11 +35,11 @@ Public Class DashbordReceiveReceipt
         GenerateReceipt()
         'GridJanusWaitingPayment.DataSource = DAPaymentWaiting.GetDataByGetPaymentListAll
     End Sub
-    
+
     Private Sub GenerateReceipt()
         Dim tblPermistion As DataTable = ModUser.GetMenuPermission(USER_NAME)
         Dim StrAdd As String = ""
-      
+
 
         For Each rows As DataRow In tblPermistion.Rows
 
@@ -66,7 +75,7 @@ Public Class DashbordReceiveReceipt
             End Try
         End If
 
-        
+
     End Sub
 
     Private Function GetReceiptByDepartment(ByVal StrPara As String) As String

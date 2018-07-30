@@ -25,12 +25,21 @@ Public Class UCMainNew_Outpatient
     Dim TotalNumbFRiel As Integer = 0
     Dim TotalFRiel As Integer = 0
     Dim MainForm As MainTakeoInventory
+    Dim MScreening As MainScreening
     Dim IS_FIll As Integer = 0
     Sub New(ByVal MainForm As MainTakeoInventory)
 
         ' This call is required by the Windows Form Designer.
         InitializeComponent()
         Me.MainForm = MainForm
+        ' Add any initialization after the InitializeComponent() call.
+
+    End Sub
+    Sub New(ByVal MScreening As MainScreening)
+        Me.MScreening = MScreening
+        ' This call is required by the Windows Form Designer.
+        InitializeComponent()
+
         ' Add any initialization after the InitializeComponent() call.
 
     End Sub
@@ -71,7 +80,8 @@ Public Class UCMainNew_Outpatient
         PNo = TxtPatientNo.Text
         DFrom = DateFrom.Value
         DTo = DateTo.Value
-        MainForm.StatusLoading(True)
+        'MainForm.StatusLoading(True)
+        MScreening.StatusLoading(True)
         BtnDisplay.Enabled = False
         BGNewOutpatient.RunWorkerAsync()
     End Sub
@@ -79,7 +89,8 @@ Public Class UCMainNew_Outpatient
         DailyDFrom = DailyDateFrom.Value
         DailyDTo = DailyDateTo.Value
         'PicLoad2.Visible = True
-        MainForm.StatusLoading(True)
+        'MainForm.StatusLoading(True)
+        MScreening.StatusLoading(True)
         BtnPrintPreview.Enabled = False
         BgLoadNewReport.RunWorkerAsync()
     End Sub
@@ -127,7 +138,8 @@ Public Class UCMainNew_Outpatient
         TxtTotalPatientFee.Text = TotalPatientRiel
         TxtTotalDolar.Text = TotalPatientDolar
 
-        MainForm.StatusLoading(False)
+        'MainForm.StatusLoading(False)
+        MScreening.StatusLoading(False)
         BtnDisplay.Enabled = True
         IS_FIll = 2
         'ModCommon.NumberAllRowHeaderDataGrid(GridEXNewPatientBookV1)
@@ -186,7 +198,8 @@ Public Class UCMainNew_Outpatient
         ModCommon.SetCurrentValuesForParameterField(MyparameterFields, myArrayList, "Label_Title")
         CrNewOutpatient.Refresh()
         BtnPrintPreview.Enabled = True
-        MainForm.StatusLoading(False)
+        'MainForm.StatusLoading(False)
+        MScreening.StatusLoading(False)
     End Sub
 
     Sub ShowSortGridColumn(ByVal dg As DataGridView, ByVal colIndex As Integer)
@@ -250,7 +263,8 @@ Public Class UCMainNew_Outpatient
         ModCommon.SetCurrentValuesForParameterField(MyparameterFields, myArrayList, "Title")
         CRVDaillyNewOut.Refresh()
         CrOtherNewPatient.Refresh()
-        MainForm.StatusLoading(False)
+        'MainForm.StatusLoading(False)
+        MScreening.StatusLoading(False)
         BtnPrintViewOther.Enabled = True
     End Sub
 

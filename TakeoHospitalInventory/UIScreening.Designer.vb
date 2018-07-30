@@ -33,9 +33,11 @@ Partial Class UIScreening
         Me.Button19 = New System.Windows.Forms.Button
         Me.Button15 = New System.Windows.Forms.Button
         Me.Button18 = New System.Windows.Forms.Button
-        Me.Button14 = New System.Windows.Forms.Button
+        Me.BtnNewPatientBook = New System.Windows.Forms.Button
         Me.BtnPatientRegistration = New System.Windows.Forms.Button
         Me.Panel2 = New System.Windows.Forms.Panel
+        Me.Button13 = New System.Windows.Forms.Button
+        Me.TextBox1 = New System.Windows.Forms.TextBox
         Me.BtnNavigationBar = New System.Windows.Forms.Button
         Me.Button7 = New System.Windows.Forms.Button
         Me.Button1 = New System.Windows.Forms.Button
@@ -85,7 +87,7 @@ Partial Class UIScreening
         Me.MenuVertical.Controls.Add(Me.Button19)
         Me.MenuVertical.Controls.Add(Me.Button15)
         Me.MenuVertical.Controls.Add(Me.Button18)
-        Me.MenuVertical.Controls.Add(Me.Button14)
+        Me.MenuVertical.Controls.Add(Me.BtnNewPatientBook)
         Me.MenuVertical.Controls.Add(Me.BtnPatientRegistration)
         Me.MenuVertical.Dock = System.Windows.Forms.DockStyle.Left
         Me.MenuVertical.Location = New System.Drawing.Point(0, 0)
@@ -212,22 +214,22 @@ Partial Class UIScreening
         Me.Button18.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.Button18.UseVisualStyleBackColor = False
         '
-        'Button14
+        'BtnNewPatientBook
         '
-        Me.Button14.BackColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(164, Byte), Integer), CType(CType(159, Byte), Integer))
-        Me.Button14.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button14.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver
-        Me.Button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button14.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button14.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.Button14.Image = CType(resources.GetObject("Button14.Image"), System.Drawing.Image)
-        Me.Button14.Location = New System.Drawing.Point(6, 139)
-        Me.Button14.Name = "Button14"
-        Me.Button14.Size = New System.Drawing.Size(229, 66)
-        Me.Button14.TabIndex = 2
-        Me.Button14.Text = "New Patient Book"
-        Me.Button14.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.Button14.UseVisualStyleBackColor = False
+        Me.BtnNewPatientBook.BackColor = System.Drawing.Color.FromArgb(CType(CType(75, Byte), Integer), CType(CType(164, Byte), Integer), CType(CType(159, Byte), Integer))
+        Me.BtnNewPatientBook.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnNewPatientBook.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver
+        Me.BtnNewPatientBook.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnNewPatientBook.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnNewPatientBook.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.BtnNewPatientBook.Image = CType(resources.GetObject("BtnNewPatientBook.Image"), System.Drawing.Image)
+        Me.BtnNewPatientBook.Location = New System.Drawing.Point(6, 139)
+        Me.BtnNewPatientBook.Name = "BtnNewPatientBook"
+        Me.BtnNewPatientBook.Size = New System.Drawing.Size(229, 66)
+        Me.BtnNewPatientBook.TabIndex = 2
+        Me.BtnNewPatientBook.Text = "New Patient Book"
+        Me.BtnNewPatientBook.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.BtnNewPatientBook.UseVisualStyleBackColor = False
         '
         'BtnPatientRegistration
         '
@@ -248,6 +250,8 @@ Partial Class UIScreening
         '
         'Panel2
         '
+        Me.Panel2.Controls.Add(Me.Button13)
+        Me.Panel2.Controls.Add(Me.TextBox1)
         Me.Panel2.Controls.Add(Me.Label1)
         Me.Panel2.Controls.Add(Me.BtnNavigationBar)
         Me.Panel2.Controls.Add(Me.Button7)
@@ -269,12 +273,36 @@ Partial Class UIScreening
         Me.Panel2.Size = New System.Drawing.Size(1283, 922)
         Me.Panel2.TabIndex = 18
         '
+        'Button13
+        '
+        Me.Button13.BackColor = System.Drawing.Color.White
+        Me.Button13.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button13.FlatAppearance.BorderSize = 0
+        Me.Button13.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver
+        Me.Button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button13.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button13.ForeColor = System.Drawing.Color.White
+        Me.Button13.Image = CType(resources.GetObject("Button13.Image"), System.Drawing.Image)
+        Me.Button13.Location = New System.Drawing.Point(1079, 12)
+        Me.Button13.Name = "Button13"
+        Me.Button13.Size = New System.Drawing.Size(36, 30)
+        Me.Button13.TabIndex = 19
+        Me.Button13.UseVisualStyleBackColor = False
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox1.Location = New System.Drawing.Point(593, 12)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(486, 30)
+        Me.TextBox1.TabIndex = 18
+        '
         'BtnNavigationBar
         '
         Me.BtnNavigationBar.BackColor = System.Drawing.Color.White
         Me.BtnNavigationBar.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BtnNavigationBar.FlatAppearance.BorderSize = 0
-        Me.BtnNavigationBar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.BtnNavigationBar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver
         Me.BtnNavigationBar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnNavigationBar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnNavigationBar.ForeColor = System.Drawing.Color.White
@@ -528,7 +556,7 @@ Partial Class UIScreening
     Friend WithEvents BtnPatientRegistration As System.Windows.Forms.Button
     Friend WithEvents Button16 As System.Windows.Forms.Button
     Friend WithEvents Button15 As System.Windows.Forms.Button
-    Friend WithEvents Button14 As System.Windows.Forms.Button
+    Friend WithEvents BtnNewPatientBook As System.Windows.Forms.Button
     Friend WithEvents Button17 As System.Windows.Forms.Button
     Friend WithEvents Button21 As System.Windows.Forms.Button
     Friend WithEvents Button20 As System.Windows.Forms.Button
@@ -536,5 +564,7 @@ Partial Class UIScreening
     Friend WithEvents Button18 As System.Windows.Forms.Button
     Friend WithEvents BtnNavigationBar As System.Windows.Forms.Button
     Friend WithEvents Panel2 As System.Windows.Forms.Panel
+    Friend WithEvents Button13 As System.Windows.Forms.Button
+    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
 
 End Class

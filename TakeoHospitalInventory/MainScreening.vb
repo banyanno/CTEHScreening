@@ -1,31 +1,40 @@
 ﻿Public Class MainScreening
     Dim Login As frmLoginInventory
-    Dim UIMainMenu As New UIScreening(Me)
+
     Private Delegate Sub DelShowLoadingPicture(ByVal visible As Boolean)
     Public examinationForm As New UCRegistrationForm
+    Dim UIMainMenu As UIScreening
     Sub New(ByVal login As frmLoginInventory)
         ' This call is required by the Windows Form Designer.
+        Me.Login = login
+        ModGlobleVariable.FLogin = login
         InitializeComponent()
         ModGlobleVariable.UIMainScreening = Me
-        ModGlobleVariable.FLogin = login
-        Me.Login = login
+
+
         ' InitUserControle()
         Application.DoEvents()
+        UIMainMenu = New UIScreening(Me, Me.Login)
         'CheckPermistionOnForm()
         ' Add any initialization after the InitializeComponent() call.
+        AddUserControl(PanelHeader, PanelDedail, UIMainMenu, "", True)
     End Sub
+
     Sub CreateRegisForm()
         AddUserControl(PanelHeader, PanelDedail, examinationForm, "", True)
     End Sub
+    
     Private Sub MainScreening_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         DBtnSwitchUser.Text = "Log out user: " & UserGlobleVariable.USER_NAME.ToUpper
         BtnDateTimeServer.Text = "Server Date: " & Format(ModGlobleVariable.GeteDateServer, "dd-MM-yyyy") & " Version:20151108"
-        AddUserControl(PanelHeader, PanelDedail, UIMainMenu, "", True)
+
     End Sub
 
 
     Private Sub BtnExit_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnExit.Click
-        Application.Exit()
+        If MessageBox.Show("Do you want to exit this application?", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) = Windows.Forms.DialogResult.Yes Then
+            Application.Exit()
+        End If
     End Sub
 
 

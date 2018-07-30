@@ -71,7 +71,7 @@ Public Class UCPatientPayment
             .SelectedValue = "OccNo"
             .Text = Nothing
         End With
-        Me.SplitContainer1.SplitterDistance = Me.Height / 2
+        'Me.SplitContainer1.SplitterDistance = Me.Height / 2
         ' Add any initialization after the InitializeComponent() call.
 
     End Sub
