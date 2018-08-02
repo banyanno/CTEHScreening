@@ -17,7 +17,7 @@
     <OptionCompare>Binary</OptionCompare>
     <OptionStrict>Off</OptionStrict>
     <OptionInfer>On</OptionInfer>
-    <ApplicationIcon>Resources\TakeoLogo.ico</ApplicationIcon>
+    <ApplicationIcon>Medicalwp-Medical-Health-Sign-blue.ico</ApplicationIcon>
     <TargetZone>LocalIntranet</TargetZone>
     <GenerateManifests>false</GenerateManifests>
     <PublishUrl>publish\</PublishUrl>
@@ -4777,6 +4777,7 @@
     <None Include="Resources\alarm-hareketli.gif" />
     <None Include="Resources\1410160314_PLayer_back.png" />
     <None Include="Resources\1-512.png" />
+    <Content Include="Medicalwp-Medical-Health-Sign-blue.ico" />
     <Content Include="Resources\Barcode.png" />
     <None Include="Resources\Bg1.PNG" />
     <None Include="Resources\button1.jpg" />

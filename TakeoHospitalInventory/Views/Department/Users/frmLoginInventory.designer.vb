@@ -43,7 +43,13 @@ Partial Class frmLoginInventory
         Me.BtnOk = New System.Windows.Forms.Button
         Me.BgLogin = New System.ComponentModel.BackgroundWorker
         Me.Panel1 = New System.Windows.Forms.Panel
+        Me.Label4 = New System.Windows.Forms.Label
+        Me.Label5 = New System.Windows.Forms.Label
+        Me.Button1 = New System.Windows.Forms.Button
+        Me.Button2 = New System.Windows.Forms.Button
+        Me.BtnConnected = New System.Windows.Forms.Button
         Me.BtnExit = New System.Windows.Forms.Button
+        Me.btnDisconect = New System.Windows.Forms.Button
         Me.Label1 = New System.Windows.Forms.Label
         Me.Panel2 = New System.Windows.Forms.Panel
         Me.PictLoading = New System.Windows.Forms.PictureBox
@@ -53,13 +59,7 @@ Partial Class frmLoginInventory
         Me.JanusSuperTip1 = New Janus.Windows.Common.JanusSuperTip(Me.components)
         Me.PictureBox1 = New System.Windows.Forms.PictureBox
         Me.Label3 = New System.Windows.Forms.Label
-        Me.btnDisconect = New System.Windows.Forms.Button
-        Me.BtnConnected = New System.Windows.Forms.Button
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
-        Me.Button1 = New System.Windows.Forms.Button
-        Me.Button2 = New System.Windows.Forms.Button
-        Me.Label4 = New System.Windows.Forms.Label
-        Me.Label5 = New System.Windows.Forms.Label
         Me.GroupBox1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -163,6 +163,76 @@ Partial Class frmLoginInventory
         Me.Panel1.Size = New System.Drawing.Size(1268, 42)
         Me.Panel1.TabIndex = 10
         '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.Color.Cyan
+        Me.Label4.Location = New System.Drawing.Point(48, 14)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(215, 17)
+        Me.Label4.TabIndex = 14
+        Me.Label4.Text = "CTEH DB Production Connection"
+        '
+        'Label5
+        '
+        Me.Label5.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.Color.Cyan
+        Me.Label5.Location = New System.Drawing.Point(959, 14)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(211, 17)
+        Me.Label5.TabIndex = 15
+        Me.Label5.Text = "CTEH DB Screening Connection"
+        '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.Button1.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button1.FlatAppearance.BorderSize = 0
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.ForeColor = System.Drawing.Color.White
+        Me.Button1.Image = CType(resources.GetObject("Button1.Image"), System.Drawing.Image)
+        Me.Button1.Location = New System.Drawing.Point(5, 5)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(35, 29)
+        Me.Button1.TabIndex = 18
+        Me.Button1.UseVisualStyleBackColor = False
+        '
+        'Button2
+        '
+        Me.Button2.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.Button2.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button2.FlatAppearance.BorderSize = 0
+        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.ForeColor = System.Drawing.Color.White
+        Me.Button2.Image = CType(resources.GetObject("Button2.Image"), System.Drawing.Image)
+        Me.Button2.Location = New System.Drawing.Point(5, 5)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(35, 29)
+        Me.Button2.TabIndex = 17
+        Me.Button2.UseVisualStyleBackColor = False
+        '
+        'BtnConnected
+        '
+        Me.BtnConnected.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.BtnConnected.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.BtnConnected.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnConnected.FlatAppearance.BorderSize = 0
+        Me.BtnConnected.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnConnected.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnConnected.ForeColor = System.Drawing.Color.White
+        Me.BtnConnected.Image = CType(resources.GetObject("BtnConnected.Image"), System.Drawing.Image)
+        Me.BtnConnected.Location = New System.Drawing.Point(1173, 1)
+        Me.BtnConnected.Name = "BtnConnected"
+        Me.BtnConnected.Size = New System.Drawing.Size(50, 39)
+        Me.BtnConnected.TabIndex = 16
+        Me.BtnConnected.UseVisualStyleBackColor = False
+        Me.BtnConnected.Visible = False
+        '
         'BtnExit
         '
         Me.BtnExit.BackColor = System.Drawing.SystemColors.HotTrack
@@ -179,6 +249,23 @@ Partial Class frmLoginInventory
         Me.BtnExit.Size = New System.Drawing.Size(39, 42)
         Me.BtnExit.TabIndex = 14
         Me.BtnExit.UseVisualStyleBackColor = False
+        '
+        'btnDisconect
+        '
+        Me.btnDisconect.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnDisconect.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.btnDisconect.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnDisconect.FlatAppearance.BorderSize = 0
+        Me.btnDisconect.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnDisconect.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnDisconect.ForeColor = System.Drawing.Color.White
+        Me.btnDisconect.Image = CType(resources.GetObject("btnDisconect.Image"), System.Drawing.Image)
+        Me.btnDisconect.Location = New System.Drawing.Point(1177, 0)
+        Me.btnDisconect.Name = "btnDisconect"
+        Me.btnDisconect.Size = New System.Drawing.Size(50, 39)
+        Me.btnDisconect.TabIndex = 15
+        Me.btnDisconect.UseVisualStyleBackColor = False
+        Me.btnDisconect.Visible = False
         '
         'Label1
         '
@@ -281,96 +368,9 @@ Partial Class frmLoginInventory
         Me.Label3.Text = "Please Login First"
         Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
-        'btnDisconect
-        '
-        Me.btnDisconect.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnDisconect.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.btnDisconect.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnDisconect.FlatAppearance.BorderSize = 0
-        Me.btnDisconect.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnDisconect.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnDisconect.ForeColor = System.Drawing.Color.White
-        Me.btnDisconect.Image = CType(resources.GetObject("btnDisconect.Image"), System.Drawing.Image)
-        Me.btnDisconect.Location = New System.Drawing.Point(1177, 0)
-        Me.btnDisconect.Name = "btnDisconect"
-        Me.btnDisconect.Size = New System.Drawing.Size(50, 39)
-        Me.btnDisconect.TabIndex = 15
-        Me.btnDisconect.UseVisualStyleBackColor = False
-        Me.btnDisconect.Visible = False
-        '
-        'BtnConnected
-        '
-        Me.BtnConnected.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.BtnConnected.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.BtnConnected.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnConnected.FlatAppearance.BorderSize = 0
-        Me.BtnConnected.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnConnected.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnConnected.ForeColor = System.Drawing.Color.White
-        Me.BtnConnected.Image = CType(resources.GetObject("BtnConnected.Image"), System.Drawing.Image)
-        Me.BtnConnected.Location = New System.Drawing.Point(1173, 1)
-        Me.BtnConnected.Name = "BtnConnected"
-        Me.BtnConnected.Size = New System.Drawing.Size(50, 39)
-        Me.BtnConnected.TabIndex = 16
-        Me.BtnConnected.UseVisualStyleBackColor = False
-        Me.BtnConnected.Visible = False
-        '
         'Timer1
         '
         Me.Timer1.Interval = 1000
-        '
-        'Button1
-        '
-        Me.Button1.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.Button1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button1.FlatAppearance.BorderSize = 0
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.ForeColor = System.Drawing.Color.White
-        Me.Button1.Image = CType(resources.GetObject("Button1.Image"), System.Drawing.Image)
-        Me.Button1.Location = New System.Drawing.Point(5, 5)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(35, 29)
-        Me.Button1.TabIndex = 18
-        Me.Button1.UseVisualStyleBackColor = False
-        '
-        'Button2
-        '
-        Me.Button2.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.Button2.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button2.FlatAppearance.BorderSize = 0
-        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.ForeColor = System.Drawing.Color.White
-        Me.Button2.Image = CType(resources.GetObject("Button2.Image"), System.Drawing.Image)
-        Me.Button2.Location = New System.Drawing.Point(5, 5)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(35, 29)
-        Me.Button2.TabIndex = 17
-        Me.Button2.UseVisualStyleBackColor = False
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.Color.Cyan
-        Me.Label4.Location = New System.Drawing.Point(48, 14)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(215, 17)
-        Me.Label4.TabIndex = 14
-        Me.Label4.Text = "CTEH DB Production Connection"
-        '
-        'Label5
-        '
-        Me.Label5.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.ForeColor = System.Drawing.Color.Cyan
-        Me.Label5.Location = New System.Drawing.Point(959, 14)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(211, 17)
-        Me.Label5.TabIndex = 15
-        Me.Label5.Text = "CTEH DB Screening Connection"
         '
         'frmLoginInventory
         '
