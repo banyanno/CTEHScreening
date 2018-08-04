@@ -26,7 +26,9 @@
     
     Private Sub MainScreening_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         DBtnSwitchUser.Text = "Log out user: " & UserGlobleVariable.USER_NAME.ToUpper
-        BtnDateTimeServer.Text = "Server Date: " & Format(ModGlobleVariable.GeteDateServer, "dd-MM-yyyy") & " Version:20151108"
+        BtnDateTimeServer.Text = "Server Date: " & Format(ModGlobleVariable.GeteDateServer, "dd-MM-yyyy") '& " Version:20151108"
+        Me.Size = Screen.PrimaryScreen.WorkingArea.Size
+        Me.Location = Screen.PrimaryScreen.WorkingArea.Location
 
     End Sub
 

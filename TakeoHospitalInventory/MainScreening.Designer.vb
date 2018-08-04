@@ -310,7 +310,6 @@ Partial Class MainScreening
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "MainScreening"
         Me.Text = "MainScreening"
-        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.PanelHeader.ResumeLayout(False)
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()

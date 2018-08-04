@@ -76,6 +76,7 @@ Module ModCommon
         '    If Not Msg = "" Then myCharacter.Speak(Msg)
         'End If
     End Sub
+    Dim xx, yy As Double
     Public Sub MoveFormOnMouseDown(ByVal e As System.Windows.Forms.MouseEventArgs)
         If e.Button = Windows.Forms.MouseButtons.Left Then
             xx = e.X

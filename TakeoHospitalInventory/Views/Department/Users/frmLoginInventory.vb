@@ -184,7 +184,8 @@ Public Class frmLoginInventory
    
 
     Private Sub frmLogin_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-
+        Me.Size = Screen.PrimaryScreen.WorkingArea.Size
+        Me.Location = Screen.PrimaryScreen.WorkingArea.Location
         Me.UpdateLabelStatus("Checking user permission", False)
         Label2.Text = "Copyright 2012. All rights reserved by KTG Version " & version.ToString '& "  " & GetDateServer.Date.ToString("MMM-yyyy")
         Timer1.Start()
