@@ -82,7 +82,8 @@
         ' Add any initialization after the InitializeComponent() call.
 
     End Sub
-    Public PatientPayment As  UCPatientPayment
+    Public PatientPayment As UCPatientPayment
+    Public ScreenDashboard As DashboardScreeningRegisBook
     Sub InitUserControle()
         Me.Login.UpdateLabelStatus("Checking Permission", True)
         Application.DoEvents()
@@ -264,6 +265,14 @@
         Login.UpdateLabelStatus("Creating user interface.", True)
         Application.DoEvents()
         DEP_EOD = URunEOD
+
+
+        '=============== Start Screening Book ======================================
+        Login.UpdateLabelStatus("Creating user interface.", True)
+        Application.DoEvents()
+        ScreenDashboard = New DashboardScreeningRegisBook
+
+
     End Sub
 
 
@@ -296,5 +305,9 @@
 
     Private Sub BtnNewPatientBook_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnNewPatientBook.Click
         AddUserControl(MScreening.PanelHeader, MScreening.PanelDedail, NewOldPatientBook, "", True)
+    End Sub
+
+    Private Sub BtnScreeningBook_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnScreeningBook.Click
+        AddUserControl(MScreening.PanelHeader, MScreening.PanelDedail, ScreenDashboard, "", True)
     End Sub
 End Class

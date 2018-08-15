@@ -1542,4 +1542,9 @@ Public Class UCPatientPayment
             ShowRegistrationFormByNew()
         End If
     End Sub
+
+    Private Sub BtnScreeningRegist_Click(ByVal sender As System.Object, ByVal e As Janus.Windows.Ribbon.CommandEventArgs) Handles BtnScreeningRegist.Click
+        Dim RegistScreening As New FormPatientRegister
+        RegistScreening.ShowDialog()
+    End Sub
 End Class

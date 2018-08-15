@@ -674,6 +674,24 @@
       <DependentUpon>ReportAllRefraction.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Takeo_Eye_Hopspital\Screening\UserRegister\DashboardScreeningRegisBook.Designer.vb">
+      <DependentUpon>DashboardScreeningRegisBook.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Takeo_Eye_Hopspital\Screening\UserRegister\DashboardScreeningRegisBook.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Takeo_Eye_Hopspital\Screening\UserRegister\FormPatientRegister.Designer.vb">
+      <DependentUpon>FormPatientRegister.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Takeo_Eye_Hopspital\Screening\UserRegister\FormPatientRegister.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Takeo_Eye_Hopspital\Screening\UserRegister\RegisSetting.Designer.vb">
+      <DependentUpon>RegisSetting.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Takeo_Eye_Hopspital\Screening\UserRegister\RegisSetting.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Takeo_Eye_Hopspital\ViewsEye\Achieve\NewAchieve\FRMAChievNew.Designer.vb">
       <DependentUpon>FRMAChievNew.vb</DependentUpon>
     </Compile>
@@ -3217,6 +3235,15 @@
     <EmbeddedResource Include="Takeo_Eye_Hopspital\Refraction\ReportAllRefraction.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>ReportAllRefraction.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Takeo_Eye_Hopspital\Screening\UserRegister\DashboardScreeningRegisBook.resx">
+      <DependentUpon>DashboardScreeningRegisBook.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Takeo_Eye_Hopspital\Screening\UserRegister\FormPatientRegister.resx">
+      <DependentUpon>FormPatientRegister.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Takeo_Eye_Hopspital\Screening\UserRegister\RegisSetting.resx">
+      <DependentUpon>RegisSetting.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Takeo_Eye_Hopspital\ViewsEye\Achieve\NewAchieve\FRMAChievNew.resx">
       <DependentUpon>FRMAChievNew.vb</DependentUpon>
