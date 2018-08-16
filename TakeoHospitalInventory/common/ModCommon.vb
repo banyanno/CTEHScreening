@@ -77,6 +77,19 @@ Module ModCommon
         'End If
     End Sub
     Dim xx, yy As Double
+    Public Sub MovePanelOnMouseDown(ByVal e As System.Windows.Forms.MouseEventArgs)
+        If e.Button = Windows.Forms.MouseButtons.Left Then
+            xx = e.X
+            yy = e.Y
+        End If
+    End Sub
+    Public Sub MovePanelOnMouseMove(ByVal e As System.Windows.Forms.MouseEventArgs, ByVal panel As Windows.Forms.Panel)
+        If e.Button = Windows.Forms.MouseButtons.Left Then
+            panel.Left += e.X - xx
+            panel.Top += e.Y - yy
+        End If
+    End Sub
+
     Public Sub MoveFormOnMouseDown(ByVal e As System.Windows.Forms.MouseEventArgs)
         If e.Button = Windows.Forms.MouseButtons.Left Then
             xx = e.X

@@ -285,12 +285,12 @@ Public Class frmLoginInventory
     End Sub
 
     Private Sub Timer1_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer1.Tick
-        If CheckConnectionStatus() = False Then
-            btnDisconect.Visible = True
-            BtnConnected.Visible = False
-        Else
-            btnDisconect.Visible = False
-            BtnConnected.Visible = True
-        End If
+        'If CheckConnectionStatus() = False Then
+        '    btnDisconect.Visible = True
+        '    BtnConnected.Visible = False
+        'Else
+        '    btnDisconect.Visible = False
+        '    BtnConnected.Visible = True
+        'End If
     End Sub
 End Class
