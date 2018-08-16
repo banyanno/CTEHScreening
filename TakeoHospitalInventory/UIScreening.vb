@@ -84,6 +84,7 @@
     End Sub
     Public PatientPayment As UCPatientPayment
     Public ScreenDashboard As DashboardScreeningRegisBook
+    Public ScreenSetting As DashboardSetting
     Sub InitUserControle()
         Me.Login.UpdateLabelStatus("Checking Permission", True)
         Application.DoEvents()
@@ -267,12 +268,14 @@
         DEP_EOD = URunEOD
 
 
-        '=============== Start Screening Book ======================================
+        '=============== Start Screening Interface ======================================
         Login.UpdateLabelStatus("Creating user interface.", True)
         Application.DoEvents()
         ScreenDashboard = New DashboardScreeningRegisBook
 
-
+        Login.UpdateLabelStatus("Create user interface.", True)
+        Application.DoEvents()
+        ScreenSetting = New DashboardSetting
     End Sub
 
 
@@ -291,7 +294,8 @@
 
 
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
-        SetVisibleEnvisibleMenu()
+        'SetVisibleEnvisibleMenu()
+        AddUserControl(MScreening.PanelHeader, MScreening.PanelDedail, PatientPayment, "", True)
     End Sub
 
     Private Sub BtnNavigationBar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnNavigationBar.Click
@@ -309,5 +313,9 @@
 
     Private Sub BtnScreeningBook_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnScreeningBook.Click
         AddUserControl(MScreening.PanelHeader, MScreening.PanelDedail, ScreenDashboard, "", True)
+    End Sub
+
+    Private Sub BtnScreeningSetting_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnScreeningSetting.Click
+        AddUserControl(MScreening.PanelHeader, MScreening.PanelDedail, ScreenSetting, "", True)
     End Sub
 End Class

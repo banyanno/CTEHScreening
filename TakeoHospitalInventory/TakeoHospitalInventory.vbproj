@@ -674,6 +674,18 @@
       <DependentUpon>ReportAllRefraction.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Takeo_Eye_Hopspital\Screening\ScreeningSetting\DashboardSetting.Designer.vb">
+      <DependentUpon>DashboardSetting.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Takeo_Eye_Hopspital\Screening\ScreeningSetting\DashboardSetting.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Takeo_Eye_Hopspital\Screening\ScreeningSetting\ScreeningSetting.Designer.vb">
+      <DependentUpon>ScreeningSetting.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Takeo_Eye_Hopspital\Screening\ScreeningSetting\ScreeningSetting.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Takeo_Eye_Hopspital\Screening\UserRegister\DashboardScreeningRegisBook.Designer.vb">
       <DependentUpon>DashboardScreeningRegisBook.vb</DependentUpon>
     </Compile>
@@ -3235,6 +3247,12 @@
     <EmbeddedResource Include="Takeo_Eye_Hopspital\Refraction\ReportAllRefraction.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>ReportAllRefraction.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Takeo_Eye_Hopspital\Screening\ScreeningSetting\DashboardSetting.resx">
+      <DependentUpon>DashboardSetting.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Takeo_Eye_Hopspital\Screening\ScreeningSetting\ScreeningSetting.resx">
+      <DependentUpon>ScreeningSetting.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Takeo_Eye_Hopspital\Screening\UserRegister\DashboardScreeningRegisBook.resx">
       <DependentUpon>DashboardScreeningRegisBook.vb</DependentUpon>
