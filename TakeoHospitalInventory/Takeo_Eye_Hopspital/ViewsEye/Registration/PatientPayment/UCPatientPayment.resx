@@ -117,8 +117,8 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="ContexMenuPatientReciept.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 53</value>
+  <metadata name="CMScreening.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>503, 19</value>
   </metadata>
   <metadata name="DSPatient.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>386, 55</value>
@@ -126,6 +126,35 @@
   <data name="GridPatientInformation_DesignTimeLayout.LayoutString" xml:space="preserve">
     <value>&lt;GridEXLayoutData&gt;&lt;RootTable&gt;&lt;Key&gt;PatientInfo&lt;/Key&gt;&lt;Columns Collection="true" ElementName="Column"&gt;&lt;Column0 ID="No"&gt;&lt;Caption&gt;No&lt;/Caption&gt;&lt;DataTypeCode&gt;Decimal&lt;/DataTypeCode&gt;&lt;DataMember&gt;No&lt;/DataMember&gt;&lt;Key&gt;No&lt;/Key&gt;&lt;Position&gt;0&lt;/Position&gt;&lt;Visible&gt;False&lt;/Visible&gt;&lt;/Column0&gt;&lt;Column1 ID="PatientNo"&gt;&lt;Caption&gt;Patient No&lt;/Caption&gt;&lt;DataTypeCode&gt;Decimal&lt;/DataTypeCode&gt;&lt;DataMember&gt;PatientNo&lt;/DataMember&gt;&lt;Key&gt;PatientNo&lt;/Key&gt;&lt;Position&gt;1&lt;/Position&gt;&lt;Width&gt;108&lt;/Width&gt;&lt;CellStyle&gt;&lt;ForeColor&gt;Red&lt;/ForeColor&gt;&lt;FontBold&gt;True&lt;/FontBold&gt;&lt;/CellStyle&gt;&lt;/Column1&gt;&lt;Column2 ID="NameKhmer"&gt;&lt;Caption&gt;Name as Khmer&lt;/Caption&gt;&lt;DataTypeCode&gt;String&lt;/DataTypeCode&gt;&lt;DataMember&gt;NameKhmer&lt;/DataMember&gt;&lt;Key&gt;NameKhmer&lt;/Key&gt;&lt;Position&gt;2&lt;/Position&gt;&lt;Width&gt;152&lt;/Width&gt;&lt;CellStyle&gt;&lt;ForeColor&gt;0, 0, 192&lt;/ForeColor&gt;&lt;Font&gt;Wat Phnom T3, 9.749999pt&lt;/Font&gt;&lt;/CellStyle&gt;&lt;/Column2&gt;&lt;Column3 ID="NameEng"&gt;&lt;Caption&gt;Name as English&lt;/Caption&gt;&lt;DataTypeCode&gt;String&lt;/DataTypeCode&gt;&lt;DataMember&gt;NameEng&lt;/DataMember&gt;&lt;Key&gt;NameEng&lt;/Key&gt;&lt;Position&gt;3&lt;/Position&gt;&lt;Width&gt;105&lt;/Width&gt;&lt;/Column3&gt;&lt;Column4 ID="Age"&gt;&lt;Caption&gt;Age&lt;/Caption&gt;&lt;DataTypeCode&gt;Decimal&lt;/DataTypeCode&gt;&lt;DataMember&gt;Age&lt;/DataMember&gt;&lt;Key&gt;Age&lt;/Key&gt;&lt;Position&gt;4&lt;/Position&gt;&lt;Width&gt;32&lt;/Width&gt;&lt;/Column4&gt;&lt;Column5 ID="Sex"&gt;&lt;Caption&gt;Sex&lt;/Caption&gt;&lt;DataTypeCode&gt;String&lt;/DataTypeCode&gt;&lt;DataMember&gt;Sex&lt;/DataMember&gt;&lt;Key&gt;Sex&lt;/Key&gt;&lt;Position&gt;5&lt;/Position&gt;&lt;Width&gt;37&lt;/Width&gt;&lt;/Column5&gt;&lt;Column6 ID="Address"&gt;&lt;Caption&gt;Address&lt;/Caption&gt;&lt;DataTypeCode&gt;String&lt;/DataTypeCode&gt;&lt;DataMember&gt;Address&lt;/DataMember&gt;&lt;Key&gt;Address&lt;/Key&gt;&lt;Position&gt;6&lt;/Position&gt;&lt;Width&gt;579&lt;/Width&gt;&lt;/Column6&gt;&lt;Column7 ID="Occupation"&gt;&lt;Caption&gt;Occupation&lt;/Caption&gt;&lt;DataTypeCode&gt;String&lt;/DataTypeCode&gt;&lt;DataMember&gt;Occupation&lt;/DataMember&gt;&lt;Key&gt;Occupation&lt;/Key&gt;&lt;Position&gt;7&lt;/Position&gt;&lt;Visible&gt;False&lt;/Visible&gt;&lt;Width&gt;70&lt;/Width&gt;&lt;/Column7&gt;&lt;Column8 ID="Telephone"&gt;&lt;Caption&gt;Telephone&lt;/Caption&gt;&lt;DataTypeCode&gt;String&lt;/DataTypeCode&gt;&lt;DataMember&gt;Telephone&lt;/DataMember&gt;&lt;Key&gt;Telephone&lt;/Key&gt;&lt;Position&gt;8&lt;/Position&gt;&lt;Visible&gt;False&lt;/Visible&gt;&lt;Width&gt;35&lt;/Width&gt;&lt;/Column8&gt;&lt;Column9 ID="Province"&gt;&lt;Caption&gt;Province&lt;/Caption&gt;&lt;DataTypeCode&gt;String&lt;/DataTypeCode&gt;&lt;DataMember&gt;Province&lt;/DataMember&gt;&lt;Key&gt;Province&lt;/Key&gt;&lt;Position&gt;9&lt;/Position&gt;&lt;Visible&gt;False&lt;/Visible&gt;&lt;/Column9&gt;&lt;Column10 ID="District"&gt;&lt;Caption&gt;District&lt;/Caption&gt;&lt;DataTypeCode&gt;String&lt;/DataTypeCode&gt;&lt;DataMember&gt;District&lt;/DataMember&gt;&lt;Key&gt;District&lt;/Key&gt;&lt;Position&gt;10&lt;/Position&gt;&lt;Visible&gt;False&lt;/Visible&gt;&lt;/Column10&gt;&lt;Column11 ID="Commune"&gt;&lt;Caption&gt;Commune&lt;/Caption&gt;&lt;DataTypeCode&gt;String&lt;/DataTypeCode&gt;&lt;DataMember&gt;Commune&lt;/DataMember&gt;&lt;Key&gt;Commune&lt;/Key&gt;&lt;Position&gt;11&lt;/Position&gt;&lt;Visible&gt;False&lt;/Visible&gt;&lt;/Column11&gt;&lt;Column12 ID="CreateDate"&gt;&lt;Caption&gt;Date Regis&lt;/Caption&gt;&lt;DataTypeCode&gt;DateTime&lt;/DataTypeCode&gt;&lt;DataMember&gt;CreateDate&lt;/DataMember&gt;&lt;EditType&gt;CalendarCombo&lt;/EditType&gt;&lt;FormatString&gt;d&lt;/FormatString&gt;&lt;Key&gt;CreateDate&lt;/Key&gt;&lt;Position&gt;12&lt;/Position&gt;&lt;Width&gt;118&lt;/Width&gt;&lt;/Column12&gt;&lt;Column13 ID="TIME_CREATE"&gt;&lt;Caption&gt;Time Created&lt;/Caption&gt;&lt;DataTypeCode&gt;String&lt;/DataTypeCode&gt;&lt;DataMember&gt;TIME_CREATE&lt;/DataMember&gt;&lt;Key&gt;TIME_CREATE&lt;/Key&gt;&lt;Position&gt;13&lt;/Position&gt;&lt;/Column13&gt;&lt;/Columns&gt;&lt;AllowEdit&gt;False&lt;/AllowEdit&gt;&lt;ChildTables Collection="true" ElementName="Table"&gt;&lt;Table0 ID="NewOutPatient"&gt;&lt;DataMember&gt;TblPatients_V_Newoutpatient1&lt;/DataMember&gt;&lt;Key&gt;NewOutPatient&lt;/Key&gt;&lt;Columns Collection="true" ElementName="Column"&gt;&lt;Column0 ID="ID"&gt;&lt;Caption&gt;ID&lt;/Caption&gt;&lt;DataTypeCode&gt;Int64&lt;/DataTypeCode&gt;&lt;DataMember&gt;ID&lt;/DataMember&gt;&lt;Key&gt;ID&lt;/Key&gt;&lt;Position&gt;0&lt;/Position&gt;&lt;Visible&gt;False&lt;/Visible&gt;&lt;Width&gt;120&lt;/Width&gt;&lt;/Column0&gt;&lt;Column1 ID="ReceiptNo"&gt;&lt;Caption&gt;ReceiptNo&lt;/Caption&gt;&lt;DataTypeCode&gt;Int64&lt;/DataTypeCode&gt;&lt;DataMember&gt;ReceiptNo&lt;/DataMember&gt;&lt;Key&gt;ReceiptNo&lt;/Key&gt;&lt;Position&gt;1&lt;/Position&gt;&lt;Width&gt;203&lt;/Width&gt;&lt;CellStyle&gt;&lt;Font&gt;Microsoft Sans Serif, 11.25pt&lt;/Font&gt;&lt;/CellStyle&gt;&lt;/Column1&gt;&lt;Column2 ID="PatientNo"&gt;&lt;Caption&gt;PatientNo&lt;/Caption&gt;&lt;DataTypeCode&gt;Decimal&lt;/DataTypeCode&gt;&lt;DataMember&gt;PatientNo&lt;/DataMember&gt;&lt;Key&gt;PatientNo&lt;/Key&gt;&lt;Position&gt;2&lt;/Position&gt;&lt;Visible&gt;False&lt;/Visible&gt;&lt;Width&gt;135&lt;/Width&gt;&lt;CellStyle&gt;&lt;Font&gt;Microsoft Sans Serif, 14.25pt&lt;/Font&gt;&lt;/CellStyle&gt;&lt;/Column2&gt;&lt;Column3 ID="NameKhmer"&gt;&lt;Caption&gt;NameKhmer&lt;/Caption&gt;&lt;DataTypeCode&gt;String&lt;/DataTypeCode&gt;&lt;DataMember&gt;NameKhmer&lt;/DataMember&gt;&lt;Key&gt;NameKhmer&lt;/Key&gt;&lt;Position&gt;3&lt;/Position&gt;&lt;Visible&gt;False&lt;/Visible&gt;&lt;/Column3&gt;&lt;Column4 ID="Age"&gt;&lt;Caption&gt;Age&lt;/Caption&gt;&lt;DataTypeCode&gt;Decimal&lt;/DataTypeCode&gt;&lt;DataMember&gt;Age&lt;/DataMember&gt;&lt;Key&gt;Age&lt;/Key&gt;&lt;Position&gt;4&lt;/Position&gt;&lt;Visible&gt;False&lt;/Visible&gt;&lt;Width&gt;179&lt;/Width&gt;&lt;/Column4&gt;&lt;Column5 ID="Sex"&gt;&lt;Caption&gt;Sex&lt;/Caption&gt;&lt;DataTypeCode&gt;String&lt;/DataTypeCode&gt;&lt;DataMember&gt;Sex&lt;/DataMember&gt;&lt;Key&gt;Sex&lt;/Key&gt;&lt;Position&gt;5&lt;/Position&gt;&lt;Visible&gt;False&lt;/Visible&gt;&lt;Width&gt;216&lt;/Width&gt;&lt;/Column5&gt;&lt;Column6 ID="Address"&gt;&lt;Caption&gt;Address&lt;/Caption&gt;&lt;DataTypeCode&gt;String&lt;/DataTypeCode&gt;&lt;DataMember&gt;Address&lt;/DataMember&gt;&lt;Key&gt;Address&lt;/Key&gt;&lt;Position&gt;6&lt;/Position&gt;&lt;Visible&gt;False&lt;/Visible&gt;&lt;Width&gt;270&lt;/Width&gt;&lt;/Column6&gt;&lt;Column7 ID="TotalRiel"&gt;&lt;Caption&gt;Total Riel&lt;/Caption&gt;&lt;DataTypeCode&gt;Double&lt;/DataTypeCode&gt;&lt;DataMember&gt;TotalRiel&lt;/DataMember&gt;&lt;Key&gt;TotalRiel&lt;/Key&gt;&lt;Position&gt;7&lt;/Position&gt;&lt;Width&gt;192&lt;/Width&gt;&lt;/Column7&gt;&lt;Column8 ID="TotalUSD"&gt;&lt;Caption&gt;Total USD&lt;/Caption&gt;&lt;DataTypeCode&gt;Double&lt;/DataTypeCode&gt;&lt;DataMember&gt;TotalUSD&lt;/DataMember&gt;&lt;Key&gt;TotalUSD&lt;/Key&gt;&lt;Position&gt;8&lt;/Position&gt;&lt;Width&gt;173&lt;/Width&gt;&lt;/Column8&gt;&lt;/Columns&gt;&lt;AllowEdit&gt;False&lt;/AllowEdit&gt;&lt;GroupCondition /&gt;&lt;GroupMode&gt;Collapsed&lt;/GroupMode&gt;&lt;Groups Collection="true" ElementName="Group"&gt;&lt;Group0 ID="Group0"&gt;&lt;ColIndex&gt;2&lt;/ColIndex&gt;&lt;GroupPrefix&gt;New Out-patient Reciept:&lt;/GroupPrefix&gt;&lt;/Group0&gt;&lt;/Groups&gt;&lt;RowHeight&gt;30&lt;/RowHeight&gt;&lt;AlternatingRowFormatStyle&gt;&lt;BackColor&gt;224, 224, 224&lt;/BackColor&gt;&lt;/AlternatingRowFormatStyle&gt;&lt;GroupRowFormatStyle&gt;&lt;ForeColor&gt;Blue&lt;/ForeColor&gt;&lt;Font&gt;Microsoft Sans Serif, 14.25pt&lt;/Font&gt;&lt;/GroupRowFormatStyle&gt;&lt;/Table0&gt;&lt;Table1 ID="OldOutPatient"&gt;&lt;DataMember&gt;TblPatients_V_OldOutpatient&lt;/DataMember&gt;&lt;Key&gt;OldOutPatient&lt;/Key&gt;&lt;Columns Collection="true" ElementName="Column"&gt;&lt;Column0 ID="ReceiptNo"&gt;&lt;Caption&gt;ReceiptNo&lt;/Caption&gt;&lt;DataTypeCode&gt;Int64&lt;/DataTypeCode&gt;&lt;DataMember&gt;ReceiptNo&lt;/DataMember&gt;&lt;Key&gt;ReceiptNo&lt;/Key&gt;&lt;Position&gt;0&lt;/Position&gt;&lt;Width&gt;203&lt;/Width&gt;&lt;CellStyle&gt;&lt;Font&gt;Microsoft Sans Serif, 11.25pt&lt;/Font&gt;&lt;/CellStyle&gt;&lt;/Column0&gt;&lt;Column1 ID="PatientNo"&gt;&lt;Caption&gt;PatientNo&lt;/Caption&gt;&lt;DataTypeCode&gt;Decimal&lt;/DataTypeCode&gt;&lt;DataMember&gt;PatientNo&lt;/DataMember&gt;&lt;Key&gt;PatientNo&lt;/Key&gt;&lt;Position&gt;1&lt;/Position&gt;&lt;Visible&gt;False&lt;/Visible&gt;&lt;Width&gt;135&lt;/Width&gt;&lt;/Column1&gt;&lt;Column2 ID="NameKhmer"&gt;&lt;Caption&gt;NameKhmer&lt;/Caption&gt;&lt;DataTypeCode&gt;String&lt;/DataTypeCode&gt;&lt;DataMember&gt;NameKhmer&lt;/DataMember&gt;&lt;Key&gt;NameKhmer&lt;/Key&gt;&lt;Position&gt;2&lt;/Position&gt;&lt;Visible&gt;False&lt;/Visible&gt;&lt;/Column2&gt;&lt;Column3 ID="Age"&gt;&lt;Caption&gt;Age&lt;/Caption&gt;&lt;DataTypeCode&gt;Decimal&lt;/DataTypeCode&gt;&lt;DataMember&gt;Age&lt;/DataMember&gt;&lt;Key&gt;Age&lt;/Key&gt;&lt;Position&gt;3&lt;/Position&gt;&lt;Visible&gt;False&lt;/Visible&gt;&lt;Width&gt;179&lt;/Width&gt;&lt;/Column3&gt;&lt;Column4 ID="Sex"&gt;&lt;Caption&gt;Sex&lt;/Caption&gt;&lt;DataTypeCode&gt;String&lt;/DataTypeCode&gt;&lt;DataMember&gt;Sex&lt;/DataMember&gt;&lt;Key&gt;Sex&lt;/Key&gt;&lt;Position&gt;4&lt;/Position&gt;&lt;Visible&gt;False&lt;/Visible&gt;&lt;Width&gt;216&lt;/Width&gt;&lt;/Column4&gt;&lt;Column5 ID="Address"&gt;&lt;Caption&gt;Address&lt;/Caption&gt;&lt;DataTypeCode&gt;String&lt;/DataTypeCode&gt;&lt;DataMember&gt;Address&lt;/DataMember&gt;&lt;Key&gt;Address&lt;/Key&gt;&lt;Position&gt;5&lt;/Position&gt;&lt;Visible&gt;False&lt;/Visible&gt;&lt;Width&gt;270&lt;/Width&gt;&lt;/Column5&gt;&lt;Column6 ID="TotalRiel"&gt;&lt;Caption&gt;Total Riel&lt;/Caption&gt;&lt;DataTypeCode&gt;Double&lt;/DataTypeCode&gt;&lt;DataMember&gt;TotalRiel&lt;/DataMember&gt;&lt;Key&gt;TotalRiel&lt;/Key&gt;&lt;Position&gt;6&lt;/Position&gt;&lt;Width&gt;193&lt;/Width&gt;&lt;/Column6&gt;&lt;Column7 ID="TotalUSD"&gt;&lt;Caption&gt;Total USD&lt;/Caption&gt;&lt;DataTypeCode&gt;Double&lt;/DataTypeCode&gt;&lt;DataMember&gt;TotalUSD&lt;/DataMember&gt;&lt;Key&gt;TotalUSD&lt;/Key&gt;&lt;Position&gt;7&lt;/Position&gt;&lt;Width&gt;173&lt;/Width&gt;&lt;/Column7&gt;&lt;/Columns&gt;&lt;AllowEdit&gt;False&lt;/AllowEdit&gt;&lt;GroupCondition /&gt;&lt;Groups Collection="true" ElementName="Group"&gt;&lt;Group0 ID="Group0"&gt;&lt;ColIndex&gt;1&lt;/ColIndex&gt;&lt;GroupPrefix&gt;Old Out-patient Receipt:&lt;/GroupPrefix&gt;&lt;GroupInterval&gt;Value&lt;/GroupInterval&gt;&lt;/Group0&gt;&lt;/Groups&gt;&lt;RowHeight&gt;30&lt;/RowHeight&gt;&lt;GroupByBoxInfoFormatStyle&gt;&lt;ForeColor&gt;Blue&lt;/ForeColor&gt;&lt;Font&gt;Microsoft Sans Serif, 14.25pt&lt;/Font&gt;&lt;/GroupByBoxInfoFormatStyle&gt;&lt;GroupRowFormatStyle&gt;&lt;ForeColor&gt;Blue&lt;/ForeColor&gt;&lt;Font&gt;Microsoft Sans Serif, 14.25pt&lt;/Font&gt;&lt;/GroupRowFormatStyle&gt;&lt;/Table1&gt;&lt;Table2 ID="Inpatient"&gt;&lt;DataMember&gt;TblPatients_V_Inpatient&lt;/DataMember&gt;&lt;Key&gt;Inpatient&lt;/Key&gt;&lt;Columns Collection="true" ElementName="Column"&gt;&lt;Column0 ID="HN"&gt;&lt;Caption&gt;HN&lt;/Caption&gt;&lt;DataTypeCode&gt;Decimal&lt;/DataTypeCode&gt;&lt;DataMember&gt;HN&lt;/DataMember&gt;&lt;Key&gt;HN&lt;/Key&gt;&lt;Position&gt;0&lt;/Position&gt;&lt;Visible&gt;False&lt;/Visible&gt;&lt;Width&gt;135&lt;/Width&gt;&lt;/Column0&gt;&lt;Column1 ID="ReceiptNo"&gt;&lt;Caption&gt;ReceiptNo&lt;/Caption&gt;&lt;DataTypeCode&gt;Int64&lt;/DataTypeCode&gt;&lt;DataMember&gt;ReceiptNo&lt;/DataMember&gt;&lt;Key&gt;ReceiptNo&lt;/Key&gt;&lt;Position&gt;1&lt;/Position&gt;&lt;Width&gt;203&lt;/Width&gt;&lt;/Column1&gt;&lt;Column2 ID="NameKhmer"&gt;&lt;Caption&gt;NameKhmer&lt;/Caption&gt;&lt;DataTypeCode&gt;String&lt;/DataTypeCode&gt;&lt;DataMember&gt;NameKhmer&lt;/DataMember&gt;&lt;Key&gt;NameKhmer&lt;/Key&gt;&lt;Position&gt;2&lt;/Position&gt;&lt;Visible&gt;False&lt;/Visible&gt;&lt;/Column2&gt;&lt;Column3 ID="Age"&gt;&lt;Caption&gt;Age&lt;/Caption&gt;&lt;DataTypeCode&gt;Decimal&lt;/DataTypeCode&gt;&lt;DataMember&gt;Age&lt;/DataMember&gt;&lt;Key&gt;Age&lt;/Key&gt;&lt;Position&gt;3&lt;/Position&gt;&lt;Visible&gt;False&lt;/Visible&gt;&lt;Width&gt;179&lt;/Width&gt;&lt;/Column3&gt;&lt;Column4 ID="Sex"&gt;&lt;Caption&gt;Sex&lt;/Caption&gt;&lt;DataTypeCode&gt;String&lt;/DataTypeCode&gt;&lt;DataMember&gt;Sex&lt;/DataMember&gt;&lt;Key&gt;Sex&lt;/Key&gt;&lt;Position&gt;4&lt;/Position&gt;&lt;Visible&gt;False&lt;/Visible&gt;&lt;Width&gt;216&lt;/Width&gt;&lt;/Column4&gt;&lt;Column5 ID="Address"&gt;&lt;Caption&gt;Address&lt;/Caption&gt;&lt;DataTypeCode&gt;String&lt;/DataTypeCode&gt;&lt;DataMember&gt;Address&lt;/DataMember&gt;&lt;Key&gt;Address&lt;/Key&gt;&lt;Position&gt;5&lt;/Position&gt;&lt;Visible&gt;False&lt;/Visible&gt;&lt;Width&gt;270&lt;/Width&gt;&lt;/Column5&gt;&lt;Column6 ID="TotalRiel"&gt;&lt;Caption&gt;Total Riel&lt;/Caption&gt;&lt;DataTypeCode&gt;Double&lt;/DataTypeCode&gt;&lt;DataMember&gt;TotalRiel&lt;/DataMember&gt;&lt;Key&gt;TotalRiel&lt;/Key&gt;&lt;Position&gt;6&lt;/Position&gt;&lt;Width&gt;193&lt;/Width&gt;&lt;/Column6&gt;&lt;Column7 ID="TotalUSD"&gt;&lt;Caption&gt;Total USD&lt;/Caption&gt;&lt;DataTypeCode&gt;Double&lt;/DataTypeCode&gt;&lt;DataMember&gt;TotalUSD&lt;/DataMember&gt;&lt;Key&gt;TotalUSD&lt;/Key&gt;&lt;Position&gt;7&lt;/Position&gt;&lt;Width&gt;173&lt;/Width&gt;&lt;/Column7&gt;&lt;/Columns&gt;&lt;AllowEdit&gt;False&lt;/AllowEdit&gt;&lt;GroupCondition /&gt;&lt;Groups Collection="true" ElementName="Group"&gt;&lt;Group0 ID="Group0"&gt;&lt;ColIndex&gt;0&lt;/ColIndex&gt;&lt;GroupPrefix&gt;In-pateint Receipt:&lt;/GroupPrefix&gt;&lt;GroupInterval&gt;Value&lt;/GroupInterval&gt;&lt;/Group0&gt;&lt;/Groups&gt;&lt;RowHeight&gt;30&lt;/RowHeight&gt;&lt;GroupByBoxInfoFormatStyle&gt;&lt;ForeColor&gt;Blue&lt;/ForeColor&gt;&lt;Font&gt;Microsoft Sans Serif, 14.25pt&lt;/Font&gt;&lt;/GroupByBoxInfoFormatStyle&gt;&lt;GroupRowFormatStyle&gt;&lt;ForeColor&gt;Blue&lt;/ForeColor&gt;&lt;Font&gt;Microsoft Sans Serif, 14.25pt&lt;/Font&gt;&lt;/GroupRowFormatStyle&gt;&lt;/Table2&gt;&lt;/ChildTables&gt;&lt;GridLineStyle&gt;Solid&lt;/GridLineStyle&gt;&lt;GroupCondition /&gt;&lt;GroupMode&gt;Collapsed&lt;/GroupMode&gt;&lt;GroupRowFormatStyle&gt;&lt;Appearance&gt;Flat&lt;/Appearance&gt;&lt;BackColor&gt;224, 224, 224&lt;/BackColor&gt;&lt;ForeColor&gt;Blue&lt;/ForeColor&gt;&lt;Font&gt;Microsoft Sans Serif, 11.249999pt&lt;/Font&gt;&lt;/GroupRowFormatStyle&gt;&lt;/RootTable&gt;&lt;/GridEXLayoutData&gt;</value>
   </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnFind.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAL2SURBVEhLvZdtaI1xGMaJibB8UNImHxBCvi15iVIrhCKZLyhkVluotXwQH2Ytm3ygvIX4gjKL
+        D8rbKLaaeV1WvixlR2udjsN5X7OO331cnjqd85iz52lXXT3Pdd33/77////zcp4zbiSk0+mpsVhsbyKR
+        uBmPxx8ZOW9OpVLzlOI/aLCSRt/gF2vGBOo4P8X5U45hdG0oFCpWuj+g6CwrTpNGVl0k2wGxKvgJ9kYi
+        kZmyvYOGpynaIZkXTGgKOV22G7K8g4KvYZWkK8g5BLslvYNiA2x3uaQryNsIA5LeQbF+uEnSFeRsgX2S
+        3kGxLrhP0hVc3yPkvZT0DopdhRckXUFOC5fkrKR3sJJnFL0h6QqavrBJSnoHxb7SfLukK7TVryS9g5Xc
+        oeBjCpfKygEvjoXkvCGnSZZ3UHA2DMADsnJArB52B4PB6bL8AUXtvdwmmQXeWhOIfSanUpZ/SCaTcykc
+        hftlOeBSHMPvD4fDM2T5C1bVTINWSQd47TSvlcwgGo0uJf8ofh3Hapu4QoWDBg0Uui3pgMLP4WGdl5D3
+        EA7BDngXvoe/4PVR3QPWlMFXJB3g3Yf1NC3l2AcfcD5H4QxsB/A74VvuiWmy/w2+MBYw4BrFIhRYItsB
+        fhmTWkbOE9hK4fEKZUE/nbb6c7JyYXcqCZuhbZtt0z2e1UUK54DGy8kZslXLyguu9VryUnm/VgiuIdgD
+        f8KLrHKxQq6gYTW57ZKusN0gL8hEs39mKVBDwGbeVMg3FGNOwpw7Ph/I66H+LslM0xWYgxwrZP03GFcJ
+        30m6ghVPpL7dK+tkZQa3wMuSBYEbcD5jh0e6LORstcZMYLKsjBnAbON4qRByvc5QqIjjLXQn53kfF2qX
+        kGNfMydk/QFGA8HGUbLMXpnU+AA/olep7N8nxD6LrOkwzXcr5B/szUTx8zAFB2Av/A5/wONMaCfHQXhQ
+        Q/wFq7S/O+tptIPHczV6kkK25dtonCK+R9bYgeYV1hxukDV2YMXloVCo+Dc/bjzG79DT8gAAAABJRU5E
+        rkJggg==
+</value>
+  </data>
+  <metadata name="StatusStripPateint.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>350, 23</value>
+  </metadata>
+  <metadata name="ToolStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>396, 92</value>
+  </metadata>
+  <metadata name="ContexMenuPatientReciept.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 53</value>
+  </metadata>
   <data name="GridConsult_DesignTimeLayout.LayoutString" xml:space="preserve">
     <value>&lt;GridEXLayoutData&gt;&lt;RootTable&gt;&lt;Columns Collection="true" ElementName="Column"&gt;&lt;Column0 ID="CONSULING_ID"&gt;&lt;Caption&gt;ID&lt;/Caption&gt;&lt;DataMember&gt;CONSULING_ID&lt;/DataMember&gt;&lt;Key&gt;CONSULING_ID&lt;/Key&gt;&lt;Position&gt;0&lt;/Position&gt;&lt;Width&gt;74&lt;/Width&gt;&lt;/Column0&gt;&lt;Column1 ID="CONSULT_FOR"&gt;&lt;Caption&gt;Consult for&lt;/Caption&gt;&lt;DataMember&gt;CONSULT_FOR&lt;/DataMember&gt;&lt;Key&gt;CONSULT_FOR&lt;/Key&gt;&lt;Position&gt;1&lt;/Position&gt;&lt;Width&gt;117&lt;/Width&gt;&lt;/Column1&gt;&lt;Column2 ID="DONATE_TYPE"&gt;&lt;Caption&gt;Service For&lt;/Caption&gt;&lt;DataMember&gt;DONATE_TYPE&lt;/DataMember&gt;&lt;Key&gt;DONATE_TYPE&lt;/Key&gt;&lt;Position&gt;2&lt;/Position&gt;&lt;Width&gt;153&lt;/Width&gt;&lt;/Column2&gt;&lt;Column3 ID="CONSULING_DATE"&gt;&lt;Caption&gt;Date Consult&lt;/Caption&gt;&lt;DataMember&gt;CONSULING_DATE&lt;/DataMember&gt;&lt;FormatString&gt;dd-MM-yyyy&lt;/FormatString&gt;&lt;Key&gt;CONSULING_DATE&lt;/Key&gt;&lt;Position&gt;3&lt;/Position&gt;&lt;Width&gt;151&lt;/Width&gt;&lt;/Column3&gt;&lt;/Columns&gt;&lt;GroupCondition /&gt;&lt;/RootTable&gt;&lt;/GridEXLayoutData&gt;</value>
   </data>
@@ -300,13 +329,6 @@
   <metadata name="Telephone.UserAddedColumn" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="StatusStripPateint.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>350, 23</value>
-  </metadata>
-  <metadata name="ToolStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>396, 92</value>
-  </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="BtnMoPoTsyo.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -420,7 +442,7 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj0yLjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAADC
-        CAAAAk1TRnQBSQFMAgEBAgEAAaQBAwGkAQMBEAEAARABAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
+        CAAAAk1TRnQBSQFMAgEBAgEAAawBAwGsAQMBEAEAARABAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
         AwABQAMAARADAAEBAQABCAYAAQQYAAGAAgABgAMAAoABAAGAAwABgAEAAYABAAKAAgADwAEAAcAB3AHA
         AQAB8AHKAaYBAAEzBQABMwEAATMBAAEzAQACMwIAAxYBAAMcAQADIgEAAykBAANVAQADTQEAA0IBAAM5
         AQABgAF8Af8BAAJQAf8BAAGTAQAB1gEAAf8B7AHMAQABxgHWAe8BAAHWAucBAAGQAakBrQIAAf8BMwMA
@@ -525,19 +547,148 @@
   </metadata>
   <data name="BtnScreeningRegist.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        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
+        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
+        deUAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="DropDownCommand1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACMAAAAjCAYAAAAe2bNZAAAABGdBTUEAALGPC/xhBQAAAxZJREFUWEft
+        l0toE0EYx+Pj4gMf+Lz5wAfqSRChUMNkUyKCHgQLIqIIJZnZtGrxhQehKj140IsIKnjpRfAi9aAH9SJe
+        hGJB8OArmdmERgsqFG2ltY3fbD5qdvJ1d7NNexD/8CNk9//9v83uzM4k9l8zoa6u8twU/7i6RaiN+lN/
+        x1Mzr2RGbWe2OsWEepQQcjAh1ARQrkJ//+Ke5+pk3JbbsLQxYl3l+QlbHYMm/VVNQ2MJ9VrXt7aW52Fk
+        NCVEbisE9pkNIvIqnilsxuj6ZAnnBAT8MAKny5C+S9ginBJcXiKCGslFbOUvizsCzObAbDQTTMg2bEmL
+        ZZxdYPxtFPrRb3F5MJktbrF4YTcTzmM4Nm54pmIszuVObO2VO2vqmzE/mZ1fi+WTgrHGCe9U9JGzrM6Q
+        MrxHnmGpR/s6Piwh/VNAPi6LqzeU2YfnWOoRO51fRnj96MPSiphd2ESYgihiuUfJjGwivL4wnl+P5XAx
+        Qh2nTAG8xHKP9IuN8PoC/Y9iuX7Tym7KFMB3fUcxYlIQfIHw+mM7V7DcfcndIk1B2M49jHDV1FlYAMe/
+        1vgCYLZzEyPci7lBmUIwHm+XGzAGJoFsJzwhkNcxIuKtRaq3CRB6jvIEYqvzGAG/yHZSpMmfYT3WMMJV
+        si23xhLyIZwL+xauwJ29GBGLpc5+XgQHw67QJcblmWahlmN5jaxsbp2+9eD9ZdRSDB9IDyzE0orgYI9h
+        oni7p6O0CksCBbvCZqgZNTJMetD+V4ms2gEnfG8v485htIcW1D0wc6oY1X3R6pWeYkRBNUPAtzoZAags
+        vb5dw9a10mMnwhoVCdgbv68ZK6Yqg08VzeIG43jWIz9pI8yGd0TI9OGqoDdj2CqcWtKfluLOjQ6NRi9c
+        yApsUZ9g7ekkAqOQr2yiynMwun7Bo3pCBIdlDJaZF5BxRG9pMTKacCBTm/MxaKDXoMtAL/BU4y4DXN2F
+        R3uVcbWf2YOLMWr6gvD70MS8kBK8pJJomR1ZWScOjav/O43AynqbpQdWomX2hI/hDnx2w/pyyG9R/EcV
+        i/0BZebb26jdp7EAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="BtnFindPatient.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAI0SURBVEhL7ZXPS1VBHMVf/ggR3NhGxCwI+xOCKFpIu/6BavW0Nm3atLEgbBMFQbukP6CNKwls
+        UVhRFLjRQCglXUUL663e72sRt8+5HELFvDNPnhs9cJj3zsz5njtzZ+YWDhGLNE17ms3miVqtNsDvI5bb
+        g0ajMQQf1uv1LzDdxAS+hOM8RJeH7x0U66DoXdiACvoDl3iIOWb8nt/fradoK/Csra2D0G4KzrhohfYe
+        HHR3Bi01fefQZzUOJvy/7O7WQJEpFaPQcpIkpyz/F4y9Bn85vLWZV6vVUYXCb3DLLHcDy1+Uj/Yrq3HU
+        cjgwf3TwJUvBwJO9HnjDUhg4KidtXLIUBZb5jPy0by2FAZPelYwPLEVBGw7/OvytDWo5Hxi0e/Weipai
+        gfedarB6w5byoZnKRNvyscCvSyXlNJy2lA8Cb3rGtyxFA/9n1SiVSn2W8sHynJcJvrAUBXyDUDfcmqUw
+        sCE6Mf2EGyEXx3bgy/YIK/fIUjhY5gmZ4SwP0mE5FzzoCJ4qbBJ83HI4COvl9lpVOO2TkHCChhifvVs4
+        aTkO2hSYF1xEfKXZuHsLeCh9KK4w5ofHPo9ZpX8ol8v9mLNQCs7TZjOHG1DH5A6v4irtddrHjFl2v/iU
+        0Pg7ulKpHMO8qCIUfKMlFwm4jVZy8Z04z5iLLhOHnULdlYH/nRy1C/TpnN+Hk4SN6W73kHg49JNDX28P
+        bQsOTqjAO5pWKPwQda/uFfpsMdNn+xp6iPaiUPgLxvu54SVtP94AAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="BtnUpdatePatient.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAFqSURBVEhL7ZU7TsNAGISN6KDiIaCiQiBaXOYKOQqcBopQxDSQC6SGA0CgpM8J8NuuWGasiWQT
+        iNGKdQTKSCP/O7v7f1pb8np/TlEUbYdhuKVhN0qSZC/LshB+i+N4V7F7EUaowDuKu9FSXjWV5/kFfK5h
+        NyrL8hiv2dCojxS7lzFmHdAbOGCt+B8Lp9zEaV/gZ9Qbit0LwDO4+sasFbsXYH4N7Ct2rxVYsXutwIp/
+        X7j6TgCYwmP+MAgTtAIrG8NT/se1rV242E/ZoCiKQ0UNYa4PVyDcSPdwrzbuwQ+zMdzXtobYG3M+WYqq
+        xhNtGihqCCdaw9yV1hD2OKvhp1p9ybXa1hDmBlozUdQOpj7Dv/C3UArzdmBqAXwhlMIaezBFQJqmd1pv
+        UN+2QSn21h47MEUQvvMI0NFPoBR7i2EPthF7izEHfodf4WtHZu85cKDQpXkwPgNhPQ/fah/BEObJXXoI
+        1oGwy5DnfQCbQ28QlM+DmQAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="BtnViewSupInvoice.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAAYlJREFUSEvt
+        lb9LxDAUx+Oqk3+Mm0MbxU3BQcRVRJrOTuIsCs6Cg5OLIIiLP+BWRxEcBAfBJoMIgqcHp+CJ9X2bHK3p
+        HfQ4Eg/OB5/rvReST5O0DRu+mFl7GguFWg9jeRoKWXNJINQZF8kGnIxH8oiKqWcOGf28m+SC2HMMHHA1
+        ITZ3oebM6jsLONq+oRbLV+KFZ1f1xYX6QN4DDQL9mla9CBwlsVdycSS3abYL9J7t6lrS0Hk1qP+J6XfX
+        qR3A0faV9jiMkmVTe842pmLQwFum36UplaLbHm/qO3M4Y3IY1yDssZDfhf9OCKLcMQh7/HfiK7rW6LS6
+        1XnyibwHHoiUjte6VS+QOWyxX4pifSzGap+W7ZpmfJ7lFQmEPKDP5Q2P1XGndhDoMW1x/4fEVKwm6Aam
+        bVBHe7c97ktMs1nJxyqj2x2IeZTM0zitfLxftHS7AzFidvVxdFLIcRvU0W6L30xyT+BxdwkccNUZPYU7
+        JvEGPja0AOkIyZeQ+CCI1SKcWPr/8BCM/QDfERbkWKOgngAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="DropDownCommand2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAAiFJREFUSEvt
+        lj9I3FAcx1NKB9uhQx3ERfeOHUrp8pK763ZiodLd4cwfSxHEwU7S3V3cCxac6lIoHTqKm4M6qHnvDikt
+        FDxbREXP74u/S5OXd0nIXdoO/cGHvPv9++Ylv3t3Rr9mubxuOv430+GdnLSZ43tUXtzQaEtpnIc2lRc3
+        NNlVmuaCyosbmvxTwpfgo+XwD7ieRvwhVF7c0CQhzFzxksKG6TUfw3em5lC4uKGJIuzvUSg0+DfiOeXs
+        WBhG5xaFA2MO/6zklPWOxWJXXD52+K7UnKC4H6vM8Jpp+8todq40b4F9xRdC5XqrN47umq6YQ+N3SH6v
+        RYp6/KFl+xY+y2nWCqmQhN6QkBiKHvxk9uG46fI1TUwLSSQt2C3tgIZDv2Mcf6Bj2cJhLn8t13kgmaRV
+        vNaDMNHmT8mdMOxyJ8hx+QKGagJreXZ32QYXoFxhcsWs2ti/jxNsNexFGHC+wiJ4XCVwhpv+9Gz+6z2s
+        Y79icoBOoo4ywLt/wRzxNuqTwrGkUrD96ZsZ+O1Thb/jpHmD766LSf6ixLLoXdtDeKULDoHnNBM46g5H
+        orEsUmsxnAlh3F21i+UdjFGt8aixdScayyKttjYrRtMfdeQrwRpHw7FYFmm12e9YrE9NdW4HxY6YjMey
+        SKnNMVySX+CH4suLvjan8OD5Lwz+qvAfOatxXYr42ob8AcfiOOIcJPKPxMaTueYQDpJN8h0zm89cA2X7
+        Rw9vIC0nAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="DropDownCommand6.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAAktJREFUSEu1
+        lr1rFFEUxV/8BAtbxVpbFaKFTZgPRC1SDjY2guzOvETtRAtlwSb+ATaCsggi9vEfUDsDYmEVTea9FVER
+        S0GEjPdOTpjdN3c3b7I7B37Fzj33XHbnzd1RTRUumTjU5nWYmV9gNUrzCOXZK9CDy0Fm3tCgQqKspfYS
+        7NPpys31w4E2tyn4sztoAuvcw72I8VfY3TgTpuYRhVgntAk2ysxKnA1OI7auxc63I/RTXSNzn/g61Dwr
+        OLPPM3gWxvL92zzrGFuDZ2GsUgvdwSnJ1AZ0SE9irFIXl+0JydQG9I2PY2x5eo9Kph2i1Nylg5JMgg7j
+        rVDbx+S/5/YPM3KPWXTxt2saorMrOr8fZpYPJ3+WMgpaPN8xrhJdfC+at1lriJTBvMO4SlGWvxSMJbB4
+        S8oo0fYpLJXKeySZCVi8JWUwUWavw1KJCvOucQdYvCVlMPzYwlIp6BUHqCgeMFi8JWUQm0oVc7CMKszy
+        Z0LDTAbTI7eCcl2RNotSE8rekjKCrj2Hcl1JUuwn0xe3CWVvuf3EW5TGi57nO7XGlJeDszDG84AY6efN
+        hvjx2l6f+U+3eQo+9HrFPsRP1qRnujFNXofmO2sH6Vt/FIOaoM0rRPor1vY8Nf+rhfnzI76xcQxxzTTF
+        T/437uYXELMXFXMU8twJ3Y0t2skpAvYuPpH0P/tCGCBCL/fLaJ1eSfLpEIWuukNcgsw+RMvsxFuN9y0N
+        2HIHEn8Cba/C2o7w/j38L5ZHS3YB5XbFb4o0sE+n/glvOlxuIKX+A4y8w0n3ODx9AAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="BtnReferToOtherHospitalV1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAAc1JREFUSEvt
+        lslKw1AUhltBUFFx2jkgDls3XWlLuUkL4qJv4EIqXJNIQX0AKa58lroSd+LGfXXhAEKR9Ca1qKB7tTSe
+        xIPEa9Ihva0i/vBRkt7z/8k5mUI/qsVtszdC89242TmlaLlPUpkuq2w/SW+ncHdnBMGHgAVU4ACOiMqS
+        +Fd7JSnFNAZ/AgdwDr/UHgUuE6/EZmkUQt7cwS4e7DHEtbtJXC5WksJOPULdvAI54WOQVGOHC6pFHhAz
+        Bpkas5x5fTR2b4+BZEoTaBNMssIuPAPq8wLkYFxRtGpOkmbscYZBcMZA1vQetK0vKIi4DFoDxyAr5jja
+        15IVhiLjm0lrOGOQteIShniLaI/9MZUNi4Zs6UMY8csEbSm42iSCKtHYsayxVDZrdWHMVyVUc8GjMChP
+        9sWVVNkM2vsLFu9yxUG4BKh9raBtfcED4IwzaZQKkIOWxtCqcRFFn+bMGuHZuVfhcYs2zQsMMh7GflwB
+        NJq+GcDy4II2n3DmPB/tdF6LVhjLWtPyujkCpn4fAk47iWbO4XJxgrNY9Qi8BsS000/wOjzAsCqcnfOx
+        53uzi5L9+oL5mnY74xvmPO5uv1YyhUFCy2O4+a+/pFDoHRYPABqnjawBAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="ButtonCommand3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAA/hJREFUSEvt
+        VltoFVcUTbVa+lCQlr61vvrjoxSEtmlqODM3ie+KjRcr5ivIvTNzk5ZASpu2tmmxAX+0lAbB/Cg+PhQV
+        QQrtT4v9TYt+BASt95wzNzY0DdH0ERqa3K59Zp/7yM2EGMQfu2AzM2vvs87MPvvsOVX/Y6ZwfZUUgdrJ
+        j/cGtenwRcdXediEm9IrmL77qGm+ukD4MoMv/A6TfeVk1GqeOG/uPbnP8fX3TqDbKJaHzR7rUr3zhKc+
+        xQS3ChP5+mxti1xmn4WXXYqJu4t+NSR89b7ozD/IMneGOl8th0hviSDZdTeQ7Ym9N56yXIN3/clEoNK4
+        15Zj6xVBuJLlZoZEWq3CwH4rgkL62fXlpkQm9zjSGVA6rU8Evz2G6wXXU1+6QXY37vusD5ajemDZ6WHE
+        PRUWBnvqAKUcKX4Tz8NOoAaSyfxc6+/szM/By5zC/SjsYjLZNx/XLuuHZd/w1SKWjwetoR0kAv0RcQk/
+        fAnPY7B/YB1RnJlolO9zprgwhlIfcfI9eo5MnyUuFigUYYOR3uNME08FdJBegCmabAimC/eB+gnXsU2t
+        1xaaAADPx2BGL+Hr9UxXQvj6Gw78y755HFwvfEW8o9e4Gf0xXmqAx33CbgPSAPc3+VAj55kuBxcJpRLr
+        KruZroBI3XwiSqO8YmKN6cvCk3s4pAzIXA/HjW5L3XyE6SJQ+hsLQp7ewHQZuNoHSQR2Gi/Y7GZuvMDu
+        KeEGapvVdQPdwHQRcKRswPqUfIbpMqAxHIJ/AmvdhMaSpnVnVyxEa+55q4vut5fpIpCuD20AbQmmy4CW
+        +W4Uk0tx+/yWXbFAsT1kdbHXP2C6CNfXng0QQfZppstAIvjqS4jpomLBdjvHrlhQ9gq6yBLTReCLqUGY
+        gERaVjNdgWjy7GuIP4ktdALrthsv+jK7K4AGVFMy8Vami6hv0c/COR4FyS+YjoWpVk8dwcT7MWa4dP+W
+        gjofTzwel0kqsB85SFa3hQ8zPSVcT/tOS9iI2KOw27TN2FVAQ/vAo/Bxz5c/MF0JrF9TFGTsM6YrQPsR
+        qf4aMb/Sno87DKCHf271aEmYnhpcPBQ8DtFGpssAXwdSeLS0hU6G68kdRsNoTfO1FvxD+CMaoP6c6lxF
+        fRf84Wh75B9gugAno7dj7AhrjNS2hGvZNT242/zLA+mH0YPe/By7DdDF6tHt9tBpg6kqc0CITiMTPBYa
+        cgu7ZwYagIG/swDZKP2xnEC+Rd2Imgz9u7FPt1APMD5kqCR+0EnLzSx3Z6hL/bIEAhdKxGZk1Fxqg/7F
+        LDN74Jz1OtbzDESHJ09SYuQ7PV3zmTXo5OhkwleFp9+moywZ2uYuw832VHmfoKrqP1JFCNzrKwRZAAAA
+        AElFTkSuQmCC
 </value>
   </data>
   <data name="BtnNew.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -612,77 +763,6 @@
         8xD57QY05NzSIL7mIK7dp8GwbSeLa/wvpFL/AGKRvAPTIlfmAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="DropDownCommand1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACMAAAAjCAYAAAAe2bNZAAAABGdBTUEAALGPC/xhBQAAAxZJREFUWEft
-        l0toE0EYx+Pj4gMf+Lz5wAfqSRChUMNkUyKCHgQLIqIIJZnZtGrxhQehKj140IsIKnjpRfAi9aAH9SJe
-        hGJB8OArmdmERgsqFG2ltY3fbD5qdvJ1d7NNexD/8CNk9//9v83uzM4k9l8zoa6u8twU/7i6RaiN+lN/
-        x1Mzr2RGbWe2OsWEepQQcjAh1ARQrkJ//+Ke5+pk3JbbsLQxYl3l+QlbHYMm/VVNQ2MJ9VrXt7aW52Fk
-        NCVEbisE9pkNIvIqnilsxuj6ZAnnBAT8MAKny5C+S9ginBJcXiKCGslFbOUvizsCzObAbDQTTMg2bEmL
-        ZZxdYPxtFPrRb3F5MJktbrF4YTcTzmM4Nm54pmIszuVObO2VO2vqmzE/mZ1fi+WTgrHGCe9U9JGzrM6Q
-        MrxHnmGpR/s6Piwh/VNAPi6LqzeU2YfnWOoRO51fRnj96MPSiphd2ESYgihiuUfJjGwivL4wnl+P5XAx
-        Qh2nTAG8xHKP9IuN8PoC/Y9iuX7Tym7KFMB3fUcxYlIQfIHw+mM7V7DcfcndIk1B2M49jHDV1FlYAMe/
-        1vgCYLZzEyPci7lBmUIwHm+XGzAGJoFsJzwhkNcxIuKtRaq3CRB6jvIEYqvzGAG/yHZSpMmfYT3WMMJV
-        si23xhLyIZwL+xauwJ29GBGLpc5+XgQHw67QJcblmWahlmN5jaxsbp2+9eD9ZdRSDB9IDyzE0orgYI9h
-        oni7p6O0CksCBbvCZqgZNTJMetD+V4ms2gEnfG8v485htIcW1D0wc6oY1X3R6pWeYkRBNUPAtzoZAags
-        vb5dw9a10mMnwhoVCdgbv68ZK6Yqg08VzeIG43jWIz9pI8yGd0TI9OGqoDdj2CqcWtKfluLOjQ6NRi9c
-        yApsUZ9g7ekkAqOQr2yiynMwun7Bo3pCBIdlDJaZF5BxRG9pMTKacCBTm/MxaKDXoMtAL/BU4y4DXN2F
-        R3uVcbWf2YOLMWr6gvD70MS8kBK8pJJomR1ZWScOjav/O43AynqbpQdWomX2hI/hDnx2w/pyyG9R/EcV
-        i/0BZebb26jdp7EAAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="BtnFindPatient.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACMAAAAjCAYAAAAe2bNZAAAABGdBTUEAALGPC/xhBQAAAoZJREFUWEft
-        mD1oFEEYhte/xh8sbARrGxVErEQMuxsJClpYnI2VKe5mN4Ugdv5wisFSjfgThfTGwkoQrFWQU0QsbGJm
-        5iQECQkKYgST8/1mR1xmZ9a5C65XZOBhZ+fdnX33u2+/2dugL1uc8KNRwieiRExWB58I0/YRbSFrNACx
-        87+IUzmkrZAZect2UIWMaStBgJ1xQ6yacW1l1YzJiszMhal4ge2zMBGvsP2e03qhJzMtKgFhs7Nen6pa
-        mH7eHCfyNHRpHO9LV2aWY8avNpudtQOM70M07saJeIPxKfAcUboWs/aOg8MftsDs49x5vvibwaN/Pgg6
-        a6JUXsH+kqlrvkVMnMyOEw8tehl+Zign1AUSccnULCyFTBwbHPm0Df0FQyvD0wxN3hC70P9pag5mhs7N
-        btJRtOk2vMws7K+3NlCOWDQnKplHxG6b5sDHjHyZ6fKtXXfAxH1KdvR/FDQ7XpF5qvVpY7yUmIlH+rw5
-        U3PgYYaJ16TrAlfUHcDMDapF6PvmmVdkFg/Xp7Zie9kYL0UlfSIP2TQHXmYQHT4cptPb0f9a0CwgKu9q
-        tc461Jp7Nt2Bpxnky/H6zEZU3Br6roL3my8hk3t0KVg0tDK8zaiEpLvFknACdzxrOwa8jxof96r5Upla
-        9DL8zShS8YQqK0UpZPwUIvUA45MYv0mvrepRRm1Bsp9RczJ+sTCHmy7NZMxjIbww0Gjv1KcG9NQMNvgB
-        vFzfga7rCh8lrQtDPZnJQxeeB8u5sRxdGVqxmb+CZeR6Nr88a9Nz/HszhKehasxk8FG9VrWKmqJKM0Tp
-        Ylu1mVJWzbj4Y6av/mv31VcIaur7DOO3IdJPVg24XuH7TH+0IPgFXLYx21EJyG8AAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="BtnUpdatePatient.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACMAAAAjCAYAAAAe2bNZAAAABGdBTUEAALGPC/xhBQAABFVJREFUWEet
-        V1uIHEUU3UhUooIvCOiH+ARF9MMgmpiM3T2bDYFEfC3ij1GESXfPiuYhKopufhQ/FCGIgmBCFEFBJQp+
-        RERRkKj7o0ZBkzBV1asECQqiebjJjuf2np7unq7p6ZnZA4fduffcW++q22ODojalrvBCtd0J9T4v0L+6
-        gf4zofwWu+OrbY7fupwhi432EjdUdzuB/haNtgfgN05g7mSS0YGRrnYDtd/S0Bx4EPwM/JR/D4GnwJwW
-        Ob7GbK5iyuEgy9GV/DS4FzO0ad3D0UWU5VBvzl7shOZBaD6iPomdc0OzhbLqWNGYOdMN9duZRPNeoD50
-        m/p6SiqhNhXdgNi9mTzCPc50eykl/YGA3Zngf11f3UPXUMAy3RvnYU7P17voKocXGD8JAv+qb1Yr6RoJ
-        rq9vk3yZ3A267HDC6GqITlJ8ygvNBF2LAiz1esnL/CfGA30lXUVgn7xLYVs2L82LCizRk0kbWP53aM6j
-        HpqbIZiPOxLon6tssontR871mqYG/WQ9MGvkN109ER+OQP3CDs17TXUTXSlwFF+jADR30GzF+kcOno09
-        8CK0x9OYmMexWV8QP6VWyAXaifHVqzQvYHq6fQaW6AgFRm5cugqYnPzpLIzsi04yK83nomOIBbjRfR1R
-        /1uuPS5RnEhmiGYrsAmfSbR9+CxDrMDSvpHRrqBZNpWaSh29l6hrBvvxqOgZWkB2qTzfBDTHO/yVxFHb
-        HF1DcwFyAye6Siy5sZ1G69pUq16iGY1kbtzVgb6Q5gIwg16aoAKbus7QAuQNS7XqTZrjzuxJHOONw+fT
-        XEB2b1ViM7qFoQXIoDPa3TTLzWt2Jg505jKaC1jTUJdkEvTl2ilzKUMLkO2QajPLhBP0ROLA/+M0WwHN
-        j2mSUh5giBXy1CRaaZ9mNOCbdZkkT7GOaYHpkSO8UE9ntGXcwRArHF8/l2hzE+A81roAxv/EIU8B/i48
-        C5b3iVqpebsbz/Ko6BhiBZYmqR7nnPCP82LjhH9oOcqGh0AprnNJez2WUnB3a3MMTUipFfUgujHRokb+
-        hGbpoXk/lyjD3i83rvMecTgMH1DUE9C9l+hxXdxFMxyhfgDG3IOHSzCuymQGKCuA1VsnJiE6cx8lVmCA
-        q6DrXR3ItxCcUuF3JTdbKSkAr+3LRb1QPU6JFdA839Hi4NCch7wjGO2jEP3TEXd1RkYhtQt8X6WaAk9D
-        87FMv9QuDO1APu5kKcGnaeoNKQXRqX1IesINotsXrO0luBfuR+d0V8P9OItju6nswRwIXsNchYRfWhqq
-        zlB/VwvVdUw5HORtQbJ+d0pV/u0ErVuZejBsbPx+DhLMdiUclWbllmgZm6gO7Bt8Y1sTjkTJyyaqQ6bU
-        lmxUDrVUUuHj8vvBlnB4qu/LC/USSAGEkySfMMeKiQfiMZyo18uqyMqQjzM8+RukfMCF9hZGKJ8qM6DU
-        NoczPADOyFWwoNM7ELOx8yqXYmzsf/pw32Maih3XAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="BtnViewSupInvoice.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAAYlJREFUSEvt
-        lb9LxDAUx+Oqk3+Mm0MbxU3BQcRVRJrOTuIsCs6Cg5OLIIiLP+BWRxEcBAfBJoMIgqcHp+CJ9X2bHK3p
-        HfQ4Eg/OB5/rvReST5O0DRu+mFl7GguFWg9jeRoKWXNJINQZF8kGnIxH8oiKqWcOGf28m+SC2HMMHHA1
-        ITZ3oebM6jsLONq+oRbLV+KFZ1f1xYX6QN4DDQL9mla9CBwlsVdycSS3abYL9J7t6lrS0Hk1qP+J6XfX
-        qR3A0faV9jiMkmVTe842pmLQwFum36UplaLbHm/qO3M4Y3IY1yDssZDfhf9OCKLcMQh7/HfiK7rW6LS6
-        1XnyibwHHoiUjte6VS+QOWyxX4pifSzGap+W7ZpmfJ7lFQmEPKDP5Q2P1XGndhDoMW1x/4fEVKwm6Aam
-        bVBHe7c97ktMs1nJxyqj2x2IeZTM0zitfLxftHS7AzFidvVxdFLIcRvU0W6L30xyT+BxdwkccNUZPYU7
-        JvEGPja0AOkIyZeQ+CCI1SKcWPr/8BCM/QDfERbkWKOgngAAAABJRU5ErkJggg==
-</value>
-  </data>
   <data name="BtnPrintNewOutPatientV1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAAVtJREFUSEtj
@@ -714,21 +794,6 @@
         gtikYJAeYizGVVaDLXYrecENZGNtzCFju6wHmgwM/xlBemAAKI7LYnBZjat2AlvsmPmoCoscNvzTNu2B
         JNhGKACKYbcYVDuB6mMgoxMoAA8qp8yH10A0VD/ZANksJLM7wPUxNgBTBGI7ZT5KBLJhFTpRGNieTkA3
         hyiArMEh67EK0JWhpGCQHnRziAIka8AByLJ4ILswmKmRPIzFYgYGAK27eAAyXWLrAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="DropDownCommand2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAAiFJREFUSEvt
-        lj9I3FAcx1NKB9uhQx3ERfeOHUrp8pK763ZiodLd4cwfSxHEwU7S3V3cCxac6lIoHTqKm4M6qHnvDikt
-        FDxbREXP74u/S5OXd0nIXdoO/cGHvPv9++Ylv3t3Rr9mubxuOv430+GdnLSZ43tUXtzQaEtpnIc2lRc3
-        NNlVmuaCyosbmvxTwpfgo+XwD7ieRvwhVF7c0CQhzFzxksKG6TUfw3em5lC4uKGJIuzvUSg0+DfiOeXs
-        WBhG5xaFA2MO/6zklPWOxWJXXD52+K7UnKC4H6vM8Jpp+8todq40b4F9xRdC5XqrN47umq6YQ+N3SH6v
-        RYp6/KFl+xY+y2nWCqmQhN6QkBiKHvxk9uG46fI1TUwLSSQt2C3tgIZDv2Mcf6Bj2cJhLn8t13kgmaRV
-        vNaDMNHmT8mdMOxyJ8hx+QKGagJreXZ32QYXoFxhcsWs2ti/jxNsNexFGHC+wiJ4XCVwhpv+9Gz+6z2s
-        Y79icoBOoo4ywLt/wRzxNuqTwrGkUrD96ZsZ+O1Thb/jpHmD766LSf6ixLLoXdtDeKULDoHnNBM46g5H
-        orEsUmsxnAlh3F21i+UdjFGt8aixdScayyKttjYrRtMfdeQrwRpHw7FYFmm12e9YrE9NdW4HxY6YjMey
-        SKnNMVySX+CH4suLvjan8OD5Lwz+qvAfOatxXYr42ob8AcfiOOIcJPKPxMaTueYQDpJN8h0zm89cA2X7
-        Rw9vIC0nAAAAAElFTkSuQmCC
 </value>
   </data>
   <data name="BtnPrintRegistrationFormAgainV1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -770,61 +835,10 @@
         rkJggg==
 </value>
   </data>
-  <data name="DropDownCommand6.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAAktJREFUSEu1
-        lr1rFFEUxV/8BAtbxVpbFaKFTZgPRC1SDjY2guzOvETtRAtlwSb+ATaCsggi9vEfUDsDYmEVTea9FVER
-        S0GEjPdOTpjdN3c3b7I7B37Fzj33XHbnzd1RTRUumTjU5nWYmV9gNUrzCOXZK9CDy0Fm3tCgQqKspfYS
-        7NPpys31w4E2tyn4sztoAuvcw72I8VfY3TgTpuYRhVgntAk2ysxKnA1OI7auxc63I/RTXSNzn/g61Dwr
-        OLPPM3gWxvL92zzrGFuDZ2GsUgvdwSnJ1AZ0SE9irFIXl+0JydQG9I2PY2x5eo9Kph2i1Nylg5JMgg7j
-        rVDbx+S/5/YPM3KPWXTxt2saorMrOr8fZpYPJ3+WMgpaPN8xrhJdfC+at1lriJTBvMO4SlGWvxSMJbB4
-        S8oo0fYpLJXKeySZCVi8JWUwUWavw1KJCvOucQdYvCVlMPzYwlIp6BUHqCgeMFi8JWUQm0oVc7CMKszy
-        Z0LDTAbTI7eCcl2RNotSE8rekjKCrj2Hcl1JUuwn0xe3CWVvuf3EW5TGi57nO7XGlJeDszDG84AY6efN
-        hvjx2l6f+U+3eQo+9HrFPsRP1qRnujFNXofmO2sH6Vt/FIOaoM0rRPor1vY8Nf+rhfnzI76xcQxxzTTF
-        T/437uYXELMXFXMU8twJ3Y0t2skpAvYuPpH0P/tCGCBCL/fLaJ1eSfLpEIWuukNcgsw+RMvsxFuN9y0N
-        2HIHEn8Cba/C2o7w/j38L5ZHS3YB5XbFb4o0sE+n/glvOlxuIKX+A4y8w0n3ODx9AAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="BtnReferToOtherHospitalV1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAAc1JREFUSEvt
-        lslKw1AUhltBUFFx2jkgDls3XWlLuUkL4qJv4EIqXJNIQX0AKa58lroSd+LGfXXhAEKR9Ca1qKB7tTSe
-        xIPEa9Ihva0i/vBRkt7z/8k5mUI/qsVtszdC89242TmlaLlPUpkuq2w/SW+ncHdnBMGHgAVU4ACOiMqS
-        +Fd7JSnFNAZ/AgdwDr/UHgUuE6/EZmkUQt7cwS4e7DHEtbtJXC5WksJOPULdvAI54WOQVGOHC6pFHhAz
-        Bpkas5x5fTR2b4+BZEoTaBNMssIuPAPq8wLkYFxRtGpOkmbscYZBcMZA1vQetK0vKIi4DFoDxyAr5jja
-        15IVhiLjm0lrOGOQteIShniLaI/9MZUNi4Zs6UMY8csEbSm42iSCKtHYsayxVDZrdWHMVyVUc8GjMChP
-        9sWVVNkM2vsLFu9yxUG4BKh9raBtfcED4IwzaZQKkIOWxtCqcRFFn+bMGuHZuVfhcYs2zQsMMh7GflwB
-        NJq+GcDy4II2n3DmPB/tdF6LVhjLWtPyujkCpn4fAk47iWbO4XJxgrNY9Qi8BsS000/wOjzAsCqcnfOx
-        53uzi5L9+oL5mnY74xvmPO5uv1YyhUFCy2O4+a+/pFDoHRYPABqnjawBAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="ButtonCommand3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAA/hJREFUSEvt
-        VltoFVcUTbVa+lCQlr61vvrjoxSEtmlqODM3ie+KjRcr5ivIvTNzk5ZASpu2tmmxAX+0lAbB/Cg+PhQV
-        QQrtT4v9TYt+BASt95wzNzY0DdH0ERqa3K59Zp/7yM2EGMQfu2AzM2vvs87MPvvsOVX/Y6ZwfZUUgdrJ
-        j/cGtenwRcdXediEm9IrmL77qGm+ukD4MoMv/A6TfeVk1GqeOG/uPbnP8fX3TqDbKJaHzR7rUr3zhKc+
-        xQS3ChP5+mxti1xmn4WXXYqJu4t+NSR89b7ozD/IMneGOl8th0hviSDZdTeQ7Ym9N56yXIN3/clEoNK4
-        15Zj6xVBuJLlZoZEWq3CwH4rgkL62fXlpkQm9zjSGVA6rU8Evz2G6wXXU1+6QXY37vusD5ajemDZ6WHE
-        PRUWBnvqAKUcKX4Tz8NOoAaSyfxc6+/szM/By5zC/SjsYjLZNx/XLuuHZd/w1SKWjwetoR0kAv0RcQk/
-        fAnPY7B/YB1RnJlolO9zprgwhlIfcfI9eo5MnyUuFigUYYOR3uNME08FdJBegCmabAimC/eB+gnXsU2t
-        1xaaAADPx2BGL+Hr9UxXQvj6Gw78y755HFwvfEW8o9e4Gf0xXmqAx33CbgPSAPc3+VAj55kuBxcJpRLr
-        KruZroBI3XwiSqO8YmKN6cvCk3s4pAzIXA/HjW5L3XyE6SJQ+hsLQp7ewHQZuNoHSQR2Gi/Y7GZuvMDu
-        KeEGapvVdQPdwHQRcKRswPqUfIbpMqAxHIJ/AmvdhMaSpnVnVyxEa+55q4vut5fpIpCuD20AbQmmy4CW
-        +W4Uk0tx+/yWXbFAsT1kdbHXP2C6CNfXng0QQfZppstAIvjqS4jpomLBdjvHrlhQ9gq6yBLTReCLqUGY
-        gERaVjNdgWjy7GuIP4ktdALrthsv+jK7K4AGVFMy8Vami6hv0c/COR4FyS+YjoWpVk8dwcT7MWa4dP+W
-        gjofTzwel0kqsB85SFa3hQ8zPSVcT/tOS9iI2KOw27TN2FVAQ/vAo/Bxz5c/MF0JrF9TFGTsM6YrQPsR
-        qf4aMb/Sno87DKCHf271aEmYnhpcPBQ8DtFGpssAXwdSeLS0hU6G68kdRsNoTfO1FvxD+CMaoP6c6lxF
-        fRf84Wh75B9gugAno7dj7AhrjNS2hGvZNT242/zLA+mH0YPe/By7DdDF6tHt9tBpg6kqc0CITiMTPBYa
-        cgu7ZwYagIG/swDZKP2xnEC+Rd2Imgz9u7FPt1APMD5kqCR+0EnLzSx3Z6hL/bIEAhdKxGZk1Fxqg/7F
-        LDN74Jz1OtbzDESHJ09SYuQ7PV3zmTXo5OhkwleFp9+moywZ2uYuw832VHmfoKrqP1JFCNzrKwRZAAAA
-        AElFTkSuQmCC
-</value>
-  </data>
   <metadata name="ErrPatient.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>261, 19</value>
   </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>77</value>
+    <value>29</value>
   </metadata>
 </root>

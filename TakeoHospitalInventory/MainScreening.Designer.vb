@@ -137,7 +137,6 @@ Partial Class MainScreening
         '
         'BtnHome
         '
-        Me.BtnHome.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.BtnHome.BackColor = System.Drawing.Color.Green
         Me.BtnHome.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BtnHome.FlatAppearance.BorderSize = 0
@@ -146,11 +145,11 @@ Partial Class MainScreening
         Me.BtnHome.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnHome.ForeColor = System.Drawing.Color.White
         Me.BtnHome.Image = CType(resources.GetObject("BtnHome.Image"), System.Drawing.Image)
-        Me.BtnHome.Location = New System.Drawing.Point(1213, 107)
+        Me.BtnHome.Location = New System.Drawing.Point(439, 92)
         Me.BtnHome.Name = "BtnHome"
-        Me.BtnHome.Size = New System.Drawing.Size(38, 35)
+        Me.BtnHome.Size = New System.Drawing.Size(56, 50)
         Me.BtnHome.TabIndex = 16
-        Me.BtnHome.UseVisualStyleBackColor = False
+        Me.BtnHome.UseVisualStyleBackColor = True
         '
         'BtnExit
         '

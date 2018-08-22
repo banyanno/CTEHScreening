@@ -317,11 +317,11 @@ Partial Class frmLoginInventory
         'LblStatus
         '
         Me.LblStatus.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.LblStatus.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblStatus.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LblStatus.ForeColor = System.Drawing.Color.White
-        Me.LblStatus.Location = New System.Drawing.Point(805, 9)
+        Me.LblStatus.Location = New System.Drawing.Point(807, 10)
         Me.LblStatus.Name = "LblStatus"
-        Me.LblStatus.Size = New System.Drawing.Size(289, 17)
+        Me.LblStatus.Size = New System.Drawing.Size(289, 19)
         Me.LblStatus.TabIndex = 10
         Me.LblStatus.Text = "Status"
         Me.LblStatus.TextAlign = System.Drawing.ContentAlignment.MiddleRight
