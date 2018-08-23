@@ -22,36 +22,42 @@ Partial Class ScreeningSetting
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ScreeningSetting))
         Me.PanelMain = New System.Windows.Forms.Panel
+        Me.LblSaveOption = New System.Windows.Forms.Label
         Me.BtnClose = New System.Windows.Forms.Button
         Me.BtnSave = New System.Windows.Forms.Button
         Me.Label2 = New System.Windows.Forms.Label
         Me.Label3 = New System.Windows.Forms.Label
         Me.Label1 = New System.Windows.Forms.Label
         Me.Panel3 = New System.Windows.Forms.Panel
+        Me.ChDefaultsetting = New System.Windows.Forms.CheckBox
         Me.Label4 = New System.Windows.Forms.Label
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker
+        Me.DateSetting = New System.Windows.Forms.DateTimePicker
         Me.Label5 = New System.Windows.Forms.Label
-        Me.TextBox1 = New System.Windows.Forms.TextBox
+        Me.TxtHealthName = New System.Windows.Forms.TextBox
         Me.GroupBox1 = New System.Windows.Forms.GroupBox
-        Me.TextBox3 = New System.Windows.Forms.TextBox
-        Me.ComboBox3 = New System.Windows.Forms.ComboBox
-        Me.ComboBox2 = New System.Windows.Forms.ComboBox
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox
+        Me.CboCommNo = New System.Windows.Forms.ComboBox
+        Me.CboDisNo = New System.Windows.Forms.ComboBox
+        Me.CboProNo = New System.Windows.Forms.ComboBox
+        Me.TxtFullAddress = New System.Windows.Forms.TextBox
         Me.Label12 = New System.Windows.Forms.Label
         Me.Label11 = New System.Windows.Forms.Label
         Me.Label10 = New System.Windows.Forms.Label
         Me.Label9 = New System.Windows.Forms.Label
+        Me.ErrSetting = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.PanelMain.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
+        CType(Me.ErrSetting, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PanelMain
         '
         Me.PanelMain.BackColor = System.Drawing.Color.FromArgb(CType(CType(236, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(241, Byte), Integer))
         Me.PanelMain.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.PanelMain.Controls.Add(Me.LblSaveOption)
         Me.PanelMain.Controls.Add(Me.BtnClose)
         Me.PanelMain.Controls.Add(Me.BtnSave)
         Me.PanelMain.Controls.Add(Me.Label2)
@@ -63,7 +69,17 @@ Partial Class ScreeningSetting
         Me.PanelMain.Location = New System.Drawing.Point(0, 0)
         Me.PanelMain.Name = "PanelMain"
         Me.PanelMain.Size = New System.Drawing.Size(388, 558)
-        Me.PanelMain.TabIndex = 1
+        Me.PanelMain.TabIndex = 0
+        '
+        'LblSaveOption
+        '
+        Me.LblSaveOption.AutoSize = True
+        Me.LblSaveOption.Location = New System.Drawing.Point(336, 42)
+        Me.LblSaveOption.Name = "LblSaveOption"
+        Me.LblSaveOption.Size = New System.Drawing.Size(20, 25)
+        Me.LblSaveOption.TabIndex = 4
+        Me.LblSaveOption.Text = "0"
+        Me.LblSaveOption.Visible = False
         '
         'BtnClose
         '
@@ -77,7 +93,7 @@ Partial Class ScreeningSetting
         Me.BtnClose.Location = New System.Drawing.Point(196, 512)
         Me.BtnClose.Name = "BtnClose"
         Me.BtnClose.Size = New System.Drawing.Size(100, 37)
-        Me.BtnClose.TabIndex = 5
+        Me.BtnClose.TabIndex = 2
         Me.BtnClose.Text = "Close"
         Me.BtnClose.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.BtnClose.UseVisualStyleBackColor = False
@@ -94,7 +110,7 @@ Partial Class ScreeningSetting
         Me.BtnSave.Location = New System.Drawing.Point(90, 512)
         Me.BtnSave.Name = "BtnSave"
         Me.BtnSave.Size = New System.Drawing.Size(100, 37)
-        Me.BtnSave.TabIndex = 4
+        Me.BtnSave.TabIndex = 1
         Me.BtnSave.Text = "Save"
         Me.BtnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.BtnSave.UseVisualStyleBackColor = False
@@ -136,16 +152,29 @@ Partial Class ScreeningSetting
         '
         Me.Panel3.BackColor = System.Drawing.Color.White
         Me.Panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel3.Controls.Add(Me.ChDefaultsetting)
         Me.Panel3.Controls.Add(Me.Label4)
-        Me.Panel3.Controls.Add(Me.DateTimePicker1)
+        Me.Panel3.Controls.Add(Me.DateSetting)
         Me.Panel3.Controls.Add(Me.Label5)
-        Me.Panel3.Controls.Add(Me.TextBox1)
+        Me.Panel3.Controls.Add(Me.TxtHealthName)
         Me.Panel3.Controls.Add(Me.GroupBox1)
         Me.Panel3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
         Me.Panel3.Location = New System.Drawing.Point(10, 91)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(367, 411)
-        Me.Panel3.TabIndex = 14
+        Me.Panel3.TabIndex = 0
+        '
+        'ChDefaultsetting
+        '
+        Me.ChDefaultsetting.AutoSize = True
+        Me.ChDefaultsetting.Checked = True
+        Me.ChDefaultsetting.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.ChDefaultsetting.Location = New System.Drawing.Point(211, 33)
+        Me.ChDefaultsetting.Name = "ChDefaultsetting"
+        Me.ChDefaultsetting.Size = New System.Drawing.Size(76, 29)
+        Me.ChDefaultsetting.TabIndex = 1
+        Me.ChDefaultsetting.Text = "Default"
+        Me.ChDefaultsetting.UseVisualStyleBackColor = True
         '
         'Label4
         '
@@ -157,16 +186,18 @@ Partial Class ScreeningSetting
         Me.Label4.TabIndex = 0
         Me.Label4.Text = "កាលបរិច្ឆេទ(Date):"
         '
-        'DateTimePicker1
+        'DateSetting
         '
-        Me.DateTimePicker1.CustomFormat = "dd/MM/yyyy"
-        Me.DateTimePicker1.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right
-        Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.DateTimePicker1.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.DateTimePicker1.Location = New System.Drawing.Point(9, 33)
-        Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(143, 32)
-        Me.DateTimePicker1.TabIndex = 1
+        Me.DateSetting.Checked = False
+        Me.DateSetting.CustomFormat = "dd/MM/yyyy"
+        Me.DateSetting.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right
+        Me.DateSetting.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.DateSetting.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.DateSetting.Location = New System.Drawing.Point(9, 33)
+        Me.DateSetting.Name = "DateSetting"
+        Me.DateSetting.ShowCheckBox = True
+        Me.DateSetting.Size = New System.Drawing.Size(143, 32)
+        Me.DateSetting.TabIndex = 0
         '
         'Label5
         '
@@ -178,20 +209,20 @@ Partial Class ScreeningSetting
         Me.Label5.TabIndex = 2
         Me.Label5.Text = "ឈ្មោះមណ្ឌលសុខភាព(Name of Health Center):"
         '
-        'TextBox1
+        'TxtHealthName
         '
-        Me.TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox1.Location = New System.Drawing.Point(9, 100)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(344, 32)
-        Me.TextBox1.TabIndex = 3
+        Me.TxtHealthName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TxtHealthName.Location = New System.Drawing.Point(9, 100)
+        Me.TxtHealthName.Name = "TxtHealthName"
+        Me.TxtHealthName.Size = New System.Drawing.Size(344, 32)
+        Me.TxtHealthName.TabIndex = 2
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.TextBox3)
-        Me.GroupBox1.Controls.Add(Me.ComboBox3)
-        Me.GroupBox1.Controls.Add(Me.ComboBox2)
-        Me.GroupBox1.Controls.Add(Me.ComboBox1)
+        Me.GroupBox1.Controls.Add(Me.CboCommNo)
+        Me.GroupBox1.Controls.Add(Me.CboDisNo)
+        Me.GroupBox1.Controls.Add(Me.CboProNo)
+        Me.GroupBox1.Controls.Add(Me.TxtFullAddress)
         Me.GroupBox1.Controls.Add(Me.Label12)
         Me.GroupBox1.Controls.Add(Me.Label11)
         Me.GroupBox1.Controls.Add(Me.Label10)
@@ -200,42 +231,51 @@ Partial Class ScreeningSetting
         Me.GroupBox1.Location = New System.Drawing.Point(9, 138)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(344, 260)
-        Me.GroupBox1.TabIndex = 8
+        Me.GroupBox1.TabIndex = 3
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Address"
         '
-        'TextBox3
+        'CboCommNo
         '
-        Me.TextBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox3.Location = New System.Drawing.Point(7, 166)
-        Me.TextBox3.Multiline = True
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(326, 88)
-        Me.TextBox3.TabIndex = 14
+        Me.CboCommNo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.CboCommNo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
+        Me.CboCommNo.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CboCommNo.FormattingEnabled = True
+        Me.CboCommNo.Location = New System.Drawing.Point(90, 100)
+        Me.CboCommNo.Name = "CboCommNo"
+        Me.CboCommNo.Size = New System.Drawing.Size(242, 28)
+        Me.CboCommNo.TabIndex = 2
         '
-        'ComboBox3
+        'CboDisNo
         '
-        Me.ComboBox3.FormattingEnabled = True
-        Me.ComboBox3.Location = New System.Drawing.Point(83, 99)
-        Me.ComboBox3.Name = "ComboBox3"
-        Me.ComboBox3.Size = New System.Drawing.Size(249, 32)
-        Me.ComboBox3.TabIndex = 13
+        Me.CboDisNo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.CboDisNo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
+        Me.CboDisNo.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CboDisNo.FormattingEnabled = True
+        Me.CboDisNo.Location = New System.Drawing.Point(90, 65)
+        Me.CboDisNo.Name = "CboDisNo"
+        Me.CboDisNo.Size = New System.Drawing.Size(242, 28)
+        Me.CboDisNo.TabIndex = 1
         '
-        'ComboBox2
+        'CboProNo
         '
-        Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Location = New System.Drawing.Point(84, 61)
-        Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(249, 32)
-        Me.ComboBox2.TabIndex = 12
+        Me.CboProNo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.CboProNo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
+        Me.CboProNo.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CboProNo.FormattingEnabled = True
+        Me.CboProNo.Location = New System.Drawing.Point(90, 31)
+        Me.CboProNo.Name = "CboProNo"
+        Me.CboProNo.Size = New System.Drawing.Size(242, 28)
+        Me.CboProNo.TabIndex = 0
         '
-        'ComboBox1
+        'TxtFullAddress
         '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(84, 21)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(249, 32)
-        Me.ComboBox1.TabIndex = 11
+        Me.TxtFullAddress.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TxtFullAddress.Location = New System.Drawing.Point(7, 166)
+        Me.TxtFullAddress.Multiline = True
+        Me.TxtFullAddress.Name = "TxtFullAddress"
+        Me.TxtFullAddress.Size = New System.Drawing.Size(326, 88)
+        Me.TxtFullAddress.TabIndex = 3
         '
         'Label12
         '
@@ -251,7 +291,7 @@ Partial Class ScreeningSetting
         '
         Me.Label11.AutoSize = True
         Me.Label11.ForeColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
-        Me.Label11.Location = New System.Drawing.Point(5, 106)
+        Me.Label11.Location = New System.Drawing.Point(5, 103)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(80, 25)
         Me.Label11.TabIndex = 9
@@ -271,11 +311,15 @@ Partial Class ScreeningSetting
         '
         Me.Label9.AutoSize = True
         Me.Label9.ForeColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
-        Me.Label9.Location = New System.Drawing.Point(6, 37)
+        Me.Label9.Location = New System.Drawing.Point(6, 34)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(71, 25)
         Me.Label9.TabIndex = 7
         Me.Label9.Text = "Province:"
+        '
+        'ErrSetting
+        '
+        Me.ErrSetting.ContainerControl = Me
         '
         'ScreeningSetting
         '
@@ -296,6 +340,7 @@ Partial Class ScreeningSetting
         Me.Panel3.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
+        CType(Me.ErrSetting, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -307,16 +352,19 @@ Partial Class ScreeningSetting
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents Panel3 As System.Windows.Forms.Panel
     Friend WithEvents Label4 As System.Windows.Forms.Label
-    Friend WithEvents DateTimePicker1 As System.Windows.Forms.DateTimePicker
+    Friend WithEvents DateSetting As System.Windows.Forms.DateTimePicker
     Friend WithEvents Label5 As System.Windows.Forms.Label
-    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
+    Friend WithEvents TxtHealthName As System.Windows.Forms.TextBox
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
-    Friend WithEvents TextBox3 As System.Windows.Forms.TextBox
-    Friend WithEvents ComboBox3 As System.Windows.Forms.ComboBox
-    Friend WithEvents ComboBox2 As System.Windows.Forms.ComboBox
-    Friend WithEvents ComboBox1 As System.Windows.Forms.ComboBox
+    Friend WithEvents TxtFullAddress As System.Windows.Forms.TextBox
     Friend WithEvents Label12 As System.Windows.Forms.Label
     Friend WithEvents Label11 As System.Windows.Forms.Label
     Friend WithEvents Label10 As System.Windows.Forms.Label
     Friend WithEvents Label9 As System.Windows.Forms.Label
+    Friend WithEvents ChDefaultsetting As System.Windows.Forms.CheckBox
+    Friend WithEvents ErrSetting As System.Windows.Forms.ErrorProvider
+    Friend WithEvents LblSaveOption As System.Windows.Forms.Label
+    Friend WithEvents CboCommNo As System.Windows.Forms.ComboBox
+    Friend WithEvents CboDisNo As System.Windows.Forms.ComboBox
+    Friend WithEvents CboProNo As System.Windows.Forms.ComboBox
 End Class

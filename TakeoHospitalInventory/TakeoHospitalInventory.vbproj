@@ -680,6 +680,11 @@
     <Compile Include="Takeo_Eye_Hopspital\Screening\ScreeningSetting\DashboardSetting.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Takeo_Eye_Hopspital\Screening\ScreeningSetting\DataSetSceenSetting.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetSceenSetting.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Takeo_Eye_Hopspital\Screening\ScreeningSetting\ScreeningSetting.Designer.vb">
       <DependentUpon>ScreeningSetting.vb</DependentUpon>
     </Compile>
@@ -5059,6 +5064,17 @@
     </None>
     <None Include="Takeo_Eye_Hopspital\Business\Account\MReportReceiptDetail\DataSetReportDetail.xss">
       <DependentUpon>DataSetReportDetail.xsd</DependentUpon>
+    </None>
+    <None Include="Takeo_Eye_Hopspital\Screening\ScreeningSetting\DataSetSceenSetting.xsc">
+      <DependentUpon>DataSetSceenSetting.xsd</DependentUpon>
+    </None>
+    <None Include="Takeo_Eye_Hopspital\Screening\ScreeningSetting\DataSetSceenSetting.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetSceenSetting.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Takeo_Eye_Hopspital\Screening\ScreeningSetting\DataSetSceenSetting.xss">
+      <DependentUpon>DataSetSceenSetting.xsd</DependentUpon>
     </None>
     <None Include="Takeo_Eye_Hopspital\ViewsEye\DailyCashCollection\CashReceived\DSPatientReceipt.xsc">
       <DependentUpon>DSPatientReceipt.xsd</DependentUpon>

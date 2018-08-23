@@ -22,6 +22,7 @@ Partial Class FormPatientRegister
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormPatientRegister))
         Me.PanelMain = New System.Windows.Forms.Panel
         Me.BtnClose = New System.Windows.Forms.Button
@@ -30,40 +31,43 @@ Partial Class FormPatientRegister
         Me.Label3 = New System.Windows.Forms.Label
         Me.Label1 = New System.Windows.Forms.Label
         Me.Panel3 = New System.Windows.Forms.Panel
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox
         Me.Label4 = New System.Windows.Forms.Label
-        Me.TextBox5 = New System.Windows.Forms.TextBox
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker
+        Me.PatientNo = New System.Windows.Forms.TextBox
+        Me.DateRegis = New System.Windows.Forms.DateTimePicker
         Me.Label5 = New System.Windows.Forms.Label
         Me.Label15 = New System.Windows.Forms.Label
-        Me.TextBox1 = New System.Windows.Forms.TextBox
+        Me.TxtHealthNameCenter = New System.Windows.Forms.TextBox
         Me.Label6 = New System.Windows.Forms.Label
         Me.Panel2 = New System.Windows.Forms.Panel
-        Me.CheckBox4 = New System.Windows.Forms.CheckBox
-        Me.CheckBox3 = New System.Windows.Forms.CheckBox
-        Me.CheckBox2 = New System.Windows.Forms.CheckBox
-        Me.CheckBox1 = New System.Windows.Forms.CheckBox
+        Me.ChOpticalshop = New System.Windows.Forms.CheckBox
+        Me.ChReferAndComeBySelf = New System.Windows.Forms.CheckBox
+        Me.ChReferAndPickup = New System.Windows.Forms.CheckBox
+        Me.ChRefraction = New System.Windows.Forms.CheckBox
         Me.Label14 = New System.Windows.Forms.Label
         Me.Label13 = New System.Windows.Forms.Label
-        Me.TextBox2 = New System.Windows.Forms.TextBox
+        Me.TxtPatientName = New System.Windows.Forms.TextBox
         Me.Label7 = New System.Windows.Forms.Label
-        Me.ComboBox4 = New System.Windows.Forms.ComboBox
+        Me.CboSex = New System.Windows.Forms.ComboBox
         Me.Label8 = New System.Windows.Forms.Label
         Me.GroupBox1 = New System.Windows.Forms.GroupBox
-        Me.TextBox3 = New System.Windows.Forms.TextBox
-        Me.ComboBox3 = New System.Windows.Forms.ComboBox
-        Me.ComboBox2 = New System.Windows.Forms.ComboBox
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox
+        Me.TxtFullAddress = New System.Windows.Forms.TextBox
         Me.Label12 = New System.Windows.Forms.Label
         Me.Label11 = New System.Windows.Forms.Label
         Me.Label10 = New System.Windows.Forms.Label
         Me.Label9 = New System.Windows.Forms.Label
-        Me.TextBox4 = New System.Windows.Forms.TextBox
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox
+        Me.TxtAge = New System.Windows.Forms.TextBox
+        Me.CboCommNo = New System.Windows.Forms.ComboBox
+        Me.CboDisNo = New System.Windows.Forms.ComboBox
+        Me.CboProNo = New System.Windows.Forms.ComboBox
+        Me.LblSettingID = New System.Windows.Forms.Label
+        Me.ErrSaveRegis = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.PanelMain.SuspendLayout()
         Me.Panel3.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ErrSaveRegis, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PanelMain
@@ -156,24 +160,34 @@ Partial Class FormPatientRegister
         Me.Panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel3.Controls.Add(Me.PictureBox1)
         Me.Panel3.Controls.Add(Me.Label4)
-        Me.Panel3.Controls.Add(Me.TextBox5)
-        Me.Panel3.Controls.Add(Me.DateTimePicker1)
+        Me.Panel3.Controls.Add(Me.PatientNo)
+        Me.Panel3.Controls.Add(Me.DateRegis)
         Me.Panel3.Controls.Add(Me.Label5)
         Me.Panel3.Controls.Add(Me.Label15)
-        Me.Panel3.Controls.Add(Me.TextBox1)
+        Me.Panel3.Controls.Add(Me.TxtHealthNameCenter)
         Me.Panel3.Controls.Add(Me.Label6)
         Me.Panel3.Controls.Add(Me.Panel2)
-        Me.Panel3.Controls.Add(Me.TextBox2)
+        Me.Panel3.Controls.Add(Me.TxtPatientName)
         Me.Panel3.Controls.Add(Me.Label7)
-        Me.Panel3.Controls.Add(Me.ComboBox4)
+        Me.Panel3.Controls.Add(Me.CboSex)
         Me.Panel3.Controls.Add(Me.Label8)
         Me.Panel3.Controls.Add(Me.GroupBox1)
-        Me.Panel3.Controls.Add(Me.TextBox4)
+        Me.Panel3.Controls.Add(Me.TxtAge)
         Me.Panel3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
         Me.Panel3.Location = New System.Drawing.Point(5, 91)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(940, 535)
         Me.Panel3.TabIndex = 14
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(608, 6)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(94, 92)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 16
+        Me.PictureBox1.TabStop = False
         '
         'Label4
         '
@@ -185,24 +199,24 @@ Partial Class FormPatientRegister
         Me.Label4.TabIndex = 0
         Me.Label4.Text = "កាលបរិច្ឆេទ(Date):"
         '
-        'TextBox5
+        'PatientNo
         '
-        Me.TextBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox5.Location = New System.Drawing.Point(176, 32)
-        Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.Size = New System.Drawing.Size(177, 32)
-        Me.TextBox5.TabIndex = 15
+        Me.PatientNo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.PatientNo.Location = New System.Drawing.Point(176, 32)
+        Me.PatientNo.Name = "PatientNo"
+        Me.PatientNo.Size = New System.Drawing.Size(177, 32)
+        Me.PatientNo.TabIndex = 15
         '
-        'DateTimePicker1
+        'DateRegis
         '
-        Me.DateTimePicker1.CustomFormat = "dd/MM/yyyy"
-        Me.DateTimePicker1.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right
-        Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.DateTimePicker1.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.DateTimePicker1.Location = New System.Drawing.Point(9, 32)
-        Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(143, 32)
-        Me.DateTimePicker1.TabIndex = 1
+        Me.DateRegis.CustomFormat = "dd/MM/yyyy"
+        Me.DateRegis.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right
+        Me.DateRegis.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.DateRegis.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.DateRegis.Location = New System.Drawing.Point(9, 32)
+        Me.DateRegis.Name = "DateRegis"
+        Me.DateRegis.Size = New System.Drawing.Size(143, 32)
+        Me.DateRegis.TabIndex = 1
         '
         'Label5
         '
@@ -224,13 +238,13 @@ Partial Class FormPatientRegister
         Me.Label15.TabIndex = 14
         Me.Label15.Text = "លេខសំគាល់(Patient No):"
         '
-        'TextBox1
+        'TxtHealthNameCenter
         '
-        Me.TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox1.Location = New System.Drawing.Point(9, 99)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(344, 32)
-        Me.TextBox1.TabIndex = 3
+        Me.TxtHealthNameCenter.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TxtHealthNameCenter.Location = New System.Drawing.Point(9, 99)
+        Me.TxtHealthNameCenter.Name = "TxtHealthNameCenter"
+        Me.TxtHealthNameCenter.Size = New System.Drawing.Size(344, 32)
+        Me.TxtHealthNameCenter.TabIndex = 3
         '
         'Label6
         '
@@ -245,10 +259,11 @@ Partial Class FormPatientRegister
         'Panel2
         '
         Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel2.Controls.Add(Me.CheckBox4)
-        Me.Panel2.Controls.Add(Me.CheckBox3)
-        Me.Panel2.Controls.Add(Me.CheckBox2)
-        Me.Panel2.Controls.Add(Me.CheckBox1)
+        Me.Panel2.Controls.Add(Me.LblSettingID)
+        Me.Panel2.Controls.Add(Me.ChOpticalshop)
+        Me.Panel2.Controls.Add(Me.ChReferAndComeBySelf)
+        Me.Panel2.Controls.Add(Me.ChReferAndPickup)
+        Me.Panel2.Controls.Add(Me.ChRefraction)
         Me.Panel2.Controls.Add(Me.Label14)
         Me.Panel2.Controls.Add(Me.Label13)
         Me.Panel2.Location = New System.Drawing.Point(376, 99)
@@ -256,49 +271,49 @@ Partial Class FormPatientRegister
         Me.Panel2.Size = New System.Drawing.Size(549, 424)
         Me.Panel2.TabIndex = 13
         '
-        'CheckBox4
+        'ChOpticalshop
         '
-        Me.CheckBox4.AutoSize = True
-        Me.CheckBox4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
-        Me.CheckBox4.Location = New System.Drawing.Point(227, 127)
-        Me.CheckBox4.Name = "CheckBox4"
-        Me.CheckBox4.Size = New System.Drawing.Size(112, 29)
-        Me.CheckBox4.TabIndex = 5
-        Me.CheckBox4.Text = "Optical Shop"
-        Me.CheckBox4.UseVisualStyleBackColor = True
+        Me.ChOpticalshop.AutoSize = True
+        Me.ChOpticalshop.ForeColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
+        Me.ChOpticalshop.Location = New System.Drawing.Point(206, 180)
+        Me.ChOpticalshop.Name = "ChOpticalshop"
+        Me.ChOpticalshop.Size = New System.Drawing.Size(112, 29)
+        Me.ChOpticalshop.TabIndex = 5
+        Me.ChOpticalshop.Text = "Optical Shop"
+        Me.ChOpticalshop.UseVisualStyleBackColor = True
         '
-        'CheckBox3
+        'ChReferAndComeBySelf
         '
-        Me.CheckBox3.AutoSize = True
-        Me.CheckBox3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
-        Me.CheckBox3.Location = New System.Drawing.Point(31, 127)
-        Me.CheckBox3.Name = "CheckBox3"
-        Me.CheckBox3.Size = New System.Drawing.Size(183, 29)
-        Me.CheckBox3.TabIndex = 4
-        Me.CheckBox3.Text = "Refer and Come By Self"
-        Me.CheckBox3.UseVisualStyleBackColor = True
+        Me.ChReferAndComeBySelf.AutoSize = True
+        Me.ChReferAndComeBySelf.ForeColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
+        Me.ChReferAndComeBySelf.Location = New System.Drawing.Point(10, 180)
+        Me.ChReferAndComeBySelf.Name = "ChReferAndComeBySelf"
+        Me.ChReferAndComeBySelf.Size = New System.Drawing.Size(183, 29)
+        Me.ChReferAndComeBySelf.TabIndex = 4
+        Me.ChReferAndComeBySelf.Text = "Refer and Come By Self"
+        Me.ChReferAndComeBySelf.UseVisualStyleBackColor = True
         '
-        'CheckBox2
+        'ChReferAndPickup
         '
-        Me.CheckBox2.AutoSize = True
-        Me.CheckBox2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
-        Me.CheckBox2.Location = New System.Drawing.Point(227, 80)
-        Me.CheckBox2.Name = "CheckBox2"
-        Me.CheckBox2.Size = New System.Drawing.Size(140, 29)
-        Me.CheckBox2.TabIndex = 3
-        Me.CheckBox2.Text = "Refer and Pickup"
-        Me.CheckBox2.UseVisualStyleBackColor = True
+        Me.ChReferAndPickup.AutoSize = True
+        Me.ChReferAndPickup.ForeColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
+        Me.ChReferAndPickup.Location = New System.Drawing.Point(10, 134)
+        Me.ChReferAndPickup.Name = "ChReferAndPickup"
+        Me.ChReferAndPickup.Size = New System.Drawing.Size(140, 29)
+        Me.ChReferAndPickup.TabIndex = 3
+        Me.ChReferAndPickup.Text = "Refer and Pickup"
+        Me.ChReferAndPickup.UseVisualStyleBackColor = True
         '
-        'CheckBox1
+        'ChRefraction
         '
-        Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
-        Me.CheckBox1.Location = New System.Drawing.Point(30, 80)
-        Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(96, 29)
-        Me.CheckBox1.TabIndex = 2
-        Me.CheckBox1.Text = "Refraction"
-        Me.CheckBox1.UseVisualStyleBackColor = True
+        Me.ChRefraction.AutoSize = True
+        Me.ChRefraction.ForeColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
+        Me.ChRefraction.Location = New System.Drawing.Point(206, 134)
+        Me.ChRefraction.Name = "ChRefraction"
+        Me.ChRefraction.Size = New System.Drawing.Size(96, 29)
+        Me.ChRefraction.TabIndex = 2
+        Me.ChRefraction.Text = "Refraction"
+        Me.ChRefraction.UseVisualStyleBackColor = True
         '
         'Label14
         '
@@ -319,37 +334,38 @@ Partial Class FormPatientRegister
         Me.Label13.TabIndex = 0
         Me.Label13.Text = "Patient Utility:"
         '
-        'TextBox2
+        'TxtPatientName
         '
-        Me.TextBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox2.Location = New System.Drawing.Point(9, 168)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(344, 32)
-        Me.TextBox2.TabIndex = 5
+        Me.TxtPatientName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TxtPatientName.Font = New System.Drawing.Font("Khmer OS Battambang", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtPatientName.Location = New System.Drawing.Point(9, 164)
+        Me.TxtPatientName.Name = "TxtPatientName"
+        Me.TxtPatientName.Size = New System.Drawing.Size(344, 40)
+        Me.TxtPatientName.TabIndex = 5
         '
         'Label7
         '
         Me.Label7.AutoSize = True
         Me.Label7.ForeColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
-        Me.Label7.Location = New System.Drawing.Point(54, 203)
+        Me.Label7.Location = New System.Drawing.Point(54, 205)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(40, 25)
         Me.Label7.TabIndex = 6
         Me.Label7.Text = "Sex:"
         '
-        'ComboBox4
+        'CboSex
         '
-        Me.ComboBox4.FormattingEnabled = True
-        Me.ComboBox4.Location = New System.Drawing.Point(9, 230)
-        Me.ComboBox4.Name = "ComboBox4"
-        Me.ComboBox4.Size = New System.Drawing.Size(143, 32)
-        Me.ComboBox4.TabIndex = 12
+        Me.CboSex.FormattingEnabled = True
+        Me.CboSex.Location = New System.Drawing.Point(9, 230)
+        Me.CboSex.Name = "CboSex"
+        Me.CboSex.Size = New System.Drawing.Size(143, 32)
+        Me.CboSex.TabIndex = 12
         '
         'Label8
         '
         Me.Label8.AutoSize = True
         Me.Label8.ForeColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
-        Me.Label8.Location = New System.Drawing.Point(266, 203)
+        Me.Label8.Location = New System.Drawing.Point(266, 204)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(41, 25)
         Me.Label8.TabIndex = 7
@@ -357,10 +373,10 @@ Partial Class FormPatientRegister
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.TextBox3)
-        Me.GroupBox1.Controls.Add(Me.ComboBox3)
-        Me.GroupBox1.Controls.Add(Me.ComboBox2)
-        Me.GroupBox1.Controls.Add(Me.ComboBox1)
+        Me.GroupBox1.Controls.Add(Me.CboCommNo)
+        Me.GroupBox1.Controls.Add(Me.CboDisNo)
+        Me.GroupBox1.Controls.Add(Me.CboProNo)
+        Me.GroupBox1.Controls.Add(Me.TxtFullAddress)
         Me.GroupBox1.Controls.Add(Me.Label12)
         Me.GroupBox1.Controls.Add(Me.Label11)
         Me.GroupBox1.Controls.Add(Me.Label10)
@@ -373,38 +389,14 @@ Partial Class FormPatientRegister
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Address"
         '
-        'TextBox3
+        'TxtFullAddress
         '
-        Me.TextBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox3.Location = New System.Drawing.Point(7, 166)
-        Me.TextBox3.Multiline = True
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(326, 88)
-        Me.TextBox3.TabIndex = 14
-        '
-        'ComboBox3
-        '
-        Me.ComboBox3.FormattingEnabled = True
-        Me.ComboBox3.Location = New System.Drawing.Point(83, 99)
-        Me.ComboBox3.Name = "ComboBox3"
-        Me.ComboBox3.Size = New System.Drawing.Size(249, 32)
-        Me.ComboBox3.TabIndex = 13
-        '
-        'ComboBox2
-        '
-        Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Location = New System.Drawing.Point(84, 61)
-        Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(249, 32)
-        Me.ComboBox2.TabIndex = 12
-        '
-        'ComboBox1
-        '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(84, 21)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(249, 32)
-        Me.ComboBox1.TabIndex = 11
+        Me.TxtFullAddress.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TxtFullAddress.Location = New System.Drawing.Point(7, 166)
+        Me.TxtFullAddress.Multiline = True
+        Me.TxtFullAddress.Name = "TxtFullAddress"
+        Me.TxtFullAddress.Size = New System.Drawing.Size(326, 88)
+        Me.TxtFullAddress.TabIndex = 14
         '
         'Label12
         '
@@ -420,7 +412,7 @@ Partial Class FormPatientRegister
         '
         Me.Label11.AutoSize = True
         Me.Label11.ForeColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
-        Me.Label11.Location = New System.Drawing.Point(5, 106)
+        Me.Label11.Location = New System.Drawing.Point(5, 103)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(80, 25)
         Me.Label11.TabIndex = 9
@@ -440,29 +432,66 @@ Partial Class FormPatientRegister
         '
         Me.Label9.AutoSize = True
         Me.Label9.ForeColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
-        Me.Label9.Location = New System.Drawing.Point(6, 37)
+        Me.Label9.Location = New System.Drawing.Point(6, 34)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(71, 25)
         Me.Label9.TabIndex = 7
         Me.Label9.Text = "Province:"
         '
-        'TextBox4
+        'TxtAge
         '
-        Me.TextBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox4.Location = New System.Drawing.Point(205, 231)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(148, 32)
-        Me.TextBox4.TabIndex = 9
+        Me.TxtAge.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TxtAge.Location = New System.Drawing.Point(205, 231)
+        Me.TxtAge.Name = "TxtAge"
+        Me.TxtAge.Size = New System.Drawing.Size(148, 32)
+        Me.TxtAge.TabIndex = 9
         '
-        'PictureBox1
+        'CboCommNo
         '
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(608, 6)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(94, 92)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 16
-        Me.PictureBox1.TabStop = False
+        Me.CboCommNo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.CboCommNo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
+        Me.CboCommNo.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CboCommNo.FormattingEnabled = True
+        Me.CboCommNo.Location = New System.Drawing.Point(91, 100)
+        Me.CboCommNo.Name = "CboCommNo"
+        Me.CboCommNo.Size = New System.Drawing.Size(242, 28)
+        Me.CboCommNo.TabIndex = 17
+        '
+        'CboDisNo
+        '
+        Me.CboDisNo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.CboDisNo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
+        Me.CboDisNo.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CboDisNo.FormattingEnabled = True
+        Me.CboDisNo.Location = New System.Drawing.Point(91, 65)
+        Me.CboDisNo.Name = "CboDisNo"
+        Me.CboDisNo.Size = New System.Drawing.Size(242, 28)
+        Me.CboDisNo.TabIndex = 16
+        '
+        'CboProNo
+        '
+        Me.CboProNo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.CboProNo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
+        Me.CboProNo.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CboProNo.FormattingEnabled = True
+        Me.CboProNo.Location = New System.Drawing.Point(91, 31)
+        Me.CboProNo.Name = "CboProNo"
+        Me.CboProNo.Size = New System.Drawing.Size(242, 28)
+        Me.CboProNo.TabIndex = 15
+        '
+        'LblSettingID
+        '
+        Me.LblSettingID.AutoSize = True
+        Me.LblSettingID.ForeColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
+        Me.LblSettingID.Location = New System.Drawing.Point(431, 37)
+        Me.LblSettingID.Name = "LblSettingID"
+        Me.LblSettingID.Size = New System.Drawing.Size(20, 25)
+        Me.LblSettingID.TabIndex = 8
+        Me.LblSettingID.Text = "0"
+        '
+        'ErrSaveRegis
+        '
+        Me.ErrSaveRegis.ContainerControl = Me
         '
         'FormPatientRegister
         '
@@ -481,11 +510,12 @@ Partial Class FormPatientRegister
         Me.PanelMain.PerformLayout()
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ErrSaveRegis, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -494,10 +524,10 @@ Partial Class FormPatientRegister
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label4 As System.Windows.Forms.Label
-    Friend WithEvents DateTimePicker1 As System.Windows.Forms.DateTimePicker
+    Friend WithEvents DateRegis As System.Windows.Forms.DateTimePicker
     Friend WithEvents Label5 As System.Windows.Forms.Label
-    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox2 As System.Windows.Forms.TextBox
+    Friend WithEvents TxtHealthNameCenter As System.Windows.Forms.TextBox
+    Friend WithEvents TxtPatientName As System.Windows.Forms.TextBox
     Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents Label8 As System.Windows.Forms.Label
     Friend WithEvents Label7 As System.Windows.Forms.Label
@@ -506,23 +536,25 @@ Partial Class FormPatientRegister
     Friend WithEvents Label11 As System.Windows.Forms.Label
     Friend WithEvents Label10 As System.Windows.Forms.Label
     Friend WithEvents Label9 As System.Windows.Forms.Label
-    Friend WithEvents ComboBox3 As System.Windows.Forms.ComboBox
-    Friend WithEvents ComboBox2 As System.Windows.Forms.ComboBox
-    Friend WithEvents ComboBox1 As System.Windows.Forms.ComboBox
-    Friend WithEvents TextBox3 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox4 As System.Windows.Forms.TextBox
-    Friend WithEvents ComboBox4 As System.Windows.Forms.ComboBox
+    Friend WithEvents TxtFullAddress As System.Windows.Forms.TextBox
+    Friend WithEvents TxtAge As System.Windows.Forms.TextBox
+    Friend WithEvents CboSex As System.Windows.Forms.ComboBox
     Friend WithEvents BtnSave As System.Windows.Forms.Button
     Friend WithEvents BtnClose As System.Windows.Forms.Button
     Friend WithEvents Panel2 As System.Windows.Forms.Panel
     Friend WithEvents Label14 As System.Windows.Forms.Label
     Friend WithEvents Label13 As System.Windows.Forms.Label
-    Friend WithEvents TextBox5 As System.Windows.Forms.TextBox
+    Friend WithEvents PatientNo As System.Windows.Forms.TextBox
     Friend WithEvents Label15 As System.Windows.Forms.Label
-    Friend WithEvents CheckBox3 As System.Windows.Forms.CheckBox
-    Friend WithEvents CheckBox2 As System.Windows.Forms.CheckBox
-    Friend WithEvents CheckBox1 As System.Windows.Forms.CheckBox
-    Friend WithEvents CheckBox4 As System.Windows.Forms.CheckBox
+    Friend WithEvents ChReferAndComeBySelf As System.Windows.Forms.CheckBox
+    Friend WithEvents ChReferAndPickup As System.Windows.Forms.CheckBox
+    Friend WithEvents ChRefraction As System.Windows.Forms.CheckBox
+    Friend WithEvents ChOpticalshop As System.Windows.Forms.CheckBox
     Friend WithEvents Panel3 As System.Windows.Forms.Panel
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
+    Friend WithEvents CboCommNo As System.Windows.Forms.ComboBox
+    Friend WithEvents CboDisNo As System.Windows.Forms.ComboBox
+    Friend WithEvents CboProNo As System.Windows.Forms.ComboBox
+    Friend WithEvents LblSettingID As System.Windows.Forms.Label
+    Friend WithEvents ErrSaveRegis As System.Windows.Forms.ErrorProvider
 End Class
