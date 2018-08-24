@@ -28,6 +28,8 @@ Partial Public Class DataSetSceenSetting
     
     Private tableSCREEN_SYSTEMSETTING As SCREEN_SYSTEMSETTINGDataTable
     
+    Private tableSCREENING_BOOK_VIEW As SCREENING_BOOK_VIEWDataTable
+    
     Private _schemaSerializationMode As Global.System.Data.SchemaSerializationMode = Global.System.Data.SchemaSerializationMode.IncludeSchema
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
@@ -58,6 +60,9 @@ Partial Public Class DataSetSceenSetting
             If (Not (ds.Tables("SCREEN_SYSTEMSETTING")) Is Nothing) Then
                 MyBase.Tables.Add(New SCREEN_SYSTEMSETTINGDataTable(ds.Tables("SCREEN_SYSTEMSETTING")))
             End If
+            If (Not (ds.Tables("SCREENING_BOOK_VIEW")) Is Nothing) Then
+                MyBase.Tables.Add(New SCREENING_BOOK_VIEWDataTable(ds.Tables("SCREENING_BOOK_VIEW")))
+            End If
             Me.DataSetName = ds.DataSetName
             Me.Prefix = ds.Prefix
             Me.Namespace = ds.Namespace
@@ -81,6 +86,15 @@ Partial Public Class DataSetSceenSetting
     Public ReadOnly Property SCREEN_SYSTEMSETTING() As SCREEN_SYSTEMSETTINGDataTable
         Get
             Return Me.tableSCREEN_SYSTEMSETTING
+        End Get
+    End Property
+    
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.ComponentModel.Browsable(false),  _
+     Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
+    Public ReadOnly Property SCREENING_BOOK_VIEW() As SCREENING_BOOK_VIEWDataTable
+        Get
+            Return Me.tableSCREENING_BOOK_VIEW
         End Get
     End Property
     
@@ -146,6 +160,9 @@ Partial Public Class DataSetSceenSetting
             If (Not (ds.Tables("SCREEN_SYSTEMSETTING")) Is Nothing) Then
                 MyBase.Tables.Add(New SCREEN_SYSTEMSETTINGDataTable(ds.Tables("SCREEN_SYSTEMSETTING")))
             End If
+            If (Not (ds.Tables("SCREENING_BOOK_VIEW")) Is Nothing) Then
+                MyBase.Tables.Add(New SCREENING_BOOK_VIEWDataTable(ds.Tables("SCREENING_BOOK_VIEW")))
+            End If
             Me.DataSetName = ds.DataSetName
             Me.Prefix = ds.Prefix
             Me.Namespace = ds.Namespace
@@ -181,6 +198,12 @@ Partial Public Class DataSetSceenSetting
                 Me.tableSCREEN_SYSTEMSETTING.InitVars
             End If
         End If
+        Me.tableSCREENING_BOOK_VIEW = CType(MyBase.Tables("SCREENING_BOOK_VIEW"),SCREENING_BOOK_VIEWDataTable)
+        If (initTable = true) Then
+            If (Not (Me.tableSCREENING_BOOK_VIEW) Is Nothing) Then
+                Me.tableSCREENING_BOOK_VIEW.InitVars
+            End If
+        End If
     End Sub
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
@@ -192,10 +215,17 @@ Partial Public Class DataSetSceenSetting
         Me.SchemaSerializationMode = Global.System.Data.SchemaSerializationMode.IncludeSchema
         Me.tableSCREEN_SYSTEMSETTING = New SCREEN_SYSTEMSETTINGDataTable
         MyBase.Tables.Add(Me.tableSCREEN_SYSTEMSETTING)
+        Me.tableSCREENING_BOOK_VIEW = New SCREENING_BOOK_VIEWDataTable
+        MyBase.Tables.Add(Me.tableSCREENING_BOOK_VIEW)
     End Sub
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
     Private Function ShouldSerializeSCREEN_SYSTEMSETTING() As Boolean
+        Return false
+    End Function
+    
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+    Private Function ShouldSerializeSCREENING_BOOK_VIEW() As Boolean
         Return false
     End Function
     
@@ -256,6 +286,8 @@ Partial Public Class DataSetSceenSetting
     End Function
     
     Public Delegate Sub SCREEN_SYSTEMSETTINGRowChangeEventHandler(ByVal sender As Object, ByVal e As SCREEN_SYSTEMSETTINGRowChangeEvent)
+    
+    Public Delegate Sub SCREENING_BOOK_VIEWRowChangeEventHandler(ByVal sender As Object, ByVal e As SCREENING_BOOK_VIEWRowChangeEvent)
     
     '''<summary>
     '''Represents the strongly named DataTable class.
@@ -600,6 +632,438 @@ Partial Public Class DataSetSceenSetting
     End Class
     
     '''<summary>
+    '''Represents the strongly named DataTable class.
+    '''</summary>
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "2.0.0.0"),  _
+     Global.System.Serializable(),  _
+     Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
+    Partial Public Class SCREENING_BOOK_VIEWDataTable
+        Inherits Global.System.Data.TypedTableBase(Of SCREENING_BOOK_VIEWRow)
+        
+        Private columnPatientNo As Global.System.Data.DataColumn
+        
+        Private columnNameEng As Global.System.Data.DataColumn
+        
+        Private columnNameKhmer As Global.System.Data.DataColumn
+        
+        Private columnAge As Global.System.Data.DataColumn
+        
+        Private columnSex As Global.System.Data.DataColumn
+        
+        Private columnSCREEN_BOOKID As Global.System.Data.DataColumn
+        
+        Private columnIS_REFRACTION As Global.System.Data.DataColumn
+        
+        Private columnIS_OPTICALSHOP As Global.System.Data.DataColumn
+        
+        Private columnIS_REFER_PICKUP As Global.System.Data.DataColumn
+        
+        Private columnIS_REFER_BYSELF As Global.System.Data.DataColumn
+        
+        Private columnSCREEN_ID As Global.System.Data.DataColumn
+        
+        Private columnSETTING_DATE As Global.System.Data.DataColumn
+        
+        Private columnHEALTH_NAME As Global.System.Data.DataColumn
+        
+        Private columnFULL_ADDRESS As Global.System.Data.DataColumn
+        
+        Private columnIS_DEFOUL As Global.System.Data.DataColumn
+        
+        Private columnBOOK_NOTE As Global.System.Data.DataColumn
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Sub New()
+            MyBase.New
+            Me.TableName = "SCREENING_BOOK_VIEW"
+            Me.BeginInit
+            Me.InitClass
+            Me.EndInit
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Friend Sub New(ByVal table As Global.System.Data.DataTable)
+            MyBase.New
+            Me.TableName = table.TableName
+            If (table.CaseSensitive <> table.DataSet.CaseSensitive) Then
+                Me.CaseSensitive = table.CaseSensitive
+            End If
+            If (table.Locale.ToString <> table.DataSet.Locale.ToString) Then
+                Me.Locale = table.Locale
+            End If
+            If (table.Namespace <> table.DataSet.Namespace) Then
+                Me.Namespace = table.Namespace
+            End If
+            Me.Prefix = table.Prefix
+            Me.MinimumCapacity = table.MinimumCapacity
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Protected Sub New(ByVal info As Global.System.Runtime.Serialization.SerializationInfo, ByVal context As Global.System.Runtime.Serialization.StreamingContext)
+            MyBase.New(info, context)
+            Me.InitVars
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public ReadOnly Property PatientNoColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnPatientNo
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public ReadOnly Property NameEngColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnNameEng
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public ReadOnly Property NameKhmerColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnNameKhmer
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public ReadOnly Property AgeColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnAge
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public ReadOnly Property SexColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnSex
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public ReadOnly Property SCREEN_BOOKIDColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnSCREEN_BOOKID
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public ReadOnly Property IS_REFRACTIONColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnIS_REFRACTION
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public ReadOnly Property IS_OPTICALSHOPColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnIS_OPTICALSHOP
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public ReadOnly Property IS_REFER_PICKUPColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnIS_REFER_PICKUP
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public ReadOnly Property IS_REFER_BYSELFColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnIS_REFER_BYSELF
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public ReadOnly Property SCREEN_IDColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnSCREEN_ID
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public ReadOnly Property SETTING_DATEColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnSETTING_DATE
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public ReadOnly Property HEALTH_NAMEColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnHEALTH_NAME
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public ReadOnly Property FULL_ADDRESSColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnFULL_ADDRESS
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public ReadOnly Property IS_DEFOULColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnIS_DEFOUL
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public ReadOnly Property BOOK_NOTEColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnBOOK_NOTE
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.ComponentModel.Browsable(false)>  _
+        Public ReadOnly Property Count() As Integer
+            Get
+                Return Me.Rows.Count
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Default ReadOnly Property Item(ByVal index As Integer) As SCREENING_BOOK_VIEWRow
+            Get
+                Return CType(Me.Rows(index),SCREENING_BOOK_VIEWRow)
+            End Get
+        End Property
+        
+        Public Event SCREENING_BOOK_VIEWRowChanging As SCREENING_BOOK_VIEWRowChangeEventHandler
+        
+        Public Event SCREENING_BOOK_VIEWRowChanged As SCREENING_BOOK_VIEWRowChangeEventHandler
+        
+        Public Event SCREENING_BOOK_VIEWRowDeleting As SCREENING_BOOK_VIEWRowChangeEventHandler
+        
+        Public Event SCREENING_BOOK_VIEWRowDeleted As SCREENING_BOOK_VIEWRowChangeEventHandler
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Overloads Sub AddSCREENING_BOOK_VIEWRow(ByVal row As SCREENING_BOOK_VIEWRow)
+            Me.Rows.Add(row)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Overloads Function AddSCREENING_BOOK_VIEWRow( _
+                    ByVal PatientNo As Decimal,  _
+                    ByVal NameEng As String,  _
+                    ByVal NameKhmer As String,  _
+                    ByVal Age As Decimal,  _
+                    ByVal Sex As String,  _
+                    ByVal SCREEN_BOOKID As Decimal,  _
+                    ByVal IS_REFRACTION As Boolean,  _
+                    ByVal IS_OPTICALSHOP As Boolean,  _
+                    ByVal IS_REFER_PICKUP As Boolean,  _
+                    ByVal IS_REFER_BYSELF As Boolean,  _
+                    ByVal SCREEN_ID As Decimal,  _
+                    ByVal SETTING_DATE As Date,  _
+                    ByVal HEALTH_NAME As String,  _
+                    ByVal FULL_ADDRESS As String,  _
+                    ByVal IS_DEFOUL As Boolean,  _
+                    ByVal BOOK_NOTE As String) As SCREENING_BOOK_VIEWRow
+            Dim rowSCREENING_BOOK_VIEWRow As SCREENING_BOOK_VIEWRow = CType(Me.NewRow,SCREENING_BOOK_VIEWRow)
+            Dim columnValuesArray() As Object = New Object() {PatientNo, NameEng, NameKhmer, Age, Sex, SCREEN_BOOKID, IS_REFRACTION, IS_OPTICALSHOP, IS_REFER_PICKUP, IS_REFER_BYSELF, SCREEN_ID, SETTING_DATE, HEALTH_NAME, FULL_ADDRESS, IS_DEFOUL, BOOK_NOTE}
+            rowSCREENING_BOOK_VIEWRow.ItemArray = columnValuesArray
+            Me.Rows.Add(rowSCREENING_BOOK_VIEWRow)
+            Return rowSCREENING_BOOK_VIEWRow
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Overrides Function Clone() As Global.System.Data.DataTable
+            Dim cln As SCREENING_BOOK_VIEWDataTable = CType(MyBase.Clone,SCREENING_BOOK_VIEWDataTable)
+            cln.InitVars
+            Return cln
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
+            Return New SCREENING_BOOK_VIEWDataTable
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Friend Sub InitVars()
+            Me.columnPatientNo = MyBase.Columns("PatientNo")
+            Me.columnNameEng = MyBase.Columns("NameEng")
+            Me.columnNameKhmer = MyBase.Columns("NameKhmer")
+            Me.columnAge = MyBase.Columns("Age")
+            Me.columnSex = MyBase.Columns("Sex")
+            Me.columnSCREEN_BOOKID = MyBase.Columns("SCREEN_BOOKID")
+            Me.columnIS_REFRACTION = MyBase.Columns("IS_REFRACTION")
+            Me.columnIS_OPTICALSHOP = MyBase.Columns("IS_OPTICALSHOP")
+            Me.columnIS_REFER_PICKUP = MyBase.Columns("IS_REFER_PICKUP")
+            Me.columnIS_REFER_BYSELF = MyBase.Columns("IS_REFER_BYSELF")
+            Me.columnSCREEN_ID = MyBase.Columns("SCREEN_ID")
+            Me.columnSETTING_DATE = MyBase.Columns("SETTING_DATE")
+            Me.columnHEALTH_NAME = MyBase.Columns("HEALTH_NAME")
+            Me.columnFULL_ADDRESS = MyBase.Columns("FULL_ADDRESS")
+            Me.columnIS_DEFOUL = MyBase.Columns("IS_DEFOUL")
+            Me.columnBOOK_NOTE = MyBase.Columns("BOOK_NOTE")
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Private Sub InitClass()
+            Me.columnPatientNo = New Global.System.Data.DataColumn("PatientNo", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnPatientNo)
+            Me.columnNameEng = New Global.System.Data.DataColumn("NameEng", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnNameEng)
+            Me.columnNameKhmer = New Global.System.Data.DataColumn("NameKhmer", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnNameKhmer)
+            Me.columnAge = New Global.System.Data.DataColumn("Age", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnAge)
+            Me.columnSex = New Global.System.Data.DataColumn("Sex", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnSex)
+            Me.columnSCREEN_BOOKID = New Global.System.Data.DataColumn("SCREEN_BOOKID", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnSCREEN_BOOKID)
+            Me.columnIS_REFRACTION = New Global.System.Data.DataColumn("IS_REFRACTION", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnIS_REFRACTION)
+            Me.columnIS_OPTICALSHOP = New Global.System.Data.DataColumn("IS_OPTICALSHOP", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnIS_OPTICALSHOP)
+            Me.columnIS_REFER_PICKUP = New Global.System.Data.DataColumn("IS_REFER_PICKUP", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnIS_REFER_PICKUP)
+            Me.columnIS_REFER_BYSELF = New Global.System.Data.DataColumn("IS_REFER_BYSELF", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnIS_REFER_BYSELF)
+            Me.columnSCREEN_ID = New Global.System.Data.DataColumn("SCREEN_ID", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnSCREEN_ID)
+            Me.columnSETTING_DATE = New Global.System.Data.DataColumn("SETTING_DATE", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnSETTING_DATE)
+            Me.columnHEALTH_NAME = New Global.System.Data.DataColumn("HEALTH_NAME", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnHEALTH_NAME)
+            Me.columnFULL_ADDRESS = New Global.System.Data.DataColumn("FULL_ADDRESS", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnFULL_ADDRESS)
+            Me.columnIS_DEFOUL = New Global.System.Data.DataColumn("IS_DEFOUL", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnIS_DEFOUL)
+            Me.columnBOOK_NOTE = New Global.System.Data.DataColumn("BOOK_NOTE", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnBOOK_NOTE)
+            Me.columnPatientNo.AllowDBNull = false
+            Me.columnNameEng.MaxLength = 50
+            Me.columnNameKhmer.MaxLength = 50
+            Me.columnSex.MaxLength = 1
+            Me.columnSCREEN_BOOKID.AllowDBNull = false
+            Me.columnHEALTH_NAME.MaxLength = 150
+            Me.columnFULL_ADDRESS.MaxLength = 50
+            Me.columnBOOK_NOTE.MaxLength = 250
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Function NewSCREENING_BOOK_VIEWRow() As SCREENING_BOOK_VIEWRow
+            Return CType(Me.NewRow,SCREENING_BOOK_VIEWRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
+            Return New SCREENING_BOOK_VIEWRow(builder)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Protected Overrides Function GetRowType() As Global.System.Type
+            Return GetType(SCREENING_BOOK_VIEWRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowChanged(e)
+            If (Not (Me.SCREENING_BOOK_VIEWRowChangedEvent) Is Nothing) Then
+                RaiseEvent SCREENING_BOOK_VIEWRowChanged(Me, New SCREENING_BOOK_VIEWRowChangeEvent(CType(e.Row,SCREENING_BOOK_VIEWRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowChanging(e)
+            If (Not (Me.SCREENING_BOOK_VIEWRowChangingEvent) Is Nothing) Then
+                RaiseEvent SCREENING_BOOK_VIEWRowChanging(Me, New SCREENING_BOOK_VIEWRowChangeEvent(CType(e.Row,SCREENING_BOOK_VIEWRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowDeleted(e)
+            If (Not (Me.SCREENING_BOOK_VIEWRowDeletedEvent) Is Nothing) Then
+                RaiseEvent SCREENING_BOOK_VIEWRowDeleted(Me, New SCREENING_BOOK_VIEWRowChangeEvent(CType(e.Row,SCREENING_BOOK_VIEWRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowDeleting(e)
+            If (Not (Me.SCREENING_BOOK_VIEWRowDeletingEvent) Is Nothing) Then
+                RaiseEvent SCREENING_BOOK_VIEWRowDeleting(Me, New SCREENING_BOOK_VIEWRowChangeEvent(CType(e.Row,SCREENING_BOOK_VIEWRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Sub RemoveSCREENING_BOOK_VIEWRow(ByVal row As SCREENING_BOOK_VIEWRow)
+            Me.Rows.Remove(row)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
+            Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType
+            Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence
+            Dim ds As DataSetSceenSetting = New DataSetSceenSetting
+            Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny
+            any1.Namespace = "http://www.w3.org/2001/XMLSchema"
+            any1.MinOccurs = New Decimal(0)
+            any1.MaxOccurs = Decimal.MaxValue
+            any1.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
+            sequence.Items.Add(any1)
+            Dim any2 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny
+            any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1"
+            any2.MinOccurs = New Decimal(1)
+            any2.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
+            sequence.Items.Add(any2)
+            Dim attribute1 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute
+            attribute1.Name = "namespace"
+            attribute1.FixedValue = ds.Namespace
+            type.Attributes.Add(attribute1)
+            Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute
+            attribute2.Name = "tableTypeName"
+            attribute2.FixedValue = "SCREENING_BOOK_VIEWDataTable"
+            type.Attributes.Add(attribute2)
+            type.Particle = sequence
+            Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
+            If xs.Contains(dsSchema.TargetNamespace) Then
+                Dim s1 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream
+                Dim s2 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream
+                Try 
+                    Dim schema As Global.System.Xml.Schema.XmlSchema = Nothing
+                    dsSchema.Write(s1)
+                    Dim schemas As Global.System.Collections.IEnumerator = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator
+                    Do While schemas.MoveNext
+                        schema = CType(schemas.Current,Global.System.Xml.Schema.XmlSchema)
+                        s2.SetLength(0)
+                        schema.Write(s2)
+                        If (s1.Length = s2.Length) Then
+                            s1.Position = 0
+                            s2.Position = 0
+                            
+                            Do While ((s1.Position <> s1.Length)  _
+                                        AndAlso (s1.ReadByte = s2.ReadByte))
+                                
+                                
+                            Loop
+                            If (s1.Position = s1.Length) Then
+                                Return type
+                            End If
+                        End If
+                        
+                    Loop
+                Finally
+                    If (Not (s1) Is Nothing) Then
+                        s1.Close
+                    End If
+                    If (Not (s2) Is Nothing) Then
+                        s2.Close
+                    End If
+                End Try
+            End If
+            xs.Add(dsSchema)
+            Return type
+        End Function
+    End Class
+    
+    '''<summary>
     '''Represents strongly named DataRow class.
     '''</summary>
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "2.0.0.0")>  _
@@ -818,6 +1282,378 @@ Partial Public Class DataSetSceenSetting
     End Class
     
     '''<summary>
+    '''Represents strongly named DataRow class.
+    '''</summary>
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "2.0.0.0")>  _
+    Partial Public Class SCREENING_BOOK_VIEWRow
+        Inherits Global.System.Data.DataRow
+        
+        Private tableSCREENING_BOOK_VIEW As SCREENING_BOOK_VIEWDataTable
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
+            MyBase.New(rb)
+            Me.tableSCREENING_BOOK_VIEW = CType(Me.Table,SCREENING_BOOK_VIEWDataTable)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Property PatientNo() As Decimal
+            Get
+                Return CType(Me(Me.tableSCREENING_BOOK_VIEW.PatientNoColumn),Decimal)
+            End Get
+            Set
+                Me(Me.tableSCREENING_BOOK_VIEW.PatientNoColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Property NameEng() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableSCREENING_BOOK_VIEW.NameEngColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'NameEng' in table 'SCREENING_BOOK_VIEW' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableSCREENING_BOOK_VIEW.NameEngColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Property NameKhmer() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableSCREENING_BOOK_VIEW.NameKhmerColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'NameKhmer' in table 'SCREENING_BOOK_VIEW' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableSCREENING_BOOK_VIEW.NameKhmerColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Property Age() As Decimal
+            Get
+                Try 
+                    Return CType(Me(Me.tableSCREENING_BOOK_VIEW.AgeColumn),Decimal)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Age' in table 'SCREENING_BOOK_VIEW' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableSCREENING_BOOK_VIEW.AgeColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Property Sex() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableSCREENING_BOOK_VIEW.SexColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Sex' in table 'SCREENING_BOOK_VIEW' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableSCREENING_BOOK_VIEW.SexColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Property SCREEN_BOOKID() As Decimal
+            Get
+                Return CType(Me(Me.tableSCREENING_BOOK_VIEW.SCREEN_BOOKIDColumn),Decimal)
+            End Get
+            Set
+                Me(Me.tableSCREENING_BOOK_VIEW.SCREEN_BOOKIDColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Property IS_REFRACTION() As Boolean
+            Get
+                Try 
+                    Return CType(Me(Me.tableSCREENING_BOOK_VIEW.IS_REFRACTIONColumn),Boolean)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'IS_REFRACTION' in table 'SCREENING_BOOK_VIEW' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableSCREENING_BOOK_VIEW.IS_REFRACTIONColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Property IS_OPTICALSHOP() As Boolean
+            Get
+                Try 
+                    Return CType(Me(Me.tableSCREENING_BOOK_VIEW.IS_OPTICALSHOPColumn),Boolean)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'IS_OPTICALSHOP' in table 'SCREENING_BOOK_VIEW' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableSCREENING_BOOK_VIEW.IS_OPTICALSHOPColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Property IS_REFER_PICKUP() As Boolean
+            Get
+                Try 
+                    Return CType(Me(Me.tableSCREENING_BOOK_VIEW.IS_REFER_PICKUPColumn),Boolean)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'IS_REFER_PICKUP' in table 'SCREENING_BOOK_VIEW' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableSCREENING_BOOK_VIEW.IS_REFER_PICKUPColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Property IS_REFER_BYSELF() As Boolean
+            Get
+                Try 
+                    Return CType(Me(Me.tableSCREENING_BOOK_VIEW.IS_REFER_BYSELFColumn),Boolean)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'IS_REFER_BYSELF' in table 'SCREENING_BOOK_VIEW' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableSCREENING_BOOK_VIEW.IS_REFER_BYSELFColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Property SCREEN_ID() As Decimal
+            Get
+                Try 
+                    Return CType(Me(Me.tableSCREENING_BOOK_VIEW.SCREEN_IDColumn),Decimal)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'SCREEN_ID' in table 'SCREENING_BOOK_VIEW' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableSCREENING_BOOK_VIEW.SCREEN_IDColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Property SETTING_DATE() As Date
+            Get
+                Try 
+                    Return CType(Me(Me.tableSCREENING_BOOK_VIEW.SETTING_DATEColumn),Date)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'SETTING_DATE' in table 'SCREENING_BOOK_VIEW' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableSCREENING_BOOK_VIEW.SETTING_DATEColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Property HEALTH_NAME() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableSCREENING_BOOK_VIEW.HEALTH_NAMEColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'HEALTH_NAME' in table 'SCREENING_BOOK_VIEW' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableSCREENING_BOOK_VIEW.HEALTH_NAMEColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Property FULL_ADDRESS() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableSCREENING_BOOK_VIEW.FULL_ADDRESSColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'FULL_ADDRESS' in table 'SCREENING_BOOK_VIEW' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableSCREENING_BOOK_VIEW.FULL_ADDRESSColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Property IS_DEFOUL() As Boolean
+            Get
+                Try 
+                    Return CType(Me(Me.tableSCREENING_BOOK_VIEW.IS_DEFOULColumn),Boolean)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'IS_DEFOUL' in table 'SCREENING_BOOK_VIEW' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableSCREENING_BOOK_VIEW.IS_DEFOULColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Property BOOK_NOTE() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableSCREENING_BOOK_VIEW.BOOK_NOTEColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'BOOK_NOTE' in table 'SCREENING_BOOK_VIEW' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableSCREENING_BOOK_VIEW.BOOK_NOTEColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Function IsNameEngNull() As Boolean
+            Return Me.IsNull(Me.tableSCREENING_BOOK_VIEW.NameEngColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Sub SetNameEngNull()
+            Me(Me.tableSCREENING_BOOK_VIEW.NameEngColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Function IsNameKhmerNull() As Boolean
+            Return Me.IsNull(Me.tableSCREENING_BOOK_VIEW.NameKhmerColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Sub SetNameKhmerNull()
+            Me(Me.tableSCREENING_BOOK_VIEW.NameKhmerColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Function IsAgeNull() As Boolean
+            Return Me.IsNull(Me.tableSCREENING_BOOK_VIEW.AgeColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Sub SetAgeNull()
+            Me(Me.tableSCREENING_BOOK_VIEW.AgeColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Function IsSexNull() As Boolean
+            Return Me.IsNull(Me.tableSCREENING_BOOK_VIEW.SexColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Sub SetSexNull()
+            Me(Me.tableSCREENING_BOOK_VIEW.SexColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Function IsIS_REFRACTIONNull() As Boolean
+            Return Me.IsNull(Me.tableSCREENING_BOOK_VIEW.IS_REFRACTIONColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Sub SetIS_REFRACTIONNull()
+            Me(Me.tableSCREENING_BOOK_VIEW.IS_REFRACTIONColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Function IsIS_OPTICALSHOPNull() As Boolean
+            Return Me.IsNull(Me.tableSCREENING_BOOK_VIEW.IS_OPTICALSHOPColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Sub SetIS_OPTICALSHOPNull()
+            Me(Me.tableSCREENING_BOOK_VIEW.IS_OPTICALSHOPColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Function IsIS_REFER_PICKUPNull() As Boolean
+            Return Me.IsNull(Me.tableSCREENING_BOOK_VIEW.IS_REFER_PICKUPColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Sub SetIS_REFER_PICKUPNull()
+            Me(Me.tableSCREENING_BOOK_VIEW.IS_REFER_PICKUPColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Function IsIS_REFER_BYSELFNull() As Boolean
+            Return Me.IsNull(Me.tableSCREENING_BOOK_VIEW.IS_REFER_BYSELFColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Sub SetIS_REFER_BYSELFNull()
+            Me(Me.tableSCREENING_BOOK_VIEW.IS_REFER_BYSELFColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Function IsSCREEN_IDNull() As Boolean
+            Return Me.IsNull(Me.tableSCREENING_BOOK_VIEW.SCREEN_IDColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Sub SetSCREEN_IDNull()
+            Me(Me.tableSCREENING_BOOK_VIEW.SCREEN_IDColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Function IsSETTING_DATENull() As Boolean
+            Return Me.IsNull(Me.tableSCREENING_BOOK_VIEW.SETTING_DATEColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Sub SetSETTING_DATENull()
+            Me(Me.tableSCREENING_BOOK_VIEW.SETTING_DATEColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Function IsHEALTH_NAMENull() As Boolean
+            Return Me.IsNull(Me.tableSCREENING_BOOK_VIEW.HEALTH_NAMEColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Sub SetHEALTH_NAMENull()
+            Me(Me.tableSCREENING_BOOK_VIEW.HEALTH_NAMEColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Function IsFULL_ADDRESSNull() As Boolean
+            Return Me.IsNull(Me.tableSCREENING_BOOK_VIEW.FULL_ADDRESSColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Sub SetFULL_ADDRESSNull()
+            Me(Me.tableSCREENING_BOOK_VIEW.FULL_ADDRESSColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Function IsIS_DEFOULNull() As Boolean
+            Return Me.IsNull(Me.tableSCREENING_BOOK_VIEW.IS_DEFOULColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Sub SetIS_DEFOULNull()
+            Me(Me.tableSCREENING_BOOK_VIEW.IS_DEFOULColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Function IsBOOK_NOTENull() As Boolean
+            Return Me.IsNull(Me.tableSCREENING_BOOK_VIEW.BOOK_NOTEColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Sub SetBOOK_NOTENull()
+            Me(Me.tableSCREENING_BOOK_VIEW.BOOK_NOTEColumn) = Global.System.Convert.DBNull
+        End Sub
+    End Class
+    
+    '''<summary>
     '''Row event argument class
     '''</summary>
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "2.0.0.0")>  _
@@ -837,6 +1673,39 @@ Partial Public Class DataSetSceenSetting
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Public ReadOnly Property Row() As SCREEN_SYSTEMSETTINGRow
+            Get
+                Return Me.eventRow
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public ReadOnly Property Action() As Global.System.Data.DataRowAction
+            Get
+                Return Me.eventAction
+            End Get
+        End Property
+    End Class
+    
+    '''<summary>
+    '''Row event argument class
+    '''</summary>
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "2.0.0.0")>  _
+    Public Class SCREENING_BOOK_VIEWRowChangeEvent
+        Inherits Global.System.EventArgs
+        
+        Private eventRow As SCREENING_BOOK_VIEWRow
+        
+        Private eventAction As Global.System.Data.DataRowAction
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Sub New(ByVal row As SCREENING_BOOK_VIEWRow, ByVal action As Global.System.Data.DataRowAction)
+            MyBase.New
+            Me.eventRow = row
+            Me.eventAction = action
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public ReadOnly Property Row() As SCREENING_BOOK_VIEWRow
             Get
                 Return Me.eventRow
             End Get
@@ -1634,6 +2503,187 @@ Namespace DataSetSceenSettingTableAdapters
                 End If
             End Try
             Return returnValue
+        End Function
+    End Class
+    
+    '''<summary>
+    '''Represents the connection and commands used to retrieve and save data.
+    '''</summary>
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "2.0.0.0"),  _
+     Global.System.ComponentModel.DesignerCategoryAttribute("code"),  _
+     Global.System.ComponentModel.ToolboxItem(true),  _
+     Global.System.ComponentModel.DataObjectAttribute(true),  _
+     Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner"& _ 
+        ", Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),  _
+     Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+    Partial Public Class SCREENING_BOOK_VIEWTableAdapter
+        Inherits Global.System.ComponentModel.Component
+        
+        Private WithEvents _adapter As Global.System.Data.SqlClient.SqlDataAdapter
+        
+        Private _connection As Global.System.Data.SqlClient.SqlConnection
+        
+        Private _transaction As Global.System.Data.SqlClient.SqlTransaction
+        
+        Private _commandCollection() As Global.System.Data.SqlClient.SqlCommand
+        
+        Private _clearBeforeFill As Boolean
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Sub New()
+            MyBase.New
+            Me.ClearBeforeFill = true
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Protected Friend ReadOnly Property Adapter() As Global.System.Data.SqlClient.SqlDataAdapter
+            Get
+                If (Me._adapter Is Nothing) Then
+                    Me.InitAdapter
+                End If
+                Return Me._adapter
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Friend Property Connection() As Global.System.Data.SqlClient.SqlConnection
+            Get
+                If (Me._connection Is Nothing) Then
+                    Me.InitConnection
+                End If
+                Return Me._connection
+            End Get
+            Set
+                Me._connection = value
+                If (Not (Me.Adapter.InsertCommand) Is Nothing) Then
+                    Me.Adapter.InsertCommand.Connection = value
+                End If
+                If (Not (Me.Adapter.DeleteCommand) Is Nothing) Then
+                    Me.Adapter.DeleteCommand.Connection = value
+                End If
+                If (Not (Me.Adapter.UpdateCommand) Is Nothing) Then
+                    Me.Adapter.UpdateCommand.Connection = value
+                End If
+                Dim i As Integer = 0
+                Do While (i < Me.CommandCollection.Length)
+                    If (Not (Me.CommandCollection(i)) Is Nothing) Then
+                        CType(Me.CommandCollection(i),Global.System.Data.SqlClient.SqlCommand).Connection = value
+                    End If
+                    i = (i + 1)
+                Loop
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Friend Property Transaction() As Global.System.Data.SqlClient.SqlTransaction
+            Get
+                Return Me._transaction
+            End Get
+            Set
+                Me._transaction = value
+                Dim i As Integer = 0
+                Do While (i < Me.CommandCollection.Length)
+                    Me.CommandCollection(i).Transaction = Me._transaction
+                    i = (i + 1)
+                Loop
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.DeleteCommand) Is Nothing)) Then
+                    Me.Adapter.DeleteCommand.Transaction = Me._transaction
+                End If
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.InsertCommand) Is Nothing)) Then
+                    Me.Adapter.InsertCommand.Transaction = Me._transaction
+                End If
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.UpdateCommand) Is Nothing)) Then
+                    Me.Adapter.UpdateCommand.Transaction = Me._transaction
+                End If
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Protected ReadOnly Property CommandCollection() As Global.System.Data.SqlClient.SqlCommand()
+            Get
+                If (Me._commandCollection Is Nothing) Then
+                    Me.InitCommandCollection
+                End If
+                Return Me._commandCollection
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Property ClearBeforeFill() As Boolean
+            Get
+                Return Me._clearBeforeFill
+            End Get
+            Set
+                Me._clearBeforeFill = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Private Sub InitAdapter()
+            Me._adapter = New Global.System.Data.SqlClient.SqlDataAdapter
+            Dim tableMapping As Global.System.Data.Common.DataTableMapping = New Global.System.Data.Common.DataTableMapping
+            tableMapping.SourceTable = "Table"
+            tableMapping.DataSetTable = "SCREENING_BOOK_VIEW"
+            tableMapping.ColumnMappings.Add("PatientNo", "PatientNo")
+            tableMapping.ColumnMappings.Add("NameEng", "NameEng")
+            tableMapping.ColumnMappings.Add("NameKhmer", "NameKhmer")
+            tableMapping.ColumnMappings.Add("Age", "Age")
+            tableMapping.ColumnMappings.Add("Sex", "Sex")
+            tableMapping.ColumnMappings.Add("SCREEN_BOOKID", "SCREEN_BOOKID")
+            tableMapping.ColumnMappings.Add("IS_REFRACTION", "IS_REFRACTION")
+            tableMapping.ColumnMappings.Add("IS_OPTICALSHOP", "IS_OPTICALSHOP")
+            tableMapping.ColumnMappings.Add("IS_REFER_PICKUP", "IS_REFER_PICKUP")
+            tableMapping.ColumnMappings.Add("IS_REFER_BYSELF", "IS_REFER_BYSELF")
+            tableMapping.ColumnMappings.Add("SCREEN_ID", "SCREEN_ID")
+            tableMapping.ColumnMappings.Add("SETTING_DATE", "SETTING_DATE")
+            tableMapping.ColumnMappings.Add("HEALTH_NAME", "HEALTH_NAME")
+            tableMapping.ColumnMappings.Add("FULL_ADDRESS", "FULL_ADDRESS")
+            tableMapping.ColumnMappings.Add("IS_DEFOUL", "IS_DEFOUL")
+            tableMapping.ColumnMappings.Add("BOOK_NOTE", "BOOK_NOTE")
+            Me._adapter.TableMappings.Add(tableMapping)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Private Sub InitConnection()
+            Me._connection = New Global.System.Data.SqlClient.SqlConnection
+            Me._connection.ConnectionString = Global.TakeoHospitalInventory.My.MySettings.Default.TakeoDBConnectionString
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Private Sub InitCommandCollection()
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
+            Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand
+            Me._commandCollection(0).Connection = Me.Connection
+            Me._commandCollection(0).CommandText = "SELECT        PatientNo, NameEng, NameKhmer, Age, Sex, SCREEN_BOOKID, IS_REFRACTI"& _ 
+                "ON, IS_OPTICALSHOP, IS_REFER_PICKUP, IS_REFER_BYSELF, SCREEN_ID, SETTING_DATE, H"& _ 
+                "EALTH_NAME, FULL_ADDRESS, IS_DEFOUL, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         BOOK_NOTE"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM "& _ 
+                "           SCREENING_BOOK_VIEW"
+            Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
+        Public Overloads Overridable Function Fill(ByVal dataTable As DataSetSceenSetting.SCREENING_BOOK_VIEWDataTable) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
+        Public Overloads Overridable Function GetData() As DataSetSceenSetting.SCREENING_BOOK_VIEWDataTable
+            Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            Dim dataTable As DataSetSceenSetting.SCREENING_BOOK_VIEWDataTable = New DataSetSceenSetting.SCREENING_BOOK_VIEWDataTable
+            Me.Adapter.Fill(dataTable)
+            Return dataTable
         End Function
     End Class
     

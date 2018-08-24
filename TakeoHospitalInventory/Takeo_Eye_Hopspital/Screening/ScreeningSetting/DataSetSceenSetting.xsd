@@ -161,6 +161,39 @@ SET                IS_DEFOUL = @IS_DEFOUL
               </DbSource>
             </Sources>
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SCREENING_BOOK_VIEWTableAdapter" GeneratorDataComponentClassName="SCREENING_BOOK_VIEWTableAdapter" Name="SCREENING_BOOK_VIEW" UserDataComponentName="SCREENING_BOOK_VIEWTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TakeoDBConnectionString (MySettings)" DbObjectName="TEHScreening.dbo.SCREENING_BOOK_VIEW" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        PatientNo, NameEng, NameKhmer, Age, Sex, SCREEN_BOOKID, IS_REFRACTION, IS_OPTICALSHOP, IS_REFER_PICKUP, IS_REFER_BYSELF, SCREEN_ID, SETTING_DATE, HEALTH_NAME, FULL_ADDRESS, IS_DEFOUL, 
+                         BOOK_NOTE
+FROM            SCREENING_BOOK_VIEW</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="PatientNo" DataSetColumn="PatientNo" />
+              <Mapping SourceColumn="NameEng" DataSetColumn="NameEng" />
+              <Mapping SourceColumn="NameKhmer" DataSetColumn="NameKhmer" />
+              <Mapping SourceColumn="Age" DataSetColumn="Age" />
+              <Mapping SourceColumn="Sex" DataSetColumn="Sex" />
+              <Mapping SourceColumn="SCREEN_BOOKID" DataSetColumn="SCREEN_BOOKID" />
+              <Mapping SourceColumn="IS_REFRACTION" DataSetColumn="IS_REFRACTION" />
+              <Mapping SourceColumn="IS_OPTICALSHOP" DataSetColumn="IS_OPTICALSHOP" />
+              <Mapping SourceColumn="IS_REFER_PICKUP" DataSetColumn="IS_REFER_PICKUP" />
+              <Mapping SourceColumn="IS_REFER_BYSELF" DataSetColumn="IS_REFER_BYSELF" />
+              <Mapping SourceColumn="SCREEN_ID" DataSetColumn="SCREEN_ID" />
+              <Mapping SourceColumn="SETTING_DATE" DataSetColumn="SETTING_DATE" />
+              <Mapping SourceColumn="HEALTH_NAME" DataSetColumn="HEALTH_NAME" />
+              <Mapping SourceColumn="FULL_ADDRESS" DataSetColumn="FULL_ADDRESS" />
+              <Mapping SourceColumn="IS_DEFOUL" DataSetColumn="IS_DEFOUL" />
+              <Mapping SourceColumn="BOOK_NOTE" DataSetColumn="BOOK_NOTE" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -172,33 +205,91 @@ SET                IS_DEFOUL = @IS_DEFOUL
         <xs:element name="SCREEN_SYSTEMSETTING" msprop:Generator_UserTableName="SCREEN_SYSTEMSETTING" msprop:Generator_RowDeletedName="SCREEN_SYSTEMSETTINGRowDeleted" msprop:Generator_RowChangedName="SCREEN_SYSTEMSETTINGRowChanged" msprop:Generator_RowClassName="SCREEN_SYSTEMSETTINGRow" msprop:Generator_RowChangingName="SCREEN_SYSTEMSETTINGRowChanging" msprop:Generator_RowEvArgName="SCREEN_SYSTEMSETTINGRowChangeEvent" msprop:Generator_RowEvHandlerName="SCREEN_SYSTEMSETTINGRowChangeEventHandler" msprop:Generator_TableClassName="SCREEN_SYSTEMSETTINGDataTable" msprop:Generator_TableVarName="tableSCREEN_SYSTEMSETTING" msprop:Generator_RowDeletingName="SCREEN_SYSTEMSETTINGRowDeleting" msprop:Generator_TablePropName="SCREEN_SYSTEMSETTING">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="SETTING_ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="SETTING_ID" msprop:Generator_ColumnPropNameInRow="SETTING_ID" msprop:Generator_ColumnVarNameInTable="columnSETTING_ID" msprop:Generator_ColumnPropNameInTable="SETTING_IDColumn" type="xs:decimal" />
-              <xs:element name="SETTING_DATE" msprop:Generator_UserColumnName="SETTING_DATE" msprop:Generator_ColumnPropNameInRow="SETTING_DATE" msprop:Generator_ColumnVarNameInTable="columnSETTING_DATE" msprop:Generator_ColumnPropNameInTable="SETTING_DATEColumn" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="HEALTH_NAME" msprop:Generator_UserColumnName="HEALTH_NAME" msprop:Generator_ColumnPropNameInRow="HEALTH_NAME" msprop:Generator_ColumnVarNameInTable="columnHEALTH_NAME" msprop:Generator_ColumnPropNameInTable="HEALTH_NAMEColumn" minOccurs="0">
+              <xs:element name="SETTING_ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="SETTING_ID" msprop:Generator_ColumnVarNameInTable="columnSETTING_ID" msprop:Generator_ColumnPropNameInRow="SETTING_ID" msprop:Generator_ColumnPropNameInTable="SETTING_IDColumn" type="xs:decimal" />
+              <xs:element name="SETTING_DATE" msprop:Generator_UserColumnName="SETTING_DATE" msprop:Generator_ColumnVarNameInTable="columnSETTING_DATE" msprop:Generator_ColumnPropNameInRow="SETTING_DATE" msprop:Generator_ColumnPropNameInTable="SETTING_DATEColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="HEALTH_NAME" msprop:Generator_UserColumnName="HEALTH_NAME" msprop:Generator_ColumnVarNameInTable="columnHEALTH_NAME" msprop:Generator_ColumnPropNameInRow="HEALTH_NAME" msprop:Generator_ColumnPropNameInTable="HEALTH_NAMEColumn" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="150" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="PROVINCE" msprop:Generator_UserColumnName="PROVINCE" msprop:Generator_ColumnPropNameInRow="PROVINCE" msprop:Generator_ColumnVarNameInTable="columnPROVINCE" msprop:Generator_ColumnPropNameInTable="PROVINCEColumn" minOccurs="0">
+              <xs:element name="PROVINCE" msprop:Generator_UserColumnName="PROVINCE" msprop:Generator_ColumnVarNameInTable="columnPROVINCE" msprop:Generator_ColumnPropNameInRow="PROVINCE" msprop:Generator_ColumnPropNameInTable="PROVINCEColumn" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="DISTRICT" msprop:Generator_UserColumnName="DISTRICT" msprop:Generator_ColumnPropNameInRow="DISTRICT" msprop:Generator_ColumnVarNameInTable="columnDISTRICT" msprop:Generator_ColumnPropNameInTable="DISTRICTColumn" minOccurs="0">
+              <xs:element name="DISTRICT" msprop:Generator_UserColumnName="DISTRICT" msprop:Generator_ColumnVarNameInTable="columnDISTRICT" msprop:Generator_ColumnPropNameInRow="DISTRICT" msprop:Generator_ColumnPropNameInTable="DISTRICTColumn" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="COMMUNE" msprop:Generator_UserColumnName="COMMUNE" msprop:Generator_ColumnPropNameInRow="COMMUNE" msprop:Generator_ColumnVarNameInTable="columnCOMMUNE" msprop:Generator_ColumnPropNameInTable="COMMUNEColumn" minOccurs="0">
+              <xs:element name="COMMUNE" msprop:Generator_UserColumnName="COMMUNE" msprop:Generator_ColumnVarNameInTable="columnCOMMUNE" msprop:Generator_ColumnPropNameInRow="COMMUNE" msprop:Generator_ColumnPropNameInTable="COMMUNEColumn" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FULL_ADDRESS" msprop:Generator_UserColumnName="FULL_ADDRESS" msprop:Generator_ColumnVarNameInTable="columnFULL_ADDRESS" msprop:Generator_ColumnPropNameInRow="FULL_ADDRESS" msprop:Generator_ColumnPropNameInTable="FULL_ADDRESSColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="IS_DEFOUL" msprop:Generator_UserColumnName="IS_DEFOUL" msprop:Generator_ColumnVarNameInTable="columnIS_DEFOUL" msprop:Generator_ColumnPropNameInRow="IS_DEFOUL" msprop:Generator_ColumnPropNameInTable="IS_DEFOULColumn" type="xs:boolean" minOccurs="0" />
+              <xs:element name="BOOK_NOTE" msprop:Generator_UserColumnName="BOOK_NOTE" msprop:Generator_ColumnVarNameInTable="columnBOOK_NOTE" msprop:Generator_ColumnPropNameInRow="BOOK_NOTE" msprop:Generator_ColumnPropNameInTable="BOOK_NOTEColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="SCREENING_BOOK_VIEW" msprop:Generator_UserTableName="SCREENING_BOOK_VIEW" msprop:Generator_RowDeletedName="SCREENING_BOOK_VIEWRowDeleted" msprop:Generator_TableClassName="SCREENING_BOOK_VIEWDataTable" msprop:Generator_RowChangedName="SCREENING_BOOK_VIEWRowChanged" msprop:Generator_RowClassName="SCREENING_BOOK_VIEWRow" msprop:Generator_RowChangingName="SCREENING_BOOK_VIEWRowChanging" msprop:Generator_RowEvArgName="SCREENING_BOOK_VIEWRowChangeEvent" msprop:Generator_RowEvHandlerName="SCREENING_BOOK_VIEWRowChangeEventHandler" msprop:Generator_TablePropName="SCREENING_BOOK_VIEW" msprop:Generator_TableVarName="tableSCREENING_BOOK_VIEW" msprop:Generator_RowDeletingName="SCREENING_BOOK_VIEWRowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="PatientNo" msprop:Generator_UserColumnName="PatientNo" msprop:Generator_ColumnPropNameInRow="PatientNo" msprop:Generator_ColumnVarNameInTable="columnPatientNo" msprop:Generator_ColumnPropNameInTable="PatientNoColumn" type="xs:decimal" />
+              <xs:element name="NameEng" msprop:Generator_UserColumnName="NameEng" msprop:Generator_ColumnPropNameInRow="NameEng" msprop:Generator_ColumnVarNameInTable="columnNameEng" msprop:Generator_ColumnPropNameInTable="NameEngColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NameKhmer" msprop:Generator_UserColumnName="NameKhmer" msprop:Generator_ColumnPropNameInRow="NameKhmer" msprop:Generator_ColumnVarNameInTable="columnNameKhmer" msprop:Generator_ColumnPropNameInTable="NameKhmerColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Age" msprop:Generator_UserColumnName="Age" msprop:Generator_ColumnPropNameInRow="Age" msprop:Generator_ColumnVarNameInTable="columnAge" msprop:Generator_ColumnPropNameInTable="AgeColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Sex" msprop:Generator_UserColumnName="Sex" msprop:Generator_ColumnPropNameInRow="Sex" msprop:Generator_ColumnVarNameInTable="columnSex" msprop:Generator_ColumnPropNameInTable="SexColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SCREEN_BOOKID" msprop:Generator_UserColumnName="SCREEN_BOOKID" msprop:Generator_ColumnPropNameInRow="SCREEN_BOOKID" msprop:Generator_ColumnVarNameInTable="columnSCREEN_BOOKID" msprop:Generator_ColumnPropNameInTable="SCREEN_BOOKIDColumn" type="xs:decimal" />
+              <xs:element name="IS_REFRACTION" msprop:Generator_UserColumnName="IS_REFRACTION" msprop:Generator_ColumnPropNameInRow="IS_REFRACTION" msprop:Generator_ColumnVarNameInTable="columnIS_REFRACTION" msprop:Generator_ColumnPropNameInTable="IS_REFRACTIONColumn" type="xs:boolean" minOccurs="0" />
+              <xs:element name="IS_OPTICALSHOP" msprop:Generator_UserColumnName="IS_OPTICALSHOP" msprop:Generator_ColumnPropNameInRow="IS_OPTICALSHOP" msprop:Generator_ColumnVarNameInTable="columnIS_OPTICALSHOP" msprop:Generator_ColumnPropNameInTable="IS_OPTICALSHOPColumn" type="xs:boolean" minOccurs="0" />
+              <xs:element name="IS_REFER_PICKUP" msprop:Generator_UserColumnName="IS_REFER_PICKUP" msprop:Generator_ColumnPropNameInRow="IS_REFER_PICKUP" msprop:Generator_ColumnVarNameInTable="columnIS_REFER_PICKUP" msprop:Generator_ColumnPropNameInTable="IS_REFER_PICKUPColumn" type="xs:boolean" minOccurs="0" />
+              <xs:element name="IS_REFER_BYSELF" msprop:Generator_UserColumnName="IS_REFER_BYSELF" msprop:Generator_ColumnPropNameInRow="IS_REFER_BYSELF" msprop:Generator_ColumnVarNameInTable="columnIS_REFER_BYSELF" msprop:Generator_ColumnPropNameInTable="IS_REFER_BYSELFColumn" type="xs:boolean" minOccurs="0" />
+              <xs:element name="SCREEN_ID" msprop:Generator_UserColumnName="SCREEN_ID" msprop:Generator_ColumnPropNameInRow="SCREEN_ID" msprop:Generator_ColumnVarNameInTable="columnSCREEN_ID" msprop:Generator_ColumnPropNameInTable="SCREEN_IDColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="SETTING_DATE" msprop:Generator_UserColumnName="SETTING_DATE" msprop:Generator_ColumnPropNameInRow="SETTING_DATE" msprop:Generator_ColumnVarNameInTable="columnSETTING_DATE" msprop:Generator_ColumnPropNameInTable="SETTING_DATEColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="HEALTH_NAME" msprop:Generator_UserColumnName="HEALTH_NAME" msprop:Generator_ColumnPropNameInRow="HEALTH_NAME" msprop:Generator_ColumnVarNameInTable="columnHEALTH_NAME" msprop:Generator_ColumnPropNameInTable="HEALTH_NAMEColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>

@@ -691,22 +691,22 @@
     <Compile Include="Takeo_Eye_Hopspital\Screening\ScreeningSetting\ScreeningSetting.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Takeo_Eye_Hopspital\Screening\UserRegister\DashboardScreeningRegisBook.Designer.vb">
+    <Compile Include="Takeo_Eye_Hopspital\Screening\ScreeningBook\DashboardScreeningRegisBook.Designer.vb">
       <DependentUpon>DashboardScreeningRegisBook.vb</DependentUpon>
     </Compile>
-    <Compile Include="Takeo_Eye_Hopspital\Screening\UserRegister\DashboardScreeningRegisBook.vb">
+    <Compile Include="Takeo_Eye_Hopspital\Screening\ScreeningBook\DashboardScreeningRegisBook.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Takeo_Eye_Hopspital\Screening\UserRegister\FormPatientRegister.Designer.vb">
+    <Compile Include="Takeo_Eye_Hopspital\Screening\ScreeningBook\FormPatientRegister.Designer.vb">
       <DependentUpon>FormPatientRegister.vb</DependentUpon>
     </Compile>
-    <Compile Include="Takeo_Eye_Hopspital\Screening\UserRegister\FormPatientRegister.vb">
+    <Compile Include="Takeo_Eye_Hopspital\Screening\ScreeningBook\FormPatientRegister.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Takeo_Eye_Hopspital\Screening\UserRegister\RegisSetting.Designer.vb">
+    <Compile Include="Takeo_Eye_Hopspital\Screening\ScreeningBook\RegisSetting.Designer.vb">
       <DependentUpon>RegisSetting.vb</DependentUpon>
     </Compile>
-    <Compile Include="Takeo_Eye_Hopspital\Screening\UserRegister\RegisSetting.vb">
+    <Compile Include="Takeo_Eye_Hopspital\Screening\ScreeningBook\RegisSetting.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Takeo_Eye_Hopspital\ViewsEye\Achieve\NewAchieve\FRMAChievNew.Designer.vb">
@@ -3259,13 +3259,13 @@
     <EmbeddedResource Include="Takeo_Eye_Hopspital\Screening\ScreeningSetting\ScreeningSetting.resx">
       <DependentUpon>ScreeningSetting.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Takeo_Eye_Hopspital\Screening\UserRegister\DashboardScreeningRegisBook.resx">
+    <EmbeddedResource Include="Takeo_Eye_Hopspital\Screening\ScreeningBook\DashboardScreeningRegisBook.resx">
       <DependentUpon>DashboardScreeningRegisBook.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Takeo_Eye_Hopspital\Screening\UserRegister\FormPatientRegister.resx">
+    <EmbeddedResource Include="Takeo_Eye_Hopspital\Screening\ScreeningBook\FormPatientRegister.resx">
       <DependentUpon>FormPatientRegister.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Takeo_Eye_Hopspital\Screening\UserRegister\RegisSetting.resx">
+    <EmbeddedResource Include="Takeo_Eye_Hopspital\Screening\ScreeningBook\RegisSetting.resx">
       <DependentUpon>RegisSetting.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Takeo_Eye_Hopspital\ViewsEye\Achieve\NewAchieve\FRMAChievNew.resx">

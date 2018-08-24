@@ -531,9 +531,6 @@ Public Class frmNewOutpatientReceipt
         End Select
     End Sub
 
-    Private Sub txtHN_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtHN.TextChanged
-
-    End Sub
 
     Private Sub txtReceiptNumber_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtReceiptNumber.KeyPress
         Select Case Asc(e.KeyChar)
