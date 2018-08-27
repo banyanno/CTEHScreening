@@ -61,6 +61,12 @@
             ' ========== Save New patient information =======================
             sqlComm.CommandText = SqlPatientInformation()
             sqlComm.ExecuteNonQuery()
+
+
+            ' ========== Save new Screening book ================================
+
+            sqlComm.CommandText = ScreeningBook()
+            sqlComm.ExecuteNonQuery()
             '=========== Save Patient Referral Detail ======================
 
             'For i As Int16 = 0 To ChListReferral.Items.Count - 1
@@ -172,9 +178,14 @@
         Return sql
     End Function
 
-    Private Function InserScreeningBook() As String
-
+    Private Function ScreeningBook() As String
+        Return InsertScreenBook(LblSettingID.Text, PatientNo.Text, ChRefraction.Checked, ChOpticalshop.Checked, ChReferAndPickup.Checked, ChReferAndComeBySelf.Checked)
     End Function
+    Private Function InsertScreenBook(ByVal SCREEN_ID As Integer, ByVal PATIENT_NO As Double, ByVal IS_REFRACTION As Boolean, ByVal IS_OPTICALSHOP As Boolean, ByVal IS_REFER_PICKUP As Boolean, ByVal IS_REFER_BYSELF As Boolean) As String
+        Dim sql As String = "INSERT INTO SCREENING_BOOK (SCREEN_ID,PATIENT_NO,IS_REFRACTION,IS_OPTICALSHOP,IS_REFER_PICKUP,IS_REFER_BYSELF) VALUES(" & SCREEN_ID & "," & PATIENT_NO & ",'" & IS_REFRACTION & "','" & IS_OPTICALSHOP & "','" & IS_REFER_PICKUP & "','" & IS_REFER_BYSELF & "')"
+        Return sql
+    End Function
+
 
     Private Sub CboDisNo_DropDown(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CboDisNo.DropDown
         If ValidateCombobox(CboProNo, "", ErrSaveRegis) = False Then Exit Sub
