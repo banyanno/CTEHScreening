@@ -1,7 +1,7 @@
 USE [TEHScreening]
 GO
 
-/****** Object:  Table [dbo].[SCREENING_BOOK]    Script Date: 08/23/2018 16:14:03 ******/
+/****** Object:  Table [dbo].[SCREENING_BOOK]    Script Date: 08/27/2018 16:40:06 ******/
 SET ANSI_NULLS ON
 GO
 
@@ -10,12 +10,15 @@ GO
 
 CREATE TABLE [dbo].[SCREENING_BOOK](
 	[SCREEN_BOOKID] [numeric](18, 0) IDENTITY(1,1) NOT NULL,
-	[SCREEN_ID] [numeric](18, 0) NULL,
+	[SCREAN_DATE] [datetime] NULL,
+	[SYS_SETTING] [numeric](18, 0) NULL,
+	[SCREEN_PLACE] [nvarchar](50) NULL,
 	[PATIENT_NO] [numeric](18, 0) NULL,
 	[IS_REFRACTION] [bit] NULL,
 	[IS_OPTICALSHOP] [bit] NULL,
 	[IS_REFER_PICKUP] [bit] NULL,
 	[IS_REFER_BYSELF] [bit] NULL,
+	[SCREEN_NOTE] [nvarchar](150) NULL,
  CONSTRAINT [PK_SCREENING_BOOK] PRIMARY KEY CLUSTERED 
 (
 	[SCREEN_BOOKID] ASC
@@ -24,44 +27,12 @@ CREATE TABLE [dbo].[SCREENING_BOOK](
 
 GO
 
-'================================================================================
-
-USE [TEHScreening]
-GO
-
-/****** Object:  Table [dbo].[SCREEN_SYSTEMSETTING]    Script Date: 08/23/2018 16:14:44 ******/
-SET ANSI_NULLS ON
-GO
-
-SET QUOTED_IDENTIFIER ON
-GO
-
-CREATE TABLE [dbo].[SCREEN_SYSTEMSETTING](
-	[SETTING_ID] [numeric](18, 0) IDENTITY(1,1) NOT NULL,
-	[SETTING_DATE] [datetime] NULL,
-	[HEALTH_NAME] [nvarchar](150) NULL,
-	[PROVINCE] [nvarchar](50) NULL,
-	[DISTRICT] [nvarchar](50) NULL,
-	[COMMUNE] [nvarchar](50) NULL,
-	[FULL_ADDRESS] [nvarchar](50) NULL,
-	[IS_DEFOUL] [bit] NULL,
-	[BOOK_NOTE] [nvarchar](250) NULL,
- CONSTRAINT [PK_SCREEN_SYSTEMSETTING] PRIMARY KEY CLUSTERED 
-(
-	[SETTING_ID] ASC
-)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
-) ON [PRIMARY]
-
-GO
-
-ALTER TABLE [dbo].[SCREEN_SYSTEMSETTING] ADD  CONSTRAINT [DF_SCREEN_SYSTEMSETTING_IS_DEFOUL]  DEFAULT ((0)) FOR [IS_DEFOUL]
-GO
 
 
 USE [TEHScreening]
 GO
 
-/****** Object:  View [dbo].[SCREENING_BOOK_VIEW]    Script Date: 08/24/2018 16:24:20 ******/
+/****** Object:  View [dbo].[SCREENING_BOOK_VIEW]    Script Date: 08/27/2018 16:39:21 ******/
 SET ANSI_NULLS ON
 GO
 
@@ -70,13 +41,11 @@ GO
 
 CREATE VIEW [dbo].[SCREENING_BOOK_VIEW]
 AS
-SELECT     dbo.TblPatients.PatientNo, dbo.TblPatients.NameEng, dbo.TblPatients.NameKhmer, dbo.TblPatients.Age, dbo.TblPatients.Sex, dbo.SCREENING_BOOK.SCREEN_BOOKID, 
-                      dbo.SCREENING_BOOK.IS_REFRACTION, dbo.SCREENING_BOOK.IS_OPTICALSHOP, dbo.SCREENING_BOOK.IS_REFER_PICKUP, dbo.SCREENING_BOOK.IS_REFER_BYSELF, 
-                      dbo.SCREENING_BOOK.SCREEN_ID, dbo.SCREEN_SYSTEMSETTING.SETTING_DATE, dbo.SCREEN_SYSTEMSETTING.HEALTH_NAME, dbo.SCREEN_SYSTEMSETTING.FULL_ADDRESS, 
-                      dbo.SCREEN_SYSTEMSETTING.IS_DEFOUL, dbo.SCREEN_SYSTEMSETTING.BOOK_NOTE, dbo.TblPatients.Address
+SELECT     dbo.SCREENING_BOOK.SCREAN_DATE, dbo.TblPatients.PatientNo, dbo.TblPatients.NameEng, dbo.TblPatients.NameKhmer, dbo.TblPatients.Age, dbo.TblPatients.Sex, dbo.TblPatients.Address, 
+                      dbo.SCREENING_BOOK.SCREEN_PLACE, dbo.SCREENING_BOOK.SCREEN_BOOKID, dbo.SCREENING_BOOK.IS_REFRACTION, dbo.SCREENING_BOOK.IS_OPTICALSHOP, 
+                      dbo.SCREENING_BOOK.IS_REFER_PICKUP, dbo.SCREENING_BOOK.IS_REFER_BYSELF, dbo.SCREENING_BOOK.SYS_SETTING, dbo.SCREENING_BOOK.SCREEN_NOTE
 FROM         dbo.TblPatients INNER JOIN
-                      dbo.SCREENING_BOOK ON dbo.TblPatients.PatientNo = dbo.SCREENING_BOOK.PATIENT_NO INNER JOIN
-                      dbo.SCREEN_SYSTEMSETTING ON dbo.SCREENING_BOOK.SCREEN_ID = dbo.SCREEN_SYSTEMSETTING.SETTING_ID
+                      dbo.SCREENING_BOOK ON dbo.TblPatients.PatientNo = dbo.SCREENING_BOOK.PATIENT_NO
 
 GO
 
@@ -85,7 +54,7 @@ Begin DesignProperties =
    Begin PaneConfigurations = 
       Begin PaneConfiguration = 0
          NumPanes = 4
-         Configuration = "(H (1[40] 4[20] 2[20] 3) )"
+         Configuration = "(H (1[48] 4[33] 2[3] 3) )"
       End
       Begin PaneConfiguration = 1
          NumPanes = 3
@@ -171,22 +140,26 @@ Begin DesignProperties =
             DisplayFlags = 280
             TopColumn = 0
          End
-         Begin Table = "SCREEN_SYSTEMSETTING"
-            Begin Extent = 
-               Top = 17
-               Left = 814
-               Bottom = 256
-               Right = 1081
-            End
-            DisplayFlags = 280
-            TopColumn = 0
-         End
       End
    End
    Begin SQLPane = 
    End
    Begin DataPane = 
       Begin ParameterDefaults = ""
+      End
+      Begin ColumnWidths = 12
+         Width = 284
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
       End
    End
    Begin CriteriaPane = 
@@ -212,6 +185,4 @@ GO
 
 EXEC sys.sp_addextendedproperty @name=N'MS_DiagramPaneCount', @value=1 , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'VIEW',@level1name=N'SCREENING_BOOK_VIEW'
 GO
-
-
 
