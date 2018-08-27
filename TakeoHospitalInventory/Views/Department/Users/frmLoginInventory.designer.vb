@@ -101,6 +101,7 @@ Partial Class frmLoginInventory
         Me.txtUserName.Name = "txtUserName"
         Me.txtUserName.Size = New System.Drawing.Size(510, 30)
         Me.txtUserName.TabIndex = 0
+        Me.txtUserName.Text = "ADMIN"
         '
         'txtPassword
         '
@@ -111,6 +112,7 @@ Partial Class frmLoginInventory
         Me.txtPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtPassword.Size = New System.Drawing.Size(510, 30)
         Me.txtPassword.TabIndex = 1
+        Me.txtPassword.Text = "1"
         '
         'GroupBox1
         '

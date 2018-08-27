@@ -64,13 +64,13 @@
         If LblSaveOption.Text = "0" Then
             If MessageBox.Show("Do you want to save new setting?", "Setting", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) = Windows.Forms.DialogResult.Yes Then
                 DASetting.UpdateDefault(False)
-                If DASetting.InsertNewSetting(DateSetting.Value.Date, TxtHealthName.Text, CboProNo.Text, CboDisNo.Text, CboCommNo.Text, TxtFullAddress.Text, ChDefaultsetting.Checked) = 1 Then
+                If DASetting.InsertNewSetting(DateSetting.Value.Date, TxtHealthName.Text, CboProNo.Text, CboDisNo.Text, CboCommNo.Text, TxtFullAddress.Text, ChDefaultsetting.Checked, "") = 1 Then
                     Me.DialogResult = Windows.Forms.DialogResult.OK
                 End If
             End If
         Else
             If MessageBox.Show("Do you want to update setting?", "Setting", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) = Windows.Forms.DialogResult.Yes Then
-                If DASetting.UpdateScreenSetting(DateSetting.Value.Date, TxtHealthName.Text, CboProNo.Text, CboDisNo.Text, CboCommNo.Text, TxtFullAddress.Text, ChDefaultsetting.Checked, LblSaveOption.Text) = 1 Then
+                If DASetting.UpdateScreenSetting(DateSetting.Value.Date, TxtHealthName.Text, CboProNo.Text, CboDisNo.Text, CboCommNo.Text, TxtFullAddress.Text, ChDefaultsetting.Checked, "", LblSaveOption.Text) = 1 Then
                     Me.DialogResult = Windows.Forms.DialogResult.OK
                 End If
             End If
