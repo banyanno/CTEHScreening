@@ -1,5 +1,6 @@
 ﻿Public Class DashboardScreeningRegisBook
     Dim DAScreeningBook As New DataSetSceenSettingTableAdapters.SCREENING_BOOK_VIEWTableAdapter
+    Dim DAReferralBook As New DataSetSceenSettingTableAdapters.SCREENING_REFERRAL_BOOKTableAdapter
     Private Sub TabControl1_DrawItem(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DrawItemEventArgs) Handles TabControl1.DrawItem
         'Select Case e.Index
         '    Case 0
@@ -19,15 +20,24 @@
 
     Private Sub BtnFind_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnFind.Click
         If TxtPatienNo.Text.Trim <> "" Then
+            ' Load Data Screening book
             DGScreeningBook.DataSource = DAScreeningBook.SelectScreenBookDateToDateWithPatientNo(DateFrom.Value.Date, DateTo.Value.Date, EmptyString(TxtPatienNo.Text))
             ModCommon.NumberAllRowHeaderDataGrid(DGScreeningBook)
+            ' Load data for referral book
+            DGReferral.DataSource = DAReferralBook.SelectReferralDateToDateWithPatientNo(DateFrom.Value.Date, DateTo.Value.Date, EmptyString(TxtPatienNo.Text))
+            ModCommon.NumberAllRowHeaderDataGrid(DGReferral)
         Else
+            ' Load Data Screening book
             DGScreeningBook.DataSource = DAScreeningBook.SelectScreenBookDateToDate(DateFrom.Value.Date, DateTo.Value.Date)
             ModCommon.NumberAllRowHeaderDataGrid(DGScreeningBook)
+            ' Load data for referral book
+            DGReferral.DataSource = DAReferralBook.SelectReferralDateToDate(DateFrom.Value.Date, DateTo.Value.Date)
+            ModCommon.NumberAllRowHeaderDataGrid(DGReferral)
         End If
     End Sub
 
     Private Sub DashboardScreeningRegisBook_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         DGScreeningBook.AutoGenerateColumns = False
+        DGReferral.AutoGenerateColumns = False
     End Sub
 End Class

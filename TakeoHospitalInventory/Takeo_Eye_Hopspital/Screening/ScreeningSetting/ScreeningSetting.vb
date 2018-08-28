@@ -100,4 +100,12 @@
 
 
  
+    Private Sub CboCommNo_DropDownClosed(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CboCommNo.DropDownClosed
+        Try
+            TxtFullAddress.Text = "Province: " & CboProNo.Text & ", District: " & CboDisNo.Text & ", Commune: " & CboCommNo.Text & "."
+        Catch ex As Exception
+
+        End Try
+
+    End Sub
 End Class

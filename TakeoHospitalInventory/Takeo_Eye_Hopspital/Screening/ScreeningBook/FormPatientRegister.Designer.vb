@@ -42,11 +42,16 @@ Partial Class FormPatientRegister
         Me.TxtHealthNameCenter = New System.Windows.Forms.TextBox
         Me.Label6 = New System.Windows.Forms.Label
         Me.Panel2 = New System.Windows.Forms.Panel
-        Me.LblSettingID = New System.Windows.Forms.Label
-        Me.ChOpticalshop = New System.Windows.Forms.CheckBox
-        Me.ChReferAndComeBySelf = New System.Windows.Forms.CheckBox
-        Me.ChReferAndPickup = New System.Windows.Forms.CheckBox
+        Me.ChReferral = New System.Windows.Forms.CheckBox
+        Me.GroupBox3 = New System.Windows.Forms.GroupBox
         Me.ChRefraction = New System.Windows.Forms.CheckBox
+        Me.ChOpticalshop = New System.Windows.Forms.CheckBox
+        Me.GBReferral = New System.Windows.Forms.GroupBox
+        Me.RadReferAndComeBySelf = New System.Windows.Forms.RadioButton
+        Me.RadReferAndPickup = New System.Windows.Forms.RadioButton
+        Me.Label17 = New System.Windows.Forms.Label
+        Me.TxtRegisterNote = New System.Windows.Forms.TextBox
+        Me.LblSettingID = New System.Windows.Forms.Label
         Me.Label14 = New System.Windows.Forms.Label
         Me.Label13 = New System.Windows.Forms.Label
         Me.TxtPatientName = New System.Windows.Forms.TextBox
@@ -64,12 +69,12 @@ Partial Class FormPatientRegister
         Me.Label9 = New System.Windows.Forms.Label
         Me.TxtAge = New System.Windows.Forms.TextBox
         Me.ErrSaveRegis = New System.Windows.Forms.ErrorProvider(Me.components)
-        Me.TxtRegisterNote = New System.Windows.Forms.TextBox
-        Me.Label17 = New System.Windows.Forms.Label
         Me.PanelMain.SuspendLayout()
         Me.Panel3.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
+        Me.GroupBox3.SuspendLayout()
+        Me.GBReferral.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.ErrSaveRegis, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -88,7 +93,7 @@ Partial Class FormPatientRegister
         Me.PanelMain.Font = New System.Drawing.Font("Khmer OS Battambang", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.PanelMain.Location = New System.Drawing.Point(0, 0)
         Me.PanelMain.Name = "PanelMain"
-        Me.PanelMain.Size = New System.Drawing.Size(959, 656)
+        Me.PanelMain.Size = New System.Drawing.Size(947, 630)
         Me.PanelMain.TabIndex = 0
         '
         'BtnClose
@@ -100,7 +105,7 @@ Partial Class FormPatientRegister
         Me.BtnClose.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnClose.ForeColor = System.Drawing.Color.White
         Me.BtnClose.Image = CType(resources.GetObject("BtnClose.Image"), System.Drawing.Image)
-        Me.BtnClose.Location = New System.Drawing.Point(481, 608)
+        Me.BtnClose.Location = New System.Drawing.Point(839, 585)
         Me.BtnClose.Name = "BtnClose"
         Me.BtnClose.Size = New System.Drawing.Size(100, 37)
         Me.BtnClose.TabIndex = 2
@@ -117,7 +122,7 @@ Partial Class FormPatientRegister
         Me.BtnSave.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnSave.ForeColor = System.Drawing.Color.White
         Me.BtnSave.Image = CType(resources.GetObject("BtnSave.Image"), System.Drawing.Image)
-        Me.BtnSave.Location = New System.Drawing.Point(375, 608)
+        Me.BtnSave.Location = New System.Drawing.Point(733, 585)
         Me.BtnSave.Name = "BtnSave"
         Me.BtnSave.Size = New System.Drawing.Size(100, 37)
         Me.BtnSave.TabIndex = 1
@@ -182,7 +187,7 @@ Partial Class FormPatientRegister
         Me.Panel3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
         Me.Panel3.Location = New System.Drawing.Point(5, 91)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(940, 506)
+        Me.Panel3.Size = New System.Drawing.Size(933, 488)
         Me.Panel3.TabIndex = 0
         '
         'Label16
@@ -271,9 +276,10 @@ Partial Class FormPatientRegister
         'TxtHealthNameCenter
         '
         Me.TxtHealthNameCenter.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TxtHealthNameCenter.Font = New System.Drawing.Font("Khmer OS Battambang", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtHealthNameCenter.Location = New System.Drawing.Point(9, 99)
         Me.TxtHealthNameCenter.Name = "TxtHealthNameCenter"
-        Me.TxtHealthNameCenter.Size = New System.Drawing.Size(344, 32)
+        Me.TxtHealthNameCenter.Size = New System.Drawing.Size(344, 37)
         Me.TxtHealthNameCenter.TabIndex = 2
         '
         'Label6
@@ -289,19 +295,116 @@ Partial Class FormPatientRegister
         'Panel2
         '
         Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel2.Controls.Add(Me.ChReferral)
+        Me.Panel2.Controls.Add(Me.GroupBox3)
+        Me.Panel2.Controls.Add(Me.GBReferral)
         Me.Panel2.Controls.Add(Me.Label17)
         Me.Panel2.Controls.Add(Me.TxtRegisterNote)
         Me.Panel2.Controls.Add(Me.LblSettingID)
-        Me.Panel2.Controls.Add(Me.ChOpticalshop)
-        Me.Panel2.Controls.Add(Me.ChReferAndComeBySelf)
-        Me.Panel2.Controls.Add(Me.ChReferAndPickup)
-        Me.Panel2.Controls.Add(Me.ChRefraction)
         Me.Panel2.Controls.Add(Me.Label14)
         Me.Panel2.Controls.Add(Me.Label13)
         Me.Panel2.Location = New System.Drawing.Point(376, 99)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(549, 397)
+        Me.Panel2.Size = New System.Drawing.Size(549, 382)
         Me.Panel2.TabIndex = 8
+        '
+        'ChReferral
+        '
+        Me.ChReferral.AutoSize = True
+        Me.ChReferral.ForeColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
+        Me.ChReferral.Location = New System.Drawing.Point(23, 90)
+        Me.ChReferral.Name = "ChReferral"
+        Me.ChReferral.Size = New System.Drawing.Size(82, 29)
+        Me.ChReferral.TabIndex = 23
+        Me.ChReferral.Text = "Referral"
+        Me.ChReferral.UseVisualStyleBackColor = True
+        '
+        'GroupBox3
+        '
+        Me.GroupBox3.Controls.Add(Me.ChRefraction)
+        Me.GroupBox3.Controls.Add(Me.ChOpticalshop)
+        Me.GroupBox3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
+        Me.GroupBox3.Location = New System.Drawing.Point(271, 93)
+        Me.GroupBox3.Name = "GroupBox3"
+        Me.GroupBox3.Size = New System.Drawing.Size(268, 111)
+        Me.GroupBox3.TabIndex = 22
+        Me.GroupBox3.TabStop = False
+        '
+        'ChRefraction
+        '
+        Me.ChRefraction.AutoSize = True
+        Me.ChRefraction.ForeColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
+        Me.ChRefraction.Location = New System.Drawing.Point(15, 33)
+        Me.ChRefraction.Name = "ChRefraction"
+        Me.ChRefraction.Size = New System.Drawing.Size(96, 29)
+        Me.ChRefraction.TabIndex = 1
+        Me.ChRefraction.Text = "Refraction"
+        Me.ChRefraction.UseVisualStyleBackColor = True
+        '
+        'ChOpticalshop
+        '
+        Me.ChOpticalshop.AutoSize = True
+        Me.ChOpticalshop.ForeColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
+        Me.ChOpticalshop.Location = New System.Drawing.Point(15, 71)
+        Me.ChOpticalshop.Name = "ChOpticalshop"
+        Me.ChOpticalshop.Size = New System.Drawing.Size(112, 29)
+        Me.ChOpticalshop.TabIndex = 3
+        Me.ChOpticalshop.Text = "Optical Shop"
+        Me.ChOpticalshop.UseVisualStyleBackColor = True
+        '
+        'GBReferral
+        '
+        Me.GBReferral.Controls.Add(Me.RadReferAndComeBySelf)
+        Me.GBReferral.Controls.Add(Me.RadReferAndPickup)
+        Me.GBReferral.Enabled = False
+        Me.GBReferral.ForeColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
+        Me.GBReferral.Location = New System.Drawing.Point(10, 93)
+        Me.GBReferral.Name = "GBReferral"
+        Me.GBReferral.Size = New System.Drawing.Size(255, 112)
+        Me.GBReferral.TabIndex = 21
+        Me.GBReferral.TabStop = False
+        '
+        'RadReferAndComeBySelf
+        '
+        Me.RadReferAndComeBySelf.AutoSize = True
+        Me.RadReferAndComeBySelf.Location = New System.Drawing.Point(14, 71)
+        Me.RadReferAndComeBySelf.Name = "RadReferAndComeBySelf"
+        Me.RadReferAndComeBySelf.Size = New System.Drawing.Size(170, 29)
+        Me.RadReferAndComeBySelf.TabIndex = 1
+        Me.RadReferAndComeBySelf.TabStop = True
+        Me.RadReferAndComeBySelf.Text = "Referral Come By Self"
+        Me.RadReferAndComeBySelf.UseVisualStyleBackColor = True
+        '
+        'RadReferAndPickup
+        '
+        Me.RadReferAndPickup.AutoSize = True
+        Me.RadReferAndPickup.Location = New System.Drawing.Point(14, 33)
+        Me.RadReferAndPickup.Name = "RadReferAndPickup"
+        Me.RadReferAndPickup.Size = New System.Drawing.Size(147, 29)
+        Me.RadReferAndPickup.TabIndex = 0
+        Me.RadReferAndPickup.TabStop = True
+        Me.RadReferAndPickup.Text = "Referral By Pickup"
+        Me.RadReferAndPickup.UseVisualStyleBackColor = True
+        '
+        'Label17
+        '
+        Me.Label17.AutoSize = True
+        Me.Label17.ForeColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
+        Me.Label17.Location = New System.Drawing.Point(5, 218)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(103, 25)
+        Me.Label17.TabIndex = 20
+        Me.Label17.Text = "Register Note:"
+        '
+        'TxtRegisterNote
+        '
+        Me.TxtRegisterNote.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TxtRegisterNote.Font = New System.Drawing.Font("Khmer OS Battambang", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtRegisterNote.Location = New System.Drawing.Point(5, 246)
+        Me.TxtRegisterNote.Multiline = True
+        Me.TxtRegisterNote.Name = "TxtRegisterNote"
+        Me.TxtRegisterNote.Size = New System.Drawing.Size(534, 128)
+        Me.TxtRegisterNote.TabIndex = 4
         '
         'LblSettingID
         '
@@ -313,50 +416,6 @@ Partial Class FormPatientRegister
         Me.LblSettingID.TabIndex = 8
         Me.LblSettingID.Text = "0"
         Me.LblSettingID.Visible = False
-        '
-        'ChOpticalshop
-        '
-        Me.ChOpticalshop.AutoSize = True
-        Me.ChOpticalshop.ForeColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
-        Me.ChOpticalshop.Location = New System.Drawing.Point(307, 176)
-        Me.ChOpticalshop.Name = "ChOpticalshop"
-        Me.ChOpticalshop.Size = New System.Drawing.Size(112, 29)
-        Me.ChOpticalshop.TabIndex = 3
-        Me.ChOpticalshop.Text = "Optical Shop"
-        Me.ChOpticalshop.UseVisualStyleBackColor = True
-        '
-        'ChReferAndComeBySelf
-        '
-        Me.ChReferAndComeBySelf.AutoSize = True
-        Me.ChReferAndComeBySelf.ForeColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
-        Me.ChReferAndComeBySelf.Location = New System.Drawing.Point(83, 176)
-        Me.ChReferAndComeBySelf.Name = "ChReferAndComeBySelf"
-        Me.ChReferAndComeBySelf.Size = New System.Drawing.Size(199, 29)
-        Me.ChReferAndComeBySelf.TabIndex = 2
-        Me.ChReferAndComeBySelf.Text = "Referral and Come By Self"
-        Me.ChReferAndComeBySelf.UseVisualStyleBackColor = True
-        '
-        'ChReferAndPickup
-        '
-        Me.ChReferAndPickup.AutoSize = True
-        Me.ChReferAndPickup.ForeColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
-        Me.ChReferAndPickup.Location = New System.Drawing.Point(83, 130)
-        Me.ChReferAndPickup.Name = "ChReferAndPickup"
-        Me.ChReferAndPickup.Size = New System.Drawing.Size(156, 29)
-        Me.ChReferAndPickup.TabIndex = 0
-        Me.ChReferAndPickup.Text = "Referral and Pickup"
-        Me.ChReferAndPickup.UseVisualStyleBackColor = True
-        '
-        'ChRefraction
-        '
-        Me.ChRefraction.AutoSize = True
-        Me.ChRefraction.ForeColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
-        Me.ChRefraction.Location = New System.Drawing.Point(307, 130)
-        Me.ChRefraction.Name = "ChRefraction"
-        Me.ChRefraction.Size = New System.Drawing.Size(96, 29)
-        Me.ChRefraction.TabIndex = 1
-        Me.ChRefraction.Text = "Refraction"
-        Me.ChRefraction.UseVisualStyleBackColor = True
         '
         'Label14
         '
@@ -398,7 +457,9 @@ Partial Class FormPatientRegister
         '
         'CboSex
         '
+        Me.CboSex.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.CboSex.FormattingEnabled = True
+        Me.CboSex.Items.AddRange(New Object() {"", "F", "M"})
         Me.CboSex.Location = New System.Drawing.Point(9, 230)
         Me.CboSex.Name = "CboSex"
         Me.CboSex.Size = New System.Drawing.Size(143, 32)
@@ -425,9 +486,9 @@ Partial Class FormPatientRegister
         Me.GroupBox1.Controls.Add(Me.Label10)
         Me.GroupBox1.Controls.Add(Me.Label9)
         Me.GroupBox1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
-        Me.GroupBox1.Location = New System.Drawing.Point(9, 348)
+        Me.GroupBox1.Location = New System.Drawing.Point(9, 335)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(344, 148)
+        Me.GroupBox1.Size = New System.Drawing.Size(344, 144)
         Me.GroupBox1.TabIndex = 7
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Address"
@@ -523,37 +584,18 @@ Partial Class FormPatientRegister
         Me.TxtAge.Name = "TxtAge"
         Me.TxtAge.Size = New System.Drawing.Size(148, 32)
         Me.TxtAge.TabIndex = 5
+        Me.TxtAge.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'ErrSaveRegis
         '
         Me.ErrSaveRegis.ContainerControl = Me
-        '
-        'TxtRegisterNote
-        '
-        Me.TxtRegisterNote.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TxtRegisterNote.Font = New System.Drawing.Font("Khmer OS Battambang", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtRegisterNote.Location = New System.Drawing.Point(5, 246)
-        Me.TxtRegisterNote.Multiline = True
-        Me.TxtRegisterNote.Name = "TxtRegisterNote"
-        Me.TxtRegisterNote.Size = New System.Drawing.Size(534, 128)
-        Me.TxtRegisterNote.TabIndex = 4
-        '
-        'Label17
-        '
-        Me.Label17.AutoSize = True
-        Me.Label17.ForeColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
-        Me.Label17.Location = New System.Drawing.Point(5, 218)
-        Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(103, 25)
-        Me.Label17.TabIndex = 20
-        Me.Label17.Text = "Register Note:"
         '
         'FormPatientRegister
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(236, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(241, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(959, 656)
+        Me.ClientSize = New System.Drawing.Size(947, 630)
         Me.Controls.Add(Me.PanelMain)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -568,6 +610,10 @@ Partial Class FormPatientRegister
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
+        Me.GroupBox3.ResumeLayout(False)
+        Me.GroupBox3.PerformLayout()
+        Me.GBReferral.ResumeLayout(False)
+        Me.GBReferral.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         CType(Me.ErrSaveRegis, System.ComponentModel.ISupportInitialize).EndInit()
@@ -601,8 +647,6 @@ Partial Class FormPatientRegister
     Friend WithEvents Label13 As System.Windows.Forms.Label
     Friend WithEvents PatientNo As System.Windows.Forms.TextBox
     Friend WithEvents Label15 As System.Windows.Forms.Label
-    Friend WithEvents ChReferAndComeBySelf As System.Windows.Forms.CheckBox
-    Friend WithEvents ChReferAndPickup As System.Windows.Forms.CheckBox
     Friend WithEvents ChRefraction As System.Windows.Forms.CheckBox
     Friend WithEvents ChOpticalshop As System.Windows.Forms.CheckBox
     Friend WithEvents Panel3 As System.Windows.Forms.Panel
@@ -616,4 +660,9 @@ Partial Class FormPatientRegister
     Friend WithEvents TxtTel As System.Windows.Forms.TextBox
     Friend WithEvents TxtRegisterNote As System.Windows.Forms.TextBox
     Friend WithEvents Label17 As System.Windows.Forms.Label
+    Friend WithEvents GBReferral As System.Windows.Forms.GroupBox
+    Friend WithEvents RadReferAndComeBySelf As System.Windows.Forms.RadioButton
+    Friend WithEvents RadReferAndPickup As System.Windows.Forms.RadioButton
+    Friend WithEvents GroupBox3 As System.Windows.Forms.GroupBox
+    Friend WithEvents ChReferral As System.Windows.Forms.CheckBox
 End Class

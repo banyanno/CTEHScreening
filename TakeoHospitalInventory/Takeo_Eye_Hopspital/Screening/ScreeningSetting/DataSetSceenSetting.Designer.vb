@@ -32,6 +32,12 @@ Partial Public Class DataSetSceenSetting
     
     Private tableSCREENING_BOOK_VIEW As SCREENING_BOOK_VIEWDataTable
     
+    Private tableSCREENING_REFERRAL_BOOK As SCREENING_REFERRAL_BOOKDataTable
+    
+    Private tableSCREENING_REFRACTION_BOOK As SCREENING_REFRACTION_BOOKDataTable
+    
+    Private tableSCREENING_OPTICALSHOP_BOOK As SCREENING_OPTICALSHOP_BOOKDataTable
+    
     Private _schemaSerializationMode As Global.System.Data.SchemaSerializationMode = Global.System.Data.SchemaSerializationMode.IncludeSchema
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
@@ -67,6 +73,15 @@ Partial Public Class DataSetSceenSetting
             End If
             If (Not (ds.Tables("SCREENING_BOOK_VIEW")) Is Nothing) Then
                 MyBase.Tables.Add(New SCREENING_BOOK_VIEWDataTable(ds.Tables("SCREENING_BOOK_VIEW")))
+            End If
+            If (Not (ds.Tables("SCREENING_REFERRAL_BOOK")) Is Nothing) Then
+                MyBase.Tables.Add(New SCREENING_REFERRAL_BOOKDataTable(ds.Tables("SCREENING_REFERRAL_BOOK")))
+            End If
+            If (Not (ds.Tables("SCREENING_REFRACTION_BOOK")) Is Nothing) Then
+                MyBase.Tables.Add(New SCREENING_REFRACTION_BOOKDataTable(ds.Tables("SCREENING_REFRACTION_BOOK")))
+            End If
+            If (Not (ds.Tables("SCREENING_OPTICALSHOP_BOOK")) Is Nothing) Then
+                MyBase.Tables.Add(New SCREENING_OPTICALSHOP_BOOKDataTable(ds.Tables("SCREENING_OPTICALSHOP_BOOK")))
             End If
             Me.DataSetName = ds.DataSetName
             Me.Prefix = ds.Prefix
@@ -109,6 +124,33 @@ Partial Public Class DataSetSceenSetting
     Public ReadOnly Property SCREENING_BOOK_VIEW() As SCREENING_BOOK_VIEWDataTable
         Get
             Return Me.tableSCREENING_BOOK_VIEW
+        End Get
+    End Property
+    
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.ComponentModel.Browsable(false),  _
+     Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
+    Public ReadOnly Property SCREENING_REFERRAL_BOOK() As SCREENING_REFERRAL_BOOKDataTable
+        Get
+            Return Me.tableSCREENING_REFERRAL_BOOK
+        End Get
+    End Property
+    
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.ComponentModel.Browsable(false),  _
+     Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
+    Public ReadOnly Property SCREENING_REFRACTION_BOOK() As SCREENING_REFRACTION_BOOKDataTable
+        Get
+            Return Me.tableSCREENING_REFRACTION_BOOK
+        End Get
+    End Property
+    
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.ComponentModel.Browsable(false),  _
+     Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
+    Public ReadOnly Property SCREENING_OPTICALSHOP_BOOK() As SCREENING_OPTICALSHOP_BOOKDataTable
+        Get
+            Return Me.tableSCREENING_OPTICALSHOP_BOOK
         End Get
     End Property
     
@@ -180,6 +222,15 @@ Partial Public Class DataSetSceenSetting
             If (Not (ds.Tables("SCREENING_BOOK_VIEW")) Is Nothing) Then
                 MyBase.Tables.Add(New SCREENING_BOOK_VIEWDataTable(ds.Tables("SCREENING_BOOK_VIEW")))
             End If
+            If (Not (ds.Tables("SCREENING_REFERRAL_BOOK")) Is Nothing) Then
+                MyBase.Tables.Add(New SCREENING_REFERRAL_BOOKDataTable(ds.Tables("SCREENING_REFERRAL_BOOK")))
+            End If
+            If (Not (ds.Tables("SCREENING_REFRACTION_BOOK")) Is Nothing) Then
+                MyBase.Tables.Add(New SCREENING_REFRACTION_BOOKDataTable(ds.Tables("SCREENING_REFRACTION_BOOK")))
+            End If
+            If (Not (ds.Tables("SCREENING_OPTICALSHOP_BOOK")) Is Nothing) Then
+                MyBase.Tables.Add(New SCREENING_OPTICALSHOP_BOOKDataTable(ds.Tables("SCREENING_OPTICALSHOP_BOOK")))
+            End If
             Me.DataSetName = ds.DataSetName
             Me.Prefix = ds.Prefix
             Me.Namespace = ds.Namespace
@@ -227,6 +278,24 @@ Partial Public Class DataSetSceenSetting
                 Me.tableSCREENING_BOOK_VIEW.InitVars
             End If
         End If
+        Me.tableSCREENING_REFERRAL_BOOK = CType(MyBase.Tables("SCREENING_REFERRAL_BOOK"),SCREENING_REFERRAL_BOOKDataTable)
+        If (initTable = true) Then
+            If (Not (Me.tableSCREENING_REFERRAL_BOOK) Is Nothing) Then
+                Me.tableSCREENING_REFERRAL_BOOK.InitVars
+            End If
+        End If
+        Me.tableSCREENING_REFRACTION_BOOK = CType(MyBase.Tables("SCREENING_REFRACTION_BOOK"),SCREENING_REFRACTION_BOOKDataTable)
+        If (initTable = true) Then
+            If (Not (Me.tableSCREENING_REFRACTION_BOOK) Is Nothing) Then
+                Me.tableSCREENING_REFRACTION_BOOK.InitVars
+            End If
+        End If
+        Me.tableSCREENING_OPTICALSHOP_BOOK = CType(MyBase.Tables("SCREENING_OPTICALSHOP_BOOK"),SCREENING_OPTICALSHOP_BOOKDataTable)
+        If (initTable = true) Then
+            If (Not (Me.tableSCREENING_OPTICALSHOP_BOOK) Is Nothing) Then
+                Me.tableSCREENING_OPTICALSHOP_BOOK.InitVars
+            End If
+        End If
     End Sub
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
@@ -242,6 +311,12 @@ Partial Public Class DataSetSceenSetting
         MyBase.Tables.Add(Me.tableSCREEN_SYSTEMSETTING)
         Me.tableSCREENING_BOOK_VIEW = New SCREENING_BOOK_VIEWDataTable
         MyBase.Tables.Add(Me.tableSCREENING_BOOK_VIEW)
+        Me.tableSCREENING_REFERRAL_BOOK = New SCREENING_REFERRAL_BOOKDataTable
+        MyBase.Tables.Add(Me.tableSCREENING_REFERRAL_BOOK)
+        Me.tableSCREENING_REFRACTION_BOOK = New SCREENING_REFRACTION_BOOKDataTable
+        MyBase.Tables.Add(Me.tableSCREENING_REFRACTION_BOOK)
+        Me.tableSCREENING_OPTICALSHOP_BOOK = New SCREENING_OPTICALSHOP_BOOKDataTable
+        MyBase.Tables.Add(Me.tableSCREENING_OPTICALSHOP_BOOK)
     End Sub
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
@@ -256,6 +331,21 @@ Partial Public Class DataSetSceenSetting
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
     Private Function ShouldSerializeSCREENING_BOOK_VIEW() As Boolean
+        Return false
+    End Function
+    
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+    Private Function ShouldSerializeSCREENING_REFERRAL_BOOK() As Boolean
+        Return false
+    End Function
+    
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+    Private Function ShouldSerializeSCREENING_REFRACTION_BOOK() As Boolean
+        Return false
+    End Function
+    
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+    Private Function ShouldSerializeSCREENING_OPTICALSHOP_BOOK() As Boolean
         Return false
     End Function
     
@@ -320,6 +410,12 @@ Partial Public Class DataSetSceenSetting
     Public Delegate Sub SCREEN_SYSTEMSETTINGRowChangeEventHandler(ByVal sender As Object, ByVal e As SCREEN_SYSTEMSETTINGRowChangeEvent)
     
     Public Delegate Sub SCREENING_BOOK_VIEWRowChangeEventHandler(ByVal sender As Object, ByVal e As SCREENING_BOOK_VIEWRowChangeEvent)
+    
+    Public Delegate Sub SCREENING_REFERRAL_BOOKRowChangeEventHandler(ByVal sender As Object, ByVal e As SCREENING_REFERRAL_BOOKRowChangeEvent)
+    
+    Public Delegate Sub SCREENING_REFRACTION_BOOKRowChangeEventHandler(ByVal sender As Object, ByVal e As SCREENING_REFRACTION_BOOKRowChangeEvent)
+    
+    Public Delegate Sub SCREENING_OPTICALSHOP_BOOKRowChangeEventHandler(ByVal sender As Object, ByVal e As SCREENING_OPTICALSHOP_BOOKRowChangeEvent)
     
     '''<summary>
     '''Represents the strongly named DataTable class.
@@ -1418,6 +1514,1076 @@ Partial Public Class DataSetSceenSetting
     End Class
     
     '''<summary>
+    '''Represents the strongly named DataTable class.
+    '''</summary>
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "2.0.0.0"),  _
+     Global.System.Serializable(),  _
+     Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
+    Partial Public Class SCREENING_REFERRAL_BOOKDataTable
+        Inherits Global.System.Data.TypedTableBase(Of SCREENING_REFERRAL_BOOKRow)
+        
+        Private columnREFERRAL_ID As Global.System.Data.DataColumn
+        
+        Private columnSCREENING_BOOKID As Global.System.Data.DataColumn
+        
+        Private columnPATIENT_NO As Global.System.Data.DataColumn
+        
+        Private columnVA_RIGHT As Global.System.Data.DataColumn
+        
+        Private columnVA_LEFT As Global.System.Data.DataColumn
+        
+        Private columnDIAGNOSIS As Global.System.Data.DataColumn
+        
+        Private columnDATE_MEETING As Global.System.Data.DataColumn
+        
+        Private columnSTATUS_PICKUP As Global.System.Data.DataColumn
+        
+        Private columnREFERRAL_NOTE As Global.System.Data.DataColumn
+        
+        Private columnCREATE_DATE As Global.System.Data.DataColumn
+        
+        Private columnARRIVED As Global.System.Data.DataColumn
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Sub New()
+            MyBase.New
+            Me.TableName = "SCREENING_REFERRAL_BOOK"
+            Me.BeginInit
+            Me.InitClass
+            Me.EndInit
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Friend Sub New(ByVal table As Global.System.Data.DataTable)
+            MyBase.New
+            Me.TableName = table.TableName
+            If (table.CaseSensitive <> table.DataSet.CaseSensitive) Then
+                Me.CaseSensitive = table.CaseSensitive
+            End If
+            If (table.Locale.ToString <> table.DataSet.Locale.ToString) Then
+                Me.Locale = table.Locale
+            End If
+            If (table.Namespace <> table.DataSet.Namespace) Then
+                Me.Namespace = table.Namespace
+            End If
+            Me.Prefix = table.Prefix
+            Me.MinimumCapacity = table.MinimumCapacity
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Protected Sub New(ByVal info As Global.System.Runtime.Serialization.SerializationInfo, ByVal context As Global.System.Runtime.Serialization.StreamingContext)
+            MyBase.New(info, context)
+            Me.InitVars
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public ReadOnly Property REFERRAL_IDColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnREFERRAL_ID
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public ReadOnly Property SCREENING_BOOKIDColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnSCREENING_BOOKID
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public ReadOnly Property PATIENT_NOColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnPATIENT_NO
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public ReadOnly Property VA_RIGHTColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnVA_RIGHT
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public ReadOnly Property VA_LEFTColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnVA_LEFT
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public ReadOnly Property DIAGNOSISColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnDIAGNOSIS
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public ReadOnly Property DATE_MEETINGColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnDATE_MEETING
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public ReadOnly Property STATUS_PICKUPColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnSTATUS_PICKUP
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public ReadOnly Property REFERRAL_NOTEColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnREFERRAL_NOTE
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public ReadOnly Property CREATE_DATEColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnCREATE_DATE
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public ReadOnly Property ARRIVEDColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnARRIVED
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.ComponentModel.Browsable(false)>  _
+        Public ReadOnly Property Count() As Integer
+            Get
+                Return Me.Rows.Count
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Default ReadOnly Property Item(ByVal index As Integer) As SCREENING_REFERRAL_BOOKRow
+            Get
+                Return CType(Me.Rows(index),SCREENING_REFERRAL_BOOKRow)
+            End Get
+        End Property
+        
+        Public Event SCREENING_REFERRAL_BOOKRowChanging As SCREENING_REFERRAL_BOOKRowChangeEventHandler
+        
+        Public Event SCREENING_REFERRAL_BOOKRowChanged As SCREENING_REFERRAL_BOOKRowChangeEventHandler
+        
+        Public Event SCREENING_REFERRAL_BOOKRowDeleting As SCREENING_REFERRAL_BOOKRowChangeEventHandler
+        
+        Public Event SCREENING_REFERRAL_BOOKRowDeleted As SCREENING_REFERRAL_BOOKRowChangeEventHandler
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Overloads Sub AddSCREENING_REFERRAL_BOOKRow(ByVal row As SCREENING_REFERRAL_BOOKRow)
+            Me.Rows.Add(row)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Overloads Function AddSCREENING_REFERRAL_BOOKRow(ByVal SCREENING_BOOKID As Decimal, ByVal PATIENT_NO As Decimal, ByVal VA_RIGHT As String, ByVal VA_LEFT As String, ByVal DIAGNOSIS As String, ByVal DATE_MEETING As Date, ByVal STATUS_PICKUP As Boolean, ByVal REFERRAL_NOTE As String, ByVal CREATE_DATE As Date, ByVal ARRIVED As Boolean) As SCREENING_REFERRAL_BOOKRow
+            Dim rowSCREENING_REFERRAL_BOOKRow As SCREENING_REFERRAL_BOOKRow = CType(Me.NewRow,SCREENING_REFERRAL_BOOKRow)
+            Dim columnValuesArray() As Object = New Object() {Nothing, SCREENING_BOOKID, PATIENT_NO, VA_RIGHT, VA_LEFT, DIAGNOSIS, DATE_MEETING, STATUS_PICKUP, REFERRAL_NOTE, CREATE_DATE, ARRIVED}
+            rowSCREENING_REFERRAL_BOOKRow.ItemArray = columnValuesArray
+            Me.Rows.Add(rowSCREENING_REFERRAL_BOOKRow)
+            Return rowSCREENING_REFERRAL_BOOKRow
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Function FindByREFERRAL_ID(ByVal REFERRAL_ID As Decimal) As SCREENING_REFERRAL_BOOKRow
+            Return CType(Me.Rows.Find(New Object() {REFERRAL_ID}),SCREENING_REFERRAL_BOOKRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Overrides Function Clone() As Global.System.Data.DataTable
+            Dim cln As SCREENING_REFERRAL_BOOKDataTable = CType(MyBase.Clone,SCREENING_REFERRAL_BOOKDataTable)
+            cln.InitVars
+            Return cln
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
+            Return New SCREENING_REFERRAL_BOOKDataTable
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Friend Sub InitVars()
+            Me.columnREFERRAL_ID = MyBase.Columns("REFERRAL_ID")
+            Me.columnSCREENING_BOOKID = MyBase.Columns("SCREENING_BOOKID")
+            Me.columnPATIENT_NO = MyBase.Columns("PATIENT_NO")
+            Me.columnVA_RIGHT = MyBase.Columns("VA_RIGHT")
+            Me.columnVA_LEFT = MyBase.Columns("VA_LEFT")
+            Me.columnDIAGNOSIS = MyBase.Columns("DIAGNOSIS")
+            Me.columnDATE_MEETING = MyBase.Columns("DATE_MEETING")
+            Me.columnSTATUS_PICKUP = MyBase.Columns("STATUS_PICKUP")
+            Me.columnREFERRAL_NOTE = MyBase.Columns("REFERRAL_NOTE")
+            Me.columnCREATE_DATE = MyBase.Columns("CREATE_DATE")
+            Me.columnARRIVED = MyBase.Columns("ARRIVED")
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Private Sub InitClass()
+            Me.columnREFERRAL_ID = New Global.System.Data.DataColumn("REFERRAL_ID", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnREFERRAL_ID)
+            Me.columnSCREENING_BOOKID = New Global.System.Data.DataColumn("SCREENING_BOOKID", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnSCREENING_BOOKID)
+            Me.columnPATIENT_NO = New Global.System.Data.DataColumn("PATIENT_NO", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnPATIENT_NO)
+            Me.columnVA_RIGHT = New Global.System.Data.DataColumn("VA_RIGHT", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnVA_RIGHT)
+            Me.columnVA_LEFT = New Global.System.Data.DataColumn("VA_LEFT", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnVA_LEFT)
+            Me.columnDIAGNOSIS = New Global.System.Data.DataColumn("DIAGNOSIS", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnDIAGNOSIS)
+            Me.columnDATE_MEETING = New Global.System.Data.DataColumn("DATE_MEETING", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnDATE_MEETING)
+            Me.columnSTATUS_PICKUP = New Global.System.Data.DataColumn("STATUS_PICKUP", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnSTATUS_PICKUP)
+            Me.columnREFERRAL_NOTE = New Global.System.Data.DataColumn("REFERRAL_NOTE", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnREFERRAL_NOTE)
+            Me.columnCREATE_DATE = New Global.System.Data.DataColumn("CREATE_DATE", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnCREATE_DATE)
+            Me.columnARRIVED = New Global.System.Data.DataColumn("ARRIVED", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnARRIVED)
+            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnREFERRAL_ID}, true))
+            Me.columnREFERRAL_ID.AutoIncrement = true
+            Me.columnREFERRAL_ID.AutoIncrementSeed = -1
+            Me.columnREFERRAL_ID.AutoIncrementStep = -1
+            Me.columnREFERRAL_ID.AllowDBNull = false
+            Me.columnREFERRAL_ID.ReadOnly = true
+            Me.columnREFERRAL_ID.Unique = true
+            Me.columnVA_RIGHT.MaxLength = 50
+            Me.columnVA_LEFT.MaxLength = 50
+            Me.columnDIAGNOSIS.MaxLength = 100
+            Me.columnREFERRAL_NOTE.MaxLength = 150
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Function NewSCREENING_REFERRAL_BOOKRow() As SCREENING_REFERRAL_BOOKRow
+            Return CType(Me.NewRow,SCREENING_REFERRAL_BOOKRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
+            Return New SCREENING_REFERRAL_BOOKRow(builder)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Protected Overrides Function GetRowType() As Global.System.Type
+            Return GetType(SCREENING_REFERRAL_BOOKRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowChanged(e)
+            If (Not (Me.SCREENING_REFERRAL_BOOKRowChangedEvent) Is Nothing) Then
+                RaiseEvent SCREENING_REFERRAL_BOOKRowChanged(Me, New SCREENING_REFERRAL_BOOKRowChangeEvent(CType(e.Row,SCREENING_REFERRAL_BOOKRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowChanging(e)
+            If (Not (Me.SCREENING_REFERRAL_BOOKRowChangingEvent) Is Nothing) Then
+                RaiseEvent SCREENING_REFERRAL_BOOKRowChanging(Me, New SCREENING_REFERRAL_BOOKRowChangeEvent(CType(e.Row,SCREENING_REFERRAL_BOOKRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowDeleted(e)
+            If (Not (Me.SCREENING_REFERRAL_BOOKRowDeletedEvent) Is Nothing) Then
+                RaiseEvent SCREENING_REFERRAL_BOOKRowDeleted(Me, New SCREENING_REFERRAL_BOOKRowChangeEvent(CType(e.Row,SCREENING_REFERRAL_BOOKRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowDeleting(e)
+            If (Not (Me.SCREENING_REFERRAL_BOOKRowDeletingEvent) Is Nothing) Then
+                RaiseEvent SCREENING_REFERRAL_BOOKRowDeleting(Me, New SCREENING_REFERRAL_BOOKRowChangeEvent(CType(e.Row,SCREENING_REFERRAL_BOOKRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Sub RemoveSCREENING_REFERRAL_BOOKRow(ByVal row As SCREENING_REFERRAL_BOOKRow)
+            Me.Rows.Remove(row)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
+            Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType
+            Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence
+            Dim ds As DataSetSceenSetting = New DataSetSceenSetting
+            Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny
+            any1.Namespace = "http://www.w3.org/2001/XMLSchema"
+            any1.MinOccurs = New Decimal(0)
+            any1.MaxOccurs = Decimal.MaxValue
+            any1.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
+            sequence.Items.Add(any1)
+            Dim any2 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny
+            any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1"
+            any2.MinOccurs = New Decimal(1)
+            any2.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
+            sequence.Items.Add(any2)
+            Dim attribute1 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute
+            attribute1.Name = "namespace"
+            attribute1.FixedValue = ds.Namespace
+            type.Attributes.Add(attribute1)
+            Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute
+            attribute2.Name = "tableTypeName"
+            attribute2.FixedValue = "SCREENING_REFERRAL_BOOKDataTable"
+            type.Attributes.Add(attribute2)
+            type.Particle = sequence
+            Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
+            If xs.Contains(dsSchema.TargetNamespace) Then
+                Dim s1 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream
+                Dim s2 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream
+                Try 
+                    Dim schema As Global.System.Xml.Schema.XmlSchema = Nothing
+                    dsSchema.Write(s1)
+                    Dim schemas As Global.System.Collections.IEnumerator = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator
+                    Do While schemas.MoveNext
+                        schema = CType(schemas.Current,Global.System.Xml.Schema.XmlSchema)
+                        s2.SetLength(0)
+                        schema.Write(s2)
+                        If (s1.Length = s2.Length) Then
+                            s1.Position = 0
+                            s2.Position = 0
+                            
+                            Do While ((s1.Position <> s1.Length)  _
+                                        AndAlso (s1.ReadByte = s2.ReadByte))
+                                
+                                
+                            Loop
+                            If (s1.Position = s1.Length) Then
+                                Return type
+                            End If
+                        End If
+                        
+                    Loop
+                Finally
+                    If (Not (s1) Is Nothing) Then
+                        s1.Close
+                    End If
+                    If (Not (s2) Is Nothing) Then
+                        s2.Close
+                    End If
+                End Try
+            End If
+            xs.Add(dsSchema)
+            Return type
+        End Function
+    End Class
+    
+    '''<summary>
+    '''Represents the strongly named DataTable class.
+    '''</summary>
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "2.0.0.0"),  _
+     Global.System.Serializable(),  _
+     Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
+    Partial Public Class SCREENING_REFRACTION_BOOKDataTable
+        Inherits Global.System.Data.TypedTableBase(Of SCREENING_REFRACTION_BOOKRow)
+        
+        Private columnREFRACT_ID As Global.System.Data.DataColumn
+        
+        Private columnSCREEN_BOOK_ID As Global.System.Data.DataColumn
+        
+        Private columnREFRACT_DATE As Global.System.Data.DataColumn
+        
+        Private columnPATIENT_NO As Global.System.Data.DataColumn
+        
+        Private columnVA_RIGHT As Global.System.Data.DataColumn
+        
+        Private columnVA_LEFT As Global.System.Data.DataColumn
+        
+        Private columnDIAGNOSIS As Global.System.Data.DataColumn
+        
+        Private columnRE_PLUS As Global.System.Data.DataColumn
+        
+        Private columnRE_VA As Global.System.Data.DataColumn
+        
+        Private columnLE_PLUS As Global.System.Data.DataColumn
+        
+        Private columnLE_VA As Global.System.Data.DataColumn
+        
+        Private columnREFRACT_ADD As Global.System.Data.DataColumn
+        
+        Private columnSIGNATURE As Global.System.Data.DataColumn
+        
+        Private columnREFRACT_NOTE As Global.System.Data.DataColumn
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Sub New()
+            MyBase.New
+            Me.TableName = "SCREENING_REFRACTION_BOOK"
+            Me.BeginInit
+            Me.InitClass
+            Me.EndInit
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Friend Sub New(ByVal table As Global.System.Data.DataTable)
+            MyBase.New
+            Me.TableName = table.TableName
+            If (table.CaseSensitive <> table.DataSet.CaseSensitive) Then
+                Me.CaseSensitive = table.CaseSensitive
+            End If
+            If (table.Locale.ToString <> table.DataSet.Locale.ToString) Then
+                Me.Locale = table.Locale
+            End If
+            If (table.Namespace <> table.DataSet.Namespace) Then
+                Me.Namespace = table.Namespace
+            End If
+            Me.Prefix = table.Prefix
+            Me.MinimumCapacity = table.MinimumCapacity
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Protected Sub New(ByVal info As Global.System.Runtime.Serialization.SerializationInfo, ByVal context As Global.System.Runtime.Serialization.StreamingContext)
+            MyBase.New(info, context)
+            Me.InitVars
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public ReadOnly Property REFRACT_IDColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnREFRACT_ID
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public ReadOnly Property SCREEN_BOOK_IDColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnSCREEN_BOOK_ID
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public ReadOnly Property REFRACT_DATEColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnREFRACT_DATE
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public ReadOnly Property PATIENT_NOColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnPATIENT_NO
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public ReadOnly Property VA_RIGHTColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnVA_RIGHT
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public ReadOnly Property VA_LEFTColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnVA_LEFT
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public ReadOnly Property DIAGNOSISColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnDIAGNOSIS
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public ReadOnly Property RE_PLUSColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnRE_PLUS
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public ReadOnly Property RE_VAColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnRE_VA
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public ReadOnly Property LE_PLUSColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnLE_PLUS
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public ReadOnly Property LE_VAColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnLE_VA
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public ReadOnly Property REFRACT_ADDColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnREFRACT_ADD
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public ReadOnly Property SIGNATUREColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnSIGNATURE
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public ReadOnly Property REFRACT_NOTEColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnREFRACT_NOTE
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.ComponentModel.Browsable(false)>  _
+        Public ReadOnly Property Count() As Integer
+            Get
+                Return Me.Rows.Count
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Default ReadOnly Property Item(ByVal index As Integer) As SCREENING_REFRACTION_BOOKRow
+            Get
+                Return CType(Me.Rows(index),SCREENING_REFRACTION_BOOKRow)
+            End Get
+        End Property
+        
+        Public Event SCREENING_REFRACTION_BOOKRowChanging As SCREENING_REFRACTION_BOOKRowChangeEventHandler
+        
+        Public Event SCREENING_REFRACTION_BOOKRowChanged As SCREENING_REFRACTION_BOOKRowChangeEventHandler
+        
+        Public Event SCREENING_REFRACTION_BOOKRowDeleting As SCREENING_REFRACTION_BOOKRowChangeEventHandler
+        
+        Public Event SCREENING_REFRACTION_BOOKRowDeleted As SCREENING_REFRACTION_BOOKRowChangeEventHandler
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Overloads Sub AddSCREENING_REFRACTION_BOOKRow(ByVal row As SCREENING_REFRACTION_BOOKRow)
+            Me.Rows.Add(row)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Overloads Function AddSCREENING_REFRACTION_BOOKRow(ByVal SCREEN_BOOK_ID As Decimal, ByVal REFRACT_DATE As Date, ByVal PATIENT_NO As Decimal, ByVal VA_RIGHT As String, ByVal VA_LEFT As String, ByVal DIAGNOSIS As String, ByVal RE_PLUS As String, ByVal RE_VA As String, ByVal LE_PLUS As String, ByVal LE_VA As String, ByVal REFRACT_ADD As String, ByVal SIGNATURE As Boolean, ByVal REFRACT_NOTE As String) As SCREENING_REFRACTION_BOOKRow
+            Dim rowSCREENING_REFRACTION_BOOKRow As SCREENING_REFRACTION_BOOKRow = CType(Me.NewRow,SCREENING_REFRACTION_BOOKRow)
+            Dim columnValuesArray() As Object = New Object() {Nothing, SCREEN_BOOK_ID, REFRACT_DATE, PATIENT_NO, VA_RIGHT, VA_LEFT, DIAGNOSIS, RE_PLUS, RE_VA, LE_PLUS, LE_VA, REFRACT_ADD, SIGNATURE, REFRACT_NOTE}
+            rowSCREENING_REFRACTION_BOOKRow.ItemArray = columnValuesArray
+            Me.Rows.Add(rowSCREENING_REFRACTION_BOOKRow)
+            Return rowSCREENING_REFRACTION_BOOKRow
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Function FindByREFRACT_ID(ByVal REFRACT_ID As Decimal) As SCREENING_REFRACTION_BOOKRow
+            Return CType(Me.Rows.Find(New Object() {REFRACT_ID}),SCREENING_REFRACTION_BOOKRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Overrides Function Clone() As Global.System.Data.DataTable
+            Dim cln As SCREENING_REFRACTION_BOOKDataTable = CType(MyBase.Clone,SCREENING_REFRACTION_BOOKDataTable)
+            cln.InitVars
+            Return cln
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
+            Return New SCREENING_REFRACTION_BOOKDataTable
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Friend Sub InitVars()
+            Me.columnREFRACT_ID = MyBase.Columns("REFRACT_ID")
+            Me.columnSCREEN_BOOK_ID = MyBase.Columns("SCREEN_BOOK_ID")
+            Me.columnREFRACT_DATE = MyBase.Columns("REFRACT_DATE")
+            Me.columnPATIENT_NO = MyBase.Columns("PATIENT_NO")
+            Me.columnVA_RIGHT = MyBase.Columns("VA_RIGHT")
+            Me.columnVA_LEFT = MyBase.Columns("VA_LEFT")
+            Me.columnDIAGNOSIS = MyBase.Columns("DIAGNOSIS")
+            Me.columnRE_PLUS = MyBase.Columns("RE_PLUS")
+            Me.columnRE_VA = MyBase.Columns("RE_VA")
+            Me.columnLE_PLUS = MyBase.Columns("LE_PLUS")
+            Me.columnLE_VA = MyBase.Columns("LE_VA")
+            Me.columnREFRACT_ADD = MyBase.Columns("REFRACT_ADD")
+            Me.columnSIGNATURE = MyBase.Columns("SIGNATURE")
+            Me.columnREFRACT_NOTE = MyBase.Columns("REFRACT_NOTE")
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Private Sub InitClass()
+            Me.columnREFRACT_ID = New Global.System.Data.DataColumn("REFRACT_ID", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnREFRACT_ID)
+            Me.columnSCREEN_BOOK_ID = New Global.System.Data.DataColumn("SCREEN_BOOK_ID", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnSCREEN_BOOK_ID)
+            Me.columnREFRACT_DATE = New Global.System.Data.DataColumn("REFRACT_DATE", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnREFRACT_DATE)
+            Me.columnPATIENT_NO = New Global.System.Data.DataColumn("PATIENT_NO", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnPATIENT_NO)
+            Me.columnVA_RIGHT = New Global.System.Data.DataColumn("VA_RIGHT", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnVA_RIGHT)
+            Me.columnVA_LEFT = New Global.System.Data.DataColumn("VA_LEFT", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnVA_LEFT)
+            Me.columnDIAGNOSIS = New Global.System.Data.DataColumn("DIAGNOSIS", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnDIAGNOSIS)
+            Me.columnRE_PLUS = New Global.System.Data.DataColumn("RE_PLUS", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnRE_PLUS)
+            Me.columnRE_VA = New Global.System.Data.DataColumn("RE_VA", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnRE_VA)
+            Me.columnLE_PLUS = New Global.System.Data.DataColumn("LE_PLUS", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnLE_PLUS)
+            Me.columnLE_VA = New Global.System.Data.DataColumn("LE_VA", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnLE_VA)
+            Me.columnREFRACT_ADD = New Global.System.Data.DataColumn("REFRACT_ADD", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnREFRACT_ADD)
+            Me.columnSIGNATURE = New Global.System.Data.DataColumn("SIGNATURE", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnSIGNATURE)
+            Me.columnREFRACT_NOTE = New Global.System.Data.DataColumn("REFRACT_NOTE", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnREFRACT_NOTE)
+            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnREFRACT_ID}, true))
+            Me.columnREFRACT_ID.AutoIncrement = true
+            Me.columnREFRACT_ID.AutoIncrementSeed = -1
+            Me.columnREFRACT_ID.AutoIncrementStep = -1
+            Me.columnREFRACT_ID.AllowDBNull = false
+            Me.columnREFRACT_ID.ReadOnly = true
+            Me.columnREFRACT_ID.Unique = true
+            Me.columnVA_RIGHT.MaxLength = 50
+            Me.columnVA_LEFT.MaxLength = 50
+            Me.columnDIAGNOSIS.MaxLength = 150
+            Me.columnRE_PLUS.MaxLength = 50
+            Me.columnRE_VA.MaxLength = 50
+            Me.columnLE_PLUS.MaxLength = 50
+            Me.columnLE_VA.MaxLength = 50
+            Me.columnREFRACT_ADD.MaxLength = 50
+            Me.columnREFRACT_NOTE.MaxLength = 250
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Function NewSCREENING_REFRACTION_BOOKRow() As SCREENING_REFRACTION_BOOKRow
+            Return CType(Me.NewRow,SCREENING_REFRACTION_BOOKRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
+            Return New SCREENING_REFRACTION_BOOKRow(builder)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Protected Overrides Function GetRowType() As Global.System.Type
+            Return GetType(SCREENING_REFRACTION_BOOKRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowChanged(e)
+            If (Not (Me.SCREENING_REFRACTION_BOOKRowChangedEvent) Is Nothing) Then
+                RaiseEvent SCREENING_REFRACTION_BOOKRowChanged(Me, New SCREENING_REFRACTION_BOOKRowChangeEvent(CType(e.Row,SCREENING_REFRACTION_BOOKRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowChanging(e)
+            If (Not (Me.SCREENING_REFRACTION_BOOKRowChangingEvent) Is Nothing) Then
+                RaiseEvent SCREENING_REFRACTION_BOOKRowChanging(Me, New SCREENING_REFRACTION_BOOKRowChangeEvent(CType(e.Row,SCREENING_REFRACTION_BOOKRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowDeleted(e)
+            If (Not (Me.SCREENING_REFRACTION_BOOKRowDeletedEvent) Is Nothing) Then
+                RaiseEvent SCREENING_REFRACTION_BOOKRowDeleted(Me, New SCREENING_REFRACTION_BOOKRowChangeEvent(CType(e.Row,SCREENING_REFRACTION_BOOKRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowDeleting(e)
+            If (Not (Me.SCREENING_REFRACTION_BOOKRowDeletingEvent) Is Nothing) Then
+                RaiseEvent SCREENING_REFRACTION_BOOKRowDeleting(Me, New SCREENING_REFRACTION_BOOKRowChangeEvent(CType(e.Row,SCREENING_REFRACTION_BOOKRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Sub RemoveSCREENING_REFRACTION_BOOKRow(ByVal row As SCREENING_REFRACTION_BOOKRow)
+            Me.Rows.Remove(row)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
+            Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType
+            Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence
+            Dim ds As DataSetSceenSetting = New DataSetSceenSetting
+            Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny
+            any1.Namespace = "http://www.w3.org/2001/XMLSchema"
+            any1.MinOccurs = New Decimal(0)
+            any1.MaxOccurs = Decimal.MaxValue
+            any1.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
+            sequence.Items.Add(any1)
+            Dim any2 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny
+            any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1"
+            any2.MinOccurs = New Decimal(1)
+            any2.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
+            sequence.Items.Add(any2)
+            Dim attribute1 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute
+            attribute1.Name = "namespace"
+            attribute1.FixedValue = ds.Namespace
+            type.Attributes.Add(attribute1)
+            Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute
+            attribute2.Name = "tableTypeName"
+            attribute2.FixedValue = "SCREENING_REFRACTION_BOOKDataTable"
+            type.Attributes.Add(attribute2)
+            type.Particle = sequence
+            Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
+            If xs.Contains(dsSchema.TargetNamespace) Then
+                Dim s1 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream
+                Dim s2 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream
+                Try 
+                    Dim schema As Global.System.Xml.Schema.XmlSchema = Nothing
+                    dsSchema.Write(s1)
+                    Dim schemas As Global.System.Collections.IEnumerator = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator
+                    Do While schemas.MoveNext
+                        schema = CType(schemas.Current,Global.System.Xml.Schema.XmlSchema)
+                        s2.SetLength(0)
+                        schema.Write(s2)
+                        If (s1.Length = s2.Length) Then
+                            s1.Position = 0
+                            s2.Position = 0
+                            
+                            Do While ((s1.Position <> s1.Length)  _
+                                        AndAlso (s1.ReadByte = s2.ReadByte))
+                                
+                                
+                            Loop
+                            If (s1.Position = s1.Length) Then
+                                Return type
+                            End If
+                        End If
+                        
+                    Loop
+                Finally
+                    If (Not (s1) Is Nothing) Then
+                        s1.Close
+                    End If
+                    If (Not (s2) Is Nothing) Then
+                        s2.Close
+                    End If
+                End Try
+            End If
+            xs.Add(dsSchema)
+            Return type
+        End Function
+    End Class
+    
+    '''<summary>
+    '''Represents the strongly named DataTable class.
+    '''</summary>
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "2.0.0.0"),  _
+     Global.System.Serializable(),  _
+     Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
+    Partial Public Class SCREENING_OPTICALSHOP_BOOKDataTable
+        Inherits Global.System.Data.TypedTableBase(Of SCREENING_OPTICALSHOP_BOOKRow)
+        
+        Private columnOPTICAL_ID As Global.System.Data.DataColumn
+        
+        Private columnSCREENBOOK_ID As Global.System.Data.DataColumn
+        
+        Private columnDATE_SCREENING As Global.System.Data.DataColumn
+        
+        Private columnPATIENT_NO As Global.System.Data.DataColumn
+        
+        Private columnOPTICALSHOP_NOTE As Global.System.Data.DataColumn
+        
+        Private columnSTATUS_PAY As Global.System.Data.DataColumn
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Sub New()
+            MyBase.New
+            Me.TableName = "SCREENING_OPTICALSHOP_BOOK"
+            Me.BeginInit
+            Me.InitClass
+            Me.EndInit
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Friend Sub New(ByVal table As Global.System.Data.DataTable)
+            MyBase.New
+            Me.TableName = table.TableName
+            If (table.CaseSensitive <> table.DataSet.CaseSensitive) Then
+                Me.CaseSensitive = table.CaseSensitive
+            End If
+            If (table.Locale.ToString <> table.DataSet.Locale.ToString) Then
+                Me.Locale = table.Locale
+            End If
+            If (table.Namespace <> table.DataSet.Namespace) Then
+                Me.Namespace = table.Namespace
+            End If
+            Me.Prefix = table.Prefix
+            Me.MinimumCapacity = table.MinimumCapacity
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Protected Sub New(ByVal info As Global.System.Runtime.Serialization.SerializationInfo, ByVal context As Global.System.Runtime.Serialization.StreamingContext)
+            MyBase.New(info, context)
+            Me.InitVars
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public ReadOnly Property OPTICAL_IDColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnOPTICAL_ID
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public ReadOnly Property SCREENBOOK_IDColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnSCREENBOOK_ID
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public ReadOnly Property DATE_SCREENINGColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnDATE_SCREENING
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public ReadOnly Property PATIENT_NOColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnPATIENT_NO
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public ReadOnly Property OPTICALSHOP_NOTEColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnOPTICALSHOP_NOTE
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public ReadOnly Property STATUS_PAYColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnSTATUS_PAY
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.ComponentModel.Browsable(false)>  _
+        Public ReadOnly Property Count() As Integer
+            Get
+                Return Me.Rows.Count
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Default ReadOnly Property Item(ByVal index As Integer) As SCREENING_OPTICALSHOP_BOOKRow
+            Get
+                Return CType(Me.Rows(index),SCREENING_OPTICALSHOP_BOOKRow)
+            End Get
+        End Property
+        
+        Public Event SCREENING_OPTICALSHOP_BOOKRowChanging As SCREENING_OPTICALSHOP_BOOKRowChangeEventHandler
+        
+        Public Event SCREENING_OPTICALSHOP_BOOKRowChanged As SCREENING_OPTICALSHOP_BOOKRowChangeEventHandler
+        
+        Public Event SCREENING_OPTICALSHOP_BOOKRowDeleting As SCREENING_OPTICALSHOP_BOOKRowChangeEventHandler
+        
+        Public Event SCREENING_OPTICALSHOP_BOOKRowDeleted As SCREENING_OPTICALSHOP_BOOKRowChangeEventHandler
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Overloads Sub AddSCREENING_OPTICALSHOP_BOOKRow(ByVal row As SCREENING_OPTICALSHOP_BOOKRow)
+            Me.Rows.Add(row)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Overloads Function AddSCREENING_OPTICALSHOP_BOOKRow(ByVal SCREENBOOK_ID As Decimal, ByVal DATE_SCREENING As Date, ByVal PATIENT_NO As Decimal, ByVal OPTICALSHOP_NOTE As String, ByVal STATUS_PAY As Boolean) As SCREENING_OPTICALSHOP_BOOKRow
+            Dim rowSCREENING_OPTICALSHOP_BOOKRow As SCREENING_OPTICALSHOP_BOOKRow = CType(Me.NewRow,SCREENING_OPTICALSHOP_BOOKRow)
+            Dim columnValuesArray() As Object = New Object() {Nothing, SCREENBOOK_ID, DATE_SCREENING, PATIENT_NO, OPTICALSHOP_NOTE, STATUS_PAY}
+            rowSCREENING_OPTICALSHOP_BOOKRow.ItemArray = columnValuesArray
+            Me.Rows.Add(rowSCREENING_OPTICALSHOP_BOOKRow)
+            Return rowSCREENING_OPTICALSHOP_BOOKRow
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Function FindByOPTICAL_ID(ByVal OPTICAL_ID As Decimal) As SCREENING_OPTICALSHOP_BOOKRow
+            Return CType(Me.Rows.Find(New Object() {OPTICAL_ID}),SCREENING_OPTICALSHOP_BOOKRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Overrides Function Clone() As Global.System.Data.DataTable
+            Dim cln As SCREENING_OPTICALSHOP_BOOKDataTable = CType(MyBase.Clone,SCREENING_OPTICALSHOP_BOOKDataTable)
+            cln.InitVars
+            Return cln
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
+            Return New SCREENING_OPTICALSHOP_BOOKDataTable
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Friend Sub InitVars()
+            Me.columnOPTICAL_ID = MyBase.Columns("OPTICAL_ID")
+            Me.columnSCREENBOOK_ID = MyBase.Columns("SCREENBOOK_ID")
+            Me.columnDATE_SCREENING = MyBase.Columns("DATE_SCREENING")
+            Me.columnPATIENT_NO = MyBase.Columns("PATIENT_NO")
+            Me.columnOPTICALSHOP_NOTE = MyBase.Columns("OPTICALSHOP_NOTE")
+            Me.columnSTATUS_PAY = MyBase.Columns("STATUS_PAY")
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Private Sub InitClass()
+            Me.columnOPTICAL_ID = New Global.System.Data.DataColumn("OPTICAL_ID", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnOPTICAL_ID)
+            Me.columnSCREENBOOK_ID = New Global.System.Data.DataColumn("SCREENBOOK_ID", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnSCREENBOOK_ID)
+            Me.columnDATE_SCREENING = New Global.System.Data.DataColumn("DATE_SCREENING", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnDATE_SCREENING)
+            Me.columnPATIENT_NO = New Global.System.Data.DataColumn("PATIENT_NO", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnPATIENT_NO)
+            Me.columnOPTICALSHOP_NOTE = New Global.System.Data.DataColumn("OPTICALSHOP_NOTE", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnOPTICALSHOP_NOTE)
+            Me.columnSTATUS_PAY = New Global.System.Data.DataColumn("STATUS_PAY", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnSTATUS_PAY)
+            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnOPTICAL_ID}, true))
+            Me.columnOPTICAL_ID.AutoIncrement = true
+            Me.columnOPTICAL_ID.AutoIncrementSeed = -1
+            Me.columnOPTICAL_ID.AutoIncrementStep = -1
+            Me.columnOPTICAL_ID.AllowDBNull = false
+            Me.columnOPTICAL_ID.ReadOnly = true
+            Me.columnOPTICAL_ID.Unique = true
+            Me.columnOPTICALSHOP_NOTE.MaxLength = 150
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Function NewSCREENING_OPTICALSHOP_BOOKRow() As SCREENING_OPTICALSHOP_BOOKRow
+            Return CType(Me.NewRow,SCREENING_OPTICALSHOP_BOOKRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
+            Return New SCREENING_OPTICALSHOP_BOOKRow(builder)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Protected Overrides Function GetRowType() As Global.System.Type
+            Return GetType(SCREENING_OPTICALSHOP_BOOKRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowChanged(e)
+            If (Not (Me.SCREENING_OPTICALSHOP_BOOKRowChangedEvent) Is Nothing) Then
+                RaiseEvent SCREENING_OPTICALSHOP_BOOKRowChanged(Me, New SCREENING_OPTICALSHOP_BOOKRowChangeEvent(CType(e.Row,SCREENING_OPTICALSHOP_BOOKRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowChanging(e)
+            If (Not (Me.SCREENING_OPTICALSHOP_BOOKRowChangingEvent) Is Nothing) Then
+                RaiseEvent SCREENING_OPTICALSHOP_BOOKRowChanging(Me, New SCREENING_OPTICALSHOP_BOOKRowChangeEvent(CType(e.Row,SCREENING_OPTICALSHOP_BOOKRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowDeleted(e)
+            If (Not (Me.SCREENING_OPTICALSHOP_BOOKRowDeletedEvent) Is Nothing) Then
+                RaiseEvent SCREENING_OPTICALSHOP_BOOKRowDeleted(Me, New SCREENING_OPTICALSHOP_BOOKRowChangeEvent(CType(e.Row,SCREENING_OPTICALSHOP_BOOKRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowDeleting(e)
+            If (Not (Me.SCREENING_OPTICALSHOP_BOOKRowDeletingEvent) Is Nothing) Then
+                RaiseEvent SCREENING_OPTICALSHOP_BOOKRowDeleting(Me, New SCREENING_OPTICALSHOP_BOOKRowChangeEvent(CType(e.Row,SCREENING_OPTICALSHOP_BOOKRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Sub RemoveSCREENING_OPTICALSHOP_BOOKRow(ByVal row As SCREENING_OPTICALSHOP_BOOKRow)
+            Me.Rows.Remove(row)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
+            Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType
+            Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence
+            Dim ds As DataSetSceenSetting = New DataSetSceenSetting
+            Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny
+            any1.Namespace = "http://www.w3.org/2001/XMLSchema"
+            any1.MinOccurs = New Decimal(0)
+            any1.MaxOccurs = Decimal.MaxValue
+            any1.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
+            sequence.Items.Add(any1)
+            Dim any2 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny
+            any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1"
+            any2.MinOccurs = New Decimal(1)
+            any2.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
+            sequence.Items.Add(any2)
+            Dim attribute1 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute
+            attribute1.Name = "namespace"
+            attribute1.FixedValue = ds.Namespace
+            type.Attributes.Add(attribute1)
+            Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute
+            attribute2.Name = "tableTypeName"
+            attribute2.FixedValue = "SCREENING_OPTICALSHOP_BOOKDataTable"
+            type.Attributes.Add(attribute2)
+            type.Particle = sequence
+            Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
+            If xs.Contains(dsSchema.TargetNamespace) Then
+                Dim s1 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream
+                Dim s2 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream
+                Try 
+                    Dim schema As Global.System.Xml.Schema.XmlSchema = Nothing
+                    dsSchema.Write(s1)
+                    Dim schemas As Global.System.Collections.IEnumerator = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator
+                    Do While schemas.MoveNext
+                        schema = CType(schemas.Current,Global.System.Xml.Schema.XmlSchema)
+                        s2.SetLength(0)
+                        schema.Write(s2)
+                        If (s1.Length = s2.Length) Then
+                            s1.Position = 0
+                            s2.Position = 0
+                            
+                            Do While ((s1.Position <> s1.Length)  _
+                                        AndAlso (s1.ReadByte = s2.ReadByte))
+                                
+                                
+                            Loop
+                            If (s1.Position = s1.Length) Then
+                                Return type
+                            End If
+                        End If
+                        
+                    Loop
+                Finally
+                    If (Not (s1) Is Nothing) Then
+                        s1.Close
+                    End If
+                    If (Not (s2) Is Nothing) Then
+                        s2.Close
+                    End If
+                End Try
+            End If
+            xs.Add(dsSchema)
+            Return type
+        End Function
+    End Class
+    
+    '''<summary>
     '''Represents strongly named DataRow class.
     '''</summary>
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "2.0.0.0")>  _
@@ -2226,6 +3392,770 @@ Partial Public Class DataSetSceenSetting
     End Class
     
     '''<summary>
+    '''Represents strongly named DataRow class.
+    '''</summary>
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "2.0.0.0")>  _
+    Partial Public Class SCREENING_REFERRAL_BOOKRow
+        Inherits Global.System.Data.DataRow
+        
+        Private tableSCREENING_REFERRAL_BOOK As SCREENING_REFERRAL_BOOKDataTable
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
+            MyBase.New(rb)
+            Me.tableSCREENING_REFERRAL_BOOK = CType(Me.Table,SCREENING_REFERRAL_BOOKDataTable)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Property REFERRAL_ID() As Decimal
+            Get
+                Return CType(Me(Me.tableSCREENING_REFERRAL_BOOK.REFERRAL_IDColumn),Decimal)
+            End Get
+            Set
+                Me(Me.tableSCREENING_REFERRAL_BOOK.REFERRAL_IDColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Property SCREENING_BOOKID() As Decimal
+            Get
+                Try 
+                    Return CType(Me(Me.tableSCREENING_REFERRAL_BOOK.SCREENING_BOOKIDColumn),Decimal)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'SCREENING_BOOKID' in table 'SCREENING_REFERRAL_BOOK' is DBN"& _ 
+                            "ull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableSCREENING_REFERRAL_BOOK.SCREENING_BOOKIDColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Property PATIENT_NO() As Decimal
+            Get
+                Try 
+                    Return CType(Me(Me.tableSCREENING_REFERRAL_BOOK.PATIENT_NOColumn),Decimal)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'PATIENT_NO' in table 'SCREENING_REFERRAL_BOOK' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableSCREENING_REFERRAL_BOOK.PATIENT_NOColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Property VA_RIGHT() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableSCREENING_REFERRAL_BOOK.VA_RIGHTColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'VA_RIGHT' in table 'SCREENING_REFERRAL_BOOK' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableSCREENING_REFERRAL_BOOK.VA_RIGHTColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Property VA_LEFT() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableSCREENING_REFERRAL_BOOK.VA_LEFTColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'VA_LEFT' in table 'SCREENING_REFERRAL_BOOK' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableSCREENING_REFERRAL_BOOK.VA_LEFTColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Property DIAGNOSIS() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableSCREENING_REFERRAL_BOOK.DIAGNOSISColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'DIAGNOSIS' in table 'SCREENING_REFERRAL_BOOK' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableSCREENING_REFERRAL_BOOK.DIAGNOSISColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Property DATE_MEETING() As Date
+            Get
+                Try 
+                    Return CType(Me(Me.tableSCREENING_REFERRAL_BOOK.DATE_MEETINGColumn),Date)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'DATE_MEETING' in table 'SCREENING_REFERRAL_BOOK' is DBNull."& _ 
+                            "", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableSCREENING_REFERRAL_BOOK.DATE_MEETINGColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Property STATUS_PICKUP() As Boolean
+            Get
+                Try 
+                    Return CType(Me(Me.tableSCREENING_REFERRAL_BOOK.STATUS_PICKUPColumn),Boolean)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'STATUS_PICKUP' in table 'SCREENING_REFERRAL_BOOK' is DBNull"& _ 
+                            ".", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableSCREENING_REFERRAL_BOOK.STATUS_PICKUPColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Property REFERRAL_NOTE() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableSCREENING_REFERRAL_BOOK.REFERRAL_NOTEColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'REFERRAL_NOTE' in table 'SCREENING_REFERRAL_BOOK' is DBNull"& _ 
+                            ".", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableSCREENING_REFERRAL_BOOK.REFERRAL_NOTEColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Property CREATE_DATE() As Date
+            Get
+                Try 
+                    Return CType(Me(Me.tableSCREENING_REFERRAL_BOOK.CREATE_DATEColumn),Date)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'CREATE_DATE' in table 'SCREENING_REFERRAL_BOOK' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableSCREENING_REFERRAL_BOOK.CREATE_DATEColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Property ARRIVED() As Boolean
+            Get
+                Try 
+                    Return CType(Me(Me.tableSCREENING_REFERRAL_BOOK.ARRIVEDColumn),Boolean)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'ARRIVED' in table 'SCREENING_REFERRAL_BOOK' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableSCREENING_REFERRAL_BOOK.ARRIVEDColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Function IsSCREENING_BOOKIDNull() As Boolean
+            Return Me.IsNull(Me.tableSCREENING_REFERRAL_BOOK.SCREENING_BOOKIDColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Sub SetSCREENING_BOOKIDNull()
+            Me(Me.tableSCREENING_REFERRAL_BOOK.SCREENING_BOOKIDColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Function IsPATIENT_NONull() As Boolean
+            Return Me.IsNull(Me.tableSCREENING_REFERRAL_BOOK.PATIENT_NOColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Sub SetPATIENT_NONull()
+            Me(Me.tableSCREENING_REFERRAL_BOOK.PATIENT_NOColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Function IsVA_RIGHTNull() As Boolean
+            Return Me.IsNull(Me.tableSCREENING_REFERRAL_BOOK.VA_RIGHTColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Sub SetVA_RIGHTNull()
+            Me(Me.tableSCREENING_REFERRAL_BOOK.VA_RIGHTColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Function IsVA_LEFTNull() As Boolean
+            Return Me.IsNull(Me.tableSCREENING_REFERRAL_BOOK.VA_LEFTColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Sub SetVA_LEFTNull()
+            Me(Me.tableSCREENING_REFERRAL_BOOK.VA_LEFTColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Function IsDIAGNOSISNull() As Boolean
+            Return Me.IsNull(Me.tableSCREENING_REFERRAL_BOOK.DIAGNOSISColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Sub SetDIAGNOSISNull()
+            Me(Me.tableSCREENING_REFERRAL_BOOK.DIAGNOSISColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Function IsDATE_MEETINGNull() As Boolean
+            Return Me.IsNull(Me.tableSCREENING_REFERRAL_BOOK.DATE_MEETINGColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Sub SetDATE_MEETINGNull()
+            Me(Me.tableSCREENING_REFERRAL_BOOK.DATE_MEETINGColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Function IsSTATUS_PICKUPNull() As Boolean
+            Return Me.IsNull(Me.tableSCREENING_REFERRAL_BOOK.STATUS_PICKUPColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Sub SetSTATUS_PICKUPNull()
+            Me(Me.tableSCREENING_REFERRAL_BOOK.STATUS_PICKUPColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Function IsREFERRAL_NOTENull() As Boolean
+            Return Me.IsNull(Me.tableSCREENING_REFERRAL_BOOK.REFERRAL_NOTEColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Sub SetREFERRAL_NOTENull()
+            Me(Me.tableSCREENING_REFERRAL_BOOK.REFERRAL_NOTEColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Function IsCREATE_DATENull() As Boolean
+            Return Me.IsNull(Me.tableSCREENING_REFERRAL_BOOK.CREATE_DATEColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Sub SetCREATE_DATENull()
+            Me(Me.tableSCREENING_REFERRAL_BOOK.CREATE_DATEColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Function IsARRIVEDNull() As Boolean
+            Return Me.IsNull(Me.tableSCREENING_REFERRAL_BOOK.ARRIVEDColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Sub SetARRIVEDNull()
+            Me(Me.tableSCREENING_REFERRAL_BOOK.ARRIVEDColumn) = Global.System.Convert.DBNull
+        End Sub
+    End Class
+    
+    '''<summary>
+    '''Represents strongly named DataRow class.
+    '''</summary>
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "2.0.0.0")>  _
+    Partial Public Class SCREENING_REFRACTION_BOOKRow
+        Inherits Global.System.Data.DataRow
+        
+        Private tableSCREENING_REFRACTION_BOOK As SCREENING_REFRACTION_BOOKDataTable
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
+            MyBase.New(rb)
+            Me.tableSCREENING_REFRACTION_BOOK = CType(Me.Table,SCREENING_REFRACTION_BOOKDataTable)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Property REFRACT_ID() As Decimal
+            Get
+                Return CType(Me(Me.tableSCREENING_REFRACTION_BOOK.REFRACT_IDColumn),Decimal)
+            End Get
+            Set
+                Me(Me.tableSCREENING_REFRACTION_BOOK.REFRACT_IDColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Property SCREEN_BOOK_ID() As Decimal
+            Get
+                Try 
+                    Return CType(Me(Me.tableSCREENING_REFRACTION_BOOK.SCREEN_BOOK_IDColumn),Decimal)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'SCREEN_BOOK_ID' in table 'SCREENING_REFRACTION_BOOK' is DBN"& _ 
+                            "ull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableSCREENING_REFRACTION_BOOK.SCREEN_BOOK_IDColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Property REFRACT_DATE() As Date
+            Get
+                Try 
+                    Return CType(Me(Me.tableSCREENING_REFRACTION_BOOK.REFRACT_DATEColumn),Date)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'REFRACT_DATE' in table 'SCREENING_REFRACTION_BOOK' is DBNul"& _ 
+                            "l.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableSCREENING_REFRACTION_BOOK.REFRACT_DATEColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Property PATIENT_NO() As Decimal
+            Get
+                Try 
+                    Return CType(Me(Me.tableSCREENING_REFRACTION_BOOK.PATIENT_NOColumn),Decimal)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'PATIENT_NO' in table 'SCREENING_REFRACTION_BOOK' is DBNull."& _ 
+                            "", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableSCREENING_REFRACTION_BOOK.PATIENT_NOColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Property VA_RIGHT() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableSCREENING_REFRACTION_BOOK.VA_RIGHTColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'VA_RIGHT' in table 'SCREENING_REFRACTION_BOOK' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableSCREENING_REFRACTION_BOOK.VA_RIGHTColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Property VA_LEFT() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableSCREENING_REFRACTION_BOOK.VA_LEFTColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'VA_LEFT' in table 'SCREENING_REFRACTION_BOOK' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableSCREENING_REFRACTION_BOOK.VA_LEFTColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Property DIAGNOSIS() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableSCREENING_REFRACTION_BOOK.DIAGNOSISColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'DIAGNOSIS' in table 'SCREENING_REFRACTION_BOOK' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableSCREENING_REFRACTION_BOOK.DIAGNOSISColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Property RE_PLUS() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableSCREENING_REFRACTION_BOOK.RE_PLUSColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'RE_PLUS' in table 'SCREENING_REFRACTION_BOOK' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableSCREENING_REFRACTION_BOOK.RE_PLUSColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Property RE_VA() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableSCREENING_REFRACTION_BOOK.RE_VAColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'RE_VA' in table 'SCREENING_REFRACTION_BOOK' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableSCREENING_REFRACTION_BOOK.RE_VAColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Property LE_PLUS() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableSCREENING_REFRACTION_BOOK.LE_PLUSColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'LE_PLUS' in table 'SCREENING_REFRACTION_BOOK' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableSCREENING_REFRACTION_BOOK.LE_PLUSColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Property LE_VA() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableSCREENING_REFRACTION_BOOK.LE_VAColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'LE_VA' in table 'SCREENING_REFRACTION_BOOK' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableSCREENING_REFRACTION_BOOK.LE_VAColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Property REFRACT_ADD() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableSCREENING_REFRACTION_BOOK.REFRACT_ADDColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'REFRACT_ADD' in table 'SCREENING_REFRACTION_BOOK' is DBNull"& _ 
+                            ".", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableSCREENING_REFRACTION_BOOK.REFRACT_ADDColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Property SIGNATURE() As Boolean
+            Get
+                Try 
+                    Return CType(Me(Me.tableSCREENING_REFRACTION_BOOK.SIGNATUREColumn),Boolean)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'SIGNATURE' in table 'SCREENING_REFRACTION_BOOK' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableSCREENING_REFRACTION_BOOK.SIGNATUREColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Property REFRACT_NOTE() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableSCREENING_REFRACTION_BOOK.REFRACT_NOTEColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'REFRACT_NOTE' in table 'SCREENING_REFRACTION_BOOK' is DBNul"& _ 
+                            "l.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableSCREENING_REFRACTION_BOOK.REFRACT_NOTEColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Function IsSCREEN_BOOK_IDNull() As Boolean
+            Return Me.IsNull(Me.tableSCREENING_REFRACTION_BOOK.SCREEN_BOOK_IDColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Sub SetSCREEN_BOOK_IDNull()
+            Me(Me.tableSCREENING_REFRACTION_BOOK.SCREEN_BOOK_IDColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Function IsREFRACT_DATENull() As Boolean
+            Return Me.IsNull(Me.tableSCREENING_REFRACTION_BOOK.REFRACT_DATEColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Sub SetREFRACT_DATENull()
+            Me(Me.tableSCREENING_REFRACTION_BOOK.REFRACT_DATEColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Function IsPATIENT_NONull() As Boolean
+            Return Me.IsNull(Me.tableSCREENING_REFRACTION_BOOK.PATIENT_NOColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Sub SetPATIENT_NONull()
+            Me(Me.tableSCREENING_REFRACTION_BOOK.PATIENT_NOColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Function IsVA_RIGHTNull() As Boolean
+            Return Me.IsNull(Me.tableSCREENING_REFRACTION_BOOK.VA_RIGHTColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Sub SetVA_RIGHTNull()
+            Me(Me.tableSCREENING_REFRACTION_BOOK.VA_RIGHTColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Function IsVA_LEFTNull() As Boolean
+            Return Me.IsNull(Me.tableSCREENING_REFRACTION_BOOK.VA_LEFTColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Sub SetVA_LEFTNull()
+            Me(Me.tableSCREENING_REFRACTION_BOOK.VA_LEFTColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Function IsDIAGNOSISNull() As Boolean
+            Return Me.IsNull(Me.tableSCREENING_REFRACTION_BOOK.DIAGNOSISColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Sub SetDIAGNOSISNull()
+            Me(Me.tableSCREENING_REFRACTION_BOOK.DIAGNOSISColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Function IsRE_PLUSNull() As Boolean
+            Return Me.IsNull(Me.tableSCREENING_REFRACTION_BOOK.RE_PLUSColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Sub SetRE_PLUSNull()
+            Me(Me.tableSCREENING_REFRACTION_BOOK.RE_PLUSColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Function IsRE_VANull() As Boolean
+            Return Me.IsNull(Me.tableSCREENING_REFRACTION_BOOK.RE_VAColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Sub SetRE_VANull()
+            Me(Me.tableSCREENING_REFRACTION_BOOK.RE_VAColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Function IsLE_PLUSNull() As Boolean
+            Return Me.IsNull(Me.tableSCREENING_REFRACTION_BOOK.LE_PLUSColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Sub SetLE_PLUSNull()
+            Me(Me.tableSCREENING_REFRACTION_BOOK.LE_PLUSColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Function IsLE_VANull() As Boolean
+            Return Me.IsNull(Me.tableSCREENING_REFRACTION_BOOK.LE_VAColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Sub SetLE_VANull()
+            Me(Me.tableSCREENING_REFRACTION_BOOK.LE_VAColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Function IsREFRACT_ADDNull() As Boolean
+            Return Me.IsNull(Me.tableSCREENING_REFRACTION_BOOK.REFRACT_ADDColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Sub SetREFRACT_ADDNull()
+            Me(Me.tableSCREENING_REFRACTION_BOOK.REFRACT_ADDColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Function IsSIGNATURENull() As Boolean
+            Return Me.IsNull(Me.tableSCREENING_REFRACTION_BOOK.SIGNATUREColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Sub SetSIGNATURENull()
+            Me(Me.tableSCREENING_REFRACTION_BOOK.SIGNATUREColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Function IsREFRACT_NOTENull() As Boolean
+            Return Me.IsNull(Me.tableSCREENING_REFRACTION_BOOK.REFRACT_NOTEColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Sub SetREFRACT_NOTENull()
+            Me(Me.tableSCREENING_REFRACTION_BOOK.REFRACT_NOTEColumn) = Global.System.Convert.DBNull
+        End Sub
+    End Class
+    
+    '''<summary>
+    '''Represents strongly named DataRow class.
+    '''</summary>
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "2.0.0.0")>  _
+    Partial Public Class SCREENING_OPTICALSHOP_BOOKRow
+        Inherits Global.System.Data.DataRow
+        
+        Private tableSCREENING_OPTICALSHOP_BOOK As SCREENING_OPTICALSHOP_BOOKDataTable
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
+            MyBase.New(rb)
+            Me.tableSCREENING_OPTICALSHOP_BOOK = CType(Me.Table,SCREENING_OPTICALSHOP_BOOKDataTable)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Property OPTICAL_ID() As Decimal
+            Get
+                Return CType(Me(Me.tableSCREENING_OPTICALSHOP_BOOK.OPTICAL_IDColumn),Decimal)
+            End Get
+            Set
+                Me(Me.tableSCREENING_OPTICALSHOP_BOOK.OPTICAL_IDColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Property SCREENBOOK_ID() As Decimal
+            Get
+                Try 
+                    Return CType(Me(Me.tableSCREENING_OPTICALSHOP_BOOK.SCREENBOOK_IDColumn),Decimal)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'SCREENBOOK_ID' in table 'SCREENING_OPTICALSHOP_BOOK' is DBN"& _ 
+                            "ull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableSCREENING_OPTICALSHOP_BOOK.SCREENBOOK_IDColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Property DATE_SCREENING() As Date
+            Get
+                Try 
+                    Return CType(Me(Me.tableSCREENING_OPTICALSHOP_BOOK.DATE_SCREENINGColumn),Date)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'DATE_SCREENING' in table 'SCREENING_OPTICALSHOP_BOOK' is DB"& _ 
+                            "Null.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableSCREENING_OPTICALSHOP_BOOK.DATE_SCREENINGColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Property PATIENT_NO() As Decimal
+            Get
+                Try 
+                    Return CType(Me(Me.tableSCREENING_OPTICALSHOP_BOOK.PATIENT_NOColumn),Decimal)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'PATIENT_NO' in table 'SCREENING_OPTICALSHOP_BOOK' is DBNull"& _ 
+                            ".", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableSCREENING_OPTICALSHOP_BOOK.PATIENT_NOColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Property OPTICALSHOP_NOTE() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableSCREENING_OPTICALSHOP_BOOK.OPTICALSHOP_NOTEColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'OPTICALSHOP_NOTE' in table 'SCREENING_OPTICALSHOP_BOOK' is "& _ 
+                            "DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableSCREENING_OPTICALSHOP_BOOK.OPTICALSHOP_NOTEColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Property STATUS_PAY() As Boolean
+            Get
+                Try 
+                    Return CType(Me(Me.tableSCREENING_OPTICALSHOP_BOOK.STATUS_PAYColumn),Boolean)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'STATUS_PAY' in table 'SCREENING_OPTICALSHOP_BOOK' is DBNull"& _ 
+                            ".", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableSCREENING_OPTICALSHOP_BOOK.STATUS_PAYColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Function IsSCREENBOOK_IDNull() As Boolean
+            Return Me.IsNull(Me.tableSCREENING_OPTICALSHOP_BOOK.SCREENBOOK_IDColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Sub SetSCREENBOOK_IDNull()
+            Me(Me.tableSCREENING_OPTICALSHOP_BOOK.SCREENBOOK_IDColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Function IsDATE_SCREENINGNull() As Boolean
+            Return Me.IsNull(Me.tableSCREENING_OPTICALSHOP_BOOK.DATE_SCREENINGColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Sub SetDATE_SCREENINGNull()
+            Me(Me.tableSCREENING_OPTICALSHOP_BOOK.DATE_SCREENINGColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Function IsPATIENT_NONull() As Boolean
+            Return Me.IsNull(Me.tableSCREENING_OPTICALSHOP_BOOK.PATIENT_NOColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Sub SetPATIENT_NONull()
+            Me(Me.tableSCREENING_OPTICALSHOP_BOOK.PATIENT_NOColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Function IsOPTICALSHOP_NOTENull() As Boolean
+            Return Me.IsNull(Me.tableSCREENING_OPTICALSHOP_BOOK.OPTICALSHOP_NOTEColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Sub SetOPTICALSHOP_NOTENull()
+            Me(Me.tableSCREENING_OPTICALSHOP_BOOK.OPTICALSHOP_NOTEColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Function IsSTATUS_PAYNull() As Boolean
+            Return Me.IsNull(Me.tableSCREENING_OPTICALSHOP_BOOK.STATUS_PAYColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Sub SetSTATUS_PAYNull()
+            Me(Me.tableSCREENING_OPTICALSHOP_BOOK.STATUS_PAYColumn) = Global.System.Convert.DBNull
+        End Sub
+    End Class
+    
+    '''<summary>
     '''Row event argument class
     '''</summary>
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "2.0.0.0")>  _
@@ -2311,6 +4241,105 @@ Partial Public Class DataSetSceenSetting
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Public ReadOnly Property Row() As SCREENING_BOOK_VIEWRow
+            Get
+                Return Me.eventRow
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public ReadOnly Property Action() As Global.System.Data.DataRowAction
+            Get
+                Return Me.eventAction
+            End Get
+        End Property
+    End Class
+    
+    '''<summary>
+    '''Row event argument class
+    '''</summary>
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "2.0.0.0")>  _
+    Public Class SCREENING_REFERRAL_BOOKRowChangeEvent
+        Inherits Global.System.EventArgs
+        
+        Private eventRow As SCREENING_REFERRAL_BOOKRow
+        
+        Private eventAction As Global.System.Data.DataRowAction
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Sub New(ByVal row As SCREENING_REFERRAL_BOOKRow, ByVal action As Global.System.Data.DataRowAction)
+            MyBase.New
+            Me.eventRow = row
+            Me.eventAction = action
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public ReadOnly Property Row() As SCREENING_REFERRAL_BOOKRow
+            Get
+                Return Me.eventRow
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public ReadOnly Property Action() As Global.System.Data.DataRowAction
+            Get
+                Return Me.eventAction
+            End Get
+        End Property
+    End Class
+    
+    '''<summary>
+    '''Row event argument class
+    '''</summary>
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "2.0.0.0")>  _
+    Public Class SCREENING_REFRACTION_BOOKRowChangeEvent
+        Inherits Global.System.EventArgs
+        
+        Private eventRow As SCREENING_REFRACTION_BOOKRow
+        
+        Private eventAction As Global.System.Data.DataRowAction
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Sub New(ByVal row As SCREENING_REFRACTION_BOOKRow, ByVal action As Global.System.Data.DataRowAction)
+            MyBase.New
+            Me.eventRow = row
+            Me.eventAction = action
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public ReadOnly Property Row() As SCREENING_REFRACTION_BOOKRow
+            Get
+                Return Me.eventRow
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public ReadOnly Property Action() As Global.System.Data.DataRowAction
+            Get
+                Return Me.eventAction
+            End Get
+        End Property
+    End Class
+    
+    '''<summary>
+    '''Row event argument class
+    '''</summary>
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "2.0.0.0")>  _
+    Public Class SCREENING_OPTICALSHOP_BOOKRowChangeEvent
+        Inherits Global.System.EventArgs
+        
+        Private eventRow As SCREENING_OPTICALSHOP_BOOKRow
+        
+        Private eventAction As Global.System.Data.DataRowAction
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Sub New(ByVal row As SCREENING_OPTICALSHOP_BOOKRow, ByVal action As Global.System.Data.DataRowAction)
+            MyBase.New
+            Me.eventRow = row
+            Me.eventAction = action
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public ReadOnly Property Row() As SCREENING_OPTICALSHOP_BOOKRow
             Get
                 Return Me.eventRow
             End Get
@@ -2576,13 +4605,17 @@ Namespace DataSetSceenSettingTableAdapters
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(1) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT        SCREEN_BOOKID, SCREAN_DATE, SYS_SETTING, SCREEN_PLACE, PATIENT_NO, "& _ 
                 "IS_REFRACTION, IS_OPTICALSHOP, IS_REFER_PICKUP, IS_REFER_BYSELF, SCREEN_NOTE"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FR"& _ 
                 "OM            SCREENING_BOOK"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand
+            Me._commandCollection(1).Connection = Me.Connection
+            Me._commandCollection(1).CommandText = "SELECT TOP 1 SCREEN_BOOKID FROM SCREENING_BOOK "
+            Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -2951,6 +4984,31 @@ Namespace DataSetSceenSettingTableAdapters
                     ByVal Original_IS_REFER_BYSELF As Global.System.Nullable(Of Boolean),  _
                     ByVal Original_SCREEN_NOTE As String) As Integer
             Return Me.Update(SCREAN_DATE, SYS_SETTING, SCREEN_PLACE, PATIENT_NO, IS_REFRACTION, IS_OPTICALSHOP, IS_REFER_PICKUP, IS_REFER_BYSELF, SCREEN_NOTE, Original_SCREEN_BOOKID, Original_SCREAN_DATE, Original_SYS_SETTING, Original_SCREEN_PLACE, Original_PATIENT_NO, Original_IS_REFRACTION, Original_IS_OPTICALSHOP, Original_IS_REFER_PICKUP, Original_IS_REFER_BYSELF, Original_SCREEN_NOTE, Original_SCREEN_BOOKID)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function GetLastInsert() As Global.System.Nullable(Of Decimal)
+            Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(1)
+            Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
+            If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                command.Connection.Open
+            End If
+            Dim returnValue As Object
+            Try 
+                returnValue = command.ExecuteScalar
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    command.Connection.Close
+                End If
+            End Try
+            If ((returnValue Is Nothing)  _
+                        OrElse (returnValue.GetType Is GetType(Global.System.DBNull))) Then
+                Return New Global.System.Nullable(Of Decimal)
+            Else
+                Return New Global.System.Nullable(Of Decimal)(CType(returnValue,Decimal))
+            End If
         End Function
     End Class
     
@@ -4035,6 +6093,2185 @@ Namespace DataSetSceenSettingTableAdapters
     End Class
     
     '''<summary>
+    '''Represents the connection and commands used to retrieve and save data.
+    '''</summary>
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "2.0.0.0"),  _
+     Global.System.ComponentModel.DesignerCategoryAttribute("code"),  _
+     Global.System.ComponentModel.ToolboxItem(true),  _
+     Global.System.ComponentModel.DataObjectAttribute(true),  _
+     Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner"& _ 
+        ", Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),  _
+     Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+    Partial Public Class SCREENING_REFERRAL_BOOKTableAdapter
+        Inherits Global.System.ComponentModel.Component
+        
+        Private WithEvents _adapter As Global.System.Data.SqlClient.SqlDataAdapter
+        
+        Private _connection As Global.System.Data.SqlClient.SqlConnection
+        
+        Private _transaction As Global.System.Data.SqlClient.SqlTransaction
+        
+        Private _commandCollection() As Global.System.Data.SqlClient.SqlCommand
+        
+        Private _clearBeforeFill As Boolean
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Sub New()
+            MyBase.New
+            Me.ClearBeforeFill = true
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Protected Friend ReadOnly Property Adapter() As Global.System.Data.SqlClient.SqlDataAdapter
+            Get
+                If (Me._adapter Is Nothing) Then
+                    Me.InitAdapter
+                End If
+                Return Me._adapter
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Friend Property Connection() As Global.System.Data.SqlClient.SqlConnection
+            Get
+                If (Me._connection Is Nothing) Then
+                    Me.InitConnection
+                End If
+                Return Me._connection
+            End Get
+            Set
+                Me._connection = value
+                If (Not (Me.Adapter.InsertCommand) Is Nothing) Then
+                    Me.Adapter.InsertCommand.Connection = value
+                End If
+                If (Not (Me.Adapter.DeleteCommand) Is Nothing) Then
+                    Me.Adapter.DeleteCommand.Connection = value
+                End If
+                If (Not (Me.Adapter.UpdateCommand) Is Nothing) Then
+                    Me.Adapter.UpdateCommand.Connection = value
+                End If
+                Dim i As Integer = 0
+                Do While (i < Me.CommandCollection.Length)
+                    If (Not (Me.CommandCollection(i)) Is Nothing) Then
+                        CType(Me.CommandCollection(i),Global.System.Data.SqlClient.SqlCommand).Connection = value
+                    End If
+                    i = (i + 1)
+                Loop
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Friend Property Transaction() As Global.System.Data.SqlClient.SqlTransaction
+            Get
+                Return Me._transaction
+            End Get
+            Set
+                Me._transaction = value
+                Dim i As Integer = 0
+                Do While (i < Me.CommandCollection.Length)
+                    Me.CommandCollection(i).Transaction = Me._transaction
+                    i = (i + 1)
+                Loop
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.DeleteCommand) Is Nothing)) Then
+                    Me.Adapter.DeleteCommand.Transaction = Me._transaction
+                End If
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.InsertCommand) Is Nothing)) Then
+                    Me.Adapter.InsertCommand.Transaction = Me._transaction
+                End If
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.UpdateCommand) Is Nothing)) Then
+                    Me.Adapter.UpdateCommand.Transaction = Me._transaction
+                End If
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Protected ReadOnly Property CommandCollection() As Global.System.Data.SqlClient.SqlCommand()
+            Get
+                If (Me._commandCollection Is Nothing) Then
+                    Me.InitCommandCollection
+                End If
+                Return Me._commandCollection
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Property ClearBeforeFill() As Boolean
+            Get
+                Return Me._clearBeforeFill
+            End Get
+            Set
+                Me._clearBeforeFill = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Private Sub InitAdapter()
+            Me._adapter = New Global.System.Data.SqlClient.SqlDataAdapter
+            Dim tableMapping As Global.System.Data.Common.DataTableMapping = New Global.System.Data.Common.DataTableMapping
+            tableMapping.SourceTable = "Table"
+            tableMapping.DataSetTable = "SCREENING_REFERRAL_BOOK"
+            tableMapping.ColumnMappings.Add("REFERRAL_ID", "REFERRAL_ID")
+            tableMapping.ColumnMappings.Add("SCREENING_BOOKID", "SCREENING_BOOKID")
+            tableMapping.ColumnMappings.Add("PATIENT_NO", "PATIENT_NO")
+            tableMapping.ColumnMappings.Add("VA_RIGHT", "VA_RIGHT")
+            tableMapping.ColumnMappings.Add("VA_LEFT", "VA_LEFT")
+            tableMapping.ColumnMappings.Add("DIAGNOSIS", "DIAGNOSIS")
+            tableMapping.ColumnMappings.Add("DATE_MEETING", "DATE_MEETING")
+            tableMapping.ColumnMappings.Add("STATUS_PICKUP", "STATUS_PICKUP")
+            tableMapping.ColumnMappings.Add("REFERRAL_NOTE", "REFERRAL_NOTE")
+            tableMapping.ColumnMappings.Add("CREATE_DATE", "CREATE_DATE")
+            tableMapping.ColumnMappings.Add("ARRIVED", "ARRIVED")
+            Me._adapter.TableMappings.Add(tableMapping)
+            Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand
+            Me._adapter.DeleteCommand.Connection = Me.Connection
+            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [SCREENING_REFERRAL_BOOK] WHERE (([REFERRAL_ID] = @Original_REFERRAL_"& _ 
+                "ID) AND ((@IsNull_SCREENING_BOOKID = 1 AND [SCREENING_BOOKID] IS NULL) OR ([SCRE"& _ 
+                "ENING_BOOKID] = @Original_SCREENING_BOOKID)) AND ((@IsNull_PATIENT_NO = 1 AND [P"& _ 
+                "ATIENT_NO] IS NULL) OR ([PATIENT_NO] = @Original_PATIENT_NO)) AND ((@IsNull_VA_R"& _ 
+                "IGHT = 1 AND [VA_RIGHT] IS NULL) OR ([VA_RIGHT] = @Original_VA_RIGHT)) AND ((@Is"& _ 
+                "Null_VA_LEFT = 1 AND [VA_LEFT] IS NULL) OR ([VA_LEFT] = @Original_VA_LEFT)) AND "& _ 
+                "((@IsNull_DIAGNOSIS = 1 AND [DIAGNOSIS] IS NULL) OR ([DIAGNOSIS] = @Original_DIA"& _ 
+                "GNOSIS)) AND ((@IsNull_DATE_MEETING = 1 AND [DATE_MEETING] IS NULL) OR ([DATE_ME"& _ 
+                "ETING] = @Original_DATE_MEETING)) AND ((@IsNull_STATUS_PICKUP = 1 AND [STATUS_PI"& _ 
+                "CKUP] IS NULL) OR ([STATUS_PICKUP] = @Original_STATUS_PICKUP)) AND ((@IsNull_REF"& _ 
+                "ERRAL_NOTE = 1 AND [REFERRAL_NOTE] IS NULL) OR ([REFERRAL_NOTE] = @Original_REFE"& _ 
+                "RRAL_NOTE)) AND ((@IsNull_CREATE_DATE = 1 AND [CREATE_DATE] IS NULL) OR ([CREATE"& _ 
+                "_DATE] = @Original_CREATE_DATE)) AND ((@IsNull_ARRIVED = 1 AND [ARRIVED] IS NULL"& _ 
+                ") OR ([ARRIVED] = @Original_ARRIVED)))"
+            Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_REFERRAL_ID", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 18, 0, "REFERRAL_ID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_SCREENING_BOOKID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "SCREENING_BOOKID", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_SCREENING_BOOKID", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 18, 0, "SCREENING_BOOKID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_PATIENT_NO", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "PATIENT_NO", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_PATIENT_NO", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 18, 0, "PATIENT_NO", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_VA_RIGHT", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "VA_RIGHT", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_VA_RIGHT", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "VA_RIGHT", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_VA_LEFT", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "VA_LEFT", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_VA_LEFT", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "VA_LEFT", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_DIAGNOSIS", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DIAGNOSIS", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_DIAGNOSIS", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DIAGNOSIS", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_DATE_MEETING", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DATE_MEETING", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_DATE_MEETING", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DATE_MEETING", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_STATUS_PICKUP", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "STATUS_PICKUP", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_STATUS_PICKUP", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "STATUS_PICKUP", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_REFERRAL_NOTE", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "REFERRAL_NOTE", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_REFERRAL_NOTE", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "REFERRAL_NOTE", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_CREATE_DATE", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CREATE_DATE", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_CREATE_DATE", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CREATE_DATE", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_ARRIVED", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ARRIVED", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ARRIVED", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ARRIVED", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand
+            Me._adapter.InsertCommand.Connection = Me.Connection
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO [SCREENING_REFERRAL_BOOK] ([SCREENING_BOOKID], [PATIENT_NO], [VA_RIGH"& _ 
+                "T], [VA_LEFT], [DIAGNOSIS], [DATE_MEETING], [STATUS_PICKUP], [REFERRAL_NOTE], [C"& _ 
+                "REATE_DATE], [ARRIVED]) VALUES (@SCREENING_BOOKID, @PATIENT_NO, @VA_RIGHT, @VA_L"& _ 
+                "EFT, @DIAGNOSIS, @DATE_MEETING, @STATUS_PICKUP, @REFERRAL_NOTE, @CREATE_DATE, @A"& _ 
+                "RRIVED);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT REFERRAL_ID, SCREENING_BOOKID, PATIENT_NO, VA_RIGHT, VA_LEFT, D"& _ 
+                "IAGNOSIS, DATE_MEETING, STATUS_PICKUP, REFERRAL_NOTE, CREATE_DATE, ARRIVED FROM "& _ 
+                "SCREENING_REFERRAL_BOOK WHERE (REFERRAL_ID = SCOPE_IDENTITY())"
+            Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@SCREENING_BOOKID", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 18, 0, "SCREENING_BOOKID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@PATIENT_NO", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 18, 0, "PATIENT_NO", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@VA_RIGHT", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "VA_RIGHT", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@VA_LEFT", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "VA_LEFT", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@DIAGNOSIS", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DIAGNOSIS", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@DATE_MEETING", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DATE_MEETING", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@STATUS_PICKUP", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "STATUS_PICKUP", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@REFERRAL_NOTE", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "REFERRAL_NOTE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@CREATE_DATE", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CREATE_DATE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ARRIVED", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ARRIVED", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand
+            Me._adapter.UpdateCommand.Connection = Me.Connection
+            Me._adapter.UpdateCommand.CommandText = "UPDATE [SCREENING_REFERRAL_BOOK] SET [SCREENING_BOOKID] = @SCREENING_BOOKID, [PAT"& _ 
+                "IENT_NO] = @PATIENT_NO, [VA_RIGHT] = @VA_RIGHT, [VA_LEFT] = @VA_LEFT, [DIAGNOSIS"& _ 
+                "] = @DIAGNOSIS, [DATE_MEETING] = @DATE_MEETING, [STATUS_PICKUP] = @STATUS_PICKUP"& _ 
+                ", [REFERRAL_NOTE] = @REFERRAL_NOTE, [CREATE_DATE] = @CREATE_DATE, [ARRIVED] = @A"& _ 
+                "RRIVED WHERE (([REFERRAL_ID] = @Original_REFERRAL_ID) AND ((@IsNull_SCREENING_BO"& _ 
+                "OKID = 1 AND [SCREENING_BOOKID] IS NULL) OR ([SCREENING_BOOKID] = @Original_SCRE"& _ 
+                "ENING_BOOKID)) AND ((@IsNull_PATIENT_NO = 1 AND [PATIENT_NO] IS NULL) OR ([PATIE"& _ 
+                "NT_NO] = @Original_PATIENT_NO)) AND ((@IsNull_VA_RIGHT = 1 AND [VA_RIGHT] IS NUL"& _ 
+                "L) OR ([VA_RIGHT] = @Original_VA_RIGHT)) AND ((@IsNull_VA_LEFT = 1 AND [VA_LEFT]"& _ 
+                " IS NULL) OR ([VA_LEFT] = @Original_VA_LEFT)) AND ((@IsNull_DIAGNOSIS = 1 AND [D"& _ 
+                "IAGNOSIS] IS NULL) OR ([DIAGNOSIS] = @Original_DIAGNOSIS)) AND ((@IsNull_DATE_ME"& _ 
+                "ETING = 1 AND [DATE_MEETING] IS NULL) OR ([DATE_MEETING] = @Original_DATE_MEETIN"& _ 
+                "G)) AND ((@IsNull_STATUS_PICKUP = 1 AND [STATUS_PICKUP] IS NULL) OR ([STATUS_PIC"& _ 
+                "KUP] = @Original_STATUS_PICKUP)) AND ((@IsNull_REFERRAL_NOTE = 1 AND [REFERRAL_N"& _ 
+                "OTE] IS NULL) OR ([REFERRAL_NOTE] = @Original_REFERRAL_NOTE)) AND ((@IsNull_CREA"& _ 
+                "TE_DATE = 1 AND [CREATE_DATE] IS NULL) OR ([CREATE_DATE] = @Original_CREATE_DATE"& _ 
+                ")) AND ((@IsNull_ARRIVED = 1 AND [ARRIVED] IS NULL) OR ([ARRIVED] = @Original_AR"& _ 
+                "RIVED)));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT REFERRAL_ID, SCREENING_BOOKID, PATIENT_NO, VA_RIGHT, VA_LEFT, "& _ 
+                "DIAGNOSIS, DATE_MEETING, STATUS_PICKUP, REFERRAL_NOTE, CREATE_DATE, ARRIVED FROM"& _ 
+                " SCREENING_REFERRAL_BOOK WHERE (REFERRAL_ID = @REFERRAL_ID)"
+            Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@SCREENING_BOOKID", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 18, 0, "SCREENING_BOOKID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@PATIENT_NO", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 18, 0, "PATIENT_NO", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@VA_RIGHT", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "VA_RIGHT", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@VA_LEFT", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "VA_LEFT", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@DIAGNOSIS", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DIAGNOSIS", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@DATE_MEETING", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DATE_MEETING", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@STATUS_PICKUP", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "STATUS_PICKUP", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@REFERRAL_NOTE", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "REFERRAL_NOTE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@CREATE_DATE", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CREATE_DATE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ARRIVED", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ARRIVED", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_REFERRAL_ID", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 18, 0, "REFERRAL_ID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_SCREENING_BOOKID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "SCREENING_BOOKID", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_SCREENING_BOOKID", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 18, 0, "SCREENING_BOOKID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_PATIENT_NO", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "PATIENT_NO", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_PATIENT_NO", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 18, 0, "PATIENT_NO", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_VA_RIGHT", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "VA_RIGHT", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_VA_RIGHT", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "VA_RIGHT", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_VA_LEFT", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "VA_LEFT", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_VA_LEFT", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "VA_LEFT", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_DIAGNOSIS", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DIAGNOSIS", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_DIAGNOSIS", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DIAGNOSIS", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_DATE_MEETING", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DATE_MEETING", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_DATE_MEETING", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DATE_MEETING", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_STATUS_PICKUP", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "STATUS_PICKUP", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_STATUS_PICKUP", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "STATUS_PICKUP", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_REFERRAL_NOTE", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "REFERRAL_NOTE", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_REFERRAL_NOTE", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "REFERRAL_NOTE", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_CREATE_DATE", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CREATE_DATE", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_CREATE_DATE", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CREATE_DATE", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_ARRIVED", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ARRIVED", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_ARRIVED", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "ARRIVED", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@REFERRAL_ID", Global.System.Data.SqlDbType.[Decimal], 9, Global.System.Data.ParameterDirection.Input, 18, 0, "REFERRAL_ID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Private Sub InitConnection()
+            Me._connection = New Global.System.Data.SqlClient.SqlConnection
+            Me._connection.ConnectionString = Global.TakeoHospitalInventory.My.MySettings.Default.TakeoDBConnectionString
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Private Sub InitCommandCollection()
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(3) {}
+            Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand
+            Me._commandCollection(0).Connection = Me.Connection
+            Me._commandCollection(0).CommandText = "SELECT        REFERRAL_ID, SCREENING_BOOKID, PATIENT_NO, VA_RIGHT, VA_LEFT, DIAGN"& _ 
+                "OSIS, DATE_MEETING, STATUS_PICKUP, REFERRAL_NOTE, CREATE_DATE, ARRIVED"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM    "& _ 
+                "        SCREENING_REFERRAL_BOOK"
+            Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand
+            Me._commandCollection(1).Connection = Me.Connection
+            Me._commandCollection(1).CommandText = "SELECT        REFERRAL_ID, SCREENING_BOOKID, PATIENT_NO, VA_RIGHT, VA_LEFT, DIAGN"& _ 
+                "OSIS, DATE_MEETING, STATUS_PICKUP, REFERRAL_NOTE, CREATE_DATE, ARRIVED"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM    "& _ 
+                "        SCREENING_REFERRAL_BOOK"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"CREATE_DATE BETWEEN @DFrom AND @DTo"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)
+            Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@DFrom", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "CREATE_DATE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@DTo", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "CREATE_DATE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(2) = New Global.System.Data.SqlClient.SqlCommand
+            Me._commandCollection(2).Connection = Me.Connection
+            Me._commandCollection(2).CommandText = "SELECT        REFERRAL_ID, SCREENING_BOOKID, PATIENT_NO, VA_RIGHT, VA_LEFT, DIAGN"& _ 
+                "OSIS, DATE_MEETING, STATUS_PICKUP, REFERRAL_NOTE, CREATE_DATE, ARRIVED"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM    "& _ 
+                "        SCREENING_REFERRAL_BOOK"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"(CREATE_DATE BETWEEN @DFrom AND @DTo) A"& _ 
+                "ND (PATIENT_NO=@PATIENT_NO)"
+            Me._commandCollection(2).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@DFrom", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "CREATE_DATE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@DTo", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "CREATE_DATE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@PATIENT_NO", Global.System.Data.SqlDbType.[Decimal], 9, Global.System.Data.ParameterDirection.Input, 18, 0, "PATIENT_NO", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(3) = New Global.System.Data.SqlClient.SqlCommand
+            Me._commandCollection(3).Connection = Me.Connection
+            Me._commandCollection(3).CommandText = "INSERT INTO [SCREENING_REFERRAL_BOOK] ([SCREENING_BOOKID], [PATIENT_NO], [VA_RIGH"& _ 
+                "T], [VA_LEFT], [DIAGNOSIS], [DATE_MEETING], [STATUS_PICKUP], [REFERRAL_NOTE]) VA"& _ 
+                "LUES (@SCREENING_BOOKID, @PATIENT_NO, @VA_RIGHT, @VA_LEFT, @DIAGNOSIS, @DATE_MEE"& _ 
+                "TING, @STATUS_PICKUP, @REFERRAL_NOTE);"
+            Me._commandCollection(3).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@SCREENING_BOOKID", Global.System.Data.SqlDbType.[Decimal], 9, Global.System.Data.ParameterDirection.Input, 18, 0, "SCREENING_BOOKID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@PATIENT_NO", Global.System.Data.SqlDbType.[Decimal], 9, Global.System.Data.ParameterDirection.Input, 18, 0, "PATIENT_NO", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@VA_RIGHT", Global.System.Data.SqlDbType.NVarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "VA_RIGHT", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@VA_LEFT", Global.System.Data.SqlDbType.NVarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "VA_LEFT", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@DIAGNOSIS", Global.System.Data.SqlDbType.NVarChar, 100, Global.System.Data.ParameterDirection.Input, 0, 0, "DIAGNOSIS", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@DATE_MEETING", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "DATE_MEETING", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@STATUS_PICKUP", Global.System.Data.SqlDbType.Bit, 1, Global.System.Data.ParameterDirection.Input, 0, 0, "STATUS_PICKUP", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@REFERRAL_NOTE", Global.System.Data.SqlDbType.NVarChar, 150, Global.System.Data.ParameterDirection.Input, 0, 0, "REFERRAL_NOTE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
+        Public Overloads Overridable Function Fill(ByVal dataTable As DataSetSceenSetting.SCREENING_REFERRAL_BOOKDataTable) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
+        Public Overloads Overridable Function GetData() As DataSetSceenSetting.SCREENING_REFERRAL_BOOKDataTable
+            Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            Dim dataTable As DataSetSceenSetting.SCREENING_REFERRAL_BOOKDataTable = New DataSetSceenSetting.SCREENING_REFERRAL_BOOKDataTable
+            Me.Adapter.Fill(dataTable)
+            Return dataTable
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
+        Public Overloads Overridable Function FillBy(ByVal dataTable As DataSetSceenSetting.SCREENING_REFERRAL_BOOKDataTable, ByVal DFrom As Global.System.Nullable(Of Date), ByVal DTo As Global.System.Nullable(Of Date)) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(1)
+            If (DFrom.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(0).Value = CType(DFrom.Value,Date)
+            Else
+                Me.Adapter.SelectCommand.Parameters(0).Value = Global.System.DBNull.Value
+            End If
+            If (DTo.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(1).Value = CType(DTo.Value,Date)
+            Else
+                Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
+            End If
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
+        Public Overloads Overridable Function SelectReferralDateToDate(ByVal DFrom As Global.System.Nullable(Of Date), ByVal DTo As Global.System.Nullable(Of Date)) As DataSetSceenSetting.SCREENING_REFERRAL_BOOKDataTable
+            Me.Adapter.SelectCommand = Me.CommandCollection(1)
+            If (DFrom.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(0).Value = CType(DFrom.Value,Date)
+            Else
+                Me.Adapter.SelectCommand.Parameters(0).Value = Global.System.DBNull.Value
+            End If
+            If (DTo.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(1).Value = CType(DTo.Value,Date)
+            Else
+                Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
+            End If
+            Dim dataTable As DataSetSceenSetting.SCREENING_REFERRAL_BOOKDataTable = New DataSetSceenSetting.SCREENING_REFERRAL_BOOKDataTable
+            Me.Adapter.Fill(dataTable)
+            Return dataTable
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
+        Public Overloads Overridable Function FillBy1(ByVal dataTable As DataSetSceenSetting.SCREENING_REFERRAL_BOOKDataTable, ByVal DFrom As Global.System.Nullable(Of Date), ByVal DTo As Global.System.Nullable(Of Date), ByVal PATIENT_NO As Global.System.Nullable(Of Decimal)) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(2)
+            If (DFrom.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(0).Value = CType(DFrom.Value,Date)
+            Else
+                Me.Adapter.SelectCommand.Parameters(0).Value = Global.System.DBNull.Value
+            End If
+            If (DTo.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(1).Value = CType(DTo.Value,Date)
+            Else
+                Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
+            End If
+            If (PATIENT_NO.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(2).Value = CType(PATIENT_NO.Value,Decimal)
+            Else
+                Me.Adapter.SelectCommand.Parameters(2).Value = Global.System.DBNull.Value
+            End If
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
+        Public Overloads Overridable Function SelectReferralDateToDateWithPatientNo(ByVal DFrom As Global.System.Nullable(Of Date), ByVal DTo As Global.System.Nullable(Of Date), ByVal PATIENT_NO As Global.System.Nullable(Of Decimal)) As DataSetSceenSetting.SCREENING_REFERRAL_BOOKDataTable
+            Me.Adapter.SelectCommand = Me.CommandCollection(2)
+            If (DFrom.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(0).Value = CType(DFrom.Value,Date)
+            Else
+                Me.Adapter.SelectCommand.Parameters(0).Value = Global.System.DBNull.Value
+            End If
+            If (DTo.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(1).Value = CType(DTo.Value,Date)
+            Else
+                Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
+            End If
+            If (PATIENT_NO.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(2).Value = CType(PATIENT_NO.Value,Decimal)
+            Else
+                Me.Adapter.SelectCommand.Parameters(2).Value = Global.System.DBNull.Value
+            End If
+            Dim dataTable As DataSetSceenSetting.SCREENING_REFERRAL_BOOKDataTable = New DataSetSceenSetting.SCREENING_REFERRAL_BOOKDataTable
+            Me.Adapter.Fill(dataTable)
+            Return dataTable
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataTable As DataSetSceenSetting.SCREENING_REFERRAL_BOOKDataTable) As Integer
+            Return Me.Adapter.Update(dataTable)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataSet As DataSetSceenSetting) As Integer
+            Return Me.Adapter.Update(dataSet, "SCREENING_REFERRAL_BOOK")
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataRow As Global.System.Data.DataRow) As Integer
+            Return Me.Adapter.Update(New Global.System.Data.DataRow() {dataRow})
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataRows() As Global.System.Data.DataRow) As Integer
+            Return Me.Adapter.Update(dataRows)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
+        Public Overloads Overridable Function Delete(ByVal Original_REFERRAL_ID As Decimal, ByVal Original_SCREENING_BOOKID As Global.System.Nullable(Of Decimal), ByVal Original_PATIENT_NO As Global.System.Nullable(Of Decimal), ByVal Original_VA_RIGHT As String, ByVal Original_VA_LEFT As String, ByVal Original_DIAGNOSIS As String, ByVal Original_DATE_MEETING As Global.System.Nullable(Of Date), ByVal Original_STATUS_PICKUP As Global.System.Nullable(Of Boolean), ByVal Original_REFERRAL_NOTE As String, ByVal Original_CREATE_DATE As Global.System.Nullable(Of Date), ByVal Original_ARRIVED As Global.System.Nullable(Of Boolean)) As Integer
+            Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_REFERRAL_ID,Decimal)
+            If (Original_SCREENING_BOOKID.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(1).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(2).Value = CType(Original_SCREENING_BOOKID.Value,Decimal)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(1).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(2).Value = Global.System.DBNull.Value
+            End If
+            If (Original_PATIENT_NO.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(3).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(4).Value = CType(Original_PATIENT_NO.Value,Decimal)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(3).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(4).Value = Global.System.DBNull.Value
+            End If
+            If (Original_VA_RIGHT Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(5).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(6).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(5).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(6).Value = CType(Original_VA_RIGHT,String)
+            End If
+            If (Original_VA_LEFT Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(7).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(8).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(7).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(8).Value = CType(Original_VA_LEFT,String)
+            End If
+            If (Original_DIAGNOSIS Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(9).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(10).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(9).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(10).Value = CType(Original_DIAGNOSIS,String)
+            End If
+            If (Original_DATE_MEETING.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(11).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(12).Value = CType(Original_DATE_MEETING.Value,Date)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(11).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(12).Value = Global.System.DBNull.Value
+            End If
+            If (Original_STATUS_PICKUP.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(13).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(14).Value = CType(Original_STATUS_PICKUP.Value,Boolean)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(13).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(14).Value = Global.System.DBNull.Value
+            End If
+            If (Original_REFERRAL_NOTE Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(15).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(16).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(15).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(16).Value = CType(Original_REFERRAL_NOTE,String)
+            End If
+            If (Original_CREATE_DATE.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(17).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(18).Value = CType(Original_CREATE_DATE.Value,Date)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(17).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(18).Value = Global.System.DBNull.Value
+            End If
+            If (Original_ARRIVED.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(19).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(20).Value = CType(Original_ARRIVED.Value,Boolean)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(19).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(20).Value = Global.System.DBNull.Value
+            End If
+            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
+            If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                Me.Adapter.DeleteCommand.Connection.Open
+            End If
+            Try 
+                Dim returnValue As Integer = Me.Adapter.DeleteCommand.ExecuteNonQuery
+                Return returnValue
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    Me.Adapter.DeleteCommand.Connection.Close
+                End If
+            End Try
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
+        Public Overloads Overridable Function Insert(ByVal SCREENING_BOOKID As Global.System.Nullable(Of Decimal), ByVal PATIENT_NO As Global.System.Nullable(Of Decimal), ByVal VA_RIGHT As String, ByVal VA_LEFT As String, ByVal DIAGNOSIS As String, ByVal DATE_MEETING As Global.System.Nullable(Of Date), ByVal STATUS_PICKUP As Global.System.Nullable(Of Boolean), ByVal REFERRAL_NOTE As String, ByVal CREATE_DATE As Global.System.Nullable(Of Date), ByVal ARRIVED As Global.System.Nullable(Of Boolean)) As Integer
+            If (SCREENING_BOOKID.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(0).Value = CType(SCREENING_BOOKID.Value,Decimal)
+            Else
+                Me.Adapter.InsertCommand.Parameters(0).Value = Global.System.DBNull.Value
+            End If
+            If (PATIENT_NO.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(1).Value = CType(PATIENT_NO.Value,Decimal)
+            Else
+                Me.Adapter.InsertCommand.Parameters(1).Value = Global.System.DBNull.Value
+            End If
+            If (VA_RIGHT Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(2).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(2).Value = CType(VA_RIGHT,String)
+            End If
+            If (VA_LEFT Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(3).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(3).Value = CType(VA_LEFT,String)
+            End If
+            If (DIAGNOSIS Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(4).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(4).Value = CType(DIAGNOSIS,String)
+            End If
+            If (DATE_MEETING.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(5).Value = CType(DATE_MEETING.Value,Date)
+            Else
+                Me.Adapter.InsertCommand.Parameters(5).Value = Global.System.DBNull.Value
+            End If
+            If (STATUS_PICKUP.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(6).Value = CType(STATUS_PICKUP.Value,Boolean)
+            Else
+                Me.Adapter.InsertCommand.Parameters(6).Value = Global.System.DBNull.Value
+            End If
+            If (REFERRAL_NOTE Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(7).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(7).Value = CType(REFERRAL_NOTE,String)
+            End If
+            If (CREATE_DATE.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(8).Value = CType(CREATE_DATE.Value,Date)
+            Else
+                Me.Adapter.InsertCommand.Parameters(8).Value = Global.System.DBNull.Value
+            End If
+            If (ARRIVED.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(9).Value = CType(ARRIVED.Value,Boolean)
+            Else
+                Me.Adapter.InsertCommand.Parameters(9).Value = Global.System.DBNull.Value
+            End If
+            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
+            If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                Me.Adapter.InsertCommand.Connection.Open
+            End If
+            Try 
+                Dim returnValue As Integer = Me.Adapter.InsertCommand.ExecuteNonQuery
+                Return returnValue
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    Me.Adapter.InsertCommand.Connection.Close
+                End If
+            End Try
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
+        Public Overloads Overridable Function Update( _
+                    ByVal SCREENING_BOOKID As Global.System.Nullable(Of Decimal),  _
+                    ByVal PATIENT_NO As Global.System.Nullable(Of Decimal),  _
+                    ByVal VA_RIGHT As String,  _
+                    ByVal VA_LEFT As String,  _
+                    ByVal DIAGNOSIS As String,  _
+                    ByVal DATE_MEETING As Global.System.Nullable(Of Date),  _
+                    ByVal STATUS_PICKUP As Global.System.Nullable(Of Boolean),  _
+                    ByVal REFERRAL_NOTE As String,  _
+                    ByVal CREATE_DATE As Global.System.Nullable(Of Date),  _
+                    ByVal ARRIVED As Global.System.Nullable(Of Boolean),  _
+                    ByVal Original_REFERRAL_ID As Decimal,  _
+                    ByVal Original_SCREENING_BOOKID As Global.System.Nullable(Of Decimal),  _
+                    ByVal Original_PATIENT_NO As Global.System.Nullable(Of Decimal),  _
+                    ByVal Original_VA_RIGHT As String,  _
+                    ByVal Original_VA_LEFT As String,  _
+                    ByVal Original_DIAGNOSIS As String,  _
+                    ByVal Original_DATE_MEETING As Global.System.Nullable(Of Date),  _
+                    ByVal Original_STATUS_PICKUP As Global.System.Nullable(Of Boolean),  _
+                    ByVal Original_REFERRAL_NOTE As String,  _
+                    ByVal Original_CREATE_DATE As Global.System.Nullable(Of Date),  _
+                    ByVal Original_ARRIVED As Global.System.Nullable(Of Boolean),  _
+                    ByVal REFERRAL_ID As Decimal) As Integer
+            If (SCREENING_BOOKID.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(0).Value = CType(SCREENING_BOOKID.Value,Decimal)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(0).Value = Global.System.DBNull.Value
+            End If
+            If (PATIENT_NO.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(1).Value = CType(PATIENT_NO.Value,Decimal)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(1).Value = Global.System.DBNull.Value
+            End If
+            If (VA_RIGHT Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(2).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(2).Value = CType(VA_RIGHT,String)
+            End If
+            If (VA_LEFT Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(3).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(3).Value = CType(VA_LEFT,String)
+            End If
+            If (DIAGNOSIS Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(4).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(DIAGNOSIS,String)
+            End If
+            If (DATE_MEETING.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(DATE_MEETING.Value,Date)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(5).Value = Global.System.DBNull.Value
+            End If
+            If (STATUS_PICKUP.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(STATUS_PICKUP.Value,Boolean)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(6).Value = Global.System.DBNull.Value
+            End If
+            If (REFERRAL_NOTE Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(7).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(REFERRAL_NOTE,String)
+            End If
+            If (CREATE_DATE.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(CREATE_DATE.Value,Date)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(8).Value = Global.System.DBNull.Value
+            End If
+            If (ARRIVED.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(ARRIVED.Value,Boolean)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(9).Value = Global.System.DBNull.Value
+            End If
+            Me.Adapter.UpdateCommand.Parameters(10).Value = CType(Original_REFERRAL_ID,Decimal)
+            If (Original_SCREENING_BOOKID.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(Original_SCREENING_BOOKID.Value,Decimal)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(12).Value = Global.System.DBNull.Value
+            End If
+            If (Original_PATIENT_NO.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(Original_PATIENT_NO.Value,Decimal)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(14).Value = Global.System.DBNull.Value
+            End If
+            If (Original_VA_RIGHT Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(16).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(Original_VA_RIGHT,String)
+            End If
+            If (Original_VA_LEFT Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(18).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(Original_VA_LEFT,String)
+            End If
+            If (Original_DIAGNOSIS Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(20).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(20).Value = CType(Original_DIAGNOSIS,String)
+            End If
+            If (Original_DATE_MEETING.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(21).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(22).Value = CType(Original_DATE_MEETING.Value,Date)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(21).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(22).Value = Global.System.DBNull.Value
+            End If
+            If (Original_STATUS_PICKUP.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(23).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(24).Value = CType(Original_STATUS_PICKUP.Value,Boolean)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(23).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(24).Value = Global.System.DBNull.Value
+            End If
+            If (Original_REFERRAL_NOTE Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(25).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(26).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(25).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(26).Value = CType(Original_REFERRAL_NOTE,String)
+            End If
+            If (Original_CREATE_DATE.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(27).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(28).Value = CType(Original_CREATE_DATE.Value,Date)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(27).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(28).Value = Global.System.DBNull.Value
+            End If
+            If (Original_ARRIVED.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(29).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(30).Value = CType(Original_ARRIVED.Value,Boolean)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(29).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(30).Value = Global.System.DBNull.Value
+            End If
+            Me.Adapter.UpdateCommand.Parameters(31).Value = CType(REFERRAL_ID,Decimal)
+            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
+            If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                Me.Adapter.UpdateCommand.Connection.Open
+            End If
+            Try 
+                Dim returnValue As Integer = Me.Adapter.UpdateCommand.ExecuteNonQuery
+                Return returnValue
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    Me.Adapter.UpdateCommand.Connection.Close
+                End If
+            End Try
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
+        Public Overloads Overridable Function Update( _
+                    ByVal SCREENING_BOOKID As Global.System.Nullable(Of Decimal),  _
+                    ByVal PATIENT_NO As Global.System.Nullable(Of Decimal),  _
+                    ByVal VA_RIGHT As String,  _
+                    ByVal VA_LEFT As String,  _
+                    ByVal DIAGNOSIS As String,  _
+                    ByVal DATE_MEETING As Global.System.Nullable(Of Date),  _
+                    ByVal STATUS_PICKUP As Global.System.Nullable(Of Boolean),  _
+                    ByVal REFERRAL_NOTE As String,  _
+                    ByVal CREATE_DATE As Global.System.Nullable(Of Date),  _
+                    ByVal ARRIVED As Global.System.Nullable(Of Boolean),  _
+                    ByVal Original_REFERRAL_ID As Decimal,  _
+                    ByVal Original_SCREENING_BOOKID As Global.System.Nullable(Of Decimal),  _
+                    ByVal Original_PATIENT_NO As Global.System.Nullable(Of Decimal),  _
+                    ByVal Original_VA_RIGHT As String,  _
+                    ByVal Original_VA_LEFT As String,  _
+                    ByVal Original_DIAGNOSIS As String,  _
+                    ByVal Original_DATE_MEETING As Global.System.Nullable(Of Date),  _
+                    ByVal Original_STATUS_PICKUP As Global.System.Nullable(Of Boolean),  _
+                    ByVal Original_REFERRAL_NOTE As String,  _
+                    ByVal Original_CREATE_DATE As Global.System.Nullable(Of Date),  _
+                    ByVal Original_ARRIVED As Global.System.Nullable(Of Boolean)) As Integer
+            Return Me.Update(SCREENING_BOOKID, PATIENT_NO, VA_RIGHT, VA_LEFT, DIAGNOSIS, DATE_MEETING, STATUS_PICKUP, REFERRAL_NOTE, CREATE_DATE, ARRIVED, Original_REFERRAL_ID, Original_SCREENING_BOOKID, Original_PATIENT_NO, Original_VA_RIGHT, Original_VA_LEFT, Original_DIAGNOSIS, Original_DATE_MEETING, Original_STATUS_PICKUP, Original_REFERRAL_NOTE, Original_CREATE_DATE, Original_ARRIVED, Original_REFERRAL_ID)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, false)>  _
+        Public Overloads Overridable Function InsertNewReferral(ByVal SCREENING_BOOKID As Global.System.Nullable(Of Decimal), ByVal PATIENT_NO As Global.System.Nullable(Of Decimal), ByVal VA_RIGHT As String, ByVal VA_LEFT As String, ByVal DIAGNOSIS As String, ByVal DATE_MEETING As Global.System.Nullable(Of Date), ByVal STATUS_PICKUP As Global.System.Nullable(Of Boolean), ByVal REFERRAL_NOTE As String) As Integer
+            Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(3)
+            If (SCREENING_BOOKID.HasValue = true) Then
+                command.Parameters(0).Value = CType(SCREENING_BOOKID.Value,Decimal)
+            Else
+                command.Parameters(0).Value = Global.System.DBNull.Value
+            End If
+            If (PATIENT_NO.HasValue = true) Then
+                command.Parameters(1).Value = CType(PATIENT_NO.Value,Decimal)
+            Else
+                command.Parameters(1).Value = Global.System.DBNull.Value
+            End If
+            If (VA_RIGHT Is Nothing) Then
+                command.Parameters(2).Value = Global.System.DBNull.Value
+            Else
+                command.Parameters(2).Value = CType(VA_RIGHT,String)
+            End If
+            If (VA_LEFT Is Nothing) Then
+                command.Parameters(3).Value = Global.System.DBNull.Value
+            Else
+                command.Parameters(3).Value = CType(VA_LEFT,String)
+            End If
+            If (DIAGNOSIS Is Nothing) Then
+                command.Parameters(4).Value = Global.System.DBNull.Value
+            Else
+                command.Parameters(4).Value = CType(DIAGNOSIS,String)
+            End If
+            If (DATE_MEETING.HasValue = true) Then
+                command.Parameters(5).Value = CType(DATE_MEETING.Value,Date)
+            Else
+                command.Parameters(5).Value = Global.System.DBNull.Value
+            End If
+            If (STATUS_PICKUP.HasValue = true) Then
+                command.Parameters(6).Value = CType(STATUS_PICKUP.Value,Boolean)
+            Else
+                command.Parameters(6).Value = Global.System.DBNull.Value
+            End If
+            If (REFERRAL_NOTE Is Nothing) Then
+                command.Parameters(7).Value = Global.System.DBNull.Value
+            Else
+                command.Parameters(7).Value = CType(REFERRAL_NOTE,String)
+            End If
+            Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
+            If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                command.Connection.Open
+            End If
+            Dim returnValue As Integer
+            Try 
+                returnValue = command.ExecuteNonQuery
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    command.Connection.Close
+                End If
+            End Try
+            Return returnValue
+        End Function
+    End Class
+    
+    '''<summary>
+    '''Represents the connection and commands used to retrieve and save data.
+    '''</summary>
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "2.0.0.0"),  _
+     Global.System.ComponentModel.DesignerCategoryAttribute("code"),  _
+     Global.System.ComponentModel.ToolboxItem(true),  _
+     Global.System.ComponentModel.DataObjectAttribute(true),  _
+     Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner"& _ 
+        ", Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),  _
+     Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+    Partial Public Class SCREENING_REFRACTION_BOOKTableAdapter
+        Inherits Global.System.ComponentModel.Component
+        
+        Private WithEvents _adapter As Global.System.Data.SqlClient.SqlDataAdapter
+        
+        Private _connection As Global.System.Data.SqlClient.SqlConnection
+        
+        Private _transaction As Global.System.Data.SqlClient.SqlTransaction
+        
+        Private _commandCollection() As Global.System.Data.SqlClient.SqlCommand
+        
+        Private _clearBeforeFill As Boolean
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Sub New()
+            MyBase.New
+            Me.ClearBeforeFill = true
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Protected Friend ReadOnly Property Adapter() As Global.System.Data.SqlClient.SqlDataAdapter
+            Get
+                If (Me._adapter Is Nothing) Then
+                    Me.InitAdapter
+                End If
+                Return Me._adapter
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Friend Property Connection() As Global.System.Data.SqlClient.SqlConnection
+            Get
+                If (Me._connection Is Nothing) Then
+                    Me.InitConnection
+                End If
+                Return Me._connection
+            End Get
+            Set
+                Me._connection = value
+                If (Not (Me.Adapter.InsertCommand) Is Nothing) Then
+                    Me.Adapter.InsertCommand.Connection = value
+                End If
+                If (Not (Me.Adapter.DeleteCommand) Is Nothing) Then
+                    Me.Adapter.DeleteCommand.Connection = value
+                End If
+                If (Not (Me.Adapter.UpdateCommand) Is Nothing) Then
+                    Me.Adapter.UpdateCommand.Connection = value
+                End If
+                Dim i As Integer = 0
+                Do While (i < Me.CommandCollection.Length)
+                    If (Not (Me.CommandCollection(i)) Is Nothing) Then
+                        CType(Me.CommandCollection(i),Global.System.Data.SqlClient.SqlCommand).Connection = value
+                    End If
+                    i = (i + 1)
+                Loop
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Friend Property Transaction() As Global.System.Data.SqlClient.SqlTransaction
+            Get
+                Return Me._transaction
+            End Get
+            Set
+                Me._transaction = value
+                Dim i As Integer = 0
+                Do While (i < Me.CommandCollection.Length)
+                    Me.CommandCollection(i).Transaction = Me._transaction
+                    i = (i + 1)
+                Loop
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.DeleteCommand) Is Nothing)) Then
+                    Me.Adapter.DeleteCommand.Transaction = Me._transaction
+                End If
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.InsertCommand) Is Nothing)) Then
+                    Me.Adapter.InsertCommand.Transaction = Me._transaction
+                End If
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.UpdateCommand) Is Nothing)) Then
+                    Me.Adapter.UpdateCommand.Transaction = Me._transaction
+                End If
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Protected ReadOnly Property CommandCollection() As Global.System.Data.SqlClient.SqlCommand()
+            Get
+                If (Me._commandCollection Is Nothing) Then
+                    Me.InitCommandCollection
+                End If
+                Return Me._commandCollection
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Property ClearBeforeFill() As Boolean
+            Get
+                Return Me._clearBeforeFill
+            End Get
+            Set
+                Me._clearBeforeFill = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Private Sub InitAdapter()
+            Me._adapter = New Global.System.Data.SqlClient.SqlDataAdapter
+            Dim tableMapping As Global.System.Data.Common.DataTableMapping = New Global.System.Data.Common.DataTableMapping
+            tableMapping.SourceTable = "Table"
+            tableMapping.DataSetTable = "SCREENING_REFRACTION_BOOK"
+            tableMapping.ColumnMappings.Add("REFRACT_ID", "REFRACT_ID")
+            tableMapping.ColumnMappings.Add("SCREEN_BOOK_ID", "SCREEN_BOOK_ID")
+            tableMapping.ColumnMappings.Add("REFRACT_DATE", "REFRACT_DATE")
+            tableMapping.ColumnMappings.Add("PATIENT_NO", "PATIENT_NO")
+            tableMapping.ColumnMappings.Add("VA_RIGHT", "VA_RIGHT")
+            tableMapping.ColumnMappings.Add("VA_LEFT", "VA_LEFT")
+            tableMapping.ColumnMappings.Add("DIAGNOSIS", "DIAGNOSIS")
+            tableMapping.ColumnMappings.Add("RE_PLUS", "RE_PLUS")
+            tableMapping.ColumnMappings.Add("RE_VA", "RE_VA")
+            tableMapping.ColumnMappings.Add("LE_PLUS", "LE_PLUS")
+            tableMapping.ColumnMappings.Add("LE_VA", "LE_VA")
+            tableMapping.ColumnMappings.Add("REFRACT_ADD", "REFRACT_ADD")
+            tableMapping.ColumnMappings.Add("SIGNATURE", "SIGNATURE")
+            tableMapping.ColumnMappings.Add("REFRACT_NOTE", "REFRACT_NOTE")
+            Me._adapter.TableMappings.Add(tableMapping)
+            Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand
+            Me._adapter.DeleteCommand.Connection = Me.Connection
+            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [SCREENING_REFRACTION_BOOK] WHERE (([REFRACT_ID] = @Original_REFRACT_"& _ 
+                "ID) AND ((@IsNull_SCREEN_BOOK_ID = 1 AND [SCREEN_BOOK_ID] IS NULL) OR ([SCREEN_B"& _ 
+                "OOK_ID] = @Original_SCREEN_BOOK_ID)) AND ((@IsNull_REFRACT_DATE = 1 AND [REFRACT"& _ 
+                "_DATE] IS NULL) OR ([REFRACT_DATE] = @Original_REFRACT_DATE)) AND ((@IsNull_PATI"& _ 
+                "ENT_NO = 1 AND [PATIENT_NO] IS NULL) OR ([PATIENT_NO] = @Original_PATIENT_NO)) A"& _ 
+                "ND ((@IsNull_VA_RIGHT = 1 AND [VA_RIGHT] IS NULL) OR ([VA_RIGHT] = @Original_VA_"& _ 
+                "RIGHT)) AND ((@IsNull_VA_LEFT = 1 AND [VA_LEFT] IS NULL) OR ([VA_LEFT] = @Origin"& _ 
+                "al_VA_LEFT)) AND ((@IsNull_DIAGNOSIS = 1 AND [DIAGNOSIS] IS NULL) OR ([DIAGNOSIS"& _ 
+                "] = @Original_DIAGNOSIS)) AND ((@IsNull_RE_PLUS = 1 AND [RE_PLUS] IS NULL) OR (["& _ 
+                "RE_PLUS] = @Original_RE_PLUS)) AND ((@IsNull_RE_VA = 1 AND [RE_VA] IS NULL) OR ("& _ 
+                "[RE_VA] = @Original_RE_VA)) AND ((@IsNull_LE_PLUS = 1 AND [LE_PLUS] IS NULL) OR "& _ 
+                "([LE_PLUS] = @Original_LE_PLUS)) AND ((@IsNull_LE_VA = 1 AND [LE_VA] IS NULL) OR"& _ 
+                " ([LE_VA] = @Original_LE_VA)) AND ((@IsNull_REFRACT_ADD = 1 AND [REFRACT_ADD] IS"& _ 
+                " NULL) OR ([REFRACT_ADD] = @Original_REFRACT_ADD)) AND ((@IsNull_SIGNATURE = 1 A"& _ 
+                "ND [SIGNATURE] IS NULL) OR ([SIGNATURE] = @Original_SIGNATURE)) AND ((@IsNull_RE"& _ 
+                "FRACT_NOTE = 1 AND [REFRACT_NOTE] IS NULL) OR ([REFRACT_NOTE] = @Original_REFRAC"& _ 
+                "T_NOTE)))"
+            Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_REFRACT_ID", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 18, 0, "REFRACT_ID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_SCREEN_BOOK_ID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "SCREEN_BOOK_ID", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_SCREEN_BOOK_ID", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 18, 0, "SCREEN_BOOK_ID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_REFRACT_DATE", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "REFRACT_DATE", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_REFRACT_DATE", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "REFRACT_DATE", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_PATIENT_NO", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "PATIENT_NO", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_PATIENT_NO", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 18, 0, "PATIENT_NO", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_VA_RIGHT", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "VA_RIGHT", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_VA_RIGHT", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "VA_RIGHT", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_VA_LEFT", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "VA_LEFT", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_VA_LEFT", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "VA_LEFT", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_DIAGNOSIS", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DIAGNOSIS", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_DIAGNOSIS", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DIAGNOSIS", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_RE_PLUS", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "RE_PLUS", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_RE_PLUS", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "RE_PLUS", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_RE_VA", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "RE_VA", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_RE_VA", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "RE_VA", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_LE_PLUS", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "LE_PLUS", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_LE_PLUS", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "LE_PLUS", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_LE_VA", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "LE_VA", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_LE_VA", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "LE_VA", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_REFRACT_ADD", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "REFRACT_ADD", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_REFRACT_ADD", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "REFRACT_ADD", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_SIGNATURE", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "SIGNATURE", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_SIGNATURE", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "SIGNATURE", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_REFRACT_NOTE", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "REFRACT_NOTE", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_REFRACT_NOTE", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "REFRACT_NOTE", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand
+            Me._adapter.InsertCommand.Connection = Me.Connection
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO [SCREENING_REFRACTION_BOOK] ([SCREEN_BOOK_ID], [REFRACT_DATE], [PATIE"& _ 
+                "NT_NO], [VA_RIGHT], [VA_LEFT], [DIAGNOSIS], [RE_PLUS], [RE_VA], [LE_PLUS], [LE_V"& _ 
+                "A], [REFRACT_ADD], [SIGNATURE], [REFRACT_NOTE]) VALUES (@SCREEN_BOOK_ID, @REFRAC"& _ 
+                "T_DATE, @PATIENT_NO, @VA_RIGHT, @VA_LEFT, @DIAGNOSIS, @RE_PLUS, @RE_VA, @LE_PLUS"& _ 
+                ", @LE_VA, @REFRACT_ADD, @SIGNATURE, @REFRACT_NOTE);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT REFRACT_ID, SCREEN_B"& _ 
+                "OOK_ID, REFRACT_DATE, PATIENT_NO, VA_RIGHT, VA_LEFT, DIAGNOSIS, RE_PLUS, RE_VA, "& _ 
+                "LE_PLUS, LE_VA, REFRACT_ADD, SIGNATURE, REFRACT_NOTE FROM SCREENING_REFRACTION_B"& _ 
+                "OOK WHERE (REFRACT_ID = SCOPE_IDENTITY())"
+            Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@SCREEN_BOOK_ID", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 18, 0, "SCREEN_BOOK_ID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@REFRACT_DATE", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "REFRACT_DATE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@PATIENT_NO", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 18, 0, "PATIENT_NO", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@VA_RIGHT", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "VA_RIGHT", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@VA_LEFT", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "VA_LEFT", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@DIAGNOSIS", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DIAGNOSIS", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@RE_PLUS", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "RE_PLUS", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@RE_VA", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "RE_VA", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@LE_PLUS", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "LE_PLUS", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@LE_VA", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "LE_VA", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@REFRACT_ADD", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "REFRACT_ADD", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@SIGNATURE", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "SIGNATURE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@REFRACT_NOTE", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "REFRACT_NOTE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand
+            Me._adapter.UpdateCommand.Connection = Me.Connection
+            Me._adapter.UpdateCommand.CommandText = "UPDATE [SCREENING_REFRACTION_BOOK] SET [SCREEN_BOOK_ID] = @SCREEN_BOOK_ID, [REFRA"& _ 
+                "CT_DATE] = @REFRACT_DATE, [PATIENT_NO] = @PATIENT_NO, [VA_RIGHT] = @VA_RIGHT, [V"& _ 
+                "A_LEFT] = @VA_LEFT, [DIAGNOSIS] = @DIAGNOSIS, [RE_PLUS] = @RE_PLUS, [RE_VA] = @R"& _ 
+                "E_VA, [LE_PLUS] = @LE_PLUS, [LE_VA] = @LE_VA, [REFRACT_ADD] = @REFRACT_ADD, [SIG"& _ 
+                "NATURE] = @SIGNATURE, [REFRACT_NOTE] = @REFRACT_NOTE WHERE (([REFRACT_ID] = @Ori"& _ 
+                "ginal_REFRACT_ID) AND ((@IsNull_SCREEN_BOOK_ID = 1 AND [SCREEN_BOOK_ID] IS NULL)"& _ 
+                " OR ([SCREEN_BOOK_ID] = @Original_SCREEN_BOOK_ID)) AND ((@IsNull_REFRACT_DATE = "& _ 
+                "1 AND [REFRACT_DATE] IS NULL) OR ([REFRACT_DATE] = @Original_REFRACT_DATE)) AND "& _ 
+                "((@IsNull_PATIENT_NO = 1 AND [PATIENT_NO] IS NULL) OR ([PATIENT_NO] = @Original_"& _ 
+                "PATIENT_NO)) AND ((@IsNull_VA_RIGHT = 1 AND [VA_RIGHT] IS NULL) OR ([VA_RIGHT] ="& _ 
+                " @Original_VA_RIGHT)) AND ((@IsNull_VA_LEFT = 1 AND [VA_LEFT] IS NULL) OR ([VA_L"& _ 
+                "EFT] = @Original_VA_LEFT)) AND ((@IsNull_DIAGNOSIS = 1 AND [DIAGNOSIS] IS NULL) "& _ 
+                "OR ([DIAGNOSIS] = @Original_DIAGNOSIS)) AND ((@IsNull_RE_PLUS = 1 AND [RE_PLUS] "& _ 
+                "IS NULL) OR ([RE_PLUS] = @Original_RE_PLUS)) AND ((@IsNull_RE_VA = 1 AND [RE_VA]"& _ 
+                " IS NULL) OR ([RE_VA] = @Original_RE_VA)) AND ((@IsNull_LE_PLUS = 1 AND [LE_PLUS"& _ 
+                "] IS NULL) OR ([LE_PLUS] = @Original_LE_PLUS)) AND ((@IsNull_LE_VA = 1 AND [LE_V"& _ 
+                "A] IS NULL) OR ([LE_VA] = @Original_LE_VA)) AND ((@IsNull_REFRACT_ADD = 1 AND [R"& _ 
+                "EFRACT_ADD] IS NULL) OR ([REFRACT_ADD] = @Original_REFRACT_ADD)) AND ((@IsNull_S"& _ 
+                "IGNATURE = 1 AND [SIGNATURE] IS NULL) OR ([SIGNATURE] = @Original_SIGNATURE)) AN"& _ 
+                "D ((@IsNull_REFRACT_NOTE = 1 AND [REFRACT_NOTE] IS NULL) OR ([REFRACT_NOTE] = @O"& _ 
+                "riginal_REFRACT_NOTE)));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT REFRACT_ID, SCREEN_BOOK_ID, REFRACT_DATE, PATIE"& _ 
+                "NT_NO, VA_RIGHT, VA_LEFT, DIAGNOSIS, RE_PLUS, RE_VA, LE_PLUS, LE_VA, REFRACT_ADD"& _ 
+                ", SIGNATURE, REFRACT_NOTE FROM SCREENING_REFRACTION_BOOK WHERE (REFRACT_ID = @RE"& _ 
+                "FRACT_ID)"
+            Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@SCREEN_BOOK_ID", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 18, 0, "SCREEN_BOOK_ID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@REFRACT_DATE", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "REFRACT_DATE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@PATIENT_NO", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 18, 0, "PATIENT_NO", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@VA_RIGHT", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "VA_RIGHT", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@VA_LEFT", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "VA_LEFT", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@DIAGNOSIS", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DIAGNOSIS", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@RE_PLUS", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "RE_PLUS", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@RE_VA", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "RE_VA", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@LE_PLUS", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "LE_PLUS", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@LE_VA", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "LE_VA", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@REFRACT_ADD", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "REFRACT_ADD", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@SIGNATURE", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "SIGNATURE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@REFRACT_NOTE", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "REFRACT_NOTE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_REFRACT_ID", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 18, 0, "REFRACT_ID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_SCREEN_BOOK_ID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "SCREEN_BOOK_ID", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_SCREEN_BOOK_ID", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 18, 0, "SCREEN_BOOK_ID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_REFRACT_DATE", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "REFRACT_DATE", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_REFRACT_DATE", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "REFRACT_DATE", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_PATIENT_NO", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "PATIENT_NO", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_PATIENT_NO", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 18, 0, "PATIENT_NO", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_VA_RIGHT", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "VA_RIGHT", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_VA_RIGHT", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "VA_RIGHT", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_VA_LEFT", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "VA_LEFT", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_VA_LEFT", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "VA_LEFT", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_DIAGNOSIS", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DIAGNOSIS", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_DIAGNOSIS", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DIAGNOSIS", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_RE_PLUS", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "RE_PLUS", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_RE_PLUS", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "RE_PLUS", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_RE_VA", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "RE_VA", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_RE_VA", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "RE_VA", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_LE_PLUS", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "LE_PLUS", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_LE_PLUS", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "LE_PLUS", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_LE_VA", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "LE_VA", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_LE_VA", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "LE_VA", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_REFRACT_ADD", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "REFRACT_ADD", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_REFRACT_ADD", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "REFRACT_ADD", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_SIGNATURE", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "SIGNATURE", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_SIGNATURE", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "SIGNATURE", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_REFRACT_NOTE", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "REFRACT_NOTE", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_REFRACT_NOTE", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "REFRACT_NOTE", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@REFRACT_ID", Global.System.Data.SqlDbType.[Decimal], 9, Global.System.Data.ParameterDirection.Input, 18, 0, "REFRACT_ID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Private Sub InitConnection()
+            Me._connection = New Global.System.Data.SqlClient.SqlConnection
+            Me._connection.ConnectionString = Global.TakeoHospitalInventory.My.MySettings.Default.TakeoDBConnectionString
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Private Sub InitCommandCollection()
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(1) {}
+            Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand
+            Me._commandCollection(0).Connection = Me.Connection
+            Me._commandCollection(0).CommandText = "SELECT        REFRACT_ID, SCREEN_BOOK_ID, REFRACT_DATE, PATIENT_NO, VA_RIGHT, VA_"& _ 
+                "LEFT, DIAGNOSIS, RE_PLUS, RE_VA, LE_PLUS, LE_VA, REFRACT_ADD, SIGNATURE, REFRACT"& _ 
+                "_NOTE"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            SCREENING_REFRACTION_BOOK"
+            Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand
+            Me._commandCollection(1).Connection = Me.Connection
+            Me._commandCollection(1).CommandText = "INSERT INTO [SCREENING_REFRACTION_BOOK] ([SCREEN_BOOK_ID], [REFRACT_DATE], [PATIE"& _ 
+                "NT_NO], [VA_RIGHT], [VA_LEFT], [DIAGNOSIS], [RE_PLUS], [RE_VA], [LE_PLUS], [LE_V"& _ 
+                "A], [REFRACT_ADD], [SIGNATURE], [REFRACT_NOTE]) VALUES (@SCREEN_BOOK_ID, @REFRAC"& _ 
+                "T_DATE, @PATIENT_NO, @VA_RIGHT, @VA_LEFT, @DIAGNOSIS, @RE_PLUS, @RE_VA, @LE_PLUS"& _ 
+                ", @LE_VA, @REFRACT_ADD, @SIGNATURE, @REFRACT_NOTE);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)
+            Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@SCREEN_BOOK_ID", Global.System.Data.SqlDbType.[Decimal], 9, Global.System.Data.ParameterDirection.Input, 18, 0, "SCREEN_BOOK_ID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@REFRACT_DATE", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "REFRACT_DATE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@PATIENT_NO", Global.System.Data.SqlDbType.[Decimal], 9, Global.System.Data.ParameterDirection.Input, 18, 0, "PATIENT_NO", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@VA_RIGHT", Global.System.Data.SqlDbType.NVarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "VA_RIGHT", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@VA_LEFT", Global.System.Data.SqlDbType.NVarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "VA_LEFT", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@DIAGNOSIS", Global.System.Data.SqlDbType.NVarChar, 150, Global.System.Data.ParameterDirection.Input, 0, 0, "DIAGNOSIS", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@RE_PLUS", Global.System.Data.SqlDbType.NVarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "RE_PLUS", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@RE_VA", Global.System.Data.SqlDbType.NVarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "RE_VA", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@LE_PLUS", Global.System.Data.SqlDbType.NVarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "LE_PLUS", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@LE_VA", Global.System.Data.SqlDbType.NVarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "LE_VA", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@REFRACT_ADD", Global.System.Data.SqlDbType.NVarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "REFRACT_ADD", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@SIGNATURE", Global.System.Data.SqlDbType.Bit, 1, Global.System.Data.ParameterDirection.Input, 0, 0, "SIGNATURE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@REFRACT_NOTE", Global.System.Data.SqlDbType.NVarChar, 250, Global.System.Data.ParameterDirection.Input, 0, 0, "REFRACT_NOTE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
+        Public Overloads Overridable Function Fill(ByVal dataTable As DataSetSceenSetting.SCREENING_REFRACTION_BOOKDataTable) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
+        Public Overloads Overridable Function GetData() As DataSetSceenSetting.SCREENING_REFRACTION_BOOKDataTable
+            Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            Dim dataTable As DataSetSceenSetting.SCREENING_REFRACTION_BOOKDataTable = New DataSetSceenSetting.SCREENING_REFRACTION_BOOKDataTable
+            Me.Adapter.Fill(dataTable)
+            Return dataTable
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataTable As DataSetSceenSetting.SCREENING_REFRACTION_BOOKDataTable) As Integer
+            Return Me.Adapter.Update(dataTable)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataSet As DataSetSceenSetting) As Integer
+            Return Me.Adapter.Update(dataSet, "SCREENING_REFRACTION_BOOK")
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataRow As Global.System.Data.DataRow) As Integer
+            Return Me.Adapter.Update(New Global.System.Data.DataRow() {dataRow})
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataRows() As Global.System.Data.DataRow) As Integer
+            Return Me.Adapter.Update(dataRows)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
+        Public Overloads Overridable Function Delete(ByVal Original_REFRACT_ID As Decimal, ByVal Original_SCREEN_BOOK_ID As Global.System.Nullable(Of Decimal), ByVal Original_REFRACT_DATE As Global.System.Nullable(Of Date), ByVal Original_PATIENT_NO As Global.System.Nullable(Of Decimal), ByVal Original_VA_RIGHT As String, ByVal Original_VA_LEFT As String, ByVal Original_DIAGNOSIS As String, ByVal Original_RE_PLUS As String, ByVal Original_RE_VA As String, ByVal Original_LE_PLUS As String, ByVal Original_LE_VA As String, ByVal Original_REFRACT_ADD As String, ByVal Original_SIGNATURE As Global.System.Nullable(Of Boolean), ByVal Original_REFRACT_NOTE As String) As Integer
+            Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_REFRACT_ID,Decimal)
+            If (Original_SCREEN_BOOK_ID.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(1).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(2).Value = CType(Original_SCREEN_BOOK_ID.Value,Decimal)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(1).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(2).Value = Global.System.DBNull.Value
+            End If
+            If (Original_REFRACT_DATE.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(3).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(4).Value = CType(Original_REFRACT_DATE.Value,Date)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(3).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(4).Value = Global.System.DBNull.Value
+            End If
+            If (Original_PATIENT_NO.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(5).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(6).Value = CType(Original_PATIENT_NO.Value,Decimal)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(5).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(6).Value = Global.System.DBNull.Value
+            End If
+            If (Original_VA_RIGHT Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(7).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(8).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(7).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(8).Value = CType(Original_VA_RIGHT,String)
+            End If
+            If (Original_VA_LEFT Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(9).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(10).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(9).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(10).Value = CType(Original_VA_LEFT,String)
+            End If
+            If (Original_DIAGNOSIS Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(11).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(12).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(11).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(12).Value = CType(Original_DIAGNOSIS,String)
+            End If
+            If (Original_RE_PLUS Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(13).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(14).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(13).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(14).Value = CType(Original_RE_PLUS,String)
+            End If
+            If (Original_RE_VA Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(15).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(16).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(15).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(16).Value = CType(Original_RE_VA,String)
+            End If
+            If (Original_LE_PLUS Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(17).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(18).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(17).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(18).Value = CType(Original_LE_PLUS,String)
+            End If
+            If (Original_LE_VA Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(19).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(20).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(19).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(20).Value = CType(Original_LE_VA,String)
+            End If
+            If (Original_REFRACT_ADD Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(21).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(22).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(21).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(22).Value = CType(Original_REFRACT_ADD,String)
+            End If
+            If (Original_SIGNATURE.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(23).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(24).Value = CType(Original_SIGNATURE.Value,Boolean)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(23).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(24).Value = Global.System.DBNull.Value
+            End If
+            If (Original_REFRACT_NOTE Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(25).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(26).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(25).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(26).Value = CType(Original_REFRACT_NOTE,String)
+            End If
+            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
+            If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                Me.Adapter.DeleteCommand.Connection.Open
+            End If
+            Try 
+                Dim returnValue As Integer = Me.Adapter.DeleteCommand.ExecuteNonQuery
+                Return returnValue
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    Me.Adapter.DeleteCommand.Connection.Close
+                End If
+            End Try
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
+        Public Overloads Overridable Function Insert(ByVal SCREEN_BOOK_ID As Global.System.Nullable(Of Decimal), ByVal REFRACT_DATE As Global.System.Nullable(Of Date), ByVal PATIENT_NO As Global.System.Nullable(Of Decimal), ByVal VA_RIGHT As String, ByVal VA_LEFT As String, ByVal DIAGNOSIS As String, ByVal RE_PLUS As String, ByVal RE_VA As String, ByVal LE_PLUS As String, ByVal LE_VA As String, ByVal REFRACT_ADD As String, ByVal SIGNATURE As Global.System.Nullable(Of Boolean), ByVal REFRACT_NOTE As String) As Integer
+            If (SCREEN_BOOK_ID.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(0).Value = CType(SCREEN_BOOK_ID.Value,Decimal)
+            Else
+                Me.Adapter.InsertCommand.Parameters(0).Value = Global.System.DBNull.Value
+            End If
+            If (REFRACT_DATE.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(1).Value = CType(REFRACT_DATE.Value,Date)
+            Else
+                Me.Adapter.InsertCommand.Parameters(1).Value = Global.System.DBNull.Value
+            End If
+            If (PATIENT_NO.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(2).Value = CType(PATIENT_NO.Value,Decimal)
+            Else
+                Me.Adapter.InsertCommand.Parameters(2).Value = Global.System.DBNull.Value
+            End If
+            If (VA_RIGHT Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(3).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(3).Value = CType(VA_RIGHT,String)
+            End If
+            If (VA_LEFT Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(4).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(4).Value = CType(VA_LEFT,String)
+            End If
+            If (DIAGNOSIS Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(5).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(5).Value = CType(DIAGNOSIS,String)
+            End If
+            If (RE_PLUS Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(6).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(6).Value = CType(RE_PLUS,String)
+            End If
+            If (RE_VA Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(7).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(7).Value = CType(RE_VA,String)
+            End If
+            If (LE_PLUS Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(8).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(8).Value = CType(LE_PLUS,String)
+            End If
+            If (LE_VA Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(9).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(9).Value = CType(LE_VA,String)
+            End If
+            If (REFRACT_ADD Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(10).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(10).Value = CType(REFRACT_ADD,String)
+            End If
+            If (SIGNATURE.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(11).Value = CType(SIGNATURE.Value,Boolean)
+            Else
+                Me.Adapter.InsertCommand.Parameters(11).Value = Global.System.DBNull.Value
+            End If
+            If (REFRACT_NOTE Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(12).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(12).Value = CType(REFRACT_NOTE,String)
+            End If
+            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
+            If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                Me.Adapter.InsertCommand.Connection.Open
+            End If
+            Try 
+                Dim returnValue As Integer = Me.Adapter.InsertCommand.ExecuteNonQuery
+                Return returnValue
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    Me.Adapter.InsertCommand.Connection.Close
+                End If
+            End Try
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
+        Public Overloads Overridable Function Update( _
+                    ByVal SCREEN_BOOK_ID As Global.System.Nullable(Of Decimal),  _
+                    ByVal REFRACT_DATE As Global.System.Nullable(Of Date),  _
+                    ByVal PATIENT_NO As Global.System.Nullable(Of Decimal),  _
+                    ByVal VA_RIGHT As String,  _
+                    ByVal VA_LEFT As String,  _
+                    ByVal DIAGNOSIS As String,  _
+                    ByVal RE_PLUS As String,  _
+                    ByVal RE_VA As String,  _
+                    ByVal LE_PLUS As String,  _
+                    ByVal LE_VA As String,  _
+                    ByVal REFRACT_ADD As String,  _
+                    ByVal SIGNATURE As Global.System.Nullable(Of Boolean),  _
+                    ByVal REFRACT_NOTE As String,  _
+                    ByVal Original_REFRACT_ID As Decimal,  _
+                    ByVal Original_SCREEN_BOOK_ID As Global.System.Nullable(Of Decimal),  _
+                    ByVal Original_REFRACT_DATE As Global.System.Nullable(Of Date),  _
+                    ByVal Original_PATIENT_NO As Global.System.Nullable(Of Decimal),  _
+                    ByVal Original_VA_RIGHT As String,  _
+                    ByVal Original_VA_LEFT As String,  _
+                    ByVal Original_DIAGNOSIS As String,  _
+                    ByVal Original_RE_PLUS As String,  _
+                    ByVal Original_RE_VA As String,  _
+                    ByVal Original_LE_PLUS As String,  _
+                    ByVal Original_LE_VA As String,  _
+                    ByVal Original_REFRACT_ADD As String,  _
+                    ByVal Original_SIGNATURE As Global.System.Nullable(Of Boolean),  _
+                    ByVal Original_REFRACT_NOTE As String,  _
+                    ByVal REFRACT_ID As Decimal) As Integer
+            If (SCREEN_BOOK_ID.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(0).Value = CType(SCREEN_BOOK_ID.Value,Decimal)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(0).Value = Global.System.DBNull.Value
+            End If
+            If (REFRACT_DATE.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(1).Value = CType(REFRACT_DATE.Value,Date)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(1).Value = Global.System.DBNull.Value
+            End If
+            If (PATIENT_NO.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(2).Value = CType(PATIENT_NO.Value,Decimal)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(2).Value = Global.System.DBNull.Value
+            End If
+            If (VA_RIGHT Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(3).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(3).Value = CType(VA_RIGHT,String)
+            End If
+            If (VA_LEFT Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(4).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(VA_LEFT,String)
+            End If
+            If (DIAGNOSIS Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(5).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(DIAGNOSIS,String)
+            End If
+            If (RE_PLUS Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(6).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(RE_PLUS,String)
+            End If
+            If (RE_VA Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(7).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(RE_VA,String)
+            End If
+            If (LE_PLUS Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(8).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(LE_PLUS,String)
+            End If
+            If (LE_VA Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(9).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(LE_VA,String)
+            End If
+            If (REFRACT_ADD Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(10).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(REFRACT_ADD,String)
+            End If
+            If (SIGNATURE.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(SIGNATURE.Value,Boolean)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(11).Value = Global.System.DBNull.Value
+            End If
+            If (REFRACT_NOTE Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(12).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(REFRACT_NOTE,String)
+            End If
+            Me.Adapter.UpdateCommand.Parameters(13).Value = CType(Original_REFRACT_ID,Decimal)
+            If (Original_SCREEN_BOOK_ID.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(Original_SCREEN_BOOK_ID.Value,Decimal)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(15).Value = Global.System.DBNull.Value
+            End If
+            If (Original_REFRACT_DATE.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(Original_REFRACT_DATE.Value,Date)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(17).Value = Global.System.DBNull.Value
+            End If
+            If (Original_PATIENT_NO.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(Original_PATIENT_NO.Value,Decimal)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(19).Value = Global.System.DBNull.Value
+            End If
+            If (Original_VA_RIGHT Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(20).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(21).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(20).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(21).Value = CType(Original_VA_RIGHT,String)
+            End If
+            If (Original_VA_LEFT Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(22).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(23).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(22).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(23).Value = CType(Original_VA_LEFT,String)
+            End If
+            If (Original_DIAGNOSIS Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(24).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(25).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(24).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(25).Value = CType(Original_DIAGNOSIS,String)
+            End If
+            If (Original_RE_PLUS Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(26).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(27).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(26).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(27).Value = CType(Original_RE_PLUS,String)
+            End If
+            If (Original_RE_VA Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(28).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(29).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(28).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(29).Value = CType(Original_RE_VA,String)
+            End If
+            If (Original_LE_PLUS Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(30).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(31).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(30).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(31).Value = CType(Original_LE_PLUS,String)
+            End If
+            If (Original_LE_VA Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(32).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(33).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(32).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(33).Value = CType(Original_LE_VA,String)
+            End If
+            If (Original_REFRACT_ADD Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(34).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(35).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(34).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(35).Value = CType(Original_REFRACT_ADD,String)
+            End If
+            If (Original_SIGNATURE.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(36).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(37).Value = CType(Original_SIGNATURE.Value,Boolean)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(36).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(37).Value = Global.System.DBNull.Value
+            End If
+            If (Original_REFRACT_NOTE Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(38).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(39).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(38).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(39).Value = CType(Original_REFRACT_NOTE,String)
+            End If
+            Me.Adapter.UpdateCommand.Parameters(40).Value = CType(REFRACT_ID,Decimal)
+            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
+            If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                Me.Adapter.UpdateCommand.Connection.Open
+            End If
+            Try 
+                Dim returnValue As Integer = Me.Adapter.UpdateCommand.ExecuteNonQuery
+                Return returnValue
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    Me.Adapter.UpdateCommand.Connection.Close
+                End If
+            End Try
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
+        Public Overloads Overridable Function Update( _
+                    ByVal SCREEN_BOOK_ID As Global.System.Nullable(Of Decimal),  _
+                    ByVal REFRACT_DATE As Global.System.Nullable(Of Date),  _
+                    ByVal PATIENT_NO As Global.System.Nullable(Of Decimal),  _
+                    ByVal VA_RIGHT As String,  _
+                    ByVal VA_LEFT As String,  _
+                    ByVal DIAGNOSIS As String,  _
+                    ByVal RE_PLUS As String,  _
+                    ByVal RE_VA As String,  _
+                    ByVal LE_PLUS As String,  _
+                    ByVal LE_VA As String,  _
+                    ByVal REFRACT_ADD As String,  _
+                    ByVal SIGNATURE As Global.System.Nullable(Of Boolean),  _
+                    ByVal REFRACT_NOTE As String,  _
+                    ByVal Original_REFRACT_ID As Decimal,  _
+                    ByVal Original_SCREEN_BOOK_ID As Global.System.Nullable(Of Decimal),  _
+                    ByVal Original_REFRACT_DATE As Global.System.Nullable(Of Date),  _
+                    ByVal Original_PATIENT_NO As Global.System.Nullable(Of Decimal),  _
+                    ByVal Original_VA_RIGHT As String,  _
+                    ByVal Original_VA_LEFT As String,  _
+                    ByVal Original_DIAGNOSIS As String,  _
+                    ByVal Original_RE_PLUS As String,  _
+                    ByVal Original_RE_VA As String,  _
+                    ByVal Original_LE_PLUS As String,  _
+                    ByVal Original_LE_VA As String,  _
+                    ByVal Original_REFRACT_ADD As String,  _
+                    ByVal Original_SIGNATURE As Global.System.Nullable(Of Boolean),  _
+                    ByVal Original_REFRACT_NOTE As String) As Integer
+            Return Me.Update(SCREEN_BOOK_ID, REFRACT_DATE, PATIENT_NO, VA_RIGHT, VA_LEFT, DIAGNOSIS, RE_PLUS, RE_VA, LE_PLUS, LE_VA, REFRACT_ADD, SIGNATURE, REFRACT_NOTE, Original_REFRACT_ID, Original_SCREEN_BOOK_ID, Original_REFRACT_DATE, Original_PATIENT_NO, Original_VA_RIGHT, Original_VA_LEFT, Original_DIAGNOSIS, Original_RE_PLUS, Original_RE_VA, Original_LE_PLUS, Original_LE_VA, Original_REFRACT_ADD, Original_SIGNATURE, Original_REFRACT_NOTE, Original_REFRACT_ID)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, false)>  _
+        Public Overloads Overridable Function InsertNewRefraction(ByVal SCREEN_BOOK_ID As Global.System.Nullable(Of Decimal), ByVal REFRACT_DATE As Global.System.Nullable(Of Date), ByVal PATIENT_NO As Global.System.Nullable(Of Decimal), ByVal VA_RIGHT As String, ByVal VA_LEFT As String, ByVal DIAGNOSIS As String, ByVal RE_PLUS As String, ByVal RE_VA As String, ByVal LE_PLUS As String, ByVal LE_VA As String, ByVal REFRACT_ADD As String, ByVal SIGNATURE As Global.System.Nullable(Of Boolean), ByVal REFRACT_NOTE As String) As Integer
+            Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(1)
+            If (SCREEN_BOOK_ID.HasValue = true) Then
+                command.Parameters(0).Value = CType(SCREEN_BOOK_ID.Value,Decimal)
+            Else
+                command.Parameters(0).Value = Global.System.DBNull.Value
+            End If
+            If (REFRACT_DATE.HasValue = true) Then
+                command.Parameters(1).Value = CType(REFRACT_DATE.Value,Date)
+            Else
+                command.Parameters(1).Value = Global.System.DBNull.Value
+            End If
+            If (PATIENT_NO.HasValue = true) Then
+                command.Parameters(2).Value = CType(PATIENT_NO.Value,Decimal)
+            Else
+                command.Parameters(2).Value = Global.System.DBNull.Value
+            End If
+            If (VA_RIGHT Is Nothing) Then
+                command.Parameters(3).Value = Global.System.DBNull.Value
+            Else
+                command.Parameters(3).Value = CType(VA_RIGHT,String)
+            End If
+            If (VA_LEFT Is Nothing) Then
+                command.Parameters(4).Value = Global.System.DBNull.Value
+            Else
+                command.Parameters(4).Value = CType(VA_LEFT,String)
+            End If
+            If (DIAGNOSIS Is Nothing) Then
+                command.Parameters(5).Value = Global.System.DBNull.Value
+            Else
+                command.Parameters(5).Value = CType(DIAGNOSIS,String)
+            End If
+            If (RE_PLUS Is Nothing) Then
+                command.Parameters(6).Value = Global.System.DBNull.Value
+            Else
+                command.Parameters(6).Value = CType(RE_PLUS,String)
+            End If
+            If (RE_VA Is Nothing) Then
+                command.Parameters(7).Value = Global.System.DBNull.Value
+            Else
+                command.Parameters(7).Value = CType(RE_VA,String)
+            End If
+            If (LE_PLUS Is Nothing) Then
+                command.Parameters(8).Value = Global.System.DBNull.Value
+            Else
+                command.Parameters(8).Value = CType(LE_PLUS,String)
+            End If
+            If (LE_VA Is Nothing) Then
+                command.Parameters(9).Value = Global.System.DBNull.Value
+            Else
+                command.Parameters(9).Value = CType(LE_VA,String)
+            End If
+            If (REFRACT_ADD Is Nothing) Then
+                command.Parameters(10).Value = Global.System.DBNull.Value
+            Else
+                command.Parameters(10).Value = CType(REFRACT_ADD,String)
+            End If
+            If (SIGNATURE.HasValue = true) Then
+                command.Parameters(11).Value = CType(SIGNATURE.Value,Boolean)
+            Else
+                command.Parameters(11).Value = Global.System.DBNull.Value
+            End If
+            If (REFRACT_NOTE Is Nothing) Then
+                command.Parameters(12).Value = Global.System.DBNull.Value
+            Else
+                command.Parameters(12).Value = CType(REFRACT_NOTE,String)
+            End If
+            Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
+            If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                command.Connection.Open
+            End If
+            Dim returnValue As Integer
+            Try 
+                returnValue = command.ExecuteNonQuery
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    command.Connection.Close
+                End If
+            End Try
+            Return returnValue
+        End Function
+    End Class
+    
+    '''<summary>
+    '''Represents the connection and commands used to retrieve and save data.
+    '''</summary>
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "2.0.0.0"),  _
+     Global.System.ComponentModel.DesignerCategoryAttribute("code"),  _
+     Global.System.ComponentModel.ToolboxItem(true),  _
+     Global.System.ComponentModel.DataObjectAttribute(true),  _
+     Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner"& _ 
+        ", Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),  _
+     Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+    Partial Public Class SCREENING_OPTICALSHOP_BOOKTableAdapter
+        Inherits Global.System.ComponentModel.Component
+        
+        Private WithEvents _adapter As Global.System.Data.SqlClient.SqlDataAdapter
+        
+        Private _connection As Global.System.Data.SqlClient.SqlConnection
+        
+        Private _transaction As Global.System.Data.SqlClient.SqlTransaction
+        
+        Private _commandCollection() As Global.System.Data.SqlClient.SqlCommand
+        
+        Private _clearBeforeFill As Boolean
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Sub New()
+            MyBase.New
+            Me.ClearBeforeFill = true
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Protected Friend ReadOnly Property Adapter() As Global.System.Data.SqlClient.SqlDataAdapter
+            Get
+                If (Me._adapter Is Nothing) Then
+                    Me.InitAdapter
+                End If
+                Return Me._adapter
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Friend Property Connection() As Global.System.Data.SqlClient.SqlConnection
+            Get
+                If (Me._connection Is Nothing) Then
+                    Me.InitConnection
+                End If
+                Return Me._connection
+            End Get
+            Set
+                Me._connection = value
+                If (Not (Me.Adapter.InsertCommand) Is Nothing) Then
+                    Me.Adapter.InsertCommand.Connection = value
+                End If
+                If (Not (Me.Adapter.DeleteCommand) Is Nothing) Then
+                    Me.Adapter.DeleteCommand.Connection = value
+                End If
+                If (Not (Me.Adapter.UpdateCommand) Is Nothing) Then
+                    Me.Adapter.UpdateCommand.Connection = value
+                End If
+                Dim i As Integer = 0
+                Do While (i < Me.CommandCollection.Length)
+                    If (Not (Me.CommandCollection(i)) Is Nothing) Then
+                        CType(Me.CommandCollection(i),Global.System.Data.SqlClient.SqlCommand).Connection = value
+                    End If
+                    i = (i + 1)
+                Loop
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Friend Property Transaction() As Global.System.Data.SqlClient.SqlTransaction
+            Get
+                Return Me._transaction
+            End Get
+            Set
+                Me._transaction = value
+                Dim i As Integer = 0
+                Do While (i < Me.CommandCollection.Length)
+                    Me.CommandCollection(i).Transaction = Me._transaction
+                    i = (i + 1)
+                Loop
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.DeleteCommand) Is Nothing)) Then
+                    Me.Adapter.DeleteCommand.Transaction = Me._transaction
+                End If
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.InsertCommand) Is Nothing)) Then
+                    Me.Adapter.InsertCommand.Transaction = Me._transaction
+                End If
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.UpdateCommand) Is Nothing)) Then
+                    Me.Adapter.UpdateCommand.Transaction = Me._transaction
+                End If
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Protected ReadOnly Property CommandCollection() As Global.System.Data.SqlClient.SqlCommand()
+            Get
+                If (Me._commandCollection Is Nothing) Then
+                    Me.InitCommandCollection
+                End If
+                Return Me._commandCollection
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Property ClearBeforeFill() As Boolean
+            Get
+                Return Me._clearBeforeFill
+            End Get
+            Set
+                Me._clearBeforeFill = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Private Sub InitAdapter()
+            Me._adapter = New Global.System.Data.SqlClient.SqlDataAdapter
+            Dim tableMapping As Global.System.Data.Common.DataTableMapping = New Global.System.Data.Common.DataTableMapping
+            tableMapping.SourceTable = "Table"
+            tableMapping.DataSetTable = "SCREENING_OPTICALSHOP_BOOK"
+            tableMapping.ColumnMappings.Add("OPTICAL_ID", "OPTICAL_ID")
+            tableMapping.ColumnMappings.Add("SCREENBOOK_ID", "SCREENBOOK_ID")
+            tableMapping.ColumnMappings.Add("DATE_SCREENING", "DATE_SCREENING")
+            tableMapping.ColumnMappings.Add("PATIENT_NO", "PATIENT_NO")
+            tableMapping.ColumnMappings.Add("OPTICALSHOP_NOTE", "OPTICALSHOP_NOTE")
+            tableMapping.ColumnMappings.Add("STATUS_PAY", "STATUS_PAY")
+            Me._adapter.TableMappings.Add(tableMapping)
+            Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand
+            Me._adapter.DeleteCommand.Connection = Me.Connection
+            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [SCREENING_OPTICALSHOP_BOOK] WHERE (([OPTICAL_ID] = @Original_OPTICAL"& _ 
+                "_ID) AND ((@IsNull_SCREENBOOK_ID = 1 AND [SCREENBOOK_ID] IS NULL) OR ([SCREENBOO"& _ 
+                "K_ID] = @Original_SCREENBOOK_ID)) AND ((@IsNull_DATE_SCREENING = 1 AND [DATE_SCR"& _ 
+                "EENING] IS NULL) OR ([DATE_SCREENING] = @Original_DATE_SCREENING)) AND ((@IsNull"& _ 
+                "_PATIENT_NO = 1 AND [PATIENT_NO] IS NULL) OR ([PATIENT_NO] = @Original_PATIENT_N"& _ 
+                "O)) AND ((@IsNull_OPTICALSHOP_NOTE = 1 AND [OPTICALSHOP_NOTE] IS NULL) OR ([OPTI"& _ 
+                "CALSHOP_NOTE] = @Original_OPTICALSHOP_NOTE)) AND ((@IsNull_STATUS_PAY = 1 AND [S"& _ 
+                "TATUS_PAY] IS NULL) OR ([STATUS_PAY] = @Original_STATUS_PAY)))"
+            Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_OPTICAL_ID", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 18, 0, "OPTICAL_ID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_SCREENBOOK_ID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "SCREENBOOK_ID", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_SCREENBOOK_ID", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 18, 0, "SCREENBOOK_ID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_DATE_SCREENING", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DATE_SCREENING", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_DATE_SCREENING", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DATE_SCREENING", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_PATIENT_NO", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "PATIENT_NO", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_PATIENT_NO", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 18, 0, "PATIENT_NO", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_OPTICALSHOP_NOTE", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "OPTICALSHOP_NOTE", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_OPTICALSHOP_NOTE", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "OPTICALSHOP_NOTE", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_STATUS_PAY", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "STATUS_PAY", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_STATUS_PAY", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "STATUS_PAY", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand
+            Me._adapter.InsertCommand.Connection = Me.Connection
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO [SCREENING_OPTICALSHOP_BOOK] ([SCREENBOOK_ID], [DATE_SCREENING], [PAT"& _ 
+                "IENT_NO], [OPTICALSHOP_NOTE], [STATUS_PAY]) VALUES (@SCREENBOOK_ID, @DATE_SCREEN"& _ 
+                "ING, @PATIENT_NO, @OPTICALSHOP_NOTE, @STATUS_PAY);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT OPTICAL_ID, SCREENBOO"& _ 
+                "K_ID, DATE_SCREENING, PATIENT_NO, OPTICALSHOP_NOTE, STATUS_PAY FROM SCREENING_OP"& _ 
+                "TICALSHOP_BOOK WHERE (OPTICAL_ID = SCOPE_IDENTITY())"
+            Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@SCREENBOOK_ID", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 18, 0, "SCREENBOOK_ID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@DATE_SCREENING", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DATE_SCREENING", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@PATIENT_NO", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 18, 0, "PATIENT_NO", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@OPTICALSHOP_NOTE", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "OPTICALSHOP_NOTE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@STATUS_PAY", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "STATUS_PAY", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand
+            Me._adapter.UpdateCommand.Connection = Me.Connection
+            Me._adapter.UpdateCommand.CommandText = "UPDATE [SCREENING_OPTICALSHOP_BOOK] SET [SCREENBOOK_ID] = @SCREENBOOK_ID, [DATE_S"& _ 
+                "CREENING] = @DATE_SCREENING, [PATIENT_NO] = @PATIENT_NO, [OPTICALSHOP_NOTE] = @O"& _ 
+                "PTICALSHOP_NOTE, [STATUS_PAY] = @STATUS_PAY WHERE (([OPTICAL_ID] = @Original_OPT"& _ 
+                "ICAL_ID) AND ((@IsNull_SCREENBOOK_ID = 1 AND [SCREENBOOK_ID] IS NULL) OR ([SCREE"& _ 
+                "NBOOK_ID] = @Original_SCREENBOOK_ID)) AND ((@IsNull_DATE_SCREENING = 1 AND [DATE"& _ 
+                "_SCREENING] IS NULL) OR ([DATE_SCREENING] = @Original_DATE_SCREENING)) AND ((@Is"& _ 
+                "Null_PATIENT_NO = 1 AND [PATIENT_NO] IS NULL) OR ([PATIENT_NO] = @Original_PATIE"& _ 
+                "NT_NO)) AND ((@IsNull_OPTICALSHOP_NOTE = 1 AND [OPTICALSHOP_NOTE] IS NULL) OR (["& _ 
+                "OPTICALSHOP_NOTE] = @Original_OPTICALSHOP_NOTE)) AND ((@IsNull_STATUS_PAY = 1 AN"& _ 
+                "D [STATUS_PAY] IS NULL) OR ([STATUS_PAY] = @Original_STATUS_PAY)));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT OPTI"& _ 
+                "CAL_ID, SCREENBOOK_ID, DATE_SCREENING, PATIENT_NO, OPTICALSHOP_NOTE, STATUS_PAY "& _ 
+                "FROM SCREENING_OPTICALSHOP_BOOK WHERE (OPTICAL_ID = @OPTICAL_ID)"
+            Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@SCREENBOOK_ID", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 18, 0, "SCREENBOOK_ID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@DATE_SCREENING", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DATE_SCREENING", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@PATIENT_NO", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 18, 0, "PATIENT_NO", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@OPTICALSHOP_NOTE", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "OPTICALSHOP_NOTE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@STATUS_PAY", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "STATUS_PAY", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_OPTICAL_ID", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 18, 0, "OPTICAL_ID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_SCREENBOOK_ID", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "SCREENBOOK_ID", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_SCREENBOOK_ID", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 18, 0, "SCREENBOOK_ID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_DATE_SCREENING", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DATE_SCREENING", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_DATE_SCREENING", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DATE_SCREENING", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_PATIENT_NO", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "PATIENT_NO", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_PATIENT_NO", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 18, 0, "PATIENT_NO", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_OPTICALSHOP_NOTE", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "OPTICALSHOP_NOTE", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_OPTICALSHOP_NOTE", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "OPTICALSHOP_NOTE", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_STATUS_PAY", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "STATUS_PAY", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_STATUS_PAY", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "STATUS_PAY", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@OPTICAL_ID", Global.System.Data.SqlDbType.[Decimal], 9, Global.System.Data.ParameterDirection.Input, 18, 0, "OPTICAL_ID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Private Sub InitConnection()
+            Me._connection = New Global.System.Data.SqlClient.SqlConnection
+            Me._connection.ConnectionString = Global.TakeoHospitalInventory.My.MySettings.Default.TakeoDBConnectionString
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Private Sub InitCommandCollection()
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
+            Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand
+            Me._commandCollection(0).Connection = Me.Connection
+            Me._commandCollection(0).CommandText = "SELECT        OPTICAL_ID, SCREENBOOK_ID, DATE_SCREENING, PATIENT_NO, OPTICALSHOP_"& _ 
+                "NOTE, STATUS_PAY"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            SCREENING_OPTICALSHOP_BOOK"
+            Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
+        Public Overloads Overridable Function Fill(ByVal dataTable As DataSetSceenSetting.SCREENING_OPTICALSHOP_BOOKDataTable) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
+        Public Overloads Overridable Function GetData() As DataSetSceenSetting.SCREENING_OPTICALSHOP_BOOKDataTable
+            Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            Dim dataTable As DataSetSceenSetting.SCREENING_OPTICALSHOP_BOOKDataTable = New DataSetSceenSetting.SCREENING_OPTICALSHOP_BOOKDataTable
+            Me.Adapter.Fill(dataTable)
+            Return dataTable
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataTable As DataSetSceenSetting.SCREENING_OPTICALSHOP_BOOKDataTable) As Integer
+            Return Me.Adapter.Update(dataTable)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataSet As DataSetSceenSetting) As Integer
+            Return Me.Adapter.Update(dataSet, "SCREENING_OPTICALSHOP_BOOK")
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataRow As Global.System.Data.DataRow) As Integer
+            Return Me.Adapter.Update(New Global.System.Data.DataRow() {dataRow})
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataRows() As Global.System.Data.DataRow) As Integer
+            Return Me.Adapter.Update(dataRows)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
+        Public Overloads Overridable Function Delete(ByVal Original_OPTICAL_ID As Decimal, ByVal Original_SCREENBOOK_ID As Global.System.Nullable(Of Decimal), ByVal Original_DATE_SCREENING As Global.System.Nullable(Of Date), ByVal Original_PATIENT_NO As Global.System.Nullable(Of Decimal), ByVal Original_OPTICALSHOP_NOTE As String, ByVal Original_STATUS_PAY As Global.System.Nullable(Of Boolean)) As Integer
+            Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_OPTICAL_ID,Decimal)
+            If (Original_SCREENBOOK_ID.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(1).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(2).Value = CType(Original_SCREENBOOK_ID.Value,Decimal)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(1).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(2).Value = Global.System.DBNull.Value
+            End If
+            If (Original_DATE_SCREENING.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(3).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(4).Value = CType(Original_DATE_SCREENING.Value,Date)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(3).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(4).Value = Global.System.DBNull.Value
+            End If
+            If (Original_PATIENT_NO.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(5).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(6).Value = CType(Original_PATIENT_NO.Value,Decimal)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(5).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(6).Value = Global.System.DBNull.Value
+            End If
+            If (Original_OPTICALSHOP_NOTE Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(7).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(8).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(7).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(8).Value = CType(Original_OPTICALSHOP_NOTE,String)
+            End If
+            If (Original_STATUS_PAY.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(9).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(10).Value = CType(Original_STATUS_PAY.Value,Boolean)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(9).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(10).Value = Global.System.DBNull.Value
+            End If
+            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
+            If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                Me.Adapter.DeleteCommand.Connection.Open
+            End If
+            Try 
+                Dim returnValue As Integer = Me.Adapter.DeleteCommand.ExecuteNonQuery
+                Return returnValue
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    Me.Adapter.DeleteCommand.Connection.Close
+                End If
+            End Try
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
+        Public Overloads Overridable Function Insert(ByVal SCREENBOOK_ID As Global.System.Nullable(Of Decimal), ByVal DATE_SCREENING As Global.System.Nullable(Of Date), ByVal PATIENT_NO As Global.System.Nullable(Of Decimal), ByVal OPTICALSHOP_NOTE As String, ByVal STATUS_PAY As Global.System.Nullable(Of Boolean)) As Integer
+            If (SCREENBOOK_ID.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(0).Value = CType(SCREENBOOK_ID.Value,Decimal)
+            Else
+                Me.Adapter.InsertCommand.Parameters(0).Value = Global.System.DBNull.Value
+            End If
+            If (DATE_SCREENING.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(1).Value = CType(DATE_SCREENING.Value,Date)
+            Else
+                Me.Adapter.InsertCommand.Parameters(1).Value = Global.System.DBNull.Value
+            End If
+            If (PATIENT_NO.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(2).Value = CType(PATIENT_NO.Value,Decimal)
+            Else
+                Me.Adapter.InsertCommand.Parameters(2).Value = Global.System.DBNull.Value
+            End If
+            If (OPTICALSHOP_NOTE Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(3).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(3).Value = CType(OPTICALSHOP_NOTE,String)
+            End If
+            If (STATUS_PAY.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(4).Value = CType(STATUS_PAY.Value,Boolean)
+            Else
+                Me.Adapter.InsertCommand.Parameters(4).Value = Global.System.DBNull.Value
+            End If
+            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
+            If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                Me.Adapter.InsertCommand.Connection.Open
+            End If
+            Try 
+                Dim returnValue As Integer = Me.Adapter.InsertCommand.ExecuteNonQuery
+                Return returnValue
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    Me.Adapter.InsertCommand.Connection.Close
+                End If
+            End Try
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
+        Public Overloads Overridable Function Update(ByVal SCREENBOOK_ID As Global.System.Nullable(Of Decimal), ByVal DATE_SCREENING As Global.System.Nullable(Of Date), ByVal PATIENT_NO As Global.System.Nullable(Of Decimal), ByVal OPTICALSHOP_NOTE As String, ByVal STATUS_PAY As Global.System.Nullable(Of Boolean), ByVal Original_OPTICAL_ID As Decimal, ByVal Original_SCREENBOOK_ID As Global.System.Nullable(Of Decimal), ByVal Original_DATE_SCREENING As Global.System.Nullable(Of Date), ByVal Original_PATIENT_NO As Global.System.Nullable(Of Decimal), ByVal Original_OPTICALSHOP_NOTE As String, ByVal Original_STATUS_PAY As Global.System.Nullable(Of Boolean), ByVal OPTICAL_ID As Decimal) As Integer
+            If (SCREENBOOK_ID.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(0).Value = CType(SCREENBOOK_ID.Value,Decimal)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(0).Value = Global.System.DBNull.Value
+            End If
+            If (DATE_SCREENING.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(1).Value = CType(DATE_SCREENING.Value,Date)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(1).Value = Global.System.DBNull.Value
+            End If
+            If (PATIENT_NO.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(2).Value = CType(PATIENT_NO.Value,Decimal)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(2).Value = Global.System.DBNull.Value
+            End If
+            If (OPTICALSHOP_NOTE Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(3).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(3).Value = CType(OPTICALSHOP_NOTE,String)
+            End If
+            If (STATUS_PAY.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(STATUS_PAY.Value,Boolean)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(4).Value = Global.System.DBNull.Value
+            End If
+            Me.Adapter.UpdateCommand.Parameters(5).Value = CType(Original_OPTICAL_ID,Decimal)
+            If (Original_SCREENBOOK_ID.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(Original_SCREENBOOK_ID.Value,Decimal)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(7).Value = Global.System.DBNull.Value
+            End If
+            If (Original_DATE_SCREENING.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(Original_DATE_SCREENING.Value,Date)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(9).Value = Global.System.DBNull.Value
+            End If
+            If (Original_PATIENT_NO.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(Original_PATIENT_NO.Value,Decimal)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(11).Value = Global.System.DBNull.Value
+            End If
+            If (Original_OPTICALSHOP_NOTE Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(13).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(Original_OPTICALSHOP_NOTE,String)
+            End If
+            If (Original_STATUS_PAY.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(Original_STATUS_PAY.Value,Boolean)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(15).Value = Global.System.DBNull.Value
+            End If
+            Me.Adapter.UpdateCommand.Parameters(16).Value = CType(OPTICAL_ID,Decimal)
+            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
+            If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                Me.Adapter.UpdateCommand.Connection.Open
+            End If
+            Try 
+                Dim returnValue As Integer = Me.Adapter.UpdateCommand.ExecuteNonQuery
+                Return returnValue
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    Me.Adapter.UpdateCommand.Connection.Close
+                End If
+            End Try
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
+        Public Overloads Overridable Function Update(ByVal SCREENBOOK_ID As Global.System.Nullable(Of Decimal), ByVal DATE_SCREENING As Global.System.Nullable(Of Date), ByVal PATIENT_NO As Global.System.Nullable(Of Decimal), ByVal OPTICALSHOP_NOTE As String, ByVal STATUS_PAY As Global.System.Nullable(Of Boolean), ByVal Original_OPTICAL_ID As Decimal, ByVal Original_SCREENBOOK_ID As Global.System.Nullable(Of Decimal), ByVal Original_DATE_SCREENING As Global.System.Nullable(Of Date), ByVal Original_PATIENT_NO As Global.System.Nullable(Of Decimal), ByVal Original_OPTICALSHOP_NOTE As String, ByVal Original_STATUS_PAY As Global.System.Nullable(Of Boolean)) As Integer
+            Return Me.Update(SCREENBOOK_ID, DATE_SCREENING, PATIENT_NO, OPTICALSHOP_NOTE, STATUS_PAY, Original_OPTICAL_ID, Original_SCREENBOOK_ID, Original_DATE_SCREENING, Original_PATIENT_NO, Original_OPTICALSHOP_NOTE, Original_STATUS_PAY, Original_OPTICAL_ID)
+        End Function
+    End Class
+    
+    '''<summary>
     '''TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
     '''</summary>
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "2.0.0.0"),  _
@@ -4051,6 +8288,12 @@ Namespace DataSetSceenSettingTableAdapters
         Private _sCREENING_BOOKTableAdapter As SCREENING_BOOKTableAdapter
         
         Private _sCREEN_SYSTEMSETTINGTableAdapter As SCREEN_SYSTEMSETTINGTableAdapter
+        
+        Private _sCREENING_REFERRAL_BOOKTableAdapter As SCREENING_REFERRAL_BOOKTableAdapter
+        
+        Private _sCREENING_REFRACTION_BOOKTableAdapter As SCREENING_REFRACTION_BOOKTableAdapter
+        
+        Private _sCREENING_OPTICALSHOP_BOOKTableAdapter As SCREENING_OPTICALSHOP_BOOKTableAdapter
         
         Private _backupDataSetBeforeUpdate As Boolean
         
@@ -4092,6 +8335,45 @@ Namespace DataSetSceenSettingTableAdapters
             End Set
         End Property
         
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso"& _ 
+            "ft.VSDesigner, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"& _ 
+            "", "System.Drawing.Design.UITypeEditor")>  _
+        Public Property SCREENING_REFERRAL_BOOKTableAdapter() As SCREENING_REFERRAL_BOOKTableAdapter
+            Get
+                Return Me._sCREENING_REFERRAL_BOOKTableAdapter
+            End Get
+            Set
+                Me._sCREENING_REFERRAL_BOOKTableAdapter = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso"& _ 
+            "ft.VSDesigner, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"& _ 
+            "", "System.Drawing.Design.UITypeEditor")>  _
+        Public Property SCREENING_REFRACTION_BOOKTableAdapter() As SCREENING_REFRACTION_BOOKTableAdapter
+            Get
+                Return Me._sCREENING_REFRACTION_BOOKTableAdapter
+            End Get
+            Set
+                Me._sCREENING_REFRACTION_BOOKTableAdapter = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso"& _ 
+            "ft.VSDesigner, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"& _ 
+            "", "System.Drawing.Design.UITypeEditor")>  _
+        Public Property SCREENING_OPTICALSHOP_BOOKTableAdapter() As SCREENING_OPTICALSHOP_BOOKTableAdapter
+            Get
+                Return Me._sCREENING_OPTICALSHOP_BOOKTableAdapter
+            End Get
+            Set
+                Me._sCREENING_OPTICALSHOP_BOOKTableAdapter = value
+            End Set
+        End Property
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Public Property BackupDataSetBeforeUpdate() As Boolean
             Get
@@ -4117,6 +8399,18 @@ Namespace DataSetSceenSettingTableAdapters
                             AndAlso (Not (Me._sCREEN_SYSTEMSETTINGTableAdapter.Connection) Is Nothing)) Then
                     Return Me._sCREEN_SYSTEMSETTINGTableAdapter.Connection
                 End If
+                If ((Not (Me._sCREENING_REFERRAL_BOOKTableAdapter) Is Nothing)  _
+                            AndAlso (Not (Me._sCREENING_REFERRAL_BOOKTableAdapter.Connection) Is Nothing)) Then
+                    Return Me._sCREENING_REFERRAL_BOOKTableAdapter.Connection
+                End If
+                If ((Not (Me._sCREENING_REFRACTION_BOOKTableAdapter) Is Nothing)  _
+                            AndAlso (Not (Me._sCREENING_REFRACTION_BOOKTableAdapter.Connection) Is Nothing)) Then
+                    Return Me._sCREENING_REFRACTION_BOOKTableAdapter.Connection
+                End If
+                If ((Not (Me._sCREENING_OPTICALSHOP_BOOKTableAdapter) Is Nothing)  _
+                            AndAlso (Not (Me._sCREENING_OPTICALSHOP_BOOKTableAdapter.Connection) Is Nothing)) Then
+                    Return Me._sCREENING_OPTICALSHOP_BOOKTableAdapter.Connection
+                End If
                 Return Nothing
             End Get
             Set
@@ -4135,6 +8429,15 @@ Namespace DataSetSceenSettingTableAdapters
                 If (Not (Me._sCREEN_SYSTEMSETTINGTableAdapter) Is Nothing) Then
                     count = (count + 1)
                 End If
+                If (Not (Me._sCREENING_REFERRAL_BOOKTableAdapter) Is Nothing) Then
+                    count = (count + 1)
+                End If
+                If (Not (Me._sCREENING_REFRACTION_BOOKTableAdapter) Is Nothing) Then
+                    count = (count + 1)
+                End If
+                If (Not (Me._sCREENING_OPTICALSHOP_BOOKTableAdapter) Is Nothing) Then
+                    count = (count + 1)
+                End If
                 Return count
             End Get
         End Property
@@ -4145,12 +8448,30 @@ Namespace DataSetSceenSettingTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Private Function UpdateUpdatedRows(ByVal dataSet As DataSetSceenSetting, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow), ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
-            If (Not (Me._sCREEN_SYSTEMSETTINGTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.SCREEN_SYSTEMSETTING.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+            If (Not (Me._sCREENING_REFERRAL_BOOKTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.SCREENING_REFERRAL_BOOK.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
                 updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
                 If ((Not (updatedRows) Is Nothing)  _
                             AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._sCREEN_SYSTEMSETTINGTableAdapter.Update(updatedRows))
+                    result = (result + Me._sCREENING_REFERRAL_BOOKTableAdapter.Update(updatedRows))
+                    allChangedRows.AddRange(updatedRows)
+                End If
+            End If
+            If (Not (Me._sCREENING_REFRACTION_BOOKTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.SCREENING_REFRACTION_BOOK.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
+                If ((Not (updatedRows) Is Nothing)  _
+                            AndAlso (0 < updatedRows.Length)) Then
+                    result = (result + Me._sCREENING_REFRACTION_BOOKTableAdapter.Update(updatedRows))
+                    allChangedRows.AddRange(updatedRows)
+                End If
+            End If
+            If (Not (Me._sCREENING_OPTICALSHOP_BOOKTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.SCREENING_OPTICALSHOP_BOOK.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
+                If ((Not (updatedRows) Is Nothing)  _
+                            AndAlso (0 < updatedRows.Length)) Then
+                    result = (result + Me._sCREENING_OPTICALSHOP_BOOKTableAdapter.Update(updatedRows))
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
@@ -4163,6 +8484,15 @@ Namespace DataSetSceenSettingTableAdapters
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
+            If (Not (Me._sCREEN_SYSTEMSETTINGTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.SCREEN_SYSTEMSETTING.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
+                If ((Not (updatedRows) Is Nothing)  _
+                            AndAlso (0 < updatedRows.Length)) Then
+                    result = (result + Me._sCREEN_SYSTEMSETTINGTableAdapter.Update(updatedRows))
+                    allChangedRows.AddRange(updatedRows)
+                End If
+            End If
             Return result
         End Function
         
@@ -4172,11 +8502,27 @@ Namespace DataSetSceenSettingTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Private Function UpdateInsertedRows(ByVal dataSet As DataSetSceenSetting, ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
-            If (Not (Me._sCREEN_SYSTEMSETTINGTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.SCREEN_SYSTEMSETTING.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+            If (Not (Me._sCREENING_REFERRAL_BOOKTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.SCREENING_REFERRAL_BOOK.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
                 If ((Not (addedRows) Is Nothing)  _
                             AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._sCREEN_SYSTEMSETTINGTableAdapter.Update(addedRows))
+                    result = (result + Me._sCREENING_REFERRAL_BOOKTableAdapter.Update(addedRows))
+                    allAddedRows.AddRange(addedRows)
+                End If
+            End If
+            If (Not (Me._sCREENING_REFRACTION_BOOKTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.SCREENING_REFRACTION_BOOK.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+                If ((Not (addedRows) Is Nothing)  _
+                            AndAlso (0 < addedRows.Length)) Then
+                    result = (result + Me._sCREENING_REFRACTION_BOOKTableAdapter.Update(addedRows))
+                    allAddedRows.AddRange(addedRows)
+                End If
+            End If
+            If (Not (Me._sCREENING_OPTICALSHOP_BOOKTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.SCREENING_OPTICALSHOP_BOOK.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+                If ((Not (addedRows) Is Nothing)  _
+                            AndAlso (0 < addedRows.Length)) Then
+                    result = (result + Me._sCREENING_OPTICALSHOP_BOOKTableAdapter.Update(addedRows))
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
@@ -4185,6 +8531,14 @@ Namespace DataSetSceenSettingTableAdapters
                 If ((Not (addedRows) Is Nothing)  _
                             AndAlso (0 < addedRows.Length)) Then
                     result = (result + Me._sCREENING_BOOKTableAdapter.Update(addedRows))
+                    allAddedRows.AddRange(addedRows)
+                End If
+            End If
+            If (Not (Me._sCREEN_SYSTEMSETTINGTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.SCREEN_SYSTEMSETTING.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+                If ((Not (addedRows) Is Nothing)  _
+                            AndAlso (0 < addedRows.Length)) Then
+                    result = (result + Me._sCREEN_SYSTEMSETTINGTableAdapter.Update(addedRows))
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
@@ -4197,6 +8551,14 @@ Namespace DataSetSceenSettingTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Private Function UpdateDeletedRows(ByVal dataSet As DataSetSceenSetting, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
+            If (Not (Me._sCREEN_SYSTEMSETTINGTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.SCREEN_SYSTEMSETTING.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+                If ((Not (deletedRows) Is Nothing)  _
+                            AndAlso (0 < deletedRows.Length)) Then
+                    result = (result + Me._sCREEN_SYSTEMSETTINGTableAdapter.Update(deletedRows))
+                    allChangedRows.AddRange(deletedRows)
+                End If
+            End If
             If (Not (Me._sCREENING_BOOKTableAdapter) Is Nothing) Then
                 Dim deletedRows() As Global.System.Data.DataRow = dataSet.SCREENING_BOOK.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
                 If ((Not (deletedRows) Is Nothing)  _
@@ -4205,11 +8567,27 @@ Namespace DataSetSceenSettingTableAdapters
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
-            If (Not (Me._sCREEN_SYSTEMSETTINGTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.SCREEN_SYSTEMSETTING.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+            If (Not (Me._sCREENING_OPTICALSHOP_BOOKTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.SCREENING_OPTICALSHOP_BOOK.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
                 If ((Not (deletedRows) Is Nothing)  _
                             AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._sCREEN_SYSTEMSETTINGTableAdapter.Update(deletedRows))
+                    result = (result + Me._sCREENING_OPTICALSHOP_BOOKTableAdapter.Update(deletedRows))
+                    allChangedRows.AddRange(deletedRows)
+                End If
+            End If
+            If (Not (Me._sCREENING_REFRACTION_BOOKTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.SCREENING_REFRACTION_BOOK.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+                If ((Not (deletedRows) Is Nothing)  _
+                            AndAlso (0 < deletedRows.Length)) Then
+                    result = (result + Me._sCREENING_REFRACTION_BOOKTableAdapter.Update(deletedRows))
+                    allChangedRows.AddRange(deletedRows)
+                End If
+            End If
+            If (Not (Me._sCREENING_REFERRAL_BOOKTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.SCREENING_REFERRAL_BOOK.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+                If ((Not (deletedRows) Is Nothing)  _
+                            AndAlso (0 < deletedRows.Length)) Then
+                    result = (result + Me._sCREENING_REFERRAL_BOOKTableAdapter.Update(deletedRows))
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
@@ -4262,6 +8640,21 @@ Namespace DataSetSceenSettingTableAdapters
                 Throw New Global.System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s"& _ 
                         "tring.")
             End If
+            If ((Not (Me._sCREENING_REFERRAL_BOOKTableAdapter) Is Nothing)  _
+                        AndAlso (Me.MatchTableAdapterConnection(Me._sCREENING_REFERRAL_BOOKTableAdapter.Connection) = false)) Then
+                Throw New Global.System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s"& _ 
+                        "tring.")
+            End If
+            If ((Not (Me._sCREENING_REFRACTION_BOOKTableAdapter) Is Nothing)  _
+                        AndAlso (Me.MatchTableAdapterConnection(Me._sCREENING_REFRACTION_BOOKTableAdapter.Connection) = false)) Then
+                Throw New Global.System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s"& _ 
+                        "tring.")
+            End If
+            If ((Not (Me._sCREENING_OPTICALSHOP_BOOKTableAdapter) Is Nothing)  _
+                        AndAlso (Me.MatchTableAdapterConnection(Me._sCREENING_OPTICALSHOP_BOOKTableAdapter.Connection) = false)) Then
+                Throw New Global.System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s"& _ 
+                        "tring.")
+            End If
             Dim workConnection As Global.System.Data.IDbConnection = Me.Connection
             If (workConnection Is Nothing) Then
                 Throw New Global.System.ApplicationException("TableAdapterManager contains no connection information. Set each TableAdapterMana"& _ 
@@ -4310,6 +8703,33 @@ Namespace DataSetSceenSettingTableAdapters
                     If Me._sCREEN_SYSTEMSETTINGTableAdapter.Adapter.AcceptChangesDuringUpdate Then
                         Me._sCREEN_SYSTEMSETTINGTableAdapter.Adapter.AcceptChangesDuringUpdate = false
                         adaptersWithAcceptChangesDuringUpdate.Add(Me._sCREEN_SYSTEMSETTINGTableAdapter.Adapter)
+                    End If
+                End If
+                If (Not (Me._sCREENING_REFERRAL_BOOKTableAdapter) Is Nothing) Then
+                    revertConnections.Add(Me._sCREENING_REFERRAL_BOOKTableAdapter, Me._sCREENING_REFERRAL_BOOKTableAdapter.Connection)
+                    Me._sCREENING_REFERRAL_BOOKTableAdapter.Connection = CType(workConnection,Global.System.Data.SqlClient.SqlConnection)
+                    Me._sCREENING_REFERRAL_BOOKTableAdapter.Transaction = CType(workTransaction,Global.System.Data.SqlClient.SqlTransaction)
+                    If Me._sCREENING_REFERRAL_BOOKTableAdapter.Adapter.AcceptChangesDuringUpdate Then
+                        Me._sCREENING_REFERRAL_BOOKTableAdapter.Adapter.AcceptChangesDuringUpdate = false
+                        adaptersWithAcceptChangesDuringUpdate.Add(Me._sCREENING_REFERRAL_BOOKTableAdapter.Adapter)
+                    End If
+                End If
+                If (Not (Me._sCREENING_REFRACTION_BOOKTableAdapter) Is Nothing) Then
+                    revertConnections.Add(Me._sCREENING_REFRACTION_BOOKTableAdapter, Me._sCREENING_REFRACTION_BOOKTableAdapter.Connection)
+                    Me._sCREENING_REFRACTION_BOOKTableAdapter.Connection = CType(workConnection,Global.System.Data.SqlClient.SqlConnection)
+                    Me._sCREENING_REFRACTION_BOOKTableAdapter.Transaction = CType(workTransaction,Global.System.Data.SqlClient.SqlTransaction)
+                    If Me._sCREENING_REFRACTION_BOOKTableAdapter.Adapter.AcceptChangesDuringUpdate Then
+                        Me._sCREENING_REFRACTION_BOOKTableAdapter.Adapter.AcceptChangesDuringUpdate = false
+                        adaptersWithAcceptChangesDuringUpdate.Add(Me._sCREENING_REFRACTION_BOOKTableAdapter.Adapter)
+                    End If
+                End If
+                If (Not (Me._sCREENING_OPTICALSHOP_BOOKTableAdapter) Is Nothing) Then
+                    revertConnections.Add(Me._sCREENING_OPTICALSHOP_BOOKTableAdapter, Me._sCREENING_OPTICALSHOP_BOOKTableAdapter.Connection)
+                    Me._sCREENING_OPTICALSHOP_BOOKTableAdapter.Connection = CType(workConnection,Global.System.Data.SqlClient.SqlConnection)
+                    Me._sCREENING_OPTICALSHOP_BOOKTableAdapter.Transaction = CType(workTransaction,Global.System.Data.SqlClient.SqlTransaction)
+                    If Me._sCREENING_OPTICALSHOP_BOOKTableAdapter.Adapter.AcceptChangesDuringUpdate Then
+                        Me._sCREENING_OPTICALSHOP_BOOKTableAdapter.Adapter.AcceptChangesDuringUpdate = false
+                        adaptersWithAcceptChangesDuringUpdate.Add(Me._sCREENING_OPTICALSHOP_BOOKTableAdapter.Adapter)
                     End If
                 End If
                 '
@@ -4379,6 +8799,18 @@ Namespace DataSetSceenSettingTableAdapters
                 If (Not (Me._sCREEN_SYSTEMSETTINGTableAdapter) Is Nothing) Then
                     Me._sCREEN_SYSTEMSETTINGTableAdapter.Connection = CType(revertConnections(Me._sCREEN_SYSTEMSETTINGTableAdapter),Global.System.Data.SqlClient.SqlConnection)
                     Me._sCREEN_SYSTEMSETTINGTableAdapter.Transaction = Nothing
+                End If
+                If (Not (Me._sCREENING_REFERRAL_BOOKTableAdapter) Is Nothing) Then
+                    Me._sCREENING_REFERRAL_BOOKTableAdapter.Connection = CType(revertConnections(Me._sCREENING_REFERRAL_BOOKTableAdapter),Global.System.Data.SqlClient.SqlConnection)
+                    Me._sCREENING_REFERRAL_BOOKTableAdapter.Transaction = Nothing
+                End If
+                If (Not (Me._sCREENING_REFRACTION_BOOKTableAdapter) Is Nothing) Then
+                    Me._sCREENING_REFRACTION_BOOKTableAdapter.Connection = CType(revertConnections(Me._sCREENING_REFRACTION_BOOKTableAdapter),Global.System.Data.SqlClient.SqlConnection)
+                    Me._sCREENING_REFRACTION_BOOKTableAdapter.Transaction = Nothing
+                End If
+                If (Not (Me._sCREENING_OPTICALSHOP_BOOKTableAdapter) Is Nothing) Then
+                    Me._sCREENING_OPTICALSHOP_BOOKTableAdapter.Connection = CType(revertConnections(Me._sCREENING_OPTICALSHOP_BOOKTableAdapter),Global.System.Data.SqlClient.SqlConnection)
+                    Me._sCREENING_OPTICALSHOP_BOOKTableAdapter.Transaction = Nothing
                 End If
                 If (0 < adaptersWithAcceptChangesDuringUpdate.Count) Then
                     Dim adapters((adaptersWithAcceptChangesDuringUpdate.Count) - 1) As Global.System.Data.Common.DataAdapter
