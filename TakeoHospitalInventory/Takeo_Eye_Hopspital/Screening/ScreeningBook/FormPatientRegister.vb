@@ -212,8 +212,8 @@ Public Class FormPatientRegister
         CreateDate & "','" & _
        province.Replace("'", "''") & "','" & _
         District.Replace("'", "''") & "','" & _
-        Commune.Replace("'", "''") & "','" & _
-        NameEng.Replace("'", "''") & "','" & _
+        Commune.Replace("'", "''") & "',N'" & _
+        NameEng.Replace("'", "''") & "',N'" & _
         NameKh.Replace("'", "''") & "'," & _
         Age & ",'" & _
         Sex & "','" & _
