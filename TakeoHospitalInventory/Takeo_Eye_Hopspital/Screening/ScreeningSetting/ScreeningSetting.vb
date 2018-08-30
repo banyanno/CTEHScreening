@@ -108,4 +108,10 @@
         End Try
 
     End Sub
+
+    Private Sub PanelMain_MouseDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles PanelMain.MouseDown
+        ' Call when we mouse move on Panel
+        ModCommon.ReleaseCapture()
+        ModCommon.SendMessage(Me.Handle, &H112, &HF012, 0)
+    End Sub
 End Class

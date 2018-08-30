@@ -1,4 +1,5 @@
-﻿Public Class FormPatientRegister
+﻿Imports System.Runtime.InteropServices
+Public Class FormPatientRegister
     Dim DA_DefaultSetting As New DataSetSceenSettingTableAdapters.SCREEN_SYSTEMSETTINGTableAdapter
     Sub New()
 
@@ -13,6 +14,8 @@
         ' Add any initialization after the InitializeComponent() call.
 
     End Sub
+   
+
     Private Sub FormPatientRegister_MouseDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles MyBase.MouseDown
         MoveFormOnMouseDown(e)
     End Sub
@@ -38,7 +41,7 @@
     End Sub
 
     Private Sub FormPatientRegister_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        ResetFormRegister
+        ResetFormRegister()
     End Sub
     Sub LoadNewPatientNo()
         PatientNo.Text = ModCommon.GenerateNo("No", "TblPatients")
@@ -86,7 +89,7 @@
                 sqlComm.CommandText = InsertRefraction(ScreenBookID, DateRegis.Value.Date, PatientNo.Text, "", "", "", "", "", "", "", "", "", False)
                 sqlComm.ExecuteNonQuery()
             End If
-            
+
             '================= End function Refraction ====================
             '=========== Start Function Opticalshop ========================
             If ChOpticalshop.Checked = True Then
@@ -217,7 +220,7 @@
         Return sql
     End Function
     '==================================== End Screening Book End =========================================
-    
+
     Private Function InsertReferralBook(ByVal SCREENING_BOOKID As Integer, ByVal PATIENT_NO As Double, ByVal VA_RIGHT As String, ByVal VA_LEFT As String, ByVal DIAGNOSIS As String, ByVal STATUS_PICKUP As Boolean, ByVal REFERRAL_NOTE As String, ByVal CREATE_DATE As Date) As String
         Dim sql As String = "INSERT INTO SCREENING_REFERRAL_BOOK(SCREENING_BOOKID,PATIENT_NO,VA_RIGHT,VA_LEFT,DIAGNOSIS,STATUS_PICKUP,REFERRAL_NOTE,CREATE_DATE) VALUES(" & SCREENING_BOOKID & "," & PATIENT_NO & ",'" & VA_RIGHT & "','" & VA_LEFT & "','" & DIAGNOSIS & "','" & STATUS_PICKUP & "','" & REFERRAL_NOTE & "','" & CREATE_DATE & "')"
         Return sql
@@ -229,7 +232,7 @@
     End Function
 
     Private Function InsertOptShopBook(ByVal SCREENBOOK_ID As Double, ByVal DATE_SCREENING As Date, ByVal PATIENT_NO As Double, ByVal OPTICALSHOP_NOTE As String, ByVal STATUS_PAY As Boolean) As String
-        Dim SQL As String = "INSERT INTO SCREENING_OPTICALSHOP_BOOK (SCREENBOOK_ID,DATE_SCREENING,PATIENT_NO,OPTICALSHOP_NOTE,STATUS_PAY) VALUES('" & SCREENBOOK_ID & ",'" & DATE_SCREENING & "'," & PATIENT_NO & ",'" & OPTICALSHOP_NOTE & "','" & STATUS_PAY & "')"
+        Dim SQL As String = "INSERT INTO SCREENING_OPTICALSHOP_BOOK (SCREENBOOK_ID,DATE_SCREENING,PATIENT_NO,OPTICALSHOP_NOTE,STATUS_PAY) VALUES(" & SCREENBOOK_ID & ",'" & DATE_SCREENING & "'," & PATIENT_NO & ",'" & OPTICALSHOP_NOTE & "','" & STATUS_PAY & "')"
         Return SQL
     End Function
 
@@ -277,7 +280,7 @@
                 MessageBox.Show("Error Patient registration. Please verify data entry again!", "Register", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End If
         End If
-        
+
 
     End Sub
 
@@ -287,6 +290,10 @@
         TxtPatientName.Focus()
         TxtPatientName.Select()
         TxtPatientName.SelectAll()
+        CboSex.SelectedIndex = -1
+        TxtAge.Text = ""
+        TxtTel.Text = ""
+        TxtFullAddress.Text = ""
         ChReferral.Checked = False
         RadReferAndPickup.Checked = False
         RadReferAndComeBySelf.Checked = False
@@ -295,7 +302,7 @@
         TxtRegisterNote.Text = ""
         LoadDefaultAddressSetting()
     End Sub
-   
+
     Private Sub TxtAge_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TxtAge.KeyPress
         SetDisableKeyString(e)
     End Sub
@@ -310,5 +317,11 @@
 
     Private Sub ChReferral_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ChReferral.CheckedChanged
         GBReferral.Enabled = ChReferral.Checked
+    End Sub
+
+    Private Sub PanelMain_MouseDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles PanelMain.MouseDown
+        ' Call when we mouse move on Panel
+        ModCommon.ReleaseCapture()
+        ModCommon.SendMessage(Me.Handle, &H112, &HF012, 0)
     End Sub
 End Class

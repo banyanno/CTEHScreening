@@ -35,9 +35,6 @@ Partial Class DashboardScreeningRegisBook
         Dim DataGridViewCellStyle13 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
         Dim DataGridViewCellStyle14 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
         Dim DataGridViewCellStyle15 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
-        Dim DataGridViewCellStyle16 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
-        Dim DataGridViewCellStyle17 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
-        Dim DataGridViewCellStyle18 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
@@ -46,70 +43,75 @@ Partial Class DashboardScreeningRegisBook
         Me.Label2 = New System.Windows.Forms.Label
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer
         Me.DGScreeningBook = New System.Windows.Forms.DataGridView
+        Me.CMScreeningBook = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator
+        Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripSeparator
+        Me.BtnRefraction = New System.Windows.Forms.ToolStripMenuItem
+        Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripSeparator
+        Me.BtnReferral = New System.Windows.Forms.ToolStripMenuItem
+        Me.ToolStripMenuItem3 = New System.Windows.Forms.ToolStripSeparator
+        Me.BtnOpticalShop = New System.Windows.Forms.ToolStripMenuItem
+        Me.ToolStripMenuItem4 = New System.Windows.Forms.ToolStripSeparator
         Me.TabControl1 = New System.Windows.Forms.TabControl
         Me.ReferralPickup = New System.Windows.Forms.TabPage
         Me.DGReferral = New System.Windows.Forms.DataGridView
+        Me.REFERRAL_ID = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.CREATE_DATE = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.SCREENING_BOOKID = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.PATIENT_NO = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.NameEngReferral = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.NameKhmerReferra = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.AgeReferral = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.SexReferral = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.AddressReferral = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.VA_RIGHT = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.VA_LEFT = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.DIAGNOSIS = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.DATE_MEETING = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.STATUS_PICKUP = New System.Windows.Forms.DataGridViewCheckBoxColumn
+        Me.ARRIVED = New System.Windows.Forms.DataGridViewCheckBoxColumn
+        Me.REFERRAL_NOTE = New System.Windows.Forms.DataGridViewTextBoxColumn
         Me.Refraction = New System.Windows.Forms.TabPage
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView
-        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.DataGridViewTextBoxColumn7 = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.DataGridViewTextBoxColumn8 = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.DataGridViewTextBoxColumn9 = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.DataGridViewCheckBoxColumn1 = New System.Windows.Forms.DataGridViewCheckBoxColumn
-        Me.DataGridViewCheckBoxColumn2 = New System.Windows.Forms.DataGridViewCheckBoxColumn
-        Me.DataGridViewCheckBoxColumn3 = New System.Windows.Forms.DataGridViewCheckBoxColumn
-        Me.DataGridViewCheckBoxColumn4 = New System.Windows.Forms.DataGridViewCheckBoxColumn
-        Me.DataGridViewTextBoxColumn10 = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.ReferralBySelf = New System.Windows.Forms.TabPage
-        Me.DataGridView3 = New System.Windows.Forms.DataGridView
-        Me.DataGridViewTextBoxColumn21 = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.DataGridViewTextBoxColumn22 = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.DataGridViewTextBoxColumn23 = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.DataGridViewTextBoxColumn24 = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.DataGridViewTextBoxColumn25 = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.DataGridViewTextBoxColumn26 = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.DataGridViewTextBoxColumn27 = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.DataGridViewTextBoxColumn28 = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.DataGridViewTextBoxColumn29 = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.DataGridViewCheckBoxColumn9 = New System.Windows.Forms.DataGridViewCheckBoxColumn
-        Me.DataGridViewCheckBoxColumn10 = New System.Windows.Forms.DataGridViewCheckBoxColumn
-        Me.DataGridViewCheckBoxColumn11 = New System.Windows.Forms.DataGridViewCheckBoxColumn
-        Me.DataGridViewCheckBoxColumn12 = New System.Windows.Forms.DataGridViewCheckBoxColumn
-        Me.DataGridViewTextBoxColumn30 = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.DGRefraction = New System.Windows.Forms.DataGridView
+        Me.REFRACT_DATE = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.REFRACT_ID = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.SCREEN_BOOK_ID = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.NameEngRefraction = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.NameKhmerRefraction = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.AgeRefraction = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.SexRefraction = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.AddressRefraction = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.VA_RIGHTRefraction = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.VA_LEFTRefraction = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.DIAGNOSISRefraction = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.RE_PLUS = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.RE_VA = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.LE_PLUS = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.LE_VA = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.REFRACT_ADD = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.SIGNATURE = New System.Windows.Forms.DataGridViewCheckBoxColumn
+        Me.REFRACT_NOTE = New System.Windows.Forms.DataGridViewTextBoxColumn
         Me.OpticalShop = New System.Windows.Forms.TabPage
-        Me.DataGridView4 = New System.Windows.Forms.DataGridView
-        Me.DataGridViewTextBoxColumn31 = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.DataGridViewTextBoxColumn32 = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.DataGridViewTextBoxColumn33 = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.DataGridViewTextBoxColumn34 = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.DataGridViewTextBoxColumn35 = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.DataGridViewTextBoxColumn36 = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.DataGridViewTextBoxColumn37 = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.DataGridViewTextBoxColumn38 = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.DataGridViewTextBoxColumn39 = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.DataGridViewCheckBoxColumn13 = New System.Windows.Forms.DataGridViewCheckBoxColumn
-        Me.DataGridViewCheckBoxColumn14 = New System.Windows.Forms.DataGridViewCheckBoxColumn
-        Me.DataGridViewCheckBoxColumn15 = New System.Windows.Forms.DataGridViewCheckBoxColumn
-        Me.DataGridViewCheckBoxColumn16 = New System.Windows.Forms.DataGridViewCheckBoxColumn
-        Me.DataGridViewTextBoxColumn40 = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.DGOpticalShop = New System.Windows.Forms.DataGridView
+        Me.DATE_SCREENING = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.PATIENT_NOOpticalshop = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.NameEngOpticalshop = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.NameKhmerOpticalShop = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.AgeOpticalshop = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.SexOpticalShop = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.AddressOpticalshop = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.OPTICAL_ID = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.SCREENBOOK_ID = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.STATUS_PAY = New System.Windows.Forms.DataGridViewCheckBoxColumn
+        Me.OPTICALSHOP_NOTE = New System.Windows.Forms.DataGridViewTextBoxColumn
         Me.DateTo = New System.Windows.Forms.DateTimePicker
         Me.DateFrom = New System.Windows.Forms.DateTimePicker
         Me.Label13 = New System.Windows.Forms.Label
         Me.Label12 = New System.Windows.Forms.Label
-        Me.BtnFind = New System.Windows.Forms.Button
         Me.TxtPatienNo = New System.Windows.Forms.TextBox
-        Me.PicOpticalShop = New System.Windows.Forms.PictureBox
         Me.Panel4 = New System.Windows.Forms.Panel
         Me.TxtTotalOpticalShop = New System.Windows.Forms.Label
         Me.Label11 = New System.Windows.Forms.Label
-        Me.PicReferral = New System.Windows.Forms.PictureBox
-        Me.PicRefraction = New System.Windows.Forms.PictureBox
-        Me.PicRgister = New System.Windows.Forms.PictureBox
         Me.Panel3 = New System.Windows.Forms.Panel
         Me.TxtTotalReferralSelf = New System.Windows.Forms.Label
         Me.Label8 = New System.Windows.Forms.Label
@@ -132,55 +134,43 @@ Partial Class DashboardScreeningRegisBook
         Me.Sex = New System.Windows.Forms.DataGridViewTextBoxColumn
         Me.Address = New System.Windows.Forms.DataGridViewTextBoxColumn
         Me.SCREEN_PLACE = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.ON_EYE = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.DIAGNOSISScreening = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.VA_RIGHTScreening = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.VA_LEFTScreening = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.PRESENTING_COMPLAIN = New System.Windows.Forms.DataGridViewTextBoxColumn
         Me.IS_REFRACTION = New System.Windows.Forms.DataGridViewCheckBoxColumn
         Me.IS_OPTICALSHOP = New System.Windows.Forms.DataGridViewCheckBoxColumn
         Me.IS_REFER_PICKUP = New System.Windows.Forms.DataGridViewCheckBoxColumn
         Me.IS_REFER_BYSELF = New System.Windows.Forms.DataGridViewCheckBoxColumn
         Me.SCREEN_NOTE = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.REFERRAL_ID = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.CREATE_DATE = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.SCREENING_BOOKID = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.PATIENT_NO = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.VA_RIGHT = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.VA_LEFT = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.DIAGNOSIS = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.DATE_MEETING = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.STATUS_PICKUP = New System.Windows.Forms.DataGridViewCheckBoxColumn
-        Me.ARRIVED = New System.Windows.Forms.DataGridViewCheckBoxColumn
-        Me.REFERRAL_NOTE = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.CMScreeningBook = New System.Windows.Forms.ContextMenuStrip(Me.components)
-        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator
         Me.BtnUpdateScreening = New System.Windows.Forms.ToolStripMenuItem
-        Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripSeparator
-        Me.BtnRefraction = New System.Windows.Forms.ToolStripMenuItem
-        Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripSeparator
-        Me.BtnReferral = New System.Windows.Forms.ToolStripMenuItem
-        Me.ToolStripMenuItem3 = New System.Windows.Forms.ToolStripSeparator
-        Me.BtnOpticalShop = New System.Windows.Forms.ToolStripMenuItem
-        Me.ToolStripMenuItem4 = New System.Windows.Forms.ToolStripSeparator
+        Me.BtnFind = New System.Windows.Forms.Button
+        Me.PicOpticalShop = New System.Windows.Forms.PictureBox
+        Me.PicReferral = New System.Windows.Forms.PictureBox
+        Me.PicRefraction = New System.Windows.Forms.PictureBox
+        Me.PicRgister = New System.Windows.Forms.PictureBox
         Me.Panel1.SuspendLayout()
         Me.SplitContainer1.Panel1.SuspendLayout()
         Me.SplitContainer1.Panel2.SuspendLayout()
         Me.SplitContainer1.SuspendLayout()
         CType(Me.DGScreeningBook, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.CMScreeningBook.SuspendLayout()
         Me.TabControl1.SuspendLayout()
         Me.ReferralPickup.SuspendLayout()
         CType(Me.DGReferral, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Refraction.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.ReferralBySelf.SuspendLayout()
-        CType(Me.DataGridView3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DGRefraction, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.OpticalShop.SuspendLayout()
-        CType(Me.DataGridView4, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PicOpticalShop, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DGOpticalShop, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel4.SuspendLayout()
-        CType(Me.PicReferral, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PicRefraction, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PicRgister, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel3.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.PanelSend.SuspendLayout()
-        Me.CMScreeningBook.SuspendLayout()
+        CType(Me.PicOpticalShop, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PicReferral, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PicRefraction, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PicRgister, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
@@ -260,7 +250,7 @@ Partial Class DashboardScreeningRegisBook
         DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.DGScreeningBook.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.DGScreeningBook.ColumnHeadersHeight = 40
-        Me.DGScreeningBook.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.SCREEN_BOOKID, Me.SYS_SETTING, Me.SCREAN_DATE, Me.PatientNo, Me.NameEng, Me.NameKhmer, Me.Age, Me.Sex, Me.Address, Me.SCREEN_PLACE, Me.IS_REFRACTION, Me.IS_OPTICALSHOP, Me.IS_REFER_PICKUP, Me.IS_REFER_BYSELF, Me.SCREEN_NOTE})
+        Me.DGScreeningBook.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.SCREEN_BOOKID, Me.SYS_SETTING, Me.SCREAN_DATE, Me.PatientNo, Me.NameEng, Me.NameKhmer, Me.Age, Me.Sex, Me.Address, Me.SCREEN_PLACE, Me.ON_EYE, Me.DIAGNOSISScreening, Me.VA_RIGHTScreening, Me.VA_LEFTScreening, Me.PRESENTING_COMPLAIN, Me.IS_REFRACTION, Me.IS_OPTICALSHOP, Me.IS_REFER_PICKUP, Me.IS_REFER_BYSELF, Me.SCREEN_NOTE})
         Me.DGScreeningBook.ContextMenuStrip = Me.CMScreeningBook
         DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle5.BackColor = System.Drawing.Color.White
@@ -291,12 +281,68 @@ Partial Class DashboardScreeningRegisBook
         Me.DGScreeningBook.Size = New System.Drawing.Size(1297, 391)
         Me.DGScreeningBook.TabIndex = 25
         '
+        'CMScreeningBook
+        '
+        Me.CMScreeningBook.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
+        Me.CMScreeningBook.Font = New System.Drawing.Font("Segoe UI", 12.0!)
+        Me.CMScreeningBook.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripSeparator1, Me.BtnUpdateScreening, Me.ToolStripMenuItem1, Me.BtnRefraction, Me.ToolStripMenuItem2, Me.BtnReferral, Me.ToolStripMenuItem3, Me.BtnOpticalShop, Me.ToolStripMenuItem4})
+        Me.CMScreeningBook.Name = "CMScreeningBook"
+        Me.CMScreeningBook.ShowImageMargin = False
+        Me.CMScreeningBook.Size = New System.Drawing.Size(179, 160)
+        '
+        'ToolStripSeparator1
+        '
+        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(175, 6)
+        Me.ToolStripSeparator1.Visible = False
+        '
+        'ToolStripMenuItem1
+        '
+        Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
+        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(175, 6)
+        '
+        'BtnRefraction
+        '
+        Me.BtnRefraction.ForeColor = System.Drawing.Color.White
+        Me.BtnRefraction.Name = "BtnRefraction"
+        Me.BtnRefraction.Size = New System.Drawing.Size(178, 26)
+        Me.BtnRefraction.Text = "Refraction"
+        '
+        'ToolStripMenuItem2
+        '
+        Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
+        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(175, 6)
+        '
+        'BtnReferral
+        '
+        Me.BtnReferral.ForeColor = System.Drawing.Color.White
+        Me.BtnReferral.Name = "BtnReferral"
+        Me.BtnReferral.Size = New System.Drawing.Size(178, 26)
+        Me.BtnReferral.Text = "Referral"
+        '
+        'ToolStripMenuItem3
+        '
+        Me.ToolStripMenuItem3.Name = "ToolStripMenuItem3"
+        Me.ToolStripMenuItem3.Size = New System.Drawing.Size(175, 6)
+        '
+        'BtnOpticalShop
+        '
+        Me.BtnOpticalShop.ForeColor = System.Drawing.Color.White
+        Me.BtnOpticalShop.Name = "BtnOpticalShop"
+        Me.BtnOpticalShop.Size = New System.Drawing.Size(178, 26)
+        Me.BtnOpticalShop.Text = "Optical Shop"
+        '
+        'ToolStripMenuItem4
+        '
+        Me.ToolStripMenuItem4.Name = "ToolStripMenuItem4"
+        Me.ToolStripMenuItem4.Size = New System.Drawing.Size(175, 6)
+        Me.ToolStripMenuItem4.Visible = False
+        '
         'TabControl1
         '
         Me.TabControl1.Appearance = System.Windows.Forms.TabAppearance.FlatButtons
         Me.TabControl1.Controls.Add(Me.ReferralPickup)
         Me.TabControl1.Controls.Add(Me.Refraction)
-        Me.TabControl1.Controls.Add(Me.ReferralBySelf)
         Me.TabControl1.Controls.Add(Me.OpticalShop)
         Me.TabControl1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TabControl1.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed
@@ -329,7 +375,6 @@ Partial Class DashboardScreeningRegisBook
         Me.DGReferral.AllowUserToDeleteRows = False
         Me.DGReferral.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DGReferral.BackgroundColor = System.Drawing.Color.White
-        Me.DGReferral.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
         Me.DGReferral.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
         DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
         DataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(67, Byte), Integer), CType(CType(82, Byte), Integer))
@@ -340,7 +385,7 @@ Partial Class DashboardScreeningRegisBook
         DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.DGReferral.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle7
         Me.DGReferral.ColumnHeadersHeight = 35
-        Me.DGReferral.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.REFERRAL_ID, Me.CREATE_DATE, Me.SCREENING_BOOKID, Me.PATIENT_NO, Me.VA_RIGHT, Me.VA_LEFT, Me.DIAGNOSIS, Me.DATE_MEETING, Me.STATUS_PICKUP, Me.ARRIVED, Me.REFERRAL_NOTE})
+        Me.DGReferral.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.REFERRAL_ID, Me.CREATE_DATE, Me.SCREENING_BOOKID, Me.PATIENT_NO, Me.NameEngReferral, Me.NameKhmerReferra, Me.AgeReferral, Me.SexReferral, Me.AddressReferral, Me.VA_RIGHT, Me.VA_LEFT, Me.DIAGNOSIS, Me.DATE_MEETING, Me.STATUS_PICKUP, Me.ARRIVED, Me.REFERRAL_NOTE})
         DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle8.BackColor = System.Drawing.Color.White
         DataGridViewCellStyle8.Font = New System.Drawing.Font("Century Gothic", 12.0!)
@@ -369,10 +414,123 @@ Partial Class DashboardScreeningRegisBook
         Me.DGReferral.Size = New System.Drawing.Size(1289, 301)
         Me.DGReferral.TabIndex = 26
         '
+        'REFERRAL_ID
+        '
+        Me.REFERRAL_ID.DataPropertyName = "REFERRAL_ID"
+        Me.REFERRAL_ID.HeaderText = "REFERRAL_ID"
+        Me.REFERRAL_ID.Name = "REFERRAL_ID"
+        Me.REFERRAL_ID.ReadOnly = True
+        Me.REFERRAL_ID.Visible = False
+        '
+        'CREATE_DATE
+        '
+        Me.CREATE_DATE.DataPropertyName = "CREATE_DATE"
+        Me.CREATE_DATE.HeaderText = "Date Regist"
+        Me.CREATE_DATE.Name = "CREATE_DATE"
+        Me.CREATE_DATE.ReadOnly = True
+        '
+        'SCREENING_BOOKID
+        '
+        Me.SCREENING_BOOKID.DataPropertyName = "SCREENING_BOOKID"
+        Me.SCREENING_BOOKID.HeaderText = "SCREENING_BOOKID"
+        Me.SCREENING_BOOKID.Name = "SCREENING_BOOKID"
+        Me.SCREENING_BOOKID.ReadOnly = True
+        Me.SCREENING_BOOKID.Visible = False
+        '
+        'PATIENT_NO
+        '
+        Me.PATIENT_NO.DataPropertyName = "PATIENT_NO"
+        Me.PATIENT_NO.HeaderText = "Patient No"
+        Me.PATIENT_NO.Name = "PATIENT_NO"
+        Me.PATIENT_NO.ReadOnly = True
+        '
+        'NameEngReferral
+        '
+        Me.NameEngReferral.DataPropertyName = "NameEng"
+        Me.NameEngReferral.HeaderText = "Name"
+        Me.NameEngReferral.Name = "NameEngReferral"
+        Me.NameEngReferral.ReadOnly = True
+        '
+        'NameKhmerReferra
+        '
+        Me.NameKhmerReferra.DataPropertyName = "NameKhmer"
+        Me.NameKhmerReferra.HeaderText = "Khmer Name"
+        Me.NameKhmerReferra.Name = "NameKhmerReferra"
+        Me.NameKhmerReferra.ReadOnly = True
+        '
+        'AgeReferral
+        '
+        Me.AgeReferral.DataPropertyName = "Age"
+        Me.AgeReferral.HeaderText = "Age"
+        Me.AgeReferral.Name = "AgeReferral"
+        Me.AgeReferral.ReadOnly = True
+        '
+        'SexReferral
+        '
+        Me.SexReferral.DataPropertyName = "Sex"
+        Me.SexReferral.HeaderText = "Sex"
+        Me.SexReferral.Name = "SexReferral"
+        Me.SexReferral.ReadOnly = True
+        '
+        'AddressReferral
+        '
+        Me.AddressReferral.DataPropertyName = "Address"
+        Me.AddressReferral.HeaderText = "Address"
+        Me.AddressReferral.Name = "AddressReferral"
+        Me.AddressReferral.ReadOnly = True
+        '
+        'VA_RIGHT
+        '
+        Me.VA_RIGHT.DataPropertyName = "VA_RIGHT"
+        Me.VA_RIGHT.HeaderText = "VA Right"
+        Me.VA_RIGHT.Name = "VA_RIGHT"
+        Me.VA_RIGHT.ReadOnly = True
+        '
+        'VA_LEFT
+        '
+        Me.VA_LEFT.DataPropertyName = "VA_LEFT"
+        Me.VA_LEFT.HeaderText = "VA Left"
+        Me.VA_LEFT.Name = "VA_LEFT"
+        Me.VA_LEFT.ReadOnly = True
+        '
+        'DIAGNOSIS
+        '
+        Me.DIAGNOSIS.DataPropertyName = "DIAGNOSIS"
+        Me.DIAGNOSIS.HeaderText = "Diagnosis"
+        Me.DIAGNOSIS.Name = "DIAGNOSIS"
+        Me.DIAGNOSIS.ReadOnly = True
+        '
+        'DATE_MEETING
+        '
+        Me.DATE_MEETING.DataPropertyName = "DATE_MEETING"
+        Me.DATE_MEETING.HeaderText = "Date Appointment"
+        Me.DATE_MEETING.Name = "DATE_MEETING"
+        Me.DATE_MEETING.ReadOnly = True
+        '
+        'STATUS_PICKUP
+        '
+        Me.STATUS_PICKUP.DataPropertyName = "STATUS_PICKUP"
+        Me.STATUS_PICKUP.HeaderText = "Pickup"
+        Me.STATUS_PICKUP.Name = "STATUS_PICKUP"
+        Me.STATUS_PICKUP.ReadOnly = True
+        '
+        'ARRIVED
+        '
+        Me.ARRIVED.DataPropertyName = "ARRIVED"
+        Me.ARRIVED.HeaderText = "Is Come"
+        Me.ARRIVED.Name = "ARRIVED"
+        '
+        'REFERRAL_NOTE
+        '
+        Me.REFERRAL_NOTE.DataPropertyName = "REFERRAL_NOTE"
+        Me.REFERRAL_NOTE.HeaderText = "Referral Note"
+        Me.REFERRAL_NOTE.Name = "REFERRAL_NOTE"
+        Me.REFERRAL_NOTE.ReadOnly = True
+        '
         'Refraction
         '
         Me.Refraction.BackColor = System.Drawing.Color.White
-        Me.Refraction.Controls.Add(Me.DataGridView1)
+        Me.Refraction.Controls.Add(Me.DGRefraction)
         Me.Refraction.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Refraction.ForeColor = System.Drawing.Color.Cornsilk
         Me.Refraction.Location = New System.Drawing.Point(4, 33)
@@ -382,15 +540,13 @@ Partial Class DashboardScreeningRegisBook
         Me.Refraction.Text = "     Refraction     "
         Me.Refraction.UseVisualStyleBackColor = True
         '
-        'DataGridView1
+        'DGRefraction
         '
-        Me.DataGridView1.AllowUserToAddRows = False
-        Me.DataGridView1.AllowUserToDeleteRows = False
-        Me.DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.DataGridView1.BackgroundColor = System.Drawing.Color.White
-        Me.DataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.DataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
-        Me.DataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
+        Me.DGRefraction.AllowUserToAddRows = False
+        Me.DGRefraction.AllowUserToDeleteRows = False
+        Me.DGRefraction.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.DGRefraction.BackgroundColor = System.Drawing.Color.White
+        Me.DGRefraction.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
         DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
         DataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(67, Byte), Integer), CType(CType(82, Byte), Integer))
         DataGridViewCellStyle10.Font = New System.Drawing.Font("Century Gothic", 12.0!)
@@ -398,9 +554,9 @@ Partial Class DashboardScreeningRegisBook
         DataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight
         DataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle10
-        Me.DataGridView1.ColumnHeadersHeight = 35
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6, Me.DataGridViewTextBoxColumn7, Me.DataGridViewTextBoxColumn8, Me.DataGridViewTextBoxColumn9, Me.DataGridViewCheckBoxColumn1, Me.DataGridViewCheckBoxColumn2, Me.DataGridViewCheckBoxColumn3, Me.DataGridViewCheckBoxColumn4, Me.DataGridViewTextBoxColumn10})
+        Me.DGRefraction.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle10
+        Me.DGRefraction.ColumnHeadersHeight = 35
+        Me.DGRefraction.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.REFRACT_DATE, Me.REFRACT_ID, Me.SCREEN_BOOK_ID, Me.NameEngRefraction, Me.NameKhmerRefraction, Me.AgeRefraction, Me.SexRefraction, Me.AddressRefraction, Me.VA_RIGHTRefraction, Me.VA_LEFTRefraction, Me.DIAGNOSISRefraction, Me.RE_PLUS, Me.RE_VA, Me.LE_PLUS, Me.LE_VA, Me.REFRACT_ADD, Me.SIGNATURE, Me.REFRACT_NOTE})
         DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle11.BackColor = System.Drawing.Color.White
         DataGridViewCellStyle11.Font = New System.Drawing.Font("Century Gothic", 12.0!)
@@ -408,14 +564,14 @@ Partial Class DashboardScreeningRegisBook
         DataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight
         DataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DataGridView1.DefaultCellStyle = DataGridViewCellStyle11
-        Me.DataGridView1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.DataGridView1.EnableHeadersVisualStyles = False
-        Me.DataGridView1.GridColor = System.Drawing.Color.SteelBlue
-        Me.DataGridView1.Location = New System.Drawing.Point(0, 0)
-        Me.DataGridView1.Margin = New System.Windows.Forms.Padding(5)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
+        Me.DGRefraction.DefaultCellStyle = DataGridViewCellStyle11
+        Me.DGRefraction.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.DGRefraction.EnableHeadersVisualStyles = False
+        Me.DGRefraction.GridColor = System.Drawing.Color.SteelBlue
+        Me.DGRefraction.Location = New System.Drawing.Point(0, 0)
+        Me.DGRefraction.Margin = New System.Windows.Forms.Padding(5)
+        Me.DGRefraction.Name = "DGRefraction"
+        Me.DGRefraction.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
         DataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(67, Byte), Integer), CType(CType(82, Byte), Integer))
         DataGridViewCellStyle12.Font = New System.Drawing.Font("Century Gothic", 12.0!)
@@ -423,234 +579,144 @@ Partial Class DashboardScreeningRegisBook
         DataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight
         DataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridView1.RowHeadersDefaultCellStyle = DataGridViewCellStyle12
-        Me.DataGridView1.RowTemplate.Height = 35
-        Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridView1.Size = New System.Drawing.Size(1289, 301)
-        Me.DataGridView1.TabIndex = 26
+        Me.DGRefraction.RowHeadersDefaultCellStyle = DataGridViewCellStyle12
+        Me.DGRefraction.RowTemplate.Height = 35
+        Me.DGRefraction.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.DGRefraction.Size = New System.Drawing.Size(1289, 301)
+        Me.DGRefraction.TabIndex = 27
         '
-        'DataGridViewTextBoxColumn1
+        'REFRACT_DATE
         '
-        Me.DataGridViewTextBoxColumn1.HeaderText = "SCREEN_BOOKID"
-        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
-        Me.DataGridViewTextBoxColumn1.Visible = False
+        Me.REFRACT_DATE.DataPropertyName = "REFRACT_DATE"
+        Me.REFRACT_DATE.HeaderText = "Date Regist"
+        Me.REFRACT_DATE.Name = "REFRACT_DATE"
+        Me.REFRACT_DATE.ReadOnly = True
         '
-        'DataGridViewTextBoxColumn2
+        'REFRACT_ID
         '
-        Me.DataGridViewTextBoxColumn2.HeaderText = "PatientNo"
-        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
+        Me.REFRACT_ID.DataPropertyName = "REFRACT_ID"
+        Me.REFRACT_ID.HeaderText = "REFRACT_ID"
+        Me.REFRACT_ID.Name = "REFRACT_ID"
+        Me.REFRACT_ID.ReadOnly = True
+        Me.REFRACT_ID.Visible = False
         '
-        'DataGridViewTextBoxColumn3
+        'SCREEN_BOOK_ID
         '
-        Me.DataGridViewTextBoxColumn3.HeaderText = "Name English"
-        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
+        Me.SCREEN_BOOK_ID.DataPropertyName = "SCREEN_BOOK_ID"
+        Me.SCREEN_BOOK_ID.HeaderText = "SCREEN_BOOK_ID"
+        Me.SCREEN_BOOK_ID.Name = "SCREEN_BOOK_ID"
+        Me.SCREEN_BOOK_ID.ReadOnly = True
+        Me.SCREEN_BOOK_ID.Visible = False
         '
-        'DataGridViewTextBoxColumn4
+        'NameEngRefraction
         '
-        Me.DataGridViewTextBoxColumn4.HeaderText = "Name Khmer"
-        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
-        Me.DataGridViewTextBoxColumn4.Visible = False
+        Me.NameEngRefraction.DataPropertyName = "NameEng"
+        Me.NameEngRefraction.HeaderText = "Name"
+        Me.NameEngRefraction.Name = "NameEngRefraction"
+        Me.NameEngRefraction.ReadOnly = True
         '
-        'DataGridViewTextBoxColumn5
+        'NameKhmerRefraction
         '
-        Me.DataGridViewTextBoxColumn5.HeaderText = "Age"
-        Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
+        Me.NameKhmerRefraction.DataPropertyName = "NameKhmer"
+        Me.NameKhmerRefraction.HeaderText = "Khmer Name"
+        Me.NameKhmerRefraction.Name = "NameKhmerRefraction"
+        Me.NameKhmerRefraction.ReadOnly = True
         '
-        'DataGridViewTextBoxColumn6
+        'AgeRefraction
         '
-        Me.DataGridViewTextBoxColumn6.HeaderText = "Sex"
-        Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
+        Me.AgeRefraction.DataPropertyName = "Age"
+        Me.AgeRefraction.HeaderText = "Age"
+        Me.AgeRefraction.Name = "AgeRefraction"
+        Me.AgeRefraction.ReadOnly = True
         '
-        'DataGridViewTextBoxColumn7
+        'SexRefraction
         '
-        Me.DataGridViewTextBoxColumn7.HeaderText = "Screening Place"
-        Me.DataGridViewTextBoxColumn7.Name = "DataGridViewTextBoxColumn7"
+        Me.SexRefraction.DataPropertyName = "Sex"
+        Me.SexRefraction.HeaderText = "Sex"
+        Me.SexRefraction.Name = "SexRefraction"
+        Me.SexRefraction.ReadOnly = True
         '
-        'DataGridViewTextBoxColumn8
+        'AddressRefraction
         '
-        Me.DataGridViewTextBoxColumn8.HeaderText = "Screening Date"
-        Me.DataGridViewTextBoxColumn8.Name = "DataGridViewTextBoxColumn8"
+        Me.AddressRefraction.DataPropertyName = "Address"
+        Me.AddressRefraction.HeaderText = "Address"
+        Me.AddressRefraction.Name = "AddressRefraction"
+        Me.AddressRefraction.ReadOnly = True
         '
-        'DataGridViewTextBoxColumn9
+        'VA_RIGHTRefraction
         '
-        Me.DataGridViewTextBoxColumn9.HeaderText = "Address"
-        Me.DataGridViewTextBoxColumn9.Name = "DataGridViewTextBoxColumn9"
+        Me.VA_RIGHTRefraction.DataPropertyName = "VA_RIGHT"
+        Me.VA_RIGHTRefraction.HeaderText = "VA Right"
+        Me.VA_RIGHTRefraction.Name = "VA_RIGHTRefraction"
+        Me.VA_RIGHTRefraction.ReadOnly = True
         '
-        'DataGridViewCheckBoxColumn1
+        'VA_LEFTRefraction
         '
-        Me.DataGridViewCheckBoxColumn1.HeaderText = "Refraction"
-        Me.DataGridViewCheckBoxColumn1.Name = "DataGridViewCheckBoxColumn1"
-        Me.DataGridViewCheckBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridViewCheckBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
+        Me.VA_LEFTRefraction.DataPropertyName = "VA_LEFT"
+        Me.VA_LEFTRefraction.HeaderText = "VA Left"
+        Me.VA_LEFTRefraction.Name = "VA_LEFTRefraction"
+        Me.VA_LEFTRefraction.ReadOnly = True
         '
-        'DataGridViewCheckBoxColumn2
+        'DIAGNOSISRefraction
         '
-        Me.DataGridViewCheckBoxColumn2.HeaderText = "Optical Shop"
-        Me.DataGridViewCheckBoxColumn2.Name = "DataGridViewCheckBoxColumn2"
-        Me.DataGridViewCheckBoxColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridViewCheckBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
+        Me.DIAGNOSISRefraction.DataPropertyName = "DIAGNOSIS"
+        Me.DIAGNOSISRefraction.HeaderText = "Diagnosis"
+        Me.DIAGNOSISRefraction.Name = "DIAGNOSISRefraction"
+        Me.DIAGNOSISRefraction.ReadOnly = True
         '
-        'DataGridViewCheckBoxColumn3
+        'RE_PLUS
         '
-        Me.DataGridViewCheckBoxColumn3.HeaderText = "Referral Pickup"
-        Me.DataGridViewCheckBoxColumn3.Name = "DataGridViewCheckBoxColumn3"
-        Me.DataGridViewCheckBoxColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridViewCheckBoxColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
+        Me.RE_PLUS.DataPropertyName = "RE_PLUS"
+        Me.RE_PLUS.HeaderText = "RE +"
+        Me.RE_PLUS.Name = "RE_PLUS"
+        Me.RE_PLUS.ReadOnly = True
         '
-        'DataGridViewCheckBoxColumn4
+        'RE_VA
         '
-        Me.DataGridViewCheckBoxColumn4.HeaderText = "Referral By Selft"
-        Me.DataGridViewCheckBoxColumn4.Name = "DataGridViewCheckBoxColumn4"
-        Me.DataGridViewCheckBoxColumn4.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridViewCheckBoxColumn4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
+        Me.RE_VA.DataPropertyName = "RE_VA"
+        Me.RE_VA.HeaderText = "VA"
+        Me.RE_VA.Name = "RE_VA"
+        Me.RE_VA.ReadOnly = True
         '
-        'DataGridViewTextBoxColumn10
+        'LE_PLUS
         '
-        Me.DataGridViewTextBoxColumn10.HeaderText = "Note"
-        Me.DataGridViewTextBoxColumn10.Name = "DataGridViewTextBoxColumn10"
+        Me.LE_PLUS.DataPropertyName = "LE_PLUS"
+        Me.LE_PLUS.HeaderText = "LE +"
+        Me.LE_PLUS.Name = "LE_PLUS"
+        Me.LE_PLUS.ReadOnly = True
         '
-        'ReferralBySelf
+        'LE_VA
         '
-        Me.ReferralBySelf.AutoScroll = True
-        Me.ReferralBySelf.Controls.Add(Me.DataGridView3)
-        Me.ReferralBySelf.Location = New System.Drawing.Point(4, 33)
-        Me.ReferralBySelf.Name = "ReferralBySelf"
-        Me.ReferralBySelf.Size = New System.Drawing.Size(1289, 301)
-        Me.ReferralBySelf.TabIndex = 2
-        Me.ReferralBySelf.Text = "    Referral By Selft     "
-        Me.ReferralBySelf.UseVisualStyleBackColor = True
+        Me.LE_VA.DataPropertyName = "LE_VA"
+        Me.LE_VA.HeaderText = "VA"
+        Me.LE_VA.Name = "LE_VA"
+        Me.LE_VA.ReadOnly = True
         '
-        'DataGridView3
+        'REFRACT_ADD
         '
-        Me.DataGridView3.AllowUserToAddRows = False
-        Me.DataGridView3.AllowUserToDeleteRows = False
-        Me.DataGridView3.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.DataGridView3.BackgroundColor = System.Drawing.Color.White
-        Me.DataGridView3.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.DataGridView3.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
-        Me.DataGridView3.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(67, Byte), Integer), CType(CType(82, Byte), Integer))
-        DataGridViewCellStyle13.Font = New System.Drawing.Font("Century Gothic", 12.0!)
-        DataGridViewCellStyle13.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridView3.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle13
-        Me.DataGridView3.ColumnHeadersHeight = 35
-        Me.DataGridView3.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn21, Me.DataGridViewTextBoxColumn22, Me.DataGridViewTextBoxColumn23, Me.DataGridViewTextBoxColumn24, Me.DataGridViewTextBoxColumn25, Me.DataGridViewTextBoxColumn26, Me.DataGridViewTextBoxColumn27, Me.DataGridViewTextBoxColumn28, Me.DataGridViewTextBoxColumn29, Me.DataGridViewCheckBoxColumn9, Me.DataGridViewCheckBoxColumn10, Me.DataGridViewCheckBoxColumn11, Me.DataGridViewCheckBoxColumn12, Me.DataGridViewTextBoxColumn30})
-        DataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle14.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle14.Font = New System.Drawing.Font("Century Gothic", 12.0!)
-        DataGridViewCellStyle14.ForeColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
-        DataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DataGridView3.DefaultCellStyle = DataGridViewCellStyle14
-        Me.DataGridView3.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.DataGridView3.EnableHeadersVisualStyles = False
-        Me.DataGridView3.GridColor = System.Drawing.Color.SteelBlue
-        Me.DataGridView3.Location = New System.Drawing.Point(0, 0)
-        Me.DataGridView3.Margin = New System.Windows.Forms.Padding(5)
-        Me.DataGridView3.Name = "DataGridView3"
-        Me.DataGridView3.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle15.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(67, Byte), Integer), CType(CType(82, Byte), Integer))
-        DataGridViewCellStyle15.Font = New System.Drawing.Font("Century Gothic", 12.0!)
-        DataGridViewCellStyle15.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridView3.RowHeadersDefaultCellStyle = DataGridViewCellStyle15
-        Me.DataGridView3.RowTemplate.Height = 35
-        Me.DataGridView3.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridView3.Size = New System.Drawing.Size(1289, 301)
-        Me.DataGridView3.TabIndex = 26
+        Me.REFRACT_ADD.DataPropertyName = "REFRACT_ADD"
+        Me.REFRACT_ADD.HeaderText = "ADD"
+        Me.REFRACT_ADD.Name = "REFRACT_ADD"
+        Me.REFRACT_ADD.ReadOnly = True
         '
-        'DataGridViewTextBoxColumn21
+        'SIGNATURE
         '
-        Me.DataGridViewTextBoxColumn21.HeaderText = "SCREEN_BOOKID"
-        Me.DataGridViewTextBoxColumn21.Name = "DataGridViewTextBoxColumn21"
-        Me.DataGridViewTextBoxColumn21.Visible = False
+        Me.SIGNATURE.DataPropertyName = "SIGNATURE"
+        Me.SIGNATURE.HeaderText = "Signature"
+        Me.SIGNATURE.Name = "SIGNATURE"
+        Me.SIGNATURE.ReadOnly = True
         '
-        'DataGridViewTextBoxColumn22
+        'REFRACT_NOTE
         '
-        Me.DataGridViewTextBoxColumn22.HeaderText = "PatientNo"
-        Me.DataGridViewTextBoxColumn22.Name = "DataGridViewTextBoxColumn22"
-        '
-        'DataGridViewTextBoxColumn23
-        '
-        Me.DataGridViewTextBoxColumn23.HeaderText = "Name English"
-        Me.DataGridViewTextBoxColumn23.Name = "DataGridViewTextBoxColumn23"
-        '
-        'DataGridViewTextBoxColumn24
-        '
-        Me.DataGridViewTextBoxColumn24.HeaderText = "Name Khmer"
-        Me.DataGridViewTextBoxColumn24.Name = "DataGridViewTextBoxColumn24"
-        Me.DataGridViewTextBoxColumn24.Visible = False
-        '
-        'DataGridViewTextBoxColumn25
-        '
-        Me.DataGridViewTextBoxColumn25.HeaderText = "Age"
-        Me.DataGridViewTextBoxColumn25.Name = "DataGridViewTextBoxColumn25"
-        '
-        'DataGridViewTextBoxColumn26
-        '
-        Me.DataGridViewTextBoxColumn26.HeaderText = "Sex"
-        Me.DataGridViewTextBoxColumn26.Name = "DataGridViewTextBoxColumn26"
-        '
-        'DataGridViewTextBoxColumn27
-        '
-        Me.DataGridViewTextBoxColumn27.HeaderText = "Screening Place"
-        Me.DataGridViewTextBoxColumn27.Name = "DataGridViewTextBoxColumn27"
-        '
-        'DataGridViewTextBoxColumn28
-        '
-        Me.DataGridViewTextBoxColumn28.HeaderText = "Screening Date"
-        Me.DataGridViewTextBoxColumn28.Name = "DataGridViewTextBoxColumn28"
-        '
-        'DataGridViewTextBoxColumn29
-        '
-        Me.DataGridViewTextBoxColumn29.HeaderText = "Address"
-        Me.DataGridViewTextBoxColumn29.Name = "DataGridViewTextBoxColumn29"
-        '
-        'DataGridViewCheckBoxColumn9
-        '
-        Me.DataGridViewCheckBoxColumn9.HeaderText = "Refraction"
-        Me.DataGridViewCheckBoxColumn9.Name = "DataGridViewCheckBoxColumn9"
-        Me.DataGridViewCheckBoxColumn9.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridViewCheckBoxColumn9.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
-        '
-        'DataGridViewCheckBoxColumn10
-        '
-        Me.DataGridViewCheckBoxColumn10.HeaderText = "Optical Shop"
-        Me.DataGridViewCheckBoxColumn10.Name = "DataGridViewCheckBoxColumn10"
-        Me.DataGridViewCheckBoxColumn10.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridViewCheckBoxColumn10.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
-        '
-        'DataGridViewCheckBoxColumn11
-        '
-        Me.DataGridViewCheckBoxColumn11.HeaderText = "Referral Pickup"
-        Me.DataGridViewCheckBoxColumn11.Name = "DataGridViewCheckBoxColumn11"
-        Me.DataGridViewCheckBoxColumn11.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridViewCheckBoxColumn11.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
-        '
-        'DataGridViewCheckBoxColumn12
-        '
-        Me.DataGridViewCheckBoxColumn12.HeaderText = "Referral By Selft"
-        Me.DataGridViewCheckBoxColumn12.Name = "DataGridViewCheckBoxColumn12"
-        Me.DataGridViewCheckBoxColumn12.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridViewCheckBoxColumn12.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
-        '
-        'DataGridViewTextBoxColumn30
-        '
-        Me.DataGridViewTextBoxColumn30.HeaderText = "Note"
-        Me.DataGridViewTextBoxColumn30.Name = "DataGridViewTextBoxColumn30"
+        Me.REFRACT_NOTE.DataPropertyName = "REFRACT_NOTE"
+        Me.REFRACT_NOTE.HeaderText = "Note"
+        Me.REFRACT_NOTE.Name = "REFRACT_NOTE"
+        Me.REFRACT_NOTE.ReadOnly = True
         '
         'OpticalShop
         '
         Me.OpticalShop.AutoScroll = True
-        Me.OpticalShop.Controls.Add(Me.DataGridView4)
+        Me.OpticalShop.Controls.Add(Me.DGOpticalShop)
         Me.OpticalShop.Location = New System.Drawing.Point(4, 33)
         Me.OpticalShop.Name = "OpticalShop"
         Me.OpticalShop.Size = New System.Drawing.Size(1289, 301)
@@ -658,132 +724,131 @@ Partial Class DashboardScreeningRegisBook
         Me.OpticalShop.Text = "    Optical Shop    "
         Me.OpticalShop.UseVisualStyleBackColor = True
         '
-        'DataGridView4
+        'DGOpticalShop
         '
-        Me.DataGridView4.AllowUserToAddRows = False
-        Me.DataGridView4.AllowUserToDeleteRows = False
-        Me.DataGridView4.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.DataGridView4.BackgroundColor = System.Drawing.Color.White
-        Me.DataGridView4.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.DataGridView4.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
-        Me.DataGridView4.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(67, Byte), Integer), CType(CType(82, Byte), Integer))
-        DataGridViewCellStyle16.Font = New System.Drawing.Font("Century Gothic", 12.0!)
-        DataGridViewCellStyle16.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridView4.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle16
-        Me.DataGridView4.ColumnHeadersHeight = 35
-        Me.DataGridView4.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn31, Me.DataGridViewTextBoxColumn32, Me.DataGridViewTextBoxColumn33, Me.DataGridViewTextBoxColumn34, Me.DataGridViewTextBoxColumn35, Me.DataGridViewTextBoxColumn36, Me.DataGridViewTextBoxColumn37, Me.DataGridViewTextBoxColumn38, Me.DataGridViewTextBoxColumn39, Me.DataGridViewCheckBoxColumn13, Me.DataGridViewCheckBoxColumn14, Me.DataGridViewCheckBoxColumn15, Me.DataGridViewCheckBoxColumn16, Me.DataGridViewTextBoxColumn40})
-        DataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle17.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle17.Font = New System.Drawing.Font("Century Gothic", 12.0!)
-        DataGridViewCellStyle17.ForeColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
-        DataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DataGridView4.DefaultCellStyle = DataGridViewCellStyle17
-        Me.DataGridView4.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.DataGridView4.EnableHeadersVisualStyles = False
-        Me.DataGridView4.GridColor = System.Drawing.Color.SteelBlue
-        Me.DataGridView4.Location = New System.Drawing.Point(0, 0)
-        Me.DataGridView4.Margin = New System.Windows.Forms.Padding(5)
-        Me.DataGridView4.Name = "DataGridView4"
-        Me.DataGridView4.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle18.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(67, Byte), Integer), CType(CType(82, Byte), Integer))
-        DataGridViewCellStyle18.Font = New System.Drawing.Font("Century Gothic", 12.0!)
-        DataGridViewCellStyle18.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridView4.RowHeadersDefaultCellStyle = DataGridViewCellStyle18
-        Me.DataGridView4.RowTemplate.Height = 35
-        Me.DataGridView4.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridView4.Size = New System.Drawing.Size(1289, 301)
-        Me.DataGridView4.TabIndex = 26
+        Me.DGOpticalShop.AllowUserToAddRows = False
+        Me.DGOpticalShop.AllowUserToDeleteRows = False
+        Me.DGOpticalShop.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.DGOpticalShop.BackgroundColor = System.Drawing.Color.White
+        Me.DGOpticalShop.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
+        DataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(67, Byte), Integer), CType(CType(82, Byte), Integer))
+        DataGridViewCellStyle13.Font = New System.Drawing.Font("Century Gothic", 12.0!)
+        DataGridViewCellStyle13.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DGOpticalShop.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle13
+        Me.DGOpticalShop.ColumnHeadersHeight = 35
+        Me.DGOpticalShop.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DATE_SCREENING, Me.PATIENT_NOOpticalshop, Me.NameEngOpticalshop, Me.NameKhmerOpticalShop, Me.AgeOpticalshop, Me.SexOpticalShop, Me.AddressOpticalshop, Me.OPTICAL_ID, Me.SCREENBOOK_ID, Me.STATUS_PAY, Me.OPTICALSHOP_NOTE})
+        DataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle14.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle14.Font = New System.Drawing.Font("Century Gothic", 12.0!)
+        DataGridViewCellStyle14.ForeColor = System.Drawing.Color.Cornsilk
+        DataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DGOpticalShop.DefaultCellStyle = DataGridViewCellStyle14
+        Me.DGOpticalShop.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.DGOpticalShop.EnableHeadersVisualStyles = False
+        Me.DGOpticalShop.GridColor = System.Drawing.Color.SteelBlue
+        Me.DGOpticalShop.Location = New System.Drawing.Point(0, 0)
+        Me.DGOpticalShop.Margin = New System.Windows.Forms.Padding(5)
+        Me.DGOpticalShop.Name = "DGOpticalShop"
+        Me.DGOpticalShop.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
+        DataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle15.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(67, Byte), Integer), CType(CType(82, Byte), Integer))
+        DataGridViewCellStyle15.Font = New System.Drawing.Font("Century Gothic", 12.0!)
+        DataGridViewCellStyle15.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DGOpticalShop.RowHeadersDefaultCellStyle = DataGridViewCellStyle15
+        Me.DGOpticalShop.RowTemplate.Height = 35
+        Me.DGOpticalShop.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.DGOpticalShop.Size = New System.Drawing.Size(1289, 301)
+        Me.DGOpticalShop.TabIndex = 28
         '
-        'DataGridViewTextBoxColumn31
+        'DATE_SCREENING
         '
-        Me.DataGridViewTextBoxColumn31.HeaderText = "SCREEN_BOOKID"
-        Me.DataGridViewTextBoxColumn31.Name = "DataGridViewTextBoxColumn31"
-        Me.DataGridViewTextBoxColumn31.Visible = False
+        Me.DATE_SCREENING.DataPropertyName = "DATE_SCREENING"
+        Me.DATE_SCREENING.HeaderText = "Date Regist"
+        Me.DATE_SCREENING.Name = "DATE_SCREENING"
+        Me.DATE_SCREENING.ReadOnly = True
         '
-        'DataGridViewTextBoxColumn32
+        'PATIENT_NOOpticalshop
         '
-        Me.DataGridViewTextBoxColumn32.HeaderText = "PatientNo"
-        Me.DataGridViewTextBoxColumn32.Name = "DataGridViewTextBoxColumn32"
+        Me.PATIENT_NOOpticalshop.DataPropertyName = "PATIENT_NO"
+        Me.PATIENT_NOOpticalshop.HeaderText = "Patient NO"
+        Me.PATIENT_NOOpticalshop.Name = "PATIENT_NOOpticalshop"
+        Me.PATIENT_NOOpticalshop.ReadOnly = True
         '
-        'DataGridViewTextBoxColumn33
+        'NameEngOpticalshop
         '
-        Me.DataGridViewTextBoxColumn33.HeaderText = "Name English"
-        Me.DataGridViewTextBoxColumn33.Name = "DataGridViewTextBoxColumn33"
+        Me.NameEngOpticalshop.DataPropertyName = "NameEng"
+        Me.NameEngOpticalshop.HeaderText = "Name"
+        Me.NameEngOpticalshop.Name = "NameEngOpticalshop"
+        Me.NameEngOpticalshop.ReadOnly = True
         '
-        'DataGridViewTextBoxColumn34
+        'NameKhmerOpticalShop
         '
-        Me.DataGridViewTextBoxColumn34.HeaderText = "Name Khmer"
-        Me.DataGridViewTextBoxColumn34.Name = "DataGridViewTextBoxColumn34"
-        Me.DataGridViewTextBoxColumn34.Visible = False
+        Me.NameKhmerOpticalShop.DataPropertyName = "NameKhmer"
+        Me.NameKhmerOpticalShop.HeaderText = "Khmer Name"
+        Me.NameKhmerOpticalShop.Name = "NameKhmerOpticalShop"
+        Me.NameKhmerOpticalShop.ReadOnly = True
         '
-        'DataGridViewTextBoxColumn35
+        'AgeOpticalshop
         '
-        Me.DataGridViewTextBoxColumn35.HeaderText = "Age"
-        Me.DataGridViewTextBoxColumn35.Name = "DataGridViewTextBoxColumn35"
+        Me.AgeOpticalshop.DataPropertyName = "Age"
+        Me.AgeOpticalshop.HeaderText = "Age"
+        Me.AgeOpticalshop.Name = "AgeOpticalshop"
+        Me.AgeOpticalshop.ReadOnly = True
         '
-        'DataGridViewTextBoxColumn36
+        'SexOpticalShop
         '
-        Me.DataGridViewTextBoxColumn36.HeaderText = "Sex"
-        Me.DataGridViewTextBoxColumn36.Name = "DataGridViewTextBoxColumn36"
+        Me.SexOpticalShop.DataPropertyName = "Sex"
+        Me.SexOpticalShop.HeaderText = "Sex"
+        Me.SexOpticalShop.Name = "SexOpticalShop"
+        Me.SexOpticalShop.ReadOnly = True
         '
-        'DataGridViewTextBoxColumn37
+        'AddressOpticalshop
         '
-        Me.DataGridViewTextBoxColumn37.HeaderText = "Screening Place"
-        Me.DataGridViewTextBoxColumn37.Name = "DataGridViewTextBoxColumn37"
+        Me.AddressOpticalshop.DataPropertyName = "Address"
+        Me.AddressOpticalshop.HeaderText = "Address"
+        Me.AddressOpticalshop.Name = "AddressOpticalshop"
+        Me.AddressOpticalshop.ReadOnly = True
         '
-        'DataGridViewTextBoxColumn38
+        'OPTICAL_ID
         '
-        Me.DataGridViewTextBoxColumn38.HeaderText = "Screening Date"
-        Me.DataGridViewTextBoxColumn38.Name = "DataGridViewTextBoxColumn38"
+        Me.OPTICAL_ID.DataPropertyName = "OPTICAL_ID"
+        Me.OPTICAL_ID.HeaderText = "OPTICAL_ID"
+        Me.OPTICAL_ID.Name = "OPTICAL_ID"
+        Me.OPTICAL_ID.ReadOnly = True
+        Me.OPTICAL_ID.Visible = False
         '
-        'DataGridViewTextBoxColumn39
+        'SCREENBOOK_ID
         '
-        Me.DataGridViewTextBoxColumn39.HeaderText = "Address"
-        Me.DataGridViewTextBoxColumn39.Name = "DataGridViewTextBoxColumn39"
+        Me.SCREENBOOK_ID.DataPropertyName = "SCREENBOOK_ID"
+        Me.SCREENBOOK_ID.HeaderText = "SCREENBOOK_ID"
+        Me.SCREENBOOK_ID.Name = "SCREENBOOK_ID"
+        Me.SCREENBOOK_ID.ReadOnly = True
+        Me.SCREENBOOK_ID.Visible = False
         '
-        'DataGridViewCheckBoxColumn13
+        'STATUS_PAY
         '
-        Me.DataGridViewCheckBoxColumn13.HeaderText = "Refraction"
-        Me.DataGridViewCheckBoxColumn13.Name = "DataGridViewCheckBoxColumn13"
-        Me.DataGridViewCheckBoxColumn13.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridViewCheckBoxColumn13.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
+        Me.STATUS_PAY.DataPropertyName = "STATUS_PAY"
+        Me.STATUS_PAY.HeaderText = "Pay"
+        Me.STATUS_PAY.Name = "STATUS_PAY"
+        Me.STATUS_PAY.ReadOnly = True
+        Me.STATUS_PAY.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.STATUS_PAY.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
         '
-        'DataGridViewCheckBoxColumn14
+        'OPTICALSHOP_NOTE
         '
-        Me.DataGridViewCheckBoxColumn14.HeaderText = "Optical Shop"
-        Me.DataGridViewCheckBoxColumn14.Name = "DataGridViewCheckBoxColumn14"
-        Me.DataGridViewCheckBoxColumn14.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridViewCheckBoxColumn14.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
-        '
-        'DataGridViewCheckBoxColumn15
-        '
-        Me.DataGridViewCheckBoxColumn15.HeaderText = "Referral Pickup"
-        Me.DataGridViewCheckBoxColumn15.Name = "DataGridViewCheckBoxColumn15"
-        Me.DataGridViewCheckBoxColumn15.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridViewCheckBoxColumn15.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
-        '
-        'DataGridViewCheckBoxColumn16
-        '
-        Me.DataGridViewCheckBoxColumn16.HeaderText = "Referral By Selft"
-        Me.DataGridViewCheckBoxColumn16.Name = "DataGridViewCheckBoxColumn16"
-        Me.DataGridViewCheckBoxColumn16.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridViewCheckBoxColumn16.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
-        '
-        'DataGridViewTextBoxColumn40
-        '
-        Me.DataGridViewTextBoxColumn40.HeaderText = "Note"
-        Me.DataGridViewTextBoxColumn40.Name = "DataGridViewTextBoxColumn40"
+        Me.OPTICALSHOP_NOTE.DataPropertyName = "OPTICALSHOP_NOTE"
+        Me.OPTICALSHOP_NOTE.HeaderText = "Note"
+        Me.OPTICALSHOP_NOTE.Name = "OPTICALSHOP_NOTE"
+        Me.OPTICALSHOP_NOTE.ReadOnly = True
         '
         'DateTo
         '
@@ -829,20 +894,6 @@ Partial Class DashboardScreeningRegisBook
         Me.Label12.TabIndex = 23
         Me.Label12.Text = "From:"
         '
-        'BtnFind
-        '
-        Me.BtnFind.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.BtnFind.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
-        Me.BtnFind.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnFind.FlatAppearance.BorderSize = 0
-        Me.BtnFind.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnFind.Image = CType(resources.GetObject("BtnFind.Image"), System.Drawing.Image)
-        Me.BtnFind.Location = New System.Drawing.Point(1255, 81)
-        Me.BtnFind.Name = "BtnFind"
-        Me.BtnFind.Size = New System.Drawing.Size(42, 27)
-        Me.BtnFind.TabIndex = 19
-        Me.BtnFind.UseVisualStyleBackColor = False
-        '
         'TxtPatienNo
         '
         Me.TxtPatienNo.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -851,18 +902,6 @@ Partial Class DashboardScreeningRegisBook
         Me.TxtPatienNo.Name = "TxtPatienNo"
         Me.TxtPatienNo.Size = New System.Drawing.Size(205, 27)
         Me.TxtPatienNo.TabIndex = 18
-        '
-        'PicOpticalShop
-        '
-        Me.PicOpticalShop.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(124, Byte), Integer))
-        Me.PicOpticalShop.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PicOpticalShop.Image = CType(resources.GetObject("PicOpticalShop.Image"), System.Drawing.Image)
-        Me.PicOpticalShop.Location = New System.Drawing.Point(688, 5)
-        Me.PicOpticalShop.Name = "PicOpticalShop"
-        Me.PicOpticalShop.Size = New System.Drawing.Size(40, 38)
-        Me.PicOpticalShop.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PicOpticalShop.TabIndex = 17
-        Me.PicOpticalShop.TabStop = False
         '
         'Panel4
         '
@@ -884,7 +923,7 @@ Partial Class DashboardScreeningRegisBook
         Me.TxtTotalOpticalShop.Name = "TxtTotalOpticalShop"
         Me.TxtTotalOpticalShop.Size = New System.Drawing.Size(96, 21)
         Me.TxtTotalOpticalShop.TabIndex = 2
-        Me.TxtTotalOpticalShop.Text = "5000"
+        Me.TxtTotalOpticalShop.Text = "0"
         Me.TxtTotalOpticalShop.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Label11
@@ -897,42 +936,6 @@ Partial Class DashboardScreeningRegisBook
         Me.Label11.Size = New System.Drawing.Size(116, 21)
         Me.Label11.TabIndex = 0
         Me.Label11.Text = "Optical Shop:"
-        '
-        'PicReferral
-        '
-        Me.PicReferral.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(124, Byte), Integer))
-        Me.PicReferral.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PicReferral.Image = CType(resources.GetObject("PicReferral.Image"), System.Drawing.Image)
-        Me.PicReferral.Location = New System.Drawing.Point(443, 5)
-        Me.PicReferral.Name = "PicReferral"
-        Me.PicReferral.Size = New System.Drawing.Size(40, 38)
-        Me.PicReferral.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PicReferral.TabIndex = 15
-        Me.PicReferral.TabStop = False
-        '
-        'PicRefraction
-        '
-        Me.PicRefraction.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(124, Byte), Integer))
-        Me.PicRefraction.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PicRefraction.Image = CType(resources.GetObject("PicRefraction.Image"), System.Drawing.Image)
-        Me.PicRefraction.Location = New System.Drawing.Point(230, 6)
-        Me.PicRefraction.Name = "PicRefraction"
-        Me.PicRefraction.Size = New System.Drawing.Size(40, 38)
-        Me.PicRefraction.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PicRefraction.TabIndex = 14
-        Me.PicRefraction.TabStop = False
-        '
-        'PicRgister
-        '
-        Me.PicRgister.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(124, Byte), Integer))
-        Me.PicRgister.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PicRgister.Image = CType(resources.GetObject("PicRgister.Image"), System.Drawing.Image)
-        Me.PicRgister.Location = New System.Drawing.Point(17, 6)
-        Me.PicRgister.Name = "PicRgister"
-        Me.PicRgister.Size = New System.Drawing.Size(40, 38)
-        Me.PicRgister.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PicRgister.TabIndex = 13
-        Me.PicRgister.TabStop = False
         '
         'Panel3
         '
@@ -957,7 +960,7 @@ Partial Class DashboardScreeningRegisBook
         Me.TxtTotalReferralSelf.Name = "TxtTotalReferralSelf"
         Me.TxtTotalReferralSelf.Size = New System.Drawing.Size(96, 21)
         Me.TxtTotalReferralSelf.TabIndex = 5
-        Me.TxtTotalReferralSelf.Text = "5000"
+        Me.TxtTotalReferralSelf.Text = "0"
         Me.TxtTotalReferralSelf.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Label8
@@ -990,7 +993,7 @@ Partial Class DashboardScreeningRegisBook
         Me.TxtTotalReferralPickup.Name = "TxtTotalReferralPickup"
         Me.TxtTotalReferralPickup.Size = New System.Drawing.Size(96, 21)
         Me.TxtTotalReferralPickup.TabIndex = 2
-        Me.TxtTotalReferralPickup.Text = "5000"
+        Me.TxtTotalReferralPickup.Text = "0"
         Me.TxtTotalReferralPickup.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Label6
@@ -1024,7 +1027,7 @@ Partial Class DashboardScreeningRegisBook
         Me.TxtTotalRefraction.Name = "TxtTotalRefraction"
         Me.TxtTotalRefraction.Size = New System.Drawing.Size(96, 21)
         Me.TxtTotalRefraction.TabIndex = 2
-        Me.TxtTotalRefraction.Text = "5000"
+        Me.TxtTotalRefraction.Text = "0"
         Me.TxtTotalRefraction.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Label4
@@ -1058,7 +1061,7 @@ Partial Class DashboardScreeningRegisBook
         Me.TxtTotalRegister.Name = "TxtTotalRegister"
         Me.TxtTotalRegister.Size = New System.Drawing.Size(96, 21)
         Me.TxtTotalRegister.TabIndex = 2
-        Me.TxtTotalRegister.Text = "5000"
+        Me.TxtTotalRegister.Text = "0"
         Me.TxtTotalRegister.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Label1
@@ -1160,6 +1163,41 @@ Partial Class DashboardScreeningRegisBook
         Me.SCREEN_PLACE.Name = "SCREEN_PLACE"
         Me.SCREEN_PLACE.ReadOnly = True
         '
+        'ON_EYE
+        '
+        Me.ON_EYE.DataPropertyName = "ON_EYE"
+        Me.ON_EYE.HeaderText = "On Eye"
+        Me.ON_EYE.Name = "ON_EYE"
+        Me.ON_EYE.ReadOnly = True
+        '
+        'DIAGNOSISScreening
+        '
+        Me.DIAGNOSISScreening.DataPropertyName = "DIAGNOSIS"
+        Me.DIAGNOSISScreening.HeaderText = "Diagnosis"
+        Me.DIAGNOSISScreening.Name = "DIAGNOSISScreening"
+        Me.DIAGNOSISScreening.ReadOnly = True
+        '
+        'VA_RIGHTScreening
+        '
+        Me.VA_RIGHTScreening.DataPropertyName = "VA_RIGHT"
+        Me.VA_RIGHTScreening.HeaderText = "VA Right"
+        Me.VA_RIGHTScreening.Name = "VA_RIGHTScreening"
+        Me.VA_RIGHTScreening.ReadOnly = True
+        '
+        'VA_LEFTScreening
+        '
+        Me.VA_LEFTScreening.DataPropertyName = "VA_LEFT"
+        Me.VA_LEFTScreening.HeaderText = "VA Left"
+        Me.VA_LEFTScreening.Name = "VA_LEFTScreening"
+        Me.VA_LEFTScreening.ReadOnly = True
+        '
+        'PRESENTING_COMPLAIN
+        '
+        Me.PRESENTING_COMPLAIN.DataPropertyName = "PRESENTING_COMPLAIN"
+        Me.PRESENTING_COMPLAIN.HeaderText = "Presenting Complain"
+        Me.PRESENTING_COMPLAIN.Name = "PRESENTING_COMPLAIN"
+        Me.PRESENTING_COMPLAIN.ReadOnly = True
+        '
         'IS_REFRACTION
         '
         Me.IS_REFRACTION.DataPropertyName = "IS_REFRACTION"
@@ -1200,91 +1238,6 @@ Partial Class DashboardScreeningRegisBook
         Me.SCREEN_NOTE.Name = "SCREEN_NOTE"
         Me.SCREEN_NOTE.ReadOnly = True
         '
-        'REFERRAL_ID
-        '
-        Me.REFERRAL_ID.DataPropertyName = "REFERRAL_ID"
-        Me.REFERRAL_ID.HeaderText = "REFERRAL_ID"
-        Me.REFERRAL_ID.Name = "REFERRAL_ID"
-        Me.REFERRAL_ID.Visible = False
-        '
-        'CREATE_DATE
-        '
-        Me.CREATE_DATE.DataPropertyName = "CREATE_DATE"
-        Me.CREATE_DATE.HeaderText = "Date Regist"
-        Me.CREATE_DATE.Name = "CREATE_DATE"
-        '
-        'SCREENING_BOOKID
-        '
-        Me.SCREENING_BOOKID.DataPropertyName = "SCREENING_BOOKID"
-        Me.SCREENING_BOOKID.HeaderText = "SCREENING_BOOKID"
-        Me.SCREENING_BOOKID.Name = "SCREENING_BOOKID"
-        Me.SCREENING_BOOKID.Visible = False
-        '
-        'PATIENT_NO
-        '
-        Me.PATIENT_NO.DataPropertyName = "PATIENT_NO"
-        Me.PATIENT_NO.HeaderText = "Patient No"
-        Me.PATIENT_NO.Name = "PATIENT_NO"
-        '
-        'VA_RIGHT
-        '
-        Me.VA_RIGHT.DataPropertyName = "VA_RIGHT"
-        Me.VA_RIGHT.HeaderText = "VA Right"
-        Me.VA_RIGHT.Name = "VA_RIGHT"
-        '
-        'VA_LEFT
-        '
-        Me.VA_LEFT.DataPropertyName = "VA_LEFT"
-        Me.VA_LEFT.HeaderText = "VA Left"
-        Me.VA_LEFT.Name = "VA_LEFT"
-        '
-        'DIAGNOSIS
-        '
-        Me.DIAGNOSIS.DataPropertyName = "DIAGNOSIS"
-        Me.DIAGNOSIS.HeaderText = "Diagnosis"
-        Me.DIAGNOSIS.Name = "DIAGNOSIS"
-        '
-        'DATE_MEETING
-        '
-        Me.DATE_MEETING.DataPropertyName = "DATE_MEETING"
-        Me.DATE_MEETING.HeaderText = "Date Appointment"
-        Me.DATE_MEETING.Name = "DATE_MEETING"
-        '
-        'STATUS_PICKUP
-        '
-        Me.STATUS_PICKUP.DataPropertyName = "STATUS_PICKUP"
-        Me.STATUS_PICKUP.HeaderText = "Pickup"
-        Me.STATUS_PICKUP.Name = "STATUS_PICKUP"
-        '
-        'ARRIVED
-        '
-        Me.ARRIVED.DataPropertyName = "ARRIVED"
-        Me.ARRIVED.HeaderText = "Comed"
-        Me.ARRIVED.Name = "ARRIVED"
-        Me.ARRIVED.ReadOnly = True
-        '
-        'REFERRAL_NOTE
-        '
-        Me.REFERRAL_NOTE.DataPropertyName = "REFERRAL_NOTE"
-        Me.REFERRAL_NOTE.HeaderText = "Referral Note"
-        Me.REFERRAL_NOTE.Name = "REFERRAL_NOTE"
-        Me.REFERRAL_NOTE.ReadOnly = True
-        '
-        'CMScreeningBook
-        '
-        Me.CMScreeningBook.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
-        Me.CMScreeningBook.Font = New System.Drawing.Font("Segoe UI", 12.0!)
-        Me.CMScreeningBook.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripSeparator1, Me.BtnUpdateScreening, Me.ToolStripMenuItem1, Me.BtnRefraction, Me.ToolStripMenuItem2, Me.BtnReferral, Me.ToolStripMenuItem3, Me.BtnOpticalShop, Me.ToolStripMenuItem4})
-        Me.CMScreeningBook.Name = "CMScreeningBook"
-        Me.CMScreeningBook.ShowImageMargin = False
-        Me.CMScreeningBook.Size = New System.Drawing.Size(179, 160)
-        '
-        'ToolStripSeparator1
-        '
-        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
-        Me.ToolStripSeparator1.Size = New System.Drawing.Size(175, 6)
-        Me.ToolStripSeparator1.Visible = False
-        '
         'BtnUpdateScreening
         '
         Me.BtnUpdateScreening.ForeColor = System.Drawing.Color.White
@@ -1293,47 +1246,67 @@ Partial Class DashboardScreeningRegisBook
         Me.BtnUpdateScreening.Size = New System.Drawing.Size(178, 26)
         Me.BtnUpdateScreening.Text = "Update Screening"
         '
-        'ToolStripMenuItem1
+        'BtnFind
         '
-        Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(175, 6)
+        Me.BtnFind.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.BtnFind.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
+        Me.BtnFind.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnFind.FlatAppearance.BorderSize = 0
+        Me.BtnFind.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnFind.Image = CType(resources.GetObject("BtnFind.Image"), System.Drawing.Image)
+        Me.BtnFind.Location = New System.Drawing.Point(1255, 81)
+        Me.BtnFind.Name = "BtnFind"
+        Me.BtnFind.Size = New System.Drawing.Size(42, 27)
+        Me.BtnFind.TabIndex = 19
+        Me.BtnFind.UseVisualStyleBackColor = False
         '
-        'BtnRefraction
+        'PicOpticalShop
         '
-        Me.BtnRefraction.ForeColor = System.Drawing.Color.White
-        Me.BtnRefraction.Name = "BtnRefraction"
-        Me.BtnRefraction.Size = New System.Drawing.Size(178, 26)
-        Me.BtnRefraction.Text = "Refraction"
+        Me.PicOpticalShop.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(124, Byte), Integer))
+        Me.PicOpticalShop.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PicOpticalShop.Image = CType(resources.GetObject("PicOpticalShop.Image"), System.Drawing.Image)
+        Me.PicOpticalShop.Location = New System.Drawing.Point(688, 5)
+        Me.PicOpticalShop.Name = "PicOpticalShop"
+        Me.PicOpticalShop.Size = New System.Drawing.Size(40, 38)
+        Me.PicOpticalShop.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PicOpticalShop.TabIndex = 17
+        Me.PicOpticalShop.TabStop = False
         '
-        'ToolStripMenuItem2
+        'PicReferral
         '
-        Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
-        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(175, 6)
+        Me.PicReferral.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(124, Byte), Integer))
+        Me.PicReferral.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PicReferral.Image = CType(resources.GetObject("PicReferral.Image"), System.Drawing.Image)
+        Me.PicReferral.Location = New System.Drawing.Point(443, 5)
+        Me.PicReferral.Name = "PicReferral"
+        Me.PicReferral.Size = New System.Drawing.Size(40, 38)
+        Me.PicReferral.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PicReferral.TabIndex = 15
+        Me.PicReferral.TabStop = False
         '
-        'BtnReferral
+        'PicRefraction
         '
-        Me.BtnReferral.ForeColor = System.Drawing.Color.White
-        Me.BtnReferral.Name = "BtnReferral"
-        Me.BtnReferral.Size = New System.Drawing.Size(178, 26)
-        Me.BtnReferral.Text = "Referral"
+        Me.PicRefraction.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(124, Byte), Integer))
+        Me.PicRefraction.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PicRefraction.Image = CType(resources.GetObject("PicRefraction.Image"), System.Drawing.Image)
+        Me.PicRefraction.Location = New System.Drawing.Point(230, 6)
+        Me.PicRefraction.Name = "PicRefraction"
+        Me.PicRefraction.Size = New System.Drawing.Size(40, 38)
+        Me.PicRefraction.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PicRefraction.TabIndex = 14
+        Me.PicRefraction.TabStop = False
         '
-        'ToolStripMenuItem3
+        'PicRgister
         '
-        Me.ToolStripMenuItem3.Name = "ToolStripMenuItem3"
-        Me.ToolStripMenuItem3.Size = New System.Drawing.Size(175, 6)
-        '
-        'BtnOpticalShop
-        '
-        Me.BtnOpticalShop.ForeColor = System.Drawing.Color.White
-        Me.BtnOpticalShop.Name = "BtnOpticalShop"
-        Me.BtnOpticalShop.Size = New System.Drawing.Size(178, 26)
-        Me.BtnOpticalShop.Text = "Optical Shop"
-        '
-        'ToolStripMenuItem4
-        '
-        Me.ToolStripMenuItem4.Name = "ToolStripMenuItem4"
-        Me.ToolStripMenuItem4.Size = New System.Drawing.Size(175, 6)
-        Me.ToolStripMenuItem4.Visible = False
+        Me.PicRgister.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(124, Byte), Integer))
+        Me.PicRgister.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PicRgister.Image = CType(resources.GetObject("PicRgister.Image"), System.Drawing.Image)
+        Me.PicRgister.Location = New System.Drawing.Point(17, 6)
+        Me.PicRgister.Name = "PicRgister"
+        Me.PicRgister.Size = New System.Drawing.Size(40, 38)
+        Me.PicRgister.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PicRgister.TabIndex = 13
+        Me.PicRgister.TabStop = False
         '
         'DashboardScreeningRegisBook
         '
@@ -1351,28 +1324,26 @@ Partial Class DashboardScreeningRegisBook
         Me.SplitContainer1.Panel2.ResumeLayout(False)
         Me.SplitContainer1.ResumeLayout(False)
         CType(Me.DGScreeningBook, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.CMScreeningBook.ResumeLayout(False)
         Me.TabControl1.ResumeLayout(False)
         Me.ReferralPickup.ResumeLayout(False)
         CType(Me.DGReferral, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Refraction.ResumeLayout(False)
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.ReferralBySelf.ResumeLayout(False)
-        CType(Me.DataGridView3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DGRefraction, System.ComponentModel.ISupportInitialize).EndInit()
         Me.OpticalShop.ResumeLayout(False)
-        CType(Me.DataGridView4, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PicOpticalShop, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DGOpticalShop, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel4.ResumeLayout(False)
         Me.Panel4.PerformLayout()
-        CType(Me.PicReferral, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PicRefraction, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PicRgister, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
         Me.PanelSend.ResumeLayout(False)
         Me.PanelSend.PerformLayout()
-        Me.CMScreeningBook.ResumeLayout(False)
+        CType(Me.PicOpticalShop, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PicReferral, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PicRefraction, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PicRgister, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -1406,82 +1377,10 @@ Partial Class DashboardScreeningRegisBook
     Friend WithEvents SplitContainer1 As System.Windows.Forms.SplitContainer
     Friend WithEvents Refraction As System.Windows.Forms.TabPage
     Friend WithEvents ReferralPickup As System.Windows.Forms.TabPage
-    Friend WithEvents ReferralBySelf As System.Windows.Forms.TabPage
     Friend WithEvents OpticalShop As System.Windows.Forms.TabPage
     Friend WithEvents TabControl1 As System.Windows.Forms.TabControl
-    Private WithEvents DataGridView1 As System.Windows.Forms.DataGridView
-    Friend WithEvents DataGridViewTextBoxColumn1 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn2 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn3 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn4 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn5 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn6 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn7 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn8 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn9 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewCheckBoxColumn1 As System.Windows.Forms.DataGridViewCheckBoxColumn
-    Friend WithEvents DataGridViewCheckBoxColumn2 As System.Windows.Forms.DataGridViewCheckBoxColumn
-    Friend WithEvents DataGridViewCheckBoxColumn3 As System.Windows.Forms.DataGridViewCheckBoxColumn
-    Friend WithEvents DataGridViewCheckBoxColumn4 As System.Windows.Forms.DataGridViewCheckBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn10 As System.Windows.Forms.DataGridViewTextBoxColumn
     Private WithEvents DGReferral As System.Windows.Forms.DataGridView
-    Private WithEvents DataGridView3 As System.Windows.Forms.DataGridView
-    Friend WithEvents DataGridViewTextBoxColumn21 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn22 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn23 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn24 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn25 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn26 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn27 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn28 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn29 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewCheckBoxColumn9 As System.Windows.Forms.DataGridViewCheckBoxColumn
-    Friend WithEvents DataGridViewCheckBoxColumn10 As System.Windows.Forms.DataGridViewCheckBoxColumn
-    Friend WithEvents DataGridViewCheckBoxColumn11 As System.Windows.Forms.DataGridViewCheckBoxColumn
-    Friend WithEvents DataGridViewCheckBoxColumn12 As System.Windows.Forms.DataGridViewCheckBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn30 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Private WithEvents DataGridView4 As System.Windows.Forms.DataGridView
-    Friend WithEvents DataGridViewTextBoxColumn31 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn32 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn33 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn34 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn35 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn36 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn37 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn38 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn39 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewCheckBoxColumn13 As System.Windows.Forms.DataGridViewCheckBoxColumn
-    Friend WithEvents DataGridViewCheckBoxColumn14 As System.Windows.Forms.DataGridViewCheckBoxColumn
-    Friend WithEvents DataGridViewCheckBoxColumn15 As System.Windows.Forms.DataGridViewCheckBoxColumn
-    Friend WithEvents DataGridViewCheckBoxColumn16 As System.Windows.Forms.DataGridViewCheckBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn40 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents SCREEN_BOOKID As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents SYS_SETTING As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents SCREAN_DATE As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents PatientNo As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents NameEng As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents NameKhmer As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Age As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Sex As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Address As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents SCREEN_PLACE As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents IS_REFRACTION As System.Windows.Forms.DataGridViewCheckBoxColumn
-    Friend WithEvents IS_OPTICALSHOP As System.Windows.Forms.DataGridViewCheckBoxColumn
-    Friend WithEvents IS_REFER_PICKUP As System.Windows.Forms.DataGridViewCheckBoxColumn
-    Friend WithEvents IS_REFER_BYSELF As System.Windows.Forms.DataGridViewCheckBoxColumn
-    Friend WithEvents SCREEN_NOTE As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents REFERRAL_ID As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents CREATE_DATE As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents SCREENING_BOOKID As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents PATIENT_NO As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents VA_RIGHT As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents VA_LEFT As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DIAGNOSIS As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DATE_MEETING As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents STATUS_PICKUP As System.Windows.Forms.DataGridViewCheckBoxColumn
-    Friend WithEvents ARRIVED As System.Windows.Forms.DataGridViewCheckBoxColumn
-    Friend WithEvents REFERRAL_NOTE As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents CMScreeningBook As System.Windows.Forms.ContextMenuStrip
     Friend WithEvents ToolStripSeparator1 As System.Windows.Forms.ToolStripSeparator
     Friend WithEvents BtnUpdateScreening As System.Windows.Forms.ToolStripMenuItem
@@ -1492,5 +1391,72 @@ Partial Class DashboardScreeningRegisBook
     Friend WithEvents ToolStripMenuItem3 As System.Windows.Forms.ToolStripSeparator
     Friend WithEvents BtnOpticalShop As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ToolStripMenuItem4 As System.Windows.Forms.ToolStripSeparator
+    Friend WithEvents REFERRAL_ID As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents CREATE_DATE As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents SCREENING_BOOKID As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents PATIENT_NO As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents NameEngReferral As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents NameKhmerReferra As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents AgeReferral As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents SexReferral As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents AddressReferral As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents VA_RIGHT As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents VA_LEFT As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DIAGNOSIS As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DATE_MEETING As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents STATUS_PICKUP As System.Windows.Forms.DataGridViewCheckBoxColumn
+    Friend WithEvents ARRIVED As System.Windows.Forms.DataGridViewCheckBoxColumn
+    Friend WithEvents REFERRAL_NOTE As System.Windows.Forms.DataGridViewTextBoxColumn
+    Private WithEvents DGRefraction As System.Windows.Forms.DataGridView
+    Private WithEvents DGOpticalShop As System.Windows.Forms.DataGridView
+    Friend WithEvents REFRACT_DATE As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents REFRACT_ID As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents SCREEN_BOOK_ID As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents NameEngRefraction As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents NameKhmerRefraction As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents AgeRefraction As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents SexRefraction As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents AddressRefraction As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents VA_RIGHTRefraction As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents VA_LEFTRefraction As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DIAGNOSISRefraction As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents RE_PLUS As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents RE_VA As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents LE_PLUS As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents LE_VA As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents REFRACT_ADD As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents SIGNATURE As System.Windows.Forms.DataGridViewCheckBoxColumn
+    Friend WithEvents REFRACT_NOTE As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DATE_SCREENING As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents PATIENT_NOOpticalshop As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents NameEngOpticalshop As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents NameKhmerOpticalShop As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents AgeOpticalshop As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents SexOpticalShop As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents AddressOpticalshop As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents OPTICAL_ID As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents SCREENBOOK_ID As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents STATUS_PAY As System.Windows.Forms.DataGridViewCheckBoxColumn
+    Friend WithEvents OPTICALSHOP_NOTE As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents SCREEN_BOOKID As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents SYS_SETTING As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents SCREAN_DATE As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents PatientNo As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents NameEng As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents NameKhmer As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Age As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Sex As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Address As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents SCREEN_PLACE As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents ON_EYE As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DIAGNOSISScreening As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents VA_RIGHTScreening As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents VA_LEFTScreening As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents PRESENTING_COMPLAIN As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents IS_REFRACTION As System.Windows.Forms.DataGridViewCheckBoxColumn
+    Friend WithEvents IS_OPTICALSHOP As System.Windows.Forms.DataGridViewCheckBoxColumn
+    Friend WithEvents IS_REFER_PICKUP As System.Windows.Forms.DataGridViewCheckBoxColumn
+    Friend WithEvents IS_REFER_BYSELF As System.Windows.Forms.DataGridViewCheckBoxColumn
+    Friend WithEvents SCREEN_NOTE As System.Windows.Forms.DataGridViewTextBoxColumn
 
 End Class

@@ -1,6 +1,7 @@
 
 Imports CrystalDecisions.CrystalReports.Engine
 Imports CrystalDecisions.Shared
+Imports System.Runtime.InteropServices
 Module ModCommon
     Function GetRowIndexDataGrid(ByVal Grid As DataGridView) As Integer
         Return Grid.SelectedCells(0).RowIndex
@@ -222,4 +223,14 @@ Module ModCommon
     Public PrinterReceipt As String = My.Settings.ReceiptPrinter
     Public PrinterRegistrationForm As String = My.Settings.RegistrationFormPrinter
     Public printDocument As New System.Drawing.Printing.PrintDocument
+
+
+
+    <DllImport("user32.DLL", EntryPoint:="ReleaseCapture")> _
+    Public Sub ReleaseCapture()
+
+    End Sub
+    <DllImport("user32.DLL", EntryPoint:="SendMessage")> _
+    Public Sub SendMessage(ByVal hWnd As System.IntPtr, ByVal wMsg As Integer, ByVal wParam As Integer, ByVal lParam As Integer)
+    End Sub
 End Module

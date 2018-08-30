@@ -674,6 +674,17 @@
       <DependentUpon>ReportAllRefraction.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Takeo_Eye_Hopspital\Screening\ScreeningBook\DataSetScreeningBook.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetScreeningBook.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Takeo_Eye_Hopspital\Screening\ScreeningBook\UpdateScreeningBook.Designer.vb">
+      <DependentUpon>UpdateScreeningBook.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Takeo_Eye_Hopspital\Screening\ScreeningBook\UpdateScreeningBook.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Takeo_Eye_Hopspital\Screening\ScreeningSetting\DashboardSetting.Designer.vb">
       <DependentUpon>DashboardSetting.vb</DependentUpon>
     </Compile>
@@ -3253,6 +3264,9 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>ReportAllRefraction.vb</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Takeo_Eye_Hopspital\Screening\ScreeningBook\UpdateScreeningBook.resx">
+      <DependentUpon>UpdateScreeningBook.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Takeo_Eye_Hopspital\Screening\ScreeningSetting\DashboardSetting.resx">
       <DependentUpon>DashboardSetting.vb</DependentUpon>
     </EmbeddedResource>
@@ -5064,6 +5078,17 @@
     </None>
     <None Include="Takeo_Eye_Hopspital\Business\Account\MReportReceiptDetail\DataSetReportDetail.xss">
       <DependentUpon>DataSetReportDetail.xsd</DependentUpon>
+    </None>
+    <None Include="Takeo_Eye_Hopspital\Screening\ScreeningBook\DataSetScreeningBook.xsc">
+      <DependentUpon>DataSetScreeningBook.xsd</DependentUpon>
+    </None>
+    <None Include="Takeo_Eye_Hopspital\Screening\ScreeningBook\DataSetScreeningBook.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetScreeningBook.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Takeo_Eye_Hopspital\Screening\ScreeningBook\DataSetScreeningBook.xss">
+      <DependentUpon>DataSetScreeningBook.xsd</DependentUpon>
     </None>
     <None Include="Takeo_Eye_Hopspital\Screening\ScreeningSetting\DataSetSceenSetting.xsc">
       <DependentUpon>DataSetSceenSetting.xsd</DependentUpon>
