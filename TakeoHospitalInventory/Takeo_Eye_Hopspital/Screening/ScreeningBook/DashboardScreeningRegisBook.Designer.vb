@@ -26,6 +26,10 @@ Partial Class DashboardScreeningRegisBook
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
         Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
         Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(DashboardScreeningRegisBook))
         Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
         Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
         Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
@@ -35,16 +39,33 @@ Partial Class DashboardScreeningRegisBook
         Dim DataGridViewCellStyle13 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
         Dim DataGridViewCellStyle14 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
         Dim DataGridViewCellStyle15 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(DashboardScreeningRegisBook))
         Me.Panel1 = New System.Windows.Forms.Panel
         Me.Label2 = New System.Windows.Forms.Label
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer
         Me.DGScreeningBook = New System.Windows.Forms.DataGridView
+        Me.SCREEN_BOOKID = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.SYS_SETTING = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.SCREAN_DATE = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.PatientNo = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.NameEng = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.NameKhmer = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.Age = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.Sex = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.Address = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.SCREEN_PLACE = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.ON_EYE = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.DIAGNOSISScreening = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.VA_RIGHTScreening = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.VA_LEFTScreening = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.PRESENTING_COMPLAIN = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.IS_REFRACTION = New System.Windows.Forms.DataGridViewCheckBoxColumn
+        Me.IS_OPTICALSHOP = New System.Windows.Forms.DataGridViewCheckBoxColumn
+        Me.IS_REFER_PICKUP = New System.Windows.Forms.DataGridViewCheckBoxColumn
+        Me.IS_REFER_BYSELF = New System.Windows.Forms.DataGridViewCheckBoxColumn
+        Me.SCREEN_NOTE = New System.Windows.Forms.DataGridViewTextBoxColumn
         Me.CMScreeningBook = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator
+        Me.BtnUpdateScreening = New System.Windows.Forms.ToolStripMenuItem
         Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripSeparator
         Me.BtnRefraction = New System.Windows.Forms.ToolStripMenuItem
         Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripSeparator
@@ -108,10 +129,15 @@ Partial Class DashboardScreeningRegisBook
         Me.DateFrom = New System.Windows.Forms.DateTimePicker
         Me.Label13 = New System.Windows.Forms.Label
         Me.Label12 = New System.Windows.Forms.Label
+        Me.BtnFind = New System.Windows.Forms.Button
         Me.TxtPatienNo = New System.Windows.Forms.TextBox
+        Me.PicOpticalShop = New System.Windows.Forms.PictureBox
         Me.Panel4 = New System.Windows.Forms.Panel
         Me.TxtTotalOpticalShop = New System.Windows.Forms.Label
         Me.Label11 = New System.Windows.Forms.Label
+        Me.PicReferral = New System.Windows.Forms.PictureBox
+        Me.PicRefraction = New System.Windows.Forms.PictureBox
+        Me.PicRgister = New System.Windows.Forms.PictureBox
         Me.Panel3 = New System.Windows.Forms.Panel
         Me.TxtTotalReferralSelf = New System.Windows.Forms.Label
         Me.Label8 = New System.Windows.Forms.Label
@@ -124,32 +150,7 @@ Partial Class DashboardScreeningRegisBook
         Me.PanelSend = New System.Windows.Forms.Panel
         Me.TxtTotalRegister = New System.Windows.Forms.Label
         Me.Label1 = New System.Windows.Forms.Label
-        Me.SCREEN_BOOKID = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.SYS_SETTING = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.SCREAN_DATE = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.PatientNo = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.NameEng = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.NameKhmer = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.Age = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.Sex = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.Address = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.SCREEN_PLACE = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.ON_EYE = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.DIAGNOSISScreening = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.VA_RIGHTScreening = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.VA_LEFTScreening = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.PRESENTING_COMPLAIN = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.IS_REFRACTION = New System.Windows.Forms.DataGridViewCheckBoxColumn
-        Me.IS_OPTICALSHOP = New System.Windows.Forms.DataGridViewCheckBoxColumn
-        Me.IS_REFER_PICKUP = New System.Windows.Forms.DataGridViewCheckBoxColumn
-        Me.IS_REFER_BYSELF = New System.Windows.Forms.DataGridViewCheckBoxColumn
-        Me.SCREEN_NOTE = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.BtnUpdateScreening = New System.Windows.Forms.ToolStripMenuItem
-        Me.BtnFind = New System.Windows.Forms.Button
-        Me.PicOpticalShop = New System.Windows.Forms.PictureBox
-        Me.PicReferral = New System.Windows.Forms.PictureBox
-        Me.PicRefraction = New System.Windows.Forms.PictureBox
-        Me.PicRgister = New System.Windows.Forms.PictureBox
+        Me.BtnNewScreeningRegist = New System.Windows.Forms.ToolStripMenuItem
         Me.Panel1.SuspendLayout()
         Me.SplitContainer1.Panel1.SuspendLayout()
         Me.SplitContainer1.Panel2.SuspendLayout()
@@ -163,14 +164,14 @@ Partial Class DashboardScreeningRegisBook
         CType(Me.DGRefraction, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.OpticalShop.SuspendLayout()
         CType(Me.DGOpticalShop, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel4.SuspendLayout()
-        Me.Panel3.SuspendLayout()
-        Me.Panel2.SuspendLayout()
-        Me.PanelSend.SuspendLayout()
         CType(Me.PicOpticalShop, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel4.SuspendLayout()
         CType(Me.PicReferral, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PicRefraction, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PicRgister, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel3.SuspendLayout()
+        Me.Panel2.SuspendLayout()
+        Me.PanelSend.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
@@ -281,61 +282,231 @@ Partial Class DashboardScreeningRegisBook
         Me.DGScreeningBook.Size = New System.Drawing.Size(1297, 391)
         Me.DGScreeningBook.TabIndex = 25
         '
+        'SCREEN_BOOKID
+        '
+        Me.SCREEN_BOOKID.DataPropertyName = "SCREEN_BOOKID"
+        Me.SCREEN_BOOKID.HeaderText = "SCREEN_BOOKID"
+        Me.SCREEN_BOOKID.Name = "SCREEN_BOOKID"
+        Me.SCREEN_BOOKID.ReadOnly = True
+        Me.SCREEN_BOOKID.Visible = False
+        '
+        'SYS_SETTING
+        '
+        Me.SYS_SETTING.DataPropertyName = "SYS_SETTING"
+        Me.SYS_SETTING.HeaderText = "SYS_SETTING"
+        Me.SYS_SETTING.Name = "SYS_SETTING"
+        Me.SYS_SETTING.ReadOnly = True
+        Me.SYS_SETTING.Visible = False
+        '
+        'SCREAN_DATE
+        '
+        Me.SCREAN_DATE.DataPropertyName = "SCREAN_DATE"
+        DataGridViewCellStyle2.Format = "dd/MM/yyyy"
+        Me.SCREAN_DATE.DefaultCellStyle = DataGridViewCellStyle2
+        Me.SCREAN_DATE.FillWeight = 101.8276!
+        Me.SCREAN_DATE.HeaderText = "Screening Date"
+        Me.SCREAN_DATE.Name = "SCREAN_DATE"
+        Me.SCREAN_DATE.ReadOnly = True
+        '
+        'PatientNo
+        '
+        Me.PatientNo.DataPropertyName = "PatientNo"
+        Me.PatientNo.FillWeight = 101.8276!
+        Me.PatientNo.HeaderText = "Patient No"
+        Me.PatientNo.Name = "PatientNo"
+        Me.PatientNo.ReadOnly = True
+        '
+        'NameEng
+        '
+        Me.NameEng.DataPropertyName = "NameEng"
+        Me.NameEng.FillWeight = 101.8276!
+        Me.NameEng.HeaderText = "NameEng"
+        Me.NameEng.Name = "NameEng"
+        Me.NameEng.ReadOnly = True
+        '
+        'NameKhmer
+        '
+        Me.NameKhmer.DataPropertyName = "NameKhmer"
+        Me.NameKhmer.FillWeight = 101.8276!
+        Me.NameKhmer.HeaderText = "NameKhmer"
+        Me.NameKhmer.Name = "NameKhmer"
+        Me.NameKhmer.ReadOnly = True
+        '
+        'Age
+        '
+        Me.Age.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Age.DataPropertyName = "Age"
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.Age.DefaultCellStyle = DataGridViewCellStyle3
+        Me.Age.FillWeight = 100.7086!
+        Me.Age.HeaderText = "Age"
+        Me.Age.Name = "Age"
+        Me.Age.ReadOnly = True
+        '
+        'Sex
+        '
+        Me.Sex.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Sex.DataPropertyName = "Sex"
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.Sex.DefaultCellStyle = DataGridViewCellStyle4
+        Me.Sex.FillWeight = 79.18782!
+        Me.Sex.HeaderText = "Sex"
+        Me.Sex.Name = "Sex"
+        Me.Sex.ReadOnly = True
+        '
+        'Address
+        '
+        Me.Address.DataPropertyName = "Address"
+        Me.Address.FillWeight = 101.8276!
+        Me.Address.HeaderText = "Address"
+        Me.Address.Name = "Address"
+        Me.Address.ReadOnly = True
+        '
+        'SCREEN_PLACE
+        '
+        Me.SCREEN_PLACE.DataPropertyName = "SCREEN_PLACE"
+        Me.SCREEN_PLACE.FillWeight = 101.8276!
+        Me.SCREEN_PLACE.HeaderText = "Screen Place"
+        Me.SCREEN_PLACE.Name = "SCREEN_PLACE"
+        Me.SCREEN_PLACE.ReadOnly = True
+        '
+        'ON_EYE
+        '
+        Me.ON_EYE.DataPropertyName = "ON_EYE"
+        Me.ON_EYE.HeaderText = "On Eye"
+        Me.ON_EYE.Name = "ON_EYE"
+        Me.ON_EYE.ReadOnly = True
+        '
+        'DIAGNOSISScreening
+        '
+        Me.DIAGNOSISScreening.DataPropertyName = "DIAGNOSIS"
+        Me.DIAGNOSISScreening.HeaderText = "Diagnosis"
+        Me.DIAGNOSISScreening.Name = "DIAGNOSISScreening"
+        Me.DIAGNOSISScreening.ReadOnly = True
+        '
+        'VA_RIGHTScreening
+        '
+        Me.VA_RIGHTScreening.DataPropertyName = "VA_RIGHT"
+        Me.VA_RIGHTScreening.HeaderText = "VA Right"
+        Me.VA_RIGHTScreening.Name = "VA_RIGHTScreening"
+        Me.VA_RIGHTScreening.ReadOnly = True
+        '
+        'VA_LEFTScreening
+        '
+        Me.VA_LEFTScreening.DataPropertyName = "VA_LEFT"
+        Me.VA_LEFTScreening.HeaderText = "VA Left"
+        Me.VA_LEFTScreening.Name = "VA_LEFTScreening"
+        Me.VA_LEFTScreening.ReadOnly = True
+        '
+        'PRESENTING_COMPLAIN
+        '
+        Me.PRESENTING_COMPLAIN.DataPropertyName = "PRESENTING_COMPLAIN"
+        Me.PRESENTING_COMPLAIN.HeaderText = "Presenting Complain"
+        Me.PRESENTING_COMPLAIN.Name = "PRESENTING_COMPLAIN"
+        Me.PRESENTING_COMPLAIN.ReadOnly = True
+        '
+        'IS_REFRACTION
+        '
+        Me.IS_REFRACTION.DataPropertyName = "IS_REFRACTION"
+        Me.IS_REFRACTION.FillWeight = 101.8276!
+        Me.IS_REFRACTION.HeaderText = "Refraction"
+        Me.IS_REFRACTION.Name = "IS_REFRACTION"
+        Me.IS_REFRACTION.ReadOnly = True
+        '
+        'IS_OPTICALSHOP
+        '
+        Me.IS_OPTICALSHOP.DataPropertyName = "IS_OPTICALSHOP"
+        Me.IS_OPTICALSHOP.FillWeight = 101.8276!
+        Me.IS_OPTICALSHOP.HeaderText = "Optical shop"
+        Me.IS_OPTICALSHOP.Name = "IS_OPTICALSHOP"
+        Me.IS_OPTICALSHOP.ReadOnly = True
+        '
+        'IS_REFER_PICKUP
+        '
+        Me.IS_REFER_PICKUP.DataPropertyName = "IS_REFER_PICKUP"
+        Me.IS_REFER_PICKUP.FillWeight = 101.8276!
+        Me.IS_REFER_PICKUP.HeaderText = "Referral By Pickup"
+        Me.IS_REFER_PICKUP.Name = "IS_REFER_PICKUP"
+        Me.IS_REFER_PICKUP.ReadOnly = True
+        '
+        'IS_REFER_BYSELF
+        '
+        Me.IS_REFER_BYSELF.DataPropertyName = "IS_REFER_BYSELF"
+        Me.IS_REFER_BYSELF.FillWeight = 101.8276!
+        Me.IS_REFER_BYSELF.HeaderText = "Referral By Selft"
+        Me.IS_REFER_BYSELF.Name = "IS_REFER_BYSELF"
+        Me.IS_REFER_BYSELF.ReadOnly = True
+        '
+        'SCREEN_NOTE
+        '
+        Me.SCREEN_NOTE.DataPropertyName = "SCREEN_NOTE"
+        Me.SCREEN_NOTE.FillWeight = 101.8276!
+        Me.SCREEN_NOTE.HeaderText = "Note"
+        Me.SCREEN_NOTE.Name = "SCREEN_NOTE"
+        Me.SCREEN_NOTE.ReadOnly = True
+        '
         'CMScreeningBook
         '
         Me.CMScreeningBook.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
         Me.CMScreeningBook.Font = New System.Drawing.Font("Segoe UI", 12.0!)
-        Me.CMScreeningBook.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripSeparator1, Me.BtnUpdateScreening, Me.ToolStripMenuItem1, Me.BtnRefraction, Me.ToolStripMenuItem2, Me.BtnReferral, Me.ToolStripMenuItem3, Me.BtnOpticalShop, Me.ToolStripMenuItem4})
+        Me.CMScreeningBook.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BtnNewScreeningRegist, Me.ToolStripSeparator1, Me.BtnUpdateScreening, Me.ToolStripMenuItem1, Me.BtnRefraction, Me.ToolStripMenuItem2, Me.BtnReferral, Me.ToolStripMenuItem3, Me.BtnOpticalShop, Me.ToolStripMenuItem4})
         Me.CMScreeningBook.Name = "CMScreeningBook"
         Me.CMScreeningBook.ShowImageMargin = False
-        Me.CMScreeningBook.Size = New System.Drawing.Size(179, 160)
+        Me.CMScreeningBook.Size = New System.Drawing.Size(249, 186)
         '
         'ToolStripSeparator1
         '
         Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
-        Me.ToolStripSeparator1.Size = New System.Drawing.Size(175, 6)
-        Me.ToolStripSeparator1.Visible = False
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(245, 6)
+        '
+        'BtnUpdateScreening
+        '
+        Me.BtnUpdateScreening.ForeColor = System.Drawing.Color.White
+        Me.BtnUpdateScreening.Image = CType(resources.GetObject("BtnUpdateScreening.Image"), System.Drawing.Image)
+        Me.BtnUpdateScreening.Name = "BtnUpdateScreening"
+        Me.BtnUpdateScreening.Size = New System.Drawing.Size(248, 26)
+        Me.BtnUpdateScreening.Text = "Update Screening"
         '
         'ToolStripMenuItem1
         '
         Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(175, 6)
+        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(245, 6)
         '
         'BtnRefraction
         '
         Me.BtnRefraction.ForeColor = System.Drawing.Color.White
         Me.BtnRefraction.Name = "BtnRefraction"
-        Me.BtnRefraction.Size = New System.Drawing.Size(178, 26)
+        Me.BtnRefraction.Size = New System.Drawing.Size(248, 26)
         Me.BtnRefraction.Text = "Refraction"
         '
         'ToolStripMenuItem2
         '
         Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
-        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(175, 6)
+        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(245, 6)
         '
         'BtnReferral
         '
         Me.BtnReferral.ForeColor = System.Drawing.Color.White
         Me.BtnReferral.Name = "BtnReferral"
-        Me.BtnReferral.Size = New System.Drawing.Size(178, 26)
+        Me.BtnReferral.Size = New System.Drawing.Size(248, 26)
         Me.BtnReferral.Text = "Referral"
         '
         'ToolStripMenuItem3
         '
         Me.ToolStripMenuItem3.Name = "ToolStripMenuItem3"
-        Me.ToolStripMenuItem3.Size = New System.Drawing.Size(175, 6)
+        Me.ToolStripMenuItem3.Size = New System.Drawing.Size(245, 6)
         '
         'BtnOpticalShop
         '
         Me.BtnOpticalShop.ForeColor = System.Drawing.Color.White
         Me.BtnOpticalShop.Name = "BtnOpticalShop"
-        Me.BtnOpticalShop.Size = New System.Drawing.Size(178, 26)
+        Me.BtnOpticalShop.Size = New System.Drawing.Size(248, 26)
         Me.BtnOpticalShop.Text = "Optical Shop"
         '
         'ToolStripMenuItem4
         '
         Me.ToolStripMenuItem4.Name = "ToolStripMenuItem4"
-        Me.ToolStripMenuItem4.Size = New System.Drawing.Size(175, 6)
+        Me.ToolStripMenuItem4.Size = New System.Drawing.Size(245, 6)
         Me.ToolStripMenuItem4.Visible = False
         '
         'TabControl1
@@ -894,6 +1065,20 @@ Partial Class DashboardScreeningRegisBook
         Me.Label12.TabIndex = 23
         Me.Label12.Text = "From:"
         '
+        'BtnFind
+        '
+        Me.BtnFind.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.BtnFind.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
+        Me.BtnFind.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnFind.FlatAppearance.BorderSize = 0
+        Me.BtnFind.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnFind.Image = CType(resources.GetObject("BtnFind.Image"), System.Drawing.Image)
+        Me.BtnFind.Location = New System.Drawing.Point(1255, 81)
+        Me.BtnFind.Name = "BtnFind"
+        Me.BtnFind.Size = New System.Drawing.Size(42, 27)
+        Me.BtnFind.TabIndex = 19
+        Me.BtnFind.UseVisualStyleBackColor = False
+        '
         'TxtPatienNo
         '
         Me.TxtPatienNo.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -902,6 +1087,18 @@ Partial Class DashboardScreeningRegisBook
         Me.TxtPatienNo.Name = "TxtPatienNo"
         Me.TxtPatienNo.Size = New System.Drawing.Size(205, 27)
         Me.TxtPatienNo.TabIndex = 18
+        '
+        'PicOpticalShop
+        '
+        Me.PicOpticalShop.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(124, Byte), Integer))
+        Me.PicOpticalShop.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PicOpticalShop.Image = CType(resources.GetObject("PicOpticalShop.Image"), System.Drawing.Image)
+        Me.PicOpticalShop.Location = New System.Drawing.Point(688, 5)
+        Me.PicOpticalShop.Name = "PicOpticalShop"
+        Me.PicOpticalShop.Size = New System.Drawing.Size(40, 38)
+        Me.PicOpticalShop.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PicOpticalShop.TabIndex = 17
+        Me.PicOpticalShop.TabStop = False
         '
         'Panel4
         '
@@ -936,6 +1133,42 @@ Partial Class DashboardScreeningRegisBook
         Me.Label11.Size = New System.Drawing.Size(116, 21)
         Me.Label11.TabIndex = 0
         Me.Label11.Text = "Optical Shop:"
+        '
+        'PicReferral
+        '
+        Me.PicReferral.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(124, Byte), Integer))
+        Me.PicReferral.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PicReferral.Image = CType(resources.GetObject("PicReferral.Image"), System.Drawing.Image)
+        Me.PicReferral.Location = New System.Drawing.Point(443, 5)
+        Me.PicReferral.Name = "PicReferral"
+        Me.PicReferral.Size = New System.Drawing.Size(40, 38)
+        Me.PicReferral.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PicReferral.TabIndex = 15
+        Me.PicReferral.TabStop = False
+        '
+        'PicRefraction
+        '
+        Me.PicRefraction.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(124, Byte), Integer))
+        Me.PicRefraction.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PicRefraction.Image = CType(resources.GetObject("PicRefraction.Image"), System.Drawing.Image)
+        Me.PicRefraction.Location = New System.Drawing.Point(230, 6)
+        Me.PicRefraction.Name = "PicRefraction"
+        Me.PicRefraction.Size = New System.Drawing.Size(40, 38)
+        Me.PicRefraction.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PicRefraction.TabIndex = 14
+        Me.PicRefraction.TabStop = False
+        '
+        'PicRgister
+        '
+        Me.PicRgister.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(124, Byte), Integer))
+        Me.PicRgister.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PicRgister.Image = CType(resources.GetObject("PicRgister.Image"), System.Drawing.Image)
+        Me.PicRgister.Location = New System.Drawing.Point(17, 6)
+        Me.PicRgister.Name = "PicRgister"
+        Me.PicRgister.Size = New System.Drawing.Size(40, 38)
+        Me.PicRgister.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PicRgister.TabIndex = 13
+        Me.PicRgister.TabStop = False
         '
         'Panel3
         '
@@ -1075,238 +1308,12 @@ Partial Class DashboardScreeningRegisBook
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Total Registration"
         '
-        'SCREEN_BOOKID
+        'BtnNewScreeningRegist
         '
-        Me.SCREEN_BOOKID.DataPropertyName = "SCREEN_BOOKID"
-        Me.SCREEN_BOOKID.HeaderText = "SCREEN_BOOKID"
-        Me.SCREEN_BOOKID.Name = "SCREEN_BOOKID"
-        Me.SCREEN_BOOKID.ReadOnly = True
-        Me.SCREEN_BOOKID.Visible = False
-        '
-        'SYS_SETTING
-        '
-        Me.SYS_SETTING.DataPropertyName = "SYS_SETTING"
-        Me.SYS_SETTING.HeaderText = "SYS_SETTING"
-        Me.SYS_SETTING.Name = "SYS_SETTING"
-        Me.SYS_SETTING.ReadOnly = True
-        Me.SYS_SETTING.Visible = False
-        '
-        'SCREAN_DATE
-        '
-        Me.SCREAN_DATE.DataPropertyName = "SCREAN_DATE"
-        DataGridViewCellStyle2.Format = "dd/MM/yyyy"
-        Me.SCREAN_DATE.DefaultCellStyle = DataGridViewCellStyle2
-        Me.SCREAN_DATE.FillWeight = 101.8276!
-        Me.SCREAN_DATE.HeaderText = "Screening Date"
-        Me.SCREAN_DATE.Name = "SCREAN_DATE"
-        Me.SCREAN_DATE.ReadOnly = True
-        '
-        'PatientNo
-        '
-        Me.PatientNo.DataPropertyName = "PatientNo"
-        Me.PatientNo.FillWeight = 101.8276!
-        Me.PatientNo.HeaderText = "Patient No"
-        Me.PatientNo.Name = "PatientNo"
-        Me.PatientNo.ReadOnly = True
-        '
-        'NameEng
-        '
-        Me.NameEng.DataPropertyName = "NameEng"
-        Me.NameEng.FillWeight = 101.8276!
-        Me.NameEng.HeaderText = "NameEng"
-        Me.NameEng.Name = "NameEng"
-        Me.NameEng.ReadOnly = True
-        '
-        'NameKhmer
-        '
-        Me.NameKhmer.DataPropertyName = "NameKhmer"
-        Me.NameKhmer.FillWeight = 101.8276!
-        Me.NameKhmer.HeaderText = "NameKhmer"
-        Me.NameKhmer.Name = "NameKhmer"
-        Me.NameKhmer.ReadOnly = True
-        '
-        'Age
-        '
-        Me.Age.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Age.DataPropertyName = "Age"
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.Age.DefaultCellStyle = DataGridViewCellStyle3
-        Me.Age.FillWeight = 100.7086!
-        Me.Age.HeaderText = "Age"
-        Me.Age.Name = "Age"
-        Me.Age.ReadOnly = True
-        '
-        'Sex
-        '
-        Me.Sex.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Sex.DataPropertyName = "Sex"
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.Sex.DefaultCellStyle = DataGridViewCellStyle4
-        Me.Sex.FillWeight = 79.18782!
-        Me.Sex.HeaderText = "Sex"
-        Me.Sex.Name = "Sex"
-        Me.Sex.ReadOnly = True
-        '
-        'Address
-        '
-        Me.Address.DataPropertyName = "Address"
-        Me.Address.FillWeight = 101.8276!
-        Me.Address.HeaderText = "Address"
-        Me.Address.Name = "Address"
-        Me.Address.ReadOnly = True
-        '
-        'SCREEN_PLACE
-        '
-        Me.SCREEN_PLACE.DataPropertyName = "SCREEN_PLACE"
-        Me.SCREEN_PLACE.FillWeight = 101.8276!
-        Me.SCREEN_PLACE.HeaderText = "Screen Place"
-        Me.SCREEN_PLACE.Name = "SCREEN_PLACE"
-        Me.SCREEN_PLACE.ReadOnly = True
-        '
-        'ON_EYE
-        '
-        Me.ON_EYE.DataPropertyName = "ON_EYE"
-        Me.ON_EYE.HeaderText = "On Eye"
-        Me.ON_EYE.Name = "ON_EYE"
-        Me.ON_EYE.ReadOnly = True
-        '
-        'DIAGNOSISScreening
-        '
-        Me.DIAGNOSISScreening.DataPropertyName = "DIAGNOSIS"
-        Me.DIAGNOSISScreening.HeaderText = "Diagnosis"
-        Me.DIAGNOSISScreening.Name = "DIAGNOSISScreening"
-        Me.DIAGNOSISScreening.ReadOnly = True
-        '
-        'VA_RIGHTScreening
-        '
-        Me.VA_RIGHTScreening.DataPropertyName = "VA_RIGHT"
-        Me.VA_RIGHTScreening.HeaderText = "VA Right"
-        Me.VA_RIGHTScreening.Name = "VA_RIGHTScreening"
-        Me.VA_RIGHTScreening.ReadOnly = True
-        '
-        'VA_LEFTScreening
-        '
-        Me.VA_LEFTScreening.DataPropertyName = "VA_LEFT"
-        Me.VA_LEFTScreening.HeaderText = "VA Left"
-        Me.VA_LEFTScreening.Name = "VA_LEFTScreening"
-        Me.VA_LEFTScreening.ReadOnly = True
-        '
-        'PRESENTING_COMPLAIN
-        '
-        Me.PRESENTING_COMPLAIN.DataPropertyName = "PRESENTING_COMPLAIN"
-        Me.PRESENTING_COMPLAIN.HeaderText = "Presenting Complain"
-        Me.PRESENTING_COMPLAIN.Name = "PRESENTING_COMPLAIN"
-        Me.PRESENTING_COMPLAIN.ReadOnly = True
-        '
-        'IS_REFRACTION
-        '
-        Me.IS_REFRACTION.DataPropertyName = "IS_REFRACTION"
-        Me.IS_REFRACTION.FillWeight = 101.8276!
-        Me.IS_REFRACTION.HeaderText = "Refraction"
-        Me.IS_REFRACTION.Name = "IS_REFRACTION"
-        Me.IS_REFRACTION.ReadOnly = True
-        '
-        'IS_OPTICALSHOP
-        '
-        Me.IS_OPTICALSHOP.DataPropertyName = "IS_OPTICALSHOP"
-        Me.IS_OPTICALSHOP.FillWeight = 101.8276!
-        Me.IS_OPTICALSHOP.HeaderText = "Optical shop"
-        Me.IS_OPTICALSHOP.Name = "IS_OPTICALSHOP"
-        Me.IS_OPTICALSHOP.ReadOnly = True
-        '
-        'IS_REFER_PICKUP
-        '
-        Me.IS_REFER_PICKUP.DataPropertyName = "IS_REFER_PICKUP"
-        Me.IS_REFER_PICKUP.FillWeight = 101.8276!
-        Me.IS_REFER_PICKUP.HeaderText = "Referral By Pickup"
-        Me.IS_REFER_PICKUP.Name = "IS_REFER_PICKUP"
-        Me.IS_REFER_PICKUP.ReadOnly = True
-        '
-        'IS_REFER_BYSELF
-        '
-        Me.IS_REFER_BYSELF.DataPropertyName = "IS_REFER_BYSELF"
-        Me.IS_REFER_BYSELF.FillWeight = 101.8276!
-        Me.IS_REFER_BYSELF.HeaderText = "Referral By Selft"
-        Me.IS_REFER_BYSELF.Name = "IS_REFER_BYSELF"
-        Me.IS_REFER_BYSELF.ReadOnly = True
-        '
-        'SCREEN_NOTE
-        '
-        Me.SCREEN_NOTE.DataPropertyName = "SCREEN_NOTE"
-        Me.SCREEN_NOTE.FillWeight = 101.8276!
-        Me.SCREEN_NOTE.HeaderText = "Note"
-        Me.SCREEN_NOTE.Name = "SCREEN_NOTE"
-        Me.SCREEN_NOTE.ReadOnly = True
-        '
-        'BtnUpdateScreening
-        '
-        Me.BtnUpdateScreening.ForeColor = System.Drawing.Color.White
-        Me.BtnUpdateScreening.Image = CType(resources.GetObject("BtnUpdateScreening.Image"), System.Drawing.Image)
-        Me.BtnUpdateScreening.Name = "BtnUpdateScreening"
-        Me.BtnUpdateScreening.Size = New System.Drawing.Size(178, 26)
-        Me.BtnUpdateScreening.Text = "Update Screening"
-        '
-        'BtnFind
-        '
-        Me.BtnFind.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.BtnFind.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
-        Me.BtnFind.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnFind.FlatAppearance.BorderSize = 0
-        Me.BtnFind.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnFind.Image = CType(resources.GetObject("BtnFind.Image"), System.Drawing.Image)
-        Me.BtnFind.Location = New System.Drawing.Point(1255, 81)
-        Me.BtnFind.Name = "BtnFind"
-        Me.BtnFind.Size = New System.Drawing.Size(42, 27)
-        Me.BtnFind.TabIndex = 19
-        Me.BtnFind.UseVisualStyleBackColor = False
-        '
-        'PicOpticalShop
-        '
-        Me.PicOpticalShop.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(124, Byte), Integer))
-        Me.PicOpticalShop.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PicOpticalShop.Image = CType(resources.GetObject("PicOpticalShop.Image"), System.Drawing.Image)
-        Me.PicOpticalShop.Location = New System.Drawing.Point(688, 5)
-        Me.PicOpticalShop.Name = "PicOpticalShop"
-        Me.PicOpticalShop.Size = New System.Drawing.Size(40, 38)
-        Me.PicOpticalShop.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PicOpticalShop.TabIndex = 17
-        Me.PicOpticalShop.TabStop = False
-        '
-        'PicReferral
-        '
-        Me.PicReferral.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(124, Byte), Integer))
-        Me.PicReferral.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PicReferral.Image = CType(resources.GetObject("PicReferral.Image"), System.Drawing.Image)
-        Me.PicReferral.Location = New System.Drawing.Point(443, 5)
-        Me.PicReferral.Name = "PicReferral"
-        Me.PicReferral.Size = New System.Drawing.Size(40, 38)
-        Me.PicReferral.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PicReferral.TabIndex = 15
-        Me.PicReferral.TabStop = False
-        '
-        'PicRefraction
-        '
-        Me.PicRefraction.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(124, Byte), Integer))
-        Me.PicRefraction.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PicRefraction.Image = CType(resources.GetObject("PicRefraction.Image"), System.Drawing.Image)
-        Me.PicRefraction.Location = New System.Drawing.Point(230, 6)
-        Me.PicRefraction.Name = "PicRefraction"
-        Me.PicRefraction.Size = New System.Drawing.Size(40, 38)
-        Me.PicRefraction.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PicRefraction.TabIndex = 14
-        Me.PicRefraction.TabStop = False
-        '
-        'PicRgister
-        '
-        Me.PicRgister.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(124, Byte), Integer))
-        Me.PicRgister.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PicRgister.Image = CType(resources.GetObject("PicRgister.Image"), System.Drawing.Image)
-        Me.PicRgister.Location = New System.Drawing.Point(17, 6)
-        Me.PicRgister.Name = "PicRgister"
-        Me.PicRgister.Size = New System.Drawing.Size(40, 38)
-        Me.PicRgister.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PicRgister.TabIndex = 13
-        Me.PicRgister.TabStop = False
+        Me.BtnNewScreeningRegist.ForeColor = System.Drawing.Color.White
+        Me.BtnNewScreeningRegist.Name = "BtnNewScreeningRegist"
+        Me.BtnNewScreeningRegist.Size = New System.Drawing.Size(248, 26)
+        Me.BtnNewScreeningRegist.Text = "New Screening Registration"
         '
         'DashboardScreeningRegisBook
         '
@@ -1332,18 +1339,18 @@ Partial Class DashboardScreeningRegisBook
         CType(Me.DGRefraction, System.ComponentModel.ISupportInitialize).EndInit()
         Me.OpticalShop.ResumeLayout(False)
         CType(Me.DGOpticalShop, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PicOpticalShop, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel4.ResumeLayout(False)
         Me.Panel4.PerformLayout()
+        CType(Me.PicReferral, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PicRefraction, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PicRgister, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
         Me.PanelSend.ResumeLayout(False)
         Me.PanelSend.PerformLayout()
-        CType(Me.PicOpticalShop, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PicReferral, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PicRefraction, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PicRgister, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -1458,5 +1465,6 @@ Partial Class DashboardScreeningRegisBook
     Friend WithEvents IS_REFER_PICKUP As System.Windows.Forms.DataGridViewCheckBoxColumn
     Friend WithEvents IS_REFER_BYSELF As System.Windows.Forms.DataGridViewCheckBoxColumn
     Friend WithEvents SCREEN_NOTE As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents BtnNewScreeningRegist As System.Windows.Forms.ToolStripMenuItem
 
 End Class

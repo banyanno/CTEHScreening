@@ -1,5 +1,7 @@
 ﻿Imports System.Runtime.InteropServices
 Public Class FormPatientRegister
+    Dim DashScreeningRegis As DashboardScreeningRegisBook
+    Dim IS_ONSCRENNING As Boolean = False
     Dim DA_DefaultSetting As New DataSetSceenSettingTableAdapters.SCREEN_SYSTEMSETTINGTableAdapter
     Sub New()
 
@@ -14,7 +16,22 @@ Public Class FormPatientRegister
         ' Add any initialization after the InitializeComponent() call.
 
     End Sub
-   
+    Sub New(ByVal DashScreeningRegis As DashboardScreeningRegisBook, ByVal IS_ONSCRENNING As Boolean)
+
+        ' This call is required by the Windows Form Designer.
+        InitializeComponent()
+        With CboProNo
+            .DataSource = ModProvince.SelectProvice()
+            .DisplayMember = "Province"
+            .ValueMember = "IDProvCode"
+            .SelectedIndex = -1
+        End With
+        Me.DashScreeningRegis = DashScreeningRegis
+        Me.IS_ONSCRENNING = IS_ONSCRENNING
+        ' Add any initialization after the InitializeComponent() call.
+
+    End Sub
+
 
     Private Sub FormPatientRegister_MouseDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles MyBase.MouseDown
         MoveFormOnMouseDown(e)
@@ -275,6 +292,9 @@ Public Class FormPatientRegister
         If MessageBox.Show("Do you want to save patient registration.", "save", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
             If SaveProcessForNewPatient() = True Then
                 MessageBox.Show("Patient registration successful!", "Register", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                If IS_ONSCRENNING = True Then
+                    Me.DashScreeningRegis.RefreshAfterScreenRegis(DateRegis.Value.Date, DateRegis.Value.Date, PatientNo.Text)
+                End If
                 ResetFormRegister()
             Else
                 MessageBox.Show("Error Patient registration. Please verify data entry again!", "Register", MessageBoxButtons.OK, MessageBoxIcon.Error)

@@ -108,4 +108,13 @@
             ModCommon.NumberAllRowHeaderDataGrid(DGScreeningBook)
         End If
     End Sub
+    Public Sub RefreshAfterScreenRegis(ByVal DFrom As Date, ByVal DTo As Date, ByVal PatientNo As Double)
+        DGScreeningBook.DataSource = DAScreeningBook.SelectScreenBookDateToDateWithPatientNo(DFrom, DTo, EmptyString(PatientNo))
+        ModCommon.NumberAllRowHeaderDataGrid(DGScreeningBook)
+    End Sub
+
+    Private Sub BtnNewScreeningRegist_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnNewScreeningRegist.Click
+        Dim RegistScreening As New FormPatientRegister(Me, True)
+        RegistScreening.ShowDialog()
+    End Sub
 End Class
