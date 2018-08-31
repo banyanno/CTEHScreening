@@ -7748,27 +7748,29 @@ Namespace DataSetScreeningBookTableAdapters
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand
             Me._commandCollection(1).Connection = Me.Connection
-            Me._commandCollection(1).CommandText = "SELECT        PATIENT_NO, NameEng, NameKhmer, Age, Sex, Address, REFERRAL_ID, CRE"& _ 
-                "ATE_DATE, SCREENING_BOOKID, VA_RIGHT, VA_LEFT, DIAGNOSIS, DATE_MEETING, STATUS_P"& _ 
-                "ICKUP, ARRIVED, REFERRAL_NOTE"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            SCREENING_REFERRAL_DETAIL"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"CREATE_DATE BETWEEN @DFrom AND @DTo"
+            Me._commandCollection(1).CommandText = "SELECT ARRIVED, Address, Age, CREATE_DATE, DATE_MEETING, DIAGNOSIS, NameEng, Name"& _ 
+                "Khmer, PATIENT_NO, REFERRAL_ID, REFERRAL_NOTE, SCREENING_BOOKID, STATUS_PICKUP, "& _ 
+                "Sex, VA_LEFT, VA_RIGHT FROM SCREENING_REFERRAL_DETAIL WHERE (CREATE_DATE BETWEEN"& _ 
+                " @DFrom AND @DTo)"
             Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@DFrom", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "CREATE_DATE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@DTo", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "CREATE_DATE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(2) = New Global.System.Data.SqlClient.SqlCommand
             Me._commandCollection(2).Connection = Me.Connection
-            Me._commandCollection(2).CommandText = "SELECT        PATIENT_NO, NameEng, NameKhmer, Age, Sex, Address, REFERRAL_ID, CRE"& _ 
-                "ATE_DATE, SCREENING_BOOKID, VA_RIGHT, VA_LEFT, DIAGNOSIS, DATE_MEETING, STATUS_P"& _ 
-                "ICKUP, ARRIVED, REFERRAL_NOTE"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            SCREENING_REFERRAL_DETAIL"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"CREATE_DATE BETWEEN @DFrom AND @DTo and  PATIENT_NO=@PATIENT_NO"
+            Me._commandCollection(2).CommandText = "SELECT ARRIVED, Address, Age, CREATE_DATE, DATE_MEETING, DIAGNOSIS, NameEng, Name"& _ 
+                "Khmer, PATIENT_NO, REFERRAL_ID, REFERRAL_NOTE, SCREENING_BOOKID, STATUS_PICKUP, "& _ 
+                "Sex, VA_LEFT, VA_RIGHT FROM SCREENING_REFERRAL_DETAIL WHERE (CREATE_DATE BETWEEN"& _ 
+                " @DFrom AND @DTo) AND (PATIENT_NO = @PATIENT_NO)"
             Me._commandCollection(2).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@DFrom", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "CREATE_DATE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@DTo", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "CREATE_DATE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@PATIENT_NO", Global.System.Data.SqlDbType.[Decimal], 9, Global.System.Data.ParameterDirection.Input, 18, 0, "PATIENT_NO", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(3) = New Global.System.Data.SqlClient.SqlCommand
             Me._commandCollection(3).Connection = Me.Connection
-            Me._commandCollection(3).CommandText = "SELECT        PATIENT_NO, NameEng, NameKhmer, Age, Sex, Address, REFERRAL_ID, CRE"& _ 
-                "ATE_DATE, SCREENING_BOOKID, VA_RIGHT, VA_LEFT, DIAGNOSIS, DATE_MEETING, STATUS_P"& _ 
-                "ICKUP, ARRIVED, REFERRAL_NOTE"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            SCREENING_REFERRAL_DETAIL"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE "& _ 
-                ""&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SCREENING_BOOKID =@SCREENING_BOOKID"
+            Me._commandCollection(3).CommandText = "SELECT ARRIVED, Address, Age, CREATE_DATE, DATE_MEETING, DIAGNOSIS, NameEng, Name"& _ 
+                "Khmer, PATIENT_NO, REFERRAL_ID, REFERRAL_NOTE, SCREENING_BOOKID, STATUS_PICKUP, "& _ 
+                "Sex, VA_LEFT, VA_RIGHT FROM SCREENING_REFERRAL_DETAIL WHERE (SCREENING_BOOKID = "& _ 
+                "@SCREENING_BOOKID)"
             Me._commandCollection(3).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@SCREENING_BOOKID", Global.System.Data.SqlDbType.[Decimal], 9, Global.System.Data.ParameterDirection.Input, 18, 0, "SCREENING_BOOKID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
@@ -9794,7 +9796,7 @@ Namespace DataSetScreeningBookTableAdapters
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(3) {}
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(4) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT        REFERRAL_ID, SCREENING_BOOKID, PATIENT_NO, VA_RIGHT, VA_LEFT, DIAGN"& _ 
@@ -9834,6 +9836,19 @@ Namespace DataSetScreeningBookTableAdapters
             Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@DATE_MEETING", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "DATE_MEETING", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@STATUS_PICKUP", Global.System.Data.SqlDbType.Bit, 1, Global.System.Data.ParameterDirection.Input, 0, 0, "STATUS_PICKUP", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@REFERRAL_NOTE", Global.System.Data.SqlDbType.NVarChar, 150, Global.System.Data.ParameterDirection.Input, 0, 0, "REFERRAL_NOTE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(4) = New Global.System.Data.SqlClient.SqlCommand
+            Me._commandCollection(4).Connection = Me.Connection
+            Me._commandCollection(4).CommandText = "UPDATE       SCREENING_REFERRAL_BOOK"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SET                VA_RIGHT = @VA_RIGHT, VA"& _ 
+                "_LEFT = @VA_LEFT, DIAGNOSIS = @DIAGNOSIS, DATE_MEETING = @DATE_MEETING, REFERRAL"& _ 
+                "_NOTE = @REFERRAL_NOTE"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (SCREENING_BOOKID = @Original_SCREENING_BOO"& _ 
+                "KID)"
+            Me._commandCollection(4).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(4).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@VA_RIGHT", Global.System.Data.SqlDbType.NVarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "VA_RIGHT", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(4).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@VA_LEFT", Global.System.Data.SqlDbType.NVarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "VA_LEFT", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(4).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@DIAGNOSIS", Global.System.Data.SqlDbType.NVarChar, 100, Global.System.Data.ParameterDirection.Input, 0, 0, "DIAGNOSIS", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(4).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@DATE_MEETING", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "DATE_MEETING", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(4).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@REFERRAL_NOTE", Global.System.Data.SqlDbType.NVarChar, 150, Global.System.Data.ParameterDirection.Input, 0, 0, "REFERRAL_NOTE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(4).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_SCREENING_BOOKID", Global.System.Data.SqlDbType.[Decimal], 9, Global.System.Data.ParameterDirection.Input, 18, 0, "SCREENING_BOOKID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -10370,6 +10385,57 @@ Namespace DataSetScreeningBookTableAdapters
                 command.Parameters(7).Value = Global.System.DBNull.Value
             Else
                 command.Parameters(7).Value = CType(REFERRAL_NOTE,String)
+            End If
+            Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
+            If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                command.Connection.Open
+            End If
+            Dim returnValue As Integer
+            Try 
+                returnValue = command.ExecuteNonQuery
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    command.Connection.Close
+                End If
+            End Try
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, false)>  _
+        Public Overloads Overridable Function UpdateReferral(ByVal VA_RIGHT As String, ByVal VA_LEFT As String, ByVal DIAGNOSIS As String, ByVal DATE_MEETING As Global.System.Nullable(Of Date), ByVal REFERRAL_NOTE As String, ByVal Original_SCREENING_BOOKID As Global.System.Nullable(Of Decimal)) As Integer
+            Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(4)
+            If (VA_RIGHT Is Nothing) Then
+                command.Parameters(0).Value = Global.System.DBNull.Value
+            Else
+                command.Parameters(0).Value = CType(VA_RIGHT,String)
+            End If
+            If (VA_LEFT Is Nothing) Then
+                command.Parameters(1).Value = Global.System.DBNull.Value
+            Else
+                command.Parameters(1).Value = CType(VA_LEFT,String)
+            End If
+            If (DIAGNOSIS Is Nothing) Then
+                command.Parameters(2).Value = Global.System.DBNull.Value
+            Else
+                command.Parameters(2).Value = CType(DIAGNOSIS,String)
+            End If
+            If (DATE_MEETING.HasValue = true) Then
+                command.Parameters(3).Value = CType(DATE_MEETING.Value,Date)
+            Else
+                command.Parameters(3).Value = Global.System.DBNull.Value
+            End If
+            If (REFERRAL_NOTE Is Nothing) Then
+                command.Parameters(4).Value = Global.System.DBNull.Value
+            Else
+                command.Parameters(4).Value = CType(REFERRAL_NOTE,String)
+            End If
+            If (Original_SCREENING_BOOKID.HasValue = true) Then
+                command.Parameters(5).Value = CType(Original_SCREENING_BOOKID.Value,Decimal)
+            Else
+                command.Parameters(5).Value = Global.System.DBNull.Value
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
             If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _

@@ -225,7 +225,7 @@ Module ModCommon
     Public printDocument As New System.Drawing.Printing.PrintDocument
 
 
-
+    ' Call Mouse move on Panel
     <DllImport("user32.DLL", EntryPoint:="ReleaseCapture")> _
     Public Sub ReleaseCapture()
 
@@ -233,4 +233,10 @@ Module ModCommon
     <DllImport("user32.DLL", EntryPoint:="SendMessage")> _
     Public Sub SendMessage(ByVal hWnd As System.IntPtr, ByVal wMsg As Integer, ByVal wParam As Integer, ByVal lParam As Integer)
     End Sub
+
+    ' Get value row by row
+    Public Function GetDataRowGridView(ByVal DGView As DataGridView) As DataGridViewRow
+        Dim DGRows As DataGridViewRow = DGView.Rows(DGView.SelectedCells(0).RowIndex)
+        Return DGRows
+    End Function
 End Module

@@ -135,4 +135,30 @@
         Dim RegistScreening As New FormPatientRegister(Me, True)
         RegistScreening.ShowDialog()
     End Sub
+
+    Private Sub BtnUpdateReferral_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnUpdateReferral.Click
+        If DGScreeningBook.SelectedCells.Count = 0 Then Exit Sub
+
+        Dim GRows As DataGridViewRow = GetDataRowGridView(DGScreeningBook)
+        If (GRows.Cells("IS_REFER_PICKUP").Value) = False AndAlso (GRows.Cells("IS_REFER_BYSELF").Value) = False Then Exit Sub
+        Dim FReferral As New FormReferral
+        FReferral.LblSaveOption.Text = GRows.Cells("SCREEN_BOOKID").Value
+        FReferral.DateScreening.Value = GRows.Cells("SCREAN_DATE").Value
+        FReferral.PatientNo.Text = GRows.Cells("PatientNo").Value
+        FReferral.PatientName.Text = GRows.Cells("NameEng").Value
+        FReferral.PatientSex.Text = GRows.Cells("Sex").Value
+        FReferral.PatientAge.Text = GRows.Cells("Age").Value
+        FReferral.CboOnEye.Text = GRows.Cells("ON_EYE").Value
+        FReferral.cboDiagnosis.Text = GRows.Cells("DIAGNOSISScreening").Value
+        FReferral.CboVARight.Text = GRows.Cells("VA_RIGHTScreening").Value
+        FReferral.CboVALeft.Text = GRows.Cells("VA_LEFTScreening").Value
+        If GRows.Cells("IS_REFER_PICKUP").Value = True Then
+            FReferral.ChPickup.Checked = True
+        Else
+            FReferral.ChPickup.Checked = False
+        End If
+        If FReferral.ShowDialog() = DialogResult.OK Then
+
+        End If
+    End Sub
 End Class

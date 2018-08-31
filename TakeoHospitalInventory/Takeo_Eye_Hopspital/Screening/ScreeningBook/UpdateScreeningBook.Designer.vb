@@ -28,6 +28,10 @@ Partial Class UpdateScreeningBook
         Me.BtnClose = New System.Windows.Forms.Button
         Me.BtnSave = New System.Windows.Forms.Button
         Me.Panel2 = New System.Windows.Forms.Panel
+        Me.ChReferral = New System.Windows.Forms.CheckBox
+        Me.GBReferral = New System.Windows.Forms.GroupBox
+        Me.RadReferAndComeBySelf = New System.Windows.Forms.RadioButton
+        Me.RadReferAndPickup = New System.Windows.Forms.RadioButton
         Me.GroupBox3 = New System.Windows.Forms.GroupBox
         Me.ChRefraction = New System.Windows.Forms.CheckBox
         Me.ChOpticalshop = New System.Windows.Forms.CheckBox
@@ -61,15 +65,11 @@ Partial Class UpdateScreeningBook
         Me.Label3 = New System.Windows.Forms.Label
         Me.Label1 = New System.Windows.Forms.Label
         Me.ErrUpdateScreen = New System.Windows.Forms.ErrorProvider(Me.components)
-        Me.ChReferral = New System.Windows.Forms.CheckBox
-        Me.GBReferral = New System.Windows.Forms.GroupBox
-        Me.RadReferAndComeBySelf = New System.Windows.Forms.RadioButton
-        Me.RadReferAndPickup = New System.Windows.Forms.RadioButton
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
+        Me.GBReferral.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         CType(Me.ErrUpdateScreen, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GBReferral.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
@@ -161,6 +161,51 @@ Partial Class UpdateScreeningBook
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(696, 522)
         Me.Panel2.TabIndex = 0
+        '
+        'ChReferral
+        '
+        Me.ChReferral.AutoSize = True
+        Me.ChReferral.ForeColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
+        Me.ChReferral.Location = New System.Drawing.Point(442, 299)
+        Me.ChReferral.Name = "ChReferral"
+        Me.ChReferral.Size = New System.Drawing.Size(85, 24)
+        Me.ChReferral.TabIndex = 25
+        Me.ChReferral.Text = "Referral"
+        Me.ChReferral.UseVisualStyleBackColor = True
+        '
+        'GBReferral
+        '
+        Me.GBReferral.Controls.Add(Me.RadReferAndComeBySelf)
+        Me.GBReferral.Controls.Add(Me.RadReferAndPickup)
+        Me.GBReferral.Enabled = False
+        Me.GBReferral.ForeColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
+        Me.GBReferral.Location = New System.Drawing.Point(429, 301)
+        Me.GBReferral.Name = "GBReferral"
+        Me.GBReferral.Size = New System.Drawing.Size(255, 119)
+        Me.GBReferral.TabIndex = 26
+        Me.GBReferral.TabStop = False
+        '
+        'RadReferAndComeBySelf
+        '
+        Me.RadReferAndComeBySelf.AutoSize = True
+        Me.RadReferAndComeBySelf.Location = New System.Drawing.Point(14, 71)
+        Me.RadReferAndComeBySelf.Name = "RadReferAndComeBySelf"
+        Me.RadReferAndComeBySelf.Size = New System.Drawing.Size(184, 24)
+        Me.RadReferAndComeBySelf.TabIndex = 1
+        Me.RadReferAndComeBySelf.TabStop = True
+        Me.RadReferAndComeBySelf.Text = "Referral Come By Self"
+        Me.RadReferAndComeBySelf.UseVisualStyleBackColor = True
+        '
+        'RadReferAndPickup
+        '
+        Me.RadReferAndPickup.AutoSize = True
+        Me.RadReferAndPickup.Location = New System.Drawing.Point(14, 33)
+        Me.RadReferAndPickup.Name = "RadReferAndPickup"
+        Me.RadReferAndPickup.Size = New System.Drawing.Size(157, 24)
+        Me.RadReferAndPickup.TabIndex = 0
+        Me.RadReferAndPickup.TabStop = True
+        Me.RadReferAndPickup.Text = "Referral By Pickup"
+        Me.RadReferAndPickup.UseVisualStyleBackColor = True
         '
         'GroupBox3
         '
@@ -447,7 +492,7 @@ Partial Class UpdateScreeningBook
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(202, Byte), Integer), CType(CType(81, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Label2.Location = New System.Drawing.Point(171, 61)
+        Me.Label2.Location = New System.Drawing.Point(305, 61)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(103, 18)
         Me.Label2.TabIndex = 6
@@ -458,7 +503,7 @@ Partial Class UpdateScreeningBook
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(202, Byte), Integer), CType(CType(81, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Label3.Location = New System.Drawing.Point(137, 41)
+        Me.Label3.Location = New System.Drawing.Point(271, 41)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(171, 18)
         Me.Label3.TabIndex = 5
@@ -469,7 +514,7 @@ Partial Class UpdateScreeningBook
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Khmer Mool1", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(100, Byte), Integer), CType(CType(84, Byte), Integer))
-        Me.Label1.Location = New System.Drawing.Point(121, 4)
+        Me.Label1.Location = New System.Drawing.Point(255, 4)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(202, 43)
         Me.Label1.TabIndex = 4
@@ -478,51 +523,6 @@ Partial Class UpdateScreeningBook
         'ErrUpdateScreen
         '
         Me.ErrUpdateScreen.ContainerControl = Me
-        '
-        'ChReferral
-        '
-        Me.ChReferral.AutoSize = True
-        Me.ChReferral.ForeColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
-        Me.ChReferral.Location = New System.Drawing.Point(442, 299)
-        Me.ChReferral.Name = "ChReferral"
-        Me.ChReferral.Size = New System.Drawing.Size(85, 24)
-        Me.ChReferral.TabIndex = 25
-        Me.ChReferral.Text = "Referral"
-        Me.ChReferral.UseVisualStyleBackColor = True
-        '
-        'GBReferral
-        '
-        Me.GBReferral.Controls.Add(Me.RadReferAndComeBySelf)
-        Me.GBReferral.Controls.Add(Me.RadReferAndPickup)
-        Me.GBReferral.Enabled = False
-        Me.GBReferral.ForeColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
-        Me.GBReferral.Location = New System.Drawing.Point(429, 301)
-        Me.GBReferral.Name = "GBReferral"
-        Me.GBReferral.Size = New System.Drawing.Size(255, 119)
-        Me.GBReferral.TabIndex = 26
-        Me.GBReferral.TabStop = False
-        '
-        'RadReferAndComeBySelf
-        '
-        Me.RadReferAndComeBySelf.AutoSize = True
-        Me.RadReferAndComeBySelf.Location = New System.Drawing.Point(14, 71)
-        Me.RadReferAndComeBySelf.Name = "RadReferAndComeBySelf"
-        Me.RadReferAndComeBySelf.Size = New System.Drawing.Size(184, 24)
-        Me.RadReferAndComeBySelf.TabIndex = 1
-        Me.RadReferAndComeBySelf.TabStop = True
-        Me.RadReferAndComeBySelf.Text = "Referral Come By Self"
-        Me.RadReferAndComeBySelf.UseVisualStyleBackColor = True
-        '
-        'RadReferAndPickup
-        '
-        Me.RadReferAndPickup.AutoSize = True
-        Me.RadReferAndPickup.Location = New System.Drawing.Point(14, 33)
-        Me.RadReferAndPickup.Name = "RadReferAndPickup"
-        Me.RadReferAndPickup.Size = New System.Drawing.Size(157, 24)
-        Me.RadReferAndPickup.TabIndex = 0
-        Me.RadReferAndPickup.TabStop = True
-        Me.RadReferAndPickup.Text = "Referral By Pickup"
-        Me.RadReferAndPickup.UseVisualStyleBackColor = True
         '
         'UpdateScreeningBook
         '
@@ -541,11 +541,11 @@ Partial Class UpdateScreeningBook
         Me.Panel1.PerformLayout()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
+        Me.GBReferral.ResumeLayout(False)
+        Me.GBReferral.PerformLayout()
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
         CType(Me.ErrUpdateScreen, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GBReferral.ResumeLayout(False)
-        Me.GBReferral.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub

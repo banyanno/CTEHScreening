@@ -31,7 +31,6 @@ Partial Class DashboardScreeningRegisBook
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
         Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
         Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(DashboardScreeningRegisBook))
         Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
         Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
         Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
@@ -41,6 +40,7 @@ Partial Class DashboardScreeningRegisBook
         Dim DataGridViewCellStyle15 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
         Dim DataGridViewCellStyle16 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
         Dim DataGridViewCellStyle17 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(DashboardScreeningRegisBook))
         Me.Panel1 = New System.Windows.Forms.Panel
         Me.Label2 = New System.Windows.Forms.Label
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer
@@ -69,20 +69,18 @@ Partial Class DashboardScreeningRegisBook
         Me.CMScreeningBook = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.BtnNewScreeningRegist = New System.Windows.Forms.ToolStripMenuItem
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator
-        Me.BtnUpdateScreening = New System.Windows.Forms.ToolStripMenuItem
         Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripSeparator
         Me.BtnRefraction = New System.Windows.Forms.ToolStripMenuItem
         Me.UpdateRefractionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.NewRefractionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripSeparator
         Me.BtnReferral = New System.Windows.Forms.ToolStripMenuItem
-        Me.AaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.ToolStripMenuItem6 = New System.Windows.Forms.ToolStripSeparator
-        Me.NewReferralToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+        Me.BtnUpdateReferral = New System.Windows.Forms.ToolStripMenuItem
+        Me.BtnNewReferral = New System.Windows.Forms.ToolStripMenuItem
         Me.ToolStripMenuItem3 = New System.Windows.Forms.ToolStripSeparator
         Me.BtnOpticalShop = New System.Windows.Forms.ToolStripMenuItem
         Me.UpdateOpticalShopToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.ToolStripMenuItem7 = New System.Windows.Forms.ToolStripSeparator
+        Me.NewOpticalShopToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.ToolStripMenuItem4 = New System.Windows.Forms.ToolStripSeparator
         Me.TabControl1 = New System.Windows.Forms.TabControl
         Me.ReferralPickup = New System.Windows.Forms.TabPage
@@ -140,15 +138,10 @@ Partial Class DashboardScreeningRegisBook
         Me.DateFrom = New System.Windows.Forms.DateTimePicker
         Me.Label13 = New System.Windows.Forms.Label
         Me.Label12 = New System.Windows.Forms.Label
-        Me.BtnFind = New System.Windows.Forms.Button
         Me.TxtPatienNo = New System.Windows.Forms.TextBox
-        Me.PicOpticalShop = New System.Windows.Forms.PictureBox
         Me.Panel4 = New System.Windows.Forms.Panel
         Me.TxtTotalOpticalShop = New System.Windows.Forms.Label
         Me.Label11 = New System.Windows.Forms.Label
-        Me.PicReferral = New System.Windows.Forms.PictureBox
-        Me.PicRefraction = New System.Windows.Forms.PictureBox
-        Me.PicRgister = New System.Windows.Forms.PictureBox
         Me.Panel3 = New System.Windows.Forms.Panel
         Me.TxtTotalReferralSelf = New System.Windows.Forms.Label
         Me.Label8 = New System.Windows.Forms.Label
@@ -161,8 +154,12 @@ Partial Class DashboardScreeningRegisBook
         Me.PanelSend = New System.Windows.Forms.Panel
         Me.TxtTotalRegister = New System.Windows.Forms.Label
         Me.Label1 = New System.Windows.Forms.Label
-        Me.NewOpticalShopToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.ToolStripMenuItem5 = New System.Windows.Forms.ToolStripSeparator
+        Me.BtnUpdateScreening = New System.Windows.Forms.ToolStripMenuItem
+        Me.BtnFind = New System.Windows.Forms.Button
+        Me.PicOpticalShop = New System.Windows.Forms.PictureBox
+        Me.PicReferral = New System.Windows.Forms.PictureBox
+        Me.PicRefraction = New System.Windows.Forms.PictureBox
+        Me.PicRgister = New System.Windows.Forms.PictureBox
         Me.Panel1.SuspendLayout()
         Me.SplitContainer1.Panel1.SuspendLayout()
         Me.SplitContainer1.Panel2.SuspendLayout()
@@ -176,14 +173,14 @@ Partial Class DashboardScreeningRegisBook
         CType(Me.DGRefraction, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.OpticalShop.SuspendLayout()
         CType(Me.DGOpticalShop, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PicOpticalShop, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel4.SuspendLayout()
-        CType(Me.PicReferral, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PicRefraction, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PicRgister, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel3.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.PanelSend.SuspendLayout()
+        CType(Me.PicOpticalShop, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PicReferral, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PicRefraction, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PicRgister, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
@@ -472,8 +469,11 @@ Partial Class DashboardScreeningRegisBook
         '
         Me.CMScreeningBook.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
         Me.CMScreeningBook.Font = New System.Drawing.Font("Segoe UI", 12.0!)
+        Me.CMScreeningBook.ImeMode = System.Windows.Forms.ImeMode.NoControl
         Me.CMScreeningBook.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BtnNewScreeningRegist, Me.ToolStripSeparator1, Me.BtnUpdateScreening, Me.ToolStripMenuItem1, Me.BtnRefraction, Me.ToolStripMenuItem2, Me.BtnReferral, Me.ToolStripMenuItem3, Me.BtnOpticalShop, Me.ToolStripMenuItem4})
+        Me.CMScreeningBook.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Table
         Me.CMScreeningBook.Name = "CMScreeningBook"
+        Me.CMScreeningBook.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional
         Me.CMScreeningBook.ShowImageMargin = False
         Me.CMScreeningBook.Size = New System.Drawing.Size(249, 186)
         '
@@ -489,14 +489,6 @@ Partial Class DashboardScreeningRegisBook
         Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
         Me.ToolStripSeparator1.Size = New System.Drawing.Size(245, 6)
         '
-        'BtnUpdateScreening
-        '
-        Me.BtnUpdateScreening.ForeColor = System.Drawing.Color.White
-        Me.BtnUpdateScreening.Image = CType(resources.GetObject("BtnUpdateScreening.Image"), System.Drawing.Image)
-        Me.BtnUpdateScreening.Name = "BtnUpdateScreening"
-        Me.BtnUpdateScreening.Size = New System.Drawing.Size(248, 26)
-        Me.BtnUpdateScreening.Text = "Update Screening"
-        '
         'ToolStripMenuItem1
         '
         Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
@@ -504,7 +496,7 @@ Partial Class DashboardScreeningRegisBook
         '
         'BtnRefraction
         '
-        Me.BtnRefraction.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.UpdateRefractionToolStripMenuItem, Me.ToolStripMenuItem5, Me.NewRefractionToolStripMenuItem})
+        Me.BtnRefraction.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.UpdateRefractionToolStripMenuItem, Me.NewRefractionToolStripMenuItem})
         Me.BtnRefraction.ForeColor = System.Drawing.Color.White
         Me.BtnRefraction.Name = "BtnRefraction"
         Me.BtnRefraction.Size = New System.Drawing.Size(248, 26)
@@ -533,35 +525,29 @@ Partial Class DashboardScreeningRegisBook
         '
         'BtnReferral
         '
-        Me.BtnReferral.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AaToolStripMenuItem, Me.ToolStripMenuItem6, Me.NewReferralToolStripMenuItem})
+        Me.BtnReferral.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BtnUpdateReferral, Me.BtnNewReferral})
         Me.BtnReferral.ForeColor = System.Drawing.Color.White
         Me.BtnReferral.Name = "BtnReferral"
         Me.BtnReferral.Overflow = System.Windows.Forms.ToolStripItemOverflow.Always
         Me.BtnReferral.Size = New System.Drawing.Size(248, 26)
         Me.BtnReferral.Text = "Referral ..."
         '
-        'AaToolStripMenuItem
+        'BtnUpdateReferral
         '
-        Me.AaToolStripMenuItem.AccessibleRole = System.Windows.Forms.AccessibleRole.Cursor
-        Me.AaToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
-        Me.AaToolStripMenuItem.ForeColor = System.Drawing.Color.White
-        Me.AaToolStripMenuItem.Name = "AaToolStripMenuItem"
-        Me.AaToolStripMenuItem.Size = New System.Drawing.Size(180, 26)
-        Me.AaToolStripMenuItem.Text = "Upate Referral"
+        Me.BtnUpdateReferral.AccessibleRole = System.Windows.Forms.AccessibleRole.Cursor
+        Me.BtnUpdateReferral.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
+        Me.BtnUpdateReferral.ForeColor = System.Drawing.Color.White
+        Me.BtnUpdateReferral.Name = "BtnUpdateReferral"
+        Me.BtnUpdateReferral.Size = New System.Drawing.Size(180, 26)
+        Me.BtnUpdateReferral.Text = "Upate Referral"
         '
-        'ToolStripMenuItem6
+        'BtnNewReferral
         '
-        Me.ToolStripMenuItem6.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
-        Me.ToolStripMenuItem6.Name = "ToolStripMenuItem6"
-        Me.ToolStripMenuItem6.Size = New System.Drawing.Size(177, 6)
-        '
-        'NewReferralToolStripMenuItem
-        '
-        Me.NewReferralToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
-        Me.NewReferralToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
-        Me.NewReferralToolStripMenuItem.Name = "NewReferralToolStripMenuItem"
-        Me.NewReferralToolStripMenuItem.Size = New System.Drawing.Size(180, 26)
-        Me.NewReferralToolStripMenuItem.Text = "New Referral"
+        Me.BtnNewReferral.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
+        Me.BtnNewReferral.ForeColor = System.Drawing.Color.White
+        Me.BtnNewReferral.Name = "BtnNewReferral"
+        Me.BtnNewReferral.Size = New System.Drawing.Size(180, 26)
+        Me.BtnNewReferral.Text = "New Referral"
         '
         'ToolStripMenuItem3
         '
@@ -570,7 +556,7 @@ Partial Class DashboardScreeningRegisBook
         '
         'BtnOpticalShop
         '
-        Me.BtnOpticalShop.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.UpdateOpticalShopToolStripMenuItem, Me.ToolStripMenuItem7, Me.NewOpticalShopToolStripMenuItem})
+        Me.BtnOpticalShop.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.UpdateOpticalShopToolStripMenuItem, Me.NewOpticalShopToolStripMenuItem})
         Me.BtnOpticalShop.ForeColor = System.Drawing.Color.White
         Me.BtnOpticalShop.Name = "BtnOpticalShop"
         Me.BtnOpticalShop.Size = New System.Drawing.Size(248, 26)
@@ -584,10 +570,13 @@ Partial Class DashboardScreeningRegisBook
         Me.UpdateOpticalShopToolStripMenuItem.Size = New System.Drawing.Size(223, 26)
         Me.UpdateOpticalShopToolStripMenuItem.Text = "Update Optical Shop"
         '
-        'ToolStripMenuItem7
+        'NewOpticalShopToolStripMenuItem
         '
-        Me.ToolStripMenuItem7.Name = "ToolStripMenuItem7"
-        Me.ToolStripMenuItem7.Size = New System.Drawing.Size(220, 6)
+        Me.NewOpticalShopToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
+        Me.NewOpticalShopToolStripMenuItem.ForeColor = System.Drawing.Color.White
+        Me.NewOpticalShopToolStripMenuItem.Name = "NewOpticalShopToolStripMenuItem"
+        Me.NewOpticalShopToolStripMenuItem.Size = New System.Drawing.Size(223, 26)
+        Me.NewOpticalShopToolStripMenuItem.Text = "New Optical Shop"
         '
         'ToolStripMenuItem4
         '
@@ -623,7 +612,7 @@ Partial Class DashboardScreeningRegisBook
         Me.ReferralPickup.Name = "ReferralPickup"
         Me.ReferralPickup.Size = New System.Drawing.Size(1289, 301)
         Me.ReferralPickup.TabIndex = 1
-        Me.ReferralPickup.Text = " Referal and Pickup   "
+        Me.ReferralPickup.Text = " Refer Pickup  or By Self"
         Me.ReferralPickup.UseVisualStyleBackColor = True
         '
         'DGReferral
@@ -1151,20 +1140,6 @@ Partial Class DashboardScreeningRegisBook
         Me.Label12.TabIndex = 23
         Me.Label12.Text = "From:"
         '
-        'BtnFind
-        '
-        Me.BtnFind.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.BtnFind.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
-        Me.BtnFind.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnFind.FlatAppearance.BorderSize = 0
-        Me.BtnFind.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnFind.Image = CType(resources.GetObject("BtnFind.Image"), System.Drawing.Image)
-        Me.BtnFind.Location = New System.Drawing.Point(1255, 81)
-        Me.BtnFind.Name = "BtnFind"
-        Me.BtnFind.Size = New System.Drawing.Size(42, 27)
-        Me.BtnFind.TabIndex = 19
-        Me.BtnFind.UseVisualStyleBackColor = False
-        '
         'TxtPatienNo
         '
         Me.TxtPatienNo.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -1173,18 +1148,6 @@ Partial Class DashboardScreeningRegisBook
         Me.TxtPatienNo.Name = "TxtPatienNo"
         Me.TxtPatienNo.Size = New System.Drawing.Size(205, 27)
         Me.TxtPatienNo.TabIndex = 18
-        '
-        'PicOpticalShop
-        '
-        Me.PicOpticalShop.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(124, Byte), Integer))
-        Me.PicOpticalShop.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PicOpticalShop.Image = CType(resources.GetObject("PicOpticalShop.Image"), System.Drawing.Image)
-        Me.PicOpticalShop.Location = New System.Drawing.Point(688, 5)
-        Me.PicOpticalShop.Name = "PicOpticalShop"
-        Me.PicOpticalShop.Size = New System.Drawing.Size(40, 38)
-        Me.PicOpticalShop.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PicOpticalShop.TabIndex = 17
-        Me.PicOpticalShop.TabStop = False
         '
         'Panel4
         '
@@ -1219,42 +1182,6 @@ Partial Class DashboardScreeningRegisBook
         Me.Label11.Size = New System.Drawing.Size(116, 21)
         Me.Label11.TabIndex = 0
         Me.Label11.Text = "Optical Shop:"
-        '
-        'PicReferral
-        '
-        Me.PicReferral.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(124, Byte), Integer))
-        Me.PicReferral.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PicReferral.Image = CType(resources.GetObject("PicReferral.Image"), System.Drawing.Image)
-        Me.PicReferral.Location = New System.Drawing.Point(443, 5)
-        Me.PicReferral.Name = "PicReferral"
-        Me.PicReferral.Size = New System.Drawing.Size(40, 38)
-        Me.PicReferral.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PicReferral.TabIndex = 15
-        Me.PicReferral.TabStop = False
-        '
-        'PicRefraction
-        '
-        Me.PicRefraction.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(124, Byte), Integer))
-        Me.PicRefraction.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PicRefraction.Image = CType(resources.GetObject("PicRefraction.Image"), System.Drawing.Image)
-        Me.PicRefraction.Location = New System.Drawing.Point(230, 6)
-        Me.PicRefraction.Name = "PicRefraction"
-        Me.PicRefraction.Size = New System.Drawing.Size(40, 38)
-        Me.PicRefraction.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PicRefraction.TabIndex = 14
-        Me.PicRefraction.TabStop = False
-        '
-        'PicRgister
-        '
-        Me.PicRgister.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(124, Byte), Integer))
-        Me.PicRgister.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PicRgister.Image = CType(resources.GetObject("PicRgister.Image"), System.Drawing.Image)
-        Me.PicRgister.Location = New System.Drawing.Point(17, 6)
-        Me.PicRgister.Name = "PicRgister"
-        Me.PicRgister.Size = New System.Drawing.Size(40, 38)
-        Me.PicRgister.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PicRgister.TabIndex = 13
-        Me.PicRgister.TabStop = False
         '
         'Panel3
         '
@@ -1394,18 +1321,75 @@ Partial Class DashboardScreeningRegisBook
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Total Registration"
         '
-        'NewOpticalShopToolStripMenuItem
+        'BtnUpdateScreening
         '
-        Me.NewOpticalShopToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
-        Me.NewOpticalShopToolStripMenuItem.ForeColor = System.Drawing.Color.White
-        Me.NewOpticalShopToolStripMenuItem.Name = "NewOpticalShopToolStripMenuItem"
-        Me.NewOpticalShopToolStripMenuItem.Size = New System.Drawing.Size(223, 26)
-        Me.NewOpticalShopToolStripMenuItem.Text = "New Optical Shop"
+        Me.BtnUpdateScreening.ForeColor = System.Drawing.Color.White
+        Me.BtnUpdateScreening.Image = CType(resources.GetObject("BtnUpdateScreening.Image"), System.Drawing.Image)
+        Me.BtnUpdateScreening.Name = "BtnUpdateScreening"
+        Me.BtnUpdateScreening.Size = New System.Drawing.Size(248, 26)
+        Me.BtnUpdateScreening.Text = "Update Screening"
         '
-        'ToolStripMenuItem5
+        'BtnFind
         '
-        Me.ToolStripMenuItem5.Name = "ToolStripMenuItem5"
-        Me.ToolStripMenuItem5.Size = New System.Drawing.Size(202, 6)
+        Me.BtnFind.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.BtnFind.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
+        Me.BtnFind.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnFind.FlatAppearance.BorderSize = 0
+        Me.BtnFind.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnFind.Image = CType(resources.GetObject("BtnFind.Image"), System.Drawing.Image)
+        Me.BtnFind.Location = New System.Drawing.Point(1255, 81)
+        Me.BtnFind.Name = "BtnFind"
+        Me.BtnFind.Size = New System.Drawing.Size(42, 27)
+        Me.BtnFind.TabIndex = 19
+        Me.BtnFind.UseVisualStyleBackColor = False
+        '
+        'PicOpticalShop
+        '
+        Me.PicOpticalShop.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(124, Byte), Integer))
+        Me.PicOpticalShop.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PicOpticalShop.Image = CType(resources.GetObject("PicOpticalShop.Image"), System.Drawing.Image)
+        Me.PicOpticalShop.Location = New System.Drawing.Point(688, 5)
+        Me.PicOpticalShop.Name = "PicOpticalShop"
+        Me.PicOpticalShop.Size = New System.Drawing.Size(40, 38)
+        Me.PicOpticalShop.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PicOpticalShop.TabIndex = 17
+        Me.PicOpticalShop.TabStop = False
+        '
+        'PicReferral
+        '
+        Me.PicReferral.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(124, Byte), Integer))
+        Me.PicReferral.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PicReferral.Image = CType(resources.GetObject("PicReferral.Image"), System.Drawing.Image)
+        Me.PicReferral.Location = New System.Drawing.Point(443, 5)
+        Me.PicReferral.Name = "PicReferral"
+        Me.PicReferral.Size = New System.Drawing.Size(40, 38)
+        Me.PicReferral.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PicReferral.TabIndex = 15
+        Me.PicReferral.TabStop = False
+        '
+        'PicRefraction
+        '
+        Me.PicRefraction.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(124, Byte), Integer))
+        Me.PicRefraction.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PicRefraction.Image = CType(resources.GetObject("PicRefraction.Image"), System.Drawing.Image)
+        Me.PicRefraction.Location = New System.Drawing.Point(230, 6)
+        Me.PicRefraction.Name = "PicRefraction"
+        Me.PicRefraction.Size = New System.Drawing.Size(40, 38)
+        Me.PicRefraction.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PicRefraction.TabIndex = 14
+        Me.PicRefraction.TabStop = False
+        '
+        'PicRgister
+        '
+        Me.PicRgister.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(124, Byte), Integer))
+        Me.PicRgister.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PicRgister.Image = CType(resources.GetObject("PicRgister.Image"), System.Drawing.Image)
+        Me.PicRgister.Location = New System.Drawing.Point(17, 6)
+        Me.PicRgister.Name = "PicRgister"
+        Me.PicRgister.Size = New System.Drawing.Size(40, 38)
+        Me.PicRgister.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PicRgister.TabIndex = 13
+        Me.PicRgister.TabStop = False
         '
         'DashboardScreeningRegisBook
         '
@@ -1431,18 +1415,18 @@ Partial Class DashboardScreeningRegisBook
         CType(Me.DGRefraction, System.ComponentModel.ISupportInitialize).EndInit()
         Me.OpticalShop.ResumeLayout(False)
         CType(Me.DGOpticalShop, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PicOpticalShop, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel4.ResumeLayout(False)
         Me.Panel4.PerformLayout()
-        CType(Me.PicReferral, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PicRefraction, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PicRgister, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
         Me.PanelSend.ResumeLayout(False)
         Me.PanelSend.PerformLayout()
+        CType(Me.PicOpticalShop, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PicReferral, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PicRefraction, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PicRgister, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -1540,9 +1524,8 @@ Partial Class DashboardScreeningRegisBook
     Friend WithEvents BtnNewScreeningRegist As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents NewRefractionToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents UpdateRefractionToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents AaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem6 As System.Windows.Forms.ToolStripSeparator
-    Friend WithEvents NewReferralToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents BtnUpdateReferral As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents BtnNewReferral As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents SCREEN_BOOKID As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents SYS_SETTING As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents SCREAN_DATE As System.Windows.Forms.DataGridViewTextBoxColumn
@@ -1565,8 +1548,6 @@ Partial Class DashboardScreeningRegisBook
     Friend WithEvents IS_REFER_BYSELF As System.Windows.Forms.DataGridViewCheckBoxColumn
     Friend WithEvents SCREEN_NOTE As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents UpdateOpticalShopToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem7 As System.Windows.Forms.ToolStripSeparator
     Friend WithEvents NewOpticalShopToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem5 As System.Windows.Forms.ToolStripSeparator
 
 End Class

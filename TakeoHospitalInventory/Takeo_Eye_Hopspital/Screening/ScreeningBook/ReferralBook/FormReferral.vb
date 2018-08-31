@@ -1,11 +1,16 @@
-﻿Public Class UpdateScreeningBook
+﻿Public Class FormReferral
+    Dim DAReferralBook As New DataSetScreeningBookTableAdapters.SCREENING_REFERRAL_BOOKTableAdapter
     Dim DADiagnosis As New DataSetScreeningBookTableAdapters.TblSurgeryTableAdapter
     Dim DAVA As New DataSetScreeningBookTableAdapters.REFRACTION_VATableAdapter
-    Dim DAScreeningBook As New DataSetScreeningBookTableAdapters.SCREENING_BOOKTableAdapter
     Sub New()
 
         ' This call is required by the Windows Form Designer.
         InitializeComponent()
+        InitParameter()
+        ' Add any initialization after the InitializeComponent() call.
+
+    End Sub
+    Private Sub InitParameter()
         With cboDiagnosis
             .DataSource = DADiagnosis.GetData
             .ValueMember = "SID"
@@ -24,8 +29,6 @@
             .ValueMember = "RFRA_VA_ID"
             .SelectedIndex = -1
         End With
-        ' Add any initialization after the InitializeComponent() call.
-
     End Sub
     Private Sub BtnClose_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnClose.Click
         Me.Close()
@@ -38,17 +41,14 @@
     End Sub
 
     Private Sub BtnSave_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnSave.Click
+        'Dim emp As Nullable(Of Date)
+        'emp = System.DBNull.Value
         If LblSaveOption.Text <> "0" Then
-            If MessageBox.Show("Do you want to update screening book?", "Update", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
-                If DAScreeningBook.UpdateScreeningBook(DateScreening.Value.Date, ChRefraction.Checked, ChOpticalshop.Checked, RadReferAndPickup.Checked, RadReferAndPickup.Checked, TxtMoreInfo.Text, CboOnEye.Text, TxtComplain.Text, cboDiagnosis.Text, CboVARight.Text, CboVALeft.Text, TxtPlaceScreening.Text, LblSaveOption.Text) = 1 Then
+            If MessageBox.Show("Do you want to update patient referral?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
+                If DAReferralBook.UpdateReferral(CboVARight.Text, CboVALeft.Text, cboDiagnosis.Text, IIf(DateAppointment.Checked = True, DateAppointment.Value.Date, Nothing), TxtMoreInfo.Text, LblSaveOption.Text) Then
                     Me.DialogResult = Windows.Forms.DialogResult.OK
                 End If
             End If
         End If
-    End Sub
-
-    Private Sub ChReferral_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ChReferral.CheckedChanged
-        GBReferral.Enabled = ChReferral.Checked
-
     End Sub
 End Class

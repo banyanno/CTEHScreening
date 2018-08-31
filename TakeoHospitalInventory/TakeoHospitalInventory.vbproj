@@ -679,6 +679,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetScreeningBook.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Takeo_Eye_Hopspital\Screening\ScreeningBook\ReferralBook\FormReferral.Designer.vb">
+      <DependentUpon>FormReferral.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Takeo_Eye_Hopspital\Screening\ScreeningBook\ReferralBook\FormReferral.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Takeo_Eye_Hopspital\Screening\ScreeningBook\UpdateScreeningBook.Designer.vb">
       <DependentUpon>UpdateScreeningBook.vb</DependentUpon>
     </Compile>
@@ -3264,6 +3270,9 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>ReportAllRefraction.vb</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Takeo_Eye_Hopspital\Screening\ScreeningBook\ReferralBook\FormReferral.resx">
+      <DependentUpon>FormReferral.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Takeo_Eye_Hopspital\Screening\ScreeningBook\UpdateScreeningBook.resx">
       <DependentUpon>UpdateScreeningBook.vb</DependentUpon>
     </EmbeddedResource>
@@ -5660,6 +5669,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="obj\" />
+    <Folder Include="Takeo_Eye_Hopspital\Screening\ScreeningBook\OpticalShop\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
