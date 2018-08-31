@@ -71,11 +71,11 @@ Partial Class frmLoginInventory
         '
         Me.UsernameLabel.AutoSize = True
         Me.UsernameLabel.BackColor = System.Drawing.Color.Transparent
-        Me.UsernameLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.UsernameLabel.ForeColor = System.Drawing.SystemColors.HotTrack
-        Me.UsernameLabel.Location = New System.Drawing.Point(19, 36)
+        Me.UsernameLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.UsernameLabel.ForeColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
+        Me.UsernameLabel.Location = New System.Drawing.Point(19, 35)
         Me.UsernameLabel.Name = "UsernameLabel"
-        Me.UsernameLabel.Size = New System.Drawing.Size(87, 20)
+        Me.UsernameLabel.Size = New System.Drawing.Size(102, 24)
         Me.UsernameLabel.TabIndex = 0
         Me.UsernameLabel.Text = "&User name"
         Me.UsernameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -84,11 +84,11 @@ Partial Class frmLoginInventory
         '
         Me.PasswordLabel.AutoSize = True
         Me.PasswordLabel.BackColor = System.Drawing.Color.Transparent
-        Me.PasswordLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.PasswordLabel.ForeColor = System.Drawing.SystemColors.HotTrack
-        Me.PasswordLabel.Location = New System.Drawing.Point(19, 110)
+        Me.PasswordLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.PasswordLabel.ForeColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
+        Me.PasswordLabel.Location = New System.Drawing.Point(19, 109)
         Me.PasswordLabel.Name = "PasswordLabel"
-        Me.PasswordLabel.Size = New System.Drawing.Size(78, 20)
+        Me.PasswordLabel.Size = New System.Drawing.Size(92, 24)
         Me.PasswordLabel.TabIndex = 2
         Me.PasswordLabel.Text = "&Password"
         Me.PasswordLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -131,14 +131,14 @@ Partial Class frmLoginInventory
         '
         'BtnOk
         '
-        Me.BtnOk.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.BtnOk.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
         Me.BtnOk.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BtnOk.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnOk.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnOk.ForeColor = System.Drawing.Color.White
         Me.BtnOk.Location = New System.Drawing.Point(104, 181)
         Me.BtnOk.Name = "BtnOk"
-        Me.BtnOk.Size = New System.Drawing.Size(341, 38)
+        Me.BtnOk.Size = New System.Drawing.Size(341, 45)
         Me.BtnOk.TabIndex = 3
         Me.BtnOk.Text = "Login ..."
         Me.BtnOk.UseVisualStyleBackColor = False
@@ -149,7 +149,8 @@ Partial Class frmLoginInventory
         '
         'Panel1
         '
-        Me.Panel1.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
+        Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel1.Controls.Add(Me.Label4)
         Me.Panel1.Controls.Add(Me.Label5)
         Me.Panel1.Controls.Add(Me.Button1)
@@ -182,7 +183,7 @@ Partial Class frmLoginInventory
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.Cyan
-        Me.Label5.Location = New System.Drawing.Point(959, 14)
+        Me.Label5.Location = New System.Drawing.Point(957, 14)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(211, 17)
         Me.Label5.TabIndex = 15
@@ -190,7 +191,7 @@ Partial Class frmLoginInventory
         '
         'Button1
         '
-        Me.Button1.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
         Me.Button1.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Button1.FlatAppearance.BorderSize = 0
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -221,7 +222,7 @@ Partial Class frmLoginInventory
         'BtnConnected
         '
         Me.BtnConnected.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.BtnConnected.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.BtnConnected.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
         Me.BtnConnected.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BtnConnected.FlatAppearance.BorderSize = 0
         Me.BtnConnected.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -237,7 +238,7 @@ Partial Class frmLoginInventory
         '
         'BtnExit
         '
-        Me.BtnExit.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.BtnExit.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
         Me.BtnExit.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BtnExit.Dock = System.Windows.Forms.DockStyle.Right
         Me.BtnExit.FlatAppearance.BorderSize = 0
@@ -246,23 +247,23 @@ Partial Class frmLoginInventory
         Me.BtnExit.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnExit.ForeColor = System.Drawing.Color.White
         Me.BtnExit.Image = CType(resources.GetObject("BtnExit.Image"), System.Drawing.Image)
-        Me.BtnExit.Location = New System.Drawing.Point(1229, 0)
+        Me.BtnExit.Location = New System.Drawing.Point(1227, 0)
         Me.BtnExit.Name = "BtnExit"
-        Me.BtnExit.Size = New System.Drawing.Size(39, 42)
+        Me.BtnExit.Size = New System.Drawing.Size(39, 40)
         Me.BtnExit.TabIndex = 14
         Me.BtnExit.UseVisualStyleBackColor = False
         '
         'btnDisconect
         '
         Me.btnDisconect.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnDisconect.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.btnDisconect.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
         Me.btnDisconect.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnDisconect.FlatAppearance.BorderSize = 0
         Me.btnDisconect.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnDisconect.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnDisconect.ForeColor = System.Drawing.Color.White
         Me.btnDisconect.Image = CType(resources.GetObject("btnDisconect.Image"), System.Drawing.Image)
-        Me.btnDisconect.Location = New System.Drawing.Point(1177, 0)
+        Me.btnDisconect.Location = New System.Drawing.Point(1173, 0)
         Me.btnDisconect.Name = "btnDisconect"
         Me.btnDisconect.Size = New System.Drawing.Size(50, 39)
         Me.btnDisconect.TabIndex = 15
@@ -275,7 +276,7 @@ Partial Class frmLoginInventory
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Times New Roman", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(527, 7)
+        Me.Label1.Location = New System.Drawing.Point(526, 6)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(254, 23)
         Me.Label1.TabIndex = 0
@@ -284,7 +285,8 @@ Partial Class frmLoginInventory
         '
         'Panel2
         '
-        Me.Panel2.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
+        Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel2.Controls.Add(Me.PictLoading)
         Me.Panel2.Controls.Add(Me.LblDate)
         Me.Panel2.Controls.Add(Me.LblStatus)
@@ -299,7 +301,7 @@ Partial Class frmLoginInventory
         '
         Me.PictLoading.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.PictLoading.Image = Global.TakeoHospitalInventory.My.Resources.Resources.loading_bar11
-        Me.PictLoading.Location = New System.Drawing.Point(1102, 7)
+        Me.PictLoading.Location = New System.Drawing.Point(1100, 5)
         Me.PictLoading.Name = "PictLoading"
         Me.PictLoading.Size = New System.Drawing.Size(165, 25)
         Me.PictLoading.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -321,7 +323,7 @@ Partial Class frmLoginInventory
         Me.LblStatus.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.LblStatus.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LblStatus.ForeColor = System.Drawing.Color.White
-        Me.LblStatus.Location = New System.Drawing.Point(807, 10)
+        Me.LblStatus.Location = New System.Drawing.Point(805, 8)
         Me.LblStatus.Name = "LblStatus"
         Me.LblStatus.Size = New System.Drawing.Size(289, 19)
         Me.LblStatus.TabIndex = 10
@@ -362,7 +364,7 @@ Partial Class frmLoginInventory
         Me.Label3.AutoSize = True
         Me.Label3.BackColor = System.Drawing.Color.Transparent
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.SystemColors.HotTrack
+        Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
         Me.Label3.Location = New System.Drawing.Point(564, 226)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(167, 25)
