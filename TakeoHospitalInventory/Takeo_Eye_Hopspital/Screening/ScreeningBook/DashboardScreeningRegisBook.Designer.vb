@@ -26,6 +26,11 @@ Partial Class DashboardScreeningRegisBook
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
         Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
         Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(DashboardScreeningRegisBook))
         Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
         Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
@@ -36,24 +41,48 @@ Partial Class DashboardScreeningRegisBook
         Dim DataGridViewCellStyle15 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
         Dim DataGridViewCellStyle16 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
         Dim DataGridViewCellStyle17 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
         Me.Panel1 = New System.Windows.Forms.Panel
         Me.Label2 = New System.Windows.Forms.Label
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer
         Me.DGScreeningBook = New System.Windows.Forms.DataGridView
+        Me.SCREEN_BOOKID = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.SYS_SETTING = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.SCREAN_DATE = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.PatientNo = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.REFERENCE_PATIENNOTE = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.NameEng = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.NameKhmer = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.Age = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.Sex = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.Address = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.SCREEN_PLACE = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.ON_EYE = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.DIAGNOSISScreening = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.VA_RIGHTScreening = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.VA_LEFTScreening = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.PRESENTING_COMPLAIN = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.IS_REFRACTION = New System.Windows.Forms.DataGridViewCheckBoxColumn
+        Me.IS_OPTICALSHOP = New System.Windows.Forms.DataGridViewCheckBoxColumn
+        Me.IS_REFER_PICKUP = New System.Windows.Forms.DataGridViewCheckBoxColumn
+        Me.IS_REFER_BYSELF = New System.Windows.Forms.DataGridViewCheckBoxColumn
+        Me.SCREEN_NOTE = New System.Windows.Forms.DataGridViewTextBoxColumn
         Me.CMScreeningBook = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.BtnNewScreeningRegist = New System.Windows.Forms.ToolStripMenuItem
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator
         Me.BtnUpdateScreening = New System.Windows.Forms.ToolStripMenuItem
         Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripSeparator
         Me.BtnRefraction = New System.Windows.Forms.ToolStripMenuItem
+        Me.UpdateRefractionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+        Me.NewRefractionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripSeparator
         Me.BtnReferral = New System.Windows.Forms.ToolStripMenuItem
+        Me.AaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+        Me.ToolStripMenuItem6 = New System.Windows.Forms.ToolStripSeparator
+        Me.NewReferralToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.ToolStripMenuItem3 = New System.Windows.Forms.ToolStripSeparator
         Me.BtnOpticalShop = New System.Windows.Forms.ToolStripMenuItem
+        Me.UpdateOpticalShopToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+        Me.ToolStripMenuItem7 = New System.Windows.Forms.ToolStripSeparator
         Me.ToolStripMenuItem4 = New System.Windows.Forms.ToolStripSeparator
         Me.TabControl1 = New System.Windows.Forms.TabControl
         Me.ReferralPickup = New System.Windows.Forms.TabPage
@@ -132,27 +161,8 @@ Partial Class DashboardScreeningRegisBook
         Me.PanelSend = New System.Windows.Forms.Panel
         Me.TxtTotalRegister = New System.Windows.Forms.Label
         Me.Label1 = New System.Windows.Forms.Label
-        Me.BtnNewScreeningRegist = New System.Windows.Forms.ToolStripMenuItem
-        Me.SCREEN_BOOKID = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.SYS_SETTING = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.SCREAN_DATE = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.PatientNo = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.NameEng = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.NameKhmer = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.Age = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.Sex = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.Address = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.SCREEN_PLACE = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.ON_EYE = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.DIAGNOSISScreening = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.VA_RIGHTScreening = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.VA_LEFTScreening = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.PRESENTING_COMPLAIN = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.IS_REFRACTION = New System.Windows.Forms.DataGridViewCheckBoxColumn
-        Me.IS_OPTICALSHOP = New System.Windows.Forms.DataGridViewCheckBoxColumn
-        Me.IS_REFER_PICKUP = New System.Windows.Forms.DataGridViewCheckBoxColumn
-        Me.IS_REFER_BYSELF = New System.Windows.Forms.DataGridViewCheckBoxColumn
-        Me.SCREEN_NOTE = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.NewOpticalShopToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+        Me.ToolStripMenuItem5 = New System.Windows.Forms.ToolStripSeparator
         Me.Panel1.SuspendLayout()
         Me.SplitContainer1.Panel1.SuspendLayout()
         Me.SplitContainer1.Panel2.SuspendLayout()
@@ -253,7 +263,7 @@ Partial Class DashboardScreeningRegisBook
         DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.DGScreeningBook.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.DGScreeningBook.ColumnHeadersHeight = 40
-        Me.DGScreeningBook.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.SCREEN_BOOKID, Me.SYS_SETTING, Me.SCREAN_DATE, Me.PatientNo, Me.NameEng, Me.NameKhmer, Me.Age, Me.Sex, Me.Address, Me.SCREEN_PLACE, Me.ON_EYE, Me.DIAGNOSISScreening, Me.VA_RIGHTScreening, Me.VA_LEFTScreening, Me.PRESENTING_COMPLAIN, Me.IS_REFRACTION, Me.IS_OPTICALSHOP, Me.IS_REFER_PICKUP, Me.IS_REFER_BYSELF, Me.SCREEN_NOTE})
+        Me.DGScreeningBook.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.SCREEN_BOOKID, Me.SYS_SETTING, Me.SCREAN_DATE, Me.PatientNo, Me.REFERENCE_PATIENNOTE, Me.NameEng, Me.NameKhmer, Me.Age, Me.Sex, Me.Address, Me.SCREEN_PLACE, Me.ON_EYE, Me.DIAGNOSISScreening, Me.VA_RIGHTScreening, Me.VA_LEFTScreening, Me.PRESENTING_COMPLAIN, Me.IS_REFRACTION, Me.IS_OPTICALSHOP, Me.IS_REFER_PICKUP, Me.IS_REFER_BYSELF, Me.SCREEN_NOTE})
         Me.DGScreeningBook.ContextMenuStrip = Me.CMScreeningBook
         DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle7.BackColor = System.Drawing.Color.White
@@ -284,6 +294,180 @@ Partial Class DashboardScreeningRegisBook
         Me.DGScreeningBook.Size = New System.Drawing.Size(1297, 391)
         Me.DGScreeningBook.TabIndex = 25
         '
+        'SCREEN_BOOKID
+        '
+        Me.SCREEN_BOOKID.DataPropertyName = "SCREEN_BOOKID"
+        Me.SCREEN_BOOKID.HeaderText = "SCREEN_BOOKID"
+        Me.SCREEN_BOOKID.Name = "SCREEN_BOOKID"
+        Me.SCREEN_BOOKID.ReadOnly = True
+        Me.SCREEN_BOOKID.Visible = False
+        '
+        'SYS_SETTING
+        '
+        Me.SYS_SETTING.DataPropertyName = "SYS_SETTING"
+        Me.SYS_SETTING.HeaderText = "SYS_SETTING"
+        Me.SYS_SETTING.Name = "SYS_SETTING"
+        Me.SYS_SETTING.ReadOnly = True
+        Me.SYS_SETTING.Visible = False
+        '
+        'SCREAN_DATE
+        '
+        Me.SCREAN_DATE.DataPropertyName = "SCREAN_DATE"
+        DataGridViewCellStyle2.Format = "dd/MM/yyyy"
+        Me.SCREAN_DATE.DefaultCellStyle = DataGridViewCellStyle2
+        Me.SCREAN_DATE.FillWeight = 101.8276!
+        Me.SCREAN_DATE.HeaderText = "Regist-Date"
+        Me.SCREAN_DATE.Name = "SCREAN_DATE"
+        Me.SCREAN_DATE.ReadOnly = True
+        '
+        'PatientNo
+        '
+        Me.PatientNo.DataPropertyName = "PatientNo"
+        Me.PatientNo.FillWeight = 101.8276!
+        Me.PatientNo.HeaderText = "Patient No"
+        Me.PatientNo.Name = "PatientNo"
+        Me.PatientNo.ReadOnly = True
+        '
+        'REFERENCE_PATIENNOTE
+        '
+        Me.REFERENCE_PATIENNOTE.DataPropertyName = "REFERENCE_PATIENNOTE"
+        Me.REFERENCE_PATIENNOTE.HeaderText = "Ref-No"
+        Me.REFERENCE_PATIENNOTE.Name = "REFERENCE_PATIENNOTE"
+        Me.REFERENCE_PATIENNOTE.ReadOnly = True
+        '
+        'NameEng
+        '
+        Me.NameEng.DataPropertyName = "NameEng"
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Khmer OS Battambang", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.NameEng.DefaultCellStyle = DataGridViewCellStyle3
+        Me.NameEng.FillWeight = 101.8276!
+        Me.NameEng.HeaderText = "NameEng"
+        Me.NameEng.Name = "NameEng"
+        Me.NameEng.ReadOnly = True
+        '
+        'NameKhmer
+        '
+        Me.NameKhmer.DataPropertyName = "NameKhmer"
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Khmer OS Battambang", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.NameKhmer.DefaultCellStyle = DataGridViewCellStyle4
+        Me.NameKhmer.FillWeight = 101.8276!
+        Me.NameKhmer.HeaderText = "NameKhmer"
+        Me.NameKhmer.Name = "NameKhmer"
+        Me.NameKhmer.ReadOnly = True
+        '
+        'Age
+        '
+        Me.Age.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Age.DataPropertyName = "Age"
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.Age.DefaultCellStyle = DataGridViewCellStyle5
+        Me.Age.FillWeight = 100.7086!
+        Me.Age.HeaderText = "Age"
+        Me.Age.Name = "Age"
+        Me.Age.ReadOnly = True
+        '
+        'Sex
+        '
+        Me.Sex.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Sex.DataPropertyName = "Sex"
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.Sex.DefaultCellStyle = DataGridViewCellStyle6
+        Me.Sex.FillWeight = 79.18782!
+        Me.Sex.HeaderText = "Sex"
+        Me.Sex.Name = "Sex"
+        Me.Sex.ReadOnly = True
+        '
+        'Address
+        '
+        Me.Address.DataPropertyName = "Address"
+        Me.Address.FillWeight = 101.8276!
+        Me.Address.HeaderText = "Address"
+        Me.Address.Name = "Address"
+        Me.Address.ReadOnly = True
+        '
+        'SCREEN_PLACE
+        '
+        Me.SCREEN_PLACE.DataPropertyName = "SCREEN_PLACE"
+        Me.SCREEN_PLACE.FillWeight = 101.8276!
+        Me.SCREEN_PLACE.HeaderText = "Screen Place"
+        Me.SCREEN_PLACE.Name = "SCREEN_PLACE"
+        Me.SCREEN_PLACE.ReadOnly = True
+        '
+        'ON_EYE
+        '
+        Me.ON_EYE.DataPropertyName = "ON_EYE"
+        Me.ON_EYE.HeaderText = "On Eye"
+        Me.ON_EYE.Name = "ON_EYE"
+        Me.ON_EYE.ReadOnly = True
+        '
+        'DIAGNOSISScreening
+        '
+        Me.DIAGNOSISScreening.DataPropertyName = "DIAGNOSIS"
+        Me.DIAGNOSISScreening.HeaderText = "Diagnosis"
+        Me.DIAGNOSISScreening.Name = "DIAGNOSISScreening"
+        Me.DIAGNOSISScreening.ReadOnly = True
+        '
+        'VA_RIGHTScreening
+        '
+        Me.VA_RIGHTScreening.DataPropertyName = "VA_RIGHT"
+        Me.VA_RIGHTScreening.HeaderText = "VA Right"
+        Me.VA_RIGHTScreening.Name = "VA_RIGHTScreening"
+        Me.VA_RIGHTScreening.ReadOnly = True
+        '
+        'VA_LEFTScreening
+        '
+        Me.VA_LEFTScreening.DataPropertyName = "VA_LEFT"
+        Me.VA_LEFTScreening.HeaderText = "VA Left"
+        Me.VA_LEFTScreening.Name = "VA_LEFTScreening"
+        Me.VA_LEFTScreening.ReadOnly = True
+        '
+        'PRESENTING_COMPLAIN
+        '
+        Me.PRESENTING_COMPLAIN.DataPropertyName = "PRESENTING_COMPLAIN"
+        Me.PRESENTING_COMPLAIN.HeaderText = "Presenting Complain"
+        Me.PRESENTING_COMPLAIN.Name = "PRESENTING_COMPLAIN"
+        Me.PRESENTING_COMPLAIN.ReadOnly = True
+        '
+        'IS_REFRACTION
+        '
+        Me.IS_REFRACTION.DataPropertyName = "IS_REFRACTION"
+        Me.IS_REFRACTION.FillWeight = 101.8276!
+        Me.IS_REFRACTION.HeaderText = "Refraction"
+        Me.IS_REFRACTION.Name = "IS_REFRACTION"
+        Me.IS_REFRACTION.ReadOnly = True
+        '
+        'IS_OPTICALSHOP
+        '
+        Me.IS_OPTICALSHOP.DataPropertyName = "IS_OPTICALSHOP"
+        Me.IS_OPTICALSHOP.FillWeight = 101.8276!
+        Me.IS_OPTICALSHOP.HeaderText = "Optical shop"
+        Me.IS_OPTICALSHOP.Name = "IS_OPTICALSHOP"
+        Me.IS_OPTICALSHOP.ReadOnly = True
+        '
+        'IS_REFER_PICKUP
+        '
+        Me.IS_REFER_PICKUP.DataPropertyName = "IS_REFER_PICKUP"
+        Me.IS_REFER_PICKUP.FillWeight = 101.8276!
+        Me.IS_REFER_PICKUP.HeaderText = "Referral By Pickup"
+        Me.IS_REFER_PICKUP.Name = "IS_REFER_PICKUP"
+        Me.IS_REFER_PICKUP.ReadOnly = True
+        '
+        'IS_REFER_BYSELF
+        '
+        Me.IS_REFER_BYSELF.DataPropertyName = "IS_REFER_BYSELF"
+        Me.IS_REFER_BYSELF.FillWeight = 101.8276!
+        Me.IS_REFER_BYSELF.HeaderText = "Referral By Selft"
+        Me.IS_REFER_BYSELF.Name = "IS_REFER_BYSELF"
+        Me.IS_REFER_BYSELF.ReadOnly = True
+        '
+        'SCREEN_NOTE
+        '
+        Me.SCREEN_NOTE.DataPropertyName = "SCREEN_NOTE"
+        Me.SCREEN_NOTE.FillWeight = 101.8276!
+        Me.SCREEN_NOTE.HeaderText = "Note"
+        Me.SCREEN_NOTE.Name = "SCREEN_NOTE"
+        Me.SCREEN_NOTE.ReadOnly = True
+        '
         'CMScreeningBook
         '
         Me.CMScreeningBook.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
@@ -291,7 +475,14 @@ Partial Class DashboardScreeningRegisBook
         Me.CMScreeningBook.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BtnNewScreeningRegist, Me.ToolStripSeparator1, Me.BtnUpdateScreening, Me.ToolStripMenuItem1, Me.BtnRefraction, Me.ToolStripMenuItem2, Me.BtnReferral, Me.ToolStripMenuItem3, Me.BtnOpticalShop, Me.ToolStripMenuItem4})
         Me.CMScreeningBook.Name = "CMScreeningBook"
         Me.CMScreeningBook.ShowImageMargin = False
-        Me.CMScreeningBook.Size = New System.Drawing.Size(249, 164)
+        Me.CMScreeningBook.Size = New System.Drawing.Size(249, 186)
+        '
+        'BtnNewScreeningRegist
+        '
+        Me.BtnNewScreeningRegist.ForeColor = System.Drawing.Color.White
+        Me.BtnNewScreeningRegist.Name = "BtnNewScreeningRegist"
+        Me.BtnNewScreeningRegist.Size = New System.Drawing.Size(248, 26)
+        Me.BtnNewScreeningRegist.Text = "New Screening Registration"
         '
         'ToolStripSeparator1
         '
@@ -313,10 +504,27 @@ Partial Class DashboardScreeningRegisBook
         '
         'BtnRefraction
         '
+        Me.BtnRefraction.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.UpdateRefractionToolStripMenuItem, Me.ToolStripMenuItem5, Me.NewRefractionToolStripMenuItem})
         Me.BtnRefraction.ForeColor = System.Drawing.Color.White
         Me.BtnRefraction.Name = "BtnRefraction"
         Me.BtnRefraction.Size = New System.Drawing.Size(248, 26)
-        Me.BtnRefraction.Text = "Refraction"
+        Me.BtnRefraction.Text = "Refraction ..."
+        '
+        'UpdateRefractionToolStripMenuItem
+        '
+        Me.UpdateRefractionToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
+        Me.UpdateRefractionToolStripMenuItem.ForeColor = System.Drawing.Color.White
+        Me.UpdateRefractionToolStripMenuItem.Name = "UpdateRefractionToolStripMenuItem"
+        Me.UpdateRefractionToolStripMenuItem.Size = New System.Drawing.Size(205, 26)
+        Me.UpdateRefractionToolStripMenuItem.Text = "Update Refraction"
+        '
+        'NewRefractionToolStripMenuItem
+        '
+        Me.NewRefractionToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
+        Me.NewRefractionToolStripMenuItem.ForeColor = System.Drawing.Color.White
+        Me.NewRefractionToolStripMenuItem.Name = "NewRefractionToolStripMenuItem"
+        Me.NewRefractionToolStripMenuItem.Size = New System.Drawing.Size(205, 26)
+        Me.NewRefractionToolStripMenuItem.Text = "New Refraction"
         '
         'ToolStripMenuItem2
         '
@@ -325,10 +533,35 @@ Partial Class DashboardScreeningRegisBook
         '
         'BtnReferral
         '
+        Me.BtnReferral.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AaToolStripMenuItem, Me.ToolStripMenuItem6, Me.NewReferralToolStripMenuItem})
         Me.BtnReferral.ForeColor = System.Drawing.Color.White
         Me.BtnReferral.Name = "BtnReferral"
+        Me.BtnReferral.Overflow = System.Windows.Forms.ToolStripItemOverflow.Always
         Me.BtnReferral.Size = New System.Drawing.Size(248, 26)
-        Me.BtnReferral.Text = "Referral"
+        Me.BtnReferral.Text = "Referral ..."
+        '
+        'AaToolStripMenuItem
+        '
+        Me.AaToolStripMenuItem.AccessibleRole = System.Windows.Forms.AccessibleRole.Cursor
+        Me.AaToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
+        Me.AaToolStripMenuItem.ForeColor = System.Drawing.Color.White
+        Me.AaToolStripMenuItem.Name = "AaToolStripMenuItem"
+        Me.AaToolStripMenuItem.Size = New System.Drawing.Size(180, 26)
+        Me.AaToolStripMenuItem.Text = "Upate Referral"
+        '
+        'ToolStripMenuItem6
+        '
+        Me.ToolStripMenuItem6.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
+        Me.ToolStripMenuItem6.Name = "ToolStripMenuItem6"
+        Me.ToolStripMenuItem6.Size = New System.Drawing.Size(177, 6)
+        '
+        'NewReferralToolStripMenuItem
+        '
+        Me.NewReferralToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
+        Me.NewReferralToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
+        Me.NewReferralToolStripMenuItem.Name = "NewReferralToolStripMenuItem"
+        Me.NewReferralToolStripMenuItem.Size = New System.Drawing.Size(180, 26)
+        Me.NewReferralToolStripMenuItem.Text = "New Referral"
         '
         'ToolStripMenuItem3
         '
@@ -337,10 +570,24 @@ Partial Class DashboardScreeningRegisBook
         '
         'BtnOpticalShop
         '
+        Me.BtnOpticalShop.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.UpdateOpticalShopToolStripMenuItem, Me.ToolStripMenuItem7, Me.NewOpticalShopToolStripMenuItem})
         Me.BtnOpticalShop.ForeColor = System.Drawing.Color.White
         Me.BtnOpticalShop.Name = "BtnOpticalShop"
         Me.BtnOpticalShop.Size = New System.Drawing.Size(248, 26)
-        Me.BtnOpticalShop.Text = "Optical Shop"
+        Me.BtnOpticalShop.Text = "Optical Shop ..."
+        '
+        'UpdateOpticalShopToolStripMenuItem
+        '
+        Me.UpdateOpticalShopToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
+        Me.UpdateOpticalShopToolStripMenuItem.ForeColor = System.Drawing.Color.White
+        Me.UpdateOpticalShopToolStripMenuItem.Name = "UpdateOpticalShopToolStripMenuItem"
+        Me.UpdateOpticalShopToolStripMenuItem.Size = New System.Drawing.Size(223, 26)
+        Me.UpdateOpticalShopToolStripMenuItem.Text = "Update Optical Shop"
+        '
+        'ToolStripMenuItem7
+        '
+        Me.ToolStripMenuItem7.Name = "ToolStripMenuItem7"
+        Me.ToolStripMenuItem7.Size = New System.Drawing.Size(220, 6)
         '
         'ToolStripMenuItem4
         '
@@ -1147,179 +1394,18 @@ Partial Class DashboardScreeningRegisBook
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Total Registration"
         '
-        'BtnNewScreeningRegist
+        'NewOpticalShopToolStripMenuItem
         '
-        Me.BtnNewScreeningRegist.ForeColor = System.Drawing.Color.White
-        Me.BtnNewScreeningRegist.Name = "BtnNewScreeningRegist"
-        Me.BtnNewScreeningRegist.Size = New System.Drawing.Size(248, 26)
-        Me.BtnNewScreeningRegist.Text = "New Screening Registration"
+        Me.NewOpticalShopToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
+        Me.NewOpticalShopToolStripMenuItem.ForeColor = System.Drawing.Color.White
+        Me.NewOpticalShopToolStripMenuItem.Name = "NewOpticalShopToolStripMenuItem"
+        Me.NewOpticalShopToolStripMenuItem.Size = New System.Drawing.Size(223, 26)
+        Me.NewOpticalShopToolStripMenuItem.Text = "New Optical Shop"
         '
-        'SCREEN_BOOKID
+        'ToolStripMenuItem5
         '
-        Me.SCREEN_BOOKID.DataPropertyName = "SCREEN_BOOKID"
-        Me.SCREEN_BOOKID.HeaderText = "SCREEN_BOOKID"
-        Me.SCREEN_BOOKID.Name = "SCREEN_BOOKID"
-        Me.SCREEN_BOOKID.ReadOnly = True
-        Me.SCREEN_BOOKID.Visible = False
-        '
-        'SYS_SETTING
-        '
-        Me.SYS_SETTING.DataPropertyName = "SYS_SETTING"
-        Me.SYS_SETTING.HeaderText = "SYS_SETTING"
-        Me.SYS_SETTING.Name = "SYS_SETTING"
-        Me.SYS_SETTING.ReadOnly = True
-        Me.SYS_SETTING.Visible = False
-        '
-        'SCREAN_DATE
-        '
-        Me.SCREAN_DATE.DataPropertyName = "SCREAN_DATE"
-        DataGridViewCellStyle2.Format = "dd/MM/yyyy"
-        Me.SCREAN_DATE.DefaultCellStyle = DataGridViewCellStyle2
-        Me.SCREAN_DATE.FillWeight = 101.8276!
-        Me.SCREAN_DATE.HeaderText = "Screening Date"
-        Me.SCREAN_DATE.Name = "SCREAN_DATE"
-        Me.SCREAN_DATE.ReadOnly = True
-        '
-        'PatientNo
-        '
-        Me.PatientNo.DataPropertyName = "PatientNo"
-        Me.PatientNo.FillWeight = 101.8276!
-        Me.PatientNo.HeaderText = "Patient No"
-        Me.PatientNo.Name = "PatientNo"
-        Me.PatientNo.ReadOnly = True
-        '
-        'NameEng
-        '
-        Me.NameEng.DataPropertyName = "NameEng"
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Khmer OS Battambang", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.NameEng.DefaultCellStyle = DataGridViewCellStyle3
-        Me.NameEng.FillWeight = 101.8276!
-        Me.NameEng.HeaderText = "NameEng"
-        Me.NameEng.Name = "NameEng"
-        Me.NameEng.ReadOnly = True
-        '
-        'NameKhmer
-        '
-        Me.NameKhmer.DataPropertyName = "NameKhmer"
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Khmer OS Battambang", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.NameKhmer.DefaultCellStyle = DataGridViewCellStyle4
-        Me.NameKhmer.FillWeight = 101.8276!
-        Me.NameKhmer.HeaderText = "NameKhmer"
-        Me.NameKhmer.Name = "NameKhmer"
-        Me.NameKhmer.ReadOnly = True
-        '
-        'Age
-        '
-        Me.Age.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Age.DataPropertyName = "Age"
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.Age.DefaultCellStyle = DataGridViewCellStyle5
-        Me.Age.FillWeight = 100.7086!
-        Me.Age.HeaderText = "Age"
-        Me.Age.Name = "Age"
-        Me.Age.ReadOnly = True
-        '
-        'Sex
-        '
-        Me.Sex.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Sex.DataPropertyName = "Sex"
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.Sex.DefaultCellStyle = DataGridViewCellStyle6
-        Me.Sex.FillWeight = 79.18782!
-        Me.Sex.HeaderText = "Sex"
-        Me.Sex.Name = "Sex"
-        Me.Sex.ReadOnly = True
-        '
-        'Address
-        '
-        Me.Address.DataPropertyName = "Address"
-        Me.Address.FillWeight = 101.8276!
-        Me.Address.HeaderText = "Address"
-        Me.Address.Name = "Address"
-        Me.Address.ReadOnly = True
-        '
-        'SCREEN_PLACE
-        '
-        Me.SCREEN_PLACE.DataPropertyName = "SCREEN_PLACE"
-        Me.SCREEN_PLACE.FillWeight = 101.8276!
-        Me.SCREEN_PLACE.HeaderText = "Screen Place"
-        Me.SCREEN_PLACE.Name = "SCREEN_PLACE"
-        Me.SCREEN_PLACE.ReadOnly = True
-        '
-        'ON_EYE
-        '
-        Me.ON_EYE.DataPropertyName = "ON_EYE"
-        Me.ON_EYE.HeaderText = "On Eye"
-        Me.ON_EYE.Name = "ON_EYE"
-        Me.ON_EYE.ReadOnly = True
-        '
-        'DIAGNOSISScreening
-        '
-        Me.DIAGNOSISScreening.DataPropertyName = "DIAGNOSIS"
-        Me.DIAGNOSISScreening.HeaderText = "Diagnosis"
-        Me.DIAGNOSISScreening.Name = "DIAGNOSISScreening"
-        Me.DIAGNOSISScreening.ReadOnly = True
-        '
-        'VA_RIGHTScreening
-        '
-        Me.VA_RIGHTScreening.DataPropertyName = "VA_RIGHT"
-        Me.VA_RIGHTScreening.HeaderText = "VA Right"
-        Me.VA_RIGHTScreening.Name = "VA_RIGHTScreening"
-        Me.VA_RIGHTScreening.ReadOnly = True
-        '
-        'VA_LEFTScreening
-        '
-        Me.VA_LEFTScreening.DataPropertyName = "VA_LEFT"
-        Me.VA_LEFTScreening.HeaderText = "VA Left"
-        Me.VA_LEFTScreening.Name = "VA_LEFTScreening"
-        Me.VA_LEFTScreening.ReadOnly = True
-        '
-        'PRESENTING_COMPLAIN
-        '
-        Me.PRESENTING_COMPLAIN.DataPropertyName = "PRESENTING_COMPLAIN"
-        Me.PRESENTING_COMPLAIN.HeaderText = "Presenting Complain"
-        Me.PRESENTING_COMPLAIN.Name = "PRESENTING_COMPLAIN"
-        Me.PRESENTING_COMPLAIN.ReadOnly = True
-        '
-        'IS_REFRACTION
-        '
-        Me.IS_REFRACTION.DataPropertyName = "IS_REFRACTION"
-        Me.IS_REFRACTION.FillWeight = 101.8276!
-        Me.IS_REFRACTION.HeaderText = "Refraction"
-        Me.IS_REFRACTION.Name = "IS_REFRACTION"
-        Me.IS_REFRACTION.ReadOnly = True
-        '
-        'IS_OPTICALSHOP
-        '
-        Me.IS_OPTICALSHOP.DataPropertyName = "IS_OPTICALSHOP"
-        Me.IS_OPTICALSHOP.FillWeight = 101.8276!
-        Me.IS_OPTICALSHOP.HeaderText = "Optical shop"
-        Me.IS_OPTICALSHOP.Name = "IS_OPTICALSHOP"
-        Me.IS_OPTICALSHOP.ReadOnly = True
-        '
-        'IS_REFER_PICKUP
-        '
-        Me.IS_REFER_PICKUP.DataPropertyName = "IS_REFER_PICKUP"
-        Me.IS_REFER_PICKUP.FillWeight = 101.8276!
-        Me.IS_REFER_PICKUP.HeaderText = "Referral By Pickup"
-        Me.IS_REFER_PICKUP.Name = "IS_REFER_PICKUP"
-        Me.IS_REFER_PICKUP.ReadOnly = True
-        '
-        'IS_REFER_BYSELF
-        '
-        Me.IS_REFER_BYSELF.DataPropertyName = "IS_REFER_BYSELF"
-        Me.IS_REFER_BYSELF.FillWeight = 101.8276!
-        Me.IS_REFER_BYSELF.HeaderText = "Referral By Selft"
-        Me.IS_REFER_BYSELF.Name = "IS_REFER_BYSELF"
-        Me.IS_REFER_BYSELF.ReadOnly = True
-        '
-        'SCREEN_NOTE
-        '
-        Me.SCREEN_NOTE.DataPropertyName = "SCREEN_NOTE"
-        Me.SCREEN_NOTE.FillWeight = 101.8276!
-        Me.SCREEN_NOTE.HeaderText = "Note"
-        Me.SCREEN_NOTE.Name = "SCREEN_NOTE"
-        Me.SCREEN_NOTE.ReadOnly = True
+        Me.ToolStripMenuItem5.Name = "ToolStripMenuItem5"
+        Me.ToolStripMenuItem5.Size = New System.Drawing.Size(202, 6)
         '
         'DashboardScreeningRegisBook
         '
@@ -1452,10 +1538,16 @@ Partial Class DashboardScreeningRegisBook
     Friend WithEvents STATUS_PAY As System.Windows.Forms.DataGridViewCheckBoxColumn
     Friend WithEvents OPTICALSHOP_NOTE As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents BtnNewScreeningRegist As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents NewRefractionToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents UpdateRefractionToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents AaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItem6 As System.Windows.Forms.ToolStripSeparator
+    Friend WithEvents NewReferralToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents SCREEN_BOOKID As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents SYS_SETTING As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents SCREAN_DATE As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents PatientNo As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents REFERENCE_PATIENNOTE As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents NameEng As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents NameKhmer As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Age As System.Windows.Forms.DataGridViewTextBoxColumn
@@ -1472,5 +1564,9 @@ Partial Class DashboardScreeningRegisBook
     Friend WithEvents IS_REFER_PICKUP As System.Windows.Forms.DataGridViewCheckBoxColumn
     Friend WithEvents IS_REFER_BYSELF As System.Windows.Forms.DataGridViewCheckBoxColumn
     Friend WithEvents SCREEN_NOTE As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents UpdateOpticalShopToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItem7 As System.Windows.Forms.ToolStripSeparator
+    Friend WithEvents NewOpticalShopToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItem5 As System.Windows.Forms.ToolStripSeparator
 
 End Class

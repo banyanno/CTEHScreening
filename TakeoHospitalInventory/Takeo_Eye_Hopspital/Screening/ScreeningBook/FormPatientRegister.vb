@@ -89,28 +89,28 @@ Public Class FormPatientRegister
 
             '=== get Screening book No ====================
             sqlComm.CommandText = GetLastScreeningBookID()
-            Dim ScreenBookID As Double = CDbl(sqlComm.ExecuteScalar.ToString)
+            Dim SCREENING_BOOKID As Double = CDbl(sqlComm.ExecuteScalar.ToString)
 
             ' ================ Incase insert referfal ============================
             If RadReferAndPickup.Checked = True Then
-                sqlComm.CommandText = InsertReferralBook(ScreenBookID, PatientNo.Text, "", "", "", True, "", DateRegis.Value.Date)
+                sqlComm.CommandText = InsertReferralBook(SCREENING_BOOKID, PatientNo.Text, "", "", "", True, "", DateRegis.Value.Date)
                 sqlComm.ExecuteNonQuery()
             End If
             If RadReferAndComeBySelf.Checked = True Then
-                sqlComm.CommandText = InsertReferralBook(ScreenBookID, PatientNo.Text, "", "", "", False, "", DateRegis.Value.Date)
+                sqlComm.CommandText = InsertReferralBook(SCREENING_BOOKID, PatientNo.Text, "", "", "", False, "", DateRegis.Value.Date)
                 sqlComm.ExecuteNonQuery()
             End If
             '============ End function referral ===========================
             '================= Start function Refraction ==================
             If ChRefraction.Checked = True Then
-                sqlComm.CommandText = InsertRefraction(ScreenBookID, DateRegis.Value.Date, PatientNo.Text, "", "", "", "", "", "", "", "", "", False)
+                sqlComm.CommandText = InsertRefraction(SCREENING_BOOKID, DateRegis.Value.Date, PatientNo.Text, "", "", "", "", "", "", "", "", "", False)
                 sqlComm.ExecuteNonQuery()
             End If
 
             '================= End function Refraction ====================
             '=========== Start Function Opticalshop ========================
             If ChOpticalshop.Checked = True Then
-                sqlComm.CommandText = InsertOptShopBook(ScreenBookID, DateRegis.Value.Date, PatientNo.Text, "", False)
+                sqlComm.CommandText = InsertOptShopBook(SCREENING_BOOKID, DateRegis.Value.Date, PatientNo.Text, "", False)
                 sqlComm.ExecuteNonQuery()
             End If
             '=========== End Function Opticalshop ==========================
@@ -226,10 +226,10 @@ Public Class FormPatientRegister
     End Function
     '==================================== Screening Book =========================================
     Private Function ScreeningBook() As String
-        Return InsertScreenBook(DateRegis.Value.Date, TxtHealthNameCenter.Text, LblSettingID.Text, PatientNo.Text, ChRefraction.Checked, ChOpticalshop.Checked, RadReferAndPickup.Checked, RadReferAndComeBySelf.Checked, TxtRegisterNote.Text)
+        Return InsertScreenBook(DateRegis.Value.Date, TxtHealthNameCenter.Text, LblSettingID.Text, PatientNo.Text, ChRefraction.Checked, ChOpticalshop.Checked, RadReferAndPickup.Checked, RadReferAndComeBySelf.Checked, TxtRegisterNote.Text, TxtReferencePatientNote.Text)
     End Function
-    Private Function InsertScreenBook(ByVal SCREAN_DATE As DateTime, ByVal SCREEN_PLACE As String, ByVal SCREEN_ID As Integer, ByVal PATIENT_NO As Double, ByVal IS_REFRACTION As Boolean, ByVal IS_OPTICALSHOP As Boolean, ByVal IS_REFER_PICKUP As Boolean, ByVal IS_REFER_BYSELF As Boolean, ByVal SCREEN_NOTE As String) As String
-        Dim sql As String = "INSERT INTO SCREENING_BOOK (SCREAN_DATE,SCREEN_PLACE,SYS_SETTING,PATIENT_NO,IS_REFRACTION,IS_OPTICALSHOP,IS_REFER_PICKUP,IS_REFER_BYSELF,SCREEN_NOTE) VALUES('" & SCREAN_DATE & "','" & SCREEN_PLACE & "'," & SCREEN_ID & "," & PATIENT_NO & ",'" & IS_REFRACTION & "','" & IS_OPTICALSHOP & "','" & IS_REFER_PICKUP & "','" & IS_REFER_BYSELF & "','" & SCREEN_NOTE & "')"
+    Private Function InsertScreenBook(ByVal SCREAN_DATE As DateTime, ByVal SCREEN_PLACE As String, ByVal SCREEN_ID As Integer, ByVal PATIENT_NO As Double, ByVal IS_REFRACTION As Boolean, ByVal IS_OPTICALSHOP As Boolean, ByVal IS_REFER_PICKUP As Boolean, ByVal IS_REFER_BYSELF As Boolean, ByVal SCREEN_NOTE As String, ByVal REFERENCE_PATIENNOTE As String) As String
+        Dim sql As String = "INSERT INTO SCREENING_BOOK (SCREAN_DATE,SCREEN_PLACE,SYS_SETTING,PATIENT_NO,IS_REFRACTION,IS_OPTICALSHOP,IS_REFER_PICKUP,IS_REFER_BYSELF,SCREEN_NOTE,REFERENCE_PATIENNOTE) VALUES('" & SCREAN_DATE & "',N'" & SCREEN_PLACE & "'," & SCREEN_ID & "," & PATIENT_NO & ",'" & IS_REFRACTION & "','" & IS_OPTICALSHOP & "','" & IS_REFER_PICKUP & "','" & IS_REFER_BYSELF & "',N'" & SCREEN_NOTE & "','" & REFERENCE_PATIENNOTE & "')"
         Return sql
     End Function
     Private Function GetLastScreeningBookID() As String
@@ -290,6 +290,9 @@ Public Class FormPatientRegister
         If ValidateCombobox(CboCommNo, "", ErrSaveRegis) = False Then Exit Sub
         If ValidateTextField(TxtFullAddress, "", ErrSaveRegis) = False Then Exit Sub
         If MessageBox.Show("Do you want to save patient registration.", "save", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
+
+            ' Function save new pateint register and screening book
+
             If SaveProcessForNewPatient() = True Then
                 MessageBox.Show("Patient registration successful!", "Register", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 If IS_ONSCRENNING = True Then

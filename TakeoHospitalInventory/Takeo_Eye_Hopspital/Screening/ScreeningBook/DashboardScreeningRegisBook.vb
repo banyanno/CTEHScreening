@@ -62,6 +62,24 @@
         DGReferral.AutoGenerateColumns = False
         DGRefraction.AutoGenerateColumns = False
         DGOpticalShop.AutoGenerateColumns = False
+        'For Each items As ToolStripItem In CMScreeningBook.Items
+        '    If TypeOf items Is ToolStripMenuItem Then
+        '        MsgBox(items.Name)
+        '        items.BackColor = Color.Black
+
+        '        items.ForeColor = Color.White
+
+        '    End If
+
+        '    'For Each meh As ToolStripMenuItem In it
+        '    '    meh.BackColor = Color.Black
+        '    '    meh.ForeColor = Color.White
+        '    '    'For Each lolCat As ToolStripMenuItem In meh.DropDownItems
+        '    '    '    lolCat.BackColor = Color.Black
+        '    '    '    lolCat.ForeColor = Color.White
+        '    '    'Next
+        '    'Next
+        'Next
     End Sub
 
     Private Sub DGScreeningBook_CellDoubleClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles DGScreeningBook.CellDoubleClick

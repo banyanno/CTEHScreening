@@ -42,6 +42,8 @@ Partial Class FormPatientRegister
         Me.TxtHealthNameCenter = New System.Windows.Forms.TextBox
         Me.Label6 = New System.Windows.Forms.Label
         Me.Panel2 = New System.Windows.Forms.Panel
+        Me.TxtReferencePatientNote = New System.Windows.Forms.TextBox
+        Me.Label18 = New System.Windows.Forms.Label
         Me.ChReferral = New System.Windows.Forms.CheckBox
         Me.GroupBox3 = New System.Windows.Forms.GroupBox
         Me.ChRefraction = New System.Windows.Forms.CheckBox
@@ -295,6 +297,8 @@ Partial Class FormPatientRegister
         'Panel2
         '
         Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel2.Controls.Add(Me.TxtReferencePatientNote)
+        Me.Panel2.Controls.Add(Me.Label18)
         Me.Panel2.Controls.Add(Me.ChReferral)
         Me.Panel2.Controls.Add(Me.GroupBox3)
         Me.Panel2.Controls.Add(Me.GBReferral)
@@ -308,6 +312,25 @@ Partial Class FormPatientRegister
         Me.Panel2.Size = New System.Drawing.Size(549, 382)
         Me.Panel2.TabIndex = 8
         '
+        'TxtReferencePatientNote
+        '
+        Me.TxtReferencePatientNote.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TxtReferencePatientNote.Font = New System.Drawing.Font("Khmer OS Battambang", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtReferencePatientNote.Location = New System.Drawing.Point(121, 43)
+        Me.TxtReferencePatientNote.Name = "TxtReferencePatientNote"
+        Me.TxtReferencePatientNote.Size = New System.Drawing.Size(418, 40)
+        Me.TxtReferencePatientNote.TabIndex = 0
+        '
+        'Label18
+        '
+        Me.Label18.AutoSize = True
+        Me.Label18.ForeColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
+        Me.Label18.Location = New System.Drawing.Point(7, 56)
+        Me.Label18.Name = "Label18"
+        Me.Label18.Size = New System.Drawing.Size(116, 25)
+        Me.Label18.TabIndex = 24
+        Me.Label18.Text = "Reference Note:"
+        '
         'ChReferral
         '
         Me.ChReferral.AutoSize = True
@@ -315,7 +338,7 @@ Partial Class FormPatientRegister
         Me.ChReferral.Location = New System.Drawing.Point(23, 90)
         Me.ChReferral.Name = "ChReferral"
         Me.ChReferral.Size = New System.Drawing.Size(82, 29)
-        Me.ChReferral.TabIndex = 23
+        Me.ChReferral.TabIndex = 1
         Me.ChReferral.Text = "Referral"
         Me.ChReferral.UseVisualStyleBackColor = True
         '
@@ -327,7 +350,7 @@ Partial Class FormPatientRegister
         Me.GroupBox3.Location = New System.Drawing.Point(271, 93)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Size = New System.Drawing.Size(268, 111)
-        Me.GroupBox3.TabIndex = 22
+        Me.GroupBox3.TabIndex = 3
         Me.GroupBox3.TabStop = False
         '
         'ChRefraction
@@ -337,7 +360,7 @@ Partial Class FormPatientRegister
         Me.ChRefraction.Location = New System.Drawing.Point(15, 33)
         Me.ChRefraction.Name = "ChRefraction"
         Me.ChRefraction.Size = New System.Drawing.Size(96, 29)
-        Me.ChRefraction.TabIndex = 1
+        Me.ChRefraction.TabIndex = 0
         Me.ChRefraction.Text = "Refraction"
         Me.ChRefraction.UseVisualStyleBackColor = True
         '
@@ -348,7 +371,7 @@ Partial Class FormPatientRegister
         Me.ChOpticalshop.Location = New System.Drawing.Point(15, 71)
         Me.ChOpticalshop.Name = "ChOpticalshop"
         Me.ChOpticalshop.Size = New System.Drawing.Size(112, 29)
-        Me.ChOpticalshop.TabIndex = 3
+        Me.ChOpticalshop.TabIndex = 1
         Me.ChOpticalshop.Text = "Optical Shop"
         Me.ChOpticalshop.UseVisualStyleBackColor = True
         '
@@ -361,7 +384,7 @@ Partial Class FormPatientRegister
         Me.GBReferral.Location = New System.Drawing.Point(10, 93)
         Me.GBReferral.Name = "GBReferral"
         Me.GBReferral.Size = New System.Drawing.Size(255, 112)
-        Me.GBReferral.TabIndex = 21
+        Me.GBReferral.TabIndex = 2
         Me.GBReferral.TabStop = False
         '
         'RadReferAndComeBySelf
@@ -410,7 +433,7 @@ Partial Class FormPatientRegister
         '
         Me.LblSettingID.AutoSize = True
         Me.LblSettingID.ForeColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
-        Me.LblSettingID.Location = New System.Drawing.Point(431, 37)
+        Me.LblSettingID.Location = New System.Drawing.Point(451, 7)
         Me.LblSettingID.Name = "LblSettingID"
         Me.LblSettingID.Size = New System.Drawing.Size(20, 25)
         Me.LblSettingID.TabIndex = 8
@@ -665,4 +688,6 @@ Partial Class FormPatientRegister
     Friend WithEvents RadReferAndPickup As System.Windows.Forms.RadioButton
     Friend WithEvents GroupBox3 As System.Windows.Forms.GroupBox
     Friend WithEvents ChReferral As System.Windows.Forms.CheckBox
+    Friend WithEvents TxtReferencePatientNote As System.Windows.Forms.TextBox
+    Friend WithEvents Label18 As System.Windows.Forms.Label
 End Class

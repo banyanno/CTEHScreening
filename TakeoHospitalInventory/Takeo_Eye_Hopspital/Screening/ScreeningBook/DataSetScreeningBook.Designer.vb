@@ -1858,6 +1858,8 @@ Partial Public Class DataSetScreeningBook
         
         Private columnON_EYE As Global.System.Data.DataColumn
         
+        Private columnREFERENCE_PATIENNOTE As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Public Sub New()
             MyBase.New
@@ -2030,6 +2032,13 @@ Partial Public Class DataSetScreeningBook
             End Get
         End Property
         
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public ReadOnly Property REFERENCE_PATIENNOTEColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnREFERENCE_PATIENNOTE
+            End Get
+        End Property
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -2079,9 +2088,10 @@ Partial Public Class DataSetScreeningBook
                     ByVal VA_RIGHT As String,  _
                     ByVal VA_LEFT As String,  _
                     ByVal PRESENTING_COMPLAIN As String,  _
-                    ByVal ON_EYE As String) As SCREENING_BOOK_VIEWRow
+                    ByVal ON_EYE As String,  _
+                    ByVal REFERENCE_PATIENNOTE As String) As SCREENING_BOOK_VIEWRow
             Dim rowSCREENING_BOOK_VIEWRow As SCREENING_BOOK_VIEWRow = CType(Me.NewRow,SCREENING_BOOK_VIEWRow)
-            Dim columnValuesArray() As Object = New Object() {PatientNo, NameEng, NameKhmer, Age, Sex, SCREEN_BOOKID, IS_REFRACTION, IS_OPTICALSHOP, IS_REFER_PICKUP, IS_REFER_BYSELF, Address, SCREAN_DATE, SYS_SETTING, SCREEN_PLACE, SCREEN_NOTE, DIAGNOSIS, VA_RIGHT, VA_LEFT, PRESENTING_COMPLAIN, ON_EYE}
+            Dim columnValuesArray() As Object = New Object() {PatientNo, NameEng, NameKhmer, Age, Sex, SCREEN_BOOKID, IS_REFRACTION, IS_OPTICALSHOP, IS_REFER_PICKUP, IS_REFER_BYSELF, Address, SCREAN_DATE, SYS_SETTING, SCREEN_PLACE, SCREEN_NOTE, DIAGNOSIS, VA_RIGHT, VA_LEFT, PRESENTING_COMPLAIN, ON_EYE, REFERENCE_PATIENNOTE}
             rowSCREENING_BOOK_VIEWRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowSCREENING_BOOK_VIEWRow)
             Return rowSCREENING_BOOK_VIEWRow
@@ -2121,6 +2131,7 @@ Partial Public Class DataSetScreeningBook
             Me.columnVA_LEFT = MyBase.Columns("VA_LEFT")
             Me.columnPRESENTING_COMPLAIN = MyBase.Columns("PRESENTING_COMPLAIN")
             Me.columnON_EYE = MyBase.Columns("ON_EYE")
+            Me.columnREFERENCE_PATIENNOTE = MyBase.Columns("REFERENCE_PATIENNOTE")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
@@ -2165,6 +2176,8 @@ Partial Public Class DataSetScreeningBook
             MyBase.Columns.Add(Me.columnPRESENTING_COMPLAIN)
             Me.columnON_EYE = New Global.System.Data.DataColumn("ON_EYE", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnON_EYE)
+            Me.columnREFERENCE_PATIENNOTE = New Global.System.Data.DataColumn("REFERENCE_PATIENNOTE", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnREFERENCE_PATIENNOTE)
             Me.columnPatientNo.AllowDBNull = false
             Me.columnNameEng.MaxLength = 50
             Me.columnNameKhmer.MaxLength = 50
@@ -2178,6 +2191,7 @@ Partial Public Class DataSetScreeningBook
             Me.columnVA_LEFT.MaxLength = 50
             Me.columnPRESENTING_COMPLAIN.MaxLength = 50
             Me.columnON_EYE.MaxLength = 50
+            Me.columnREFERENCE_PATIENNOTE.MaxLength = 50
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
@@ -5741,6 +5755,21 @@ Partial Public Class DataSetScreeningBook
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Property REFERENCE_PATIENNOTE() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableSCREENING_BOOK_VIEW.REFERENCE_PATIENNOTEColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'REFERENCE_PATIENNOTE' in table 'SCREENING_BOOK_VIEW' is DBN"& _ 
+                            "ull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableSCREENING_BOOK_VIEW.REFERENCE_PATIENNOTEColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Public Function IsNameEngNull() As Boolean
             Return Me.IsNull(Me.tableSCREENING_BOOK_VIEW.NameEngColumn)
         End Function
@@ -5918,6 +5947,16 @@ Partial Public Class DataSetScreeningBook
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Public Sub SetON_EYENull()
             Me(Me.tableSCREENING_BOOK_VIEW.ON_EYEColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Function IsREFERENCE_PATIENNOTENull() As Boolean
+            Return Me.IsNull(Me.tableSCREENING_BOOK_VIEW.REFERENCE_PATIENNOTEColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Sub SetREFERENCE_PATIENNOTENull()
+            Me(Me.tableSCREENING_BOOK_VIEW.REFERENCE_PATIENNOTEColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -8689,6 +8728,7 @@ Namespace DataSetScreeningBookTableAdapters
             tableMapping.ColumnMappings.Add("VA_LEFT", "VA_LEFT")
             tableMapping.ColumnMappings.Add("PRESENTING_COMPLAIN", "PRESENTING_COMPLAIN")
             tableMapping.ColumnMappings.Add("ON_EYE", "ON_EYE")
+            tableMapping.ColumnMappings.Add("REFERENCE_PATIENNOTE", "REFERENCE_PATIENNOTE")
             Me._adapter.TableMappings.Add(tableMapping)
         End Sub
         
@@ -8706,24 +8746,26 @@ Namespace DataSetScreeningBookTableAdapters
             Me._commandCollection(0).CommandText = "SELECT        SCREAN_DATE, PatientNo, NameEng, NameKhmer, Age, Sex, Address, SCRE"& _ 
                 "EN_PLACE, SCREEN_BOOKID, IS_REFRACTION, IS_OPTICALSHOP, IS_REFER_PICKUP, IS_REFE"& _ 
                 "R_BYSELF, SYS_SETTING, SCREEN_NOTE, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         DIAGNOSIS, VA_RIG"& _ 
-                "HT, VA_LEFT, PRESENTING_COMPLAIN, ON_EYE"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            SCREENING_BOOK_VIEW"
+                "HT, VA_LEFT, PRESENTING_COMPLAIN, ON_EYE, REFERENCE_PATIENNOTE"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            "& _ 
+                "SCREENING_BOOK_VIEW"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand
             Me._commandCollection(1).Connection = Me.Connection
             Me._commandCollection(1).CommandText = "SELECT Address, Age, DIAGNOSIS, IS_OPTICALSHOP, IS_REFER_BYSELF, IS_REFER_PICKUP,"& _ 
-                " IS_REFRACTION, NameEng, NameKhmer, ON_EYE, PRESENTING_COMPLAIN, PatientNo, SCRE"& _ 
-                "AN_DATE, SCREEN_BOOKID, SCREEN_NOTE, SCREEN_PLACE, SYS_SETTING, Sex, VA_LEFT, VA"& _ 
-                "_RIGHT FROM SCREENING_BOOK_VIEW WHERE (SCREAN_DATE BETWEEN @DFROM AND @DTo)"
+                " IS_REFRACTION, NameEng, NameKhmer, ON_EYE, PRESENTING_COMPLAIN, PatientNo, REFE"& _ 
+                "RENCE_PATIENNOTE, SCREAN_DATE, SCREEN_BOOKID, SCREEN_NOTE, SCREEN_PLACE, SYS_SET"& _ 
+                "TING, Sex, VA_LEFT, VA_RIGHT FROM SCREENING_BOOK_VIEW WHERE (SCREAN_DATE BETWEEN"& _ 
+                " @DFROM AND @DTo)"
             Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@DFROM", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "SCREAN_DATE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@DTo", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "SCREAN_DATE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(2) = New Global.System.Data.SqlClient.SqlCommand
             Me._commandCollection(2).Connection = Me.Connection
             Me._commandCollection(2).CommandText = "SELECT Address, Age, DIAGNOSIS, IS_OPTICALSHOP, IS_REFER_BYSELF, IS_REFER_PICKUP,"& _ 
-                " IS_REFRACTION, NameEng, NameKhmer, ON_EYE, PRESENTING_COMPLAIN, PatientNo, SCRE"& _ 
-                "AN_DATE, SCREEN_BOOKID, SCREEN_NOTE, SCREEN_PLACE, SYS_SETTING, Sex, VA_LEFT, VA"& _ 
-                "_RIGHT FROM SCREENING_BOOK_VIEW WHERE (SCREAN_DATE BETWEEN @DFrom AND @DTo) AND "& _ 
-                "(PatientNo = @PatientNo)"
+                " IS_REFRACTION, NameEng, NameKhmer, ON_EYE, PRESENTING_COMPLAIN, PatientNo, REFE"& _ 
+                "RENCE_PATIENNOTE, SCREAN_DATE, SCREEN_BOOKID, SCREEN_NOTE, SCREEN_PLACE, SYS_SET"& _ 
+                "TING, Sex, VA_LEFT, VA_RIGHT FROM SCREENING_BOOK_VIEW WHERE (SCREAN_DATE BETWEEN"& _ 
+                " @DFrom AND @DTo) AND (PatientNo = @PatientNo)"
             Me._commandCollection(2).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@DFrom", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "SCREAN_DATE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@DTo", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "SCREAN_DATE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
