@@ -382,7 +382,7 @@ Partial Class UIScreening
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(252, 93)
         Me.Button2.TabIndex = 2
-        Me.Button2.Text = "Accounting and Cashier"
+        Me.Button2.Text = "Optical Shop"
         Me.Button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.Button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         Me.Button2.UseVisualStyleBackColor = False

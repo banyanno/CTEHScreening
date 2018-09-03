@@ -3,6 +3,8 @@
     Dim DAReferralBookDetail As New DataSetScreeningBookTableAdapters.SCREENING_REFERRAL_DETAILTableAdapter
     Dim DARefractionBookDedail As New DataSetScreeningBookTableAdapters.SCREENIG_REFRACTION_DEDAILTableAdapter
     Dim DAOpticalshopBookDetail As New DataSetScreeningBookTableAdapters.SCREENING_OPTICALSHOP_DETIALTableAdapter
+
+    Private TableScreenBook, TableReferralBook, TableRefractionBook, TableOpticalShop As DataTable
     Private Sub TabControl1_DrawItem(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DrawItemEventArgs) Handles TabControl1.DrawItem
         'Select Case e.Index
         '    Case 0
@@ -19,44 +21,66 @@
     Private Sub TxtFind_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TxtPatienNo.KeyPress
         SetDisableKeyString(e)
     End Sub
-
+    Private Sub CallScreeningBooks()
+        UIMainScreening.StatusLoading(True)
+        BGScreeningBook.RunWorkerAsync()
+    End Sub
     Private Sub BtnFind_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnFind.Click
+
+        CallScreeningBooks()
+
+       
+    End Sub
+    Private Sub BGScreeningBook_DoWork(ByVal sender As System.Object, ByVal e As System.ComponentModel.DoWorkEventArgs) Handles BGScreeningBook.DoWork
         If TxtPatienNo.Text.Trim <> "" Then
-            ' Load Data Screening book
-            DGScreeningBook.DataSource = DAScreeningBook.SelectScreenBookDateToDateWithPatientNo(DateFrom.Value.Date, DateTo.Value.Date, EmptyString(TxtPatienNo.Text))
-            ModCommon.NumberAllRowHeaderDataGrid(DGScreeningBook)
-            ' Load data for referral book
-            DGReferral.DataSource = DAReferralBookDetail.SelectScreenReferralDateToDateWithPatientNo(DateFrom.Value.Date, DateTo.Value.Date, EmptyString(TxtPatienNo.Text))
-            ModCommon.NumberAllRowHeaderDataGrid(DGReferral)
-            ' Loading data for Refraction Book
-            DGRefraction.DataSource = DARefractionBookDedail.SelectScreenRefractionDateToDateWithPatientNo(DateFrom.Value.Date, DateTo.Value.Date, EmptyString(TxtPatienNo.Text))
-            ModCommon.NumberAllRowHeaderDataGrid(DGRefraction)
-
-            ' Loading Data for Optical shop book
-            DGOpticalShop.DataSource = DAOpticalshopBookDetail.SelectScreenOpticalShopDateToDateWithPatientNO(DateFrom.Value.Date, DateTo.Value.Date, EmptyString(TxtPatienNo.Text))
-            ModCommon.NumberAllRowHeaderDataGrid(DGOpticalShop)
+            TableScreenBook = DAScreeningBook.SelectScreenBookDateToDateWithPatientNo(DateFrom.Value.Date, DateTo.Value.Date, EmptyString(TxtPatienNo.Text))
+            TableReferralBook = DAReferralBookDetail.SelectScreenReferralDateToDateWithPatientNo(DateFrom.Value.Date, DateTo.Value.Date, EmptyString(TxtPatienNo.Text))
+            TableRefractionBook = DARefractionBookDedail.SelectScreenRefractionDateToDateWithPatientNo(DateFrom.Value.Date, DateTo.Value.Date, EmptyString(TxtPatienNo.Text))
+            TableOpticalShop = DAOpticalshopBookDetail.SelectScreenOpticalShopDateToDateWithPatientNO(DateFrom.Value.Date, DateTo.Value.Date, EmptyString(TxtPatienNo.Text))
         Else
-
-            ' Load Data Screening book
-            DGScreeningBook.DataSource = DAScreeningBook.SelectScreenBookDateToDate(DateFrom.Value.Date, DateTo.Value.Date)
-            ModCommon.NumberAllRowHeaderDataGrid(DGScreeningBook)
-            ' Load data for referral book
-            DGReferral.DataSource = DAReferralBookDetail.SelectScreebReferralDateToDate(DateFrom.Value.Date, DateTo.Value.Date)
-            ModCommon.NumberAllRowHeaderDataGrid(DGReferral)
-
-            ' Loading data for Refraction Book
-            DGRefraction.DataSource = DARefractionBookDedail.SelectScreenRefractDateToDate(DateFrom.Value.Date, DateTo.Value.Date)
-            ModCommon.NumberAllRowHeaderDataGrid(DGRefraction)
-
-            ' Loading Data for Optical shop book
-            DGOpticalShop.DataSource = DAOpticalshopBookDetail.SelectScreenOpticalShopDateToDate(DateFrom.Value.Date, DateTo.Value.Date)
-            ModCommon.NumberAllRowHeaderDataGrid(DGOpticalShop)
+            TableScreenBook = DAScreeningBook.SelectScreenBookDateToDate(DateFrom.Value.Date, DateTo.Value.Date)
+            TableReferralBook = DAReferralBookDetail.SelectScreebReferralDateToDate(DateFrom.Value.Date, DateTo.Value.Date)
+            TableRefractionBook = DARefractionBookDedail.SelectScreenRefractDateToDate(DateFrom.Value.Date, DateTo.Value.Date)
+            TableOpticalShop = DAOpticalshopBookDetail.SelectScreenOpticalShopDateToDate(DateFrom.Value.Date, DateTo.Value.Date)
         End If
+    End Sub
+    Private Sub BGScreeningBook_RunWorkerCompleted(ByVal sender As System.Object, ByVal e As System.ComponentModel.RunWorkerCompletedEventArgs) Handles BGScreeningBook.RunWorkerCompleted
+        'If TxtPatienNo.Text.Trim <> "" Then
+        ' Load Data Screening book
+        DGScreeningBook.DataSource = TableScreenBook
+        ModCommon.NumberAllRowHeaderDataGrid(DGScreeningBook)
+        ' Load data for referral book
+        DGReferral.DataSource = TableReferralBook
+        ModCommon.NumberAllRowHeaderDataGrid(DGReferral)
+        ' Loading data for Refraction Book
+        DGRefraction.DataSource = TableRefractionBook
+        ModCommon.NumberAllRowHeaderDataGrid(DGRefraction)
+
+        ' Loading Data for Optical shop book
+        DGOpticalShop.DataSource = TableOpticalShop
+        ModCommon.NumberAllRowHeaderDataGrid(DGOpticalShop)
+        'Else
+
+        '    ' Load Data Screening book
+        '    DGScreeningBook.DataSource = 
+        '    ModCommon.NumberAllRowHeaderDataGrid(DGScreeningBook)
+        '    ' Load data for referral book
+        '    DGReferral.DataSource = 
+        '    ModCommon.NumberAllRowHeaderDataGrid(DGReferral)
+
+        '    ' Loading data for Refraction Book
+        '    DGRefraction.DataSource =
+        '    ModCommon.NumberAllRowHeaderDataGrid(DGRefraction)
+
+        '    ' Loading Data for Optical shop book
+        '    DGOpticalShop.DataSource = 
+        '    ModCommon.NumberAllRowHeaderDataGrid(DGOpticalShop)
+        'End If
 
         ' Call Total Regis, Refraction, Referral and Optical shop
         DisplayTotalScreening(DateFrom.Value.Date, DateTo.Value.Date)
+        UIMainScreening.StatusLoading(False)
     End Sub
-
     Private Sub DashboardScreeningRegisBook_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         DGScreeningBook.AutoGenerateColumns = False
         DGReferral.AutoGenerateColumns = False
@@ -119,8 +143,15 @@
         UpdateSNBook.TxtMoreInfo.Text = GRows.Cells("SCREEN_NOTE").Value
         UpdateSNBook.ChRefraction.Checked = GRows.Cells("IS_REFRACTION").Value
         UpdateSNBook.ChOpticalshop.Checked = GRows.Cells("IS_OPTICALSHOP").Value
-        UpdateSNBook.RadReferAndComeBySelf.Checked = GRows.Cells("IS_REFER_BYSELF").Value
-        UpdateSNBook.RadReferAndPickup.Checked = GRows.Cells("IS_REFER_PICKUP").Value
+        If GRows.Cells("IS_REFER_BYSELF").Value = True Then
+            UpdateSNBook.ChReferral.Checked = True
+            UpdateSNBook.RadReferAndComeBySelf.Checked = GRows.Cells("IS_REFER_BYSELF").Value
+        End If
+        If GRows.Cells("IS_REFER_PICKUP").Value = True Then
+            UpdateSNBook.ChReferral.Checked = True
+            UpdateSNBook.RadReferAndPickup.Checked = GRows.Cells("IS_REFER_PICKUP").Value
+        End If
+
         If UpdateSNBook.ShowDialog = DialogResult.OK Then
             DGScreeningBook.DataSource = DAScreeningBook.SelectScreenBookDateToDateWithPatientNo(DateFrom.Value.Date, DateTo.Value.Date, EmptyString(UpdateSNBook.PatientNo.Text))
             ModCommon.NumberAllRowHeaderDataGrid(DGScreeningBook)
@@ -161,4 +192,7 @@
 
         End If
     End Sub
+
+   
+   
 End Class
