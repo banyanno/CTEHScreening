@@ -340,6 +340,10 @@ Public Class FormPatientRegister
 
     Private Sub ChReferral_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ChReferral.CheckedChanged
         GBReferral.Enabled = ChReferral.Checked
+        If ChReferral.Checked = False Then
+            RadReferAndComeBySelf.Checked = False
+            RadReferAndPickup.Checked = False
+        End If
     End Sub
 
     Private Sub PanelMain_MouseDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles PanelMain.MouseDown
