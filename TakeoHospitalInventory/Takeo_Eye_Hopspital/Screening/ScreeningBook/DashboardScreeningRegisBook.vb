@@ -26,10 +26,7 @@
         BGScreeningBook.RunWorkerAsync()
     End Sub
     Private Sub BtnFind_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnFind.Click
-
         CallScreeningBooks()
-
-       
     End Sub
     Private Sub BGScreeningBook_DoWork(ByVal sender As System.Object, ByVal e As System.ComponentModel.DoWorkEventArgs) Handles BGScreeningBook.DoWork
         If TxtPatienNo.Text.Trim <> "" Then
@@ -154,6 +151,7 @@
 
         If UpdateSNBook.ShowDialog = DialogResult.OK Then
             DGScreeningBook.DataSource = DAScreeningBook.SelectScreenBookDateToDateWithPatientNo(DateFrom.Value.Date, DateTo.Value.Date, EmptyString(UpdateSNBook.PatientNo.Text))
+            DisplayUtiliyBookByScreenID(CDbl(UpdateSNBook.LblSaveOption.Text))
             ModCommon.NumberAllRowHeaderDataGrid(DGScreeningBook)
         End If
     End Sub
@@ -174,6 +172,7 @@
         If (GRows.Cells("IS_REFER_PICKUP").Value) = False AndAlso (GRows.Cells("IS_REFER_BYSELF").Value) = False Then Exit Sub
         Dim FReferral As New FormReferral
         FReferral.LblSaveOption.Text = GRows.Cells("SCREEN_BOOKID").Value
+
         FReferral.DateScreening.Value = GRows.Cells("SCREAN_DATE").Value
         FReferral.PatientNo.Text = GRows.Cells("PatientNo").Value
         FReferral.PatientName.Text = GRows.Cells("NameEng").Value
@@ -195,4 +194,129 @@
 
    
    
+    Private Sub BtnNewReferral_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnNewReferral.Click
+        If DGScreeningBook.SelectedCells.Count = 0 Then Exit Sub
+
+        Dim GRows As DataGridViewRow = GetDataRowGridView(DGScreeningBook)
+        'If (GRows.Cells("IS_REFER_PICKUP").Value) = False AndAlso (GRows.Cells("IS_REFER_BYSELF").Value) = False Then Exit Sub
+        Dim FReferral As New FormReferral
+        If FReferral.DAReferralBook.CheckExistingBookID(GRows.Cells("SCREEN_BOOKID").Value) <> 0 Then
+            MessageBox.Show("The patient already register into referral book. please check again!", "Screening", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            FReferral.Close()
+            FReferral.Dispose()
+            Exit Sub
+        End If
+        FReferral.LblSaveOption.Text = "0"
+        FReferral.LblScreenBookID.Text = GRows.Cells("SCREEN_BOOKID").Value
+        FReferral.DateScreening.Value = GRows.Cells("SCREAN_DATE").Value
+        FReferral.PatientNo.Text = GRows.Cells("PatientNo").Value
+        FReferral.PatientName.Text = GRows.Cells("NameEng").Value
+        FReferral.PatientSex.Text = GRows.Cells("Sex").Value
+        FReferral.PatientAge.Text = GRows.Cells("Age").Value
+        FReferral.CboOnEye.Text = GRows.Cells("ON_EYE").Value
+        FReferral.cboDiagnosis.Text = GRows.Cells("DIAGNOSISScreening").Value
+        FReferral.CboVARight.Text = GRows.Cells("VA_RIGHTScreening").Value
+        FReferral.CboVALeft.Text = GRows.Cells("VA_LEFTScreening").Value
+        FReferral.ChPickup.Enabled = True
+        If FReferral.ShowDialog() = DialogResult.OK Then
+
+        End If
+    End Sub
+
+    Private Sub BtnUpdateOpticalshop_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnUpdateOpticalshop.Click
+        If DGScreeningBook.SelectedCells.Count = 0 Then Exit Sub
+        Dim GRows As DataGridViewRow = GetDataRowGridView(DGScreeningBook)
+        If (GRows.Cells("IS_OPTICALSHOP").Value) = False Then Exit Sub
+        Dim FOpticalShop As New FormOpticalShop
+        FOpticalShop.LblSaveOption.Text = GRows.Cells("SCREEN_BOOKID").Value
+        FOpticalShop.LblScreenBookID.Text = GRows.Cells("SCREEN_BOOKID").Value
+        FOpticalShop.DateScreening.Value = GRows.Cells("SCREAN_DATE").Value
+        FOpticalShop.PatientNo.Text = GRows.Cells("PatientNo").Value
+        FOpticalShop.PatientName.Text = GRows.Cells("NameEng").Value
+        FOpticalShop.PatientSex.Text = GRows.Cells("Sex").Value
+        FOpticalShop.PatientAge.Text = GRows.Cells("Age").Value
+        If FOpticalShop.ShowDialog() = DialogResult.OK Then
+
+        End If
+    End Sub
+
+    Private Sub NewOpticalShopToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles NewOpticalShopToolStripMenuItem.Click
+        If DGScreeningBook.SelectedCells.Count = 0 Then Exit Sub
+        Dim GRows As DataGridViewRow = GetDataRowGridView(DGScreeningBook)
+        If (GRows.Cells("IS_OPTICALSHOP").Value) = False Then Exit Sub
+        Dim FOpticalShop As New FormOpticalShop
+        If FOpticalShop.DAOpticalShopBook.CheckExistingOpShop(GRows.Cells("SCREEN_BOOKID").Value) <> 0 Then
+            MessageBox.Show("The patient already register into optical shop book. please check again!", "Screening", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            FOpticalShop.Close()
+            FOpticalShop.Dispose()
+            Exit Sub
+        End If
+        FOpticalShop.LblSaveOption.Text = "0"
+        FOpticalShop.LblScreenBookID.Text = GRows.Cells("SCREEN_BOOKID").Value
+        FOpticalShop.DateScreening.Value = GRows.Cells("SCREAN_DATE").Value
+        FOpticalShop.PatientNo.Text = GRows.Cells("PatientNo").Value
+        FOpticalShop.PatientName.Text = GRows.Cells("NameEng").Value
+        FOpticalShop.PatientSex.Text = GRows.Cells("Sex").Value
+        FOpticalShop.PatientAge.Text = GRows.Cells("Age").Value
+        If FOpticalShop.ShowDialog() = DialogResult.OK Then
+
+        End If
+    End Sub
+
+   
+    Private Sub UpdateRefractionToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles UpdateRefractionToolStripMenuItem.Click
+        If DGScreeningBook.SelectedCells.Count = 0 Then Exit Sub
+
+        Dim GRows As DataGridViewRow = GetDataRowGridView(DGScreeningBook)
+        If (GRows.Cells("IS_REFRACTION").Value) = False Then Exit Sub
+        Dim FRefraction As New FormRefraction
+        'If FReferral.DAReferralBook.CheckExistingBookID(GRows.Cells("SCREEN_BOOKID").Value) <> 0 Then
+        '    MessageBox.Show("The patient already register into referral book. please check again!", "Screening", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        '    FReferral.Close()
+        '    FReferral.Dispose()
+        '    Exit Sub
+        'End If
+        FRefraction.LblSaveOption.Text = "0"
+        FRefraction.LblScreenBookID.Text = GRows.Cells("SCREEN_BOOKID").Value
+        FRefraction.DateScreening.Value = GRows.Cells("SCREAN_DATE").Value
+        FRefraction.PatientNo.Text = GRows.Cells("PatientNo").Value
+        FRefraction.PatientName.Text = GRows.Cells("NameEng").Value
+        FRefraction.PatientSex.Text = GRows.Cells("Sex").Value
+        FRefraction.PatientAge.Text = GRows.Cells("Age").Value
+        FRefraction.CboOnEye.Text = GRows.Cells("ON_EYE").Value
+        FRefraction.cboDiagnosis.Text = GRows.Cells("DIAGNOSISScreening").Value
+        FRefraction.CboVARight.Text = GRows.Cells("VA_RIGHTScreening").Value
+        FRefraction.CboVALeft.Text = GRows.Cells("VA_LEFTScreening").Value
+        If FRefraction.ShowDialog() = DialogResult.OK Then
+
+        End If
+    End Sub
+
+    Private Sub NewRefractionToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles NewRefractionToolStripMenuItem.Click
+        If DGScreeningBook.SelectedCells.Count = 0 Then Exit Sub
+
+        Dim GRows As DataGridViewRow = GetDataRowGridView(DGScreeningBook)
+        If (GRows.Cells("IS_REFRACTION").Value) = False Then Exit Sub
+        Dim FRefraction As New FormRefraction
+        If FRefraction.DARefraction.CheckExistingRefraction(GRows.Cells("SCREEN_BOOKID").Value) <> 0 Then
+            MessageBox.Show("The patient already register into referral book. please check again!", "Screening", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            FRefraction.Close()
+            FRefraction.Dispose()
+            Exit Sub
+        End If
+        FRefraction.LblSaveOption.Text = GRows.Cells("SCREEN_BOOKID").Value
+        FRefraction.LblScreenBookID.Text = GRows.Cells("SCREEN_BOOKID").Value
+        FRefraction.DateScreening.Value = GRows.Cells("SCREAN_DATE").Value
+        FRefraction.PatientNo.Text = GRows.Cells("PatientNo").Value
+        FRefraction.PatientName.Text = GRows.Cells("NameEng").Value
+        FRefraction.PatientSex.Text = GRows.Cells("Sex").Value
+        FRefraction.PatientAge.Text = GRows.Cells("Age").Value
+        FRefraction.CboOnEye.Text = GRows.Cells("ON_EYE").Value
+        FRefraction.cboDiagnosis.Text = GRows.Cells("DIAGNOSISScreening").Value
+        FRefraction.CboVARight.Text = GRows.Cells("VA_RIGHTScreening").Value
+        FRefraction.CboVALeft.Text = GRows.Cells("VA_LEFTScreening").Value
+        If FRefraction.ShowDialog() = DialogResult.OK Then
+
+        End If
+    End Sub
 End Class

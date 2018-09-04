@@ -2,6 +2,9 @@
     Dim DADiagnosis As New DataSetScreeningBookTableAdapters.TblSurgeryTableAdapter
     Dim DAVA As New DataSetScreeningBookTableAdapters.REFRACTION_VATableAdapter
     Dim DAScreeningBook As New DataSetScreeningBookTableAdapters.SCREENING_BOOKTableAdapter
+    Dim DAReferral As New DataSetScreeningBookTableAdapters.SCREENING_REFERRAL_BOOKTableAdapter
+    Dim DARefraction As New DataSetScreeningBookTableAdapters.SCREENING_REFRACTION_BOOKTableAdapter
+    Dim DAOpticalShop As New DataSetScreeningBookTableAdapters.SCREENING_OPTICALSHOP_BOOKTableAdapter
     Sub New()
 
         ' This call is required by the Windows Form Designer.
@@ -40,7 +43,38 @@
     Private Sub BtnSave_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnSave.Click
         If LblSaveOption.Text <> "0" Then
             If MessageBox.Show("Do you want to update screening book?", "Update", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
-                If DAScreeningBook.UpdateScreeningBook(DateScreening.Value.Date, ChRefraction.Checked, ChOpticalshop.Checked, RadReferAndPickup.Checked, RadReferAndPickup.Checked, TxtMoreInfo.Text, CboOnEye.Text, TxtComplain.Text, cboDiagnosis.Text, CboVARight.Text, CboVALeft.Text, TxtPlaceScreening.Text, LblSaveOption.Text) = 1 Then
+                If DAScreeningBook.UpdateScreeningBook(DateScreening.Value.Date, ChRefraction.Checked, ChOpticalshop.Checked, RadReferAndPickup.Checked, RadReferAndComeBySelf.Checked, TxtMoreInfo.Text, CboOnEye.Text, TxtComplain.Text, cboDiagnosis.Text, CboVARight.Text, CboVALeft.Text, TxtPlaceScreening.Text, LblSaveOption.Text) = 1 Then
+                    ' Check in Referral
+                    If ChReferral.Checked = True Then
+                        
+                        If DAReferral.CheckExistingBookID(LblSaveOption.Text) = 0 Then
+                            If RadReferAndComeBySelf.Checked = True Then
+                                DAReferral.InsertNewReferral(LblSaveOption.Text, PatientNo.Text, CboVARight.Text, CboVALeft.Text, cboDiagnosis.Text, Nothing, False, "", DateScreening.Value.Date)
+                            End If
+                            If RadReferAndPickup.Checked = True Then
+                                DAReferral.InsertNewReferral(LblSaveOption.Text, PatientNo.Text, CboVARight.Text, CboVALeft.Text, cboDiagnosis.Text, Nothing, True, "", DateScreening.Value.Date)
+                            End If
+                        End If
+                    Else
+                        DAReferral.DeleteReferralBookID(LblSaveOption.Text)
+                    End If
+                    ' Check in Refraction 
+                    If ChRefraction.Checked = True Then
+                        If DARefraction.CheckExistingRefraction(LblSaveOption.Text) = 0 Then
+                            DARefraction.InsertNewRefraction(LblSaveOption.Text, DateScreening.Value.Date, PatientNo.Text, CboVARight.Text, CboVALeft.Text, cboDiagnosis.Text, "", "", "", "", "", False, "")
+                        End If
+                    Else
+                        DARefraction.DeleteRefraction(LblSaveOption.Text)
+                    End If
+                    ' Check in Optical shop
+                    If ChOpticalshop.Checked = True Then
+                        If DAOpticalShop.CheckExistingOpShop(LblSaveOption.Text) = 0 Then
+                            DAOpticalShop.InsertNewOpticalShop(LblSaveOption.Text, DateScreening.Value.Date, PatientNo.Text, "", False)
+                        End If
+                    Else
+                        DAOpticalShop.DeleteOpticalShop(LblSaveOption.Text)
+                    End If
+
                     Me.DialogResult = Windows.Forms.DialogResult.OK
                 End If
             End If

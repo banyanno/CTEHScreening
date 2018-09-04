@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class FormReferral
+Partial Class FormRefraction
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -22,7 +22,7 @@ Partial Class FormReferral
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormReferral))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormRefraction))
         Me.Panel1 = New System.Windows.Forms.Panel
         Me.BtnClose = New System.Windows.Forms.Button
         Me.BtnSave = New System.Windows.Forms.Button
@@ -32,10 +32,8 @@ Partial Class FormReferral
         Me.Panel2 = New System.Windows.Forms.Panel
         Me.TxtMoreInfo = New System.Windows.Forms.TextBox
         Me.Label13 = New System.Windows.Forms.Label
-        Me.ChPickup = New System.Windows.Forms.CheckBox
-        Me.DateAppointment = New System.Windows.Forms.DateTimePicker
-        Me.Label12 = New System.Windows.Forms.Label
         Me.BtnNewVA = New System.Windows.Forms.Button
+        Me.LblScreenBookID = New System.Windows.Forms.Label
         Me.LblSaveOption = New System.Windows.Forms.Label
         Me.DateScreening = New System.Windows.Forms.DateTimePicker
         Me.Label14 = New System.Windows.Forms.Label
@@ -55,7 +53,16 @@ Partial Class FormReferral
         Me.Label5 = New System.Windows.Forms.Label
         Me.PatientNo = New System.Windows.Forms.TextBox
         Me.Label4 = New System.Windows.Forms.Label
-        Me.LblScreenBookID = New System.Windows.Forms.Label
+        Me.Label12 = New System.Windows.Forms.Label
+        Me.Label15 = New System.Windows.Forms.Label
+        Me.TextBox1 = New System.Windows.Forms.TextBox
+        Me.TextBox2 = New System.Windows.Forms.TextBox
+        Me.Label16 = New System.Windows.Forms.Label
+        Me.Label17 = New System.Windows.Forms.Label
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox
+        Me.ComboBox2 = New System.Windows.Forms.ComboBox
+        Me.Label18 = New System.Windows.Forms.Label
+        Me.ComboBox3 = New System.Windows.Forms.ComboBox
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
@@ -73,8 +80,8 @@ Partial Class FormReferral
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(556, 609)
-        Me.Panel1.TabIndex = 0
+        Me.Panel1.Size = New System.Drawing.Size(455, 715)
+        Me.Panel1.TabIndex = 1
         '
         'BtnClose
         '
@@ -85,7 +92,7 @@ Partial Class FormReferral
         Me.BtnClose.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnClose.ForeColor = System.Drawing.Color.White
         Me.BtnClose.Image = CType(resources.GetObject("BtnClose.Image"), System.Drawing.Image)
-        Me.BtnClose.Location = New System.Drawing.Point(277, 563)
+        Me.BtnClose.Location = New System.Drawing.Point(229, 669)
         Me.BtnClose.Name = "BtnClose"
         Me.BtnClose.Size = New System.Drawing.Size(100, 37)
         Me.BtnClose.TabIndex = 8
@@ -102,7 +109,7 @@ Partial Class FormReferral
         Me.BtnSave.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnSave.ForeColor = System.Drawing.Color.White
         Me.BtnSave.Image = CType(resources.GetObject("BtnSave.Image"), System.Drawing.Image)
-        Me.BtnSave.Location = New System.Drawing.Point(171, 563)
+        Me.BtnSave.Location = New System.Drawing.Point(123, 669)
         Me.BtnSave.Name = "BtnSave"
         Me.BtnSave.Size = New System.Drawing.Size(100, 37)
         Me.BtnSave.TabIndex = 7
@@ -115,7 +122,7 @@ Partial Class FormReferral
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(202, Byte), Integer), CType(CType(81, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Label2.Location = New System.Drawing.Point(187, 61)
+        Me.Label2.Location = New System.Drawing.Point(136, 61)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(181, 18)
         Me.Label2.TabIndex = 6
@@ -126,7 +133,7 @@ Partial Class FormReferral
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(202, Byte), Integer), CType(CType(81, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Label3.Location = New System.Drawing.Point(192, 41)
+        Me.Label3.Location = New System.Drawing.Point(141, 41)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(171, 18)
         Me.Label3.TabIndex = 5
@@ -137,7 +144,7 @@ Partial Class FormReferral
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Khmer Mool1", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(100, Byte), Integer), CType(CType(84, Byte), Integer))
-        Me.Label1.Location = New System.Drawing.Point(176, 4)
+        Me.Label1.Location = New System.Drawing.Point(125, 4)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(202, 43)
         Me.Label1.TabIndex = 4
@@ -147,11 +154,18 @@ Partial Class FormReferral
         '
         Me.Panel2.BackColor = System.Drawing.Color.White
         Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel2.Controls.Add(Me.Label18)
+        Me.Panel2.Controls.Add(Me.ComboBox3)
+        Me.Panel2.Controls.Add(Me.ComboBox2)
+        Me.Panel2.Controls.Add(Me.ComboBox1)
+        Me.Panel2.Controls.Add(Me.TextBox2)
+        Me.Panel2.Controls.Add(Me.TextBox1)
+        Me.Panel2.Controls.Add(Me.Label15)
+        Me.Panel2.Controls.Add(Me.Label17)
+        Me.Panel2.Controls.Add(Me.Label16)
+        Me.Panel2.Controls.Add(Me.Label12)
         Me.Panel2.Controls.Add(Me.TxtMoreInfo)
         Me.Panel2.Controls.Add(Me.Label13)
-        Me.Panel2.Controls.Add(Me.ChPickup)
-        Me.Panel2.Controls.Add(Me.DateAppointment)
-        Me.Panel2.Controls.Add(Me.Label12)
         Me.Panel2.Controls.Add(Me.BtnNewVA)
         Me.Panel2.Controls.Add(Me.LblScreenBookID)
         Me.Panel2.Controls.Add(Me.LblSaveOption)
@@ -177,57 +191,26 @@ Partial Class FormReferral
         Me.Panel2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
         Me.Panel2.Location = New System.Drawing.Point(8, 89)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(537, 468)
+        Me.Panel2.Size = New System.Drawing.Size(438, 576)
         Me.Panel2.TabIndex = 0
         '
         'TxtMoreInfo
         '
         Me.TxtMoreInfo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TxtMoreInfo.Location = New System.Drawing.Point(9, 387)
+        Me.TxtMoreInfo.Location = New System.Drawing.Point(11, 496)
         Me.TxtMoreInfo.Multiline = True
         Me.TxtMoreInfo.Name = "TxtMoreInfo"
-        Me.TxtMoreInfo.Size = New System.Drawing.Size(521, 72)
+        Me.TxtMoreInfo.Size = New System.Drawing.Size(414, 72)
         Me.TxtMoreInfo.TabIndex = 47
         '
         'Label13
         '
         Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(9, 362)
+        Me.Label13.Location = New System.Drawing.Point(11, 471)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(81, 20)
         Me.Label13.TabIndex = 46
         Me.Label13.Text = "More Info:"
-        '
-        'ChPickup
-        '
-        Me.ChPickup.AutoSize = True
-        Me.ChPickup.Enabled = False
-        Me.ChPickup.Location = New System.Drawing.Point(246, 335)
-        Me.ChPickup.Name = "ChPickup"
-        Me.ChPickup.Size = New System.Drawing.Size(287, 24)
-        Me.ChPickup.TabIndex = 45
-        Me.ChPickup.Text = "Pick Up or By Self (Cheked = Pickup)"
-        Me.ChPickup.UseVisualStyleBackColor = True
-        '
-        'DateAppointment
-        '
-        Me.DateAppointment.Checked = False
-        Me.DateAppointment.CustomFormat = "dd/MM/yyyy"
-        Me.DateAppointment.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.DateAppointment.Location = New System.Drawing.Point(103, 335)
-        Me.DateAppointment.Name = "DateAppointment"
-        Me.DateAppointment.ShowCheckBox = True
-        Me.DateAppointment.Size = New System.Drawing.Size(136, 26)
-        Me.DateAppointment.TabIndex = 44
-        '
-        'Label12
-        '
-        Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(98, 307)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(107, 20)
-        Me.Label12.TabIndex = 43
-        Me.Label12.Text = "Date Appoint:"
         '
         'BtnNewVA
         '
@@ -245,10 +228,20 @@ Partial Class FormReferral
         Me.BtnNewVA.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.BtnNewVA.UseVisualStyleBackColor = False
         '
+        'LblScreenBookID
+        '
+        Me.LblScreenBookID.AutoSize = True
+        Me.LblScreenBookID.Location = New System.Drawing.Point(407, 63)
+        Me.LblScreenBookID.Name = "LblScreenBookID"
+        Me.LblScreenBookID.Size = New System.Drawing.Size(18, 20)
+        Me.LblScreenBookID.TabIndex = 42
+        Me.LblScreenBookID.Text = "0"
+        Me.LblScreenBookID.Visible = False
+        '
         'LblSaveOption
         '
         Me.LblSaveOption.AutoSize = True
-        Me.LblSaveOption.Location = New System.Drawing.Point(428, 29)
+        Me.LblSaveOption.Location = New System.Drawing.Point(407, 29)
         Me.LblSaveOption.Name = "LblSaveOption"
         Me.LblSaveOption.Size = New System.Drawing.Size(18, 20)
         Me.LblSaveOption.TabIndex = 42
@@ -260,7 +253,7 @@ Partial Class FormReferral
         Me.DateScreening.CustomFormat = "dd/MM/yyyy"
         Me.DateScreening.Enabled = False
         Me.DateScreening.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.DateScreening.Location = New System.Drawing.Point(103, 19)
+        Me.DateScreening.Location = New System.Drawing.Point(101, 19)
         Me.DateScreening.Name = "DateScreening"
         Me.DateScreening.Size = New System.Drawing.Size(290, 26)
         Me.DateScreening.TabIndex = 22
@@ -289,7 +282,7 @@ Partial Class FormReferral
         Me.CboVARight.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
         Me.CboVARight.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
         Me.CboVARight.FormattingEnabled = True
-        Me.CboVARight.Location = New System.Drawing.Point(103, 272)
+        Me.CboVARight.Location = New System.Drawing.Point(101, 272)
         Me.CboVARight.Name = "CboVARight"
         Me.CboVARight.Size = New System.Drawing.Size(133, 28)
         Me.CboVARight.TabIndex = 35
@@ -299,7 +292,7 @@ Partial Class FormReferral
         Me.cboDiagnosis.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
         Me.cboDiagnosis.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
         Me.cboDiagnosis.FormattingEnabled = True
-        Me.cboDiagnosis.Location = New System.Drawing.Point(103, 212)
+        Me.cboDiagnosis.Location = New System.Drawing.Point(101, 212)
         Me.cboDiagnosis.Name = "cboDiagnosis"
         Me.cboDiagnosis.Size = New System.Drawing.Size(292, 28)
         Me.cboDiagnosis.TabIndex = 33
@@ -374,7 +367,7 @@ Partial Class FormReferral
         '
         Me.PatientSex.BackColor = System.Drawing.Color.LightGray
         Me.PatientSex.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.PatientSex.Location = New System.Drawing.Point(103, 158)
+        Me.PatientSex.Location = New System.Drawing.Point(101, 158)
         Me.PatientSex.Name = "PatientSex"
         Me.PatientSex.ReadOnly = True
         Me.PatientSex.Size = New System.Drawing.Size(62, 26)
@@ -384,7 +377,7 @@ Partial Class FormReferral
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(95, 131)
+        Me.Label6.Location = New System.Drawing.Point(101, 131)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(40, 20)
         Me.Label6.TabIndex = 28
@@ -395,7 +388,7 @@ Partial Class FormReferral
         Me.PatientName.BackColor = System.Drawing.Color.LightGray
         Me.PatientName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.PatientName.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.PatientName.Location = New System.Drawing.Point(103, 97)
+        Me.PatientName.Location = New System.Drawing.Point(101, 97)
         Me.PatientName.Name = "PatientName"
         Me.PatientName.ReadOnly = True
         Me.PatientName.Size = New System.Drawing.Size(290, 30)
@@ -415,7 +408,7 @@ Partial Class FormReferral
         Me.PatientNo.BackColor = System.Drawing.Color.LightGray
         Me.PatientNo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.PatientNo.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!)
-        Me.PatientNo.Location = New System.Drawing.Point(103, 57)
+        Me.PatientNo.Location = New System.Drawing.Point(101, 57)
         Me.PatientNo.Name = "PatientNo"
         Me.PatientNo.ReadOnly = True
         Me.PatientNo.Size = New System.Drawing.Size(290, 30)
@@ -430,29 +423,107 @@ Partial Class FormReferral
         Me.Label4.TabIndex = 23
         Me.Label4.Text = "Patient No:"
         '
-        'LblScreenBookID
+        'Label12
         '
-        Me.LblScreenBookID.AutoSize = True
-        Me.LblScreenBookID.Location = New System.Drawing.Point(450, 67)
-        Me.LblScreenBookID.Name = "LblScreenBookID"
-        Me.LblScreenBookID.Size = New System.Drawing.Size(18, 20)
-        Me.LblScreenBookID.TabIndex = 42
-        Me.LblScreenBookID.Text = "0"
-        Me.LblScreenBookID.Visible = False
+        Me.Label12.AutoSize = True
+        Me.Label12.Location = New System.Drawing.Point(101, 307)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(65, 20)
+        Me.Label12.TabIndex = 48
+        Me.Label12.Text = "(RE) P+"
         '
-        'FormReferral
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.Location = New System.Drawing.Point(101, 361)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(62, 20)
+        Me.Label15.TabIndex = 48
+        Me.Label15.Text = "(LE) P+"
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(101, 329)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(131, 26)
+        Me.TextBox1.TabIndex = 49
+        '
+        'TextBox2
+        '
+        Me.TextBox2.Location = New System.Drawing.Point(101, 386)
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.Size = New System.Drawing.Size(131, 26)
+        Me.TextBox2.TabIndex = 49
+        '
+        'Label16
+        '
+        Me.Label16.AutoSize = True
+        Me.Label16.Location = New System.Drawing.Point(240, 335)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(31, 20)
+        Me.Label16.TabIndex = 48
+        Me.Label16.Text = "VA"
+        '
+        'Label17
+        '
+        Me.Label17.AutoSize = True
+        Me.Label17.Location = New System.Drawing.Point(240, 392)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(31, 20)
+        Me.Label17.TabIndex = 48
+        Me.Label17.Text = "VA"
+        '
+        'ComboBox1
+        '
+        Me.ComboBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.ComboBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Location = New System.Drawing.Point(277, 327)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(115, 28)
+        Me.ComboBox1.TabIndex = 50
+        '
+        'ComboBox2
+        '
+        Me.ComboBox2.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.ComboBox2.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
+        Me.ComboBox2.FormattingEnabled = True
+        Me.ComboBox2.Location = New System.Drawing.Point(277, 384)
+        Me.ComboBox2.Name = "ComboBox2"
+        Me.ComboBox2.Size = New System.Drawing.Size(115, 28)
+        Me.ComboBox2.TabIndex = 50
+        '
+        'Label18
+        '
+        Me.Label18.AutoSize = True
+        Me.Label18.Location = New System.Drawing.Point(101, 418)
+        Me.Label18.Name = "Label18"
+        Me.Label18.Size = New System.Drawing.Size(44, 20)
+        Me.Label18.TabIndex = 51
+        Me.Label18.Text = "ADD"
+        '
+        'ComboBox3
+        '
+        Me.ComboBox3.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.ComboBox3.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
+        Me.ComboBox3.FormattingEnabled = True
+        Me.ComboBox3.Location = New System.Drawing.Point(101, 441)
+        Me.ComboBox3.Name = "ComboBox3"
+        Me.ComboBox3.Size = New System.Drawing.Size(290, 28)
+        Me.ComboBox3.TabIndex = 50
+        '
+        'FormRefraction
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(556, 609)
+        Me.ClientSize = New System.Drawing.Size(455, 715)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Name = "FormReferral"
+        Me.Name = "FormRefraction"
         Me.ShowIcon = False
         Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "FormReferral"
+        Me.Text = "FormRefraction"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.Panel2.ResumeLayout(False)
@@ -461,13 +532,16 @@ Partial Class FormReferral
 
     End Sub
     Friend WithEvents Panel1 As System.Windows.Forms.Panel
-    Friend WithEvents Panel2 As System.Windows.Forms.Panel
+    Friend WithEvents BtnClose As System.Windows.Forms.Button
+    Friend WithEvents BtnSave As System.Windows.Forms.Button
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents BtnClose As System.Windows.Forms.Button
-    Friend WithEvents BtnSave As System.Windows.Forms.Button
+    Friend WithEvents Panel2 As System.Windows.Forms.Panel
+    Friend WithEvents TxtMoreInfo As System.Windows.Forms.TextBox
+    Friend WithEvents Label13 As System.Windows.Forms.Label
     Friend WithEvents BtnNewVA As System.Windows.Forms.Button
+    Friend WithEvents LblScreenBookID As System.Windows.Forms.Label
     Friend WithEvents LblSaveOption As System.Windows.Forms.Label
     Friend WithEvents DateScreening As System.Windows.Forms.DateTimePicker
     Friend WithEvents Label14 As System.Windows.Forms.Label
@@ -487,10 +561,14 @@ Partial Class FormReferral
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents PatientNo As System.Windows.Forms.TextBox
     Friend WithEvents Label4 As System.Windows.Forms.Label
-    Friend WithEvents DateAppointment As System.Windows.Forms.DateTimePicker
+    Friend WithEvents Label15 As System.Windows.Forms.Label
     Friend WithEvents Label12 As System.Windows.Forms.Label
-    Friend WithEvents ChPickup As System.Windows.Forms.CheckBox
-    Friend WithEvents TxtMoreInfo As System.Windows.Forms.TextBox
-    Friend WithEvents Label13 As System.Windows.Forms.Label
-    Friend WithEvents LblScreenBookID As System.Windows.Forms.Label
+    Friend WithEvents ComboBox2 As System.Windows.Forms.ComboBox
+    Friend WithEvents ComboBox1 As System.Windows.Forms.ComboBox
+    Friend WithEvents TextBox2 As System.Windows.Forms.TextBox
+    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
+    Friend WithEvents Label17 As System.Windows.Forms.Label
+    Friend WithEvents Label16 As System.Windows.Forms.Label
+    Friend WithEvents Label18 As System.Windows.Forms.Label
+    Friend WithEvents ComboBox3 As System.Windows.Forms.ComboBox
 End Class

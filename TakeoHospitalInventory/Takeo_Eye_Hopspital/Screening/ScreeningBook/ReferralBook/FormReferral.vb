@@ -1,7 +1,7 @@
 ﻿Public Class FormReferral
-    Dim DAReferralBook As New DataSetScreeningBookTableAdapters.SCREENING_REFERRAL_BOOKTableAdapter
-    Dim DADiagnosis As New DataSetScreeningBookTableAdapters.TblSurgeryTableAdapter
-    Dim DAVA As New DataSetScreeningBookTableAdapters.REFRACTION_VATableAdapter
+    Public DAReferralBook As New DataSetScreeningBookTableAdapters.SCREENING_REFERRAL_BOOKTableAdapter
+    Public DADiagnosis As New DataSetScreeningBookTableAdapters.TblSurgeryTableAdapter
+    Public DAVA As New DataSetScreeningBookTableAdapters.REFRACTION_VATableAdapter
     Sub New()
 
         ' This call is required by the Windows Form Designer.
@@ -47,6 +47,12 @@
             If MessageBox.Show("Do you want to update patient referral?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
                 If DAReferralBook.UpdateReferral(CboVARight.Text, CboVALeft.Text, cboDiagnosis.Text, IIf(DateAppointment.Checked = True, DateAppointment.Value.Date, Nothing), TxtMoreInfo.Text, LblSaveOption.Text) Then
                     Me.DialogResult = Windows.Forms.DialogResult.OK
+                End If
+            End If
+        Else
+            If MessageBox.Show("Do you want to save referral?", "Screening", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
+                If DAReferralBook.InsertNewReferral(LblScreenBookID.Text, PatientNo.Text, CboVARight.Text, CboVALeft.Text, cboDiagnosis.Text, DateAppointment.Value.Date, ChPickup.Checked, TxtMoreInfo.Text, DateScreening.Value.Date) = 1 Then
+
                 End If
             End If
         End If

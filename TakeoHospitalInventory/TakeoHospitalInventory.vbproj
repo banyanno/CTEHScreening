@@ -679,10 +679,22 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetScreeningBook.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Takeo_Eye_Hopspital\Screening\ScreeningBook\OpticalShop\FormOpticalShop.Designer.vb">
+      <DependentUpon>FormOpticalShop.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Takeo_Eye_Hopspital\Screening\ScreeningBook\OpticalShop\FormOpticalShop.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Takeo_Eye_Hopspital\Screening\ScreeningBook\ReferralBook\FormReferral.Designer.vb">
       <DependentUpon>FormReferral.vb</DependentUpon>
     </Compile>
     <Compile Include="Takeo_Eye_Hopspital\Screening\ScreeningBook\ReferralBook\FormReferral.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Takeo_Eye_Hopspital\Screening\ScreeningBook\Refraction\FormRefraction.Designer.vb">
+      <DependentUpon>FormRefraction.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Takeo_Eye_Hopspital\Screening\ScreeningBook\Refraction\FormRefraction.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Takeo_Eye_Hopspital\Screening\ScreeningBook\UpdateScreeningBook.Designer.vb">
@@ -3270,8 +3282,14 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>ReportAllRefraction.vb</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Takeo_Eye_Hopspital\Screening\ScreeningBook\OpticalShop\FormOpticalShop.resx">
+      <DependentUpon>FormOpticalShop.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Takeo_Eye_Hopspital\Screening\ScreeningBook\ReferralBook\FormReferral.resx">
       <DependentUpon>FormReferral.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Takeo_Eye_Hopspital\Screening\ScreeningBook\Refraction\FormRefraction.resx">
+      <DependentUpon>FormRefraction.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Takeo_Eye_Hopspital\Screening\ScreeningBook\UpdateScreeningBook.resx">
       <DependentUpon>UpdateScreeningBook.vb</DependentUpon>
@@ -5669,7 +5687,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="obj\" />
-    <Folder Include="Takeo_Eye_Hopspital\Screening\ScreeningBook\OpticalShop\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

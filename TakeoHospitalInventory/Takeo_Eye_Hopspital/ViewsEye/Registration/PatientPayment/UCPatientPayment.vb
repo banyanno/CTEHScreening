@@ -767,7 +767,7 @@ Public Class UCPatientPayment
                 'BtnShowBookV1.Enabled = True
                 'MFree.Enabled = True
                 'BtnUpdatePatient.Enabled = True
-                CheckIsPatientConsult(GridPatientInformation.GetRow.Cells("PatientNo").Value, 0)
+                ' CheckIsPatientConsult(GridPatientInformation.GetRow.Cells("PatientNo").Value, 0)
                 ' ViewPatientDetail(lblSaveOption.Text, TxtPatientNo.Text, TxtNameKhmer.Text, TxtNameEng.Text, TxtAgePatient.Text, CboSexPatien.Text, TxtAddress.Text, CboOccupation.Text, TxtTel.Text, CboProNo.Text, CboDisNo.Text, CboCommNo.Text, DateRegis.Value)
             Else
                 MainBtnPrintRegistrationForm.Enabled = False
@@ -1295,16 +1295,16 @@ Public Class UCPatientPayment
     End Sub
 
     Private Sub GridPatientInformation_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles GridPatientInformation.Click
-        Try
-            If GridPatientInformation.SelectedItems(0).Table.Key = "PatientInfo" Then
-                'SplitContainer2.Panel2Collapsed = False
-                'CheckPanel = True
-                Dim PatientNo As Double = GridPatientInformation.GetRow.Cells(1).Text
-                LoadPatientBooks(PatientNo)
-            End If
-        Catch ex As Exception
+        'Try
+        '    If GridPatientInformation.SelectedItems(0).Table.Key = "PatientInfo" Then
+        '        'SplitContainer2.Panel2Collapsed = False
+        '        'CheckPanel = True
+        '        Dim PatientNo As Double = GridPatientInformation.GetRow.Cells(1).Text
+        '        LoadPatientBooks(PatientNo)
+        '    End If
+        'Catch ex As Exception
 
-        End Try
+        'End Try
         
     End Sub
 
