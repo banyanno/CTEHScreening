@@ -55,14 +55,14 @@ Partial Class FormRefraction
         Me.Label4 = New System.Windows.Forms.Label
         Me.Label12 = New System.Windows.Forms.Label
         Me.Label15 = New System.Windows.Forms.Label
-        Me.TextBox1 = New System.Windows.Forms.TextBox
-        Me.TextBox2 = New System.Windows.Forms.TextBox
+        Me.TxtREPlus = New System.Windows.Forms.TextBox
+        Me.TxtLEPlus = New System.Windows.Forms.TextBox
         Me.Label16 = New System.Windows.Forms.Label
         Me.Label17 = New System.Windows.Forms.Label
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox
-        Me.ComboBox2 = New System.Windows.Forms.ComboBox
+        Me.CboREPlusVA = New System.Windows.Forms.ComboBox
+        Me.CboLEPlusVA = New System.Windows.Forms.ComboBox
         Me.Label18 = New System.Windows.Forms.Label
-        Me.ComboBox3 = New System.Windows.Forms.ComboBox
+        Me.CboAdd = New System.Windows.Forms.ComboBox
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
@@ -155,11 +155,11 @@ Partial Class FormRefraction
         Me.Panel2.BackColor = System.Drawing.Color.White
         Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel2.Controls.Add(Me.Label18)
-        Me.Panel2.Controls.Add(Me.ComboBox3)
-        Me.Panel2.Controls.Add(Me.ComboBox2)
-        Me.Panel2.Controls.Add(Me.ComboBox1)
-        Me.Panel2.Controls.Add(Me.TextBox2)
-        Me.Panel2.Controls.Add(Me.TextBox1)
+        Me.Panel2.Controls.Add(Me.CboAdd)
+        Me.Panel2.Controls.Add(Me.CboLEPlusVA)
+        Me.Panel2.Controls.Add(Me.CboREPlusVA)
+        Me.Panel2.Controls.Add(Me.TxtLEPlus)
+        Me.Panel2.Controls.Add(Me.TxtREPlus)
         Me.Panel2.Controls.Add(Me.Label15)
         Me.Panel2.Controls.Add(Me.Label17)
         Me.Panel2.Controls.Add(Me.Label16)
@@ -441,19 +441,19 @@ Partial Class FormRefraction
         Me.Label15.TabIndex = 48
         Me.Label15.Text = "(LE) P+"
         '
-        'TextBox1
+        'TxtREPlus
         '
-        Me.TextBox1.Location = New System.Drawing.Point(101, 329)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(131, 26)
-        Me.TextBox1.TabIndex = 49
+        Me.TxtREPlus.Location = New System.Drawing.Point(101, 329)
+        Me.TxtREPlus.Name = "TxtREPlus"
+        Me.TxtREPlus.Size = New System.Drawing.Size(131, 26)
+        Me.TxtREPlus.TabIndex = 49
         '
-        'TextBox2
+        'TxtLEPlus
         '
-        Me.TextBox2.Location = New System.Drawing.Point(101, 386)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(131, 26)
-        Me.TextBox2.TabIndex = 49
+        Me.TxtLEPlus.Location = New System.Drawing.Point(101, 386)
+        Me.TxtLEPlus.Name = "TxtLEPlus"
+        Me.TxtLEPlus.Size = New System.Drawing.Size(131, 26)
+        Me.TxtLEPlus.TabIndex = 49
         '
         'Label16
         '
@@ -473,25 +473,25 @@ Partial Class FormRefraction
         Me.Label17.TabIndex = 48
         Me.Label17.Text = "VA"
         '
-        'ComboBox1
+        'CboREPlusVA
         '
-        Me.ComboBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
-        Me.ComboBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(277, 327)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(115, 28)
-        Me.ComboBox1.TabIndex = 50
+        Me.CboREPlusVA.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.CboREPlusVA.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
+        Me.CboREPlusVA.FormattingEnabled = True
+        Me.CboREPlusVA.Location = New System.Drawing.Point(277, 327)
+        Me.CboREPlusVA.Name = "CboREPlusVA"
+        Me.CboREPlusVA.Size = New System.Drawing.Size(115, 28)
+        Me.CboREPlusVA.TabIndex = 50
         '
-        'ComboBox2
+        'CboLEPlusVA
         '
-        Me.ComboBox2.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
-        Me.ComboBox2.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
-        Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Location = New System.Drawing.Point(277, 384)
-        Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(115, 28)
-        Me.ComboBox2.TabIndex = 50
+        Me.CboLEPlusVA.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.CboLEPlusVA.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
+        Me.CboLEPlusVA.FormattingEnabled = True
+        Me.CboLEPlusVA.Location = New System.Drawing.Point(277, 384)
+        Me.CboLEPlusVA.Name = "CboLEPlusVA"
+        Me.CboLEPlusVA.Size = New System.Drawing.Size(115, 28)
+        Me.CboLEPlusVA.TabIndex = 50
         '
         'Label18
         '
@@ -502,15 +502,15 @@ Partial Class FormRefraction
         Me.Label18.TabIndex = 51
         Me.Label18.Text = "ADD"
         '
-        'ComboBox3
+        'CboAdd
         '
-        Me.ComboBox3.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
-        Me.ComboBox3.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
-        Me.ComboBox3.FormattingEnabled = True
-        Me.ComboBox3.Location = New System.Drawing.Point(101, 441)
-        Me.ComboBox3.Name = "ComboBox3"
-        Me.ComboBox3.Size = New System.Drawing.Size(290, 28)
-        Me.ComboBox3.TabIndex = 50
+        Me.CboAdd.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.CboAdd.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
+        Me.CboAdd.FormattingEnabled = True
+        Me.CboAdd.Location = New System.Drawing.Point(101, 441)
+        Me.CboAdd.Name = "CboAdd"
+        Me.CboAdd.Size = New System.Drawing.Size(290, 28)
+        Me.CboAdd.TabIndex = 50
         '
         'FormRefraction
         '
@@ -563,12 +563,12 @@ Partial Class FormRefraction
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents Label15 As System.Windows.Forms.Label
     Friend WithEvents Label12 As System.Windows.Forms.Label
-    Friend WithEvents ComboBox2 As System.Windows.Forms.ComboBox
-    Friend WithEvents ComboBox1 As System.Windows.Forms.ComboBox
-    Friend WithEvents TextBox2 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
+    Friend WithEvents CboLEPlusVA As System.Windows.Forms.ComboBox
+    Friend WithEvents CboREPlusVA As System.Windows.Forms.ComboBox
+    Friend WithEvents TxtLEPlus As System.Windows.Forms.TextBox
+    Friend WithEvents TxtREPlus As System.Windows.Forms.TextBox
     Friend WithEvents Label17 As System.Windows.Forms.Label
     Friend WithEvents Label16 As System.Windows.Forms.Label
     Friend WithEvents Label18 As System.Windows.Forms.Label
-    Friend WithEvents ComboBox3 As System.Windows.Forms.ComboBox
+    Friend WithEvents CboAdd As System.Windows.Forms.ComboBox
 End Class
