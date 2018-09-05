@@ -679,6 +679,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetScreeningBook.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Takeo_Eye_Hopspital\Screening\ScreeningBook\ImportPatient\DashboardImportPatient.Designer.vb">
+      <DependentUpon>DashboardImportPatient.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Takeo_Eye_Hopspital\Screening\ScreeningBook\ImportPatient\DashboardImportPatient.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Takeo_Eye_Hopspital\Screening\ScreeningBook\OpticalShop\FormOpticalShop.Designer.vb">
       <DependentUpon>FormOpticalShop.vb</DependentUpon>
     </Compile>
@@ -3281,6 +3287,9 @@
     <EmbeddedResource Include="Takeo_Eye_Hopspital\Refraction\ReportAllRefraction.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>ReportAllRefraction.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Takeo_Eye_Hopspital\Screening\ScreeningBook\ImportPatient\DashboardImportPatient.resx">
+      <DependentUpon>DashboardImportPatient.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Takeo_Eye_Hopspital\Screening\ScreeningBook\OpticalShop\FormOpticalShop.resx">
       <DependentUpon>FormOpticalShop.vb</DependentUpon>

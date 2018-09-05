@@ -119,6 +119,7 @@
         TxtTotalReferralPickup.Text = DAScreeningBook.TotalPatientReferralPickup(DateFrom, DateTo)
         TxtTotalReferralSelf.Text = DAScreeningBook.TotalPatientReferralBySelf(DateFrom, DateTo)
         TxtTotalOpticalShop.Text = DAScreeningBook.TotalPatientOpticalshop(DateFrom, DateTo)
+        TxtTotalNotYetImport.Text = DAScreeningBook.TotalNotYetImport(DateFrom, DateTo)
     End Sub
 
     Private Sub BtnUpdateScreening_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnUpdateScreening.Click
@@ -318,5 +319,24 @@
         If FRefraction.ShowDialog() = DialogResult.OK Then
 
         End If
+    End Sub
+    Private IndexGrid As Integer = 0
+   
+    Private Sub PicStartImport_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PicStartImport.Click
+
+        IndexGrid = 0
+        For i As Integer = 0 To DGScreeningBook.Rows.Count - 1 'GRows.Cells.Count - 1
+            IndexGrid = i
+            Threading.Thread.Sleep(10)
+            Application.DoEvents()
+            ' MessageBox.Show(DGScreeningBook.Rows(IndexGrid).Cells("PatientNo").Value)
+            DGScreeningBook.ClearSelection()
+            'DGScreeningBook.CurrentCell = DGScreeningBook.Rows(IndexGrid).Cells(0)
+            DGScreeningBook.Rows(IndexGrid).Selected = True
+            'DGScreeningBook.BeginEdit(False)
+            'DGScreeningBook.CurrentCell = DGScreeningBook.Rows( '.Item(0, IndexGrid)  'DGScreeningBook.Rows(IndexGrid).Cells(0)
+
+            IndexGrid = IndexGrid + i
+        Next
     End Sub
 End Class

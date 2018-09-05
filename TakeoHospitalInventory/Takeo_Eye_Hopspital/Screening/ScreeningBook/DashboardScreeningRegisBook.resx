@@ -117,6 +117,29 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="PicStartImport.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAAA95JREFUaEPt
+        mcuLjWEcx4eRKHfKxv2yQDYoJYmlMqWUsjAUQvEXuNRsZKyUhWRjYSMJg0QhLIaV7GZDKZc4ZubMfVyP
+        z3f6PscxPDnvnPOecxbnW9/e5/n9fs/v8rzve37P22moA+RyuXF9fX2r+vv7dw8MDLQMDg5e5voMvoKv
+        YdcoSiZdu21btFY+5MtuK4Pe3t45JHAYXoOfYK5MlK+r8BAxZjtceaHdIkATvAG/wsIEPsIb7HAr1/3s
+        7ubh4eGlcEk2m50Z2NPTM0sy6WSD7QHWnOF6E47ekC/wOmwq251y0OcOIP6A9+BBdCtsVhL8iK7E5yF4
+        3zFCvPahoaFNNk0OnE/AyfkCh9q1Y+ziPJukBmLMJ9ZxmHFs8Rw5NdqkOLBgCgvv2kE/PC6Z1RVDJpOZ
+        SuyTUFAud4rOA0O9D21e+BausapqIId18J1zuq4crYqD27rLCz7xbC60uOogl0XkNPKokeNOi+Pgd/2J
+        jLnutahmQF77XMgji+LA8LuMu7u7Z1hUM9DPuHKD3yyKw4a5rq6u6RbVDAoKyVkURzCEByyqGZCT+kzi
+        QmrtZV9MTp9DfhbHEQzN97xYG6yqGihiI7l8KMzNqjgKjG/7+oViWqvx8uudILbOYzp7KZfQ34ovBDSq
+        AMbh3KPbWskjygnY6djK4RQ5jfe8+EI81Vxd9WmQw4oeGulnj7mutelf+UURM0QWjvHhNgf+8xhPAnNJ
+        MH8u0liyhMf4bV6eR7DxNI7/GVb7wyrYexpH0YbAj0TsU1eJ6eQcEtVYspI+dVmTrJB6Z08R5FTv7PXO
+        Xg7UO7sw2pBxvbOTYL2zO9xfCPaexlG0IfAjUe/sY0HiQmDNdXZhLIVUtbP7XNXmaR4hP0/jCIZmVTo7
+        MdcT+41ysCiPkJuncQRDWJXOzsvfTEzhnwmTyyP40NM4ggNQ0c5OvMn4v+hYeVqdHKMdME69s3MXVrNB
+        Hfafhds9Ll8hAchK6uwxsG4H63rkS8WoKMk1T8IRZ4WIKoyxdnYSfGIXI6DIicjOovtp/RX9sWN16YWw
+        K71SFNMQSabozo7ugZfp+2IBsnbr9GNy1KrECP49/Q3tnJWpNES91HqEQgKMj1g1JgQ/nv4GjlP/x6oi
+        d0SPC4pbNkitIab+jggE0b+6FWmI+E7nVyuAYirWEPm5XobvF44zQDF7PI4nmBQ4S70hCmzcBDbpdEGc
+        8hYSgNOSGmJnZ+c03U30+jbfCvV9fgq7ZpuMQHPkQjqFBKTwqZu16zzYiOXIX0pvUbpgx5M0RDXad1w7
+        4APGl2AL67fY3R/A9yT0Fzz9DxoafgHXynHg2bfA8AAAAABJRU5ErkJggg==
+</value>
+  </data>
   <metadata name="SCREEN_BOOKID.UserAddedColumn" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -180,10 +203,12 @@
   <metadata name="SCREEN_NOTE.UserAddedColumn" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <metadata name="IMPORT_STATUS.UserAddedColumn" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <metadata name="CMScreeningBook.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="BtnUpdateScreening.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAABGdBTUEAALGPC/xhBQAAAMBJREFUKFNt

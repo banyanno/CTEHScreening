@@ -1860,6 +1860,8 @@ Partial Public Class DataSetScreeningBook
         
         Private columnREFERENCE_PATIENNOTE As Global.System.Data.DataColumn
         
+        Private columnIMPORT_STATUS As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Public Sub New()
             MyBase.New
@@ -2039,6 +2041,13 @@ Partial Public Class DataSetScreeningBook
             End Get
         End Property
         
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public ReadOnly Property IMPORT_STATUSColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnIMPORT_STATUS
+            End Get
+        End Property
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -2089,9 +2098,10 @@ Partial Public Class DataSetScreeningBook
                     ByVal VA_LEFT As String,  _
                     ByVal PRESENTING_COMPLAIN As String,  _
                     ByVal ON_EYE As String,  _
-                    ByVal REFERENCE_PATIENNOTE As String) As SCREENING_BOOK_VIEWRow
+                    ByVal REFERENCE_PATIENNOTE As String,  _
+                    ByVal IMPORT_STATUS As Boolean) As SCREENING_BOOK_VIEWRow
             Dim rowSCREENING_BOOK_VIEWRow As SCREENING_BOOK_VIEWRow = CType(Me.NewRow,SCREENING_BOOK_VIEWRow)
-            Dim columnValuesArray() As Object = New Object() {PatientNo, NameEng, NameKhmer, Age, Sex, SCREEN_BOOKID, IS_REFRACTION, IS_OPTICALSHOP, IS_REFER_PICKUP, IS_REFER_BYSELF, Address, SCREAN_DATE, SYS_SETTING, SCREEN_PLACE, SCREEN_NOTE, DIAGNOSIS, VA_RIGHT, VA_LEFT, PRESENTING_COMPLAIN, ON_EYE, REFERENCE_PATIENNOTE}
+            Dim columnValuesArray() As Object = New Object() {PatientNo, NameEng, NameKhmer, Age, Sex, SCREEN_BOOKID, IS_REFRACTION, IS_OPTICALSHOP, IS_REFER_PICKUP, IS_REFER_BYSELF, Address, SCREAN_DATE, SYS_SETTING, SCREEN_PLACE, SCREEN_NOTE, DIAGNOSIS, VA_RIGHT, VA_LEFT, PRESENTING_COMPLAIN, ON_EYE, REFERENCE_PATIENNOTE, IMPORT_STATUS}
             rowSCREENING_BOOK_VIEWRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowSCREENING_BOOK_VIEWRow)
             Return rowSCREENING_BOOK_VIEWRow
@@ -2132,6 +2142,7 @@ Partial Public Class DataSetScreeningBook
             Me.columnPRESENTING_COMPLAIN = MyBase.Columns("PRESENTING_COMPLAIN")
             Me.columnON_EYE = MyBase.Columns("ON_EYE")
             Me.columnREFERENCE_PATIENNOTE = MyBase.Columns("REFERENCE_PATIENNOTE")
+            Me.columnIMPORT_STATUS = MyBase.Columns("IMPORT_STATUS")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
@@ -2178,6 +2189,8 @@ Partial Public Class DataSetScreeningBook
             MyBase.Columns.Add(Me.columnON_EYE)
             Me.columnREFERENCE_PATIENNOTE = New Global.System.Data.DataColumn("REFERENCE_PATIENNOTE", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnREFERENCE_PATIENNOTE)
+            Me.columnIMPORT_STATUS = New Global.System.Data.DataColumn("IMPORT_STATUS", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnIMPORT_STATUS)
             Me.columnPatientNo.AllowDBNull = false
             Me.columnNameEng.MaxLength = 50
             Me.columnNameKhmer.MaxLength = 50
@@ -5770,6 +5783,20 @@ Partial Public Class DataSetScreeningBook
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Property IMPORT_STATUS() As Boolean
+            Get
+                Try 
+                    Return CType(Me(Me.tableSCREENING_BOOK_VIEW.IMPORT_STATUSColumn),Boolean)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'IMPORT_STATUS' in table 'SCREENING_BOOK_VIEW' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableSCREENING_BOOK_VIEW.IMPORT_STATUSColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Public Function IsNameEngNull() As Boolean
             Return Me.IsNull(Me.tableSCREENING_BOOK_VIEW.NameEngColumn)
         End Function
@@ -5957,6 +5984,16 @@ Partial Public Class DataSetScreeningBook
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Public Sub SetREFERENCE_PATIENNOTENull()
             Me(Me.tableSCREENING_BOOK_VIEW.REFERENCE_PATIENNOTEColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Function IsIMPORT_STATUSNull() As Boolean
+            Return Me.IsNull(Me.tableSCREENING_BOOK_VIEW.IMPORT_STATUSColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Sub SetIMPORT_STATUSNull()
+            Me(Me.tableSCREENING_BOOK_VIEW.IMPORT_STATUSColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -8731,6 +8768,7 @@ Namespace DataSetScreeningBookTableAdapters
             tableMapping.ColumnMappings.Add("PRESENTING_COMPLAIN", "PRESENTING_COMPLAIN")
             tableMapping.ColumnMappings.Add("ON_EYE", "ON_EYE")
             tableMapping.ColumnMappings.Add("REFERENCE_PATIENNOTE", "REFERENCE_PATIENNOTE")
+            tableMapping.ColumnMappings.Add("IMPORT_STATUS", "IMPORT_STATUS")
             Me._adapter.TableMappings.Add(tableMapping)
         End Sub
         
@@ -8742,32 +8780,32 @@ Namespace DataSetScreeningBookTableAdapters
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(7) {}
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(8) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT        SCREAN_DATE, PatientNo, NameEng, NameKhmer, Age, Sex, Address, SCRE"& _ 
                 "EN_PLACE, SCREEN_BOOKID, IS_REFRACTION, IS_OPTICALSHOP, IS_REFER_PICKUP, IS_REFE"& _ 
                 "R_BYSELF, SYS_SETTING, SCREEN_NOTE, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         DIAGNOSIS, VA_RIG"& _ 
-                "HT, VA_LEFT, PRESENTING_COMPLAIN, ON_EYE, REFERENCE_PATIENNOTE"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            "& _ 
-                "SCREENING_BOOK_VIEW"
+                "HT, VA_LEFT, PRESENTING_COMPLAIN, ON_EYE, REFERENCE_PATIENNOTE, IMPORT_STATUS"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"F"& _ 
+                "ROM            SCREENING_BOOK_VIEW"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand
             Me._commandCollection(1).Connection = Me.Connection
-            Me._commandCollection(1).CommandText = "SELECT Address, Age, DIAGNOSIS, IS_OPTICALSHOP, IS_REFER_BYSELF, IS_REFER_PICKUP,"& _ 
-                " IS_REFRACTION, NameEng, NameKhmer, ON_EYE, PRESENTING_COMPLAIN, PatientNo, REFE"& _ 
-                "RENCE_PATIENNOTE, SCREAN_DATE, SCREEN_BOOKID, SCREEN_NOTE, SCREEN_PLACE, SYS_SET"& _ 
-                "TING, Sex, VA_LEFT, VA_RIGHT FROM SCREENING_BOOK_VIEW WHERE (SCREAN_DATE BETWEEN"& _ 
-                " @DFROM AND @DTo)"
+            Me._commandCollection(1).CommandText = "SELECT Address, Age, DIAGNOSIS, IMPORT_STATUS, IS_OPTICALSHOP, IS_REFER_BYSELF, I"& _ 
+                "S_REFER_PICKUP, IS_REFRACTION, NameEng, NameKhmer, ON_EYE, PRESENTING_COMPLAIN, "& _ 
+                "PatientNo, REFERENCE_PATIENNOTE, SCREAN_DATE, SCREEN_BOOKID, SCREEN_NOTE, SCREEN"& _ 
+                "_PLACE, SYS_SETTING, Sex, VA_LEFT, VA_RIGHT FROM SCREENING_BOOK_VIEW WHERE (SCRE"& _ 
+                "AN_DATE BETWEEN @DFROM AND @DTo)"
             Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@DFROM", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "SCREAN_DATE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@DTo", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "SCREAN_DATE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(2) = New Global.System.Data.SqlClient.SqlCommand
             Me._commandCollection(2).Connection = Me.Connection
-            Me._commandCollection(2).CommandText = "SELECT Address, Age, DIAGNOSIS, IS_OPTICALSHOP, IS_REFER_BYSELF, IS_REFER_PICKUP,"& _ 
-                " IS_REFRACTION, NameEng, NameKhmer, ON_EYE, PRESENTING_COMPLAIN, PatientNo, REFE"& _ 
-                "RENCE_PATIENNOTE, SCREAN_DATE, SCREEN_BOOKID, SCREEN_NOTE, SCREEN_PLACE, SYS_SET"& _ 
-                "TING, Sex, VA_LEFT, VA_RIGHT FROM SCREENING_BOOK_VIEW WHERE (SCREAN_DATE BETWEEN"& _ 
-                " @DFrom AND @DTo) AND (PatientNo = @PatientNo)"
+            Me._commandCollection(2).CommandText = "SELECT Address, Age, DIAGNOSIS, IMPORT_STATUS, IS_OPTICALSHOP, IS_REFER_BYSELF, I"& _ 
+                "S_REFER_PICKUP, IS_REFRACTION, NameEng, NameKhmer, ON_EYE, PRESENTING_COMPLAIN, "& _ 
+                "PatientNo, REFERENCE_PATIENNOTE, SCREAN_DATE, SCREEN_BOOKID, SCREEN_NOTE, SCREEN"& _ 
+                "_PLACE, SYS_SETTING, Sex, VA_LEFT, VA_RIGHT FROM SCREENING_BOOK_VIEW WHERE (SCRE"& _ 
+                "AN_DATE BETWEEN @DFrom AND @DTo) AND (PatientNo = @PatientNo)"
             Me._commandCollection(2).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@DFrom", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "SCREAN_DATE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@DTo", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "SCREAN_DATE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -8775,38 +8813,45 @@ Namespace DataSetScreeningBookTableAdapters
             Me._commandCollection(3) = New Global.System.Data.SqlClient.SqlCommand
             Me._commandCollection(3).Connection = Me.Connection
             Me._commandCollection(3).CommandText = "SELECT COUNT(PatientNo) FROM SCREENING_BOOK_VIEW"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"screan_date between @Dfr"& _ 
-                "om and @Dto and is_opticalshop=1"
+                "om and @Dto and import_status=0"
             Me._commandCollection(3).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Dfrom", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "SCREAN_DATE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Dto", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "SCREAN_DATE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(4) = New Global.System.Data.SqlClient.SqlCommand
             Me._commandCollection(4).Connection = Me.Connection
             Me._commandCollection(4).CommandText = "SELECT COUNT(PatientNo) FROM SCREENING_BOOK_VIEW"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"screan_date between @Dfr"& _ 
-                "om and @Dto and is_refer_byself=1"
+                "om and @Dto and is_opticalshop=1"
             Me._commandCollection(4).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(4).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Dfrom", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "SCREAN_DATE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(4).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Dto", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "SCREAN_DATE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(5) = New Global.System.Data.SqlClient.SqlCommand
             Me._commandCollection(5).Connection = Me.Connection
             Me._commandCollection(5).CommandText = "SELECT COUNT(PatientNo) FROM SCREENING_BOOK_VIEW"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"screan_date between @Dfr"& _ 
-                "om and @Dto and is_refer_pickup=1"
+                "om and @Dto and is_refer_byself=1"
             Me._commandCollection(5).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(5).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Dfrom", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "SCREAN_DATE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(5).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Dto", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "SCREAN_DATE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(6) = New Global.System.Data.SqlClient.SqlCommand
             Me._commandCollection(6).Connection = Me.Connection
             Me._commandCollection(6).CommandText = "SELECT COUNT(PatientNo) FROM SCREENING_BOOK_VIEW"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"screan_date between @Dfr"& _ 
-                "om and @Dto and is_refraction=1"
+                "om and @Dto and is_refer_pickup=1"
             Me._commandCollection(6).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(6).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Dfrom", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "SCREAN_DATE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(6).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Dto", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "SCREAN_DATE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(7) = New Global.System.Data.SqlClient.SqlCommand
             Me._commandCollection(7).Connection = Me.Connection
-            Me._commandCollection(7).CommandText = "SELECT COUNT(*) FROM SCREENING_BOOK_VIEW"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SCREAN_DATE BETWEEN @DFrom and "& _ 
-                "@Dto"
+            Me._commandCollection(7).CommandText = "SELECT COUNT(PatientNo) FROM SCREENING_BOOK_VIEW"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"screan_date between @Dfr"& _ 
+                "om and @Dto and is_refraction=1"
             Me._commandCollection(7).CommandType = Global.System.Data.CommandType.Text
-            Me._commandCollection(7).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@DFrom", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "SCREAN_DATE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(7).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Dfrom", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "SCREAN_DATE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(7).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Dto", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "SCREAN_DATE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(8) = New Global.System.Data.SqlClient.SqlCommand
+            Me._commandCollection(8).Connection = Me.Connection
+            Me._commandCollection(8).CommandText = "SELECT COUNT(*) FROM SCREENING_BOOK_VIEW"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SCREAN_DATE BETWEEN @DFrom and "& _ 
+                "@Dto"
+            Me._commandCollection(8).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(8).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@DFrom", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "SCREAN_DATE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(8).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Dto", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "SCREAN_DATE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -8919,7 +8964,7 @@ Namespace DataSetScreeningBookTableAdapters
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function TotalPatientOpticalshop(ByVal Dfrom As Global.System.Nullable(Of Date), ByVal Dto As Global.System.Nullable(Of Date)) As Global.System.Nullable(Of Integer)
+        Public Overloads Overridable Function TotalNotYetImport(ByVal Dfrom As Global.System.Nullable(Of Date), ByVal Dto As Global.System.Nullable(Of Date)) As Global.System.Nullable(Of Integer)
             Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(3)
             If (Dfrom.HasValue = true) Then
                 command.Parameters(0).Value = CType(Dfrom.Value,Date)
@@ -8954,7 +8999,7 @@ Namespace DataSetScreeningBookTableAdapters
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function TotalPatientReferralBySelf(ByVal Dfrom As Global.System.Nullable(Of Date), ByVal Dto As Global.System.Nullable(Of Date)) As Global.System.Nullable(Of Integer)
+        Public Overloads Overridable Function TotalPatientOpticalshop(ByVal Dfrom As Global.System.Nullable(Of Date), ByVal Dto As Global.System.Nullable(Of Date)) As Global.System.Nullable(Of Integer)
             Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(4)
             If (Dfrom.HasValue = true) Then
                 command.Parameters(0).Value = CType(Dfrom.Value,Date)
@@ -8989,7 +9034,7 @@ Namespace DataSetScreeningBookTableAdapters
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function TotalPatientReferralPickup(ByVal Dfrom As Global.System.Nullable(Of Date), ByVal Dto As Global.System.Nullable(Of Date)) As Global.System.Nullable(Of Integer)
+        Public Overloads Overridable Function TotalPatientReferralBySelf(ByVal Dfrom As Global.System.Nullable(Of Date), ByVal Dto As Global.System.Nullable(Of Date)) As Global.System.Nullable(Of Integer)
             Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(5)
             If (Dfrom.HasValue = true) Then
                 command.Parameters(0).Value = CType(Dfrom.Value,Date)
@@ -9024,7 +9069,7 @@ Namespace DataSetScreeningBookTableAdapters
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function TotalPatientRefraction(ByVal Dfrom As Global.System.Nullable(Of Date), ByVal Dto As Global.System.Nullable(Of Date)) As Global.System.Nullable(Of Integer)
+        Public Overloads Overridable Function TotalPatientReferralPickup(ByVal Dfrom As Global.System.Nullable(Of Date), ByVal Dto As Global.System.Nullable(Of Date)) As Global.System.Nullable(Of Integer)
             Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(6)
             If (Dfrom.HasValue = true) Then
                 command.Parameters(0).Value = CType(Dfrom.Value,Date)
@@ -9059,8 +9104,43 @@ Namespace DataSetScreeningBookTableAdapters
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function TotalScreen(ByVal DFrom As Global.System.Nullable(Of Date), ByVal Dto As Global.System.Nullable(Of Date)) As Global.System.Nullable(Of Integer)
+        Public Overloads Overridable Function TotalPatientRefraction(ByVal Dfrom As Global.System.Nullable(Of Date), ByVal Dto As Global.System.Nullable(Of Date)) As Global.System.Nullable(Of Integer)
             Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(7)
+            If (Dfrom.HasValue = true) Then
+                command.Parameters(0).Value = CType(Dfrom.Value,Date)
+            Else
+                command.Parameters(0).Value = Global.System.DBNull.Value
+            End If
+            If (Dto.HasValue = true) Then
+                command.Parameters(1).Value = CType(Dto.Value,Date)
+            Else
+                command.Parameters(1).Value = Global.System.DBNull.Value
+            End If
+            Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
+            If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                command.Connection.Open
+            End If
+            Dim returnValue As Object
+            Try 
+                returnValue = command.ExecuteScalar
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    command.Connection.Close
+                End If
+            End Try
+            If ((returnValue Is Nothing)  _
+                        OrElse (returnValue.GetType Is GetType(Global.System.DBNull))) Then
+                Return New Global.System.Nullable(Of Integer)
+            Else
+                Return New Global.System.Nullable(Of Integer)(CType(returnValue,Integer))
+            End If
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function TotalScreen(ByVal DFrom As Global.System.Nullable(Of Date), ByVal Dto As Global.System.Nullable(Of Date)) As Global.System.Nullable(Of Integer)
+            Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(8)
             If (DFrom.HasValue = true) Then
                 command.Parameters(0).Value = CType(DFrom.Value,Date)
             Else
