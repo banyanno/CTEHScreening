@@ -29,7 +29,7 @@ Partial Class DashboardImportPatient
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.Name = "DashboardImportPatient"
-        Me.Size = New System.Drawing.Size(1099, 614)
+        Me.Size = New System.Drawing.Size(1176, 751)
         Me.ResumeLayout(False)
 
     End Sub

@@ -89,6 +89,18 @@ Namespace My
                 Return CType(Me("TakeoDBConnectionString"),String)
             End Get
         End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP128\;Initial Catalog=TakeoDB;Persist Security Info=True;User I"& _ 
+            "D=sa;Password=P@ssw0rd;Max Pool Size=4000;Asynchronous Processing=True;Connect T"& _ 
+            "imeout=5000;Packet Size=2768")>  _
+        Public ReadOnly Property DBCNNPROD() As String
+            Get
+                Return CType(Me("DBCNNPROD"),String)
+            End Get
+        End Property
     End Class
 End Namespace
 
