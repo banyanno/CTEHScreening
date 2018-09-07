@@ -144,6 +144,7 @@ Partial Class DashboardScreeningRegisBook
         Me.TxtTotalRegister = New System.Windows.Forms.Label
         Me.Label1 = New System.Windows.Forms.Label
         Me.BGScreeningBook = New System.ComponentModel.BackgroundWorker
+        Me.IMPORT_STATUS = New System.Windows.Forms.DataGridViewCheckBoxColumn
         Me.SCREEN_BOOKID = New System.Windows.Forms.DataGridViewTextBoxColumn
         Me.SYS_SETTING = New System.Windows.Forms.DataGridViewTextBoxColumn
         Me.SCREAN_DATE = New System.Windows.Forms.DataGridViewTextBoxColumn
@@ -165,7 +166,6 @@ Partial Class DashboardScreeningRegisBook
         Me.IS_REFER_PICKUP = New System.Windows.Forms.DataGridViewCheckBoxColumn
         Me.IS_REFER_BYSELF = New System.Windows.Forms.DataGridViewCheckBoxColumn
         Me.SCREEN_NOTE = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.IMPORT_STATUS = New System.Windows.Forms.DataGridViewCheckBoxColumn
         Me.Panel1.SuspendLayout()
         CType(Me.PicStartImport, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel5.SuspendLayout()
@@ -317,7 +317,7 @@ Partial Class DashboardScreeningRegisBook
         DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.DGScreeningBook.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.DGScreeningBook.ColumnHeadersHeight = 40
-        Me.DGScreeningBook.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.SCREEN_BOOKID, Me.SYS_SETTING, Me.SCREAN_DATE, Me.PatientNo, Me.REFERENCE_PATIENNOTE, Me.NameEng, Me.NameKhmer, Me.Age, Me.Sex, Me.Address, Me.SCREEN_PLACE, Me.ON_EYE, Me.DIAGNOSISScreening, Me.VA_RIGHTScreening, Me.VA_LEFTScreening, Me.PRESENTING_COMPLAIN, Me.IS_REFRACTION, Me.IS_OPTICALSHOP, Me.IS_REFER_PICKUP, Me.IS_REFER_BYSELF, Me.SCREEN_NOTE, Me.IMPORT_STATUS})
+        Me.DGScreeningBook.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IMPORT_STATUS, Me.SCREEN_BOOKID, Me.SYS_SETTING, Me.SCREAN_DATE, Me.PatientNo, Me.REFERENCE_PATIENNOTE, Me.NameEng, Me.NameKhmer, Me.Age, Me.Sex, Me.Address, Me.SCREEN_PLACE, Me.ON_EYE, Me.DIAGNOSISScreening, Me.VA_RIGHTScreening, Me.VA_LEFTScreening, Me.PRESENTING_COMPLAIN, Me.IS_REFRACTION, Me.IS_OPTICALSHOP, Me.IS_REFER_PICKUP, Me.IS_REFER_BYSELF, Me.SCREEN_NOTE})
         Me.DGScreeningBook.ContextMenuStrip = Me.CMScreeningBook
         DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle7.BackColor = System.Drawing.Color.White
@@ -1276,6 +1276,16 @@ Partial Class DashboardScreeningRegisBook
         'BGScreeningBook
         '
         '
+        'IMPORT_STATUS
+        '
+        Me.IMPORT_STATUS.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.IMPORT_STATUS.DataPropertyName = "IMPORT_STATUS"
+        Me.IMPORT_STATUS.FillWeight = 49.81596!
+        Me.IMPORT_STATUS.HeaderText = "Import Status"
+        Me.IMPORT_STATUS.Name = "IMPORT_STATUS"
+        Me.IMPORT_STATUS.ReadOnly = True
+        Me.IMPORT_STATUS.Width = 150
+        '
         'SCREEN_BOOKID
         '
         Me.SCREEN_BOOKID.DataPropertyName = "SCREEN_BOOKID"
@@ -1447,6 +1457,7 @@ Partial Class DashboardScreeningRegisBook
         Me.IS_REFRACTION.HeaderText = "Refraction"
         Me.IS_REFRACTION.Name = "IS_REFRACTION"
         Me.IS_REFRACTION.ReadOnly = True
+        Me.IS_REFRACTION.Width = 150
         '
         'IS_OPTICALSHOP
         '
@@ -1456,6 +1467,7 @@ Partial Class DashboardScreeningRegisBook
         Me.IS_OPTICALSHOP.HeaderText = "Optical shop"
         Me.IS_OPTICALSHOP.Name = "IS_OPTICALSHOP"
         Me.IS_OPTICALSHOP.ReadOnly = True
+        Me.IS_OPTICALSHOP.Width = 150
         '
         'IS_REFER_PICKUP
         '
@@ -1465,6 +1477,7 @@ Partial Class DashboardScreeningRegisBook
         Me.IS_REFER_PICKUP.HeaderText = "Referral By Pickup"
         Me.IS_REFER_PICKUP.Name = "IS_REFER_PICKUP"
         Me.IS_REFER_PICKUP.ReadOnly = True
+        Me.IS_REFER_PICKUP.Width = 150
         '
         'IS_REFER_BYSELF
         '
@@ -1474,6 +1487,7 @@ Partial Class DashboardScreeningRegisBook
         Me.IS_REFER_BYSELF.HeaderText = "Referral By Selft"
         Me.IS_REFER_BYSELF.Name = "IS_REFER_BYSELF"
         Me.IS_REFER_BYSELF.ReadOnly = True
+        Me.IS_REFER_BYSELF.Width = 150
         '
         'SCREEN_NOTE
         '
@@ -1483,15 +1497,7 @@ Partial Class DashboardScreeningRegisBook
         Me.SCREEN_NOTE.HeaderText = "Note"
         Me.SCREEN_NOTE.Name = "SCREEN_NOTE"
         Me.SCREEN_NOTE.ReadOnly = True
-        '
-        'IMPORT_STATUS
-        '
-        Me.IMPORT_STATUS.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.IMPORT_STATUS.DataPropertyName = "IMPORT_STATUS"
-        Me.IMPORT_STATUS.FillWeight = 49.81596!
-        Me.IMPORT_STATUS.HeaderText = "Import Status"
-        Me.IMPORT_STATUS.Name = "IMPORT_STATUS"
-        Me.IMPORT_STATUS.ReadOnly = True
+        Me.SCREEN_NOTE.Width = 150
         '
         'DashboardScreeningRegisBook
         '
@@ -1638,6 +1644,7 @@ Partial Class DashboardScreeningRegisBook
     Friend WithEvents Panel5 As System.Windows.Forms.Panel
     Friend WithEvents TxtTotalNotYetImport As System.Windows.Forms.Label
     Friend WithEvents Label5 As System.Windows.Forms.Label
+    Friend WithEvents IMPORT_STATUS As System.Windows.Forms.DataGridViewCheckBoxColumn
     Friend WithEvents SCREEN_BOOKID As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents SYS_SETTING As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents SCREAN_DATE As System.Windows.Forms.DataGridViewTextBoxColumn
@@ -1659,6 +1666,5 @@ Partial Class DashboardScreeningRegisBook
     Friend WithEvents IS_REFER_PICKUP As System.Windows.Forms.DataGridViewCheckBoxColumn
     Friend WithEvents IS_REFER_BYSELF As System.Windows.Forms.DataGridViewCheckBoxColumn
     Friend WithEvents SCREEN_NOTE As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents IMPORT_STATUS As System.Windows.Forms.DataGridViewCheckBoxColumn
 
 End Class
