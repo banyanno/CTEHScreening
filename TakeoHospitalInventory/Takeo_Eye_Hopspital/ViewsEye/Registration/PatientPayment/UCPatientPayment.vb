@@ -143,13 +143,13 @@ Public Class UCPatientPayment
         Catch ex As Exception
 
         End Try
-        ModGlobleVariable.UIMainScreening.StatusLoading(False)
+        ModGlobleVariable.UIMainScreening.StatusLoading(False, "Loading")
         Cursor = Cursors.Default
 
     End Sub
     'End Sub
     Private Sub FillPatientInformation()
-        ModGlobleVariable.UIMainScreening.StatusLoading(True)
+        ModGlobleVariable.UIMainScreening.StatusLoading(True, "Loading")
         Dim Cnn As SqlConnection = ModGlobleVariable.GENERAL_DAO.getConnection
         Try
             SqlComman.CommandText = SearchPatient(patientNoSearh, OldPatientNo, DateFrom, DateTo, patientEngName, patientKhName, patientAge, patientSex, patientProvince, patientDistrict, patientCommune)

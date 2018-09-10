@@ -81,7 +81,7 @@ Public Class UCMainNew_Outpatient
         DFrom = DateFrom.Value
         DTo = DateTo.Value
         'MainForm.StatusLoading(True)
-        MScreening.StatusLoading(True)
+        MScreening.StatusLoading(True, "Loading")
         BtnDisplay.Enabled = False
         BGNewOutpatient.RunWorkerAsync()
     End Sub
@@ -90,7 +90,7 @@ Public Class UCMainNew_Outpatient
         DailyDTo = DailyDateTo.Value
         'PicLoad2.Visible = True
         'MainForm.StatusLoading(True)
-        MScreening.StatusLoading(True)
+        MScreening.StatusLoading(True, "Loading")
         BtnPrintPreview.Enabled = False
         BgLoadNewReport.RunWorkerAsync()
     End Sub
@@ -139,7 +139,7 @@ Public Class UCMainNew_Outpatient
         TxtTotalDolar.Text = TotalPatientDolar
 
         'MainForm.StatusLoading(False)
-        MScreening.StatusLoading(False)
+        MScreening.StatusLoading(False, "Loading")
         BtnDisplay.Enabled = True
         IS_FIll = 2
         'ModCommon.NumberAllRowHeaderDataGrid(GridEXNewPatientBookV1)
@@ -199,7 +199,7 @@ Public Class UCMainNew_Outpatient
         CrNewOutpatient.Refresh()
         BtnPrintPreview.Enabled = True
         'MainForm.StatusLoading(False)
-        MScreening.StatusLoading(False)
+        MScreening.StatusLoading(False, "Loading")
     End Sub
 
     Sub ShowSortGridColumn(ByVal dg As DataGridView, ByVal colIndex As Integer)
@@ -264,7 +264,7 @@ Public Class UCMainNew_Outpatient
         CRVDaillyNewOut.Refresh()
         CrOtherNewPatient.Refresh()
         'MainForm.StatusLoading(False)
-        MScreening.StatusLoading(False)
+        MScreening.StatusLoading(False, "Loading")
         BtnPrintViewOther.Enabled = True
     End Sub
 

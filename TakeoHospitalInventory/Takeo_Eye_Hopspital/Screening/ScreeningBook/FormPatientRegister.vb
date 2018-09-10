@@ -61,7 +61,7 @@ Public Class FormPatientRegister
         ResetFormRegister()
     End Sub
     Sub LoadNewPatientNo()
-        PatientNo.Text = ModCommon.GenerateNo("No", "TblPatients")
+        PatientNo.Text = ModCommon.GeneratePatientNoForScreening("No", "TblPatients")
         'txtHN.Text = TxtPatientNo.Text
     End Sub
 

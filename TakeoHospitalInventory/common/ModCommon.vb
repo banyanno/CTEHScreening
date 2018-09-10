@@ -168,7 +168,7 @@ Module ModCommon
             Return False
         End If
     End Function
-    Friend Function GenerateNo(ByVal FieldNo As String, ByVal Table As String) As String
+    Friend Function GeneratePatientNoForScreening(ByVal FieldNo As String, ByVal Table As String) As String
         Dim DateServer As Date = ModGlobleVariable.GeteDateServer
         Dim years As Integer = DateServer.Year
         Dim month As String = DateServer.Month.ToString
@@ -187,6 +187,25 @@ Module ModCommon
         End Try
         Return years & month.ToString & idHn.ToString
     End Function
+    'Function GeneratePatientNoForTEH()
+    '    Dim DateServer As Date = ModGlobleVariable.GeteDateServer
+    '    Dim years As Integer = DateServer.Year
+    '    Dim month As String = DateServer.Month.ToString
+
+    '    If month.Length = 1 Then
+    '        month = "0" & month
+    '    Else
+    '        month = month
+    '    End If
+    '    Dim idHn As Double
+    '    Try
+    '        'MsgBox("SELECT MAX(" & FieldNo & ") FROM " & Table & " Where Years=" & Years & "")
+    '        idHn = ModGlobleVariable.GENERAL_DAO.SelectDAOAsScalar("SELECT COUNT(" & FieldNo & ") FROM " & Table & " WHERE YEARS=" & years) + 1
+    '    Catch ex As Exception
+    '        idHn = 1
+    '    End Try
+    '    Return years & month.ToString & idHn.ToString
+    'End Function
     ' User past paramenterfield to Crystal Report
     Sub SetCurrentValuesForParameterField(ByVal myParameterFields As ParameterFields, ByVal myArrayList As ArrayList, ByVal parameterFields As String)
         Dim currentParameterValues As ParameterValues = New ParameterValues()

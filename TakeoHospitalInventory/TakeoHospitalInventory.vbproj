@@ -685,6 +685,11 @@
     <Compile Include="Takeo_Eye_Hopspital\Screening\ScreeningBook\ImportPatient\DashboardImportPatient.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Takeo_Eye_Hopspital\Screening\ScreeningBook\ImportPatient\DatasetPatientTEH.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DatasetPatientTEH.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Takeo_Eye_Hopspital\Screening\ScreeningBook\OpticalShop\FormOpticalShop.Designer.vb">
       <DependentUpon>FormOpticalShop.vb</DependentUpon>
     </Compile>
@@ -5125,6 +5130,17 @@
     </None>
     <None Include="Takeo_Eye_Hopspital\Screening\ScreeningBook\DataSetScreeningBook.xss">
       <DependentUpon>DataSetScreeningBook.xsd</DependentUpon>
+    </None>
+    <None Include="Takeo_Eye_Hopspital\Screening\ScreeningBook\ImportPatient\DatasetPatientTEH.xsc">
+      <DependentUpon>DatasetPatientTEH.xsd</DependentUpon>
+    </None>
+    <None Include="Takeo_Eye_Hopspital\Screening\ScreeningBook\ImportPatient\DatasetPatientTEH.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DatasetPatientTEH.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Takeo_Eye_Hopspital\Screening\ScreeningBook\ImportPatient\DatasetPatientTEH.xss">
+      <DependentUpon>DatasetPatientTEH.xsd</DependentUpon>
     </None>
     <None Include="Takeo_Eye_Hopspital\Screening\ScreeningSetting\DataSetSceenSetting.xsc">
       <DependentUpon>DataSetSceenSetting.xsd</DependentUpon>

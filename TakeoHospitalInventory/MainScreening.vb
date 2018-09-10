@@ -1,7 +1,8 @@
 ﻿Public Class MainScreening
     Dim Login As frmLoginInventory
 
-    Private Delegate Sub DelShowLoadingPicture(ByVal visible As Boolean)
+    Private Delegate Sub DelShowLoadingPicture(ByVal visible As Boolean, ByVal TextLable As String)
+    Private Delegate Sub DelShowLabel(ByVal TextLable As String)
     Public examinationForm As New UCRegistrationForm
     Dim UIMainMenu As UIScreening
     Sub New(ByVal login As frmLoginInventory)
@@ -43,14 +44,24 @@
     Private Sub BtnHome_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnHome.Click
         AddUserControl(PanelHeader, PanelDedail, UIMainMenu, "", True)
     End Sub
-    Public Sub StatusLoading(ByVal v As Boolean)
+    Public Sub StatusLoading(ByVal v As Boolean, ByVal TextLabel As String)
         If Me.Created Then
-            RibboStatusBar.Invoke(New DelShowLoadingPicture(AddressOf UpdateVisibleLoading), New Object() {v})
+            RibboStatusBar.Invoke(New DelShowLoadingPicture(AddressOf UpdateVisibleLoading), New Object() {v, TextLabel})
         End If
     End Sub
-    Private Sub UpdateVisibleLoading(ByVal v As Boolean)
+    Public Sub StatusUpdateLabel(ByVal TextLabel As String)
+        If Me.Created Then
+            RibboStatusBar.Invoke(New DelShowLabel(AddressOf UpdateLabelLoading), New Object() {TextLabel})
+        End If
+    End Sub
+    Private Sub UpdateVisibleLoading(ByVal v As Boolean, ByVal TextLabel As String)
+       
         ContainerPicloading.Visible = v
     End Sub
+    Private Sub UpdateLabelLoading(ByVal TextLabel As String)
+        ContainerPicloading.Text = TextLabel
+    End Sub
+
 
     Private Sub DBtnSwitchUser_Click(ByVal sender As System.Object, ByVal e As Janus.Windows.Ribbon.CommandEventArgs) Handles DBtnSwitchUser.Click
         CreateSwitchUser()

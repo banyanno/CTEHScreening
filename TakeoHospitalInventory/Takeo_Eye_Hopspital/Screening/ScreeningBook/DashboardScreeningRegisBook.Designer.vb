@@ -24,23 +24,23 @@ Partial Class DashboardScreeningRegisBook
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(DashboardScreeningRegisBook))
+        Dim DataGridViewCellStyle18 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
+        Dim DataGridViewCellStyle24 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
+        Dim DataGridViewCellStyle25 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
+        Dim DataGridViewCellStyle19 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
+        Dim DataGridViewCellStyle20 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
+        Dim DataGridViewCellStyle21 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
+        Dim DataGridViewCellStyle22 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
+        Dim DataGridViewCellStyle23 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
         Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
         Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
-        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
-        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
-        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
-        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
-        Dim DataGridViewCellStyle13 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
-        Dim DataGridViewCellStyle14 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
-        Dim DataGridViewCellStyle15 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
-        Dim DataGridViewCellStyle16 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
-        Dim DataGridViewCellStyle17 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
+        Dim DataGridViewCellStyle26 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
+        Dim DataGridViewCellStyle27 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
+        Dim DataGridViewCellStyle28 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
+        Dim DataGridViewCellStyle29 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
+        Dim DataGridViewCellStyle30 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
+        Dim DataGridViewCellStyle31 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
         Me.Panel1 = New System.Windows.Forms.Panel
         Me.PicStartImport = New System.Windows.Forms.PictureBox
         Me.Panel5 = New System.Windows.Forms.Panel
@@ -49,6 +49,35 @@ Partial Class DashboardScreeningRegisBook
         Me.Label2 = New System.Windows.Forms.Label
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer
         Me.DGScreeningBook = New System.Windows.Forms.DataGridView
+        Me.IMPORT_STATUS = New System.Windows.Forms.DataGridViewCheckBoxColumn
+        Me.SCREEN_BOOKID = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.SYS_SETTING = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.SCREAN_DATE = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.PatientNo = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.REFERENCE_PATIENNOTE = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.NameEng = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.NameKhmer = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.Age = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.Sex = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.Address = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.SCREEN_PLACE = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.ON_EYE = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.DIAGNOSISScreening = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.VA_RIGHTScreening = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.VA_LEFTScreening = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.PRESENTING_COMPLAIN = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.IS_REFRACTION = New System.Windows.Forms.DataGridViewCheckBoxColumn
+        Me.IS_OPTICALSHOP = New System.Windows.Forms.DataGridViewCheckBoxColumn
+        Me.IS_REFER_PICKUP = New System.Windows.Forms.DataGridViewCheckBoxColumn
+        Me.IS_REFER_BYSELF = New System.Windows.Forms.DataGridViewCheckBoxColumn
+        Me.SCREEN_NOTE = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.Province = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.District = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.Commune = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.Male = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.Female = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.Occupation = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.Telephone = New System.Windows.Forms.DataGridViewTextBoxColumn
         Me.CMScreeningBook = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.BtnNewScreeningRegist = New System.Windows.Forms.ToolStripMenuItem
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator
@@ -144,28 +173,7 @@ Partial Class DashboardScreeningRegisBook
         Me.TxtTotalRegister = New System.Windows.Forms.Label
         Me.Label1 = New System.Windows.Forms.Label
         Me.BGScreeningBook = New System.ComponentModel.BackgroundWorker
-        Me.IMPORT_STATUS = New System.Windows.Forms.DataGridViewCheckBoxColumn
-        Me.SCREEN_BOOKID = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.SYS_SETTING = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.SCREAN_DATE = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.PatientNo = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.REFERENCE_PATIENNOTE = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.NameEng = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.NameKhmer = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.Age = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.Sex = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.Address = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.SCREEN_PLACE = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.ON_EYE = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.DIAGNOSISScreening = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.VA_RIGHTScreening = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.VA_LEFTScreening = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.PRESENTING_COMPLAIN = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.IS_REFRACTION = New System.Windows.Forms.DataGridViewCheckBoxColumn
-        Me.IS_OPTICALSHOP = New System.Windows.Forms.DataGridViewCheckBoxColumn
-        Me.IS_REFER_PICKUP = New System.Windows.Forms.DataGridViewCheckBoxColumn
-        Me.IS_REFER_BYSELF = New System.Windows.Forms.DataGridViewCheckBoxColumn
-        Me.SCREEN_NOTE = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.BGImportToTEH = New System.ComponentModel.BackgroundWorker
         Me.Panel1.SuspendLayout()
         CType(Me.PicStartImport, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel5.SuspendLayout()
@@ -308,25 +316,25 @@ Partial Class DashboardScreeningRegisBook
         Me.DGScreeningBook.BackgroundColor = System.Drawing.Color.White
         Me.DGScreeningBook.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText
         Me.DGScreeningBook.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(67, Byte), Integer), CType(CType(82, Byte), Integer))
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Century Gothic", 12.0!)
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DGScreeningBook.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle18.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(67, Byte), Integer), CType(CType(82, Byte), Integer))
+        DataGridViewCellStyle18.Font = New System.Drawing.Font("Century Gothic", 12.0!)
+        DataGridViewCellStyle18.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DGScreeningBook.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle18
         Me.DGScreeningBook.ColumnHeadersHeight = 40
-        Me.DGScreeningBook.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IMPORT_STATUS, Me.SCREEN_BOOKID, Me.SYS_SETTING, Me.SCREAN_DATE, Me.PatientNo, Me.REFERENCE_PATIENNOTE, Me.NameEng, Me.NameKhmer, Me.Age, Me.Sex, Me.Address, Me.SCREEN_PLACE, Me.ON_EYE, Me.DIAGNOSISScreening, Me.VA_RIGHTScreening, Me.VA_LEFTScreening, Me.PRESENTING_COMPLAIN, Me.IS_REFRACTION, Me.IS_OPTICALSHOP, Me.IS_REFER_PICKUP, Me.IS_REFER_BYSELF, Me.SCREEN_NOTE})
+        Me.DGScreeningBook.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IMPORT_STATUS, Me.SCREEN_BOOKID, Me.SYS_SETTING, Me.SCREAN_DATE, Me.PatientNo, Me.REFERENCE_PATIENNOTE, Me.NameEng, Me.NameKhmer, Me.Age, Me.Sex, Me.Address, Me.SCREEN_PLACE, Me.ON_EYE, Me.DIAGNOSISScreening, Me.VA_RIGHTScreening, Me.VA_LEFTScreening, Me.PRESENTING_COMPLAIN, Me.IS_REFRACTION, Me.IS_OPTICALSHOP, Me.IS_REFER_PICKUP, Me.IS_REFER_BYSELF, Me.SCREEN_NOTE, Me.Province, Me.District, Me.Commune, Me.Male, Me.Female, Me.Occupation, Me.Telephone})
         Me.DGScreeningBook.ContextMenuStrip = Me.CMScreeningBook
-        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle7.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle7.Font = New System.Drawing.Font("Century Gothic", 12.0!)
-        DataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
-        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DGScreeningBook.DefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle24.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle24.Font = New System.Drawing.Font("Century Gothic", 12.0!)
+        DataGridViewCellStyle24.ForeColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
+        DataGridViewCellStyle24.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle24.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DGScreeningBook.DefaultCellStyle = DataGridViewCellStyle24
         Me.DGScreeningBook.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DGScreeningBook.EnableHeadersVisualStyles = False
         Me.DGScreeningBook.GridColor = System.Drawing.Color.SteelBlue
@@ -334,19 +342,293 @@ Partial Class DashboardScreeningRegisBook
         Me.DGScreeningBook.Margin = New System.Windows.Forms.Padding(5)
         Me.DGScreeningBook.Name = "DGScreeningBook"
         Me.DGScreeningBook.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(67, Byte), Integer), CType(CType(82, Byte), Integer))
-        DataGridViewCellStyle8.Font = New System.Drawing.Font("Century Gothic", 12.0!)
-        DataGridViewCellStyle8.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DGScreeningBook.RowHeadersDefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle25.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(67, Byte), Integer), CType(CType(82, Byte), Integer))
+        DataGridViewCellStyle25.Font = New System.Drawing.Font("Century Gothic", 12.0!)
+        DataGridViewCellStyle25.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle25.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle25.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle25.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DGScreeningBook.RowHeadersDefaultCellStyle = DataGridViewCellStyle25
         Me.DGScreeningBook.RowHeadersWidth = 50
         Me.DGScreeningBook.RowTemplate.Height = 35
         Me.DGScreeningBook.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DGScreeningBook.Size = New System.Drawing.Size(1297, 391)
         Me.DGScreeningBook.TabIndex = 25
+        '
+        'IMPORT_STATUS
+        '
+        Me.IMPORT_STATUS.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.IMPORT_STATUS.DataPropertyName = "IMPORT_STATUS"
+        Me.IMPORT_STATUS.FillWeight = 49.81596!
+        Me.IMPORT_STATUS.HeaderText = "Import Status"
+        Me.IMPORT_STATUS.Name = "IMPORT_STATUS"
+        Me.IMPORT_STATUS.ReadOnly = True
+        Me.IMPORT_STATUS.Width = 150
+        '
+        'SCREEN_BOOKID
+        '
+        Me.SCREEN_BOOKID.DataPropertyName = "SCREEN_BOOKID"
+        Me.SCREEN_BOOKID.HeaderText = "SCREEN_BOOKID"
+        Me.SCREEN_BOOKID.Name = "SCREEN_BOOKID"
+        Me.SCREEN_BOOKID.ReadOnly = True
+        Me.SCREEN_BOOKID.Visible = False
+        '
+        'SYS_SETTING
+        '
+        Me.SYS_SETTING.DataPropertyName = "SYS_SETTING"
+        Me.SYS_SETTING.HeaderText = "SYS_SETTING"
+        Me.SYS_SETTING.Name = "SYS_SETTING"
+        Me.SYS_SETTING.ReadOnly = True
+        Me.SYS_SETTING.Visible = False
+        '
+        'SCREAN_DATE
+        '
+        Me.SCREAN_DATE.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.SCREAN_DATE.DataPropertyName = "SCREAN_DATE"
+        DataGridViewCellStyle19.Format = "dd/MM/yyyy"
+        Me.SCREAN_DATE.DefaultCellStyle = DataGridViewCellStyle19
+        Me.SCREAN_DATE.FillWeight = 1035.533!
+        Me.SCREAN_DATE.HeaderText = "Regist-Date"
+        Me.SCREAN_DATE.Name = "SCREAN_DATE"
+        Me.SCREAN_DATE.ReadOnly = True
+        Me.SCREAN_DATE.Width = 150
+        '
+        'PatientNo
+        '
+        Me.PatientNo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.PatientNo.DataPropertyName = "PatientNo"
+        Me.PatientNo.FillWeight = 69.60071!
+        Me.PatientNo.HeaderText = "Patient No"
+        Me.PatientNo.Name = "PatientNo"
+        Me.PatientNo.ReadOnly = True
+        Me.PatientNo.Width = 150
+        '
+        'REFERENCE_PATIENNOTE
+        '
+        Me.REFERENCE_PATIENNOTE.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.REFERENCE_PATIENNOTE.DataPropertyName = "REFERENCE_PATIENNOTE"
+        Me.REFERENCE_PATIENNOTE.FillWeight = 49.81596!
+        Me.REFERENCE_PATIENNOTE.HeaderText = "Ref-No"
+        Me.REFERENCE_PATIENNOTE.Name = "REFERENCE_PATIENNOTE"
+        Me.REFERENCE_PATIENNOTE.ReadOnly = True
+        '
+        'NameEng
+        '
+        Me.NameEng.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.NameEng.DataPropertyName = "NameEng"
+        DataGridViewCellStyle20.Font = New System.Drawing.Font("Khmer OS Battambang", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.NameEng.DefaultCellStyle = DataGridViewCellStyle20
+        Me.NameEng.FillWeight = 50.72639!
+        Me.NameEng.HeaderText = "NameEng"
+        Me.NameEng.Name = "NameEng"
+        Me.NameEng.ReadOnly = True
+        Me.NameEng.Width = 150
+        '
+        'NameKhmer
+        '
+        Me.NameKhmer.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.NameKhmer.DataPropertyName = "NameKhmer"
+        DataGridViewCellStyle21.Font = New System.Drawing.Font("Khmer OS Battambang", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.NameKhmer.DefaultCellStyle = DataGridViewCellStyle21
+        Me.NameKhmer.FillWeight = 50.72639!
+        Me.NameKhmer.HeaderText = "NameKhmer"
+        Me.NameKhmer.Name = "NameKhmer"
+        Me.NameKhmer.ReadOnly = True
+        Me.NameKhmer.Width = 150
+        '
+        'Age
+        '
+        Me.Age.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.Age.DataPropertyName = "Age"
+        DataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.Age.DefaultCellStyle = DataGridViewCellStyle22
+        Me.Age.FillWeight = 50.16895!
+        Me.Age.HeaderText = "Age"
+        Me.Age.Name = "Age"
+        Me.Age.ReadOnly = True
+        Me.Age.Width = 50
+        '
+        'Sex
+        '
+        Me.Sex.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.Sex.DataPropertyName = "Sex"
+        DataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.Sex.DefaultCellStyle = DataGridViewCellStyle23
+        Me.Sex.FillWeight = 39.44817!
+        Me.Sex.HeaderText = "Sex"
+        Me.Sex.Name = "Sex"
+        Me.Sex.ReadOnly = True
+        Me.Sex.Width = 50
+        '
+        'Address
+        '
+        Me.Address.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.Address.DataPropertyName = "Address"
+        Me.Address.FillWeight = 50.72639!
+        Me.Address.HeaderText = "Address"
+        Me.Address.Name = "Address"
+        Me.Address.ReadOnly = True
+        Me.Address.Width = 150
+        '
+        'SCREEN_PLACE
+        '
+        Me.SCREEN_PLACE.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.SCREEN_PLACE.DataPropertyName = "SCREEN_PLACE"
+        Me.SCREEN_PLACE.FillWeight = 50.72639!
+        Me.SCREEN_PLACE.HeaderText = "Screen Place"
+        Me.SCREEN_PLACE.Name = "SCREEN_PLACE"
+        Me.SCREEN_PLACE.ReadOnly = True
+        Me.SCREEN_PLACE.Width = 150
+        '
+        'ON_EYE
+        '
+        Me.ON_EYE.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.ON_EYE.DataPropertyName = "ON_EYE"
+        Me.ON_EYE.FillWeight = 49.81596!
+        Me.ON_EYE.HeaderText = "On Eye"
+        Me.ON_EYE.Name = "ON_EYE"
+        Me.ON_EYE.ReadOnly = True
+        Me.ON_EYE.Width = 90
+        '
+        'DIAGNOSISScreening
+        '
+        Me.DIAGNOSISScreening.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.DIAGNOSISScreening.DataPropertyName = "DIAGNOSIS"
+        Me.DIAGNOSISScreening.FillWeight = 49.81596!
+        Me.DIAGNOSISScreening.HeaderText = "Diagnosis"
+        Me.DIAGNOSISScreening.Name = "DIAGNOSISScreening"
+        Me.DIAGNOSISScreening.ReadOnly = True
+        Me.DIAGNOSISScreening.Width = 150
+        '
+        'VA_RIGHTScreening
+        '
+        Me.VA_RIGHTScreening.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.VA_RIGHTScreening.DataPropertyName = "VA_RIGHT"
+        Me.VA_RIGHTScreening.FillWeight = 49.81596!
+        Me.VA_RIGHTScreening.HeaderText = "VA Right"
+        Me.VA_RIGHTScreening.Name = "VA_RIGHTScreening"
+        Me.VA_RIGHTScreening.ReadOnly = True
+        Me.VA_RIGHTScreening.Width = 50
+        '
+        'VA_LEFTScreening
+        '
+        Me.VA_LEFTScreening.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.VA_LEFTScreening.DataPropertyName = "VA_LEFT"
+        Me.VA_LEFTScreening.FillWeight = 49.81596!
+        Me.VA_LEFTScreening.HeaderText = "VA Left"
+        Me.VA_LEFTScreening.Name = "VA_LEFTScreening"
+        Me.VA_LEFTScreening.ReadOnly = True
+        Me.VA_LEFTScreening.Width = 50
+        '
+        'PRESENTING_COMPLAIN
+        '
+        Me.PRESENTING_COMPLAIN.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.PRESENTING_COMPLAIN.DataPropertyName = "PRESENTING_COMPLAIN"
+        Me.PRESENTING_COMPLAIN.FillWeight = 49.81596!
+        Me.PRESENTING_COMPLAIN.HeaderText = "Presenting Complain"
+        Me.PRESENTING_COMPLAIN.Name = "PRESENTING_COMPLAIN"
+        Me.PRESENTING_COMPLAIN.ReadOnly = True
+        Me.PRESENTING_COMPLAIN.Width = 150
+        '
+        'IS_REFRACTION
+        '
+        Me.IS_REFRACTION.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.IS_REFRACTION.DataPropertyName = "IS_REFRACTION"
+        Me.IS_REFRACTION.FillWeight = 50.72639!
+        Me.IS_REFRACTION.HeaderText = "Refraction"
+        Me.IS_REFRACTION.Name = "IS_REFRACTION"
+        Me.IS_REFRACTION.ReadOnly = True
+        Me.IS_REFRACTION.Width = 150
+        '
+        'IS_OPTICALSHOP
+        '
+        Me.IS_OPTICALSHOP.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.IS_OPTICALSHOP.DataPropertyName = "IS_OPTICALSHOP"
+        Me.IS_OPTICALSHOP.FillWeight = 50.72639!
+        Me.IS_OPTICALSHOP.HeaderText = "Optical shop"
+        Me.IS_OPTICALSHOP.Name = "IS_OPTICALSHOP"
+        Me.IS_OPTICALSHOP.ReadOnly = True
+        Me.IS_OPTICALSHOP.Width = 150
+        '
+        'IS_REFER_PICKUP
+        '
+        Me.IS_REFER_PICKUP.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.IS_REFER_PICKUP.DataPropertyName = "IS_REFER_PICKUP"
+        Me.IS_REFER_PICKUP.FillWeight = 50.72639!
+        Me.IS_REFER_PICKUP.HeaderText = "Referral By Pickup"
+        Me.IS_REFER_PICKUP.Name = "IS_REFER_PICKUP"
+        Me.IS_REFER_PICKUP.ReadOnly = True
+        Me.IS_REFER_PICKUP.Width = 150
+        '
+        'IS_REFER_BYSELF
+        '
+        Me.IS_REFER_BYSELF.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.IS_REFER_BYSELF.DataPropertyName = "IS_REFER_BYSELF"
+        Me.IS_REFER_BYSELF.FillWeight = 50.72639!
+        Me.IS_REFER_BYSELF.HeaderText = "Referral By Selft"
+        Me.IS_REFER_BYSELF.Name = "IS_REFER_BYSELF"
+        Me.IS_REFER_BYSELF.ReadOnly = True
+        Me.IS_REFER_BYSELF.Width = 150
+        '
+        'SCREEN_NOTE
+        '
+        Me.SCREEN_NOTE.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.SCREEN_NOTE.DataPropertyName = "SCREEN_NOTE"
+        Me.SCREEN_NOTE.FillWeight = 50.72639!
+        Me.SCREEN_NOTE.HeaderText = "Note"
+        Me.SCREEN_NOTE.Name = "SCREEN_NOTE"
+        Me.SCREEN_NOTE.ReadOnly = True
+        Me.SCREEN_NOTE.Width = 150
+        '
+        'Province
+        '
+        Me.Province.DataPropertyName = "Province"
+        Me.Province.HeaderText = "Province"
+        Me.Province.Name = "Province"
+        Me.Province.Visible = False
+        '
+        'District
+        '
+        Me.District.DataPropertyName = "District"
+        Me.District.HeaderText = "District"
+        Me.District.Name = "District"
+        Me.District.Visible = False
+        '
+        'Commune
+        '
+        Me.Commune.DataPropertyName = "Commune"
+        Me.Commune.HeaderText = "Commune"
+        Me.Commune.Name = "Commune"
+        Me.Commune.Visible = False
+        '
+        'Male
+        '
+        Me.Male.DataPropertyName = "Male"
+        Me.Male.HeaderText = "Male"
+        Me.Male.Name = "Male"
+        Me.Male.Visible = False
+        '
+        'Female
+        '
+        Me.Female.DataPropertyName = "Female"
+        Me.Female.HeaderText = "Female"
+        Me.Female.Name = "Female"
+        Me.Female.Visible = False
+        '
+        'Occupation
+        '
+        Me.Occupation.DataPropertyName = "Occupation"
+        Me.Occupation.HeaderText = "Occupation"
+        Me.Occupation.Name = "Occupation"
+        Me.Occupation.Visible = False
+        '
+        'Telephone
+        '
+        Me.Telephone.DataPropertyName = "Telephone"
+        Me.Telephone.HeaderText = "Telephone"
+        Me.Telephone.Name = "Telephone"
+        Me.Telephone.Visible = False
         '
         'CMScreeningBook
         '
@@ -512,24 +794,24 @@ Partial Class DashboardScreeningRegisBook
         Me.DGReferral.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DGReferral.BackgroundColor = System.Drawing.Color.White
         Me.DGReferral.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(67, Byte), Integer), CType(CType(82, Byte), Integer))
-        DataGridViewCellStyle9.Font = New System.Drawing.Font("Century Gothic", 12.0!)
-        DataGridViewCellStyle9.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DGReferral.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle9
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(67, Byte), Integer), CType(CType(82, Byte), Integer))
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Century Gothic", 12.0!)
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DGReferral.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.DGReferral.ColumnHeadersHeight = 35
         Me.DGReferral.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.REFERRAL_ID, Me.CREATE_DATE, Me.SCREENING_BOOKID, Me.PATIENT_NO, Me.NameEngReferral, Me.NameKhmerReferra, Me.AgeReferral, Me.SexReferral, Me.AddressReferral, Me.VA_RIGHT, Me.VA_LEFT, Me.DIAGNOSIS, Me.DATE_MEETING, Me.STATUS_PICKUP, Me.ARRIVED, Me.REFERRAL_NOTE})
-        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle10.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle10.Font = New System.Drawing.Font("Century Gothic", 12.0!)
-        DataGridViewCellStyle10.ForeColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
-        DataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DGReferral.DefaultCellStyle = DataGridViewCellStyle10
+        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle7.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle7.Font = New System.Drawing.Font("Century Gothic", 12.0!)
+        DataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
+        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DGReferral.DefaultCellStyle = DataGridViewCellStyle7
         Me.DGReferral.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DGReferral.EnableHeadersVisualStyles = False
         Me.DGReferral.GridColor = System.Drawing.Color.SteelBlue
@@ -537,14 +819,14 @@ Partial Class DashboardScreeningRegisBook
         Me.DGReferral.Margin = New System.Windows.Forms.Padding(5)
         Me.DGReferral.Name = "DGReferral"
         Me.DGReferral.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(67, Byte), Integer), CType(CType(82, Byte), Integer))
-        DataGridViewCellStyle11.Font = New System.Drawing.Font("Century Gothic", 12.0!)
-        DataGridViewCellStyle11.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DGReferral.RowHeadersDefaultCellStyle = DataGridViewCellStyle11
+        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(67, Byte), Integer), CType(CType(82, Byte), Integer))
+        DataGridViewCellStyle8.Font = New System.Drawing.Font("Century Gothic", 12.0!)
+        DataGridViewCellStyle8.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DGReferral.RowHeadersDefaultCellStyle = DataGridViewCellStyle8
         Me.DGReferral.RowTemplate.Height = 35
         Me.DGReferral.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DGReferral.Size = New System.Drawing.Size(1289, 301)
@@ -683,24 +965,24 @@ Partial Class DashboardScreeningRegisBook
         Me.DGRefraction.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DGRefraction.BackgroundColor = System.Drawing.Color.White
         Me.DGRefraction.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(67, Byte), Integer), CType(CType(82, Byte), Integer))
-        DataGridViewCellStyle12.Font = New System.Drawing.Font("Century Gothic", 12.0!)
-        DataGridViewCellStyle12.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DGRefraction.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle12
+        DataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle26.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(67, Byte), Integer), CType(CType(82, Byte), Integer))
+        DataGridViewCellStyle26.Font = New System.Drawing.Font("Century Gothic", 12.0!)
+        DataGridViewCellStyle26.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle26.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle26.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DGRefraction.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle26
         Me.DGRefraction.ColumnHeadersHeight = 35
         Me.DGRefraction.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.REFRACT_DATE, Me.REFRACT_ID, Me.SCREEN_BOOK_ID, Me.NameEngRefraction, Me.NameKhmerRefraction, Me.AgeRefraction, Me.SexRefraction, Me.AddressRefraction, Me.VA_RIGHTRefraction, Me.VA_LEFTRefraction, Me.DIAGNOSISRefraction, Me.RE_PLUS, Me.RE_VA, Me.LE_PLUS, Me.LE_VA, Me.REFRACT_ADD, Me.SIGNATURE, Me.REFRACT_NOTE})
-        DataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle13.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle13.Font = New System.Drawing.Font("Century Gothic", 12.0!)
-        DataGridViewCellStyle13.ForeColor = System.Drawing.Color.Cornsilk
-        DataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DGRefraction.DefaultCellStyle = DataGridViewCellStyle13
+        DataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle27.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle27.Font = New System.Drawing.Font("Century Gothic", 12.0!)
+        DataGridViewCellStyle27.ForeColor = System.Drawing.Color.Cornsilk
+        DataGridViewCellStyle27.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle27.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle27.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DGRefraction.DefaultCellStyle = DataGridViewCellStyle27
         Me.DGRefraction.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DGRefraction.EnableHeadersVisualStyles = False
         Me.DGRefraction.GridColor = System.Drawing.Color.SteelBlue
@@ -708,14 +990,14 @@ Partial Class DashboardScreeningRegisBook
         Me.DGRefraction.Margin = New System.Windows.Forms.Padding(5)
         Me.DGRefraction.Name = "DGRefraction"
         Me.DGRefraction.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(67, Byte), Integer), CType(CType(82, Byte), Integer))
-        DataGridViewCellStyle14.Font = New System.Drawing.Font("Century Gothic", 12.0!)
-        DataGridViewCellStyle14.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DGRefraction.RowHeadersDefaultCellStyle = DataGridViewCellStyle14
+        DataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle28.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(67, Byte), Integer), CType(CType(82, Byte), Integer))
+        DataGridViewCellStyle28.Font = New System.Drawing.Font("Century Gothic", 12.0!)
+        DataGridViewCellStyle28.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle28.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle28.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle28.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DGRefraction.RowHeadersDefaultCellStyle = DataGridViewCellStyle28
         Me.DGRefraction.RowTemplate.Height = 35
         Me.DGRefraction.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DGRefraction.Size = New System.Drawing.Size(1289, 301)
@@ -867,24 +1149,24 @@ Partial Class DashboardScreeningRegisBook
         Me.DGOpticalShop.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DGOpticalShop.BackgroundColor = System.Drawing.Color.White
         Me.DGOpticalShop.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle15.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(67, Byte), Integer), CType(CType(82, Byte), Integer))
-        DataGridViewCellStyle15.Font = New System.Drawing.Font("Century Gothic", 12.0!)
-        DataGridViewCellStyle15.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DGOpticalShop.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle15
+        DataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle29.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(67, Byte), Integer), CType(CType(82, Byte), Integer))
+        DataGridViewCellStyle29.Font = New System.Drawing.Font("Century Gothic", 12.0!)
+        DataGridViewCellStyle29.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle29.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle29.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle29.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DGOpticalShop.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle29
         Me.DGOpticalShop.ColumnHeadersHeight = 35
         Me.DGOpticalShop.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DATE_SCREENING, Me.PATIENT_NOOpticalshop, Me.NameEngOpticalshop, Me.NameKhmerOpticalShop, Me.AgeOpticalshop, Me.SexOpticalShop, Me.AddressOpticalshop, Me.OPTICAL_ID, Me.SCREENBOOK_ID, Me.STATUS_PAY, Me.OPTICALSHOP_NOTE})
-        DataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle16.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle16.Font = New System.Drawing.Font("Century Gothic", 12.0!)
-        DataGridViewCellStyle16.ForeColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
-        DataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DGOpticalShop.DefaultCellStyle = DataGridViewCellStyle16
+        DataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle30.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle30.Font = New System.Drawing.Font("Century Gothic", 12.0!)
+        DataGridViewCellStyle30.ForeColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
+        DataGridViewCellStyle30.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle30.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle30.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DGOpticalShop.DefaultCellStyle = DataGridViewCellStyle30
         Me.DGOpticalShop.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DGOpticalShop.EnableHeadersVisualStyles = False
         Me.DGOpticalShop.GridColor = System.Drawing.Color.SteelBlue
@@ -892,14 +1174,14 @@ Partial Class DashboardScreeningRegisBook
         Me.DGOpticalShop.Margin = New System.Windows.Forms.Padding(5)
         Me.DGOpticalShop.Name = "DGOpticalShop"
         Me.DGOpticalShop.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(67, Byte), Integer), CType(CType(82, Byte), Integer))
-        DataGridViewCellStyle17.Font = New System.Drawing.Font("Century Gothic", 12.0!)
-        DataGridViewCellStyle17.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DGOpticalShop.RowHeadersDefaultCellStyle = DataGridViewCellStyle17
+        DataGridViewCellStyle31.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle31.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(67, Byte), Integer), CType(CType(82, Byte), Integer))
+        DataGridViewCellStyle31.Font = New System.Drawing.Font("Century Gothic", 12.0!)
+        DataGridViewCellStyle31.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle31.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle31.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle31.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DGOpticalShop.RowHeadersDefaultCellStyle = DataGridViewCellStyle31
         Me.DGOpticalShop.RowTemplate.Height = 35
         Me.DGOpticalShop.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DGOpticalShop.Size = New System.Drawing.Size(1289, 301)
@@ -1276,228 +1558,8 @@ Partial Class DashboardScreeningRegisBook
         'BGScreeningBook
         '
         '
-        'IMPORT_STATUS
+        'BGImportToTEH
         '
-        Me.IMPORT_STATUS.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.IMPORT_STATUS.DataPropertyName = "IMPORT_STATUS"
-        Me.IMPORT_STATUS.FillWeight = 49.81596!
-        Me.IMPORT_STATUS.HeaderText = "Import Status"
-        Me.IMPORT_STATUS.Name = "IMPORT_STATUS"
-        Me.IMPORT_STATUS.ReadOnly = True
-        Me.IMPORT_STATUS.Width = 150
-        '
-        'SCREEN_BOOKID
-        '
-        Me.SCREEN_BOOKID.DataPropertyName = "SCREEN_BOOKID"
-        Me.SCREEN_BOOKID.HeaderText = "SCREEN_BOOKID"
-        Me.SCREEN_BOOKID.Name = "SCREEN_BOOKID"
-        Me.SCREEN_BOOKID.ReadOnly = True
-        Me.SCREEN_BOOKID.Visible = False
-        '
-        'SYS_SETTING
-        '
-        Me.SYS_SETTING.DataPropertyName = "SYS_SETTING"
-        Me.SYS_SETTING.HeaderText = "SYS_SETTING"
-        Me.SYS_SETTING.Name = "SYS_SETTING"
-        Me.SYS_SETTING.ReadOnly = True
-        Me.SYS_SETTING.Visible = False
-        '
-        'SCREAN_DATE
-        '
-        Me.SCREAN_DATE.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.SCREAN_DATE.DataPropertyName = "SCREAN_DATE"
-        DataGridViewCellStyle2.Format = "dd/MM/yyyy"
-        Me.SCREAN_DATE.DefaultCellStyle = DataGridViewCellStyle2
-        Me.SCREAN_DATE.FillWeight = 1035.533!
-        Me.SCREAN_DATE.HeaderText = "Regist-Date"
-        Me.SCREAN_DATE.Name = "SCREAN_DATE"
-        Me.SCREAN_DATE.ReadOnly = True
-        '
-        'PatientNo
-        '
-        Me.PatientNo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.PatientNo.DataPropertyName = "PatientNo"
-        Me.PatientNo.FillWeight = 69.60071!
-        Me.PatientNo.HeaderText = "Patient No"
-        Me.PatientNo.Name = "PatientNo"
-        Me.PatientNo.ReadOnly = True
-        '
-        'REFERENCE_PATIENNOTE
-        '
-        Me.REFERENCE_PATIENNOTE.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.REFERENCE_PATIENNOTE.DataPropertyName = "REFERENCE_PATIENNOTE"
-        Me.REFERENCE_PATIENNOTE.FillWeight = 49.81596!
-        Me.REFERENCE_PATIENNOTE.HeaderText = "Ref-No"
-        Me.REFERENCE_PATIENNOTE.Name = "REFERENCE_PATIENNOTE"
-        Me.REFERENCE_PATIENNOTE.ReadOnly = True
-        '
-        'NameEng
-        '
-        Me.NameEng.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.NameEng.DataPropertyName = "NameEng"
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Khmer OS Battambang", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.NameEng.DefaultCellStyle = DataGridViewCellStyle3
-        Me.NameEng.FillWeight = 50.72639!
-        Me.NameEng.HeaderText = "NameEng"
-        Me.NameEng.Name = "NameEng"
-        Me.NameEng.ReadOnly = True
-        Me.NameEng.Width = 150
-        '
-        'NameKhmer
-        '
-        Me.NameKhmer.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.NameKhmer.DataPropertyName = "NameKhmer"
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Khmer OS Battambang", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.NameKhmer.DefaultCellStyle = DataGridViewCellStyle4
-        Me.NameKhmer.FillWeight = 50.72639!
-        Me.NameKhmer.HeaderText = "NameKhmer"
-        Me.NameKhmer.Name = "NameKhmer"
-        Me.NameKhmer.ReadOnly = True
-        Me.NameKhmer.Width = 150
-        '
-        'Age
-        '
-        Me.Age.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.Age.DataPropertyName = "Age"
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.Age.DefaultCellStyle = DataGridViewCellStyle5
-        Me.Age.FillWeight = 50.16895!
-        Me.Age.HeaderText = "Age"
-        Me.Age.Name = "Age"
-        Me.Age.ReadOnly = True
-        Me.Age.Width = 50
-        '
-        'Sex
-        '
-        Me.Sex.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.Sex.DataPropertyName = "Sex"
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.Sex.DefaultCellStyle = DataGridViewCellStyle6
-        Me.Sex.FillWeight = 39.44817!
-        Me.Sex.HeaderText = "Sex"
-        Me.Sex.Name = "Sex"
-        Me.Sex.ReadOnly = True
-        Me.Sex.Width = 50
-        '
-        'Address
-        '
-        Me.Address.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.Address.DataPropertyName = "Address"
-        Me.Address.FillWeight = 50.72639!
-        Me.Address.HeaderText = "Address"
-        Me.Address.Name = "Address"
-        Me.Address.ReadOnly = True
-        Me.Address.Width = 150
-        '
-        'SCREEN_PLACE
-        '
-        Me.SCREEN_PLACE.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.SCREEN_PLACE.DataPropertyName = "SCREEN_PLACE"
-        Me.SCREEN_PLACE.FillWeight = 50.72639!
-        Me.SCREEN_PLACE.HeaderText = "Screen Place"
-        Me.SCREEN_PLACE.Name = "SCREEN_PLACE"
-        Me.SCREEN_PLACE.ReadOnly = True
-        Me.SCREEN_PLACE.Width = 150
-        '
-        'ON_EYE
-        '
-        Me.ON_EYE.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.ON_EYE.DataPropertyName = "ON_EYE"
-        Me.ON_EYE.FillWeight = 49.81596!
-        Me.ON_EYE.HeaderText = "On Eye"
-        Me.ON_EYE.Name = "ON_EYE"
-        Me.ON_EYE.ReadOnly = True
-        Me.ON_EYE.Width = 90
-        '
-        'DIAGNOSISScreening
-        '
-        Me.DIAGNOSISScreening.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.DIAGNOSISScreening.DataPropertyName = "DIAGNOSIS"
-        Me.DIAGNOSISScreening.FillWeight = 49.81596!
-        Me.DIAGNOSISScreening.HeaderText = "Diagnosis"
-        Me.DIAGNOSISScreening.Name = "DIAGNOSISScreening"
-        Me.DIAGNOSISScreening.ReadOnly = True
-        Me.DIAGNOSISScreening.Width = 150
-        '
-        'VA_RIGHTScreening
-        '
-        Me.VA_RIGHTScreening.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.VA_RIGHTScreening.DataPropertyName = "VA_RIGHT"
-        Me.VA_RIGHTScreening.FillWeight = 49.81596!
-        Me.VA_RIGHTScreening.HeaderText = "VA Right"
-        Me.VA_RIGHTScreening.Name = "VA_RIGHTScreening"
-        Me.VA_RIGHTScreening.ReadOnly = True
-        Me.VA_RIGHTScreening.Width = 50
-        '
-        'VA_LEFTScreening
-        '
-        Me.VA_LEFTScreening.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.VA_LEFTScreening.DataPropertyName = "VA_LEFT"
-        Me.VA_LEFTScreening.FillWeight = 49.81596!
-        Me.VA_LEFTScreening.HeaderText = "VA Left"
-        Me.VA_LEFTScreening.Name = "VA_LEFTScreening"
-        Me.VA_LEFTScreening.ReadOnly = True
-        Me.VA_LEFTScreening.Width = 50
-        '
-        'PRESENTING_COMPLAIN
-        '
-        Me.PRESENTING_COMPLAIN.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.PRESENTING_COMPLAIN.DataPropertyName = "PRESENTING_COMPLAIN"
-        Me.PRESENTING_COMPLAIN.FillWeight = 49.81596!
-        Me.PRESENTING_COMPLAIN.HeaderText = "Presenting Complain"
-        Me.PRESENTING_COMPLAIN.Name = "PRESENTING_COMPLAIN"
-        Me.PRESENTING_COMPLAIN.ReadOnly = True
-        Me.PRESENTING_COMPLAIN.Width = 150
-        '
-        'IS_REFRACTION
-        '
-        Me.IS_REFRACTION.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.IS_REFRACTION.DataPropertyName = "IS_REFRACTION"
-        Me.IS_REFRACTION.FillWeight = 50.72639!
-        Me.IS_REFRACTION.HeaderText = "Refraction"
-        Me.IS_REFRACTION.Name = "IS_REFRACTION"
-        Me.IS_REFRACTION.ReadOnly = True
-        Me.IS_REFRACTION.Width = 150
-        '
-        'IS_OPTICALSHOP
-        '
-        Me.IS_OPTICALSHOP.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.IS_OPTICALSHOP.DataPropertyName = "IS_OPTICALSHOP"
-        Me.IS_OPTICALSHOP.FillWeight = 50.72639!
-        Me.IS_OPTICALSHOP.HeaderText = "Optical shop"
-        Me.IS_OPTICALSHOP.Name = "IS_OPTICALSHOP"
-        Me.IS_OPTICALSHOP.ReadOnly = True
-        Me.IS_OPTICALSHOP.Width = 150
-        '
-        'IS_REFER_PICKUP
-        '
-        Me.IS_REFER_PICKUP.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.IS_REFER_PICKUP.DataPropertyName = "IS_REFER_PICKUP"
-        Me.IS_REFER_PICKUP.FillWeight = 50.72639!
-        Me.IS_REFER_PICKUP.HeaderText = "Referral By Pickup"
-        Me.IS_REFER_PICKUP.Name = "IS_REFER_PICKUP"
-        Me.IS_REFER_PICKUP.ReadOnly = True
-        Me.IS_REFER_PICKUP.Width = 150
-        '
-        'IS_REFER_BYSELF
-        '
-        Me.IS_REFER_BYSELF.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.IS_REFER_BYSELF.DataPropertyName = "IS_REFER_BYSELF"
-        Me.IS_REFER_BYSELF.FillWeight = 50.72639!
-        Me.IS_REFER_BYSELF.HeaderText = "Referral By Selft"
-        Me.IS_REFER_BYSELF.Name = "IS_REFER_BYSELF"
-        Me.IS_REFER_BYSELF.ReadOnly = True
-        Me.IS_REFER_BYSELF.Width = 150
-        '
-        'SCREEN_NOTE
-        '
-        Me.SCREEN_NOTE.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.SCREEN_NOTE.DataPropertyName = "SCREEN_NOTE"
-        Me.SCREEN_NOTE.FillWeight = 50.72639!
-        Me.SCREEN_NOTE.HeaderText = "Note"
-        Me.SCREEN_NOTE.Name = "SCREEN_NOTE"
-        Me.SCREEN_NOTE.ReadOnly = True
-        Me.SCREEN_NOTE.Width = 150
         '
         'DashboardScreeningRegisBook
         '
@@ -1666,5 +1728,13 @@ Partial Class DashboardScreeningRegisBook
     Friend WithEvents IS_REFER_PICKUP As System.Windows.Forms.DataGridViewCheckBoxColumn
     Friend WithEvents IS_REFER_BYSELF As System.Windows.Forms.DataGridViewCheckBoxColumn
     Friend WithEvents SCREEN_NOTE As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Province As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents District As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Commune As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Male As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Female As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Occupation As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Telephone As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents BGImportToTEH As System.ComponentModel.BackgroundWorker
 
 End Class

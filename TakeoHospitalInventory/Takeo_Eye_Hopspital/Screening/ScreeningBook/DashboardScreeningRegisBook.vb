@@ -1,5 +1,6 @@
 ﻿Public Class DashboardScreeningRegisBook
-    Dim DAScreeningBook As New DataSetScreeningBookTableAdapters.SCREENING_BOOK_VIEWTableAdapter
+    Dim DAScreeningBook As New DataSetScreeningBookTableAdapters.SCREENING_BOOKTableAdapter
+    Dim DAScreeningBookDetail As New DataSetScreeningBookTableAdapters.SCREENING_BOOK_VIEWTableAdapter
     Dim DAReferralBookDetail As New DataSetScreeningBookTableAdapters.SCREENING_REFERRAL_DETAILTableAdapter
     Dim DARefractionBookDedail As New DataSetScreeningBookTableAdapters.SCREENIG_REFRACTION_DEDAILTableAdapter
     Dim DAOpticalshopBookDetail As New DataSetScreeningBookTableAdapters.SCREENING_OPTICALSHOP_DETIALTableAdapter
@@ -22,7 +23,7 @@
         SetDisableKeyString(e)
     End Sub
     Private Sub CallScreeningBooks()
-        UIMainScreening.StatusLoading(True)
+        UIMainScreening.StatusLoading(True, "Loading")
         BGScreeningBook.RunWorkerAsync()
     End Sub
     Private Sub BtnFind_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnFind.Click
@@ -30,12 +31,12 @@
     End Sub
     Private Sub BGScreeningBook_DoWork(ByVal sender As System.Object, ByVal e As System.ComponentModel.DoWorkEventArgs) Handles BGScreeningBook.DoWork
         If TxtPatienNo.Text.Trim <> "" Then
-            TableScreenBook = DAScreeningBook.SelectScreenBookDateToDateWithPatientNo(DateFrom.Value.Date, DateTo.Value.Date, EmptyString(TxtPatienNo.Text))
+            TableScreenBook = DAScreeningBookDetail.SelectScreenBookDateToDateWithPatientNo(DateFrom.Value.Date, DateTo.Value.Date, EmptyString(TxtPatienNo.Text))
             TableReferralBook = DAReferralBookDetail.SelectScreenReferralDateToDateWithPatientNo(DateFrom.Value.Date, DateTo.Value.Date, EmptyString(TxtPatienNo.Text))
             TableRefractionBook = DARefractionBookDedail.SelectScreenRefractionDateToDateWithPatientNo(DateFrom.Value.Date, DateTo.Value.Date, EmptyString(TxtPatienNo.Text))
             TableOpticalShop = DAOpticalshopBookDetail.SelectScreenOpticalShopDateToDateWithPatientNO(DateFrom.Value.Date, DateTo.Value.Date, EmptyString(TxtPatienNo.Text))
         Else
-            TableScreenBook = DAScreeningBook.SelectScreenBookDateToDate(DateFrom.Value.Date, DateTo.Value.Date)
+            TableScreenBook = DAScreeningBookDetail.SelectScreenBookDateToDate(DateFrom.Value.Date, DateTo.Value.Date)
             TableReferralBook = DAReferralBookDetail.SelectScreebReferralDateToDate(DateFrom.Value.Date, DateTo.Value.Date)
             TableRefractionBook = DARefractionBookDedail.SelectScreenRefractDateToDate(DateFrom.Value.Date, DateTo.Value.Date)
             TableOpticalShop = DAOpticalshopBookDetail.SelectScreenOpticalShopDateToDate(DateFrom.Value.Date, DateTo.Value.Date)
@@ -76,7 +77,7 @@
 
         ' Call Total Regis, Refraction, Referral and Optical shop
         DisplayTotalScreening(DateFrom.Value.Date, DateTo.Value.Date)
-        UIMainScreening.StatusLoading(False)
+        UIMainScreening.StatusLoading(False, "Loading")
     End Sub
     Private Sub DashboardScreeningRegisBook_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         DGScreeningBook.AutoGenerateColumns = False
@@ -114,12 +115,12 @@
         DGOpticalShop.DataSource = DAOpticalshopBookDetail.SelectOpticalByScreenBookID(ScreenID)
     End Sub
     Private Sub DisplayTotalScreening(ByVal DateFrom As Date, ByVal DateTo As Date)
-        TxtTotalRegister.Text = DAScreeningBook.TotalScreen(DateFrom, DateTo)
-        TxtTotalRefraction.Text = DAScreeningBook.TotalPatientRefraction(DateFrom, DateTo)
-        TxtTotalReferralPickup.Text = DAScreeningBook.TotalPatientReferralPickup(DateFrom, DateTo)
-        TxtTotalReferralSelf.Text = DAScreeningBook.TotalPatientReferralBySelf(DateFrom, DateTo)
-        TxtTotalOpticalShop.Text = DAScreeningBook.TotalPatientOpticalshop(DateFrom, DateTo)
-        TxtTotalNotYetImport.Text = DAScreeningBook.TotalNotYetImport(DateFrom, DateTo)
+        TxtTotalRegister.Text = DAScreeningBookDetail.TotalScreen(DateFrom, DateTo)
+        TxtTotalRefraction.Text = DAScreeningBookDetail.TotalPatientRefraction(DateFrom, DateTo)
+        TxtTotalReferralPickup.Text = DAScreeningBookDetail.TotalPatientReferralPickup(DateFrom, DateTo)
+        TxtTotalReferralSelf.Text = DAScreeningBookDetail.TotalPatientReferralBySelf(DateFrom, DateTo)
+        TxtTotalOpticalShop.Text = DAScreeningBookDetail.TotalPatientOpticalshop(DateFrom, DateTo)
+        TxtTotalNotYetImport.Text = DAScreeningBookDetail.TotalNotYetImport(DateFrom, DateTo)
     End Sub
 
     Private Sub BtnUpdateScreening_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnUpdateScreening.Click
@@ -151,13 +152,13 @@
         End If
 
         If UpdateSNBook.ShowDialog = DialogResult.OK Then
-            DGScreeningBook.DataSource = DAScreeningBook.SelectScreenBookDateToDateWithPatientNo(DateFrom.Value.Date, DateTo.Value.Date, EmptyString(UpdateSNBook.PatientNo.Text))
+            DGScreeningBook.DataSource = DAScreeningBookDetail.SelectScreenBookDateToDateWithPatientNo(DateFrom.Value.Date, DateTo.Value.Date, EmptyString(UpdateSNBook.PatientNo.Text))
             DisplayUtiliyBookByScreenID(CDbl(UpdateSNBook.LblSaveOption.Text))
             ModCommon.NumberAllRowHeaderDataGrid(DGScreeningBook)
         End If
     End Sub
     Public Sub RefreshAfterScreenRegis(ByVal DFrom As Date, ByVal DTo As Date, ByVal PatientNo As Double)
-        DGScreeningBook.DataSource = DAScreeningBook.SelectScreenBookDateToDateWithPatientNo(DFrom, DTo, EmptyString(PatientNo))
+        DGScreeningBook.DataSource = DAScreeningBookDetail.SelectScreenBookDateToDateWithPatientNo(DFrom, DTo, EmptyString(PatientNo))
         ModCommon.NumberAllRowHeaderDataGrid(DGScreeningBook)
     End Sub
 
@@ -193,8 +194,8 @@
         End If
     End Sub
 
-   
-   
+
+
     Private Sub BtnNewReferral_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnNewReferral.Click
         If DGScreeningBook.SelectedCells.Count = 0 Then Exit Sub
 
@@ -264,7 +265,7 @@
         End If
     End Sub
 
-   
+
     Private Sub UpdateRefractionToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles UpdateRefractionToolStripMenuItem.Click
         If DGScreeningBook.SelectedCells.Count = 0 Then Exit Sub
 
@@ -320,13 +321,58 @@
 
         End If
     End Sub
+    ' Call Index grid to import user
     Private IndexGrid As Integer = 0
-   
+    Private PateintTEHNo As Double = 0
+    Dim DAPatientTEH As New DatasetPatientTEHTableAdapters.TblPatientsTableAdapter
+    Dim DADateServer As New DatasetPatientTEHTableAdapters.TableGetDateServerTableAdapter
     Private Sub PicStartImport_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PicStartImport.Click
+        UIMainScreening.StatusLoading(True, "Loading")
+        BGImportToTEH.RunWorkerAsync()
+    End Sub
+    'Declare for patient para:
+    Dim PatientScreenNo As Double = 0
+    Dim PatientTEHNo As Double
+    Dim PatientSEngName, PatientSKhname, PatientSProvince, PatientSDistrict, PatientSCommune, PatientSAddress, PatientSSex, PatientSMale, PatientSFemale, ScreeningPlace As String
+    Dim PatientSAge As Integer
 
+    Private Sub ImportPatientScreeningToTEH()
         IndexGrid = 0
-        For i As Integer = 0 To DGScreeningBook.Rows.Count - 1 'GRows.Cells.Count - 1
-            IndexGrid = i
+        For I As Integer = 0 To DGScreeningBook.Rows.Count - 1 'GRows.Cells.Count - 1
+            IndexGrid = I
+            PatientTEHNo = 0
+            If DAPatientTEH.CheckExistingPatient(GeneratePatientNoForTEH) > 0 Then
+                PateintTEHNo = GeneratePatientNoForTEH()
+            Else
+                PateintTEHNo = GeneratePatientNoForTEH()
+            End If
+            PatientScreenNo = DGScreeningBook.Rows(IndexGrid).Cells("PatientNo").Value
+            PatientSEngName = DGScreeningBook.Rows(IndexGrid).Cells("NameEng").Value
+            PatientSKhname = DGScreeningBook.Rows(IndexGrid).Cells("NameKhmer").Value
+            PatientSProvince = DGScreeningBook.Rows(IndexGrid).Cells("Province").Value
+            PatientSDistrict = DGScreeningBook.Rows(IndexGrid).Cells("District").Value
+            PatientSCommune = DGScreeningBook.Rows(IndexGrid).Cells("Commune").Value
+            PatientSAddress = DGScreeningBook.Rows(IndexGrid).Cells("Address").Value
+            'PatientSMale = DGScreeningBook.Rows(IndexGrid).Cells("Male").Value
+            'PatientSFemale = DGScreeningBook.Rows(IndexGrid).Cells("Female").Value
+            PatientSSex = DGScreeningBook.Rows(IndexGrid).Cells("Sex").Value
+            PatientSAge = DGScreeningBook.Rows(IndexGrid).Cells("Age").Value
+            ScreeningPlace = DGScreeningBook.Rows(IndexGrid).Cells("SCREEN_PLACE").Value
+
+
+            If CBool(DAScreeningBook.CheckStatusImport(PatientScreenNo)) = False Then
+                Application.DoEvents()
+                UIMainScreening.StatusUpdateLabel("Importing Patient:" & PatientScreenNo)
+                If DAPatientTEH.ImportPatientScreeningToTEHSys(PateintTEHNo, DADateServer.SelectDateSVR.Value.Date, PatientSProvince, PatientSDistrict, PatientSCommune, PatientSEngName, PatientSKhname, PatientSAge, PatientSMale, PatientSFemale, PatientSSex, PatientSAddress, "", "", DADateServer.SelectDateSVR.Value.Year, ScreeningPlace, Format(DADateServer.SelectDateSVR, "HH:mm:ss"), PatientScreenNo, True, Now.Date) = 1 Then
+                    DAScreeningBook.UpateStatusImport(True, PatientScreenNo)
+                    DGScreeningBook.Rows(IndexGrid).Cells("IMPORT_STATUS").Value = True
+                End If
+
+            Else
+                Application.DoEvents()
+                UIMainScreening.StatusUpdateLabel(PatientScreenNo & " Imported")
+            End If
+
             Threading.Thread.Sleep(10)
             Application.DoEvents()
             ' MessageBox.Show(DGScreeningBook.Rows(IndexGrid).Cells("PatientNo").Value)
@@ -336,7 +382,29 @@
             'DGScreeningBook.BeginEdit(False)
             'DGScreeningBook.CurrentCell = DGScreeningBook.Rows( '.Item(0, IndexGrid)  'DGScreeningBook.Rows(IndexGrid).Cells(0)
 
-            IndexGrid = IndexGrid + i
+            IndexGrid = IndexGrid + I
         Next
+    End Sub
+    Function GeneratePatientNoForTEH() As String
+        Dim DateServerTEH As Date = DADateServer.SelectDateSVR
+        Dim Years As Integer = DateServerTEH.Year
+        Dim Month As String = DateServerTEH.Month.ToString
+        If Month.Length = 1 Then
+            Month = "0" & Month
+        Else
+            Month = Month
+        End If
+        Dim IDHN As Double
+        Try
+            'MsgBox("SELECT MAX(" & FieldNo & ") FROM " & Table & " Where Years=" & Years & "")
+            IDHN = DAPatientTEH.AutoNoPatient(Years) + 1  'ModGlobleVariable.GENERAL_DAO.SelectDAOAsScalar("SELECT COUNT(" & FieldNo & ") FROM " & Table & " WHERE YEARS=" & years) + 1
+        Catch ex As Exception
+            IDHN = 1
+        End Try
+        Return Years & Month.ToString & IDHN.ToString
+    End Function
+
+    Private Sub BGImportToTEH_DoWork(ByVal sender As System.Object, ByVal e As System.ComponentModel.DoWorkEventArgs) Handles BGImportToTEH.DoWork
+        ImportPatientScreeningToTEH()
     End Sub
 End Class
