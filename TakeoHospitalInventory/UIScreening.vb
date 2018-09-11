@@ -208,7 +208,7 @@
         UCabinet = New UCCabinet
         Login.UpdateLabelStatus("Creating user interface 37.", True)
         Application.DoEvents()
-        'UNewReceipt = New MainOpticalShop(Me)
+        UNewReceipt = New MainOpticalShop(Me.MScreening)
         Login.UpdateLabelStatus("Creating user interface 38.", True)
         Application.DoEvents()
 
@@ -317,5 +317,9 @@
 
     Private Sub BtnScreeningSetting_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnScreeningSetting.Click
         AddUserControl(MScreening.PanelHeader, MScreening.PanelDedail, ScreenSetting, "", True)
+    End Sub
+
+    Private Sub BtnOpticalShop_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnOpticalShop.Click
+        AddUserControl(MScreening.PanelHeader, MScreening.PanelDedail, UNewReceipt, "", True)
     End Sub
 End Class

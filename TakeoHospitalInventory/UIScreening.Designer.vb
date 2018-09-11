@@ -42,7 +42,7 @@ Partial Class UIScreening
         Me.Button7 = New System.Windows.Forms.Button
         Me.Button1 = New System.Windows.Forms.Button
         Me.Button8 = New System.Windows.Forms.Button
-        Me.Button2 = New System.Windows.Forms.Button
+        Me.BtnOpticalShop = New System.Windows.Forms.Button
         Me.Button9 = New System.Windows.Forms.Button
         Me.BtnScreeningBook = New System.Windows.Forms.Button
         Me.Button10 = New System.Windows.Forms.Button
@@ -258,7 +258,7 @@ Partial Class UIScreening
         Me.Panel2.Controls.Add(Me.Button7)
         Me.Panel2.Controls.Add(Me.Button1)
         Me.Panel2.Controls.Add(Me.Button8)
-        Me.Panel2.Controls.Add(Me.Button2)
+        Me.Panel2.Controls.Add(Me.BtnOpticalShop)
         Me.Panel2.Controls.Add(Me.Button9)
         Me.Panel2.Controls.Add(Me.BtnScreeningBook)
         Me.Panel2.Controls.Add(Me.Button10)
@@ -368,24 +368,24 @@ Partial Class UIScreening
         Me.Button8.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.Button8.UseVisualStyleBackColor = False
         '
-        'Button2
+        'BtnOpticalShop
         '
-        Me.Button2.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
-        Me.Button2.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver
-        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.ForeColor = System.Drawing.Color.White
-        Me.Button2.Image = CType(resources.GetObject("Button2.Image"), System.Drawing.Image)
-        Me.Button2.Location = New System.Drawing.Point(277, 203)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(252, 93)
-        Me.Button2.TabIndex = 2
-        Me.Button2.Text = "Optical Shop"
-        Me.Button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.Button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
-        Me.Button2.UseVisualStyleBackColor = False
+        Me.BtnOpticalShop.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
+        Me.BtnOpticalShop.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnOpticalShop.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.BtnOpticalShop.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver
+        Me.BtnOpticalShop.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnOpticalShop.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnOpticalShop.ForeColor = System.Drawing.Color.White
+        Me.BtnOpticalShop.Image = CType(resources.GetObject("BtnOpticalShop.Image"), System.Drawing.Image)
+        Me.BtnOpticalShop.Location = New System.Drawing.Point(277, 203)
+        Me.BtnOpticalShop.Name = "BtnOpticalShop"
+        Me.BtnOpticalShop.Size = New System.Drawing.Size(252, 93)
+        Me.BtnOpticalShop.TabIndex = 2
+        Me.BtnOpticalShop.Text = "Optical Shop"
+        Me.BtnOpticalShop.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.BtnOpticalShop.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        Me.BtnOpticalShop.UseVisualStyleBackColor = False
         '
         'Button9
         '
@@ -548,7 +548,7 @@ Partial Class UIScreening
     End Sub
     Friend WithEvents Button1 As System.Windows.Forms.Button
     Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents Button2 As System.Windows.Forms.Button
+    Friend WithEvents BtnOpticalShop As System.Windows.Forms.Button
     Friend WithEvents BtnScreeningSetting As System.Windows.Forms.Button
     Friend WithEvents BtnScreeningBook As System.Windows.Forms.Button
     Friend WithEvents Button5 As System.Windows.Forms.Button

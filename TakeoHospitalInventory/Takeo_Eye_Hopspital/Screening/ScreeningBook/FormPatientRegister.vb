@@ -163,7 +163,7 @@ Public Class FormPatientRegister
     Function SqlPatientInformation() As String
         Return StringPatientInformation(PatientNo.Text, DateRegis.Value.Date, CboProNo.Text, _
                                         CboDisNo.Text, CboCommNo.Text, TxtPatientName.Text, _
-                                        TxtPatientName.Text, TxtAge.Text, CboSex.Text, _
+                                        TxtPatientNameKh.Text, TxtAge.Text, CboSex.Text, _
                                         TxtFullAddress.Text, "", TxtTel.Text, "", _
                                         DateRegis.Value.Year, ModGlobleVariable.ACHIEVE, False, GetTextReferralV1, Format(GetDateServer, "hh:mm:ss tt").ToString)
     End Function
@@ -226,7 +226,7 @@ Public Class FormPatientRegister
     End Function
     '==================================== Screening Book =========================================
     Private Function ScreeningBook() As String
-        Return InsertScreenBook(DateRegis.Value.Date, TxtHealthNameCenter.Text, LblSettingID.Text, PatientNo.Text, ChRefraction.Checked, ChOpticalshop.Checked, RadReferAndPickup.Checked, RadReferAndComeBySelf.Checked, TxtRegisterNote.Text, TxtReferencePatientNote.Text)
+        Return InsertScreenBook(DateRegis.Value.Date, TxtHealthNameCenter.Text, LblSettingID.Text, PatientNo.Text, ChRefraction.Checked, ChOpticalshop.Checked, RadReferAndPickup.Checked, RadReferAndComeBySelf.Checked, TxtRegisterNote.Text, EmptyString(TxtReferencePatientNote.Text))
     End Function
     Private Function InsertScreenBook(ByVal SCREAN_DATE As DateTime, ByVal SCREEN_PLACE As String, ByVal SCREEN_ID As Integer, ByVal PATIENT_NO As Double, ByVal IS_REFRACTION As Boolean, ByVal IS_OPTICALSHOP As Boolean, ByVal IS_REFER_PICKUP As Boolean, ByVal IS_REFER_BYSELF As Boolean, ByVal SCREEN_NOTE As String, ByVal REFERENCE_PATIENNOTE As String) As String
         Dim sql As String = "INSERT INTO SCREENING_BOOK (SCREAN_DATE,SCREEN_PLACE,SYS_SETTING,PATIENT_NO,IS_REFRACTION,IS_OPTICALSHOP,IS_REFER_PICKUP,IS_REFER_BYSELF,SCREEN_NOTE,REFERENCE_PATIENNOTE) VALUES('" & SCREAN_DATE & "',N'" & SCREEN_PLACE & "'," & SCREEN_ID & "," & PATIENT_NO & ",'" & IS_REFRACTION & "','" & IS_OPTICALSHOP & "','" & IS_REFER_PICKUP & "','" & IS_REFER_BYSELF & "',N'" & SCREEN_NOTE & "','" & REFERENCE_PATIENNOTE & "')"
@@ -350,5 +350,9 @@ Public Class FormPatientRegister
         ' Call when we mouse move on Panel
         ModCommon.ReleaseCapture()
         ModCommon.SendMessage(Me.Handle, &H112, &HF012, 0)
+    End Sub
+
+    Private Sub TxtReferencePatientNote_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TxtReferencePatientNote.KeyPress
+        SetDisableKeyString(e)
     End Sub
 End Class

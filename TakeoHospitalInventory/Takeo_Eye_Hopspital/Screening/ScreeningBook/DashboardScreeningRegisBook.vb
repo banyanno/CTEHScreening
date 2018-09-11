@@ -324,14 +324,17 @@
     ' Call Index grid to import user
     Private IndexGrid As Integer = 0
     Private PateintTEHNo As Double = 0
-    Dim DAPatientTEH As New DatasetPatientTEHTableAdapters.TblPatientsTableAdapter
+    Dim DAPatientTEH As New DatasetPatientTEHTableAdapters.PATIENT_SCREENING_INFOTableAdapter
     Dim DADateServer As New DatasetPatientTEHTableAdapters.TableGetDateServerTableAdapter
     Private Sub PicStartImport_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PicStartImport.Click
-        UIMainScreening.StatusLoading(True, "Loading")
-        BGImportToTEH.RunWorkerAsync()
+        If MessageBox.Show("Do you want to import patients to TEH sys?", "Screening", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
+            UIMainScreening.StatusLoading(True, "Loading")
+            BGImportToTEH.RunWorkerAsync()
+        End If
+        
     End Sub
     'Declare for patient para:
-    Dim PatientScreenNo As Double = 0
+    Dim PatientScreenNo, PatientSReferNo As Double
     Dim PatientTEHNo As Double
     Dim PatientSEngName, PatientSKhname, PatientSProvince, PatientSDistrict, PatientSCommune, PatientSAddress, PatientSSex, PatientSMale, PatientSFemale, ScreeningPlace As String
     Dim PatientSAge As Integer
@@ -347,6 +350,8 @@
                 PateintTEHNo = GeneratePatientNoForTEH()
             End If
             PatientScreenNo = DGScreeningBook.Rows(IndexGrid).Cells("PatientNo").Value
+
+            PatientSReferNo = DGScreeningBook.Rows(IndexGrid).Cells("REFERENCE_PATIENNOTE").Value
             PatientSEngName = DGScreeningBook.Rows(IndexGrid).Cells("NameEng").Value
             PatientSKhname = DGScreeningBook.Rows(IndexGrid).Cells("NameKhmer").Value
             PatientSProvince = DGScreeningBook.Rows(IndexGrid).Cells("Province").Value
@@ -360,10 +365,10 @@
             ScreeningPlace = DGScreeningBook.Rows(IndexGrid).Cells("SCREEN_PLACE").Value
 
 
-            If CBool(DAScreeningBook.CheckStatusImport(PatientScreenNo)) = False Then
+            If CBool(DAScreeningBook.CheckStatusImport(PatientScreenNo)) = False And DAPatientTEH.CheckExistingScreeningNo(PatientScreenNo) = 0 Then
                 Application.DoEvents()
                 UIMainScreening.StatusUpdateLabel("Importing Patient:" & PatientScreenNo)
-                If DAPatientTEH.ImportPatientScreeningToTEHSys(PateintTEHNo, DADateServer.SelectDateSVR.Value.Date, PatientSProvince, PatientSDistrict, PatientSCommune, PatientSEngName, PatientSKhname, PatientSAge, PatientSMale, PatientSFemale, PatientSSex, PatientSAddress, "", "", DADateServer.SelectDateSVR.Value.Year, ScreeningPlace, Format(DADateServer.SelectDateSVR, "HH:mm:ss"), PatientScreenNo, True, Now.Date) = 1 Then
+                If DAPatientTEH.ImportPatientScreeningToTEHSys(PateintTEHNo, DADateServer.SelectDateSVR.Value.Date, PatientSProvince, PatientSDistrict, PatientSCommune, PatientSEngName, PatientSKhname, PatientSAge, PatientSMale, PatientSFemale, PatientSSex, PatientSAddress, "", "", DADateServer.SelectDateSVR.Value.Year, ScreeningPlace, Format(DADateServer.SelectDateSVR, "HH:mm:ss"), PatientScreenNo, True, Now.Date, PatientSReferNo) = 1 Then
                     DAScreeningBook.UpateStatusImport(True, PatientScreenNo)
                     DGScreeningBook.Rows(IndexGrid).Cells("IMPORT_STATUS").Value = True
                 End If
@@ -406,5 +411,10 @@
 
     Private Sub BGImportToTEH_DoWork(ByVal sender As System.Object, ByVal e As System.ComponentModel.DoWorkEventArgs) Handles BGImportToTEH.DoWork
         ImportPatientScreeningToTEH()
+    End Sub
+
+    Private Sub BGImportToTEH_RunWorkerCompleted(ByVal sender As System.Object, ByVal e As System.ComponentModel.RunWorkerCompletedEventArgs) Handles BGImportToTEH.RunWorkerCompleted
+        UIMainScreening.StatusLoading(False, "Loading")
+        MessageBox.Show("Import patients is done!", "Screening", MessageBoxButtons.OK, MessageBoxIcon.Information)
     End Sub
 End Class

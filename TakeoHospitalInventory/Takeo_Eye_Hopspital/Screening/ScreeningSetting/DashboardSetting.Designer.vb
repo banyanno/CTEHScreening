@@ -22,12 +22,20 @@ Partial Class DashboardSetting
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(DashboardSetting))
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
         Me.DGSetting = New System.Windows.Forms.DataGridView
+        Me.ToolStrip1 = New System.Windows.Forms.ToolStrip
+        Me.ToolStripSeparator4 = New System.Windows.Forms.ToolStripSeparator
+        Me.BtnNewSetting = New System.Windows.Forms.ToolStripButton
+        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator
+        Me.BtnUpdateSetting = New System.Windows.Forms.ToolStripButton
+        Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator
+        Me.BtnRefresh = New System.Windows.Forms.ToolStripButton
+        Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator
         Me.SETTING_ID = New System.Windows.Forms.DataGridViewTextBoxColumn
         Me.SETTING_DATE = New System.Windows.Forms.DataGridViewTextBoxColumn
         Me.HEALTH_NAME = New System.Windows.Forms.DataGridViewTextBoxColumn
@@ -36,14 +44,7 @@ Partial Class DashboardSetting
         Me.COMMUNE = New System.Windows.Forms.DataGridViewTextBoxColumn
         Me.FULL_ADDRESS = New System.Windows.Forms.DataGridViewTextBoxColumn
         Me.IS_DEFOUL = New System.Windows.Forms.DataGridViewCheckBoxColumn
-        Me.ToolStrip1 = New System.Windows.Forms.ToolStrip
-        Me.BtnNewSetting = New System.Windows.Forms.ToolStripButton
-        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator
-        Me.BtnUpdateSetting = New System.Windows.Forms.ToolStripButton
-        Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator
-        Me.BtnRefresh = New System.Windows.Forms.ToolStripButton
-        Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator
-        Me.ToolStripSeparator4 = New System.Windows.Forms.ToolStripSeparator
+        Me.BOOK_NOTE = New System.Windows.Forms.DataGridViewTextBoxColumn
         CType(Me.DGSetting, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ToolStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -57,102 +58,43 @@ Partial Class DashboardSetting
         Me.DGSetting.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.DGSetting.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
         Me.DGSetting.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(67, Byte), Integer), CType(CType(82, Byte), Integer))
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Century Gothic", 12.0!)
-        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DGSetting.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(67, Byte), Integer), CType(CType(82, Byte), Integer))
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Century Gothic", 12.0!)
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DGSetting.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.DGSetting.ColumnHeadersHeight = 35
-        Me.DGSetting.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.SETTING_ID, Me.SETTING_DATE, Me.HEALTH_NAME, Me.PROVINCE, Me.DISTRICT, Me.COMMUNE, Me.FULL_ADDRESS, Me.IS_DEFOUL})
-        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle7.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle7.Font = New System.Drawing.Font("Century Gothic", 12.0!)
-        DataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
-        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DGSetting.DefaultCellStyle = DataGridViewCellStyle7
+        Me.DGSetting.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.SETTING_ID, Me.SETTING_DATE, Me.HEALTH_NAME, Me.PROVINCE, Me.DISTRICT, Me.COMMUNE, Me.FULL_ADDRESS, Me.IS_DEFOUL, Me.BOOK_NOTE})
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Century Gothic", 12.0!)
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DGSetting.DefaultCellStyle = DataGridViewCellStyle3
         Me.DGSetting.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DGSetting.EnableHeadersVisualStyles = False
         Me.DGSetting.GridColor = System.Drawing.Color.SteelBlue
         Me.DGSetting.Location = New System.Drawing.Point(0, 58)
-        Me.DGSetting.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.DGSetting.Margin = New System.Windows.Forms.Padding(5)
         Me.DGSetting.Name = "DGSetting"
         Me.DGSetting.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(67, Byte), Integer), CType(CType(82, Byte), Integer))
-        DataGridViewCellStyle8.Font = New System.Drawing.Font("Century Gothic", 12.0!)
-        DataGridViewCellStyle8.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DGSetting.RowHeadersDefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(67, Byte), Integer), CType(CType(82, Byte), Integer))
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Century Gothic", 12.0!)
+        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DGSetting.RowHeadersDefaultCellStyle = DataGridViewCellStyle4
         Me.DGSetting.RowTemplate.Height = 35
         Me.DGSetting.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DGSetting.Size = New System.Drawing.Size(967, 848)
         Me.DGSetting.TabIndex = 13
-        '
-        'SETTING_ID
-        '
-        Me.SETTING_ID.DataPropertyName = "SETTING_ID"
-        Me.SETTING_ID.HeaderText = "Setting No"
-        Me.SETTING_ID.Name = "SETTING_ID"
-        Me.SETTING_ID.Visible = False
-        '
-        'SETTING_DATE
-        '
-        Me.SETTING_DATE.DataPropertyName = "SETTING_DATE"
-        DataGridViewCellStyle6.Format = "dd-MM-yyyy"
-        Me.SETTING_DATE.DefaultCellStyle = DataGridViewCellStyle6
-        Me.SETTING_DATE.HeaderText = "Date Setting"
-        Me.SETTING_DATE.Name = "SETTING_DATE"
-        Me.SETTING_DATE.ReadOnly = True
-        '
-        'HEALTH_NAME
-        '
-        Me.HEALTH_NAME.DataPropertyName = "HEALTH_NAME"
-        Me.HEALTH_NAME.HeaderText = "Screening Place"
-        Me.HEALTH_NAME.Name = "HEALTH_NAME"
-        Me.HEALTH_NAME.ReadOnly = True
-        '
-        'PROVINCE
-        '
-        Me.PROVINCE.DataPropertyName = "PROVINCE"
-        Me.PROVINCE.HeaderText = "Province"
-        Me.PROVINCE.Name = "PROVINCE"
-        Me.PROVINCE.ReadOnly = True
-        '
-        'DISTRICT
-        '
-        Me.DISTRICT.DataPropertyName = "DISTRICT"
-        Me.DISTRICT.HeaderText = "District"
-        Me.DISTRICT.Name = "DISTRICT"
-        Me.DISTRICT.ReadOnly = True
-        '
-        'COMMUNE
-        '
-        Me.COMMUNE.DataPropertyName = "COMMUNE"
-        Me.COMMUNE.HeaderText = "Commune"
-        Me.COMMUNE.Name = "COMMUNE"
-        Me.COMMUNE.ReadOnly = True
-        '
-        'FULL_ADDRESS
-        '
-        Me.FULL_ADDRESS.DataPropertyName = "FULL_ADDRESS"
-        Me.FULL_ADDRESS.HeaderText = "Full Address"
-        Me.FULL_ADDRESS.Name = "FULL_ADDRESS"
-        Me.FULL_ADDRESS.ReadOnly = True
-        Me.FULL_ADDRESS.Visible = False
-        '
-        'IS_DEFOUL
-        '
-        Me.IS_DEFOUL.DataPropertyName = "IS_DEFOUL"
-        Me.IS_DEFOUL.HeaderText = "Default"
-        Me.IS_DEFOUL.Name = "IS_DEFOUL"
-        Me.IS_DEFOUL.ReadOnly = True
         '
         'ToolStrip1
         '
@@ -167,6 +109,11 @@ Partial Class DashboardSetting
         Me.ToolStrip1.Size = New System.Drawing.Size(967, 58)
         Me.ToolStrip1.TabIndex = 14
         Me.ToolStrip1.Text = "ToolStrip1"
+        '
+        'ToolStripSeparator4
+        '
+        Me.ToolStripSeparator4.Name = "ToolStripSeparator4"
+        Me.ToolStripSeparator4.Size = New System.Drawing.Size(6, 58)
         '
         'BtnNewSetting
         '
@@ -214,10 +161,82 @@ Partial Class DashboardSetting
         Me.ToolStripSeparator3.Name = "ToolStripSeparator3"
         Me.ToolStripSeparator3.Size = New System.Drawing.Size(6, 58)
         '
-        'ToolStripSeparator4
+        'SETTING_ID
         '
-        Me.ToolStripSeparator4.Name = "ToolStripSeparator4"
-        Me.ToolStripSeparator4.Size = New System.Drawing.Size(6, 58)
+        Me.SETTING_ID.DataPropertyName = "SETTING_ID"
+        Me.SETTING_ID.HeaderText = "Setting No"
+        Me.SETTING_ID.Name = "SETTING_ID"
+        Me.SETTING_ID.Visible = False
+        '
+        'SETTING_DATE
+        '
+        Me.SETTING_DATE.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.SETTING_DATE.DataPropertyName = "SETTING_DATE"
+        DataGridViewCellStyle2.Format = "dd-MM-yyyy"
+        Me.SETTING_DATE.DefaultCellStyle = DataGridViewCellStyle2
+        Me.SETTING_DATE.HeaderText = "Date Setting"
+        Me.SETTING_DATE.Name = "SETTING_DATE"
+        Me.SETTING_DATE.ReadOnly = True
+        Me.SETTING_DATE.Width = 150
+        '
+        'HEALTH_NAME
+        '
+        Me.HEALTH_NAME.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.HEALTH_NAME.DataPropertyName = "HEALTH_NAME"
+        Me.HEALTH_NAME.HeaderText = "Screening Place"
+        Me.HEALTH_NAME.Name = "HEALTH_NAME"
+        Me.HEALTH_NAME.ReadOnly = True
+        Me.HEALTH_NAME.Width = 200
+        '
+        'PROVINCE
+        '
+        Me.PROVINCE.DataPropertyName = "PROVINCE"
+        Me.PROVINCE.HeaderText = "Province"
+        Me.PROVINCE.Name = "PROVINCE"
+        Me.PROVINCE.ReadOnly = True
+        Me.PROVINCE.Visible = False
+        '
+        'DISTRICT
+        '
+        Me.DISTRICT.DataPropertyName = "DISTRICT"
+        Me.DISTRICT.HeaderText = "District"
+        Me.DISTRICT.Name = "DISTRICT"
+        Me.DISTRICT.ReadOnly = True
+        Me.DISTRICT.Visible = False
+        '
+        'COMMUNE
+        '
+        Me.COMMUNE.DataPropertyName = "COMMUNE"
+        Me.COMMUNE.HeaderText = "Commune"
+        Me.COMMUNE.Name = "COMMUNE"
+        Me.COMMUNE.ReadOnly = True
+        Me.COMMUNE.Visible = False
+        '
+        'FULL_ADDRESS
+        '
+        Me.FULL_ADDRESS.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.FULL_ADDRESS.DataPropertyName = "FULL_ADDRESS"
+        Me.FULL_ADDRESS.HeaderText = "Address"
+        Me.FULL_ADDRESS.Name = "FULL_ADDRESS"
+        Me.FULL_ADDRESS.ReadOnly = True
+        Me.FULL_ADDRESS.Width = 350
+        '
+        'IS_DEFOUL
+        '
+        Me.IS_DEFOUL.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.IS_DEFOUL.DataPropertyName = "IS_DEFOUL"
+        Me.IS_DEFOUL.HeaderText = "Default"
+        Me.IS_DEFOUL.Name = "IS_DEFOUL"
+        Me.IS_DEFOUL.ReadOnly = True
+        '
+        'BOOK_NOTE
+        '
+        Me.BOOK_NOTE.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.BOOK_NOTE.DataPropertyName = "BOOK_NOTE"
+        Me.BOOK_NOTE.HeaderText = "Note"
+        Me.BOOK_NOTE.Name = "BOOK_NOTE"
+        Me.BOOK_NOTE.ReadOnly = True
+        Me.BOOK_NOTE.Width = 250
         '
         'DashboardSetting
         '
@@ -226,7 +245,7 @@ Partial Class DashboardSetting
         Me.Controls.Add(Me.DGSetting)
         Me.Controls.Add(Me.ToolStrip1)
         Me.Font = New System.Drawing.Font("Century Gothic", 12.0!)
-        Me.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.Margin = New System.Windows.Forms.Padding(5)
         Me.Name = "DashboardSetting"
         Me.Size = New System.Drawing.Size(967, 906)
         CType(Me.DGSetting, System.ComponentModel.ISupportInitialize).EndInit()
@@ -237,14 +256,6 @@ Partial Class DashboardSetting
 
     End Sub
     Private WithEvents DGSetting As System.Windows.Forms.DataGridView
-    Friend WithEvents SETTING_ID As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents SETTING_DATE As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents HEALTH_NAME As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents PROVINCE As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DISTRICT As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents COMMUNE As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents FULL_ADDRESS As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents IS_DEFOUL As System.Windows.Forms.DataGridViewCheckBoxColumn
     Friend WithEvents ToolStrip1 As System.Windows.Forms.ToolStrip
     Friend WithEvents BtnNewSetting As System.Windows.Forms.ToolStripButton
     Friend WithEvents ToolStripSeparator1 As System.Windows.Forms.ToolStripSeparator
@@ -253,5 +264,14 @@ Partial Class DashboardSetting
     Friend WithEvents BtnRefresh As System.Windows.Forms.ToolStripButton
     Friend WithEvents ToolStripSeparator4 As System.Windows.Forms.ToolStripSeparator
     Friend WithEvents ToolStripSeparator3 As System.Windows.Forms.ToolStripSeparator
+    Friend WithEvents SETTING_ID As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents SETTING_DATE As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents HEALTH_NAME As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents PROVINCE As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DISTRICT As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents COMMUNE As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents FULL_ADDRESS As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents IS_DEFOUL As System.Windows.Forms.DataGridViewCheckBoxColumn
+    Friend WithEvents BOOK_NOTE As System.Windows.Forms.DataGridViewTextBoxColumn
 
 End Class

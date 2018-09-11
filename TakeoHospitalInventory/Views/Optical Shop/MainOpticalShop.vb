@@ -3,11 +3,25 @@
     Dim DAReceipt As New DSOpticalShopTableAdapters.VMainReceiptDetailTableAdapter
     Dim DAReceiptDetail As New DSOpticalShopTableAdapters.VReceiptDetailTableAdapter
     Dim MTakeoInventory As MainTakeoInventory
+    Dim MScreening As MainScreening
+    Dim DAOpticalshopBookDetail As New DataSetScreeningBookTableAdapters.SCREENING_OPTICALSHOP_DETIALTableAdapter
     Sub New(ByVal MTakeoInventory As MainTakeoInventory)
 
         ' This call is required by the Windows Form Designer.
         InitializeComponent()
         Me.MTakeoInventory = MTakeoInventory
+        ' Add any initialization after the InitializeComponent() call.
+
+    End Sub
+
+    Sub New(ByVal MScreening As MainScreening)
+
+        ' This call is required by the Windows Form Designer.
+        InitializeComponent()
+        Me.MScreening = MScreening
+
+    
+        'Me.SplitContainer1.SplitterDistance = Me.Height / 2
         ' Add any initialization after the InitializeComponent() call.
 
     End Sub
@@ -45,6 +59,10 @@
         GridReceipt.RootTable.ChildTables(0).DataMember = "VMainReceiptDetail_VReceiptDetail"
         GridReceipt.Refresh()
     End Sub
+    Sub LoadingWaitingPayment(ByVal DateFfromVal As Date, ByVal dateToVal As Date)
+        GridListWaitingPay.DataSource = DAOpticalshopBookDetail.SelectScreenOpticalShopDateToDate(DateFfromVal, dateToVal)
+        'GridListWaitingPay.Refresh()
+    End Sub
     Sub LoadByReceiptNo(ByVal receiptNo As String)
         DAReceipt.GetDataByReceiptNo(receiptNo)
         DAReceipt.Fill(DSOpt.VMainReceiptDetail)
@@ -56,7 +74,7 @@
 
     Private Sub BtnView_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnView.Click
         'FilterReceipt.Visible = True
-        MTakeoInventory.StatusLoading(True)
+        MScreening.StatusLoading(True, "Loading")
         'RadWaitAndPaid.Checked = True
         BtnView.Enabled = False
         BGLoadOpticalShop.RunWorkerAsync()
@@ -77,6 +95,7 @@
             If RadReceiptCancel.Checked = True Then
                 LoadingReceiptByDateCancel(DateTo.Value, DateFrom.Value, 2)
             End If
+            LoadingWaitingPayment(DateFrom.Value.Date, DateTo.Value)
         End If
         
     End Sub
@@ -199,7 +218,7 @@
     End Sub
 
     Private Sub BGLoadOpticalShop_RunWorkerCompleted(ByVal sender As System.Object, ByVal e As System.ComponentModel.RunWorkerCompletedEventArgs) Handles BGLoadOpticalShop.RunWorkerCompleted
-        Me.MTakeoInventory.StatusLoading(False)
+        MScreening.StatusLoading(False, "Loading")
         BtnView.Enabled = True
     End Sub
 
