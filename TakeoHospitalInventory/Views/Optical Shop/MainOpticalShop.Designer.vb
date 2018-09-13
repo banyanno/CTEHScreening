@@ -25,7 +25,7 @@ Partial Class MainOpticalShop
         Me.components = New System.ComponentModel.Container
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MainOpticalShop))
         Dim GridReceipt_DesignTimeLayout As Janus.Windows.GridEX.GridEXLayout = New Janus.Windows.GridEX.GridEXLayout
-        Dim JanusColorScheme1 As Janus.Windows.Common.JanusColorScheme = New Janus.Windows.Common.JanusColorScheme
+        Dim JanusColorScheme4 As Janus.Windows.Common.JanusColorScheme = New Janus.Windows.Common.JanusColorScheme
         Dim GridListWaitingPay_DesignTimeLayout As Janus.Windows.GridEX.GridEXLayout = New Janus.Windows.GridEX.GridEXLayout
         Me.ImageAddItem = New System.Windows.Forms.ImageList(Me.components)
         Me.ImageStatusbar = New System.Windows.Forms.ImageList(Me.components)
@@ -108,38 +108,38 @@ Partial Class MainOpticalShop
         Me.GridReceipt.RowHeaderContent = Janus.Windows.GridEX.RowHeaderContent.RowPosition
         Me.GridReceipt.RowHeaders = Janus.Windows.GridEX.InheritableBoolean.[True]
         Me.GridReceipt.SelectedInactiveFormatStyle.BackColor = System.Drawing.SystemColors.Highlight
-        Me.GridReceipt.Size = New System.Drawing.Size(863, 501)
+        Me.GridReceipt.Size = New System.Drawing.Size(664, 486)
         Me.GridReceipt.TabIndex = 3
         Me.GridReceipt.ThemedAreas = Janus.Windows.GridEX.ThemedArea.None
         Me.GridReceipt.VisualStyleManager = Me.VSForOpticalshop
         '
         'VSForOpticalshop
         '
-        JanusColorScheme1.ActiveCaptionColor = System.Drawing.Color.Tomato
-        JanusColorScheme1.ActiveCaptionTextColor = System.Drawing.Color.White
-        JanusColorScheme1.ControlDarkColor = System.Drawing.SystemColors.Control
-        JanusColorScheme1.ControlTextColor = System.Drawing.Color.Black
-        JanusColorScheme1.DisabledColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(150, Byte), Integer), CType(CType(102, Byte), Integer))
-        JanusColorScheme1.GrayTextColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
-        JanusColorScheme1.HighlightColor = System.Drawing.Color.FromArgb(CType(CType(43, Byte), Integer), CType(CType(99, Byte), Integer), CType(CType(67, Byte), Integer))
-        JanusColorScheme1.HighlightTextColor = System.Drawing.Color.WhiteSmoke
-        JanusColorScheme1.InfoColor = System.Drawing.Color.WhiteSmoke
-        JanusColorScheme1.InfoTextColor = System.Drawing.Color.FloralWhite
-        JanusColorScheme1.MenuColor = System.Drawing.SystemColors.ActiveCaption
-        JanusColorScheme1.MenuTextColor = System.Drawing.Color.DimGray
-        JanusColorScheme1.Name = "Header"
-        JanusColorScheme1.Office2007ColorScheme = Janus.Windows.Common.Office2007ColorScheme.Silver
-        JanusColorScheme1.Office2007CustomColor = System.Drawing.SystemColors.Control
-        JanusColorScheme1.UseThemes = False
-        JanusColorScheme1.VisualStyle = Janus.Windows.Common.VisualStyle.Standard
-        JanusColorScheme1.WindowColor = System.Drawing.Color.White
-        JanusColorScheme1.WindowTextColor = System.Drawing.Color.DarkBlue
-        Me.VSForOpticalshop.ColorSchemes.Add(JanusColorScheme1)
+        JanusColorScheme4.ActiveCaptionColor = System.Drawing.Color.Tomato
+        JanusColorScheme4.ActiveCaptionTextColor = System.Drawing.Color.White
+        JanusColorScheme4.ControlDarkColor = System.Drawing.SystemColors.Control
+        JanusColorScheme4.ControlTextColor = System.Drawing.Color.Black
+        JanusColorScheme4.DisabledColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(150, Byte), Integer), CType(CType(102, Byte), Integer))
+        JanusColorScheme4.GrayTextColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
+        JanusColorScheme4.HighlightColor = System.Drawing.Color.FromArgb(CType(CType(43, Byte), Integer), CType(CType(99, Byte), Integer), CType(CType(67, Byte), Integer))
+        JanusColorScheme4.HighlightTextColor = System.Drawing.Color.WhiteSmoke
+        JanusColorScheme4.InfoColor = System.Drawing.Color.WhiteSmoke
+        JanusColorScheme4.InfoTextColor = System.Drawing.Color.FloralWhite
+        JanusColorScheme4.MenuColor = System.Drawing.SystemColors.ActiveCaption
+        JanusColorScheme4.MenuTextColor = System.Drawing.Color.DimGray
+        JanusColorScheme4.Name = "Header"
+        JanusColorScheme4.Office2007ColorScheme = Janus.Windows.Common.Office2007ColorScheme.Silver
+        JanusColorScheme4.Office2007CustomColor = System.Drawing.SystemColors.Control
+        JanusColorScheme4.UseThemes = False
+        JanusColorScheme4.VisualStyle = Janus.Windows.Common.VisualStyle.Standard
+        JanusColorScheme4.WindowColor = System.Drawing.Color.White
+        JanusColorScheme4.WindowTextColor = System.Drawing.Color.DarkBlue
+        Me.VSForOpticalshop.ColorSchemes.Add(JanusColorScheme4)
         Me.VSForOpticalshop.DefaultColorScheme = "Header"
         '
         'Panel1
         '
-        Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(236, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(241, Byte), Integer))
         Me.Panel1.Controls.Add(Me.BtnEditDonateOptical)
         Me.Panel1.Controls.Add(Me.BtnEditeDateReceipt)
         Me.Panel1.Controls.Add(Me.BtnPrintInvoice)
@@ -155,68 +155,78 @@ Partial Class MainOpticalShop
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1368, 58)
+        Me.Panel1.Size = New System.Drawing.Size(1368, 73)
         Me.Panel1.TabIndex = 5
         '
         'BtnEditDonateOptical
         '
         Me.BtnEditDonateOptical.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BtnEditDonateOptical.Enabled = False
-        Me.BtnEditDonateOptical.Location = New System.Drawing.Point(292, 8)
+        Me.BtnEditDonateOptical.Location = New System.Drawing.Point(618, 63)
         Me.BtnEditDonateOptical.Name = "BtnEditDonateOptical"
         Me.BtnEditDonateOptical.Size = New System.Drawing.Size(101, 34)
         Me.BtnEditDonateOptical.TabIndex = 15
         Me.BtnEditDonateOptical.Tag = "Edit Donate In Optical"
         Me.BtnEditDonateOptical.Text = "Edit Donate In Optical"
         Me.BtnEditDonateOptical.UseVisualStyleBackColor = True
+        Me.BtnEditDonateOptical.Visible = False
         '
         'BtnEditeDateReceipt
         '
+        Me.BtnEditeDateReceipt.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
         Me.BtnEditeDateReceipt.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BtnEditeDateReceipt.Enabled = False
-        Me.BtnEditeDateReceipt.ImageIndex = 4
-        Me.BtnEditeDateReceipt.ImageList = Me.ImageStatusbar
-        Me.BtnEditeDateReceipt.Location = New System.Drawing.Point(188, 8)
+        Me.BtnEditeDateReceipt.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnEditeDateReceipt.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnEditeDateReceipt.ForeColor = System.Drawing.Color.White
+        Me.BtnEditeDateReceipt.Image = CType(resources.GetObject("BtnEditeDateReceipt.Image"), System.Drawing.Image)
+        Me.BtnEditeDateReceipt.Location = New System.Drawing.Point(441, 4)
         Me.BtnEditeDateReceipt.Name = "BtnEditeDateReceipt"
-        Me.BtnEditeDateReceipt.Size = New System.Drawing.Size(98, 34)
+        Me.BtnEditeDateReceipt.Size = New System.Drawing.Size(159, 64)
         Me.BtnEditeDateReceipt.TabIndex = 14
         Me.BtnEditeDateReceipt.Tag = "Edit Date Receipt"
         Me.BtnEditeDateReceipt.Text = "Edit Date Receipt"
-        Me.BtnEditeDateReceipt.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.BtnEditeDateReceipt.UseVisualStyleBackColor = True
+        Me.BtnEditeDateReceipt.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        Me.BtnEditeDateReceipt.UseVisualStyleBackColor = False
         '
         'BtnPrintInvoice
         '
+        Me.BtnPrintInvoice.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
         Me.BtnPrintInvoice.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnPrintInvoice.ImageIndex = 5
-        Me.BtnPrintInvoice.ImageList = Me.ImageStatusbar
-        Me.BtnPrintInvoice.Location = New System.Drawing.Point(399, 8)
+        Me.BtnPrintInvoice.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnPrintInvoice.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnPrintInvoice.ForeColor = System.Drawing.Color.White
+        Me.BtnPrintInvoice.Image = CType(resources.GetObject("BtnPrintInvoice.Image"), System.Drawing.Image)
+        Me.BtnPrintInvoice.Location = New System.Drawing.Point(155, 4)
         Me.BtnPrintInvoice.Name = "BtnPrintInvoice"
-        Me.BtnPrintInvoice.Size = New System.Drawing.Size(89, 34)
+        Me.BtnPrintInvoice.Size = New System.Drawing.Size(137, 64)
         Me.BtnPrintInvoice.TabIndex = 13
         Me.BtnPrintInvoice.Text = "Print Invoice"
-        Me.BtnPrintInvoice.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.BtnPrintInvoice.UseVisualStyleBackColor = True
+        Me.BtnPrintInvoice.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        Me.BtnPrintInvoice.UseVisualStyleBackColor = False
         '
         'BtnEditInvoice
         '
+        Me.BtnEditInvoice.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
         Me.BtnEditInvoice.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BtnEditInvoice.Enabled = False
-        Me.BtnEditInvoice.ImageIndex = 4
-        Me.BtnEditInvoice.ImageList = Me.ImageStatusbar
-        Me.BtnEditInvoice.Location = New System.Drawing.Point(97, 8)
+        Me.BtnEditInvoice.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnEditInvoice.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnEditInvoice.ForeColor = System.Drawing.Color.White
+        Me.BtnEditInvoice.Image = CType(resources.GetObject("BtnEditInvoice.Image"), System.Drawing.Image)
+        Me.BtnEditInvoice.Location = New System.Drawing.Point(298, 4)
         Me.BtnEditInvoice.Name = "BtnEditInvoice"
-        Me.BtnEditInvoice.Size = New System.Drawing.Size(86, 34)
+        Me.BtnEditInvoice.Size = New System.Drawing.Size(137, 64)
         Me.BtnEditInvoice.TabIndex = 12
         Me.BtnEditInvoice.Tag = "Edit Invoice"
         Me.BtnEditInvoice.Text = "Edit Invoice"
-        Me.BtnEditInvoice.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.BtnEditInvoice.UseVisualStyleBackColor = True
+        Me.BtnEditInvoice.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        Me.BtnEditInvoice.UseVisualStyleBackColor = False
         '
         'RadReceiptCancel
         '
         Me.RadReceiptCancel.AutoSize = True
-        Me.RadReceiptCancel.Location = New System.Drawing.Point(877, 27)
+        Me.RadReceiptCancel.Location = New System.Drawing.Point(772, 40)
         Me.RadReceiptCancel.Name = "RadReceiptCancel"
         Me.RadReceiptCancel.Size = New System.Drawing.Size(96, 17)
         Me.RadReceiptCancel.TabIndex = 11
@@ -227,7 +237,7 @@ Partial Class MainOpticalShop
         '
         Me.RadWaitAndPaid.AutoSize = True
         Me.RadWaitAndPaid.Checked = True
-        Me.RadWaitAndPaid.Location = New System.Drawing.Point(877, 6)
+        Me.RadWaitAndPaid.Location = New System.Drawing.Point(772, 19)
         Me.RadWaitAndPaid.Name = "RadWaitAndPaid"
         Me.RadWaitAndPaid.Size = New System.Drawing.Size(144, 17)
         Me.RadWaitAndPaid.TabIndex = 11
@@ -237,37 +247,43 @@ Partial Class MainOpticalShop
         '
         'BtnNewReceipt1
         '
+        Me.BtnNewReceipt1.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
         Me.BtnNewReceipt1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnNewReceipt1.ImageIndex = 3
-        Me.BtnNewReceipt1.ImageList = Me.ImageStatusbar
-        Me.BtnNewReceipt1.Location = New System.Drawing.Point(2, 8)
+        Me.BtnNewReceipt1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnNewReceipt1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnNewReceipt1.ForeColor = System.Drawing.Color.White
+        Me.BtnNewReceipt1.Image = CType(resources.GetObject("BtnNewReceipt1.Image"), System.Drawing.Image)
+        Me.BtnNewReceipt1.Location = New System.Drawing.Point(3, 4)
         Me.BtnNewReceipt1.Name = "BtnNewReceipt1"
-        Me.BtnNewReceipt1.Size = New System.Drawing.Size(90, 34)
+        Me.BtnNewReceipt1.Size = New System.Drawing.Size(146, 62)
         Me.BtnNewReceipt1.TabIndex = 10
         Me.BtnNewReceipt1.Tag = "New Invoice"
         Me.BtnNewReceipt1.Text = "New Invoice"
-        Me.BtnNewReceipt1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.BtnNewReceipt1.UseVisualStyleBackColor = True
+        Me.BtnNewReceipt1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        Me.BtnNewReceipt1.UseVisualStyleBackColor = False
         '
         'BtnView
         '
+        Me.BtnView.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
         Me.BtnView.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnView.ImageIndex = 2
-        Me.BtnView.ImageList = Me.ImageStatusbar
-        Me.BtnView.Location = New System.Drawing.Point(791, 7)
+        Me.BtnView.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnView.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnView.ForeColor = System.Drawing.Color.White
+        Me.BtnView.Image = CType(resources.GetObject("BtnView.Image"), System.Drawing.Image)
+        Me.BtnView.Location = New System.Drawing.Point(922, 4)
         Me.BtnView.Name = "BtnView"
-        Me.BtnView.Size = New System.Drawing.Size(82, 29)
+        Me.BtnView.Size = New System.Drawing.Size(134, 60)
         Me.BtnView.TabIndex = 8
-        Me.BtnView.Text = "View"
-        Me.BtnView.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.BtnView.UseVisualStyleBackColor = True
+        Me.BtnView.Text = "Preview"
+        Me.BtnView.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        Me.BtnView.UseVisualStyleBackColor = False
         '
         'DateTo
         '
         Me.DateTo.CustomFormat = "dd/MM/yyyy"
         Me.DateTo.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DateTo.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.DateTo.Location = New System.Drawing.Point(694, 12)
+        Me.DateTo.Location = New System.Drawing.Point(672, 40)
         Me.DateTo.Name = "DateTo"
         Me.DateTo.Size = New System.Drawing.Size(92, 23)
         Me.DateTo.TabIndex = 6
@@ -277,7 +293,7 @@ Partial Class MainOpticalShop
         Me.DateFrom.CustomFormat = "dd/MM/yyyy"
         Me.DateFrom.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DateFrom.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.DateFrom.Location = New System.Drawing.Point(571, 12)
+        Me.DateFrom.Location = New System.Drawing.Point(672, 11)
         Me.DateFrom.Name = "DateFrom"
         Me.DateFrom.Size = New System.Drawing.Size(91, 23)
         Me.DateFrom.TabIndex = 6
@@ -285,7 +301,7 @@ Partial Class MainOpticalShop
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(667, 19)
+        Me.Label2.Location = New System.Drawing.Point(633, 47)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(23, 13)
         Me.Label2.TabIndex = 5
@@ -294,7 +310,7 @@ Partial Class MainOpticalShop
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(537, 19)
+        Me.Label1.Location = New System.Drawing.Point(633, 18)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(33, 13)
         Me.Label1.TabIndex = 5
@@ -303,7 +319,7 @@ Partial Class MainOpticalShop
         'Splitter1
         '
         Me.Splitter1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Splitter1.Location = New System.Drawing.Point(0, 58)
+        Me.Splitter1.Location = New System.Drawing.Point(0, 73)
         Me.Splitter1.Name = "Splitter1"
         Me.Splitter1.Size = New System.Drawing.Size(1368, 3)
         Me.Splitter1.TabIndex = 7
@@ -316,7 +332,7 @@ Partial Class MainOpticalShop
         '
         Me.SplitContainer1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.SplitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel1
-        Me.SplitContainer1.Location = New System.Drawing.Point(0, 61)
+        Me.SplitContainer1.Location = New System.Drawing.Point(0, 76)
         Me.SplitContainer1.Name = "SplitContainer1"
         '
         'SplitContainer1.Panel1
@@ -326,8 +342,8 @@ Partial Class MainOpticalShop
         'SplitContainer1.Panel2
         '
         Me.SplitContainer1.Panel2.Controls.Add(Me.GridReceipt)
-        Me.SplitContainer1.Size = New System.Drawing.Size(1368, 501)
-        Me.SplitContainer1.SplitterDistance = 501
+        Me.SplitContainer1.Size = New System.Drawing.Size(1368, 486)
+        Me.SplitContainer1.SplitterDistance = 700
         Me.SplitContainer1.TabIndex = 8
         '
         'GridListWaitingPay
@@ -353,7 +369,7 @@ Partial Class MainOpticalShop
         Me.GridListWaitingPay.RecordNavigator = True
         Me.GridListWaitingPay.RowHeaderContent = Janus.Windows.GridEX.RowHeaderContent.RowIndex
         Me.GridListWaitingPay.RowHeaders = Janus.Windows.GridEX.InheritableBoolean.[True]
-        Me.GridListWaitingPay.Size = New System.Drawing.Size(501, 501)
+        Me.GridListWaitingPay.Size = New System.Drawing.Size(700, 486)
         Me.GridListWaitingPay.TabIndex = 4
         Me.GridListWaitingPay.VisualStyleManager = Me.VSForOpticalshop
         '

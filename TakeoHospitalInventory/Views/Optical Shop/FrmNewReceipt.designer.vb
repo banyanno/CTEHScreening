@@ -16,7 +16,9 @@ Partial Class FrmNewReceipt
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmNewReceipt))
+        Dim JanusColorScheme1 As Janus.Windows.Common.JanusColorScheme = New Janus.Windows.Common.JanusColorScheme
         Me.DateCreateReceipt = New System.Windows.Forms.DateTimePicker
         Me.Label2 = New System.Windows.Forms.Label
         Me.Label1 = New System.Windows.Forms.Label
@@ -39,16 +41,6 @@ Partial Class FrmNewReceipt
         Me.BtnAddCustomer = New Janus.Windows.EditControls.UIButton
         Me.TxtCustomerID = New System.Windows.Forms.TextBox
         Me.GridItemDetail = New System.Windows.Forms.DataGridView
-        Me.ColumnItemID = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.ColumnBarcode = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.ColumnName = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.ColumnPrice = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.ColumnQTY = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.SubTotal = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.SubTotalDolar = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.Picture = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.ItemCost = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.EXCHANGE_RATE = New System.Windows.Forms.DataGridViewTextBoxColumn
         Me.GroupBox3 = New System.Windows.Forms.GroupBox
         Me.GPIncomeType = New System.Windows.Forms.GroupBox
         Me.lblIspaid = New System.Windows.Forms.Label
@@ -128,6 +120,35 @@ Partial Class FrmNewReceipt
         Me.ErrReceipt = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.BgSaveAndPrinting = New System.ComponentModel.BackgroundWorker
         Me.Label14 = New System.Windows.Forms.Label
+        Me.ColumnItemID = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.ColumnBarcode = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.ColumnName = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.ColumnPrice = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.ColumnQTY = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.SubTotal = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.SubTotalDolar = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.Picture = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.ItemCost = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.EXCHANGE_RATE = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.BtnClose = New System.Windows.Forms.Button
+        Me.BtnSave = New System.Windows.Forms.Button
+        Me.GroupBox9 = New System.Windows.Forms.GroupBox
+        Me.lblCost = New System.Windows.Forms.Label
+        Me.TxtUnitInstock = New System.Windows.Forms.TextBox
+        Me.Label15 = New System.Windows.Forms.Label
+        Me.TxtBarcode = New System.Windows.Forms.TextBox
+        Me.LblItemID = New System.Windows.Forms.Label
+        Me.PictItem = New System.Windows.Forms.PictureBox
+        Me.TxtItemPrice = New System.Windows.Forms.TextBox
+        Me.LblPrice = New System.Windows.Forms.Label
+        Me.TxtItemQTY = New System.Windows.Forms.TextBox
+        Me.Label17 = New System.Windows.Forms.Label
+        Me.TxtItemName = New System.Windows.Forms.TextBox
+        Me.Label19 = New System.Windows.Forms.Label
+        Me.Label20 = New System.Windows.Forms.Label
+        Me.VisualStyleManager1 = New Janus.Windows.Common.VisualStyleManager(Me.components)
+        Me.UiTab1 = New Janus.Windows.UI.Tab.UITab
+        Me.UiTabPage2 = New Janus.Windows.UI.Tab.UITabPage
         Me.GroupBox1.SuspendLayout()
         CType(Me.GridItemDetail, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox3.SuspendLayout()
@@ -145,6 +166,11 @@ Partial Class FrmNewReceipt
         Me.GroupPayCorrency.SuspendLayout()
         Me.GroupBox7.SuspendLayout()
         CType(Me.ErrReceipt, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox9.SuspendLayout()
+        CType(Me.PictItem, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.UiTab1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.UiTab1.SuspendLayout()
+        Me.UiTabPage2.SuspendLayout()
         Me.SuspendLayout()
         '
         'DateCreateReceipt
@@ -199,7 +225,7 @@ Partial Class FrmNewReceipt
         Me.GroupBox1.Controls.Add(Me.Label5)
         Me.GroupBox1.Controls.Add(Me.Label4)
         Me.GroupBox1.Controls.Add(Me.BtnAddCustomer)
-        Me.GroupBox1.Location = New System.Drawing.Point(8, 33)
+        Me.GroupBox1.Location = New System.Drawing.Point(8, 9)
         Me.GroupBox1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
@@ -233,6 +259,7 @@ Partial Class FrmNewReceipt
         '
         'TxtCusNameEng
         '
+        Me.TxtCusNameEng.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TxtCusNameEng.Font = New System.Drawing.Font("Microsoft Sans Serif", 17.0!)
         Me.TxtCusNameEng.Location = New System.Drawing.Point(309, 21)
         Me.TxtCusNameEng.Name = "TxtCusNameEng"
@@ -246,9 +273,12 @@ Partial Class FrmNewReceipt
         Me.BtnSelectPatient.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.BtnSelectPatient.Name = "BtnSelectPatient"
         Me.BtnSelectPatient.Size = New System.Drawing.Size(119, 34)
+        Me.BtnSelectPatient.StateStyles.FormatStyle.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
+        Me.BtnSelectPatient.StateStyles.FormatStyle.ForeColor = System.Drawing.Color.White
         Me.BtnSelectPatient.TabIndex = 6
         Me.BtnSelectPatient.Text = "Select New Patient"
         Me.BtnSelectPatient.Visible = False
+        Me.BtnSelectPatient.VisualStyleManager = Me.VisualStyleManager1
         '
         'Label3
         '
@@ -266,12 +296,17 @@ Partial Class FrmNewReceipt
         Me.BtnCleanCustomer.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.BtnCleanCustomer.Name = "BtnCleanCustomer"
         Me.BtnCleanCustomer.Size = New System.Drawing.Size(109, 35)
+        Me.BtnCleanCustomer.StateStyles.FormatStyle.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
+        Me.BtnCleanCustomer.StateStyles.FormatStyle.ForeColor = System.Drawing.Color.White
         Me.BtnCleanCustomer.TabIndex = 8
         Me.BtnCleanCustomer.Text = "Clean Cus-info"
+        Me.BtnCleanCustomer.VisualStyle = Janus.Windows.UI.VisualStyle.Standard
+        Me.BtnCleanCustomer.VisualStyleManager = Me.VisualStyleManager1
         '
         'txtAddress
         '
         Me.txtAddress.BackColor = System.Drawing.Color.White
+        Me.txtAddress.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtAddress.Location = New System.Drawing.Point(72, 89)
         Me.txtAddress.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtAddress.Multiline = True
@@ -301,6 +336,7 @@ Partial Class FrmNewReceipt
         'TxtAge
         '
         Me.TxtAge.BackColor = System.Drawing.Color.White
+        Me.TxtAge.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TxtAge.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtAge.Location = New System.Drawing.Point(447, 57)
         Me.TxtAge.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
@@ -312,6 +348,7 @@ Partial Class FrmNewReceipt
         'TxtSex
         '
         Me.TxtSex.BackColor = System.Drawing.Color.White
+        Me.TxtSex.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TxtSex.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtSex.Location = New System.Drawing.Point(300, 58)
         Me.TxtSex.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
@@ -323,6 +360,7 @@ Partial Class FrmNewReceipt
         'TxtCusOccupation
         '
         Me.TxtCusOccupation.BackColor = System.Drawing.Color.White
+        Me.TxtCusOccupation.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TxtCusOccupation.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtCusOccupation.Location = New System.Drawing.Point(72, 59)
         Me.TxtCusOccupation.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
@@ -334,6 +372,7 @@ Partial Class FrmNewReceipt
         'TxtCustomerName
         '
         Me.TxtCustomerName.BackColor = System.Drawing.Color.White
+        Me.TxtCustomerName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TxtCustomerName.Font = New System.Drawing.Font("Limon S1", 17.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtCustomerName.Location = New System.Drawing.Point(72, 21)
         Me.TxtCustomerName.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
@@ -367,14 +406,17 @@ Partial Class FrmNewReceipt
         Me.BtnAddCustomer.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.BtnAddCustomer.Name = "BtnAddCustomer"
         Me.BtnAddCustomer.Size = New System.Drawing.Size(161, 35)
+        Me.BtnAddCustomer.StateStyles.FormatStyle.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
+        Me.BtnAddCustomer.StateStyles.FormatStyle.ForeColor = System.Drawing.Color.White
         Me.BtnAddCustomer.TabIndex = 7
         Me.BtnAddCustomer.Text = "Select New Customer And Old Patient"
+        Me.BtnAddCustomer.VisualStyleManager = Me.VisualStyleManager1
         '
         'TxtCustomerID
         '
         Me.TxtCustomerID.BackColor = System.Drawing.Color.White
         Me.TxtCustomerID.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtCustomerID.Location = New System.Drawing.Point(382, 18)
+        Me.TxtCustomerID.Location = New System.Drawing.Point(378, 18)
         Me.TxtCustomerID.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.TxtCustomerID.Name = "TxtCustomerID"
         Me.TxtCustomerID.ReadOnly = True
@@ -389,105 +431,26 @@ Partial Class FrmNewReceipt
         Me.GridItemDetail.AllowUserToDeleteRows = False
         Me.GridItemDetail.BackgroundColor = System.Drawing.SystemColors.Window
         Me.GridItemDetail.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.GridItemDetail.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(67, Byte), Integer), CType(CType(82, Byte), Integer))
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.GridItemDetail.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.GridItemDetail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.GridItemDetail.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ColumnItemID, Me.ColumnBarcode, Me.ColumnName, Me.ColumnPrice, Me.ColumnQTY, Me.SubTotal, Me.SubTotalDolar, Me.Picture, Me.ItemCost, Me.EXCHANGE_RATE})
-        Me.GridItemDetail.Location = New System.Drawing.Point(11, 217)
+        Me.GridItemDetail.EnableHeadersVisualStyles = False
+        Me.GridItemDetail.Location = New System.Drawing.Point(433, 199)
         Me.GridItemDetail.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.GridItemDetail.Name = "GridItemDetail"
         Me.GridItemDetail.ReadOnly = True
         Me.GridItemDetail.RowTemplate.Height = 30
         Me.GridItemDetail.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.GridItemDetail.Size = New System.Drawing.Size(1101, 221)
+        Me.GridItemDetail.Size = New System.Drawing.Size(642, 221)
         Me.GridItemDetail.TabIndex = 3
-        '
-        'ColumnItemID
-        '
-        Me.ColumnItemID.DataPropertyName = "ColumnItemID"
-        Me.ColumnItemID.HeaderText = "ColumnItemID"
-        Me.ColumnItemID.Name = "ColumnItemID"
-        Me.ColumnItemID.ReadOnly = True
-        Me.ColumnItemID.Visible = False
-        Me.ColumnItemID.Width = 50
-        '
-        'ColumnBarcode
-        '
-        Me.ColumnBarcode.DataPropertyName = "ColumnBarcode"
-        Me.ColumnBarcode.HeaderText = "Barcode"
-        Me.ColumnBarcode.Name = "ColumnBarcode"
-        Me.ColumnBarcode.ReadOnly = True
-        Me.ColumnBarcode.Width = 200
-        '
-        'ColumnName
-        '
-        Me.ColumnName.DataPropertyName = "ColumnName"
-        Me.ColumnName.HeaderText = "Name"
-        Me.ColumnName.Name = "ColumnName"
-        Me.ColumnName.ReadOnly = True
-        Me.ColumnName.Width = 200
-        '
-        'ColumnPrice
-        '
-        Me.ColumnPrice.DataPropertyName = "ColumnPrice"
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        Me.ColumnPrice.DefaultCellStyle = DataGridViewCellStyle1
-        Me.ColumnPrice.HeaderText = "Price"
-        Me.ColumnPrice.Name = "ColumnPrice"
-        Me.ColumnPrice.ReadOnly = True
-        '
-        'ColumnQTY
-        '
-        Me.ColumnQTY.DataPropertyName = "ColumnQTY"
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        Me.ColumnQTY.DefaultCellStyle = DataGridViewCellStyle2
-        Me.ColumnQTY.HeaderText = "Quality"
-        Me.ColumnQTY.Name = "ColumnQTY"
-        Me.ColumnQTY.ReadOnly = True
-        '
-        'SubTotal
-        '
-        Me.SubTotal.DataPropertyName = "SubTotalReal"
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle3.Format = "R"
-        DataGridViewCellStyle3.NullValue = Nothing
-        Me.SubTotal.DefaultCellStyle = DataGridViewCellStyle3
-        Me.SubTotal.HeaderText = "Sub Total R"
-        Me.SubTotal.Name = "SubTotal"
-        Me.SubTotal.ReadOnly = True
-        Me.SubTotal.Width = 150
-        '
-        'SubTotalDolar
-        '
-        Me.SubTotalDolar.DataPropertyName = "SubTotalDolar"
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        Me.SubTotalDolar.DefaultCellStyle = DataGridViewCellStyle4
-        Me.SubTotalDolar.HeaderText = "Sub Total $"
-        Me.SubTotalDolar.Name = "SubTotalDolar"
-        Me.SubTotalDolar.ReadOnly = True
-        Me.SubTotalDolar.Width = 150
-        '
-        'Picture
-        '
-        Me.Picture.DataPropertyName = "Picture"
-        Me.Picture.HeaderText = "Picture"
-        Me.Picture.Name = "Picture"
-        Me.Picture.ReadOnly = True
-        Me.Picture.Visible = False
-        '
-        'ItemCost
-        '
-        Me.ItemCost.DataPropertyName = "ItemCost"
-        Me.ItemCost.HeaderText = "ItemCost"
-        Me.ItemCost.Name = "ItemCost"
-        Me.ItemCost.ReadOnly = True
-        Me.ItemCost.Visible = False
-        '
-        'EXCHANGE_RATE
-        '
-        Me.EXCHANGE_RATE.DataPropertyName = "EXCHANGE_RATE"
-        Me.EXCHANGE_RATE.HeaderText = "EXCHANGE_RATE"
-        Me.EXCHANGE_RATE.Name = "EXCHANGE_RATE"
-        Me.EXCHANGE_RATE.ReadOnly = True
-        Me.EXCHANGE_RATE.Visible = False
         '
         'GroupBox3
         '
@@ -495,11 +458,11 @@ Partial Class FrmNewReceipt
         Me.GroupBox3.Controls.Add(Me.GroupBox2)
         Me.GroupBox3.Controls.Add(Me.GroupBox6)
         Me.GroupBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox3.Location = New System.Drawing.Point(11, 442)
+        Me.GroupBox3.Location = New System.Drawing.Point(8, 424)
         Me.GroupBox3.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.GroupBox3.Size = New System.Drawing.Size(1101, 238)
+        Me.GroupBox3.Size = New System.Drawing.Size(642, 238)
         Me.GroupBox3.TabIndex = 6
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "In payment for"
@@ -528,7 +491,7 @@ Partial Class FrmNewReceipt
         Me.GPIncomeType.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.GPIncomeType.Name = "GPIncomeType"
         Me.GPIncomeType.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.GPIncomeType.Size = New System.Drawing.Size(1087, 155)
+        Me.GPIncomeType.Size = New System.Drawing.Size(628, 155)
         Me.GPIncomeType.TabIndex = 2
         Me.GPIncomeType.TabStop = False
         Me.GPIncomeType.Text = "Select In payment for"
@@ -545,6 +508,7 @@ Partial Class FrmNewReceipt
         '
         'GroupBox10
         '
+        Me.GroupBox10.Controls.Add(Me.Label14)
         Me.GroupBox10.Controls.Add(Me.DateConsult)
         Me.GroupBox10.Controls.Add(Me.LblConsultID)
         Me.GroupBox10.Controls.Add(Me.LblSendBy)
@@ -559,10 +523,11 @@ Partial Class FrmNewReceipt
         Me.GroupBox10.ForeColor = System.Drawing.Color.Red
         Me.GroupBox10.Location = New System.Drawing.Point(752, 13)
         Me.GroupBox10.Name = "GroupBox10"
-        Me.GroupBox10.Size = New System.Drawing.Size(326, 136)
+        Me.GroupBox10.Size = New System.Drawing.Size(90, 136)
         Me.GroupBox10.TabIndex = 211
         Me.GroupBox10.TabStop = False
         Me.GroupBox10.Text = "Information From Consult"
+        Me.GroupBox10.Visible = False
         '
         'DateConsult
         '
@@ -741,7 +706,7 @@ Partial Class FrmNewReceipt
         '
         Me.TxtCustomerNo.BackColor = System.Drawing.Color.White
         Me.TxtCustomerNo.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtCustomerNo.Location = New System.Drawing.Point(382, 53)
+        Me.TxtCustomerNo.Location = New System.Drawing.Point(376, 53)
         Me.TxtCustomerNo.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.TxtCustomerNo.Name = "TxtCustomerNo"
         Me.TxtCustomerNo.ReadOnly = True
@@ -780,7 +745,7 @@ Partial Class FrmNewReceipt
         Me.GroupBox8.Controls.Add(Me.cmdAddRate)
         Me.GroupBox8.Controls.Add(Me.txtRate)
         Me.GroupBox8.Font = New System.Drawing.Font("Kh Battambang", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox8.Location = New System.Drawing.Point(465, 6)
+        Me.GroupBox8.Location = New System.Drawing.Point(447, 6)
         Me.GroupBox8.Name = "GroupBox8"
         Me.GroupBox8.Size = New System.Drawing.Size(164, 50)
         Me.GroupBox8.TabIndex = 9
@@ -816,13 +781,14 @@ Partial Class FrmNewReceipt
         '
         Me.ChDonation.AutoSize = True
         Me.ChDonation.Enabled = False
-        Me.ChDonation.Location = New System.Drawing.Point(474, 63)
+        Me.ChDonation.Location = New System.Drawing.Point(673, 51)
         Me.ChDonation.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.ChDonation.Name = "ChDonation"
         Me.ChDonation.Size = New System.Drawing.Size(102, 17)
         Me.ChDonation.TabIndex = 11
         Me.ChDonation.Text = "Source of Fund:"
         Me.ChDonation.UseVisualStyleBackColor = True
+        Me.ChDonation.Visible = False
         '
         'RadFundRaising
         '
@@ -859,11 +825,12 @@ Partial Class FrmNewReceipt
         Me.GroupBox5.Controls.Add(Me.Label12)
         Me.GroupBox5.Controls.Add(Me.Label10)
         Me.GroupBox5.Controls.Add(Me.Label13)
-        Me.GroupBox5.Location = New System.Drawing.Point(467, 65)
+        Me.GroupBox5.Location = New System.Drawing.Point(666, 53)
         Me.GroupBox5.Name = "GroupBox5"
-        Me.GroupBox5.Size = New System.Drawing.Size(279, 74)
+        Me.GroupBox5.Size = New System.Drawing.Size(51, 74)
         Me.GroupBox5.TabIndex = 10
         Me.GroupBox5.TabStop = False
+        Me.GroupBox5.Visible = False
         '
         'TxtDonateAmount
         '
@@ -999,10 +966,10 @@ Partial Class FrmNewReceipt
         Me.GroupBox2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.GroupBox2.Size = New System.Drawing.Size(504, 57)
+        Me.GroupBox2.Size = New System.Drawing.Size(268, 56)
         Me.GroupBox2.TabIndex = 0
         Me.GroupBox2.TabStop = False
-        Me.GroupBox2.Text = "Riel"
+        Me.GroupBox2.Text = "Total Riel"
         '
         'TxtTotalAsReal
         '
@@ -1011,31 +978,31 @@ Partial Class FrmNewReceipt
         Me.TxtTotalAsReal.Location = New System.Drawing.Point(9, 17)
         Me.TxtTotalAsReal.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.TxtTotalAsReal.Name = "TxtTotalAsReal"
-        Me.TxtTotalAsReal.Size = New System.Drawing.Size(393, 30)
+        Me.TxtTotalAsReal.Size = New System.Drawing.Size(226, 30)
         Me.TxtTotalAsReal.TabIndex = 0
         Me.TxtTotalAsReal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'Label18
         '
         Me.Label18.AutoSize = True
-        Me.Label18.Location = New System.Drawing.Point(408, 29)
+        Me.Label18.Location = New System.Drawing.Point(245, 29)
         Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(58, 13)
+        Me.Label18.Size = New System.Drawing.Size(15, 13)
         Me.Label18.TabIndex = 0
-        Me.Label18.Text = "Total (Riel)"
+        Me.Label18.Text = "R"
         '
         'GroupBox6
         '
         Me.GroupBox6.Controls.Add(Me.TxtTotalAsDolar)
         Me.GroupBox6.Controls.Add(Me.Label8)
-        Me.GroupBox6.Location = New System.Drawing.Point(518, 15)
+        Me.GroupBox6.Location = New System.Drawing.Point(292, 16)
         Me.GroupBox6.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.GroupBox6.Name = "GroupBox6"
         Me.GroupBox6.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.GroupBox6.Size = New System.Drawing.Size(577, 56)
+        Me.GroupBox6.Size = New System.Drawing.Size(268, 56)
         Me.GroupBox6.TabIndex = 1
         Me.GroupBox6.TabStop = False
-        Me.GroupBox6.Text = "Dolar"
+        Me.GroupBox6.Text = "Total Dolar"
         '
         'TxtTotalAsDolar
         '
@@ -1045,24 +1012,24 @@ Partial Class FrmNewReceipt
         Me.TxtTotalAsDolar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.TxtTotalAsDolar.Name = "TxtTotalAsDolar"
         Me.TxtTotalAsDolar.ReadOnly = True
-        Me.TxtTotalAsDolar.Size = New System.Drawing.Size(440, 30)
+        Me.TxtTotalAsDolar.Size = New System.Drawing.Size(226, 30)
         Me.TxtTotalAsDolar.TabIndex = 0
         Me.TxtTotalAsDolar.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(461, 29)
+        Me.Label8.Location = New System.Drawing.Point(247, 29)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(65, 13)
+        Me.Label8.Size = New System.Drawing.Size(13, 13)
         Me.Label8.TabIndex = 0
-        Me.Label8.Text = "Total (Dolar)"
+        Me.Label8.Text = "$"
         '
         'BtnAddItem
         '
         Me.BtnAddItem.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BtnAddItem.Image = Global.TakeoHospitalInventory.My.Resources.Resources._new
-        Me.BtnAddItem.Location = New System.Drawing.Point(1116, 217)
+        Me.BtnAddItem.Location = New System.Drawing.Point(1087, 230)
         Me.BtnAddItem.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.BtnAddItem.Name = "BtnAddItem"
         Me.BtnAddItem.Size = New System.Drawing.Size(38, 31)
@@ -1073,7 +1040,7 @@ Partial Class FrmNewReceipt
         '
         Me.BtnRemoveItem.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BtnRemoveItem.Image = Global.TakeoHospitalInventory.My.Resources.Resources.cross_circle
-        Me.BtnRemoveItem.Location = New System.Drawing.Point(1116, 254)
+        Me.BtnRemoveItem.Location = New System.Drawing.Point(1087, 267)
         Me.BtnRemoveItem.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.BtnRemoveItem.Name = "BtnRemoveItem"
         Me.BtnRemoveItem.Size = New System.Drawing.Size(38, 31)
@@ -1093,9 +1060,10 @@ Partial Class FrmNewReceipt
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
         Me.ToolStrip1.Name = "ToolStrip1"
         Me.ToolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional
-        Me.ToolStrip1.Size = New System.Drawing.Size(1160, 27)
+        Me.ToolStrip1.Size = New System.Drawing.Size(1466, 27)
         Me.ToolStrip1.TabIndex = 0
         Me.ToolStrip1.Text = "ToolStrip1"
+        Me.ToolStrip1.Visible = False
         '
         'BtnSaveReceipt
         '
@@ -1140,9 +1108,10 @@ Partial Class FrmNewReceipt
         Me.GroupBox4.Controls.Add(Me.TxtReceiptNo)
         Me.GroupBox4.Controls.Add(Me.ChPrintPreview)
         Me.GroupBox4.Controls.Add(Me.Label1)
+        Me.GroupBox4.Controls.Add(Me.TxtGetBarcode)
         Me.GroupBox4.Controls.Add(Me.DateCreateReceipt)
         Me.GroupBox4.Controls.Add(Me.Label2)
-        Me.GroupBox4.Location = New System.Drawing.Point(557, 33)
+        Me.GroupBox4.Location = New System.Drawing.Point(556, 11)
         Me.GroupBox4.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.GroupBox4.Name = "GroupBox4"
         Me.GroupBox4.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
@@ -1172,7 +1141,7 @@ Partial Class FrmNewReceipt
         Me.LblReceiptID.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.LblReceiptID.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold)
         Me.LblReceiptID.ForeColor = System.Drawing.Color.Red
-        Me.LblReceiptID.Location = New System.Drawing.Point(168, 69)
+        Me.LblReceiptID.Location = New System.Drawing.Point(7, 84)
         Me.LblReceiptID.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.LblReceiptID.Name = "LblReceiptID"
         Me.LblReceiptID.Size = New System.Drawing.Size(21, 22)
@@ -1230,6 +1199,7 @@ Partial Class FrmNewReceipt
         'TxtSocialAmount
         '
         Me.TxtSocialAmount.BackColor = System.Drawing.Color.White
+        Me.TxtSocialAmount.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TxtSocialAmount.Enabled = False
         Me.TxtSocialAmount.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtSocialAmount.Location = New System.Drawing.Point(69, 52)
@@ -1250,6 +1220,7 @@ Partial Class FrmNewReceipt
         'TxtFullAmount
         '
         Me.TxtFullAmount.BackColor = System.Drawing.Color.White
+        Me.TxtFullAmount.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TxtFullAmount.Enabled = False
         Me.TxtFullAmount.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
         Me.TxtFullAmount.Location = New System.Drawing.Point(69, 21)
@@ -1310,6 +1281,7 @@ Partial Class FrmNewReceipt
         'TxtNumGlasses
         '
         Me.TxtNumGlasses.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.TxtNumGlasses.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TxtNumGlasses.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
         Me.TxtNumGlasses.Location = New System.Drawing.Point(81, 14)
         Me.TxtNumGlasses.Name = "TxtNumGlasses"
@@ -1363,7 +1335,7 @@ Partial Class FrmNewReceipt
         '
         'TxtGetBarcode
         '
-        Me.TxtGetBarcode.Location = New System.Drawing.Point(704, 118)
+        Me.TxtGetBarcode.Location = New System.Drawing.Point(8, 86)
         Me.TxtGetBarcode.Name = "TxtGetBarcode"
         Me.TxtGetBarcode.Size = New System.Drawing.Size(185, 20)
         Me.TxtGetBarcode.TabIndex = 16
@@ -1379,26 +1351,374 @@ Partial Class FrmNewReceipt
         '
         Me.Label14.AutoSize = True
         Me.Label14.ForeColor = System.Drawing.Color.Blue
-        Me.Label14.Location = New System.Drawing.Point(965, 557)
+        Me.Label14.Location = New System.Drawing.Point(194, 87)
         Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(71, 13)
+        Me.Label14.Size = New System.Drawing.Size(106, 17)
         Me.Label14.TabIndex = 9
         Me.Label14.Text = "Date Consult:"
+        '
+        'ColumnItemID
+        '
+        Me.ColumnItemID.DataPropertyName = "ColumnItemID"
+        Me.ColumnItemID.HeaderText = "ColumnItemID"
+        Me.ColumnItemID.Name = "ColumnItemID"
+        Me.ColumnItemID.ReadOnly = True
+        Me.ColumnItemID.Visible = False
+        Me.ColumnItemID.Width = 50
+        '
+        'ColumnBarcode
+        '
+        Me.ColumnBarcode.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.ColumnBarcode.DataPropertyName = "ColumnBarcode"
+        Me.ColumnBarcode.HeaderText = "Barcode"
+        Me.ColumnBarcode.Name = "ColumnBarcode"
+        Me.ColumnBarcode.ReadOnly = True
+        '
+        'ColumnName
+        '
+        Me.ColumnName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.ColumnName.DataPropertyName = "ColumnName"
+        Me.ColumnName.HeaderText = "Name"
+        Me.ColumnName.Name = "ColumnName"
+        Me.ColumnName.ReadOnly = True
+        Me.ColumnName.Width = 150
+        '
+        'ColumnPrice
+        '
+        Me.ColumnPrice.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.ColumnPrice.DataPropertyName = "ColumnPrice"
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        Me.ColumnPrice.DefaultCellStyle = DataGridViewCellStyle2
+        Me.ColumnPrice.HeaderText = "Price"
+        Me.ColumnPrice.Name = "ColumnPrice"
+        Me.ColumnPrice.ReadOnly = True
+        Me.ColumnPrice.Width = 50
+        '
+        'ColumnQTY
+        '
+        Me.ColumnQTY.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.ColumnQTY.DataPropertyName = "ColumnQTY"
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        Me.ColumnQTY.DefaultCellStyle = DataGridViewCellStyle3
+        Me.ColumnQTY.HeaderText = "Qty"
+        Me.ColumnQTY.Name = "ColumnQTY"
+        Me.ColumnQTY.ReadOnly = True
+        Me.ColumnQTY.Width = 50
+        '
+        'SubTotal
+        '
+        Me.SubTotal.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.SubTotal.DataPropertyName = "SubTotalReal"
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle4.Format = "R"
+        DataGridViewCellStyle4.NullValue = Nothing
+        Me.SubTotal.DefaultCellStyle = DataGridViewCellStyle4
+        Me.SubTotal.HeaderText = "Sub Total R"
+        Me.SubTotal.Name = "SubTotal"
+        Me.SubTotal.ReadOnly = True
+        Me.SubTotal.Width = 120
+        '
+        'SubTotalDolar
+        '
+        Me.SubTotalDolar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.SubTotalDolar.DataPropertyName = "SubTotalDolar"
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        Me.SubTotalDolar.DefaultCellStyle = DataGridViewCellStyle5
+        Me.SubTotalDolar.HeaderText = "Sub Total $"
+        Me.SubTotalDolar.Name = "SubTotalDolar"
+        Me.SubTotalDolar.ReadOnly = True
+        Me.SubTotalDolar.Width = 120
+        '
+        'Picture
+        '
+        Me.Picture.DataPropertyName = "Picture"
+        Me.Picture.HeaderText = "Picture"
+        Me.Picture.Name = "Picture"
+        Me.Picture.ReadOnly = True
+        Me.Picture.Visible = False
+        '
+        'ItemCost
+        '
+        Me.ItemCost.DataPropertyName = "ItemCost"
+        Me.ItemCost.HeaderText = "ItemCost"
+        Me.ItemCost.Name = "ItemCost"
+        Me.ItemCost.ReadOnly = True
+        Me.ItemCost.Visible = False
+        '
+        'EXCHANGE_RATE
+        '
+        Me.EXCHANGE_RATE.DataPropertyName = "EXCHANGE_RATE"
+        Me.EXCHANGE_RATE.HeaderText = "EXCHANGE_RATE"
+        Me.EXCHANGE_RATE.Name = "EXCHANGE_RATE"
+        Me.EXCHANGE_RATE.ReadOnly = True
+        Me.EXCHANGE_RATE.Visible = False
+        '
+        'BtnClose
+        '
+        Me.BtnClose.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
+        Me.BtnClose.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnClose.FlatAppearance.BorderSize = 0
+        Me.BtnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnClose.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnClose.ForeColor = System.Drawing.Color.White
+        Me.BtnClose.Image = CType(resources.GetObject("BtnClose.Image"), System.Drawing.Image)
+        Me.BtnClose.Location = New System.Drawing.Point(1238, 312)
+        Me.BtnClose.Name = "BtnClose"
+        Me.BtnClose.Size = New System.Drawing.Size(126, 57)
+        Me.BtnClose.TabIndex = 18
+        Me.BtnClose.Text = "Close"
+        Me.BtnClose.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        Me.BtnClose.UseVisualStyleBackColor = False
+        '
+        'BtnSave
+        '
+        Me.BtnSave.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
+        Me.BtnSave.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnSave.FlatAppearance.BorderSize = 0
+        Me.BtnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnSave.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnSave.ForeColor = System.Drawing.Color.White
+        Me.BtnSave.Image = CType(resources.GetObject("BtnSave.Image"), System.Drawing.Image)
+        Me.BtnSave.Location = New System.Drawing.Point(1104, 312)
+        Me.BtnSave.Name = "BtnSave"
+        Me.BtnSave.Size = New System.Drawing.Size(126, 57)
+        Me.BtnSave.TabIndex = 17
+        Me.BtnSave.Text = "Save"
+        Me.BtnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        Me.BtnSave.UseVisualStyleBackColor = False
+        '
+        'GroupBox9
+        '
+        Me.GroupBox9.Controls.Add(Me.lblCost)
+        Me.GroupBox9.Controls.Add(Me.TxtUnitInstock)
+        Me.GroupBox9.Controls.Add(Me.Label15)
+        Me.GroupBox9.Controls.Add(Me.TxtBarcode)
+        Me.GroupBox9.Controls.Add(Me.LblItemID)
+        Me.GroupBox9.Controls.Add(Me.PictItem)
+        Me.GroupBox9.Controls.Add(Me.TxtItemPrice)
+        Me.GroupBox9.Controls.Add(Me.LblPrice)
+        Me.GroupBox9.Controls.Add(Me.TxtItemQTY)
+        Me.GroupBox9.Controls.Add(Me.Label17)
+        Me.GroupBox9.Controls.Add(Me.TxtItemName)
+        Me.GroupBox9.Controls.Add(Me.Label19)
+        Me.GroupBox9.Controls.Add(Me.Label20)
+        Me.GroupBox9.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox9.Location = New System.Drawing.Point(1158, 61)
+        Me.GroupBox9.Margin = New System.Windows.Forms.Padding(2)
+        Me.GroupBox9.Name = "GroupBox9"
+        Me.GroupBox9.Padding = New System.Windows.Forms.Padding(2)
+        Me.GroupBox9.Size = New System.Drawing.Size(418, 221)
+        Me.GroupBox9.TabIndex = 19
+        Me.GroupBox9.TabStop = False
+        Me.GroupBox9.Text = "Item Information"
+        '
+        'lblCost
+        '
+        Me.lblCost.AutoSize = True
+        Me.lblCost.Location = New System.Drawing.Point(16, 189)
+        Me.lblCost.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblCost.Name = "lblCost"
+        Me.lblCost.Size = New System.Drawing.Size(16, 17)
+        Me.lblCost.TabIndex = 18
+        Me.lblCost.Text = "0"
+        Me.lblCost.Visible = False
+        '
+        'TxtUnitInstock
+        '
+        Me.TxtUnitInstock.BackColor = System.Drawing.Color.Silver
+        Me.TxtUnitInstock.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TxtUnitInstock.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtUnitInstock.Location = New System.Drawing.Point(119, 153)
+        Me.TxtUnitInstock.Margin = New System.Windows.Forms.Padding(2)
+        Me.TxtUnitInstock.Name = "TxtUnitInstock"
+        Me.TxtUnitInstock.ReadOnly = True
+        Me.TxtUnitInstock.Size = New System.Drawing.Size(274, 27)
+        Me.TxtUnitInstock.TabIndex = 17
+        Me.TxtUnitInstock.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.Location = New System.Drawing.Point(6, 158)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(91, 17)
+        Me.Label15.TabIndex = 16
+        Me.Label15.Text = "Unit In Stock:"
+        '
+        'TxtBarcode
+        '
+        Me.TxtBarcode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TxtBarcode.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtBarcode.Location = New System.Drawing.Point(119, 27)
+        Me.TxtBarcode.Margin = New System.Windows.Forms.Padding(2)
+        Me.TxtBarcode.Name = "TxtBarcode"
+        Me.TxtBarcode.Size = New System.Drawing.Size(274, 27)
+        Me.TxtBarcode.TabIndex = 0
+        '
+        'LblItemID
+        '
+        Me.LblItemID.AutoSize = True
+        Me.LblItemID.Location = New System.Drawing.Point(18, 166)
+        Me.LblItemID.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.LblItemID.Name = "LblItemID"
+        Me.LblItemID.Size = New System.Drawing.Size(16, 17)
+        Me.LblItemID.TabIndex = 14
+        Me.LblItemID.Text = "0"
+        Me.LblItemID.Visible = False
+        '
+        'PictItem
+        '
+        Me.PictItem.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.PictItem.Location = New System.Drawing.Point(84, 173)
+        Me.PictItem.Margin = New System.Windows.Forms.Padding(2)
+        Me.PictItem.Name = "PictItem"
+        Me.PictItem.Size = New System.Drawing.Size(10, 33)
+        Me.PictItem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictItem.TabIndex = 8
+        Me.PictItem.TabStop = False
+        Me.PictItem.Visible = False
+        '
+        'TxtItemPrice
+        '
+        Me.TxtItemPrice.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.TxtItemPrice.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TxtItemPrice.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtItemPrice.Location = New System.Drawing.Point(119, 90)
+        Me.TxtItemPrice.Margin = New System.Windows.Forms.Padding(2)
+        Me.TxtItemPrice.Name = "TxtItemPrice"
+        Me.TxtItemPrice.ReadOnly = True
+        Me.TxtItemPrice.Size = New System.Drawing.Size(274, 27)
+        Me.TxtItemPrice.TabIndex = 2
+        Me.TxtItemPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'LblPrice
+        '
+        Me.LblPrice.AutoSize = True
+        Me.LblPrice.Location = New System.Drawing.Point(6, 99)
+        Me.LblPrice.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.LblPrice.Name = "LblPrice"
+        Me.LblPrice.Size = New System.Drawing.Size(75, 17)
+        Me.LblPrice.TabIndex = 3
+        Me.LblPrice.Text = "Price ($): *"
+        '
+        'TxtItemQTY
+        '
+        Me.TxtItemQTY.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.TxtItemQTY.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TxtItemQTY.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtItemQTY.Location = New System.Drawing.Point(119, 120)
+        Me.TxtItemQTY.Margin = New System.Windows.Forms.Padding(2)
+        Me.TxtItemQTY.Name = "TxtItemQTY"
+        Me.TxtItemQTY.Size = New System.Drawing.Size(274, 27)
+        Me.TxtItemQTY.TabIndex = 3
+        Me.TxtItemQTY.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'Label17
+        '
+        Me.Label17.AutoSize = True
+        Me.Label17.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label17.Location = New System.Drawing.Point(6, 129)
+        Me.Label17.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(62, 15)
+        Me.Label17.TabIndex = 3
+        Me.Label17.Text = "Quantity: *"
+        '
+        'TxtItemName
+        '
+        Me.TxtItemName.BackColor = System.Drawing.Color.White
+        Me.TxtItemName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TxtItemName.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtItemName.Location = New System.Drawing.Point(119, 60)
+        Me.TxtItemName.Margin = New System.Windows.Forms.Padding(2)
+        Me.TxtItemName.Name = "TxtItemName"
+        Me.TxtItemName.ReadOnly = True
+        Me.TxtItemName.Size = New System.Drawing.Size(274, 27)
+        Me.TxtItemName.TabIndex = 1
+        '
+        'Label19
+        '
+        Me.Label19.AutoSize = True
+        Me.Label19.Location = New System.Drawing.Point(6, 69)
+        Me.Label19.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label19.Name = "Label19"
+        Me.Label19.Size = New System.Drawing.Size(88, 17)
+        Me.Label19.TabIndex = 1
+        Me.Label19.Text = "Item Name: *"
+        '
+        'Label20
+        '
+        Me.Label20.AutoSize = True
+        Me.Label20.Location = New System.Drawing.Point(6, 35)
+        Me.Label20.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label20.Name = "Label20"
+        Me.Label20.Size = New System.Drawing.Size(104, 17)
+        Me.Label20.TabIndex = 1
+        Me.Label20.Text = "Item Barcode: *"
+        '
+        'VisualStyleManager1
+        '
+        JanusColorScheme1.ActiveCaptionColor = System.Drawing.Color.FromArgb(CType(CType(126, Byte), Integer), CType(CType(126, Byte), Integer), CType(CType(126, Byte), Integer))
+        JanusColorScheme1.ActiveCaptionTextColor = System.Drawing.Color.White
+        JanusColorScheme1.ControlColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        JanusColorScheme1.ControlDarkColor = System.Drawing.Color.FromArgb(CType(CType(126, Byte), Integer), CType(CType(126, Byte), Integer), CType(CType(126, Byte), Integer))
+        JanusColorScheme1.ControlTextColor = System.Drawing.Color.Black
+        JanusColorScheme1.DisabledColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        JanusColorScheme1.GrayTextColor = System.Drawing.Color.FromArgb(CType(CType(126, Byte), Integer), CType(CType(126, Byte), Integer), CType(CType(126, Byte), Integer))
+        JanusColorScheme1.HighlightColor = System.Drawing.Color.FromArgb(CType(CType(126, Byte), Integer), CType(CType(126, Byte), Integer), CType(CType(126, Byte), Integer))
+        JanusColorScheme1.HighlightTextColor = System.Drawing.Color.White
+        JanusColorScheme1.InfoColor = System.Drawing.Color.White
+        JanusColorScheme1.InfoTextColor = System.Drawing.Color.Black
+        JanusColorScheme1.MenuColor = System.Drawing.Color.White
+        JanusColorScheme1.MenuTextColor = System.Drawing.Color.Black
+        JanusColorScheme1.Name = "Scheme0"
+        JanusColorScheme1.Office2007CustomColor = System.Drawing.Color.Empty
+        JanusColorScheme1.UseThemes = False
+        JanusColorScheme1.VisualStyle = Janus.Windows.Common.VisualStyle.Standard
+        JanusColorScheme1.WindowColor = System.Drawing.Color.White
+        JanusColorScheme1.WindowTextColor = System.Drawing.Color.Black
+        Me.VisualStyleManager1.ColorSchemes.Add(JanusColorScheme1)
+        '
+        'UiTab1
+        '
+        Me.UiTab1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.UiTab1.Location = New System.Drawing.Point(0, 0)
+        Me.UiTab1.Name = "UiTab1"
+        Me.UiTab1.Size = New System.Drawing.Size(1466, 683)
+        Me.UiTab1.TabIndex = 20
+        Me.UiTab1.TabPages.AddRange(New Janus.Windows.UI.Tab.UITabPage() {Me.UiTabPage2})
+        Me.UiTab1.VisualStyle = Janus.Windows.UI.Tab.TabVisualStyle.Light3D
+        Me.UiTab1.VisualStyleManager = Me.VisualStyleManager1
+        '
+        'UiTabPage2
+        '
+        Me.UiTabPage2.Controls.Add(Me.GroupBox1)
+        Me.UiTabPage2.Controls.Add(Me.BtnClose)
+        Me.UiTabPage2.Controls.Add(Me.GroupBox3)
+        Me.UiTabPage2.Controls.Add(Me.GroupBox9)
+        Me.UiTabPage2.Controls.Add(Me.BtnSave)
+        Me.UiTabPage2.Controls.Add(Me.GroupBox4)
+        Me.UiTabPage2.Controls.Add(Me.GridItemDetail)
+        Me.UiTabPage2.Controls.Add(Me.BtnRemoveItem)
+        Me.UiTabPage2.Controls.Add(Me.BtnAddItem)
+        Me.UiTabPage2.Location = New System.Drawing.Point(1, 28)
+        Me.UiTabPage2.Name = "UiTabPage2"
+        Me.UiTabPage2.Size = New System.Drawing.Size(1464, 654)
+        Me.UiTabPage2.StateStyles.FormatStyle.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
+        Me.UiTabPage2.StateStyles.FormatStyle.FontSize = 12.0!
+        Me.UiTabPage2.StateStyles.FormatStyle.ForeColor = System.Drawing.Color.White
+        Me.UiTabPage2.TabStop = True
+        Me.UiTabPage2.Text = "Optical Shop in Screening"
         '
         'FrmNewReceipt
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
         Me.AutoScroll = True
-        Me.ClientSize = New System.Drawing.Size(1160, 683)
-        Me.Controls.Add(Me.Label14)
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(236, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(241, Byte), Integer))
+        Me.ClientSize = New System.Drawing.Size(1466, 683)
+        Me.Controls.Add(Me.UiTab1)
         Me.Controls.Add(Me.ToolStrip1)
-        Me.Controls.Add(Me.GroupBox4)
-        Me.Controls.Add(Me.GroupBox1)
-        Me.Controls.Add(Me.BtnRemoveItem)
-        Me.Controls.Add(Me.BtnAddItem)
-        Me.Controls.Add(Me.TxtGetBarcode)
-        Me.Controls.Add(Me.GroupBox3)
-        Me.Controls.Add(Me.GridItemDetail)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.KeyPreview = True
         Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
@@ -1437,6 +1757,12 @@ Partial Class FrmNewReceipt
         Me.GroupBox7.ResumeLayout(False)
         Me.GroupBox7.PerformLayout()
         CType(Me.ErrReceipt, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox9.ResumeLayout(False)
+        Me.GroupBox9.PerformLayout()
+        CType(Me.PictItem, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.UiTab1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.UiTab1.ResumeLayout(False)
+        Me.UiTabPage2.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1540,6 +1866,8 @@ Partial Class FrmNewReceipt
     Friend WithEvents LblReceiptID As System.Windows.Forms.Label
     Friend WithEvents DateConsult As System.Windows.Forms.DateTimePicker
     Friend WithEvents Label14 As System.Windows.Forms.Label
+    Friend WithEvents ChIsPrintFull As System.Windows.Forms.CheckBox
+    Friend WithEvents lblIspaid As System.Windows.Forms.Label
     Friend WithEvents ColumnItemID As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents ColumnBarcode As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents ColumnName As System.Windows.Forms.DataGridViewTextBoxColumn
@@ -1550,6 +1878,23 @@ Partial Class FrmNewReceipt
     Friend WithEvents Picture As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents ItemCost As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents EXCHANGE_RATE As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents ChIsPrintFull As System.Windows.Forms.CheckBox
-    Friend WithEvents lblIspaid As System.Windows.Forms.Label
+    Friend WithEvents BtnClose As System.Windows.Forms.Button
+    Friend WithEvents BtnSave As System.Windows.Forms.Button
+    Friend WithEvents GroupBox9 As System.Windows.Forms.GroupBox
+    Friend WithEvents lblCost As System.Windows.Forms.Label
+    Friend WithEvents TxtUnitInstock As System.Windows.Forms.TextBox
+    Friend WithEvents Label15 As System.Windows.Forms.Label
+    Friend WithEvents TxtBarcode As System.Windows.Forms.TextBox
+    Friend WithEvents LblItemID As System.Windows.Forms.Label
+    Friend WithEvents PictItem As System.Windows.Forms.PictureBox
+    Friend WithEvents TxtItemPrice As System.Windows.Forms.TextBox
+    Friend WithEvents LblPrice As System.Windows.Forms.Label
+    Friend WithEvents TxtItemQTY As System.Windows.Forms.TextBox
+    Friend WithEvents Label17 As System.Windows.Forms.Label
+    Friend WithEvents TxtItemName As System.Windows.Forms.TextBox
+    Friend WithEvents Label19 As System.Windows.Forms.Label
+    Friend WithEvents Label20 As System.Windows.Forms.Label
+    Friend WithEvents UiTab1 As Janus.Windows.UI.Tab.UITab
+    Friend WithEvents UiTabPage2 As Janus.Windows.UI.Tab.UITabPage
+    Friend WithEvents VisualStyleManager1 As Janus.Windows.Common.VisualStyleManager
 End Class
