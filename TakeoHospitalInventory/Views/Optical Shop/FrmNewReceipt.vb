@@ -28,7 +28,7 @@ Public Class FrmNewReceipt
     Dim P_Customer As New OpticalshopImp
     Private PARAMETKHMER As String = ""
     Private PARAMETENG As String = ""
-    Private ItemPrice As New DSItemPriceTableAdapters.VItemPriceOpticalShopTableAdapter
+
     Dim ImageStream As System.IO.MemoryStream
     Public IsPatient As Boolean = False
     Dim MTakeoInventory As MainTakeoInventory
@@ -40,6 +40,13 @@ Public Class FrmNewReceipt
     Dim DA_Consult_Detail As New DSConsultTableAdapters.V_CONSULTINGTableAdapter
     Dim DS_Consult As New DSConsultTableAdapters.CONSULINGTableAdapter
     Public IS_UPDATE As Boolean = False
+
+
+
+
+
+    ' New Updpate for screening system
+    Private ItemPrice As New DSItemPriceTableAdapters.VItemPriceOpticalShopTableAdapter
     Sub New(ByVal MainReceipt As MainOpticalShop)
         ' This call is required by the Windows Form Designer.
         InitializeComponent()
@@ -93,27 +100,27 @@ Public Class FrmNewReceipt
     End Sub
 
     Private Sub FrmNewReceipt_GotFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.GotFocus
-        GetBarcod()
+        'GetBarcod()
     End Sub
     Private Sub FrmNewReceipt_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
-        If TxtCustomerNo.Text = "" Then
-            MessageBox.Show("Please select customer first before add Item.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            Exit Sub
-        End If
-        If e.KeyCode = Keys.F1 Then
-            'Dim FAddNewItem As New FrmAddItemInOpticalShop(Me)
-            'FAddNewItem.ShowDialog()
+        'If TxtCustomerNo.Text = "" Then
+        '    MessageBox.Show("Please select customer first before add Item.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        '    Exit Sub
+        'End If
+        'If e.KeyCode = Keys.F1 Then
+        '    'Dim FAddNewItem As New FrmAddItemInOpticalShop(Me)
+        '    'FAddNewItem.ShowDialog()
 
-            Dim FAddNewItem As New FrmAddItemInOpticalShop(Me)
-            If RadNil.Checked = True Then
-                FAddNewItem.IsPaymentNil = True
-            Else
-                FAddNewItem.IsPaymentNil = False
-            End If
-            FAddNewItem.Rate = Val(txtRate.Text)
-            FAddNewItem.ShowDialog()
-            CheckIsPatientConsult(EmptyString(TxtCustomerNo.Text), "Optical Shop", 0)
-        End If
+        '    Dim FAddNewItem As New FrmAddItemInOpticalShop(Me)
+        '    If RadNil.Checked = True Then
+        '        FAddNewItem.IsPaymentNil = True
+        '    Else
+        '        FAddNewItem.IsPaymentNil = False
+        '    End If
+        '    FAddNewItem.Rate = Val(txtRate.Text)
+        '    FAddNewItem.ShowDialog()
+        '    CheckIsPatientConsult(EmptyString(TxtCustomerNo.Text), "Optical Shop", 0)
+        'End If
     End Sub
     Sub InitDonation()
         With CboDonation
@@ -481,7 +488,7 @@ Public Class FrmNewReceipt
         LoadNewReceiptNo()
         Me.Focus()
         Call GetRates()
-        GetBarcod()
+        ' GetBarcod()
         If IS_UPDATE = False Then
             DateCreateReceipt.Checked = True
             DateCreateReceipt.Value = CheckMarkEOD()
@@ -1168,7 +1175,7 @@ Public Class FrmNewReceipt
                         Me.Dispose()
                     End If
                     IsPatient = False
-                    GetBarcod()
+                    'GetBarcod()
                     If LblConsultID.Text = "0" Then
 
                     Else
@@ -1603,7 +1610,7 @@ Public Class FrmNewReceipt
                                 Me.Dispose()
                             End If
                             IsPatient = False
-                            GetBarcod()
+                            'GetBarcod()
 
                             '.......... Finish Cashe Nill ------------------------------- 
                             '------------------------------------------------------------
@@ -1639,7 +1646,7 @@ Public Class FrmNewReceipt
                                     Me.Dispose()
                                 End If
                                 IsPatient = False
-                                GetBarcod()
+                                'GetBarcod()
                             End If
                         End If
                         If LblConsultID.Text = "0" Then
@@ -1844,7 +1851,7 @@ Public Class FrmNewReceipt
     End Function
 
     Private Sub GridItemDetail_GotFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles GridItemDetail.GotFocus
-        GetBarcod()
+        '  GetBarcod()
     End Sub
     Sub GetBarcod()
         TxtGetBarcode.Text = ""
@@ -1899,83 +1906,83 @@ Public Class FrmNewReceipt
     End Sub
 
     Private Sub BtnAddCustomer_GotFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnAddCustomer.GotFocus
-        GetBarcod()
+        'GetBarcod()
     End Sub
 
     Private Sub BtnCleanCustomer_GotFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnCleanCustomer.GotFocus
-        GetBarcod()
+        'GetBarcod()
     End Sub
 
     Private Sub TxtCustomerName_GotFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles TxtCustomerName.GotFocus
-        GetBarcod()
+        ' GetBarcod()
     End Sub
 
     Private Sub BtnNewCustomer_GotFocus(ByVal sender As Object, ByVal e As System.EventArgs)
-        GetBarcod()
+        ' GetBarcod()
     End Sub
 
     Private Sub DateCreateReceipt_GotFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles DateCreateReceipt.GotFocus
-        GetBarcod()
+        ' GetBarcod()
     End Sub
 
     Private Sub BtnAddItem_GotFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnAddItem.GotFocus
-        GetBarcod()
+        '' GetBarcod()
     End Sub
 
     Private Sub BtnRemoveItem_GotFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnRemoveItem.GotFocus
-        GetBarcod()
+        ' GetBarcod()
     End Sub
 
     Private Sub TxtCusOccupation_GotFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles TxtCusOccupation.GotFocus
-        GetBarcod()
+        ' GetBarcod()
     End Sub
 
     Private Sub TxtSex_GotFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles TxtSex.GotFocus
-        GetBarcod()
+        'GetBarcod()
     End Sub
 
     Private Sub TxtAge_GotFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles TxtAge.GotFocus
-        GetBarcod()
+        ' GetBarcod()
     End Sub
 
     Private Sub TxtTotalAsReal_GotFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles TxtTotalAsReal.GotFocus
-        GetBarcod()
+        ' GetBarcod()
     End Sub
 
     Private Sub ChPrintPreview_GotFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles ChPrintPreview.GotFocus
-        GetBarcod()
+        'GetBarcod()
     End Sub
 
     Private Sub RadSpectacle_GotFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles RadCustomerMadeSpectacle.GotFocus
-        GetBarcod()
+        ' GetBarcod()
     End Sub
 
     Private Sub RadSunGlasses_GotFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles RadSunGlasses.GotFocus
-        GetBarcod()
+        ' GetBarcod()
     End Sub
 
     Private Sub RadReadMod_GotFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles RadReadyMadeSpectacle.GotFocus
-        GetBarcod()
+        'GetBarcod()
     End Sub
 
     Private Sub RadMedicine_GotFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles RadMedicine.GotFocus
-        GetBarcod()
+        'GetBarcod()
     End Sub
 
     Private Sub RadFundRaising_GotFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles RadFundRaising.GotFocus
-        GetBarcod()
+        'GetBarcod()
     End Sub
 
     Private Sub RadOther_GotFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles RadOther.GotFocus
-        GetBarcod()
+        'GetBarcod()
     End Sub
 
     Private Sub ChDonation_GotFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles ChDonation.GotFocus
-        GetBarcod()
+        'GetBarcod()
     End Sub
 
     Private Sub CboDonation_GotFocus(ByVal sender As Object, ByVal e As System.EventArgs)
-        GetBarcod()
+        ' GetBarcod()
     End Sub
 
     Private Sub BtnSelectPatient_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnSelectPatient.Click
@@ -2340,5 +2347,23 @@ Public Class FrmNewReceipt
     
     Private Sub BtnClose_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnClose.Click
         Me.Close()
+    End Sub
+
+    Private Sub BtnSearch_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnSearch.Click
+        SearchItemByName()
+    End Sub
+    Private Sub SearchItemByName()
+        GridListOfItem.DataSource = ItemPrice.SelectItemNameInopticalShop(TxtItemNameSearch.Text)
+    End Sub
+
+   
+    Private Sub TxtItemNameSearch_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles TxtItemNameSearch.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            SearchItemByName()
+        End If
+    End Sub
+
+    Private Sub GridItemDetail_CellContentClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles GridItemDetail.CellContentClick
+
     End Sub
 End Class

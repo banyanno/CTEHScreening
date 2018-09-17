@@ -690,6 +690,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DatasetPatientTEH.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Takeo_Eye_Hopspital\Screening\ScreeningBook\OpticalShop\DashboardOpticalshop.Designer.vb">
+      <DependentUpon>DashboardOpticalshop.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Takeo_Eye_Hopspital\Screening\ScreeningBook\OpticalShop\DashboardOpticalshop.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Takeo_Eye_Hopspital\Screening\ScreeningBook\OpticalShop\FormOpticalShop.Designer.vb">
       <DependentUpon>FormOpticalShop.vb</DependentUpon>
     </Compile>
@@ -3295,6 +3301,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Takeo_Eye_Hopspital\Screening\ScreeningBook\ImportPatient\DashboardImportPatient.resx">
       <DependentUpon>DashboardImportPatient.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Takeo_Eye_Hopspital\Screening\ScreeningBook\OpticalShop\DashboardOpticalshop.resx">
+      <DependentUpon>DashboardOpticalshop.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Takeo_Eye_Hopspital\Screening\ScreeningBook\OpticalShop\FormOpticalShop.resx">
       <DependentUpon>FormOpticalShop.vb</DependentUpon>

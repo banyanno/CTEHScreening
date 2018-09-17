@@ -25,7 +25,7 @@ Partial Class MainOpticalShop
         Me.components = New System.ComponentModel.Container
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MainOpticalShop))
         Dim GridReceipt_DesignTimeLayout As Janus.Windows.GridEX.GridEXLayout = New Janus.Windows.GridEX.GridEXLayout
-        Dim JanusColorScheme4 As Janus.Windows.Common.JanusColorScheme = New Janus.Windows.Common.JanusColorScheme
+        Dim JanusColorScheme1 As Janus.Windows.Common.JanusColorScheme = New Janus.Windows.Common.JanusColorScheme
         Dim GridListWaitingPay_DesignTimeLayout As Janus.Windows.GridEX.GridEXLayout = New Janus.Windows.GridEX.GridEXLayout
         Me.ImageAddItem = New System.Windows.Forms.ImageList(Me.components)
         Me.ImageStatusbar = New System.Windows.Forms.ImageList(Me.components)
@@ -49,6 +49,7 @@ Partial Class MainOpticalShop
         Me.BGLoadOpticalShop = New System.ComponentModel.BackgroundWorker
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer
         Me.GridListWaitingPay = New Janus.Windows.GridEX.GridEX
+        Me.Button1 = New System.Windows.Forms.Button
         CType(Me.ErrReceipt, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridReceipt, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
@@ -115,31 +116,32 @@ Partial Class MainOpticalShop
         '
         'VSForOpticalshop
         '
-        JanusColorScheme4.ActiveCaptionColor = System.Drawing.Color.Tomato
-        JanusColorScheme4.ActiveCaptionTextColor = System.Drawing.Color.White
-        JanusColorScheme4.ControlDarkColor = System.Drawing.SystemColors.Control
-        JanusColorScheme4.ControlTextColor = System.Drawing.Color.Black
-        JanusColorScheme4.DisabledColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(150, Byte), Integer), CType(CType(102, Byte), Integer))
-        JanusColorScheme4.GrayTextColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
-        JanusColorScheme4.HighlightColor = System.Drawing.Color.FromArgb(CType(CType(43, Byte), Integer), CType(CType(99, Byte), Integer), CType(CType(67, Byte), Integer))
-        JanusColorScheme4.HighlightTextColor = System.Drawing.Color.WhiteSmoke
-        JanusColorScheme4.InfoColor = System.Drawing.Color.WhiteSmoke
-        JanusColorScheme4.InfoTextColor = System.Drawing.Color.FloralWhite
-        JanusColorScheme4.MenuColor = System.Drawing.SystemColors.ActiveCaption
-        JanusColorScheme4.MenuTextColor = System.Drawing.Color.DimGray
-        JanusColorScheme4.Name = "Header"
-        JanusColorScheme4.Office2007ColorScheme = Janus.Windows.Common.Office2007ColorScheme.Silver
-        JanusColorScheme4.Office2007CustomColor = System.Drawing.SystemColors.Control
-        JanusColorScheme4.UseThemes = False
-        JanusColorScheme4.VisualStyle = Janus.Windows.Common.VisualStyle.Standard
-        JanusColorScheme4.WindowColor = System.Drawing.Color.White
-        JanusColorScheme4.WindowTextColor = System.Drawing.Color.DarkBlue
-        Me.VSForOpticalshop.ColorSchemes.Add(JanusColorScheme4)
+        JanusColorScheme1.ActiveCaptionColor = System.Drawing.Color.Tomato
+        JanusColorScheme1.ActiveCaptionTextColor = System.Drawing.Color.White
+        JanusColorScheme1.ControlDarkColor = System.Drawing.SystemColors.Control
+        JanusColorScheme1.ControlTextColor = System.Drawing.Color.Black
+        JanusColorScheme1.DisabledColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(150, Byte), Integer), CType(CType(102, Byte), Integer))
+        JanusColorScheme1.GrayTextColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
+        JanusColorScheme1.HighlightColor = System.Drawing.Color.FromArgb(CType(CType(43, Byte), Integer), CType(CType(99, Byte), Integer), CType(CType(67, Byte), Integer))
+        JanusColorScheme1.HighlightTextColor = System.Drawing.Color.WhiteSmoke
+        JanusColorScheme1.InfoColor = System.Drawing.Color.WhiteSmoke
+        JanusColorScheme1.InfoTextColor = System.Drawing.Color.FloralWhite
+        JanusColorScheme1.MenuColor = System.Drawing.SystemColors.ActiveCaption
+        JanusColorScheme1.MenuTextColor = System.Drawing.Color.DimGray
+        JanusColorScheme1.Name = "Header"
+        JanusColorScheme1.Office2007ColorScheme = Janus.Windows.Common.Office2007ColorScheme.Silver
+        JanusColorScheme1.Office2007CustomColor = System.Drawing.SystemColors.Control
+        JanusColorScheme1.UseThemes = False
+        JanusColorScheme1.VisualStyle = Janus.Windows.Common.VisualStyle.Standard
+        JanusColorScheme1.WindowColor = System.Drawing.Color.White
+        JanusColorScheme1.WindowTextColor = System.Drawing.Color.DarkBlue
+        Me.VSForOpticalshop.ColorSchemes.Add(JanusColorScheme1)
         Me.VSForOpticalshop.DefaultColorScheme = "Header"
         '
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(236, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(241, Byte), Integer))
+        Me.Panel1.Controls.Add(Me.Button1)
         Me.Panel1.Controls.Add(Me.BtnEditDonateOptical)
         Me.Panel1.Controls.Add(Me.BtnEditeDateReceipt)
         Me.Panel1.Controls.Add(Me.BtnPrintInvoice)
@@ -373,6 +375,15 @@ Partial Class MainOpticalShop
         Me.GridListWaitingPay.TabIndex = 4
         Me.GridListWaitingPay.VisualStyleManager = Me.VSForOpticalshop
         '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(1109, 21)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(154, 23)
+        Me.Button1.TabIndex = 16
+        Me.Button1.Text = "Button1"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'MainOpticalShop
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -416,5 +427,6 @@ Partial Class MainOpticalShop
     Friend WithEvents VSForOpticalshop As Janus.Windows.Common.VisualStyleManager
     Friend WithEvents SplitContainer1 As System.Windows.Forms.SplitContainer
     Friend WithEvents GridListWaitingPay As Janus.Windows.GridEX.GridEX
+    Friend WithEvents Button1 As System.Windows.Forms.Button
 
 End Class

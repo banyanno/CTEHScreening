@@ -378,7 +378,7 @@ Partial Class UIScreening
         Me.BtnOpticalShop.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnOpticalShop.ForeColor = System.Drawing.Color.White
         Me.BtnOpticalShop.Image = CType(resources.GetObject("BtnOpticalShop.Image"), System.Drawing.Image)
-        Me.BtnOpticalShop.Location = New System.Drawing.Point(277, 203)
+        Me.BtnOpticalShop.Location = New System.Drawing.Point(8, 202)
         Me.BtnOpticalShop.Name = "BtnOpticalShop"
         Me.BtnOpticalShop.Size = New System.Drawing.Size(252, 93)
         Me.BtnOpticalShop.TabIndex = 2
@@ -450,7 +450,7 @@ Partial Class UIScreening
         Me.BtnScreeningSetting.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnScreeningSetting.ForeColor = System.Drawing.Color.White
         Me.BtnScreeningSetting.Image = CType(resources.GetObject("BtnScreeningSetting.Image"), System.Drawing.Image)
-        Me.BtnScreeningSetting.Location = New System.Drawing.Point(8, 203)
+        Me.BtnScreeningSetting.Location = New System.Drawing.Point(277, 202)
         Me.BtnScreeningSetting.Name = "BtnScreeningSetting"
         Me.BtnScreeningSetting.Size = New System.Drawing.Size(252, 93)
         Me.BtnScreeningSetting.TabIndex = 4
