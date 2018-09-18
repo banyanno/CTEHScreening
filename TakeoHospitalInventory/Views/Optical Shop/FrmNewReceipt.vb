@@ -47,6 +47,8 @@ Public Class FrmNewReceipt
 
     ' New Updpate for screening system
     Private ItemPrice As New DSItemPriceTableAdapters.VItemPriceOpticalShopTableAdapter
+
+    Dim IsDolar As Boolean = True
     Sub New(ByVal MainReceipt As MainOpticalShop)
         ' This call is required by the Windows Form Designer.
         InitializeComponent()
@@ -1883,15 +1885,15 @@ Public Class FrmNewReceipt
                     FAddNewItem.TxtItemPrice.Text = row("Price")
                 End If
 
-                'If row("IsUSD") = True Then
-                '    LblPrice.Text = "Price:(ដុល្លារ)"
-                '    IsDolar = True
-                'Else
-                '    IsDolar = False
-                'End If
-                'If row("IsKHR") = True Then
-                '    LblPrice.Text = "Price:(រៀល)"
-                'End If
+                If row("IsUSD") = True Then
+                    'LblPrice.Text = "Price:(ដុល្លារ)"
+                    IsDolar = True
+                Else
+                    IsDolar = False
+                End If
+                If row("IsKHR") = True Then
+                    'LblPrice.Text = "Price:(រៀល)"
+                End If
                 If TypeOf row("Picture") Is DBNull Then
                     FAddNewItem.PictItem.Visible = False
                 Else
@@ -2356,14 +2358,36 @@ Public Class FrmNewReceipt
         GridListOfItem.DataSource = ItemPrice.SelectItemNameInopticalShop(TxtItemNameSearch.Text)
     End Sub
 
-   
-    Private Sub TxtItemNameSearch_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles TxtItemNameSearch.KeyDown
-        If e.KeyCode = Keys.Enter Then
-            SearchItemByName()
-        End If
+  
+
+    Private Sub TxtItemNameSearch_KeyUp(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles TxtItemNameSearch.KeyUp
+        SearchItemByName()
     End Sub
 
-    Private Sub GridItemDetail_CellContentClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles GridItemDetail.CellContentClick
+    Private Sub GridListOfItem_DoubleClick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles GridListOfItem.DoubleClick
+        If GridListOfItem.SelectedItems.Count = 0 Then
+            MessageBox.Show("Please select item.", "Item", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Exit Sub
+        End If
+        Dim SubTotalR As Double
+        Dim SubTotalD As Double
+        If IsDolar = True Then
+            SubTotalR = Round((Val(GridListOfItem.GetRow.Cells("Price").Value) * Val(txtRate.Text)) * 1) 'Val(TxtItemQTY.Text))
+            'Calculate for Dolar
+            SubTotalD = Round(Val(GridListOfItem.GetRow.Cells("Price").Value) * 1, 3) ' Val(TxtItemQTY.Text)
+        Else
+            SubTotalR = Math.Round(Val(GridListOfItem.GetRow.Cells("Price").Value) * 1) 'Val(TxtItemQTY.Text))
+            SubTotalD = Round((Val(GridListOfItem.GetRow.Cells("Price").Value) / Val(txtRate.Text)) * 1, 3) 'Val(TxtItemQTY.Text)
+        End If
 
+        'If IsPaymentNil = True Then
+        '    'SubTotalR = 0
+        '    'SubTotalD = 0
+        '    Me.FNewReceipt.AddItemDetial(LblItemID.Text, TxtBarcode.Text, TxtItemName.Text, TxtItemPrice.Text, TxtItemQTY.Text, Nothing, SubTotalR, SubTotalD, lblCost.Text)
+        'Else
+        AddItemDetial(GridListOfItem.GetRow.Cells("ItemID").Value, GridListOfItem.GetRow.Cells("Barcode").Value, GridListOfItem.GetRow.Cells("ItemName").Value, GridListOfItem.GetRow.Cells("Price").Value, 1, Nothing, SubTotalR, SubTotalD, GridListOfItem.GetRow.Cells("UnitPrice").Value)
+        'End If
+        
+        'Me.Close()
     End Sub
 End Class

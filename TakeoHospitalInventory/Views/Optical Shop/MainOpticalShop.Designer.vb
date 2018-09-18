@@ -25,7 +25,7 @@ Partial Class MainOpticalShop
         Me.components = New System.ComponentModel.Container
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MainOpticalShop))
         Dim GridReceipt_DesignTimeLayout As Janus.Windows.GridEX.GridEXLayout = New Janus.Windows.GridEX.GridEXLayout
-        Dim JanusColorScheme1 As Janus.Windows.Common.JanusColorScheme = New Janus.Windows.Common.JanusColorScheme
+        Dim JanusColorScheme2 As Janus.Windows.Common.JanusColorScheme = New Janus.Windows.Common.JanusColorScheme
         Dim GridListWaitingPay_DesignTimeLayout As Janus.Windows.GridEX.GridEXLayout = New Janus.Windows.GridEX.GridEXLayout
         Me.ImageAddItem = New System.Windows.Forms.ImageList(Me.components)
         Me.ImageStatusbar = New System.Windows.Forms.ImageList(Me.components)
@@ -49,7 +49,6 @@ Partial Class MainOpticalShop
         Me.BGLoadOpticalShop = New System.ComponentModel.BackgroundWorker
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer
         Me.GridListWaitingPay = New Janus.Windows.GridEX.GridEX
-        Me.Button1 = New System.Windows.Forms.Button
         CType(Me.ErrReceipt, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridReceipt, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
@@ -116,32 +115,31 @@ Partial Class MainOpticalShop
         '
         'VSForOpticalshop
         '
-        JanusColorScheme1.ActiveCaptionColor = System.Drawing.Color.Tomato
-        JanusColorScheme1.ActiveCaptionTextColor = System.Drawing.Color.White
-        JanusColorScheme1.ControlDarkColor = System.Drawing.SystemColors.Control
-        JanusColorScheme1.ControlTextColor = System.Drawing.Color.Black
-        JanusColorScheme1.DisabledColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(150, Byte), Integer), CType(CType(102, Byte), Integer))
-        JanusColorScheme1.GrayTextColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
-        JanusColorScheme1.HighlightColor = System.Drawing.Color.FromArgb(CType(CType(43, Byte), Integer), CType(CType(99, Byte), Integer), CType(CType(67, Byte), Integer))
-        JanusColorScheme1.HighlightTextColor = System.Drawing.Color.WhiteSmoke
-        JanusColorScheme1.InfoColor = System.Drawing.Color.WhiteSmoke
-        JanusColorScheme1.InfoTextColor = System.Drawing.Color.FloralWhite
-        JanusColorScheme1.MenuColor = System.Drawing.SystemColors.ActiveCaption
-        JanusColorScheme1.MenuTextColor = System.Drawing.Color.DimGray
-        JanusColorScheme1.Name = "Header"
-        JanusColorScheme1.Office2007ColorScheme = Janus.Windows.Common.Office2007ColorScheme.Silver
-        JanusColorScheme1.Office2007CustomColor = System.Drawing.SystemColors.Control
-        JanusColorScheme1.UseThemes = False
-        JanusColorScheme1.VisualStyle = Janus.Windows.Common.VisualStyle.Standard
-        JanusColorScheme1.WindowColor = System.Drawing.Color.White
-        JanusColorScheme1.WindowTextColor = System.Drawing.Color.DarkBlue
-        Me.VSForOpticalshop.ColorSchemes.Add(JanusColorScheme1)
+        JanusColorScheme2.ActiveCaptionColor = System.Drawing.Color.Tomato
+        JanusColorScheme2.ActiveCaptionTextColor = System.Drawing.Color.White
+        JanusColorScheme2.ControlDarkColor = System.Drawing.SystemColors.Control
+        JanusColorScheme2.ControlTextColor = System.Drawing.Color.Black
+        JanusColorScheme2.DisabledColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(150, Byte), Integer), CType(CType(102, Byte), Integer))
+        JanusColorScheme2.GrayTextColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
+        JanusColorScheme2.HighlightColor = System.Drawing.Color.FromArgb(CType(CType(43, Byte), Integer), CType(CType(99, Byte), Integer), CType(CType(67, Byte), Integer))
+        JanusColorScheme2.HighlightTextColor = System.Drawing.Color.WhiteSmoke
+        JanusColorScheme2.InfoColor = System.Drawing.Color.WhiteSmoke
+        JanusColorScheme2.InfoTextColor = System.Drawing.Color.FloralWhite
+        JanusColorScheme2.MenuColor = System.Drawing.SystemColors.ActiveCaption
+        JanusColorScheme2.MenuTextColor = System.Drawing.Color.DimGray
+        JanusColorScheme2.Name = "Header"
+        JanusColorScheme2.Office2007ColorScheme = Janus.Windows.Common.Office2007ColorScheme.Silver
+        JanusColorScheme2.Office2007CustomColor = System.Drawing.SystemColors.Control
+        JanusColorScheme2.UseThemes = False
+        JanusColorScheme2.VisualStyle = Janus.Windows.Common.VisualStyle.Standard
+        JanusColorScheme2.WindowColor = System.Drawing.Color.White
+        JanusColorScheme2.WindowTextColor = System.Drawing.Color.DarkBlue
+        Me.VSForOpticalshop.ColorSchemes.Add(JanusColorScheme2)
         Me.VSForOpticalshop.DefaultColorScheme = "Header"
         '
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(236, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(241, Byte), Integer))
-        Me.Panel1.Controls.Add(Me.Button1)
         Me.Panel1.Controls.Add(Me.BtnEditDonateOptical)
         Me.Panel1.Controls.Add(Me.BtnEditeDateReceipt)
         Me.Panel1.Controls.Add(Me.BtnPrintInvoice)
@@ -164,7 +162,7 @@ Partial Class MainOpticalShop
         '
         Me.BtnEditDonateOptical.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BtnEditDonateOptical.Enabled = False
-        Me.BtnEditDonateOptical.Location = New System.Drawing.Point(618, 63)
+        Me.BtnEditDonateOptical.Location = New System.Drawing.Point(766, 23)
         Me.BtnEditDonateOptical.Name = "BtnEditDonateOptical"
         Me.BtnEditDonateOptical.Size = New System.Drawing.Size(101, 34)
         Me.BtnEditDonateOptical.TabIndex = 15
@@ -227,8 +225,9 @@ Partial Class MainOpticalShop
         '
         'RadReceiptCancel
         '
+        Me.RadReceiptCancel.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.RadReceiptCancel.AutoSize = True
-        Me.RadReceiptCancel.Location = New System.Drawing.Point(772, 40)
+        Me.RadReceiptCancel.Location = New System.Drawing.Point(1076, 40)
         Me.RadReceiptCancel.Name = "RadReceiptCancel"
         Me.RadReceiptCancel.Size = New System.Drawing.Size(96, 17)
         Me.RadReceiptCancel.TabIndex = 11
@@ -237,9 +236,10 @@ Partial Class MainOpticalShop
         '
         'RadWaitAndPaid
         '
+        Me.RadWaitAndPaid.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.RadWaitAndPaid.AutoSize = True
         Me.RadWaitAndPaid.Checked = True
-        Me.RadWaitAndPaid.Location = New System.Drawing.Point(772, 19)
+        Me.RadWaitAndPaid.Location = New System.Drawing.Point(1076, 19)
         Me.RadWaitAndPaid.Name = "RadWaitAndPaid"
         Me.RadWaitAndPaid.Size = New System.Drawing.Size(144, 17)
         Me.RadWaitAndPaid.TabIndex = 11
@@ -266,13 +266,14 @@ Partial Class MainOpticalShop
         '
         'BtnView
         '
+        Me.BtnView.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.BtnView.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
         Me.BtnView.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BtnView.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnView.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnView.ForeColor = System.Drawing.Color.White
         Me.BtnView.Image = CType(resources.GetObject("BtnView.Image"), System.Drawing.Image)
-        Me.BtnView.Location = New System.Drawing.Point(922, 4)
+        Me.BtnView.Location = New System.Drawing.Point(1222, 6)
         Me.BtnView.Name = "BtnView"
         Me.BtnView.Size = New System.Drawing.Size(134, 60)
         Me.BtnView.TabIndex = 8
@@ -282,28 +283,31 @@ Partial Class MainOpticalShop
         '
         'DateTo
         '
+        Me.DateTo.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.DateTo.CustomFormat = "dd/MM/yyyy"
         Me.DateTo.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DateTo.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.DateTo.Location = New System.Drawing.Point(672, 40)
+        Me.DateTo.Location = New System.Drawing.Point(976, 40)
         Me.DateTo.Name = "DateTo"
         Me.DateTo.Size = New System.Drawing.Size(92, 23)
         Me.DateTo.TabIndex = 6
         '
         'DateFrom
         '
+        Me.DateFrom.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.DateFrom.CustomFormat = "dd/MM/yyyy"
         Me.DateFrom.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DateFrom.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.DateFrom.Location = New System.Drawing.Point(672, 11)
+        Me.DateFrom.Location = New System.Drawing.Point(976, 11)
         Me.DateFrom.Name = "DateFrom"
         Me.DateFrom.Size = New System.Drawing.Size(91, 23)
         Me.DateFrom.TabIndex = 6
         '
         'Label2
         '
+        Me.Label2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(633, 47)
+        Me.Label2.Location = New System.Drawing.Point(937, 47)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(23, 13)
         Me.Label2.TabIndex = 5
@@ -311,8 +315,9 @@ Partial Class MainOpticalShop
         '
         'Label1
         '
+        Me.Label1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(633, 18)
+        Me.Label1.Location = New System.Drawing.Point(937, 18)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(33, 13)
         Me.Label1.TabIndex = 5
@@ -375,15 +380,6 @@ Partial Class MainOpticalShop
         Me.GridListWaitingPay.TabIndex = 4
         Me.GridListWaitingPay.VisualStyleManager = Me.VSForOpticalshop
         '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(1109, 21)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(154, 23)
-        Me.Button1.TabIndex = 16
-        Me.Button1.Text = "Button1"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
         'MainOpticalShop
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -427,6 +423,5 @@ Partial Class MainOpticalShop
     Friend WithEvents VSForOpticalshop As Janus.Windows.Common.VisualStyleManager
     Friend WithEvents SplitContainer1 As System.Windows.Forms.SplitContainer
     Friend WithEvents GridListWaitingPay As Janus.Windows.GridEX.GridEX
-    Friend WithEvents Button1 As System.Windows.Forms.Button
 
 End Class

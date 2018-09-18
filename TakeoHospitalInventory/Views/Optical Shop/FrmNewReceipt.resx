@@ -162,7 +162,24 @@
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>25</value>
   </metadata>
+  <data name="GridListOfItem_DesignTimeLayout.LayoutString" xml:space="preserve">
+    <value>&lt;GridEXLayoutData&gt;&lt;RootTable&gt;&lt;Columns Collection="true" ElementName="Column"&gt;&lt;Column0 ID="ItemID"&gt;&lt;Caption&gt;ItemID&lt;/Caption&gt;&lt;DataMember&gt;ItemID&lt;/DataMember&gt;&lt;Key&gt;ItemID&lt;/Key&gt;&lt;Position&gt;0&lt;/Position&gt;&lt;Visible&gt;False&lt;/Visible&gt;&lt;/Column0&gt;&lt;Column1 ID="Barcode"&gt;&lt;Caption&gt;Barcode&lt;/Caption&gt;&lt;DataMember&gt;Barcode&lt;/DataMember&gt;&lt;Key&gt;Barcode&lt;/Key&gt;&lt;Position&gt;1&lt;/Position&gt;&lt;/Column1&gt;&lt;Column2 ID="ItemName"&gt;&lt;Caption&gt;Name&lt;/Caption&gt;&lt;DataMember&gt;ItemName&lt;/DataMember&gt;&lt;Key&gt;ItemName&lt;/Key&gt;&lt;Position&gt;2&lt;/Position&gt;&lt;Width&gt;201&lt;/Width&gt;&lt;/Column2&gt;&lt;Column3 ID="Price"&gt;&lt;Caption&gt;Price&lt;/Caption&gt;&lt;DataMember&gt;Price&lt;/DataMember&gt;&lt;Key&gt;Price&lt;/Key&gt;&lt;Position&gt;3&lt;/Position&gt;&lt;Width&gt;107&lt;/Width&gt;&lt;CellStyle&gt;&lt;TextAlignment&gt;Far&lt;/TextAlignment&gt;&lt;/CellStyle&gt;&lt;/Column3&gt;&lt;Column4 ID="IsUSD"&gt;&lt;Caption&gt;IsUSD&lt;/Caption&gt;&lt;DataMember&gt;IsUSD&lt;/DataMember&gt;&lt;Key&gt;IsUSD&lt;/Key&gt;&lt;Position&gt;4&lt;/Position&gt;&lt;Visible&gt;False&lt;/Visible&gt;&lt;/Column4&gt;&lt;Column5 ID="IsKHR"&gt;&lt;Caption&gt;IsKHR&lt;/Caption&gt;&lt;DataMember&gt;IsKHR&lt;/DataMember&gt;&lt;Key&gt;IsKHR&lt;/Key&gt;&lt;Position&gt;5&lt;/Position&gt;&lt;Visible&gt;False&lt;/Visible&gt;&lt;/Column5&gt;&lt;Column6 ID="IsCurPrice"&gt;&lt;Caption&gt;IsCurPrice&lt;/Caption&gt;&lt;DataMember&gt;IsCurPrice&lt;/DataMember&gt;&lt;Key&gt;IsCurPrice&lt;/Key&gt;&lt;Position&gt;6&lt;/Position&gt;&lt;Visible&gt;False&lt;/Visible&gt;&lt;/Column6&gt;&lt;Column7 ID="UnitsInStock"&gt;&lt;Caption&gt;Stock&lt;/Caption&gt;&lt;DataMember&gt;UnitsInStock&lt;/DataMember&gt;&lt;Key&gt;UnitsInStock&lt;/Key&gt;&lt;Position&gt;7&lt;/Position&gt;&lt;Width&gt;91&lt;/Width&gt;&lt;CellStyle&gt;&lt;TextAlignment&gt;Far&lt;/TextAlignment&gt;&lt;/CellStyle&gt;&lt;/Column7&gt;&lt;Column8 ID="DepartID"&gt;&lt;Caption&gt;DepartID&lt;/Caption&gt;&lt;DataMember&gt;DepartID&lt;/DataMember&gt;&lt;Key&gt;DepartID&lt;/Key&gt;&lt;Position&gt;8&lt;/Position&gt;&lt;Visible&gt;False&lt;/Visible&gt;&lt;/Column8&gt;&lt;Column9 ID="UnitPrice"&gt;&lt;Caption&gt;Unit Price&lt;/Caption&gt;&lt;DataMember&gt;UnitPrice&lt;/DataMember&gt;&lt;Key&gt;UnitPrice&lt;/Key&gt;&lt;Position&gt;9&lt;/Position&gt;&lt;Visible&gt;False&lt;/Visible&gt;&lt;/Column9&gt;&lt;/Columns&gt;&lt;AllowEdit&gt;False&lt;/AllowEdit&gt;&lt;GridLineStyle&gt;Solid&lt;/GridLineStyle&gt;&lt;GroupCondition /&gt;&lt;RowHeaders&gt;False&lt;/RowHeaders&gt;&lt;RowHeaderContent&gt;RowPosition&lt;/RowHeaderContent&gt;&lt;RowHeight&gt;40&lt;/RowHeight&gt;&lt;/RootTable&gt;&lt;/GridEXLayoutData&gt;</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="Button1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAAf9JREFUSEvt
+        lr1LW1EYxtMPaEFpsSKJsa3YLgWHunV3cRRBV6cuLuKghQYpnVy6uFX8dzoKwaHVaqLg0KHgDTffATG3
+        vzc8gRjvzT1pFsH84OGc8973Pc+5h5Pck7iTNBqNN0EQPNXQmXK5PFGpVJIa9ke1Wv2KApSr1WovFY6l
+        WCy+IL9EXRXzlMJuUPNFpm2Z+ZQe96RQKDwn/xL59uYKx0PBtsxuiNWf0qaV1hPf98fszTWMh4kzHWZX
+        aq9R0/qYn9DGmpO3RV6G8/FAoWhIXrXJpSzaUd9Da6hljn4y4UOV3aJer79WXlAqld4pHA2J7cOUtW1i
+        IZsae3reNvd7nXRbFOfhG/W79B8pHA1JjzkM87QjNu42Noi9t5+YhpHYXCYN+yPM2AUMR6nJows7ZAq7
+        87/G7Nqs6gK2/IPC7gyNXRkaK+zO0NiVgY0p2tAEfxVyYmBj/pPfUvyDN/+skBMDG7tiHwMW9wmTFRuH
+        GdNftBcg94mNe0LiHAV/0HeFQiFvQUZNjNa7jWk/IrtM2HhJZdEwYfti8EuhUDzPe2Y5yrXv9Z76pn3U
+        MkU5LgbjKouGbbEP+jI3ihmFImGRSSY+kkGY8szldlPtx9jAPEX+cYjpGfFXSovHdas7IXcSk9+qM53b
+        HUyP3cDY6XB1Q34aHaBDTKcVvvckEv8Akwlo7aU7RwAAAAAASUVORK5CYII=
+</value>
+  </data>
   <data name="BtnClose.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAATpJREFUSEvt
@@ -463,21 +480,4 @@
   <metadata name="BgSaveAndPrinting.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>374, 17</value>
   </metadata>
-  <data name="GridListOfItem_DesignTimeLayout.LayoutString" xml:space="preserve">
-    <value>&lt;GridEXLayoutData&gt;&lt;RootTable&gt;&lt;Columns Collection="true" ElementName="Column"&gt;&lt;Column0 ID="ItemID"&gt;&lt;Caption&gt;ItemID&lt;/Caption&gt;&lt;DataMember&gt;ItemID&lt;/DataMember&gt;&lt;Key&gt;ItemID&lt;/Key&gt;&lt;Position&gt;0&lt;/Position&gt;&lt;Visible&gt;False&lt;/Visible&gt;&lt;/Column0&gt;&lt;Column1 ID="Barcode"&gt;&lt;Caption&gt;Barcode&lt;/Caption&gt;&lt;DataMember&gt;Barcode&lt;/DataMember&gt;&lt;Key&gt;Barcode&lt;/Key&gt;&lt;Position&gt;1&lt;/Position&gt;&lt;/Column1&gt;&lt;Column2 ID="ItemName"&gt;&lt;Caption&gt;Name&lt;/Caption&gt;&lt;DataMember&gt;ItemName&lt;/DataMember&gt;&lt;Key&gt;ItemName&lt;/Key&gt;&lt;Position&gt;2&lt;/Position&gt;&lt;Width&gt;201&lt;/Width&gt;&lt;/Column2&gt;&lt;Column3 ID="Price"&gt;&lt;Caption&gt;Price&lt;/Caption&gt;&lt;DataMember&gt;Price&lt;/DataMember&gt;&lt;Key&gt;Price&lt;/Key&gt;&lt;Position&gt;3&lt;/Position&gt;&lt;Width&gt;107&lt;/Width&gt;&lt;CellStyle&gt;&lt;TextAlignment&gt;Far&lt;/TextAlignment&gt;&lt;/CellStyle&gt;&lt;/Column3&gt;&lt;Column4 ID="IsUSD"&gt;&lt;Caption&gt;IsUSD&lt;/Caption&gt;&lt;DataMember&gt;IsUSD&lt;/DataMember&gt;&lt;Key&gt;IsUSD&lt;/Key&gt;&lt;Position&gt;4&lt;/Position&gt;&lt;Visible&gt;False&lt;/Visible&gt;&lt;/Column4&gt;&lt;Column5 ID="IsKHR"&gt;&lt;Caption&gt;IsKHR&lt;/Caption&gt;&lt;DataMember&gt;IsKHR&lt;/DataMember&gt;&lt;Key&gt;IsKHR&lt;/Key&gt;&lt;Position&gt;5&lt;/Position&gt;&lt;Visible&gt;False&lt;/Visible&gt;&lt;/Column5&gt;&lt;Column6 ID="IsCurPrice"&gt;&lt;Caption&gt;IsCurPrice&lt;/Caption&gt;&lt;DataMember&gt;IsCurPrice&lt;/DataMember&gt;&lt;Key&gt;IsCurPrice&lt;/Key&gt;&lt;Position&gt;6&lt;/Position&gt;&lt;Visible&gt;False&lt;/Visible&gt;&lt;/Column6&gt;&lt;Column7 ID="UnitsInStock"&gt;&lt;Caption&gt;Stock&lt;/Caption&gt;&lt;DataMember&gt;UnitsInStock&lt;/DataMember&gt;&lt;Key&gt;UnitsInStock&lt;/Key&gt;&lt;Position&gt;7&lt;/Position&gt;&lt;Width&gt;91&lt;/Width&gt;&lt;CellStyle&gt;&lt;TextAlignment&gt;Far&lt;/TextAlignment&gt;&lt;/CellStyle&gt;&lt;/Column7&gt;&lt;Column8 ID="DepartID"&gt;&lt;Caption&gt;DepartID&lt;/Caption&gt;&lt;DataMember&gt;DepartID&lt;/DataMember&gt;&lt;Key&gt;DepartID&lt;/Key&gt;&lt;Position&gt;8&lt;/Position&gt;&lt;Visible&gt;False&lt;/Visible&gt;&lt;/Column8&gt;&lt;Column9 ID="UnitPrice"&gt;&lt;Caption&gt;Unit Price&lt;/Caption&gt;&lt;DataMember&gt;UnitPrice&lt;/DataMember&gt;&lt;Key&gt;UnitPrice&lt;/Key&gt;&lt;Position&gt;9&lt;/Position&gt;&lt;Visible&gt;False&lt;/Visible&gt;&lt;/Column9&gt;&lt;/Columns&gt;&lt;AllowEdit&gt;False&lt;/AllowEdit&gt;&lt;GridLineStyle&gt;Solid&lt;/GridLineStyle&gt;&lt;GroupCondition /&gt;&lt;RowHeaders&gt;False&lt;/RowHeaders&gt;&lt;RowHeaderContent&gt;RowPosition&lt;/RowHeaderContent&gt;&lt;RowHeight&gt;40&lt;/RowHeight&gt;&lt;/RootTable&gt;&lt;/GridEXLayoutData&gt;</value>
-  </data>
-  <data name="Button1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAAf9JREFUSEvt
-        lr1LW1EYxtMPaEFpsSKJsa3YLgWHunV3cRRBV6cuLuKghQYpnVy6uFX8dzoKwaHVaqLg0KHgDTffATG3
-        vzc8gRjvzT1pFsH84OGc8973Pc+5h5Pck7iTNBqNN0EQPNXQmXK5PFGpVJIa9ke1Wv2KApSr1WovFY6l
-        WCy+IL9EXRXzlMJuUPNFpm2Z+ZQe96RQKDwn/xL59uYKx0PBtsxuiNWf0qaV1hPf98fszTWMh4kzHWZX
-        aq9R0/qYn9DGmpO3RV6G8/FAoWhIXrXJpSzaUd9Da6hljn4y4UOV3aJer79WXlAqld4pHA2J7cOUtW1i
-        IZsae3reNvd7nXRbFOfhG/W79B8pHA1JjzkM87QjNu42Noi9t5+YhpHYXCYN+yPM2AUMR6nJows7ZAq7
-        87/G7Nqs6gK2/IPC7gyNXRkaK+zO0NiVgY0p2tAEfxVyYmBj/pPfUvyDN/+skBMDG7tiHwMW9wmTFRuH
-        GdNftBcg94mNe0LiHAV/0HeFQiFvQUZNjNa7jWk/IrtM2HhJZdEwYfti8EuhUDzPe2Y5yrXv9Z76pn3U
-        MkU5LgbjKouGbbEP+jI3ihmFImGRSSY+kkGY8szldlPtx9jAPEX+cYjpGfFXSovHdas7IXcSk9+qM53b
-        HUyP3cDY6XB1Q34aHaBDTKcVvvckEv8Akwlo7aU7RwAAAAAASUVORK5CYII=
-</value>
-  </data>
 </root>

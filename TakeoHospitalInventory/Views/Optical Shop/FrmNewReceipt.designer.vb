@@ -12,21 +12,23 @@ Partial Class FrmNewReceipt
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container
-        Dim JanusColorScheme2 As Janus.Windows.Common.JanusColorScheme = New Janus.Windows.Common.JanusColorScheme
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
-        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
-        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
-        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
-        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmNewReceipt))
+        Dim JanusColorScheme1 As Janus.Windows.Common.JanusColorScheme = New Janus.Windows.Common.JanusColorScheme
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
         Dim GridListOfItem_DesignTimeLayout As Janus.Windows.GridEX.GridEXLayout = New Janus.Windows.GridEX.GridEXLayout
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmNewReceipt))
         Me.DateCreateReceipt = New System.Windows.Forms.DateTimePicker
         Me.Label2 = New System.Windows.Forms.Label
         Me.Label1 = New System.Windows.Forms.Label
         Me.GroupBox1 = New System.Windows.Forms.GroupBox
         Me.LblCombindReferal = New System.Windows.Forms.Label
         Me.CheOldPatient = New System.Windows.Forms.CheckBox
+        Me.BtnAddItem = New System.Windows.Forms.Button
+        Me.BtnRemoveItem = New System.Windows.Forms.Button
         Me.TxtCusNameEng = New System.Windows.Forms.TextBox
         Me.BtnSelectPatient = New Janus.Windows.EditControls.UIButton
         Me.VisualStyleManager1 = New Janus.Windows.Common.VisualStyleManager(Me.components)
@@ -102,8 +104,6 @@ Partial Class FrmNewReceipt
         Me.GroupBox6 = New System.Windows.Forms.GroupBox
         Me.TxtTotalAsDolar = New System.Windows.Forms.TextBox
         Me.Label8 = New System.Windows.Forms.Label
-        Me.BtnAddItem = New System.Windows.Forms.Button
-        Me.BtnRemoveItem = New System.Windows.Forms.Button
         Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip
         Me.BtnSaveReceipt = New System.Windows.Forms.ToolStripButton
@@ -205,8 +205,12 @@ Partial Class FrmNewReceipt
         '
         'GroupBox1
         '
+        Me.GroupBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox1.Controls.Add(Me.LblCombindReferal)
         Me.GroupBox1.Controls.Add(Me.CheOldPatient)
+        Me.GroupBox1.Controls.Add(Me.BtnAddItem)
+        Me.GroupBox1.Controls.Add(Me.BtnRemoveItem)
         Me.GroupBox1.Controls.Add(Me.TxtCusNameEng)
         Me.GroupBox1.Controls.Add(Me.BtnSelectPatient)
         Me.GroupBox1.Controls.Add(Me.Label3)
@@ -221,11 +225,11 @@ Partial Class FrmNewReceipt
         Me.GroupBox1.Controls.Add(Me.Label5)
         Me.GroupBox1.Controls.Add(Me.Label4)
         Me.GroupBox1.Controls.Add(Me.BtnAddCustomer)
-        Me.GroupBox1.Location = New System.Drawing.Point(18, 350)
+        Me.GroupBox1.Location = New System.Drawing.Point(3, 181)
         Me.GroupBox1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.GroupBox1.Size = New System.Drawing.Size(537, 181)
+        Me.GroupBox1.Size = New System.Drawing.Size(852, 181)
         Me.GroupBox1.TabIndex = 1
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Customer Informatrion"
@@ -253,6 +257,28 @@ Partial Class FrmNewReceipt
         Me.CheOldPatient.Text = "Old Patient"
         Me.CheOldPatient.UseVisualStyleBackColor = False
         '
+        'BtnAddItem
+        '
+        Me.BtnAddItem.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnAddItem.Image = Global.TakeoHospitalInventory.My.Resources.Resources._new
+        Me.BtnAddItem.Location = New System.Drawing.Point(670, 60)
+        Me.BtnAddItem.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.BtnAddItem.Name = "BtnAddItem"
+        Me.BtnAddItem.Size = New System.Drawing.Size(38, 31)
+        Me.BtnAddItem.TabIndex = 4
+        Me.BtnAddItem.UseVisualStyleBackColor = True
+        '
+        'BtnRemoveItem
+        '
+        Me.BtnRemoveItem.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnRemoveItem.Image = Global.TakeoHospitalInventory.My.Resources.Resources.cross_circle
+        Me.BtnRemoveItem.Location = New System.Drawing.Point(753, 69)
+        Me.BtnRemoveItem.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.BtnRemoveItem.Name = "BtnRemoveItem"
+        Me.BtnRemoveItem.Size = New System.Drawing.Size(38, 31)
+        Me.BtnRemoveItem.TabIndex = 5
+        Me.BtnRemoveItem.UseVisualStyleBackColor = True
+        '
         'TxtCusNameEng
         '
         Me.TxtCusNameEng.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
@@ -278,26 +304,26 @@ Partial Class FrmNewReceipt
         '
         'VisualStyleManager1
         '
-        JanusColorScheme2.ActiveCaptionColor = System.Drawing.Color.FromArgb(CType(CType(126, Byte), Integer), CType(CType(126, Byte), Integer), CType(CType(126, Byte), Integer))
-        JanusColorScheme2.ActiveCaptionTextColor = System.Drawing.Color.White
-        JanusColorScheme2.ControlColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        JanusColorScheme2.ControlDarkColor = System.Drawing.Color.FromArgb(CType(CType(126, Byte), Integer), CType(CType(126, Byte), Integer), CType(CType(126, Byte), Integer))
-        JanusColorScheme2.ControlTextColor = System.Drawing.Color.Black
-        JanusColorScheme2.DisabledColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        JanusColorScheme2.GrayTextColor = System.Drawing.Color.FromArgb(CType(CType(126, Byte), Integer), CType(CType(126, Byte), Integer), CType(CType(126, Byte), Integer))
-        JanusColorScheme2.HighlightColor = System.Drawing.Color.FromArgb(CType(CType(126, Byte), Integer), CType(CType(126, Byte), Integer), CType(CType(126, Byte), Integer))
-        JanusColorScheme2.HighlightTextColor = System.Drawing.Color.White
-        JanusColorScheme2.InfoColor = System.Drawing.Color.White
-        JanusColorScheme2.InfoTextColor = System.Drawing.Color.Black
-        JanusColorScheme2.MenuColor = System.Drawing.Color.White
-        JanusColorScheme2.MenuTextColor = System.Drawing.Color.Black
-        JanusColorScheme2.Name = "Scheme0"
-        JanusColorScheme2.Office2007CustomColor = System.Drawing.Color.Empty
-        JanusColorScheme2.UseThemes = False
-        JanusColorScheme2.VisualStyle = Janus.Windows.Common.VisualStyle.Standard
-        JanusColorScheme2.WindowColor = System.Drawing.Color.White
-        JanusColorScheme2.WindowTextColor = System.Drawing.Color.Black
-        Me.VisualStyleManager1.ColorSchemes.Add(JanusColorScheme2)
+        JanusColorScheme1.ActiveCaptionColor = System.Drawing.Color.FromArgb(CType(CType(126, Byte), Integer), CType(CType(126, Byte), Integer), CType(CType(126, Byte), Integer))
+        JanusColorScheme1.ActiveCaptionTextColor = System.Drawing.Color.White
+        JanusColorScheme1.ControlColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        JanusColorScheme1.ControlDarkColor = System.Drawing.Color.FromArgb(CType(CType(126, Byte), Integer), CType(CType(126, Byte), Integer), CType(CType(126, Byte), Integer))
+        JanusColorScheme1.ControlTextColor = System.Drawing.Color.Black
+        JanusColorScheme1.DisabledColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        JanusColorScheme1.GrayTextColor = System.Drawing.Color.FromArgb(CType(CType(126, Byte), Integer), CType(CType(126, Byte), Integer), CType(CType(126, Byte), Integer))
+        JanusColorScheme1.HighlightColor = System.Drawing.Color.FromArgb(CType(CType(126, Byte), Integer), CType(CType(126, Byte), Integer), CType(CType(126, Byte), Integer))
+        JanusColorScheme1.HighlightTextColor = System.Drawing.Color.White
+        JanusColorScheme1.InfoColor = System.Drawing.Color.White
+        JanusColorScheme1.InfoTextColor = System.Drawing.Color.Black
+        JanusColorScheme1.MenuColor = System.Drawing.Color.White
+        JanusColorScheme1.MenuTextColor = System.Drawing.Color.Black
+        JanusColorScheme1.Name = "Scheme0"
+        JanusColorScheme1.Office2007CustomColor = System.Drawing.Color.Empty
+        JanusColorScheme1.UseThemes = False
+        JanusColorScheme1.VisualStyle = Janus.Windows.Common.VisualStyle.Standard
+        JanusColorScheme1.WindowColor = System.Drawing.Color.White
+        JanusColorScheme1.WindowTextColor = System.Drawing.Color.Black
+        Me.VisualStyleManager1.ColorSchemes.Add(JanusColorScheme1)
         '
         'Label3
         '
@@ -452,14 +478,14 @@ Partial Class FrmNewReceipt
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GridItemDetail.BackgroundColor = System.Drawing.SystemColors.Window
         Me.GridItemDetail.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(67, Byte), Integer), CType(CType(82, Byte), Integer))
-        DataGridViewCellStyle7.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle7.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.GridItemDetail.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(67, Byte), Integer), CType(CType(82, Byte), Integer))
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.GridItemDetail.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.GridItemDetail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.GridItemDetail.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ColumnItemID, Me.ColumnBarcode, Me.ColumnName, Me.ColumnPrice, Me.ColumnQTY, Me.SubTotal, Me.SubTotalDolar, Me.Picture, Me.ItemCost, Me.EXCHANGE_RATE})
         Me.GridItemDetail.EnableHeadersVisualStyles = False
@@ -467,17 +493,17 @@ Partial Class FrmNewReceipt
         Me.GridItemDetail.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.GridItemDetail.Name = "GridItemDetail"
         Me.GridItemDetail.ReadOnly = True
-        DataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle12.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.GridItemDetail.RowHeadersDefaultCellStyle = DataGridViewCellStyle12
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.GridItemDetail.RowHeadersDefaultCellStyle = DataGridViewCellStyle6
         Me.GridItemDetail.RowTemplate.Height = 30
         Me.GridItemDetail.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.GridItemDetail.Size = New System.Drawing.Size(536, 294)
+        Me.GridItemDetail.Size = New System.Drawing.Size(536, 440)
         Me.GridItemDetail.TabIndex = 3
         '
         'ColumnItemID
@@ -511,8 +537,8 @@ Partial Class FrmNewReceipt
         '
         Me.ColumnPrice.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
         Me.ColumnPrice.DataPropertyName = "ColumnPrice"
-        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        Me.ColumnPrice.DefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        Me.ColumnPrice.DefaultCellStyle = DataGridViewCellStyle2
         Me.ColumnPrice.HeaderText = "Price"
         Me.ColumnPrice.Name = "ColumnPrice"
         Me.ColumnPrice.ReadOnly = True
@@ -522,8 +548,8 @@ Partial Class FrmNewReceipt
         '
         Me.ColumnQTY.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
         Me.ColumnQTY.DataPropertyName = "ColumnQTY"
-        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        Me.ColumnQTY.DefaultCellStyle = DataGridViewCellStyle9
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        Me.ColumnQTY.DefaultCellStyle = DataGridViewCellStyle3
         Me.ColumnQTY.HeaderText = "Qty"
         Me.ColumnQTY.Name = "ColumnQTY"
         Me.ColumnQTY.ReadOnly = True
@@ -533,10 +559,10 @@ Partial Class FrmNewReceipt
         '
         Me.SubTotal.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
         Me.SubTotal.DataPropertyName = "SubTotalReal"
-        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle10.Format = "R"
-        DataGridViewCellStyle10.NullValue = Nothing
-        Me.SubTotal.DefaultCellStyle = DataGridViewCellStyle10
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle4.Format = "R"
+        DataGridViewCellStyle4.NullValue = Nothing
+        Me.SubTotal.DefaultCellStyle = DataGridViewCellStyle4
         Me.SubTotal.HeaderText = "Total R"
         Me.SubTotal.Name = "SubTotal"
         Me.SubTotal.ReadOnly = True
@@ -546,8 +572,8 @@ Partial Class FrmNewReceipt
         '
         Me.SubTotalDolar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
         Me.SubTotalDolar.DataPropertyName = "SubTotalDolar"
-        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        Me.SubTotalDolar.DefaultCellStyle = DataGridViewCellStyle11
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        Me.SubTotalDolar.DefaultCellStyle = DataGridViewCellStyle5
         Me.SubTotalDolar.HeaderText = "Total $"
         Me.SubTotalDolar.Name = "SubTotalDolar"
         Me.SubTotalDolar.ReadOnly = True
@@ -579,15 +605,17 @@ Partial Class FrmNewReceipt
         '
         'GroupBox3
         '
+        Me.GroupBox3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox3.Controls.Add(Me.GPIncomeType)
         Me.GroupBox3.Controls.Add(Me.GroupBox2)
         Me.GroupBox3.Controls.Add(Me.GroupBox6)
         Me.GroupBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox3.Location = New System.Drawing.Point(3, 92)
+        Me.GroupBox3.Location = New System.Drawing.Point(4, 369)
         Me.GroupBox3.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.GroupBox3.Size = New System.Drawing.Size(642, 238)
+        Me.GroupBox3.Size = New System.Drawing.Size(851, 238)
         Me.GroupBox3.TabIndex = 6
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "In payment for"
@@ -1160,28 +1188,6 @@ Partial Class FrmNewReceipt
         Me.Label8.TabIndex = 0
         Me.Label8.Text = "$"
         '
-        'BtnAddItem
-        '
-        Me.BtnAddItem.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnAddItem.Image = Global.TakeoHospitalInventory.My.Resources.Resources._new
-        Me.BtnAddItem.Location = New System.Drawing.Point(344, 335)
-        Me.BtnAddItem.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.BtnAddItem.Name = "BtnAddItem"
-        Me.BtnAddItem.Size = New System.Drawing.Size(38, 31)
-        Me.BtnAddItem.TabIndex = 4
-        Me.BtnAddItem.UseVisualStyleBackColor = True
-        '
-        'BtnRemoveItem
-        '
-        Me.BtnRemoveItem.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnRemoveItem.Image = Global.TakeoHospitalInventory.My.Resources.Resources.cross_circle
-        Me.BtnRemoveItem.Location = New System.Drawing.Point(344, 372)
-        Me.BtnRemoveItem.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.BtnRemoveItem.Name = "BtnRemoveItem"
-        Me.BtnRemoveItem.Size = New System.Drawing.Size(38, 31)
-        Me.BtnRemoveItem.TabIndex = 5
-        Me.BtnRemoveItem.UseVisualStyleBackColor = True
-        '
         'ImageList1
         '
         Me.ImageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit
@@ -1236,6 +1242,8 @@ Partial Class FrmNewReceipt
         '
         'GroupBox4
         '
+        Me.GroupBox4.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox4.Controls.Add(Me.ChIsPrintFull)
         Me.GroupBox4.Controls.Add(Me.LblReceiptID)
         Me.GroupBox4.Controls.Add(Me.GBPaymentType)
@@ -1246,11 +1254,11 @@ Partial Class FrmNewReceipt
         Me.GroupBox4.Controls.Add(Me.TxtGetBarcode)
         Me.GroupBox4.Controls.Add(Me.DateCreateReceipt)
         Me.GroupBox4.Controls.Add(Me.Label2)
-        Me.GroupBox4.Location = New System.Drawing.Point(126, 21)
+        Me.GroupBox4.Location = New System.Drawing.Point(3, 5)
         Me.GroupBox4.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.GroupBox4.Name = "GroupBox4"
         Me.GroupBox4.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.GroupBox4.Size = New System.Drawing.Size(437, 175)
+        Me.GroupBox4.Size = New System.Drawing.Size(852, 170)
         Me.GroupBox4.TabIndex = 2
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "Invoice Info"
@@ -1262,7 +1270,7 @@ Partial Class FrmNewReceipt
         Me.ChIsPrintFull.CheckState = System.Windows.Forms.CheckState.Checked
         Me.ChIsPrintFull.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ChIsPrintFull.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.ChIsPrintFull.Location = New System.Drawing.Point(419, 136)
+        Me.ChIsPrintFull.Location = New System.Drawing.Point(397, 129)
         Me.ChIsPrintFull.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.ChIsPrintFull.Name = "ChIsPrintFull"
         Me.ChIsPrintFull.Size = New System.Drawing.Size(125, 21)
@@ -1276,7 +1284,7 @@ Partial Class FrmNewReceipt
         Me.LblReceiptID.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.LblReceiptID.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold)
         Me.LblReceiptID.ForeColor = System.Drawing.Color.Red
-        Me.LblReceiptID.Location = New System.Drawing.Point(185, 50)
+        Me.LblReceiptID.Location = New System.Drawing.Point(670, 49)
         Me.LblReceiptID.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.LblReceiptID.Name = "LblReceiptID"
         Me.LblReceiptID.Size = New System.Drawing.Size(21, 22)
@@ -1407,7 +1415,7 @@ Partial Class FrmNewReceipt
         Me.GroupBox7.Controls.Add(Me.TxtNumGlasses)
         Me.GroupBox7.Controls.Add(Me.Label9)
         Me.GroupBox7.Controls.Add(Me.ChbNewGlasses)
-        Me.GroupBox7.Location = New System.Drawing.Point(15, 115)
+        Me.GroupBox7.Location = New System.Drawing.Point(9, 79)
         Me.GroupBox7.Name = "GroupBox7"
         Me.GroupBox7.Size = New System.Drawing.Size(204, 46)
         Me.GroupBox7.TabIndex = 5
@@ -1460,7 +1468,7 @@ Partial Class FrmNewReceipt
         Me.ChPrintPreview.AutoSize = True
         Me.ChPrintPreview.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ChPrintPreview.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.ChPrintPreview.Location = New System.Drawing.Point(253, 136)
+        Me.ChPrintPreview.Location = New System.Drawing.Point(231, 129)
         Me.ChPrintPreview.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.ChPrintPreview.Name = "ChPrintPreview"
         Me.ChPrintPreview.Size = New System.Drawing.Size(157, 21)
@@ -1470,10 +1478,11 @@ Partial Class FrmNewReceipt
         '
         'TxtGetBarcode
         '
-        Me.TxtGetBarcode.Location = New System.Drawing.Point(8, 86)
+        Me.TxtGetBarcode.Location = New System.Drawing.Point(635, 86)
         Me.TxtGetBarcode.Name = "TxtGetBarcode"
         Me.TxtGetBarcode.Size = New System.Drawing.Size(185, 20)
         Me.TxtGetBarcode.TabIndex = 16
+        Me.TxtGetBarcode.Visible = False
         '
         'ErrReceipt
         '
@@ -1491,12 +1500,12 @@ Partial Class FrmNewReceipt
         Me.BtnClose.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnClose.ForeColor = System.Drawing.Color.White
         Me.BtnClose.Image = CType(resources.GetObject("BtnClose.Image"), System.Drawing.Image)
-        Me.BtnClose.Location = New System.Drawing.Point(516, 424)
+        Me.BtnClose.Location = New System.Drawing.Point(144, 619)
         Me.BtnClose.Name = "BtnClose"
-        Me.BtnClose.Size = New System.Drawing.Size(126, 57)
+        Me.BtnClose.Size = New System.Drawing.Size(126, 43)
         Me.BtnClose.TabIndex = 18
         Me.BtnClose.Text = "Close"
-        Me.BtnClose.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        Me.BtnClose.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.BtnClose.UseVisualStyleBackColor = False
         '
         'BtnSave
@@ -1508,12 +1517,12 @@ Partial Class FrmNewReceipt
         Me.BtnSave.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnSave.ForeColor = System.Drawing.Color.White
         Me.BtnSave.Image = CType(resources.GetObject("BtnSave.Image"), System.Drawing.Image)
-        Me.BtnSave.Location = New System.Drawing.Point(361, 417)
+        Me.BtnSave.Location = New System.Drawing.Point(10, 619)
         Me.BtnSave.Name = "BtnSave"
-        Me.BtnSave.Size = New System.Drawing.Size(126, 57)
+        Me.BtnSave.Size = New System.Drawing.Size(126, 43)
         Me.BtnSave.TabIndex = 17
         Me.BtnSave.Text = "Save"
-        Me.BtnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        Me.BtnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.BtnSave.UseVisualStyleBackColor = False
         '
         'TxtItemNameSearch
@@ -1542,7 +1551,7 @@ Partial Class FrmNewReceipt
         Me.UiTab1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.UiTab1.Location = New System.Drawing.Point(0, 0)
         Me.UiTab1.Name = "UiTab1"
-        Me.UiTab1.Size = New System.Drawing.Size(1200, 683)
+        Me.UiTab1.Size = New System.Drawing.Size(1424, 829)
         Me.UiTab1.TabIndex = 20
         Me.UiTab1.TabPages.AddRange(New Janus.Windows.UI.Tab.UITabPage() {Me.UiTabPage2})
         Me.UiTab1.VisualStyleManager = Me.VisualStyleManager1
@@ -1556,7 +1565,7 @@ Partial Class FrmNewReceipt
         Me.UiTabPage2.Controls.Add(Me.TxtItemNameSearch)
         Me.UiTabPage2.Location = New System.Drawing.Point(1, 28)
         Me.UiTabPage2.Name = "UiTabPage2"
-        Me.UiTabPage2.Size = New System.Drawing.Size(1198, 654)
+        Me.UiTabPage2.Size = New System.Drawing.Size(1422, 800)
         Me.UiTabPage2.StateStyles.FormatStyle.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
         Me.UiTabPage2.StateStyles.FormatStyle.FontSize = 12.0!
         Me.UiTabPage2.StateStyles.FormatStyle.ForeColor = System.Drawing.Color.White
@@ -1573,7 +1582,7 @@ Partial Class FrmNewReceipt
         Me.Panel2.Controls.Add(Me.GridItemDetail)
         Me.Panel2.Location = New System.Drawing.Point(3, 51)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(546, 595)
+        Me.Panel2.Size = New System.Drawing.Size(546, 741)
         Me.Panel2.TabIndex = 24
         '
         'GridListOfItem
@@ -1614,14 +1623,12 @@ Partial Class FrmNewReceipt
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel1.Controls.Add(Me.GroupBox3)
         Me.Panel1.Controls.Add(Me.GroupBox1)
-        Me.Panel1.Controls.Add(Me.BtnAddItem)
         Me.Panel1.Controls.Add(Me.BtnClose)
-        Me.Panel1.Controls.Add(Me.BtnRemoveItem)
         Me.Panel1.Controls.Add(Me.GroupBox4)
         Me.Panel1.Controls.Add(Me.BtnSave)
         Me.Panel1.Location = New System.Drawing.Point(555, 51)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(640, 595)
+        Me.Panel1.Size = New System.Drawing.Size(864, 741)
         Me.Panel1.TabIndex = 23
         '
         'BtnSearch
@@ -1641,7 +1648,7 @@ Partial Class FrmNewReceipt
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
         Me.AutoScroll = True
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(236, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(241, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(1200, 683)
+        Me.ClientSize = New System.Drawing.Size(1424, 829)
         Me.Controls.Add(Me.UiTab1)
         Me.Controls.Add(Me.ToolStrip1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
