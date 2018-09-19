@@ -700,7 +700,7 @@ Public Class FrmNewReceipt
             Me.TxtSex.Text = FUMainCustomer.GridCustomer.SelectedItems(0).GetRow.Cells("Sex").Value
             Me.TxtAge.Text = FUMainCustomer.GridCustomer.SelectedItems(0).GetRow.Cells("Age").Value
             Me.txtAddress.Text = FUMainCustomer.GridCustomer.SelectedItems(0).GetRow.Cells("Address").Value
-            CheckIsPatientConsult(EmptyString(TxtCustomerNo.Text), "Optical Shop", 0)
+            'CheckIsPatientConsult(EmptyString(TxtCustomerNo.Text), "Optical Shop", 0)
         End If
     End Sub
 
@@ -2360,10 +2360,6 @@ Public Class FrmNewReceipt
 
   
 
-    Private Sub TxtItemNameSearch_KeyUp(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles TxtItemNameSearch.KeyUp
-        SearchItemByName()
-    End Sub
-
     Private Sub GridListOfItem_DoubleClick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles GridListOfItem.DoubleClick
         If GridListOfItem.SelectedItems.Count = 0 Then
             MessageBox.Show("Please select item.", "Item", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -2389,5 +2385,12 @@ Public Class FrmNewReceipt
         'End If
         
         'Me.Close()
+    End Sub
+
+  
+    Private Sub TxtItemNameSearch_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles TxtItemNameSearch.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            SearchItemByName()
+        End If
     End Sub
 End Class
