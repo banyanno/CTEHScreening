@@ -229,7 +229,7 @@ Partial Class FrmNewReceipt
         Me.GroupBox1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.GroupBox1.Size = New System.Drawing.Size(852, 181)
+        Me.GroupBox1.Size = New System.Drawing.Size(852, 137)
         Me.GroupBox1.TabIndex = 1
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Customer Informatrion"
@@ -345,6 +345,7 @@ Partial Class FrmNewReceipt
         Me.BtnCleanCustomer.StateStyles.FormatStyle.ForeColor = System.Drawing.Color.White
         Me.BtnCleanCustomer.TabIndex = 8
         Me.BtnCleanCustomer.Text = "Clean Cus-info"
+        Me.BtnCleanCustomer.Visible = False
         Me.BtnCleanCustomer.VisualStyleManager = Me.VisualStyleManager1
         '
         'txtAddress
@@ -454,6 +455,7 @@ Partial Class FrmNewReceipt
         Me.BtnAddCustomer.StateStyles.FormatStyle.ForeColor = System.Drawing.Color.White
         Me.BtnAddCustomer.TabIndex = 7
         Me.BtnAddCustomer.Text = "Select New Customer And Old Patient"
+        Me.BtnAddCustomer.Visible = False
         Me.BtnAddCustomer.VisualStyleManager = Me.VisualStyleManager1
         '
         'TxtCustomerID
@@ -611,11 +613,11 @@ Partial Class FrmNewReceipt
         Me.GroupBox3.Controls.Add(Me.GroupBox2)
         Me.GroupBox3.Controls.Add(Me.GroupBox6)
         Me.GroupBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox3.Location = New System.Drawing.Point(3, 349)
+        Me.GroupBox3.Location = New System.Drawing.Point(4, 304)
         Me.GroupBox3.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.GroupBox3.Size = New System.Drawing.Size(851, 281)
+        Me.GroupBox3.Size = New System.Drawing.Size(851, 318)
         Me.GroupBox3.TabIndex = 6
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "In payment for"
@@ -1500,7 +1502,7 @@ Partial Class FrmNewReceipt
         Me.BtnClose.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnClose.ForeColor = System.Drawing.Color.White
         Me.BtnClose.Image = CType(resources.GetObject("BtnClose.Image"), System.Drawing.Image)
-        Me.BtnClose.Location = New System.Drawing.Point(152, 663)
+        Me.BtnClose.Location = New System.Drawing.Point(137, 672)
         Me.BtnClose.Name = "BtnClose"
         Me.BtnClose.Size = New System.Drawing.Size(126, 43)
         Me.BtnClose.TabIndex = 18
@@ -1517,7 +1519,7 @@ Partial Class FrmNewReceipt
         Me.BtnSave.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnSave.ForeColor = System.Drawing.Color.White
         Me.BtnSave.Image = CType(resources.GetObject("BtnSave.Image"), System.Drawing.Image)
-        Me.BtnSave.Location = New System.Drawing.Point(18, 663)
+        Me.BtnSave.Location = New System.Drawing.Point(3, 672)
         Me.BtnSave.Name = "BtnSave"
         Me.BtnSave.Size = New System.Drawing.Size(126, 43)
         Me.BtnSave.TabIndex = 17
