@@ -2,7 +2,7 @@
 Imports System.Data.Common
 
 Public Class FrmNewReceipt
-
+    Dim MScreening As MainScreening
     Dim MainReceipt As MainOpticalShop
     Const MEDICINCE As String = "Medicince"
     Const SPECTACLE As String = "Spectacle"
@@ -54,6 +54,14 @@ Public Class FrmNewReceipt
         InitializeComponent()
         ' Add any initialization after the InitializeComponent() call.
         Me.MainReceipt = MainReceipt
+        InitDonation()
+    End Sub
+    Sub New(ByVal MScreening As MainScreening)
+
+        ' This call is required by the Windows Form Designer.
+        InitializeComponent()
+        MScreening = MScreening
+        ' Add any initialization after the InitializeComponent() call.
         InitDonation()
     End Sub
     Sub New(ByVal MTakeoInventory As MainTakeoInventory)
@@ -739,7 +747,7 @@ Public Class FrmNewReceipt
                 Exit Sub
             End If
             If CheckEyeGlasses(GroupPayCorrency) = False Then
-                MessageBox.Show("Please select customer pay as ($ or R)", "Invioce", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                'MessageBox.Show("Please select customer pay as ($ or R)", "Invioce", MessageBoxButtons.OK, MessageBoxIcon.Warning)
                 GroupPayCorrency.BackColor = Color.Khaki
                 Exit Sub
             Else
@@ -748,7 +756,7 @@ Public Class FrmNewReceipt
 
 
             If CheckStatusIncome() = False Then
-                MessageBox.Show("Please select income type.", "Income", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                'MessageBox.Show("Please select income type.", "Income", MessageBoxButtons.OK, MessageBoxIcon.Warning)
                 GPIncomeType.BackColor = Color.Khaki
                 Exit Sub
             Else
@@ -775,7 +783,7 @@ Public Class FrmNewReceipt
             End If
 
             If CheckPaymentType() = False Then
-                MessageBox.Show("Please select payment type.", "Payment", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                'MessageBox.Show("Please select payment type.", "Payment", MessageBoxButtons.OK, MessageBoxIcon.Warning)
                 GBPaymentType.BackColor = Color.Khaki
                 Exit Sub
             Else
@@ -1197,7 +1205,7 @@ Public Class FrmNewReceipt
                             LoadNewReceiptNo()
                         End If
                         Dim ReceiptType As String = ""
-                        MTakeoInventory.StatusLoading(True)
+                        UIMainScreening.StatusLoading(True, "Loading")
                         Application.DoEvents()
 
                         '-------- Set Object For Receip TblPatientReceipt----------
@@ -1404,25 +1412,25 @@ Public Class FrmNewReceipt
                         ObjReceipt.TIME_CREATE = Format(GetDateServer, "hh:mm:ss tt").ToString
 
                         'Case Patient not yet add to table Receipt_Customer
-                        If IsPatient = True Then
-                            Dim Re_Customer As New RECEIPT_CUSTOMER
-                            Re_Customer.CustomerNo = TxtCustomerID.Text
-                            Re_Customer.CusName = TxtCustomerName.Text
-                            Re_Customer.Sex = TxtSex.Text
-                            '--- For Optical shop customer statistic report purpose
-                            If TxtSex.Text = "F" Then
-                                Re_Customer.Female = "F"
-                            Else
-                                Re_Customer.Male = "M"
-                            End If
-                            Re_Customer.Age = CInt(TxtAge.Text)
-                            Re_Customer.Occupation = TxtCusOccupation.Text
-                            Re_Customer.Address = Replace(txtAddress.Text, "'", "")
-                            Re_Customer.IsPatient = True
-                            Re_Customer.CusNameEng = TxtCusNameEng.Text
-                            ObjReceipt.CustomerNo = P_Customer.SaveNewCustomer(Re_Customer)
-                            ObjReceipt.CustID = Re_Customer.CustID
+                        'If IsPatient = True Then
+                        Dim Re_Customer As New RECEIPT_CUSTOMER
+                        Re_Customer.CustomerNo = TxtCustomerID.Text
+                        Re_Customer.CusName = TxtCustomerName.Text
+                        Re_Customer.Sex = TxtSex.Text
+                        '--- For Optical shop customer statistic report purpose
+                        If TxtSex.Text = "F" Then
+                            Re_Customer.Female = "F"
+                        Else
+                            Re_Customer.Male = "M"
                         End If
+                        Re_Customer.Age = CInt(TxtAge.Text)
+                        Re_Customer.Occupation = TxtCusOccupation.Text
+                        Re_Customer.Address = Replace(txtAddress.Text, "'", "")
+                        Re_Customer.IsPatient = True
+                        Re_Customer.CusNameEng = TxtCusNameEng.Text
+                        ObjReceipt.CustomerNo = P_Customer.SaveNewCustomer(Re_Customer)
+                        ObjReceipt.CustID = Re_Customer.CustID
+                        'End If
 
                         ObjReceipt.MedicReal = 0
                         ObjReceipt.MedicDolar = 0
@@ -2025,7 +2033,7 @@ Public Class FrmNewReceipt
 
     Private Sub BgSaveAndPrinting_RunWorkerCompleted(ByVal sender As System.Object, ByVal e As System.ComponentModel.RunWorkerCompletedEventArgs) Handles BgSaveAndPrinting.RunWorkerCompleted
 
-        Me.MTakeoInventory.StatusLoading(False)
+        UIMainScreening.StatusLoading(False, "")
         Application.DoEvents()
         'Me.DialogResult = Windows.Forms.DialogResult.OK
     End Sub
@@ -2392,5 +2400,38 @@ Public Class FrmNewReceipt
         If e.KeyCode = Keys.Enter Then
             SearchItemByName()
         End If
+    End Sub
+
+    Private Sub BtnRemoveV1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnRemoveV1.Click
+        If GridItemDetail.CurrentRow Is Nothing Then
+            MessageBox.Show("Please selected at least one item to remove.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Exit Sub
+        Else
+            If MessageBox.Show("Do you want remove this item?", "Remove", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
+                GridItemDetail.Refresh()
+                Dim Index As Integer = GridItemDetail.CurrentRow.Index
+                DTblItemDetial.Rows(Index).Delete()
+                DTblItemDetial.AcceptChanges()
+                CheckCalculatReceipt()
+
+                '--- Refresh value Full Amount
+                If RadFull.Checked = True Then
+                    If RadKHR.Checked = True Then
+                        TxtFullAmount.Text = TxtTotalAsReal.Text
+                    End If
+                    If RadUSD.Checked = True Then
+                        TxtFullAmount.Text = TxtTotalAsDolar.Text
+                    End If
+                End If
+
+            End If
+        End If
+    End Sub
+
+    Private Sub BtnSave_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnSave.Click
+        DateCreateReceipt.Checked = True
+        DateCreateReceipt.Value = CheckMarkEOD()
+        DateCreateReceipt.Enabled = False
+        BgSaveAndPrinting.RunWorkerAsync()
     End Sub
 End Class

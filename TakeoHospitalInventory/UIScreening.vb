@@ -1,5 +1,5 @@
 ﻿Public Class UIScreening
-    Dim MScreening As MainScreening
+    'Dim MScreening As MainScreening
     Dim Login As frmLoginInventory
 
 
@@ -76,7 +76,7 @@
 
         ' This call is required by the Windows Form Designer.
         InitializeComponent()
-        Me.MScreening = MScreening
+        'Me.MScreening = MScreening
         Me.Login = LoginForm
         InitUserControle()
         ' Add any initialization after the InitializeComponent() call.
@@ -88,10 +88,10 @@
     Sub InitUserControle()
         Me.Login.UpdateLabelStatus("Checking Permission", True)
         Application.DoEvents()
-        ReceivePayemtn = New DashbordReceiveReceipt(Me.MScreening)
+        ReceivePayemtn = New DashbordReceiveReceipt(UIMainScreening)
         Login.UpdateLabelStatus("Creating user interface 1.", True)
         Application.DoEvents()
-        PatientPayment = New UCPatientPayment(Me.MScreening)
+        PatientPayment = New UCPatientPayment(UIMainScreening)
         Login.UpdateLabelStatus("Creating user interface 2.", True)
         Application.DoEvents()
         examinationForm = New UCRegistrationForm
@@ -112,7 +112,7 @@
         WeeklySummary = New UWeeklyCashCollection
         Login.UpdateLabelStatus("Creating user interface 8.", True)
         Application.DoEvents()
-        NewOldPatientBook = New UCMainNew_Outpatient(Me.MScreening)
+        NewOldPatientBook = New UCMainNew_Outpatient(UIMainScreening)
         Login.UpdateLabelStatus("Creating user interface 9.", True)
         Application.DoEvents()
         ' OldOutpatient = New UCMainOld_Outpatient(Me)
@@ -208,7 +208,7 @@
         UCabinet = New UCCabinet
         Login.UpdateLabelStatus("Creating user interface 37.", True)
         Application.DoEvents()
-        UNewReceipt = New MainOpticalShop(Me.MScreening)
+        UNewReceipt = New MainOpticalShop(UIMainScreening)
         Login.UpdateLabelStatus("Creating user interface 38.", True)
         Application.DoEvents()
 
@@ -295,7 +295,7 @@
 
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
         'SetVisibleEnvisibleMenu()
-        AddUserControl(MScreening.PanelHeader, MScreening.PanelDedail, PatientPayment, "", True)
+        AddUserControl(UIMainScreening.PanelHeader, UIMainScreening.PanelDedail, PatientPayment, "", True)
     End Sub
 
     Private Sub BtnNavigationBar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnNavigationBar.Click
@@ -304,22 +304,26 @@
 
 
     Private Sub BtnPatientRegistration_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnPatientRegistration.Click
-        AddUserControl(MScreening.PanelHeader, MScreening.PanelDedail, PatientPayment, "", True)
+        AddUserControl(UIMainScreening.PanelHeader, UIMainScreening.PanelDedail, PatientPayment, "", True)
     End Sub
 
     Private Sub BtnNewPatientBook_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnNewPatientBook.Click
-        AddUserControl(MScreening.PanelHeader, MScreening.PanelDedail, NewOldPatientBook, "", True)
+        AddUserControl(UIMainScreening.PanelHeader, UIMainScreening.PanelDedail, NewOldPatientBook, "", True)
     End Sub
 
     Private Sub BtnScreeningBook_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnScreeningBook.Click
-        AddUserControl(MScreening.PanelHeader, MScreening.PanelDedail, ScreenDashboard, "", True)
+        AddUserControl(UIMainScreening.PanelHeader, UIMainScreening.PanelDedail, ScreenDashboard, "", True)
     End Sub
 
     Private Sub BtnScreeningSetting_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnScreeningSetting.Click
-        AddUserControl(MScreening.PanelHeader, MScreening.PanelDedail, ScreenSetting, "", True)
+        AddUserControl(UIMainScreening.PanelHeader, UIMainScreening.PanelDedail, ScreenSetting, "", True)
     End Sub
 
     Private Sub BtnOpticalShop_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnOpticalShop.Click
-        AddUserControl(MScreening.PanelHeader, MScreening.PanelDedail, UNewReceipt, "", True)
+        AddUserControl(UIMainScreening.PanelHeader, UIMainScreening.PanelDedail, UNewReceipt, "", True)
+    End Sub
+
+    Private Sub BtnPharmacty_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnPharmacty.Click
+        AddUserControl(UIMainScreening.PanelHeader, UIMainScreening.PanelDedail, CashReceipDashboad, "", True)
     End Sub
 End Class

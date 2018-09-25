@@ -141,7 +141,7 @@ Partial Class FrmNewReceipt
         Me.UiTabPage2 = New Janus.Windows.UI.Tab.UITabPage
         Me.Panel2 = New System.Windows.Forms.Panel
         Me.GridListOfItem = New Janus.Windows.GridEX.GridEX
-        Me.Button1 = New System.Windows.Forms.Button
+        Me.BtnRemoveV1 = New System.Windows.Forms.Button
         Me.Panel1 = New System.Windows.Forms.Panel
         Me.BtnSearch = New System.Windows.Forms.Button
         Me.GroupBox1.SuspendLayout()
@@ -229,7 +229,7 @@ Partial Class FrmNewReceipt
         Me.GroupBox1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.GroupBox1.Size = New System.Drawing.Size(852, 137)
+        Me.GroupBox1.Size = New System.Drawing.Size(852, 184)
         Me.GroupBox1.TabIndex = 1
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Customer Informatrion"
@@ -272,7 +272,7 @@ Partial Class FrmNewReceipt
         '
         Me.BtnRemoveItem.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BtnRemoveItem.Image = Global.TakeoHospitalInventory.My.Resources.Resources.cross_circle
-        Me.BtnRemoveItem.Location = New System.Drawing.Point(753, 69)
+        Me.BtnRemoveItem.Location = New System.Drawing.Point(723, 61)
         Me.BtnRemoveItem.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.BtnRemoveItem.Name = "BtnRemoveItem"
         Me.BtnRemoveItem.Size = New System.Drawing.Size(38, 31)
@@ -613,7 +613,7 @@ Partial Class FrmNewReceipt
         Me.GroupBox3.Controls.Add(Me.GroupBox2)
         Me.GroupBox3.Controls.Add(Me.GroupBox6)
         Me.GroupBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox3.Location = New System.Drawing.Point(4, 304)
+        Me.GroupBox3.Location = New System.Drawing.Point(8, 349)
         Me.GroupBox3.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
@@ -1202,7 +1202,7 @@ Partial Class FrmNewReceipt
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
         Me.ToolStrip1.Name = "ToolStrip1"
         Me.ToolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional
-        Me.ToolStrip1.Size = New System.Drawing.Size(1111, 27)
+        Me.ToolStrip1.Size = New System.Drawing.Size(1424, 27)
         Me.ToolStrip1.TabIndex = 0
         Me.ToolStrip1.Text = "ToolStrip1"
         Me.ToolStrip1.Visible = False
@@ -1324,10 +1324,12 @@ Partial Class FrmNewReceipt
         'RadKHR
         '
         Me.RadKHR.AutoSize = True
+        Me.RadKHR.Checked = True
         Me.RadKHR.Location = New System.Drawing.Point(6, 18)
         Me.RadKHR.Name = "RadKHR"
         Me.RadKHR.Size = New System.Drawing.Size(48, 17)
         Me.RadKHR.TabIndex = 1
+        Me.RadKHR.TabStop = True
         Me.RadKHR.Text = "KHR"
         Me.RadKHR.UseVisualStyleBackColor = True
         '
@@ -1403,6 +1405,7 @@ Partial Class FrmNewReceipt
         'RadFull
         '
         Me.RadFull.AutoSize = True
+        Me.RadFull.Checked = True
         Me.RadFull.Enabled = False
         Me.RadFull.Location = New System.Drawing.Point(17, 30)
         Me.RadFull.Name = "RadFull"
@@ -1580,7 +1583,7 @@ Partial Class FrmNewReceipt
                     Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel2.Controls.Add(Me.GridListOfItem)
-        Me.Panel2.Controls.Add(Me.Button1)
+        Me.Panel2.Controls.Add(Me.BtnRemoveV1)
         Me.Panel2.Controls.Add(Me.GridItemDetail)
         Me.Panel2.Location = New System.Drawing.Point(3, 51)
         Me.Panel2.Name = "Panel2"
@@ -1608,17 +1611,17 @@ Partial Class FrmNewReceipt
         Me.GridListOfItem.ThemedAreas = Janus.Windows.GridEX.ThemedArea.None
         Me.GridListOfItem.VisualStyleManager = Me.VisualStyleManager1
         '
-        'Button1
+        'BtnRemoveV1
         '
-        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
-        Me.Button1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Image = CType(resources.GetObject("Button1.Image"), System.Drawing.Image)
-        Me.Button1.Location = New System.Drawing.Point(241, 255)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(43, 37)
-        Me.Button1.TabIndex = 22
-        Me.Button1.UseVisualStyleBackColor = False
+        Me.BtnRemoveV1.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
+        Me.BtnRemoveV1.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnRemoveV1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnRemoveV1.Image = CType(resources.GetObject("BtnRemoveV1.Image"), System.Drawing.Image)
+        Me.BtnRemoveV1.Location = New System.Drawing.Point(241, 255)
+        Me.BtnRemoveV1.Name = "BtnRemoveV1"
+        Me.BtnRemoveV1.Size = New System.Drawing.Size(43, 37)
+        Me.BtnRemoveV1.TabIndex = 22
+        Me.BtnRemoveV1.UseVisualStyleBackColor = False
         '
         'Panel1
         '
@@ -1826,7 +1829,7 @@ Partial Class FrmNewReceipt
     Friend WithEvents Picture As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents ItemCost As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents EXCHANGE_RATE As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents BtnRemoveV1 As System.Windows.Forms.Button
     Friend WithEvents Panel1 As System.Windows.Forms.Panel
     Friend WithEvents Panel2 As System.Windows.Forms.Panel
 End Class

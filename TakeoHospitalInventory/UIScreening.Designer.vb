@@ -50,7 +50,7 @@ Partial Class UIScreening
         Me.Button11 = New System.Windows.Forms.Button
         Me.Button6 = New System.Windows.Forms.Button
         Me.Button12 = New System.Windows.Forms.Button
-        Me.Button5 = New System.Windows.Forms.Button
+        Me.BtnPharmacty = New System.Windows.Forms.Button
         Me.MenuVertical.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
@@ -266,7 +266,7 @@ Partial Class UIScreening
         Me.Panel2.Controls.Add(Me.Button11)
         Me.Panel2.Controls.Add(Me.Button6)
         Me.Panel2.Controls.Add(Me.Button12)
-        Me.Panel2.Controls.Add(Me.Button5)
+        Me.Panel2.Controls.Add(Me.BtnPharmacty)
         Me.Panel2.Controls.Add(Me.Label2)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel2.Location = New System.Drawing.Point(242, 0)
@@ -512,24 +512,24 @@ Partial Class UIScreening
         Me.Button12.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.Button12.UseVisualStyleBackColor = False
         '
-        'Button5
+        'BtnPharmacty
         '
-        Me.Button5.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
-        Me.Button5.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Button5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver
-        Me.Button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button5.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button5.ForeColor = System.Drawing.Color.White
-        Me.Button5.Image = CType(resources.GetObject("Button5.Image"), System.Drawing.Image)
-        Me.Button5.Location = New System.Drawing.Point(8, 306)
-        Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(252, 93)
-        Me.Button5.TabIndex = 6
-        Me.Button5.Text = "Pharmacy"
-        Me.Button5.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.Button5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
-        Me.Button5.UseVisualStyleBackColor = False
+        Me.BtnPharmacty.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
+        Me.BtnPharmacty.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnPharmacty.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.BtnPharmacty.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver
+        Me.BtnPharmacty.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnPharmacty.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnPharmacty.ForeColor = System.Drawing.Color.White
+        Me.BtnPharmacty.Image = CType(resources.GetObject("BtnPharmacty.Image"), System.Drawing.Image)
+        Me.BtnPharmacty.Location = New System.Drawing.Point(8, 306)
+        Me.BtnPharmacty.Name = "BtnPharmacty"
+        Me.BtnPharmacty.Size = New System.Drawing.Size(252, 93)
+        Me.BtnPharmacty.TabIndex = 6
+        Me.BtnPharmacty.Text = "Pharmacy"
+        Me.BtnPharmacty.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.BtnPharmacty.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        Me.BtnPharmacty.UseVisualStyleBackColor = False
         '
         'UIScreening
         '
@@ -551,7 +551,7 @@ Partial Class UIScreening
     Friend WithEvents BtnOpticalShop As System.Windows.Forms.Button
     Friend WithEvents BtnScreeningSetting As System.Windows.Forms.Button
     Friend WithEvents BtnScreeningBook As System.Windows.Forms.Button
-    Friend WithEvents Button5 As System.Windows.Forms.Button
+    Friend WithEvents BtnPharmacty As System.Windows.Forms.Button
     Friend WithEvents Button6 As System.Windows.Forms.Button
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Button7 As System.Windows.Forms.Button
