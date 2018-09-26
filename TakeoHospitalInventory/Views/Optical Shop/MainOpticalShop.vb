@@ -101,7 +101,10 @@
     End Sub
 
     Private Sub BtnNewReceipt1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnNewReceipt1.Click
-        If GridListWaitingPay.SelectedItems.Count = 0 Then Exit Sub
+        If GridListWaitingPay.SelectedItems.Count = 0 Then
+            MessageBox.Show("Please select patient name!", "Shop", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Exit Sub
+        End If
         Dim FNewReceipt As New FrmNewReceipt(Me)
         FNewReceipt.TxtCustomerID.Text = GridListWaitingPay.GetRow.Cells("PATIENT_NO").Value
         FNewReceipt.TxtCustomerNo.Text = GridListWaitingPay.GetRow.Cells("PATIENT_NO").Value

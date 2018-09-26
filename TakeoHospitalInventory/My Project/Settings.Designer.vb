@@ -81,9 +81,9 @@ Namespace My
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=NBC120\sql2008;Failover Partner=192.168.111.252\sql2;Initial Catalog="& _ 
-            "TEHScreening;Persist Security Info=True;User ID=sa;Password=P@ssw0rd;Max Pool Si"& _ 
-            "ze=4000;Asynchronous Processing=True;Connect Timeout=5000;Packet Size=2768")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP128;Failover Partner=192.168.111.252\sql2;Initial Catalog=TEHS"& _ 
+            "creening;Persist Security Info=True;User ID=sa;Password=P@ssw0rd;Max Pool Size=4"& _ 
+            "000;Asynchronous Processing=True;Connect Timeout=5000;Packet Size=2768")>  _
         Public ReadOnly Property TakeoDBConnectionString() As String
             Get
                 Return CType(Me("TakeoDBConnectionString"),String)
@@ -93,9 +93,9 @@ Namespace My
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=NBC120\sql2008;Initial Catalog=TakeoDB;Persist Security Info=True;Use"& _ 
-            "r ID=sa;Password=P@ssw0rd;Max Pool Size=4000;Asynchronous Processing=True;Connec"& _ 
-            "t Timeout=5000;Packet Size=2768")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP128;Initial Catalog=TakeoDB;Persist Security Info=True;User ID"& _ 
+            "=sa;Password=P@ssw0rd;Max Pool Size=4000;Asynchronous Processing=True;Connect Ti"& _ 
+            "meout=5000;Packet Size=2768")>  _
         Public ReadOnly Property DBCNNPROD() As String
             Get
                 Return CType(Me("DBCNNPROD"),String)

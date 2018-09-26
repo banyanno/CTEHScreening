@@ -12,6 +12,7 @@ Public Class FrmNewReceipt
     Dim DADonation As New DSOpticalShopTableAdapters.DONATIONTableAdapter
     Private THIDataContext As New BaseDataContext
     Dim DaReceipt As New DSOpticalShopTableAdapters.VMainReceiptDetailTableAdapter
+
     Dim DaReceiptPrint As New DSOpticalShopTableAdapters.V_Receipt_InvoiceTableAdapter
     Dim DaReceiptDetail As New DSOpticalShopTableAdapters.VReceiptDetailTableAdapter
     Dim DaReceiptCustomer As New DSOpticalShopTableAdapters.RECEIPT_CUSTOMERTableAdapter
@@ -2373,15 +2374,27 @@ Public Class FrmNewReceipt
             MessageBox.Show("Please select item.", "Item", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Exit Sub
         End If
+        Dim ItmePrice As Double = 0
         Dim SubTotalR As Double
         Dim SubTotalD As Double
-        If IsDolar = True Then
-            SubTotalR = Round((Val(GridListOfItem.GetRow.Cells("Price").Value) * Val(txtRate.Text)) * 1) 'Val(TxtItemQTY.Text))
-            'Calculate for Dolar
-            SubTotalD = Round(Val(GridListOfItem.GetRow.Cells("Price").Value) * 1, 3) ' Val(TxtItemQTY.Text)
+        If GridListOfItem.GetRow.Cells("UnitsInStock").Value <= 0 Then
+            MessageBox.Show("QTy can not 0. please check again", "Item", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Exit Sub
+        End If
+        If GridListOfItem.GetRow.Cells("Price").Value = 0 Then
+            MessageBox.Show("Please select item.", "Item", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Exit Sub
         Else
-            SubTotalR = Math.Round(Val(GridListOfItem.GetRow.Cells("Price").Value) * 1) 'Val(TxtItemQTY.Text))
-            SubTotalD = Round((Val(GridListOfItem.GetRow.Cells("Price").Value) / Val(txtRate.Text)) * 1, 3) 'Val(TxtItemQTY.Text)
+            ItmePrice = GridListOfItem.GetRow.Cells("Price").Value
+        End If
+       
+        If IsDolar = True Then
+            SubTotalR = Round((Val(ItmePrice) * Val(txtRate.Text)) * 1) 'Val(TxtItemQTY.Text))
+            'Calculate for Dolar
+            SubTotalD = Round(Val(ItmePrice) * 1, 3) ' Val(TxtItemQTY.Text)
+        Else
+            SubTotalR = Math.Round(Val(ItmePrice) * 1) 'Val(TxtItemQTY.Text))
+            SubTotalD = Round((Val(ItmePrice) / Val(txtRate.Text)) * 1, 3) 'Val(TxtItemQTY.Text)
         End If
 
         'If IsPaymentNil = True Then
@@ -2389,7 +2402,7 @@ Public Class FrmNewReceipt
         '    'SubTotalD = 0
         '    Me.FNewReceipt.AddItemDetial(LblItemID.Text, TxtBarcode.Text, TxtItemName.Text, TxtItemPrice.Text, TxtItemQTY.Text, Nothing, SubTotalR, SubTotalD, lblCost.Text)
         'Else
-        AddItemDetial(GridListOfItem.GetRow.Cells("ItemID").Value, GridListOfItem.GetRow.Cells("Barcode").Value, GridListOfItem.GetRow.Cells("ItemName").Value, GridListOfItem.GetRow.Cells("Price").Value, 1, Nothing, SubTotalR, SubTotalD, GridListOfItem.GetRow.Cells("UnitPrice").Value)
+        AddItemDetial(GridListOfItem.GetRow.Cells("ItemID").Value, GridListOfItem.GetRow.Cells("Barcode").Value, GridListOfItem.GetRow.Cells("ItemName").Value, ItmePrice, 1, Nothing, SubTotalR, SubTotalD, GridListOfItem.GetRow.Cells("UnitPrice").Value)
         'End If
         
         'Me.Close()
@@ -2433,5 +2446,170 @@ Public Class FrmNewReceipt
         DateCreateReceipt.Value = CheckMarkEOD()
         DateCreateReceipt.Enabled = False
         BgSaveAndPrinting.RunWorkerAsync()
+    End Sub
+    Sub PaymentForOpticalShop(ByVal ReceiptNo As Double)
+        ' MsgBox(GridJanusWaitingPayment.GetRow.Cells("ReceiptNo").Value)
+        Dim TblOpticalShop As DataTable = DaReceipt.GetDataByReceiptNo(ReceiptNo)
+        ' if Rows count > 1 mean have multi receipt.....
+        If TblOpticalShop.Rows.Count > 1 Then
+        Else
+            Dim fPayment As New FormPayment
+            Dim isDisplayAmountCur As Integer = 0
+
+            For Each DROW As DataRow In TblOpticalShop.Rows
+                Dim TypeNo As Integer = DROW("IncomType")
+                If TypeNo = 1 Then
+                    fPayment.RadMedicine.Checked = True
+                ElseIf TypeNo = 2 Then
+                    fPayment.RadSunGlasses.Checked = True
+                ElseIf TypeNo = 3 Then
+                    fPayment.RadReadMod.Checked = True
+                ElseIf TypeNo = 4 Then
+                    fPayment.RadSpectacle.Checked = True
+                ElseIf TypeNo = 5 Then
+                    fPayment.RadFundRaising.Checked = True
+                ElseIf TypeNo = 6 Then
+                    fPayment.RadOther.Checked = True
+                ElseIf TypeNo = 7 Then
+                    fPayment.RadLV.Checked = True
+                End If
+                fPayment.LblReceiptID.Text = DROW("ReceiptID")
+                fPayment.lblReceiptNo.Text = DROW("ReceiptNo")
+                fPayment.LblReceiptDate.Text = DROW("ReceiptDate")
+                fPayment.TxtCustomerNo.Text = DROW("CustomerNo")
+                fPayment.TxtCustomerName.Text = DROW("CusName")
+                fPayment.TxtAge.Text = DROW("Age")
+                fPayment.TxtSex.Text = DROW("Sex")
+                fPayment.TxtTotalAsDolar.Text = DROW("TotalDolar")
+                fPayment.TxtTotalAsReal.Text = DROW("TotalReal")
+                If TypeOf DROW("isDonation") Is DBNull Then
+                    fPayment.TxtFundName.Text = ""
+                Else
+
+                    fPayment.TxtFundName.Text = IIf(TypeOf DROW("DonationName") Is DBNull, "", DROW("DonationName"))
+                    If TypeOf DROW("DonateAmount") Is DBNull Then
+                        fPayment.TxtDonateAmount.Text = ""
+                    Else
+                        fPayment.TxtDonateAmount.Text = DROW("DonateAmount")
+                    End If
+                End If
+                If TypeOf DROW("PayByDonation") Is DBNull Then
+                    fPayment.TxtPayByFund.Text = ""
+                Else
+                    fPayment.TxtPayByFund.Text = DROW("PayByDonation")
+                End If
+                If TypeOf DROW("PayBySelf") Is DBNull Then
+                    fPayment.TxtPayBySelf.Text = ""
+                Else
+                    fPayment.TxtPayBySelf.Text = DROW("PayBySelf")
+                End If
+
+
+                '--- Load Payment type currency
+                If TypeOf DROW("PaymentCur") Is DBNull = False Then
+                    If DROW("PaymentCur") = "USD" Then
+                        fPayment.RadUSD.Checked = True
+                        fPayment.ChDolar.Checked = True
+                        isDisplayAmountCur = 1
+                    Else
+                        fPayment.RadKHR.Checked = True
+                        fPayment.ChReal.Checked = True
+                        isDisplayAmountCur = 2
+                    End If
+                End If
+
+                '--- Load Payment type information
+                'MsgBox("Payment Type : ----> " & GridReceipt.GetRow.Cells("PaymentType").Value)
+                If TypeOf DROW("PaymentType") Is DBNull = False Then
+                    If DROW("PaymentType") = 1 Then
+                        If TypeOf DROW("FullAmount") Is DBNull = False Then
+                            fPayment.TxtFullAmount.Text = DROW("FullAmount")
+                            fPayment.RadFull.Checked = True
+                            If isDisplayAmountCur = 1 Then
+                                fPayment.TxtAmountDolar.Text = DROW("FullAmount")
+                            Else
+                                fPayment.TxtAmounInReal.Text = DROW("FullAmount")
+                            End If
+                        Else
+                            fPayment.TxtFullAmount.Text = ""
+                        End If
+                    ElseIf DROW("PaymentType") = 2 Then
+                        If TypeOf DROW("NilAmount") Is DBNull = False Then
+                            fPayment.TxtNilAmount.Text = DROW("NilAmount")
+                            fPayment.RadNil.Checked = True
+                        Else
+                            fPayment.TxtNilAmount.Text = ""
+                        End If
+                    Else
+                        If TypeOf DROW("SocialAmount") Is DBNull = False Then
+                            fPayment.TxtSocialAmount.Text = DROW("SocialAmount")
+                            fPayment.TxtTemSocialAmount.Text = DROW("SocialAmount")
+                            fPayment.RadSocial.Checked = True
+                            If isDisplayAmountCur = 1 Then
+                                fPayment.TxtAmountDolar.Text = DROW("SocialAmount")
+                            Else
+                                fPayment.TxtAmounInReal.Text = DROW("SocialAmount")
+                            End If
+                        Else
+                            fPayment.TxtSocialAmount.Text = ""
+                        End If
+                    End If
+                End If
+
+                '--- Pass Receipt status value
+                fPayment.LblIsPaidStatus.Text = DROW("IsPaid")
+                '--- Load information receipt paid
+                If CInt(DROW("IsPaid")) = 1 Then
+
+                    fPayment.LblAmountInFigureR.Visible = True
+                    fPayment.LblAmountInFigureD.Visible = True
+                    fPayment.Label19.Visible = True
+                    If TypeOf DROW("Comment") Is DBNull Then
+                        fPayment.TxtComment.Text = ""
+                    Else
+                        fPayment.TxtComment.Text = DROW("Comment")
+                    End If
+
+                    '--- Amount Customer Paid
+                    If TypeOf DROW("PaidR") Is DBNull Then
+                        fPayment.TxtAmounInReal.Text = ""
+                        fPayment.LblAmountInFigureR.Text = "0.00"
+                    Else
+                        'fPayment.TxtAmounInReal.Text = GridReceipt.GetRow.Cells("PaidR").Value
+                        fPayment.LblAmountInFigureR.Text = DROW("PaidR")
+                        'fPayment.ChReal.Checked = True
+
+                    End If
+
+                    If TypeOf DROW("PaidDollar") Is DBNull Then
+                        fPayment.TxtAmountDolar.Text = ""
+                        fPayment.LblAmountInFigureD.Text = "0.00"
+                    Else
+                        'fPayment.TxtAmountDolar.Text = GridReceipt.GetRow.Cells("PaidDollar").Value
+                        fPayment.LblAmountInFigureD.Text = DROW("PaidDollar")
+                        'fPayment.ChDolar.Checked = True
+                    End If
+
+                    '--- Amount Return 
+                    If TypeOf DROW("ReturnReal") Is DBNull Then
+                        fPayment.TxtReturnReal.Text = ""
+                    Else
+                        fPayment.TxtReturnReal.Text = DROW("ReturnReal")
+                    End If
+
+                    If TypeOf DROW("ReturnDolar") Is DBNull Then
+                        fPayment.TxtReturnDolar.Text = ""
+                    Else
+                        fPayment.TxtReturnDolar.Text = DROW("ReturnDolar")
+                    End If
+                    '--- Enable Box edit Reciept's comment purpose
+                    fPayment.TxtComment.Enabled = True
+                End If
+            Next
+            If fPayment.ShowDialog = DialogResult.OK Then
+
+            End If
+        End If
+
     End Sub
 End Class
