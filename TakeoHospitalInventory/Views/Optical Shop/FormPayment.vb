@@ -310,7 +310,7 @@ Public Class FormPayment
     Sub WriteAmountInWord()
         Dim AmoundInWordRiel As New riel
         Dim AmoundInWordDolar As New dollar
-        TxtAmountInWord.Text = AmoundInWordRiel.Convert(TxtAmounInReal.Text) & " និង " & AmoundInWordDolar.Convert(TxtAmountDolar.Text)
+        TxtAmountInWord.Text = AmoundInWordRiel.Convert(TxtAmounInReal.Text) & " and " & AmoundInWordDolar.Convert(TxtAmountDolar.Text)
         'If ChReal.Checked = True Then
         '    StrAmountInDolar = AmoundInWordRiel.Convert(TxtAmounInReal.Text)
         'End If
