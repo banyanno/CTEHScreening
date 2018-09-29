@@ -1597,7 +1597,6 @@ Public Class FrmNewReceipt
                                         mytblUsedDetail.UsedID = mytblUsed.UsedID
                                         mytblUsedDetail.ItemID = itemID
                                         mytblUsedDetail.UsedQuantity = Val(Rec("ColumnQTY"))
-
                                         THIDataContext.getTHIDataContext.tblUsedDetails.InsertOnSubmit(mytblUsedDetail)
                                         THIDataContext.getTHIDataContext.SubmitChanges()
                                     Next
@@ -1650,7 +1649,7 @@ Public Class FrmNewReceipt
                                     'If RadNil.Checked = False Then
                                     '    GenerateReceipt(TxtReceiptNo.Text)
                                     'End If
-
+                                    ProcessCut()
                                     '''''''''''''''''''''Clean and Create New Receipt''''''''''''''''
                                     'CleanReceiptInfomation()
                                     Me.DialogResult = Windows.Forms.DialogResult.OK
@@ -2036,7 +2035,7 @@ Public Class FrmNewReceipt
 
     Private Sub BgSaveAndPrinting_RunWorkerCompleted(ByVal sender As System.Object, ByVal e As System.ComponentModel.RunWorkerCompletedEventArgs) Handles BgSaveAndPrinting.RunWorkerCompleted
 
-        CleanReceiptInfomation()
+        ' CleanReceiptInfomation()
         UIMainScreening.StatusLoading(False, "")
         Application.DoEvents()
         'Me.DialogResult = Windows.Forms.DialogResult.OK
@@ -2462,7 +2461,7 @@ Public Class FrmNewReceipt
     Private Sub ProcessCut()
         Dim ObjTblPatientReceipt As New tblPatientReceipt
         ObjTblPatientReceipt = OpticalDataControl.GetTblPatientReceipt(TxtReceiptNo.Text)
-        ObjReceip = OpticalDataControl.GetReceipt(LblReceiptID.Text)
+        Dim ObjReceip As RECEIPT = OpticalDataControl.GetReceiptNo(TxtReceiptNo.Text) ' OpticalDataControl.GetReceipt(LblReceiptID.Text)
         ObjReceip.ReturnDolar = 0 'EmptyString(TxtReturnDolar.Text)
         ObjReceip.ReturnReal = 0 'EmptyString(TxtReturnReal.Text)
         ObjReceip.AmountInWords = TxtAmountInWord.Text
@@ -2567,7 +2566,7 @@ Public Class FrmNewReceipt
             '--- Validate department have medicine available for particular prescription 
             Dim receiptNo As String = TxtReceiptNo.Text
 
-            Dim listReceiptDetail = From receiptDetail In THTOpticalShopContext.getTHIDataContextOpticalShop.RECEIPT_DETAILs Where receiptDetail.ReceiptNo = CDbl(LblReceiptID.Text)
+            Dim listReceiptDetail = From receiptDetail In THTOpticalShopContext.getTHIDataContextOpticalShop.RECEIPT_DETAILs Where receiptDetail.ReceiptNo = CDbl(ObjReceip.ReceiptID)  ' .CDbl(LblReceiptID.Text)
             For Each recDetail As RECEIPT_DETAIL In listReceiptDetail.ToList
 
                 Dim itemID As Integer = CInt(recDetail.ItemID)
