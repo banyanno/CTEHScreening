@@ -674,6 +674,12 @@
       <DependentUpon>ReportAllRefraction.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Takeo_Eye_Hopspital\Screening\ScreeningBook\DashboardReportUtility.Designer.vb">
+      <DependentUpon>DashboardReportUtility.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Takeo_Eye_Hopspital\Screening\ScreeningBook\DashboardReportUtility.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Takeo_Eye_Hopspital\Screening\ScreeningBook\DataSetScreeningBook.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -3298,6 +3304,9 @@
     <EmbeddedResource Include="Takeo_Eye_Hopspital\Refraction\ReportAllRefraction.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>ReportAllRefraction.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Takeo_Eye_Hopspital\Screening\ScreeningBook\DashboardReportUtility.resx">
+      <DependentUpon>DashboardReportUtility.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Takeo_Eye_Hopspital\Screening\ScreeningBook\ImportPatient\DashboardImportPatient.resx">
       <DependentUpon>DashboardImportPatient.vb</DependentUpon>

@@ -85,6 +85,7 @@
     Public PatientPayment As UCPatientPayment
     Public ScreenDashboard As DashboardScreeningRegisBook
     Public ScreenSetting As DashboardSetting
+    Public DashReportUtility As DashboardReportUtility
     Sub InitUserControle()
         Me.Login.UpdateLabelStatus("Checking Permission", True)
         Application.DoEvents()
@@ -276,6 +277,9 @@
         Login.UpdateLabelStatus("Create user interface.", True)
         Application.DoEvents()
         ScreenSetting = New DashboardSetting
+        Login.UpdateLabelStatus("Create User interface.", True)
+        Application.DoEvents()
+        DashReportUtility = New DashboardReportUtility
     End Sub
 
 
@@ -325,5 +329,9 @@
 
     Private Sub BtnPharmacty_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnPharmacty.Click
         AddUserControl(UIMainScreening.PanelHeader, UIMainScreening.PanelDedail, CashReceipDashboad, "", True)
+    End Sub
+
+    Private Sub BtnReports_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnReports.Click
+        AddUserControl(UIMainScreening.PanelHeader, UIMainScreening.PanelDedail, DashReportUtility, "", True)
     End Sub
 End Class

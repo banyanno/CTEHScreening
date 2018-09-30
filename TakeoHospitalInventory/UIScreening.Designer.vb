@@ -22,10 +22,58 @@ Partial Class UIScreening
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(UIScreening))
         Me.Label1 = New System.Windows.Forms.Label
         Me.Label2 = New System.Windows.Forms.Label
         Me.MenuVertical = New System.Windows.Forms.Panel
+        Me.Panel2 = New System.Windows.Forms.Panel
+        Me.TextBox1 = New System.Windows.Forms.TextBox
+        Me.DGScreeningBook = New System.Windows.Forms.DataGridView
+        Me.IMPORT_STATUS = New System.Windows.Forms.DataGridViewCheckBoxColumn
+        Me.SCREEN_BOOKID = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.SYS_SETTING = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.SCREAN_DATE = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.PatientNo = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.REFERENCE_PATIENNOTE = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.NameEng = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.NameKhmer = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.Age = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.Sex = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.Address = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.SCREEN_PLACE = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.ON_EYE = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.DIAGNOSISScreening = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.VA_RIGHTScreening = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.VA_LEFTScreening = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.PRESENTING_COMPLAIN = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.IS_REFRACTION = New System.Windows.Forms.DataGridViewCheckBoxColumn
+        Me.IS_OPTICALSHOP = New System.Windows.Forms.DataGridViewCheckBoxColumn
+        Me.IS_REFER_PICKUP = New System.Windows.Forms.DataGridViewCheckBoxColumn
+        Me.IS_REFER_BYSELF = New System.Windows.Forms.DataGridViewCheckBoxColumn
+        Me.SCREEN_NOTE = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.Province = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.District = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.Commune = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.Male = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.Female = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.Occupation = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.Telephone = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.Button13 = New System.Windows.Forms.Button
+        Me.BtnNavigationBar = New System.Windows.Forms.Button
+        Me.Button1 = New System.Windows.Forms.Button
+        Me.BtnOpticalShop = New System.Windows.Forms.Button
+        Me.BtnScreeningBook = New System.Windows.Forms.Button
+        Me.BtnScreeningSetting = New System.Windows.Forms.Button
+        Me.BtnReports = New System.Windows.Forms.Button
+        Me.BtnPharmacty = New System.Windows.Forms.Button
         Me.Button21 = New System.Windows.Forms.Button
         Me.Button17 = New System.Windows.Forms.Button
         Me.Button20 = New System.Windows.Forms.Button
@@ -35,24 +83,9 @@ Partial Class UIScreening
         Me.Button18 = New System.Windows.Forms.Button
         Me.BtnNewPatientBook = New System.Windows.Forms.Button
         Me.BtnPatientRegistration = New System.Windows.Forms.Button
-        Me.Panel2 = New System.Windows.Forms.Panel
-        Me.Button13 = New System.Windows.Forms.Button
-        Me.TextBox1 = New System.Windows.Forms.TextBox
-        Me.BtnNavigationBar = New System.Windows.Forms.Button
-        Me.Button7 = New System.Windows.Forms.Button
-        Me.Button1 = New System.Windows.Forms.Button
-        Me.Button8 = New System.Windows.Forms.Button
-        Me.BtnOpticalShop = New System.Windows.Forms.Button
-        Me.Button9 = New System.Windows.Forms.Button
-        Me.BtnScreeningBook = New System.Windows.Forms.Button
-        Me.Button10 = New System.Windows.Forms.Button
-        Me.BtnScreeningSetting = New System.Windows.Forms.Button
-        Me.Button11 = New System.Windows.Forms.Button
-        Me.Button6 = New System.Windows.Forms.Button
-        Me.Button12 = New System.Windows.Forms.Button
-        Me.BtnPharmacty = New System.Windows.Forms.Button
         Me.MenuVertical.SuspendLayout()
         Me.Panel2.SuspendLayout()
+        CType(Me.DGScreeningBook, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -68,10 +101,13 @@ Partial Class UIScreening
         '
         'Label2
         '
+        Me.Label2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+                    Or System.Windows.Forms.AnchorStyles.Left) _
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.Blue
-        Me.Label2.Location = New System.Drawing.Point(588, 64)
+        Me.Label2.Location = New System.Drawing.Point(549, 64)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(150, 20)
         Me.Label2.TabIndex = 7
@@ -95,6 +131,506 @@ Partial Class UIScreening
         Me.MenuVertical.Size = New System.Drawing.Size(242, 922)
         Me.MenuVertical.TabIndex = 14
         Me.MenuVertical.Visible = False
+        '
+        'Panel2
+        '
+        Me.Panel2.Controls.Add(Me.DGScreeningBook)
+        Me.Panel2.Controls.Add(Me.Button13)
+        Me.Panel2.Controls.Add(Me.TextBox1)
+        Me.Panel2.Controls.Add(Me.Label1)
+        Me.Panel2.Controls.Add(Me.BtnNavigationBar)
+        Me.Panel2.Controls.Add(Me.Button1)
+        Me.Panel2.Controls.Add(Me.BtnOpticalShop)
+        Me.Panel2.Controls.Add(Me.BtnScreeningBook)
+        Me.Panel2.Controls.Add(Me.BtnScreeningSetting)
+        Me.Panel2.Controls.Add(Me.BtnReports)
+        Me.Panel2.Controls.Add(Me.BtnPharmacty)
+        Me.Panel2.Controls.Add(Me.Label2)
+        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel2.Location = New System.Drawing.Point(242, 0)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(1283, 922)
+        Me.Panel2.TabIndex = 18
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox1.Location = New System.Drawing.Point(549, 12)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(503, 30)
+        Me.TextBox1.TabIndex = 18
+        '
+        'DGScreeningBook
+        '
+        Me.DGScreeningBook.AllowUserToAddRows = False
+        Me.DGScreeningBook.AllowUserToDeleteRows = False
+        Me.DGScreeningBook.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+                    Or System.Windows.Forms.AnchorStyles.Left) _
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.DGScreeningBook.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.DGScreeningBook.BackgroundColor = System.Drawing.Color.White
+        Me.DGScreeningBook.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.DGScreeningBook.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText
+        Me.DGScreeningBook.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(67, Byte), Integer), CType(CType(82, Byte), Integer))
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Century Gothic", 12.0!)
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DGScreeningBook.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        Me.DGScreeningBook.ColumnHeadersHeight = 40
+        Me.DGScreeningBook.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IMPORT_STATUS, Me.SCREEN_BOOKID, Me.SYS_SETTING, Me.SCREAN_DATE, Me.PatientNo, Me.REFERENCE_PATIENNOTE, Me.NameEng, Me.NameKhmer, Me.Age, Me.Sex, Me.Address, Me.SCREEN_PLACE, Me.ON_EYE, Me.DIAGNOSISScreening, Me.VA_RIGHTScreening, Me.VA_LEFTScreening, Me.PRESENTING_COMPLAIN, Me.IS_REFRACTION, Me.IS_OPTICALSHOP, Me.IS_REFER_PICKUP, Me.IS_REFER_BYSELF, Me.SCREEN_NOTE, Me.Province, Me.District, Me.Commune, Me.Male, Me.Female, Me.Occupation, Me.Telephone})
+        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle7.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle7.Font = New System.Drawing.Font("Century Gothic", 12.0!)
+        DataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
+        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DGScreeningBook.DefaultCellStyle = DataGridViewCellStyle7
+        Me.DGScreeningBook.EnableHeadersVisualStyles = False
+        Me.DGScreeningBook.GridColor = System.Drawing.Color.SteelBlue
+        Me.DGScreeningBook.Location = New System.Drawing.Point(549, 89)
+        Me.DGScreeningBook.Margin = New System.Windows.Forms.Padding(5)
+        Me.DGScreeningBook.Name = "DGScreeningBook"
+        Me.DGScreeningBook.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
+        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(67, Byte), Integer), CType(CType(82, Byte), Integer))
+        DataGridViewCellStyle8.Font = New System.Drawing.Font("Century Gothic", 12.0!)
+        DataGridViewCellStyle8.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DGScreeningBook.RowHeadersDefaultCellStyle = DataGridViewCellStyle8
+        Me.DGScreeningBook.RowHeadersWidth = 50
+        Me.DGScreeningBook.RowTemplate.Height = 35
+        Me.DGScreeningBook.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.DGScreeningBook.Size = New System.Drawing.Size(729, 828)
+        Me.DGScreeningBook.TabIndex = 26
+        '
+        'IMPORT_STATUS
+        '
+        Me.IMPORT_STATUS.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.IMPORT_STATUS.DataPropertyName = "IMPORT_STATUS"
+        Me.IMPORT_STATUS.FillWeight = 49.81596!
+        Me.IMPORT_STATUS.HeaderText = "Import Status"
+        Me.IMPORT_STATUS.Name = "IMPORT_STATUS"
+        Me.IMPORT_STATUS.ReadOnly = True
+        Me.IMPORT_STATUS.Width = 150
+        '
+        'SCREEN_BOOKID
+        '
+        Me.SCREEN_BOOKID.DataPropertyName = "SCREEN_BOOKID"
+        Me.SCREEN_BOOKID.HeaderText = "SCREEN_BOOKID"
+        Me.SCREEN_BOOKID.Name = "SCREEN_BOOKID"
+        Me.SCREEN_BOOKID.ReadOnly = True
+        Me.SCREEN_BOOKID.Visible = False
+        '
+        'SYS_SETTING
+        '
+        Me.SYS_SETTING.DataPropertyName = "SYS_SETTING"
+        Me.SYS_SETTING.HeaderText = "SYS_SETTING"
+        Me.SYS_SETTING.Name = "SYS_SETTING"
+        Me.SYS_SETTING.ReadOnly = True
+        Me.SYS_SETTING.Visible = False
+        '
+        'SCREAN_DATE
+        '
+        Me.SCREAN_DATE.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.SCREAN_DATE.DataPropertyName = "SCREAN_DATE"
+        DataGridViewCellStyle2.Format = "dd/MM/yyyy"
+        Me.SCREAN_DATE.DefaultCellStyle = DataGridViewCellStyle2
+        Me.SCREAN_DATE.FillWeight = 1035.533!
+        Me.SCREAN_DATE.HeaderText = "Regist-Date"
+        Me.SCREAN_DATE.Name = "SCREAN_DATE"
+        Me.SCREAN_DATE.ReadOnly = True
+        Me.SCREAN_DATE.Width = 150
+        '
+        'PatientNo
+        '
+        Me.PatientNo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.PatientNo.DataPropertyName = "PatientNo"
+        Me.PatientNo.FillWeight = 69.60071!
+        Me.PatientNo.HeaderText = "Patient No"
+        Me.PatientNo.Name = "PatientNo"
+        Me.PatientNo.ReadOnly = True
+        Me.PatientNo.Width = 150
+        '
+        'REFERENCE_PATIENNOTE
+        '
+        Me.REFERENCE_PATIENNOTE.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.REFERENCE_PATIENNOTE.DataPropertyName = "REFERENCE_PATIENNOTE"
+        Me.REFERENCE_PATIENNOTE.FillWeight = 49.81596!
+        Me.REFERENCE_PATIENNOTE.HeaderText = "Ref-No"
+        Me.REFERENCE_PATIENNOTE.Name = "REFERENCE_PATIENNOTE"
+        Me.REFERENCE_PATIENNOTE.ReadOnly = True
+        Me.REFERENCE_PATIENNOTE.Width = 150
+        '
+        'NameEng
+        '
+        Me.NameEng.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.NameEng.DataPropertyName = "NameEng"
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Khmer OS Battambang", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.NameEng.DefaultCellStyle = DataGridViewCellStyle3
+        Me.NameEng.FillWeight = 50.72639!
+        Me.NameEng.HeaderText = "Name Eng"
+        Me.NameEng.Name = "NameEng"
+        Me.NameEng.ReadOnly = True
+        Me.NameEng.Width = 150
+        '
+        'NameKhmer
+        '
+        Me.NameKhmer.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.NameKhmer.DataPropertyName = "NameKhmer"
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Wat Phnom T3", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.NameKhmer.DefaultCellStyle = DataGridViewCellStyle4
+        Me.NameKhmer.FillWeight = 50.72639!
+        Me.NameKhmer.HeaderText = "Name Kh"
+        Me.NameKhmer.Name = "NameKhmer"
+        Me.NameKhmer.ReadOnly = True
+        Me.NameKhmer.Width = 150
+        '
+        'Age
+        '
+        Me.Age.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.Age.DataPropertyName = "Age"
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.Age.DefaultCellStyle = DataGridViewCellStyle5
+        Me.Age.FillWeight = 50.16895!
+        Me.Age.HeaderText = "Age"
+        Me.Age.Name = "Age"
+        Me.Age.ReadOnly = True
+        Me.Age.Width = 50
+        '
+        'Sex
+        '
+        Me.Sex.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.Sex.DataPropertyName = "Sex"
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.Sex.DefaultCellStyle = DataGridViewCellStyle6
+        Me.Sex.FillWeight = 39.44817!
+        Me.Sex.HeaderText = "Sex"
+        Me.Sex.Name = "Sex"
+        Me.Sex.ReadOnly = True
+        Me.Sex.Width = 50
+        '
+        'Address
+        '
+        Me.Address.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.Address.DataPropertyName = "Address"
+        Me.Address.FillWeight = 50.72639!
+        Me.Address.HeaderText = "Address"
+        Me.Address.Name = "Address"
+        Me.Address.ReadOnly = True
+        Me.Address.Width = 150
+        '
+        'SCREEN_PLACE
+        '
+        Me.SCREEN_PLACE.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.SCREEN_PLACE.DataPropertyName = "SCREEN_PLACE"
+        Me.SCREEN_PLACE.FillWeight = 50.72639!
+        Me.SCREEN_PLACE.HeaderText = "Screen Place"
+        Me.SCREEN_PLACE.Name = "SCREEN_PLACE"
+        Me.SCREEN_PLACE.ReadOnly = True
+        Me.SCREEN_PLACE.Width = 150
+        '
+        'ON_EYE
+        '
+        Me.ON_EYE.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.ON_EYE.DataPropertyName = "ON_EYE"
+        Me.ON_EYE.FillWeight = 49.81596!
+        Me.ON_EYE.HeaderText = "On Eye"
+        Me.ON_EYE.Name = "ON_EYE"
+        Me.ON_EYE.ReadOnly = True
+        Me.ON_EYE.Width = 90
+        '
+        'DIAGNOSISScreening
+        '
+        Me.DIAGNOSISScreening.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.DIAGNOSISScreening.DataPropertyName = "DIAGNOSIS"
+        Me.DIAGNOSISScreening.FillWeight = 49.81596!
+        Me.DIAGNOSISScreening.HeaderText = "Diagnosis"
+        Me.DIAGNOSISScreening.Name = "DIAGNOSISScreening"
+        Me.DIAGNOSISScreening.ReadOnly = True
+        Me.DIAGNOSISScreening.Width = 150
+        '
+        'VA_RIGHTScreening
+        '
+        Me.VA_RIGHTScreening.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.VA_RIGHTScreening.DataPropertyName = "VA_RIGHT"
+        Me.VA_RIGHTScreening.FillWeight = 49.81596!
+        Me.VA_RIGHTScreening.HeaderText = "VA Right"
+        Me.VA_RIGHTScreening.Name = "VA_RIGHTScreening"
+        Me.VA_RIGHTScreening.ReadOnly = True
+        Me.VA_RIGHTScreening.Width = 50
+        '
+        'VA_LEFTScreening
+        '
+        Me.VA_LEFTScreening.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.VA_LEFTScreening.DataPropertyName = "VA_LEFT"
+        Me.VA_LEFTScreening.FillWeight = 49.81596!
+        Me.VA_LEFTScreening.HeaderText = "VA Left"
+        Me.VA_LEFTScreening.Name = "VA_LEFTScreening"
+        Me.VA_LEFTScreening.ReadOnly = True
+        Me.VA_LEFTScreening.Width = 50
+        '
+        'PRESENTING_COMPLAIN
+        '
+        Me.PRESENTING_COMPLAIN.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.PRESENTING_COMPLAIN.DataPropertyName = "PRESENTING_COMPLAIN"
+        Me.PRESENTING_COMPLAIN.FillWeight = 49.81596!
+        Me.PRESENTING_COMPLAIN.HeaderText = "Presenting Complain"
+        Me.PRESENTING_COMPLAIN.Name = "PRESENTING_COMPLAIN"
+        Me.PRESENTING_COMPLAIN.ReadOnly = True
+        Me.PRESENTING_COMPLAIN.Width = 150
+        '
+        'IS_REFRACTION
+        '
+        Me.IS_REFRACTION.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.IS_REFRACTION.DataPropertyName = "IS_REFRACTION"
+        Me.IS_REFRACTION.FillWeight = 50.72639!
+        Me.IS_REFRACTION.HeaderText = "Refraction"
+        Me.IS_REFRACTION.Name = "IS_REFRACTION"
+        Me.IS_REFRACTION.ReadOnly = True
+        Me.IS_REFRACTION.Width = 150
+        '
+        'IS_OPTICALSHOP
+        '
+        Me.IS_OPTICALSHOP.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.IS_OPTICALSHOP.DataPropertyName = "IS_OPTICALSHOP"
+        Me.IS_OPTICALSHOP.FillWeight = 50.72639!
+        Me.IS_OPTICALSHOP.HeaderText = "Optical shop"
+        Me.IS_OPTICALSHOP.Name = "IS_OPTICALSHOP"
+        Me.IS_OPTICALSHOP.ReadOnly = True
+        Me.IS_OPTICALSHOP.Width = 150
+        '
+        'IS_REFER_PICKUP
+        '
+        Me.IS_REFER_PICKUP.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.IS_REFER_PICKUP.DataPropertyName = "IS_REFER_PICKUP"
+        Me.IS_REFER_PICKUP.FillWeight = 50.72639!
+        Me.IS_REFER_PICKUP.HeaderText = "Referral By Pickup"
+        Me.IS_REFER_PICKUP.Name = "IS_REFER_PICKUP"
+        Me.IS_REFER_PICKUP.ReadOnly = True
+        Me.IS_REFER_PICKUP.Width = 150
+        '
+        'IS_REFER_BYSELF
+        '
+        Me.IS_REFER_BYSELF.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.IS_REFER_BYSELF.DataPropertyName = "IS_REFER_BYSELF"
+        Me.IS_REFER_BYSELF.FillWeight = 50.72639!
+        Me.IS_REFER_BYSELF.HeaderText = "Referral By Selft"
+        Me.IS_REFER_BYSELF.Name = "IS_REFER_BYSELF"
+        Me.IS_REFER_BYSELF.ReadOnly = True
+        Me.IS_REFER_BYSELF.Width = 150
+        '
+        'SCREEN_NOTE
+        '
+        Me.SCREEN_NOTE.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.SCREEN_NOTE.DataPropertyName = "SCREEN_NOTE"
+        Me.SCREEN_NOTE.FillWeight = 50.72639!
+        Me.SCREEN_NOTE.HeaderText = "Note"
+        Me.SCREEN_NOTE.Name = "SCREEN_NOTE"
+        Me.SCREEN_NOTE.ReadOnly = True
+        Me.SCREEN_NOTE.Width = 150
+        '
+        'Province
+        '
+        Me.Province.DataPropertyName = "Province"
+        Me.Province.HeaderText = "Province"
+        Me.Province.Name = "Province"
+        Me.Province.Visible = False
+        '
+        'District
+        '
+        Me.District.DataPropertyName = "District"
+        Me.District.HeaderText = "District"
+        Me.District.Name = "District"
+        Me.District.Visible = False
+        '
+        'Commune
+        '
+        Me.Commune.DataPropertyName = "Commune"
+        Me.Commune.HeaderText = "Commune"
+        Me.Commune.Name = "Commune"
+        Me.Commune.Visible = False
+        '
+        'Male
+        '
+        Me.Male.DataPropertyName = "Male"
+        Me.Male.HeaderText = "Male"
+        Me.Male.Name = "Male"
+        Me.Male.Visible = False
+        '
+        'Female
+        '
+        Me.Female.DataPropertyName = "Female"
+        Me.Female.HeaderText = "Female"
+        Me.Female.Name = "Female"
+        Me.Female.Visible = False
+        '
+        'Occupation
+        '
+        Me.Occupation.DataPropertyName = "Occupation"
+        Me.Occupation.HeaderText = "Occupation"
+        Me.Occupation.Name = "Occupation"
+        Me.Occupation.Visible = False
+        '
+        'Telephone
+        '
+        Me.Telephone.DataPropertyName = "Telephone"
+        Me.Telephone.HeaderText = "Telephone"
+        Me.Telephone.Name = "Telephone"
+        Me.Telephone.Visible = False
+        '
+        'Button13
+        '
+        Me.Button13.BackColor = System.Drawing.Color.White
+        Me.Button13.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button13.FlatAppearance.BorderSize = 0
+        Me.Button13.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver
+        Me.Button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button13.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button13.ForeColor = System.Drawing.Color.White
+        Me.Button13.Image = CType(resources.GetObject("Button13.Image"), System.Drawing.Image)
+        Me.Button13.Location = New System.Drawing.Point(1054, 12)
+        Me.Button13.Name = "Button13"
+        Me.Button13.Size = New System.Drawing.Size(36, 30)
+        Me.Button13.TabIndex = 19
+        Me.Button13.UseVisualStyleBackColor = False
+        '
+        'BtnNavigationBar
+        '
+        Me.BtnNavigationBar.BackColor = System.Drawing.Color.White
+        Me.BtnNavigationBar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnNavigationBar.FlatAppearance.BorderSize = 0
+        Me.BtnNavigationBar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver
+        Me.BtnNavigationBar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnNavigationBar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnNavigationBar.ForeColor = System.Drawing.Color.White
+        Me.BtnNavigationBar.Image = Global.TakeoHospitalInventory.My.Resources.Resources.Switch_On_40px1
+        Me.BtnNavigationBar.Location = New System.Drawing.Point(8, 3)
+        Me.BtnNavigationBar.Name = "BtnNavigationBar"
+        Me.BtnNavigationBar.Size = New System.Drawing.Size(49, 31)
+        Me.BtnNavigationBar.TabIndex = 17
+        Me.BtnNavigationBar.UseVisualStyleBackColor = False
+        Me.BtnNavigationBar.Visible = False
+        '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
+        Me.Button1.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.ForeColor = System.Drawing.Color.White
+        Me.Button1.Image = CType(resources.GetObject("Button1.Image"), System.Drawing.Image)
+        Me.Button1.Location = New System.Drawing.Point(8, 100)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(252, 93)
+        Me.Button1.TabIndex = 0
+        Me.Button1.Text = "Patient Registration"
+        Me.Button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.Button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        Me.Button1.UseVisualStyleBackColor = False
+        '
+        'BtnOpticalShop
+        '
+        Me.BtnOpticalShop.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
+        Me.BtnOpticalShop.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnOpticalShop.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.BtnOpticalShop.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver
+        Me.BtnOpticalShop.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnOpticalShop.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnOpticalShop.ForeColor = System.Drawing.Color.White
+        Me.BtnOpticalShop.Image = CType(resources.GetObject("BtnOpticalShop.Image"), System.Drawing.Image)
+        Me.BtnOpticalShop.Location = New System.Drawing.Point(8, 202)
+        Me.BtnOpticalShop.Name = "BtnOpticalShop"
+        Me.BtnOpticalShop.Size = New System.Drawing.Size(252, 93)
+        Me.BtnOpticalShop.TabIndex = 2
+        Me.BtnOpticalShop.Text = "Optical Shop"
+        Me.BtnOpticalShop.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.BtnOpticalShop.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        Me.BtnOpticalShop.UseVisualStyleBackColor = False
+        '
+        'BtnScreeningBook
+        '
+        Me.BtnScreeningBook.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
+        Me.BtnScreeningBook.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnScreeningBook.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.BtnScreeningBook.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver
+        Me.BtnScreeningBook.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnScreeningBook.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnScreeningBook.ForeColor = System.Drawing.Color.White
+        Me.BtnScreeningBook.Image = CType(resources.GetObject("BtnScreeningBook.Image"), System.Drawing.Image)
+        Me.BtnScreeningBook.Location = New System.Drawing.Point(277, 100)
+        Me.BtnScreeningBook.Name = "BtnScreeningBook"
+        Me.BtnScreeningBook.Size = New System.Drawing.Size(252, 93)
+        Me.BtnScreeningBook.TabIndex = 3
+        Me.BtnScreeningBook.Text = "Screening Book"
+        Me.BtnScreeningBook.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.BtnScreeningBook.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        Me.BtnScreeningBook.UseVisualStyleBackColor = False
+        '
+        'BtnScreeningSetting
+        '
+        Me.BtnScreeningSetting.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
+        Me.BtnScreeningSetting.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnScreeningSetting.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.BtnScreeningSetting.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver
+        Me.BtnScreeningSetting.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnScreeningSetting.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnScreeningSetting.ForeColor = System.Drawing.Color.White
+        Me.BtnScreeningSetting.Image = CType(resources.GetObject("BtnScreeningSetting.Image"), System.Drawing.Image)
+        Me.BtnScreeningSetting.Location = New System.Drawing.Point(277, 202)
+        Me.BtnScreeningSetting.Name = "BtnScreeningSetting"
+        Me.BtnScreeningSetting.Size = New System.Drawing.Size(252, 93)
+        Me.BtnScreeningSetting.TabIndex = 4
+        Me.BtnScreeningSetting.Text = "Screening Setting"
+        Me.BtnScreeningSetting.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.BtnScreeningSetting.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        Me.BtnScreeningSetting.UseVisualStyleBackColor = False
+        '
+        'BtnReports
+        '
+        Me.BtnReports.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
+        Me.BtnReports.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnReports.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.BtnReports.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver
+        Me.BtnReports.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnReports.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnReports.ForeColor = System.Drawing.Color.White
+        Me.BtnReports.Image = CType(resources.GetObject("BtnReports.Image"), System.Drawing.Image)
+        Me.BtnReports.Location = New System.Drawing.Point(277, 306)
+        Me.BtnReports.Name = "BtnReports"
+        Me.BtnReports.Size = New System.Drawing.Size(252, 93)
+        Me.BtnReports.TabIndex = 5
+        Me.BtnReports.Text = "Reports Utility"
+        Me.BtnReports.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.BtnReports.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        Me.BtnReports.UseVisualStyleBackColor = False
+        '
+        'BtnPharmacty
+        '
+        Me.BtnPharmacty.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
+        Me.BtnPharmacty.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnPharmacty.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.BtnPharmacty.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver
+        Me.BtnPharmacty.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnPharmacty.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnPharmacty.ForeColor = System.Drawing.Color.White
+        Me.BtnPharmacty.Image = CType(resources.GetObject("BtnPharmacty.Image"), System.Drawing.Image)
+        Me.BtnPharmacty.Location = New System.Drawing.Point(8, 306)
+        Me.BtnPharmacty.Name = "BtnPharmacty"
+        Me.BtnPharmacty.Size = New System.Drawing.Size(252, 93)
+        Me.BtnPharmacty.TabIndex = 6
+        Me.BtnPharmacty.Text = "Pharmacy"
+        Me.BtnPharmacty.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.BtnPharmacty.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        Me.BtnPharmacty.UseVisualStyleBackColor = False
         '
         'Button21
         '
@@ -249,288 +785,6 @@ Partial Class UIScreening
         Me.BtnPatientRegistration.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.BtnPatientRegistration.UseVisualStyleBackColor = False
         '
-        'Panel2
-        '
-        Me.Panel2.Controls.Add(Me.Button13)
-        Me.Panel2.Controls.Add(Me.TextBox1)
-        Me.Panel2.Controls.Add(Me.Label1)
-        Me.Panel2.Controls.Add(Me.BtnNavigationBar)
-        Me.Panel2.Controls.Add(Me.Button7)
-        Me.Panel2.Controls.Add(Me.Button1)
-        Me.Panel2.Controls.Add(Me.Button8)
-        Me.Panel2.Controls.Add(Me.BtnOpticalShop)
-        Me.Panel2.Controls.Add(Me.Button9)
-        Me.Panel2.Controls.Add(Me.BtnScreeningBook)
-        Me.Panel2.Controls.Add(Me.Button10)
-        Me.Panel2.Controls.Add(Me.BtnScreeningSetting)
-        Me.Panel2.Controls.Add(Me.Button11)
-        Me.Panel2.Controls.Add(Me.Button6)
-        Me.Panel2.Controls.Add(Me.Button12)
-        Me.Panel2.Controls.Add(Me.BtnPharmacty)
-        Me.Panel2.Controls.Add(Me.Label2)
-        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel2.Location = New System.Drawing.Point(242, 0)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1283, 922)
-        Me.Panel2.TabIndex = 18
-        '
-        'Button13
-        '
-        Me.Button13.BackColor = System.Drawing.Color.White
-        Me.Button13.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button13.FlatAppearance.BorderSize = 0
-        Me.Button13.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver
-        Me.Button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button13.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button13.ForeColor = System.Drawing.Color.White
-        Me.Button13.Image = CType(resources.GetObject("Button13.Image"), System.Drawing.Image)
-        Me.Button13.Location = New System.Drawing.Point(1079, 12)
-        Me.Button13.Name = "Button13"
-        Me.Button13.Size = New System.Drawing.Size(36, 30)
-        Me.Button13.TabIndex = 19
-        Me.Button13.UseVisualStyleBackColor = False
-        '
-        'TextBox1
-        '
-        Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(593, 12)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(486, 30)
-        Me.TextBox1.TabIndex = 18
-        '
-        'BtnNavigationBar
-        '
-        Me.BtnNavigationBar.BackColor = System.Drawing.Color.White
-        Me.BtnNavigationBar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnNavigationBar.FlatAppearance.BorderSize = 0
-        Me.BtnNavigationBar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver
-        Me.BtnNavigationBar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnNavigationBar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnNavigationBar.ForeColor = System.Drawing.Color.White
-        Me.BtnNavigationBar.Image = Global.TakeoHospitalInventory.My.Resources.Resources.Switch_On_40px1
-        Me.BtnNavigationBar.Location = New System.Drawing.Point(8, 3)
-        Me.BtnNavigationBar.Name = "BtnNavigationBar"
-        Me.BtnNavigationBar.Size = New System.Drawing.Size(49, 31)
-        Me.BtnNavigationBar.TabIndex = 17
-        Me.BtnNavigationBar.UseVisualStyleBackColor = False
-        Me.BtnNavigationBar.Visible = False
-        '
-        'Button7
-        '
-        Me.Button7.BackColor = System.Drawing.Color.FromArgb(CType(CType(91, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(172, Byte), Integer))
-        Me.Button7.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button7.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver
-        Me.Button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button7.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button7.ForeColor = System.Drawing.Color.White
-        Me.Button7.Image = CType(resources.GetObject("Button7.Image"), System.Drawing.Image)
-        Me.Button7.Location = New System.Drawing.Point(863, 372)
-        Me.Button7.Name = "Button7"
-        Me.Button7.Size = New System.Drawing.Size(252, 118)
-        Me.Button7.TabIndex = 13
-        Me.Button7.Text = "Patient Registration"
-        Me.Button7.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.Button7.UseVisualStyleBackColor = False
-        '
-        'Button1
-        '
-        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
-        Me.Button1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.ForeColor = System.Drawing.Color.White
-        Me.Button1.Image = CType(resources.GetObject("Button1.Image"), System.Drawing.Image)
-        Me.Button1.Location = New System.Drawing.Point(8, 100)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(252, 93)
-        Me.Button1.TabIndex = 0
-        Me.Button1.Text = "Patient Registration"
-        Me.Button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.Button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
-        Me.Button1.UseVisualStyleBackColor = False
-        '
-        'Button8
-        '
-        Me.Button8.BackColor = System.Drawing.Color.FromArgb(CType(CType(91, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(172, Byte), Integer))
-        Me.Button8.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button8.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver
-        Me.Button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button8.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button8.ForeColor = System.Drawing.Color.White
-        Me.Button8.Image = CType(resources.GetObject("Button8.Image"), System.Drawing.Image)
-        Me.Button8.Location = New System.Drawing.Point(592, 372)
-        Me.Button8.Name = "Button8"
-        Me.Button8.Size = New System.Drawing.Size(252, 118)
-        Me.Button8.TabIndex = 12
-        Me.Button8.Text = "Patient Registration"
-        Me.Button8.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.Button8.UseVisualStyleBackColor = False
-        '
-        'BtnOpticalShop
-        '
-        Me.BtnOpticalShop.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
-        Me.BtnOpticalShop.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnOpticalShop.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.BtnOpticalShop.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver
-        Me.BtnOpticalShop.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnOpticalShop.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnOpticalShop.ForeColor = System.Drawing.Color.White
-        Me.BtnOpticalShop.Image = CType(resources.GetObject("BtnOpticalShop.Image"), System.Drawing.Image)
-        Me.BtnOpticalShop.Location = New System.Drawing.Point(8, 202)
-        Me.BtnOpticalShop.Name = "BtnOpticalShop"
-        Me.BtnOpticalShop.Size = New System.Drawing.Size(252, 93)
-        Me.BtnOpticalShop.TabIndex = 2
-        Me.BtnOpticalShop.Text = "Optical Shop"
-        Me.BtnOpticalShop.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.BtnOpticalShop.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
-        Me.BtnOpticalShop.UseVisualStyleBackColor = False
-        '
-        'Button9
-        '
-        Me.Button9.BackColor = System.Drawing.Color.FromArgb(CType(CType(91, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(172, Byte), Integer))
-        Me.Button9.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button9.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver
-        Me.Button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button9.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button9.ForeColor = System.Drawing.Color.White
-        Me.Button9.Image = CType(resources.GetObject("Button9.Image"), System.Drawing.Image)
-        Me.Button9.Location = New System.Drawing.Point(863, 234)
-        Me.Button9.Name = "Button9"
-        Me.Button9.Size = New System.Drawing.Size(252, 118)
-        Me.Button9.TabIndex = 11
-        Me.Button9.Text = "Patient Registration"
-        Me.Button9.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.Button9.UseVisualStyleBackColor = False
-        '
-        'BtnScreeningBook
-        '
-        Me.BtnScreeningBook.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
-        Me.BtnScreeningBook.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnScreeningBook.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.BtnScreeningBook.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver
-        Me.BtnScreeningBook.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnScreeningBook.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnScreeningBook.ForeColor = System.Drawing.Color.White
-        Me.BtnScreeningBook.Image = CType(resources.GetObject("BtnScreeningBook.Image"), System.Drawing.Image)
-        Me.BtnScreeningBook.Location = New System.Drawing.Point(277, 100)
-        Me.BtnScreeningBook.Name = "BtnScreeningBook"
-        Me.BtnScreeningBook.Size = New System.Drawing.Size(252, 93)
-        Me.BtnScreeningBook.TabIndex = 3
-        Me.BtnScreeningBook.Text = "Screening Book"
-        Me.BtnScreeningBook.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.BtnScreeningBook.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
-        Me.BtnScreeningBook.UseVisualStyleBackColor = False
-        '
-        'Button10
-        '
-        Me.Button10.BackColor = System.Drawing.Color.FromArgb(CType(CType(91, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(172, Byte), Integer))
-        Me.Button10.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button10.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver
-        Me.Button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button10.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button10.ForeColor = System.Drawing.Color.White
-        Me.Button10.Image = CType(resources.GetObject("Button10.Image"), System.Drawing.Image)
-        Me.Button10.Location = New System.Drawing.Point(863, 100)
-        Me.Button10.Name = "Button10"
-        Me.Button10.Size = New System.Drawing.Size(252, 118)
-        Me.Button10.TabIndex = 10
-        Me.Button10.Text = "Patient Registration"
-        Me.Button10.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.Button10.UseVisualStyleBackColor = False
-        '
-        'BtnScreeningSetting
-        '
-        Me.BtnScreeningSetting.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
-        Me.BtnScreeningSetting.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnScreeningSetting.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.BtnScreeningSetting.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver
-        Me.BtnScreeningSetting.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnScreeningSetting.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnScreeningSetting.ForeColor = System.Drawing.Color.White
-        Me.BtnScreeningSetting.Image = CType(resources.GetObject("BtnScreeningSetting.Image"), System.Drawing.Image)
-        Me.BtnScreeningSetting.Location = New System.Drawing.Point(277, 202)
-        Me.BtnScreeningSetting.Name = "BtnScreeningSetting"
-        Me.BtnScreeningSetting.Size = New System.Drawing.Size(252, 93)
-        Me.BtnScreeningSetting.TabIndex = 4
-        Me.BtnScreeningSetting.Text = "Screening Setting"
-        Me.BtnScreeningSetting.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.BtnScreeningSetting.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
-        Me.BtnScreeningSetting.UseVisualStyleBackColor = False
-        '
-        'Button11
-        '
-        Me.Button11.BackColor = System.Drawing.Color.FromArgb(CType(CType(91, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(172, Byte), Integer))
-        Me.Button11.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button11.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver
-        Me.Button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button11.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button11.ForeColor = System.Drawing.Color.White
-        Me.Button11.Image = CType(resources.GetObject("Button11.Image"), System.Drawing.Image)
-        Me.Button11.Location = New System.Drawing.Point(592, 234)
-        Me.Button11.Name = "Button11"
-        Me.Button11.Size = New System.Drawing.Size(252, 118)
-        Me.Button11.TabIndex = 9
-        Me.Button11.Text = "Patient Registration"
-        Me.Button11.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.Button11.UseVisualStyleBackColor = False
-        '
-        'Button6
-        '
-        Me.Button6.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
-        Me.Button6.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button6.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Button6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver
-        Me.Button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button6.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button6.ForeColor = System.Drawing.Color.White
-        Me.Button6.Image = CType(resources.GetObject("Button6.Image"), System.Drawing.Image)
-        Me.Button6.Location = New System.Drawing.Point(277, 306)
-        Me.Button6.Name = "Button6"
-        Me.Button6.Size = New System.Drawing.Size(252, 93)
-        Me.Button6.TabIndex = 5
-        Me.Button6.Text = "Ward"
-        Me.Button6.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.Button6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
-        Me.Button6.UseVisualStyleBackColor = False
-        '
-        'Button12
-        '
-        Me.Button12.BackColor = System.Drawing.Color.FromArgb(CType(CType(91, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(172, Byte), Integer))
-        Me.Button12.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button12.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver
-        Me.Button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button12.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button12.ForeColor = System.Drawing.Color.White
-        Me.Button12.Image = CType(resources.GetObject("Button12.Image"), System.Drawing.Image)
-        Me.Button12.Location = New System.Drawing.Point(592, 100)
-        Me.Button12.Name = "Button12"
-        Me.Button12.Size = New System.Drawing.Size(252, 118)
-        Me.Button12.TabIndex = 8
-        Me.Button12.Text = "Patient Registration"
-        Me.Button12.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.Button12.UseVisualStyleBackColor = False
-        '
-        'BtnPharmacty
-        '
-        Me.BtnPharmacty.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
-        Me.BtnPharmacty.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnPharmacty.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.BtnPharmacty.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver
-        Me.BtnPharmacty.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnPharmacty.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnPharmacty.ForeColor = System.Drawing.Color.White
-        Me.BtnPharmacty.Image = CType(resources.GetObject("BtnPharmacty.Image"), System.Drawing.Image)
-        Me.BtnPharmacty.Location = New System.Drawing.Point(8, 306)
-        Me.BtnPharmacty.Name = "BtnPharmacty"
-        Me.BtnPharmacty.Size = New System.Drawing.Size(252, 93)
-        Me.BtnPharmacty.TabIndex = 6
-        Me.BtnPharmacty.Text = "Pharmacy"
-        Me.BtnPharmacty.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.BtnPharmacty.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
-        Me.BtnPharmacty.UseVisualStyleBackColor = False
-        '
         'UIScreening
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -543,6 +797,7 @@ Partial Class UIScreening
         Me.MenuVertical.ResumeLayout(False)
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
+        CType(Me.DGScreeningBook, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -552,14 +807,8 @@ Partial Class UIScreening
     Friend WithEvents BtnScreeningSetting As System.Windows.Forms.Button
     Friend WithEvents BtnScreeningBook As System.Windows.Forms.Button
     Friend WithEvents BtnPharmacty As System.Windows.Forms.Button
-    Friend WithEvents Button6 As System.Windows.Forms.Button
+    Friend WithEvents BtnReports As System.Windows.Forms.Button
     Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents Button7 As System.Windows.Forms.Button
-    Friend WithEvents Button8 As System.Windows.Forms.Button
-    Friend WithEvents Button9 As System.Windows.Forms.Button
-    Friend WithEvents Button10 As System.Windows.Forms.Button
-    Friend WithEvents Button11 As System.Windows.Forms.Button
-    Friend WithEvents Button12 As System.Windows.Forms.Button
     Friend WithEvents MenuVertical As System.Windows.Forms.Panel
     Friend WithEvents BtnPatientRegistration As System.Windows.Forms.Button
     Friend WithEvents Button16 As System.Windows.Forms.Button
@@ -574,5 +823,35 @@ Partial Class UIScreening
     Friend WithEvents Panel2 As System.Windows.Forms.Panel
     Friend WithEvents Button13 As System.Windows.Forms.Button
     Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
+    Private WithEvents DGScreeningBook As System.Windows.Forms.DataGridView
+    Friend WithEvents IMPORT_STATUS As System.Windows.Forms.DataGridViewCheckBoxColumn
+    Friend WithEvents SCREEN_BOOKID As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents SYS_SETTING As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents SCREAN_DATE As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents PatientNo As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents REFERENCE_PATIENNOTE As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents NameEng As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents NameKhmer As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Age As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Sex As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Address As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents SCREEN_PLACE As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents ON_EYE As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DIAGNOSISScreening As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents VA_RIGHTScreening As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents VA_LEFTScreening As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents PRESENTING_COMPLAIN As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents IS_REFRACTION As System.Windows.Forms.DataGridViewCheckBoxColumn
+    Friend WithEvents IS_OPTICALSHOP As System.Windows.Forms.DataGridViewCheckBoxColumn
+    Friend WithEvents IS_REFER_PICKUP As System.Windows.Forms.DataGridViewCheckBoxColumn
+    Friend WithEvents IS_REFER_BYSELF As System.Windows.Forms.DataGridViewCheckBoxColumn
+    Friend WithEvents SCREEN_NOTE As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Province As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents District As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Commune As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Male As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Female As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Occupation As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Telephone As System.Windows.Forms.DataGridViewTextBoxColumn
 
 End Class
