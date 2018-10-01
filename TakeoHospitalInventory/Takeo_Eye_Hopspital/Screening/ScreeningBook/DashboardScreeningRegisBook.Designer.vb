@@ -250,14 +250,14 @@ Partial Class DashboardScreeningRegisBook
         Me.Panel5.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Panel5.Location = New System.Drawing.Point(747, 25)
         Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(175, 82)
+        Me.Panel5.Size = New System.Drawing.Size(175, 70)
         Me.Panel5.TabIndex = 30
         '
         'TxtTotalNotYetImport
         '
-        Me.TxtTotalNotYetImport.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.TxtTotalNotYetImport.Font = New System.Drawing.Font("Century Gothic", 12.0!)
         Me.TxtTotalNotYetImport.ForeColor = System.Drawing.Color.White
-        Me.TxtTotalNotYetImport.Location = New System.Drawing.Point(42, 52)
+        Me.TxtTotalNotYetImport.Location = New System.Drawing.Point(42, 45)
         Me.TxtTotalNotYetImport.Name = "TxtTotalNotYetImport"
         Me.TxtTotalNotYetImport.Size = New System.Drawing.Size(96, 21)
         Me.TxtTotalNotYetImport.TabIndex = 2
@@ -267,11 +267,11 @@ Partial Class DashboardScreeningRegisBook
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.Label5.Font = New System.Drawing.Font("Century Gothic", 12.0!)
         Me.Label5.ForeColor = System.Drawing.Color.White
-        Me.Label5.Location = New System.Drawing.Point(20, 25)
+        Me.Label5.Location = New System.Drawing.Point(20, 22)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(121, 19)
+        Me.Label5.Size = New System.Drawing.Size(132, 21)
         Me.Label5.TabIndex = 0
         Me.Label5.Text = "Not Yet Import:"
         '
@@ -1357,14 +1357,14 @@ Partial Class DashboardScreeningRegisBook
         Me.Panel4.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Panel4.Location = New System.Drawing.Point(563, 24)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(175, 82)
+        Me.Panel4.Size = New System.Drawing.Size(175, 70)
         Me.Panel4.TabIndex = 16
         '
         'TxtTotalOpticalShop
         '
-        Me.TxtTotalOpticalShop.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.TxtTotalOpticalShop.Font = New System.Drawing.Font("Century Gothic", 12.0!)
         Me.TxtTotalOpticalShop.ForeColor = System.Drawing.Color.White
-        Me.TxtTotalOpticalShop.Location = New System.Drawing.Point(42, 52)
+        Me.TxtTotalOpticalShop.Location = New System.Drawing.Point(42, 45)
         Me.TxtTotalOpticalShop.Name = "TxtTotalOpticalShop"
         Me.TxtTotalOpticalShop.Size = New System.Drawing.Size(96, 21)
         Me.TxtTotalOpticalShop.TabIndex = 2
@@ -1374,11 +1374,11 @@ Partial Class DashboardScreeningRegisBook
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.Label11.Font = New System.Drawing.Font("Century Gothic", 12.0!)
         Me.Label11.ForeColor = System.Drawing.Color.White
-        Me.Label11.Location = New System.Drawing.Point(28, 25)
+        Me.Label11.Location = New System.Drawing.Point(28, 22)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(113, 19)
+        Me.Label11.Size = New System.Drawing.Size(116, 21)
         Me.Label11.TabIndex = 0
         Me.Label11.Text = "Optical Shop:"
         '
@@ -1430,14 +1430,14 @@ Partial Class DashboardScreeningRegisBook
         Me.Panel3.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Panel3.Location = New System.Drawing.Point(377, 25)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(175, 82)
+        Me.Panel3.Size = New System.Drawing.Size(175, 70)
         Me.Panel3.TabIndex = 10
         '
         'TxtTotalReferralSelf
         '
-        Me.TxtTotalReferralSelf.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.TxtTotalReferralSelf.Font = New System.Drawing.Font("Century Gothic", 12.0!)
         Me.TxtTotalReferralSelf.ForeColor = System.Drawing.Color.White
-        Me.TxtTotalReferralSelf.Location = New System.Drawing.Point(108, 52)
+        Me.TxtTotalReferralSelf.Location = New System.Drawing.Point(108, 45)
         Me.TxtTotalReferralSelf.Name = "TxtTotalReferralSelf"
         Me.TxtTotalReferralSelf.Size = New System.Drawing.Size(62, 21)
         Me.TxtTotalReferralSelf.TabIndex = 5
@@ -1447,30 +1447,30 @@ Partial Class DashboardScreeningRegisBook
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.Label8.Font = New System.Drawing.Font("Century Gothic", 12.0!)
         Me.Label8.ForeColor = System.Drawing.Color.White
-        Me.Label8.Location = New System.Drawing.Point(4, 52)
+        Me.Label8.Location = New System.Drawing.Point(4, 45)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(101, 19)
+        Me.Label8.Size = New System.Drawing.Size(104, 21)
         Me.Label8.TabIndex = 4
         Me.Label8.Text = "Total By Self:"
         '
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.Label7.Font = New System.Drawing.Font("Century Gothic", 12.0!)
         Me.Label7.ForeColor = System.Drawing.Color.White
-        Me.Label7.Location = New System.Drawing.Point(4, 24)
+        Me.Label7.Location = New System.Drawing.Point(4, 21)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(106, 19)
+        Me.Label7.Size = New System.Drawing.Size(108, 21)
         Me.Label7.TabIndex = 3
         Me.Label7.Text = "Total Pickup:"
         '
         'TxtTotalReferralPickup
         '
-        Me.TxtTotalReferralPickup.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.TxtTotalReferralPickup.Font = New System.Drawing.Font("Century Gothic", 12.0!)
         Me.TxtTotalReferralPickup.ForeColor = System.Drawing.Color.White
-        Me.TxtTotalReferralPickup.Location = New System.Drawing.Point(108, 24)
+        Me.TxtTotalReferralPickup.Location = New System.Drawing.Point(108, 21)
         Me.TxtTotalReferralPickup.Name = "TxtTotalReferralPickup"
         Me.TxtTotalReferralPickup.Size = New System.Drawing.Size(62, 21)
         Me.TxtTotalReferralPickup.TabIndex = 2
@@ -1480,11 +1480,11 @@ Partial Class DashboardScreeningRegisBook
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.Label6.Font = New System.Drawing.Font("Century Gothic", 12.0!)
         Me.Label6.ForeColor = System.Drawing.Color.White
         Me.Label6.Location = New System.Drawing.Point(67, 1)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(66, 19)
+        Me.Label6.Size = New System.Drawing.Size(67, 21)
         Me.Label6.TabIndex = 0
         Me.Label6.Text = "Referall"
         '
@@ -1497,14 +1497,14 @@ Partial Class DashboardScreeningRegisBook
         Me.Panel2.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Panel2.Location = New System.Drawing.Point(193, 25)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(175, 82)
+        Me.Panel2.Size = New System.Drawing.Size(175, 70)
         Me.Panel2.TabIndex = 9
         '
         'TxtTotalRefraction
         '
-        Me.TxtTotalRefraction.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.TxtTotalRefraction.Font = New System.Drawing.Font("Century Gothic", 12.0!)
         Me.TxtTotalRefraction.ForeColor = System.Drawing.Color.White
-        Me.TxtTotalRefraction.Location = New System.Drawing.Point(38, 52)
+        Me.TxtTotalRefraction.Location = New System.Drawing.Point(38, 45)
         Me.TxtTotalRefraction.Name = "TxtTotalRefraction"
         Me.TxtTotalRefraction.Size = New System.Drawing.Size(96, 21)
         Me.TxtTotalRefraction.TabIndex = 2
@@ -1514,11 +1514,11 @@ Partial Class DashboardScreeningRegisBook
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.Label4.Font = New System.Drawing.Font("Century Gothic", 12.0!)
         Me.Label4.ForeColor = System.Drawing.Color.White
-        Me.Label4.Location = New System.Drawing.Point(19, 24)
+        Me.Label4.Location = New System.Drawing.Point(19, 21)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(126, 19)
+        Me.Label4.Size = New System.Drawing.Size(134, 21)
         Me.Label4.TabIndex = 0
         Me.Label4.Text = "Total Refraction"
         '
@@ -1531,14 +1531,14 @@ Partial Class DashboardScreeningRegisBook
         Me.PanelSend.Cursor = System.Windows.Forms.Cursors.Hand
         Me.PanelSend.Location = New System.Drawing.Point(9, 25)
         Me.PanelSend.Name = "PanelSend"
-        Me.PanelSend.Size = New System.Drawing.Size(175, 82)
+        Me.PanelSend.Size = New System.Drawing.Size(175, 70)
         Me.PanelSend.TabIndex = 8
         '
         'TxtTotalRegister
         '
-        Me.TxtTotalRegister.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.TxtTotalRegister.Font = New System.Drawing.Font("Century Gothic", 12.0!)
         Me.TxtTotalRegister.ForeColor = System.Drawing.Color.White
-        Me.TxtTotalRegister.Location = New System.Drawing.Point(38, 52)
+        Me.TxtTotalRegister.Location = New System.Drawing.Point(38, 45)
         Me.TxtTotalRegister.Name = "TxtTotalRegister"
         Me.TxtTotalRegister.Size = New System.Drawing.Size(96, 21)
         Me.TxtTotalRegister.TabIndex = 2
@@ -1548,11 +1548,11 @@ Partial Class DashboardScreeningRegisBook
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.Label1.Font = New System.Drawing.Font("Century Gothic", 12.0!)
         Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(13, 24)
+        Me.Label1.Location = New System.Drawing.Point(13, 21)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(137, 19)
+        Me.Label1.Size = New System.Drawing.Size(146, 21)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Total Registration"
         '

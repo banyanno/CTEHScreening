@@ -77,6 +77,7 @@
 
         ' Call Total Regis, Refraction, Referral and Optical shop
         DisplayTotalScreening(DateFrom.Value.Date, DateTo.Value.Date)
+        CheckBlankDiagnosis(Me.DGScreeningBook)
         UIMainScreening.StatusLoading(False, "Loading")
     End Sub
     Private Sub DashboardScreeningRegisBook_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
@@ -121,6 +122,23 @@
         TxtTotalReferralSelf.Text = DAScreeningBookDetail.TotalPatientReferralBySelf(DateFrom, DateTo)
         TxtTotalOpticalShop.Text = DAScreeningBookDetail.TotalPatientOpticalshop(DateFrom, DateTo)
         TxtTotalNotYetImport.Text = DAScreeningBookDetail.TotalNotYetImport(DateFrom, DateTo)
+    End Sub
+    Private Sub CheckBlankDiagnosis(ByVal DG As DataGridView)
+        For Each rows As DataGridViewRow In DG.Rows
+            BlankDiagnosis = rows.Cells.Item("DIAGNOSISScreening").Value.ToString.Trim
+            'DelOption = rows.Cells.Item("DeleteOption").Value.ToString.Trim
+            'VA = rows.Cells.Item("VAStatus").Value.ToString
+            'If VA = "False" Then
+            '    rows.DefaultCellStyle.BackColor = Color.Bisque
+            'End If
+            If BlankDiagnosis = "" Then
+                rows.DefaultCellStyle.BackColor = Color.FromArgb(222, 182, 174)
+            End If
+            'If DelOption = "True" Then
+            '    rows.DefaultCellStyle.BackColor = Color.DarkKhaki
+            'End If
+        Next
+        NumberAllRowHeaderDataGrid(DG)
     End Sub
 
     Private Sub BtnUpdateScreening_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnUpdateScreening.Click
