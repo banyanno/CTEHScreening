@@ -122,6 +122,7 @@
         TxtTotalReferralSelf.Text = DAScreeningBookDetail.TotalPatientReferralBySelf(DateFrom, DateTo)
         TxtTotalOpticalShop.Text = DAScreeningBookDetail.TotalPatientOpticalshop(DateFrom, DateTo)
         TxtTotalNotYetImport.Text = DAScreeningBookDetail.TotalNotYetImport(DateFrom, DateTo)
+        LblTotalNotFillDiagnosis.Text = DAScreeningBookDetail.TotalPatientNotFillDiagnosis(DateFrom, DateTo)
     End Sub
     Private Sub CheckBlankDiagnosis(ByVal DG As DataGridView)
         For Each rows As DataGridViewRow In DG.Rows
@@ -434,5 +435,12 @@
     Private Sub BGImportToTEH_RunWorkerCompleted(ByVal sender As System.Object, ByVal e As System.ComponentModel.RunWorkerCompletedEventArgs) Handles BGImportToTEH.RunWorkerCompleted
         UIMainScreening.StatusLoading(False, "Loading")
         MessageBox.Show("Import patients is done!", "Screening", MessageBoxButtons.OK, MessageBoxIcon.Information)
+    End Sub
+
+    
+
+  
+    Private Sub DGScreeningBook_ColumnHeaderMouseClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellMouseEventArgs) Handles DGScreeningBook.ColumnHeaderMouseClick
+        CheckBlankDiagnosis(Me.DGScreeningBook)
     End Sub
 End Class

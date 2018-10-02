@@ -42,6 +42,10 @@ Partial Class DashboardScreeningRegisBook
         Dim DataGridViewCellStyle16 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
         Dim DataGridViewCellStyle17 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
         Me.Panel1 = New System.Windows.Forms.Panel
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox
+        Me.Panel6 = New System.Windows.Forms.Panel
+        Me.LblTotalNotFillDiagnosis = New System.Windows.Forms.Label
+        Me.Label9 = New System.Windows.Forms.Label
         Me.PicStartImport = New System.Windows.Forms.PictureBox
         Me.Panel5 = New System.Windows.Forms.Panel
         Me.TxtTotalNotYetImport = New System.Windows.Forms.Label
@@ -175,6 +179,8 @@ Partial Class DashboardScreeningRegisBook
         Me.BGScreeningBook = New System.ComponentModel.BackgroundWorker
         Me.BGImportToTEH = New System.ComponentModel.BackgroundWorker
         Me.Panel1.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel6.SuspendLayout()
         CType(Me.PicStartImport, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel5.SuspendLayout()
         Me.SplitContainer1.Panel1.SuspendLayout()
@@ -205,6 +211,8 @@ Partial Class DashboardScreeningRegisBook
                     Or System.Windows.Forms.AnchorStyles.Left) _
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(236, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(241, Byte), Integer))
+        Me.Panel1.Controls.Add(Me.PictureBox1)
+        Me.Panel1.Controls.Add(Me.Panel6)
         Me.Panel1.Controls.Add(Me.PicStartImport)
         Me.Panel1.Controls.Add(Me.Panel5)
         Me.Panel1.Controls.Add(Me.Label2)
@@ -229,12 +237,58 @@ Partial Class DashboardScreeningRegisBook
         Me.Panel1.Size = New System.Drawing.Size(1309, 852)
         Me.Panel1.TabIndex = 0
         '
+        'PictureBox1
+        '
+        Me.PictureBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(124, Byte), Integer))
+        Me.PictureBox1.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(758, 5)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(40, 38)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 33
+        Me.PictureBox1.TabStop = False
+        '
+        'Panel6
+        '
+        Me.Panel6.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(124, Byte), Integer))
+        Me.Panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel6.Controls.Add(Me.LblTotalNotFillDiagnosis)
+        Me.Panel6.Controls.Add(Me.Label9)
+        Me.Panel6.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Panel6.Location = New System.Drawing.Point(750, 24)
+        Me.Panel6.Name = "Panel6"
+        Me.Panel6.Size = New System.Drawing.Size(143, 70)
+        Me.Panel6.TabIndex = 32
+        '
+        'LblTotalNotFillDiagnosis
+        '
+        Me.LblTotalNotFillDiagnosis.Font = New System.Drawing.Font("Century Gothic", 12.0!)
+        Me.LblTotalNotFillDiagnosis.ForeColor = System.Drawing.Color.White
+        Me.LblTotalNotFillDiagnosis.Location = New System.Drawing.Point(22, 44)
+        Me.LblTotalNotFillDiagnosis.Name = "LblTotalNotFillDiagnosis"
+        Me.LblTotalNotFillDiagnosis.Size = New System.Drawing.Size(96, 21)
+        Me.LblTotalNotFillDiagnosis.TabIndex = 2
+        Me.LblTotalNotFillDiagnosis.Text = "0"
+        Me.LblTotalNotFillDiagnosis.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Century Gothic", 12.0!)
+        Me.Label9.ForeColor = System.Drawing.Color.White
+        Me.Label9.Location = New System.Drawing.Point(2, 23)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(136, 21)
+        Me.Label9.TabIndex = 0
+        Me.Label9.Text = "Not Fill Daignosis"
+        '
         'PicStartImport
         '
         Me.PicStartImport.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(124, Byte), Integer))
         Me.PicStartImport.Cursor = System.Windows.Forms.Cursors.Hand
         Me.PicStartImport.Image = CType(resources.GetObject("PicStartImport.Image"), System.Drawing.Image)
-        Me.PicStartImport.Location = New System.Drawing.Point(755, 5)
+        Me.PicStartImport.Location = New System.Drawing.Point(618, 4)
         Me.PicStartImport.Name = "PicStartImport"
         Me.PicStartImport.Size = New System.Drawing.Size(40, 39)
         Me.PicStartImport.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -248,16 +302,16 @@ Partial Class DashboardScreeningRegisBook
         Me.Panel5.Controls.Add(Me.TxtTotalNotYetImport)
         Me.Panel5.Controls.Add(Me.Label5)
         Me.Panel5.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Panel5.Location = New System.Drawing.Point(747, 25)
+        Me.Panel5.Location = New System.Drawing.Point(610, 24)
         Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(175, 70)
+        Me.Panel5.Size = New System.Drawing.Size(135, 70)
         Me.Panel5.TabIndex = 30
         '
         'TxtTotalNotYetImport
         '
         Me.TxtTotalNotYetImport.Font = New System.Drawing.Font("Century Gothic", 12.0!)
         Me.TxtTotalNotYetImport.ForeColor = System.Drawing.Color.White
-        Me.TxtTotalNotYetImport.Location = New System.Drawing.Point(42, 45)
+        Me.TxtTotalNotYetImport.Location = New System.Drawing.Point(18, 45)
         Me.TxtTotalNotYetImport.Name = "TxtTotalNotYetImport"
         Me.TxtTotalNotYetImport.Size = New System.Drawing.Size(96, 21)
         Me.TxtTotalNotYetImport.TabIndex = 2
@@ -269,7 +323,7 @@ Partial Class DashboardScreeningRegisBook
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Century Gothic", 12.0!)
         Me.Label5.ForeColor = System.Drawing.Color.White
-        Me.Label5.Location = New System.Drawing.Point(20, 22)
+        Me.Label5.Location = New System.Drawing.Point(2, 21)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(132, 21)
         Me.Label5.TabIndex = 0
@@ -281,7 +335,7 @@ Partial Class DashboardScreeningRegisBook
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Century Gothic", 12.0!)
         Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
-        Me.Label2.Location = New System.Drawing.Point(947, 85)
+        Me.Label2.Location = New System.Drawing.Point(947, 73)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(97, 21)
         Me.Label2.TabIndex = 29
@@ -293,7 +347,7 @@ Partial Class DashboardScreeningRegisBook
                     Or System.Windows.Forms.AnchorStyles.Left) _
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.SplitContainer1.BackColor = System.Drawing.Color.FromArgb(CType(CType(236, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(241, Byte), Integer))
-        Me.SplitContainer1.Location = New System.Drawing.Point(7, 114)
+        Me.SplitContainer1.Location = New System.Drawing.Point(7, 98)
         Me.SplitContainer1.Name = "SplitContainer1"
         Me.SplitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal
         '
@@ -304,8 +358,8 @@ Partial Class DashboardScreeningRegisBook
         'SplitContainer1.Panel2
         '
         Me.SplitContainer1.Panel2.Controls.Add(Me.TabControl1)
-        Me.SplitContainer1.Size = New System.Drawing.Size(1297, 733)
-        Me.SplitContainer1.SplitterDistance = 391
+        Me.SplitContainer1.Size = New System.Drawing.Size(1297, 751)
+        Me.SplitContainer1.SplitterDistance = 400
         Me.SplitContainer1.TabIndex = 28
         '
         'DGScreeningBook
@@ -353,7 +407,7 @@ Partial Class DashboardScreeningRegisBook
         Me.DGScreeningBook.RowHeadersWidth = 50
         Me.DGScreeningBook.RowTemplate.Height = 35
         Me.DGScreeningBook.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DGScreeningBook.Size = New System.Drawing.Size(1297, 391)
+        Me.DGScreeningBook.Size = New System.Drawing.Size(1297, 400)
         Me.DGScreeningBook.TabIndex = 25
         '
         'IMPORT_STATUS
@@ -772,7 +826,7 @@ Partial Class DashboardScreeningRegisBook
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.Padding = New System.Drawing.Point(3, 3)
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(1297, 338)
+        Me.TabControl1.Size = New System.Drawing.Size(1297, 347)
         Me.TabControl1.TabIndex = 0
         '
         'ReferralPickup
@@ -783,7 +837,7 @@ Partial Class DashboardScreeningRegisBook
         Me.ReferralPickup.ForeColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
         Me.ReferralPickup.Location = New System.Drawing.Point(4, 33)
         Me.ReferralPickup.Name = "ReferralPickup"
-        Me.ReferralPickup.Size = New System.Drawing.Size(1289, 301)
+        Me.ReferralPickup.Size = New System.Drawing.Size(1289, 310)
         Me.ReferralPickup.TabIndex = 1
         Me.ReferralPickup.Text = " Refer Pickup  or By Self"
         Me.ReferralPickup.UseVisualStyleBackColor = True
@@ -830,7 +884,7 @@ Partial Class DashboardScreeningRegisBook
         Me.DGReferral.RowHeadersDefaultCellStyle = DataGridViewCellStyle11
         Me.DGReferral.RowTemplate.Height = 35
         Me.DGReferral.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DGReferral.Size = New System.Drawing.Size(1289, 301)
+        Me.DGReferral.Size = New System.Drawing.Size(1289, 310)
         Me.DGReferral.TabIndex = 26
         '
         'REFERRAL_ID
@@ -954,7 +1008,7 @@ Partial Class DashboardScreeningRegisBook
         Me.Refraction.ForeColor = System.Drawing.Color.Cornsilk
         Me.Refraction.Location = New System.Drawing.Point(4, 33)
         Me.Refraction.Name = "Refraction"
-        Me.Refraction.Size = New System.Drawing.Size(1289, 301)
+        Me.Refraction.Size = New System.Drawing.Size(1289, 310)
         Me.Refraction.TabIndex = 0
         Me.Refraction.Text = "     Refraction     "
         Me.Refraction.UseVisualStyleBackColor = True
@@ -1001,7 +1055,7 @@ Partial Class DashboardScreeningRegisBook
         Me.DGRefraction.RowHeadersDefaultCellStyle = DataGridViewCellStyle14
         Me.DGRefraction.RowTemplate.Height = 35
         Me.DGRefraction.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DGRefraction.Size = New System.Drawing.Size(1289, 301)
+        Me.DGRefraction.Size = New System.Drawing.Size(1289, 310)
         Me.DGRefraction.TabIndex = 27
         '
         'REFRACT_DATE
@@ -1138,7 +1192,7 @@ Partial Class DashboardScreeningRegisBook
         Me.OpticalShop.Controls.Add(Me.DGOpticalShop)
         Me.OpticalShop.Location = New System.Drawing.Point(4, 33)
         Me.OpticalShop.Name = "OpticalShop"
-        Me.OpticalShop.Size = New System.Drawing.Size(1289, 301)
+        Me.OpticalShop.Size = New System.Drawing.Size(1289, 310)
         Me.OpticalShop.TabIndex = 3
         Me.OpticalShop.Text = "    Optical Shop    "
         Me.OpticalShop.UseVisualStyleBackColor = True
@@ -1185,7 +1239,7 @@ Partial Class DashboardScreeningRegisBook
         Me.DGOpticalShop.RowHeadersDefaultCellStyle = DataGridViewCellStyle17
         Me.DGOpticalShop.RowTemplate.Height = 35
         Me.DGOpticalShop.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DGOpticalShop.Size = New System.Drawing.Size(1289, 301)
+        Me.DGOpticalShop.Size = New System.Drawing.Size(1289, 310)
         Me.DGOpticalShop.TabIndex = 28
         '
         'DATE_SCREENING
@@ -1274,7 +1328,7 @@ Partial Class DashboardScreeningRegisBook
         Me.DateTo.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.DateTo.CustomFormat = "dd-MM-yyyy"
         Me.DateTo.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.DateTo.Location = New System.Drawing.Point(1050, 50)
+        Me.DateTo.Location = New System.Drawing.Point(1050, 38)
         Me.DateTo.Name = "DateTo"
         Me.DateTo.Size = New System.Drawing.Size(247, 27)
         Me.DateTo.TabIndex = 27
@@ -1284,7 +1338,7 @@ Partial Class DashboardScreeningRegisBook
         Me.DateFrom.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.DateFrom.CustomFormat = "dd-MM-yyyy"
         Me.DateFrom.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.DateFrom.Location = New System.Drawing.Point(1050, 18)
+        Me.DateFrom.Location = New System.Drawing.Point(1050, 6)
         Me.DateFrom.Name = "DateFrom"
         Me.DateFrom.Size = New System.Drawing.Size(247, 27)
         Me.DateFrom.TabIndex = 26
@@ -1295,7 +1349,7 @@ Partial Class DashboardScreeningRegisBook
         Me.Label13.AutoSize = True
         Me.Label13.Font = New System.Drawing.Font("Century Gothic", 12.0!)
         Me.Label13.ForeColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
-        Me.Label13.Location = New System.Drawing.Point(1012, 55)
+        Me.Label13.Location = New System.Drawing.Point(1012, 43)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(32, 21)
         Me.Label13.TabIndex = 24
@@ -1307,7 +1361,7 @@ Partial Class DashboardScreeningRegisBook
         Me.Label12.AutoSize = True
         Me.Label12.Font = New System.Drawing.Font("Century Gothic", 12.0!)
         Me.Label12.ForeColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
-        Me.Label12.Location = New System.Drawing.Point(992, 23)
+        Me.Label12.Location = New System.Drawing.Point(992, 11)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(52, 21)
         Me.Label12.TabIndex = 23
@@ -1321,7 +1375,7 @@ Partial Class DashboardScreeningRegisBook
         Me.BtnFind.FlatAppearance.BorderSize = 0
         Me.BtnFind.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnFind.Image = CType(resources.GetObject("BtnFind.Image"), System.Drawing.Image)
-        Me.BtnFind.Location = New System.Drawing.Point(1255, 81)
+        Me.BtnFind.Location = New System.Drawing.Point(1255, 69)
         Me.BtnFind.Name = "BtnFind"
         Me.BtnFind.Size = New System.Drawing.Size(42, 27)
         Me.BtnFind.TabIndex = 19
@@ -1331,7 +1385,7 @@ Partial Class DashboardScreeningRegisBook
         '
         Me.TxtPatienNo.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.TxtPatienNo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TxtPatienNo.Location = New System.Drawing.Point(1050, 81)
+        Me.TxtPatienNo.Location = New System.Drawing.Point(1050, 69)
         Me.TxtPatienNo.Name = "TxtPatienNo"
         Me.TxtPatienNo.Size = New System.Drawing.Size(205, 27)
         Me.TxtPatienNo.TabIndex = 18
@@ -1341,7 +1395,7 @@ Partial Class DashboardScreeningRegisBook
         Me.PicOpticalShop.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(124, Byte), Integer))
         Me.PicOpticalShop.Cursor = System.Windows.Forms.Cursors.Hand
         Me.PicOpticalShop.Image = CType(resources.GetObject("PicOpticalShop.Image"), System.Drawing.Image)
-        Me.PicOpticalShop.Location = New System.Drawing.Point(571, 5)
+        Me.PicOpticalShop.Location = New System.Drawing.Point(487, 5)
         Me.PicOpticalShop.Name = "PicOpticalShop"
         Me.PicOpticalShop.Size = New System.Drawing.Size(40, 38)
         Me.PicOpticalShop.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -1355,16 +1409,16 @@ Partial Class DashboardScreeningRegisBook
         Me.Panel4.Controls.Add(Me.TxtTotalOpticalShop)
         Me.Panel4.Controls.Add(Me.Label11)
         Me.Panel4.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Panel4.Location = New System.Drawing.Point(563, 24)
+        Me.Panel4.Location = New System.Drawing.Point(479, 24)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(175, 70)
+        Me.Panel4.Size = New System.Drawing.Size(125, 70)
         Me.Panel4.TabIndex = 16
         '
         'TxtTotalOpticalShop
         '
         Me.TxtTotalOpticalShop.Font = New System.Drawing.Font("Century Gothic", 12.0!)
         Me.TxtTotalOpticalShop.ForeColor = System.Drawing.Color.White
-        Me.TxtTotalOpticalShop.Location = New System.Drawing.Point(42, 45)
+        Me.TxtTotalOpticalShop.Location = New System.Drawing.Point(13, 44)
         Me.TxtTotalOpticalShop.Name = "TxtTotalOpticalShop"
         Me.TxtTotalOpticalShop.Size = New System.Drawing.Size(96, 21)
         Me.TxtTotalOpticalShop.TabIndex = 2
@@ -1376,7 +1430,7 @@ Partial Class DashboardScreeningRegisBook
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Century Gothic", 12.0!)
         Me.Label11.ForeColor = System.Drawing.Color.White
-        Me.Label11.Location = New System.Drawing.Point(28, 22)
+        Me.Label11.Location = New System.Drawing.Point(2, 23)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(116, 21)
         Me.Label11.TabIndex = 0
@@ -1387,7 +1441,7 @@ Partial Class DashboardScreeningRegisBook
         Me.PicReferral.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(124, Byte), Integer))
         Me.PicReferral.Cursor = System.Windows.Forms.Cursors.Hand
         Me.PicReferral.Image = CType(resources.GetObject("PicReferral.Image"), System.Drawing.Image)
-        Me.PicReferral.Location = New System.Drawing.Point(385, 5)
+        Me.PicReferral.Location = New System.Drawing.Point(322, 5)
         Me.PicReferral.Name = "PicReferral"
         Me.PicReferral.Size = New System.Drawing.Size(40, 38)
         Me.PicReferral.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -1399,7 +1453,7 @@ Partial Class DashboardScreeningRegisBook
         Me.PicRefraction.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(124, Byte), Integer))
         Me.PicRefraction.Cursor = System.Windows.Forms.Cursors.Hand
         Me.PicRefraction.Image = CType(resources.GetObject("PicRefraction.Image"), System.Drawing.Image)
-        Me.PicRefraction.Location = New System.Drawing.Point(201, 6)
+        Me.PicRefraction.Location = New System.Drawing.Point(178, 6)
         Me.PicRefraction.Name = "PicRefraction"
         Me.PicRefraction.Size = New System.Drawing.Size(40, 38)
         Me.PicRefraction.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -1428,9 +1482,9 @@ Partial Class DashboardScreeningRegisBook
         Me.Panel3.Controls.Add(Me.TxtTotalReferralPickup)
         Me.Panel3.Controls.Add(Me.Label6)
         Me.Panel3.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Panel3.Location = New System.Drawing.Point(377, 25)
+        Me.Panel3.Location = New System.Drawing.Point(314, 25)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(175, 70)
+        Me.Panel3.Size = New System.Drawing.Size(160, 70)
         Me.Panel3.TabIndex = 10
         '
         'TxtTotalReferralSelf
@@ -1439,7 +1493,7 @@ Partial Class DashboardScreeningRegisBook
         Me.TxtTotalReferralSelf.ForeColor = System.Drawing.Color.White
         Me.TxtTotalReferralSelf.Location = New System.Drawing.Point(108, 45)
         Me.TxtTotalReferralSelf.Name = "TxtTotalReferralSelf"
-        Me.TxtTotalReferralSelf.Size = New System.Drawing.Size(62, 21)
+        Me.TxtTotalReferralSelf.Size = New System.Drawing.Size(50, 21)
         Me.TxtTotalReferralSelf.TabIndex = 5
         Me.TxtTotalReferralSelf.Text = "0"
         Me.TxtTotalReferralSelf.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -1449,7 +1503,7 @@ Partial Class DashboardScreeningRegisBook
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Century Gothic", 12.0!)
         Me.Label8.ForeColor = System.Drawing.Color.White
-        Me.Label8.Location = New System.Drawing.Point(4, 45)
+        Me.Label8.Location = New System.Drawing.Point(3, 45)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(104, 21)
         Me.Label8.TabIndex = 4
@@ -1460,7 +1514,7 @@ Partial Class DashboardScreeningRegisBook
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Century Gothic", 12.0!)
         Me.Label7.ForeColor = System.Drawing.Color.White
-        Me.Label7.Location = New System.Drawing.Point(4, 21)
+        Me.Label7.Location = New System.Drawing.Point(3, 21)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(108, 21)
         Me.Label7.TabIndex = 3
@@ -1472,7 +1526,7 @@ Partial Class DashboardScreeningRegisBook
         Me.TxtTotalReferralPickup.ForeColor = System.Drawing.Color.White
         Me.TxtTotalReferralPickup.Location = New System.Drawing.Point(108, 21)
         Me.TxtTotalReferralPickup.Name = "TxtTotalReferralPickup"
-        Me.TxtTotalReferralPickup.Size = New System.Drawing.Size(62, 21)
+        Me.TxtTotalReferralPickup.Size = New System.Drawing.Size(50, 21)
         Me.TxtTotalReferralPickup.TabIndex = 2
         Me.TxtTotalReferralPickup.Text = "0"
         Me.TxtTotalReferralPickup.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -1495,16 +1549,16 @@ Partial Class DashboardScreeningRegisBook
         Me.Panel2.Controls.Add(Me.TxtTotalRefraction)
         Me.Panel2.Controls.Add(Me.Label4)
         Me.Panel2.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Panel2.Location = New System.Drawing.Point(193, 25)
+        Me.Panel2.Location = New System.Drawing.Point(170, 25)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(175, 70)
+        Me.Panel2.Size = New System.Drawing.Size(139, 70)
         Me.Panel2.TabIndex = 9
         '
         'TxtTotalRefraction
         '
         Me.TxtTotalRefraction.Font = New System.Drawing.Font("Century Gothic", 12.0!)
         Me.TxtTotalRefraction.ForeColor = System.Drawing.Color.White
-        Me.TxtTotalRefraction.Location = New System.Drawing.Point(38, 45)
+        Me.TxtTotalRefraction.Location = New System.Drawing.Point(20, 45)
         Me.TxtTotalRefraction.Name = "TxtTotalRefraction"
         Me.TxtTotalRefraction.Size = New System.Drawing.Size(96, 21)
         Me.TxtTotalRefraction.TabIndex = 2
@@ -1516,7 +1570,7 @@ Partial Class DashboardScreeningRegisBook
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Century Gothic", 12.0!)
         Me.Label4.ForeColor = System.Drawing.Color.White
-        Me.Label4.Location = New System.Drawing.Point(19, 21)
+        Me.Label4.Location = New System.Drawing.Point(0, 21)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(134, 21)
         Me.Label4.TabIndex = 0
@@ -1531,14 +1585,14 @@ Partial Class DashboardScreeningRegisBook
         Me.PanelSend.Cursor = System.Windows.Forms.Cursors.Hand
         Me.PanelSend.Location = New System.Drawing.Point(9, 25)
         Me.PanelSend.Name = "PanelSend"
-        Me.PanelSend.Size = New System.Drawing.Size(175, 70)
+        Me.PanelSend.Size = New System.Drawing.Size(156, 70)
         Me.PanelSend.TabIndex = 8
         '
         'TxtTotalRegister
         '
         Me.TxtTotalRegister.Font = New System.Drawing.Font("Century Gothic", 12.0!)
         Me.TxtTotalRegister.ForeColor = System.Drawing.Color.White
-        Me.TxtTotalRegister.Location = New System.Drawing.Point(38, 45)
+        Me.TxtTotalRegister.Location = New System.Drawing.Point(29, 45)
         Me.TxtTotalRegister.Name = "TxtTotalRegister"
         Me.TxtTotalRegister.Size = New System.Drawing.Size(96, 21)
         Me.TxtTotalRegister.TabIndex = 2
@@ -1550,7 +1604,7 @@ Partial Class DashboardScreeningRegisBook
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Century Gothic", 12.0!)
         Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(13, 21)
+        Me.Label1.Location = New System.Drawing.Point(4, 21)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(146, 21)
         Me.Label1.TabIndex = 0
@@ -1574,6 +1628,9 @@ Partial Class DashboardScreeningRegisBook
         Me.Size = New System.Drawing.Size(1320, 863)
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel6.ResumeLayout(False)
+        Me.Panel6.PerformLayout()
         CType(Me.PicStartImport, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel5.ResumeLayout(False)
         Me.Panel5.PerformLayout()
@@ -1737,5 +1794,9 @@ Partial Class DashboardScreeningRegisBook
     Friend WithEvents Female As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Occupation As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Telephone As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
+    Friend WithEvents Panel6 As System.Windows.Forms.Panel
+    Friend WithEvents LblTotalNotFillDiagnosis As System.Windows.Forms.Label
+    Friend WithEvents Label9 As System.Windows.Forms.Label
 
 End Class
