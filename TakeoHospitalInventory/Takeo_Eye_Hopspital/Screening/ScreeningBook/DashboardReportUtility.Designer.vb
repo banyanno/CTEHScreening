@@ -34,7 +34,7 @@ Partial Class DashboardReportUtility
         Me.Label12 = New System.Windows.Forms.Label
         Me.Label2 = New System.Windows.Forms.Label
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer
-        Me.CrystalReportViewer1 = New CrystalDecisions.Windows.Forms.CrystalReportViewer
+        Me.CRVScreeningUtility = New CrystalDecisions.Windows.Forms.CrystalReportViewer
         Me.SplitContainer1.Panel1.SuspendLayout()
         Me.SplitContainer1.Panel2.SuspendLayout()
         Me.SplitContainer1.SuspendLayout()
@@ -211,25 +211,25 @@ Partial Class DashboardReportUtility
         '
         'SplitContainer1.Panel2
         '
-        Me.SplitContainer1.Panel2.Controls.Add(Me.CrystalReportViewer1)
+        Me.SplitContainer1.Panel2.Controls.Add(Me.CRVScreeningUtility)
         Me.SplitContainer1.Size = New System.Drawing.Size(1498, 938)
         Me.SplitContainer1.SplitterDistance = 246
         Me.SplitContainer1.TabIndex = 33
         '
-        'CrystalReportViewer1
+        'CRVScreeningUtility
         '
-        Me.CrystalReportViewer1.ActiveViewIndex = -1
-        Me.CrystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.CrystalReportViewer1.DisplayGroupTree = False
-        Me.CrystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.CrystalReportViewer1.Location = New System.Drawing.Point(0, 0)
-        Me.CrystalReportViewer1.Name = "CrystalReportViewer1"
-        Me.CrystalReportViewer1.SelectionFormula = ""
-        Me.CrystalReportViewer1.ShowGroupTreeButton = False
-        Me.CrystalReportViewer1.ShowRefreshButton = False
-        Me.CrystalReportViewer1.Size = New System.Drawing.Size(1248, 938)
-        Me.CrystalReportViewer1.TabIndex = 0
-        Me.CrystalReportViewer1.ViewTimeSelectionFormula = ""
+        Me.CRVScreeningUtility.ActiveViewIndex = -1
+        Me.CRVScreeningUtility.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.CRVScreeningUtility.DisplayGroupTree = False
+        Me.CRVScreeningUtility.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.CRVScreeningUtility.Location = New System.Drawing.Point(0, 0)
+        Me.CRVScreeningUtility.Name = "CRVScreeningUtility"
+        Me.CRVScreeningUtility.SelectionFormula = ""
+        Me.CRVScreeningUtility.ShowGroupTreeButton = False
+        Me.CRVScreeningUtility.ShowRefreshButton = False
+        Me.CRVScreeningUtility.Size = New System.Drawing.Size(1248, 938)
+        Me.CRVScreeningUtility.TabIndex = 0
+        Me.CRVScreeningUtility.ViewTimeSelectionFormula = ""
         '
         'DashboardReportUtility
         '
@@ -259,6 +259,6 @@ Partial Class DashboardReportUtility
     Friend WithEvents Label12 As System.Windows.Forms.Label
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents SplitContainer1 As System.Windows.Forms.SplitContainer
-    Friend WithEvents CrystalReportViewer1 As CrystalDecisions.Windows.Forms.CrystalReportViewer
+    Friend WithEvents CRVScreeningUtility As CrystalDecisions.Windows.Forms.CrystalReportViewer
 
 End Class
