@@ -692,6 +692,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetScreeningBook.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Takeo_Eye_Hopspital\Screening\ScreeningBook\DataSetScreeningBook.vb">
+      <DependentUpon>DataSetScreeningBook.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Takeo_Eye_Hopspital\Screening\ScreeningBook\ImportPatient\DashboardImportPatient.Designer.vb">
       <DependentUpon>DashboardImportPatient.vb</DependentUpon>
     </Compile>

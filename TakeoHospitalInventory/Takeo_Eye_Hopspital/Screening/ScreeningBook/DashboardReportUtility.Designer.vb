@@ -24,20 +24,25 @@ Partial Class DashboardReportUtility
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(DashboardReportUtility))
         Me.BtnScreeningBook = New System.Windows.Forms.Button
-        Me.BtnPrescribtion = New System.Windows.Forms.Button
-        Me.BtnReferredTEH = New System.Windows.Forms.Button
-        Me.BtnPickUP = New System.Windows.Forms.Button
-        Me.BtnPatientOperation = New System.Windows.Forms.Button
         Me.DateTo = New System.Windows.Forms.DateTimePicker
         Me.DateFrom = New System.Windows.Forms.DateTimePicker
         Me.Label13 = New System.Windows.Forms.Label
         Me.Label12 = New System.Windows.Forms.Label
-        Me.Label2 = New System.Windows.Forms.Label
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer
         Me.CRVScreeningUtility = New CrystalDecisions.Windows.Forms.CrystalReportViewer
+        Me.ChScreeningPlace = New System.Windows.Forms.CheckBox
+        Me.CboScreeningPlace = New System.Windows.Forms.ComboBox
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox
+        Me.RadAllScreening = New System.Windows.Forms.RadioButton
+        Me.RadRefraction = New System.Windows.Forms.RadioButton
+        Me.RadReferalBySelf = New System.Windows.Forms.RadioButton
+        Me.RadReferPickup = New System.Windows.Forms.RadioButton
+        Me.RadOpticalShop = New System.Windows.Forms.RadioButton
+        Me.BGloadingReport = New System.ComponentModel.BackgroundWorker
         Me.SplitContainer1.Panel1.SuspendLayout()
         Me.SplitContainer1.Panel2.SuspendLayout()
         Me.SplitContainer1.SuspendLayout()
+        Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
         'BtnScreeningBook
@@ -50,90 +55,14 @@ Partial Class DashboardReportUtility
         Me.BtnScreeningBook.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnScreeningBook.ForeColor = System.Drawing.Color.White
         Me.BtnScreeningBook.Image = CType(resources.GetObject("BtnScreeningBook.Image"), System.Drawing.Image)
-        Me.BtnScreeningBook.Location = New System.Drawing.Point(7, 118)
+        Me.BtnScreeningBook.Location = New System.Drawing.Point(7, 352)
         Me.BtnScreeningBook.Name = "BtnScreeningBook"
-        Me.BtnScreeningBook.Size = New System.Drawing.Size(227, 74)
+        Me.BtnScreeningBook.Size = New System.Drawing.Size(228, 72)
         Me.BtnScreeningBook.TabIndex = 4
-        Me.BtnScreeningBook.Text = "Screening Book"
+        Me.BtnScreeningBook.Text = "Print Preview"
         Me.BtnScreeningBook.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.BtnScreeningBook.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         Me.BtnScreeningBook.UseVisualStyleBackColor = False
-        '
-        'BtnPrescribtion
-        '
-        Me.BtnPrescribtion.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
-        Me.BtnPrescribtion.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnPrescribtion.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.BtnPrescribtion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver
-        Me.BtnPrescribtion.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnPrescribtion.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnPrescribtion.ForeColor = System.Drawing.Color.White
-        Me.BtnPrescribtion.Image = CType(resources.GetObject("BtnPrescribtion.Image"), System.Drawing.Image)
-        Me.BtnPrescribtion.Location = New System.Drawing.Point(7, 198)
-        Me.BtnPrescribtion.Name = "BtnPrescribtion"
-        Me.BtnPrescribtion.Size = New System.Drawing.Size(227, 74)
-        Me.BtnPrescribtion.TabIndex = 5
-        Me.BtnPrescribtion.Text = "Prescribtion For Refraction"
-        Me.BtnPrescribtion.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.BtnPrescribtion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
-        Me.BtnPrescribtion.UseVisualStyleBackColor = False
-        '
-        'BtnReferredTEH
-        '
-        Me.BtnReferredTEH.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
-        Me.BtnReferredTEH.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnReferredTEH.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.BtnReferredTEH.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver
-        Me.BtnReferredTEH.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnReferredTEH.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnReferredTEH.ForeColor = System.Drawing.Color.White
-        Me.BtnReferredTEH.Image = CType(resources.GetObject("BtnReferredTEH.Image"), System.Drawing.Image)
-        Me.BtnReferredTEH.Location = New System.Drawing.Point(7, 278)
-        Me.BtnReferredTEH.Name = "BtnReferredTEH"
-        Me.BtnReferredTEH.Size = New System.Drawing.Size(227, 74)
-        Me.BtnReferredTEH.TabIndex = 6
-        Me.BtnReferredTEH.Text = "Referred patient to TEH"
-        Me.BtnReferredTEH.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.BtnReferredTEH.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
-        Me.BtnReferredTEH.UseVisualStyleBackColor = False
-        '
-        'BtnPickUP
-        '
-        Me.BtnPickUP.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
-        Me.BtnPickUP.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnPickUP.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.BtnPickUP.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver
-        Me.BtnPickUP.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnPickUP.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnPickUP.ForeColor = System.Drawing.Color.White
-        Me.BtnPickUP.Image = CType(resources.GetObject("BtnPickUP.Image"), System.Drawing.Image)
-        Me.BtnPickUP.Location = New System.Drawing.Point(7, 358)
-        Me.BtnPickUP.Name = "BtnPickUP"
-        Me.BtnPickUP.Size = New System.Drawing.Size(227, 74)
-        Me.BtnPickUP.TabIndex = 6
-        Me.BtnPickUP.Text = "Pick up To TEH"
-        Me.BtnPickUP.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.BtnPickUP.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
-        Me.BtnPickUP.UseVisualStyleBackColor = False
-        '
-        'BtnPatientOperation
-        '
-        Me.BtnPatientOperation.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
-        Me.BtnPatientOperation.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnPatientOperation.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.BtnPatientOperation.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver
-        Me.BtnPatientOperation.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnPatientOperation.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnPatientOperation.ForeColor = System.Drawing.Color.White
-        Me.BtnPatientOperation.Image = CType(resources.GetObject("BtnPatientOperation.Image"), System.Drawing.Image)
-        Me.BtnPatientOperation.Location = New System.Drawing.Point(7, 438)
-        Me.BtnPatientOperation.Name = "BtnPatientOperation"
-        Me.BtnPatientOperation.Size = New System.Drawing.Size(227, 74)
-        Me.BtnPatientOperation.TabIndex = 6
-        Me.BtnPatientOperation.Text = "Patient Operation"
-        Me.BtnPatientOperation.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.BtnPatientOperation.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
-        Me.BtnPatientOperation.UseVisualStyleBackColor = False
         '
         'DateTo
         '
@@ -175,20 +104,6 @@ Partial Class DashboardReportUtility
         Me.Label12.TabIndex = 28
         Me.Label12.Text = "From:"
         '
-        'Label2
-        '
-        Me.Label2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                    Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.Blue
-        Me.Label2.Location = New System.Drawing.Point(3, 95)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(104, 20)
-        Me.Label2.TabIndex = 32
-        Me.Label2.Text = "Report Utility:"
-        '
         'SplitContainer1
         '
         Me.SplitContainer1.Dock = System.Windows.Forms.DockStyle.Fill
@@ -198,16 +113,14 @@ Partial Class DashboardReportUtility
         '
         'SplitContainer1.Panel1
         '
+        Me.SplitContainer1.Panel1.Controls.Add(Me.GroupBox1)
+        Me.SplitContainer1.Panel1.Controls.Add(Me.CboScreeningPlace)
+        Me.SplitContainer1.Panel1.Controls.Add(Me.ChScreeningPlace)
         Me.SplitContainer1.Panel1.Controls.Add(Me.Label12)
-        Me.SplitContainer1.Panel1.Controls.Add(Me.Label2)
         Me.SplitContainer1.Panel1.Controls.Add(Me.BtnScreeningBook)
         Me.SplitContainer1.Panel1.Controls.Add(Me.DateTo)
-        Me.SplitContainer1.Panel1.Controls.Add(Me.BtnPrescribtion)
         Me.SplitContainer1.Panel1.Controls.Add(Me.DateFrom)
-        Me.SplitContainer1.Panel1.Controls.Add(Me.BtnReferredTEH)
         Me.SplitContainer1.Panel1.Controls.Add(Me.Label13)
-        Me.SplitContainer1.Panel1.Controls.Add(Me.BtnPickUP)
-        Me.SplitContainer1.Panel1.Controls.Add(Me.BtnPatientOperation)
         '
         'SplitContainer1.Panel2
         '
@@ -231,6 +144,100 @@ Partial Class DashboardReportUtility
         Me.CRVScreeningUtility.TabIndex = 0
         Me.CRVScreeningUtility.ViewTimeSelectionFormula = ""
         '
+        'ChScreeningPlace
+        '
+        Me.ChScreeningPlace.AutoSize = True
+        Me.ChScreeningPlace.ForeColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
+        Me.ChScreeningPlace.Location = New System.Drawing.Point(7, 86)
+        Me.ChScreeningPlace.Name = "ChScreeningPlace"
+        Me.ChScreeningPlace.Size = New System.Drawing.Size(157, 25)
+        Me.ChScreeningPlace.TabIndex = 33
+        Me.ChScreeningPlace.Text = "Screening Place:"
+        Me.ChScreeningPlace.UseVisualStyleBackColor = True
+        '
+        'CboScreeningPlace
+        '
+        Me.CboScreeningPlace.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.CboScreeningPlace.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
+        Me.CboScreeningPlace.Enabled = False
+        Me.CboScreeningPlace.FormattingEnabled = True
+        Me.CboScreeningPlace.Location = New System.Drawing.Point(7, 112)
+        Me.CboScreeningPlace.Name = "CboScreeningPlace"
+        Me.CboScreeningPlace.Size = New System.Drawing.Size(227, 29)
+        Me.CboScreeningPlace.TabIndex = 34
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.RadOpticalShop)
+        Me.GroupBox1.Controls.Add(Me.RadReferPickup)
+        Me.GroupBox1.Controls.Add(Me.RadReferalBySelf)
+        Me.GroupBox1.Controls.Add(Me.RadRefraction)
+        Me.GroupBox1.Controls.Add(Me.RadAllScreening)
+        Me.GroupBox1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
+        Me.GroupBox1.Location = New System.Drawing.Point(7, 156)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(227, 190)
+        Me.GroupBox1.TabIndex = 35
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "View By:"
+        '
+        'RadAllScreening
+        '
+        Me.RadAllScreening.AutoSize = True
+        Me.RadAllScreening.Checked = True
+        Me.RadAllScreening.ForeColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
+        Me.RadAllScreening.Location = New System.Drawing.Point(6, 26)
+        Me.RadAllScreening.Name = "RadAllScreening"
+        Me.RadAllScreening.Size = New System.Drawing.Size(128, 25)
+        Me.RadAllScreening.TabIndex = 0
+        Me.RadAllScreening.TabStop = True
+        Me.RadAllScreening.Text = "All Screening"
+        Me.RadAllScreening.UseVisualStyleBackColor = True
+        '
+        'RadRefraction
+        '
+        Me.RadRefraction.AutoSize = True
+        Me.RadRefraction.ForeColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
+        Me.RadRefraction.Location = New System.Drawing.Point(6, 57)
+        Me.RadRefraction.Name = "RadRefraction"
+        Me.RadRefraction.Size = New System.Drawing.Size(109, 25)
+        Me.RadRefraction.TabIndex = 0
+        Me.RadRefraction.Text = "Refraction"
+        Me.RadRefraction.UseVisualStyleBackColor = True
+        '
+        'RadReferalBySelf
+        '
+        Me.RadReferalBySelf.AutoSize = True
+        Me.RadReferalBySelf.Location = New System.Drawing.Point(6, 88)
+        Me.RadReferalBySelf.Name = "RadReferalBySelf"
+        Me.RadReferalBySelf.Size = New System.Drawing.Size(181, 25)
+        Me.RadReferalBySelf.TabIndex = 0
+        Me.RadReferalBySelf.Text = "Referal To TEH Byself"
+        Me.RadReferalBySelf.UseVisualStyleBackColor = True
+        '
+        'RadReferPickup
+        '
+        Me.RadReferPickup.AutoSize = True
+        Me.RadReferPickup.Location = New System.Drawing.Point(6, 119)
+        Me.RadReferPickup.Name = "RadReferPickup"
+        Me.RadReferPickup.Size = New System.Drawing.Size(191, 25)
+        Me.RadReferPickup.TabIndex = 0
+        Me.RadReferPickup.Text = "Referal To TEH Pickup"
+        Me.RadReferPickup.UseVisualStyleBackColor = True
+        '
+        'RadOpticalShop
+        '
+        Me.RadOpticalShop.AutoSize = True
+        Me.RadOpticalShop.Location = New System.Drawing.Point(6, 150)
+        Me.RadOpticalShop.Name = "RadOpticalShop"
+        Me.RadOpticalShop.Size = New System.Drawing.Size(130, 25)
+        Me.RadOpticalShop.TabIndex = 0
+        Me.RadOpticalShop.Text = "Optical Shop"
+        Me.RadOpticalShop.UseVisualStyleBackColor = True
+        '
+        'BGloadingReport
+        '
+        '
         'DashboardReportUtility
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(10.0!, 21.0!)
@@ -245,20 +252,26 @@ Partial Class DashboardReportUtility
         Me.SplitContainer1.Panel1.PerformLayout()
         Me.SplitContainer1.Panel2.ResumeLayout(False)
         Me.SplitContainer1.ResumeLayout(False)
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
     Friend WithEvents BtnScreeningBook As System.Windows.Forms.Button
-    Friend WithEvents BtnPrescribtion As System.Windows.Forms.Button
-    Friend WithEvents BtnReferredTEH As System.Windows.Forms.Button
-    Friend WithEvents BtnPickUP As System.Windows.Forms.Button
-    Friend WithEvents BtnPatientOperation As System.Windows.Forms.Button
     Friend WithEvents DateTo As System.Windows.Forms.DateTimePicker
     Friend WithEvents DateFrom As System.Windows.Forms.DateTimePicker
     Friend WithEvents Label13 As System.Windows.Forms.Label
     Friend WithEvents Label12 As System.Windows.Forms.Label
-    Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents SplitContainer1 As System.Windows.Forms.SplitContainer
     Friend WithEvents CRVScreeningUtility As CrystalDecisions.Windows.Forms.CrystalReportViewer
+    Friend WithEvents ChScreeningPlace As System.Windows.Forms.CheckBox
+    Friend WithEvents CboScreeningPlace As System.Windows.Forms.ComboBox
+    Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
+    Friend WithEvents RadReferalBySelf As System.Windows.Forms.RadioButton
+    Friend WithEvents RadRefraction As System.Windows.Forms.RadioButton
+    Friend WithEvents RadAllScreening As System.Windows.Forms.RadioButton
+    Friend WithEvents RadReferPickup As System.Windows.Forms.RadioButton
+    Friend WithEvents RadOpticalShop As System.Windows.Forms.RadioButton
+    Friend WithEvents BGloadingReport As System.ComponentModel.BackgroundWorker
 
 End Class
