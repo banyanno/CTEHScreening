@@ -327,7 +327,7 @@
         AddUserControl(UIMainScreening.PanelHeader, UIMainScreening.PanelDedail, UNewReceipt, "", True)
     End Sub
 
-    Private Sub BtnPharmacty_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnPharmacty.Click
+    Private Sub BtnPharmacty_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnInventory.Click
         AddUserControl(UIMainScreening.PanelHeader, UIMainScreening.PanelDedail, CashReceipDashboad, "", True)
     End Sub
 
