@@ -224,7 +224,8 @@
         UDepToDep = New UCDepartReceivedRequest
         Login.UpdateLabelStatus("Creating user interface 42.", True)
         Application.DoEvents()
-        ' UDepartmentCurrenstock = New UCDepartCurrentStock(Me)
+        'UDepartmentCurrenstock = New UCDepartCurrentStock(Me)
+        UDepartmentCurrenstock = New UCDepartCurrentStock(UIMainScreening)
         Login.UpdateLabelStatus("Creating user interface 43.", True)
         Application.DoEvents()
         Login.UpdateLabelStatus("Creating user interface 44.", True)
@@ -328,7 +329,7 @@
     End Sub
 
     Private Sub BtnPharmacty_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnInventory.Click
-        AddUserControl(UIMainScreening.PanelHeader, UIMainScreening.PanelDedail, CashReceipDashboad, "", True)
+        AddUserControl(UIMainScreening.PanelHeader, UIMainScreening.PanelDedail, UDepartmentCurrenstock, "", True)
     End Sub
 
     Private Sub BtnReports_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnReports.Click

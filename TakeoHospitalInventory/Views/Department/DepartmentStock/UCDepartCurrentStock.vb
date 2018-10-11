@@ -5,6 +5,7 @@ Public Class UCDepartCurrentStock
     Dim DAInHouseUsed As New DSInhouseUsedItemTableAdapters.VUsedWithUsedDetailTableAdapter
     Dim IsSplitClose As Boolean = False
     Private MTakeoInventory As MainTakeoInventory
+    Dim MScreening As MainScreening
 
     Public Sub New(ByVal MTakeoInventory As MainTakeoInventory)
         ' This call is required by the Windows Form Designer.
@@ -12,6 +13,15 @@ Public Class UCDepartCurrentStock
         Me.MTakeoInventory = MTakeoInventory
         ItemListInDepartDataAdapter = New DSCategoriesAndItemsTableAdapters.VItemListInDepartTableAdapter
         ' Add any initialization after the InitializeComponent() call.
+    End Sub
+    Sub New(ByVal MScreening As MainScreening)
+
+        ' This call is required by the Windows Form Designer.
+        InitializeComponent()
+        Me.MScreening = MScreening
+        ItemListInDepartDataAdapter = New DSCategoriesAndItemsTableAdapters.VItemListInDepartTableAdapter
+        ' Add any initialization after the InitializeComponent() call.
+
     End Sub
     Private Sub UCDepartCurrentStock_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         gridDepartItems.DataSource = ItemListInDepartDataAdapter.GetItemDataByDepartID(CInt(DEPART_ID))
@@ -86,7 +96,7 @@ Public Class UCDepartCurrentStock
 
     Private Sub BtnUseTemplet_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnUseTemplet.Click
 
-        MTakeoInventory.StatusLoading(True)
+        Me.MScreening.StatusLoading(True, "Loading")
         Application.DoEvents()
         If BgLoadingReport.IsBusy = True Then
             BgLoadingReport.CancelAsync()
@@ -158,6 +168,7 @@ Public Class UCDepartCurrentStock
     End Sub
 
     Private Sub BgLoadingReport_RunWorkerCompleted(ByVal sender As System.Object, ByVal e As System.ComponentModel.RunWorkerCompletedEventArgs) Handles BgLoadingReport.RunWorkerCompleted
-        MTakeoInventory.StatusLoading(False)
+        'MTakeoInventory.StatusLoading(False)
+        Me.MScreening.StatusLoading(False, "Loading")
     End Sub
 End Class
