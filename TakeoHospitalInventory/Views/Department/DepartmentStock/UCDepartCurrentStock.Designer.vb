@@ -25,11 +25,12 @@ Partial Class UCDepartCurrentStock
         Me.components = New System.ComponentModel.Container
         Dim gridDepartItems_DesignTimeLayout As Janus.Windows.GridEX.GridEXLayout = New Janus.Windows.GridEX.GridEXLayout
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(UCDepartCurrentStock))
+        Dim JanusColorScheme6 As Janus.Windows.Common.JanusColorScheme = New Janus.Windows.Common.JanusColorScheme
         Dim gridItemUsed_DesignTimeLayout As Janus.Windows.GridEX.GridEXLayout = New Janus.Windows.GridEX.GridEXLayout
-        Dim JanusColorScheme1 As Janus.Windows.Common.JanusColorScheme = New Janus.Windows.Common.JanusColorScheme
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer
         Me.GroupBox1 = New System.Windows.Forms.GroupBox
         Me.gridDepartItems = New Janus.Windows.GridEX.GridEX
+        Me.VSForOpticalshop = New Janus.Windows.Common.VisualStyleManager(Me.components)
         Me.PictItem = New System.Windows.Forms.PictureBox
         Me.lbLocaInCabi = New System.Windows.Forms.Label
         Me.FilterEditor1 = New Janus.Windows.FilterEditor.FilterEditor
@@ -64,7 +65,6 @@ Partial Class UCDepartCurrentStock
         Me.SplitContainer2 = New System.Windows.Forms.SplitContainer
         Me.CRVItemMonthlyUsed = New CrystalDecisions.Windows.Forms.CrystalReportViewer
         Me.BgLoadingReport = New System.ComponentModel.BackgroundWorker
-        Me.VSForOpticalshop = New Janus.Windows.Common.VisualStyleManager(Me.components)
         Me.SplitContainer1.Panel1.SuspendLayout()
         Me.SplitContainer1.Panel2.SuspendLayout()
         Me.SplitContainer1.SuspendLayout()
@@ -95,7 +95,7 @@ Partial Class UCDepartCurrentStock
         Me.SplitContainer1.Panel2.Controls.Add(Me.gridItemUsed)
         Me.SplitContainer1.Panel2.Controls.Add(Me.Search)
         Me.SplitContainer1.Panel2.Controls.Add(Me.ToolStrip2)
-        Me.SplitContainer1.Size = New System.Drawing.Size(951, 495)
+        Me.SplitContainer1.Size = New System.Drawing.Size(951, 480)
         Me.SplitContainer1.SplitterDistance = 692
         Me.SplitContainer1.TabIndex = 0
         '
@@ -108,7 +108,7 @@ Partial Class UCDepartCurrentStock
         Me.GroupBox1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GroupBox1.Location = New System.Drawing.Point(0, 0)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(692, 495)
+        Me.GroupBox1.Size = New System.Drawing.Size(692, 480)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Search"
@@ -131,9 +131,33 @@ Partial Class UCDepartCurrentStock
         Me.gridDepartItems.Office2007CustomColor = System.Drawing.SystemColors.Control
         Me.gridDepartItems.RecordNavigator = True
         Me.gridDepartItems.RowHeaderContent = Janus.Windows.GridEX.RowHeaderContent.RowPosition
-        Me.gridDepartItems.Size = New System.Drawing.Size(686, 393)
+        Me.gridDepartItems.Size = New System.Drawing.Size(686, 378)
         Me.gridDepartItems.TabIndex = 13
         Me.gridDepartItems.VisualStyleManager = Me.VSForOpticalshop
+        '
+        'VSForOpticalshop
+        '
+        JanusColorScheme6.ActiveCaptionColor = System.Drawing.Color.Tomato
+        JanusColorScheme6.ActiveCaptionTextColor = System.Drawing.Color.White
+        JanusColorScheme6.ControlDarkColor = System.Drawing.SystemColors.Control
+        JanusColorScheme6.ControlTextColor = System.Drawing.Color.Black
+        JanusColorScheme6.DisabledColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(150, Byte), Integer), CType(CType(102, Byte), Integer))
+        JanusColorScheme6.GrayTextColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
+        JanusColorScheme6.HighlightColor = System.Drawing.Color.FromArgb(CType(CType(43, Byte), Integer), CType(CType(99, Byte), Integer), CType(CType(67, Byte), Integer))
+        JanusColorScheme6.HighlightTextColor = System.Drawing.Color.WhiteSmoke
+        JanusColorScheme6.InfoColor = System.Drawing.Color.WhiteSmoke
+        JanusColorScheme6.InfoTextColor = System.Drawing.Color.FloralWhite
+        JanusColorScheme6.MenuColor = System.Drawing.SystemColors.ActiveCaption
+        JanusColorScheme6.MenuTextColor = System.Drawing.Color.DimGray
+        JanusColorScheme6.Name = "Header"
+        JanusColorScheme6.Office2007ColorScheme = Janus.Windows.Common.Office2007ColorScheme.Silver
+        JanusColorScheme6.Office2007CustomColor = System.Drawing.SystemColors.Control
+        JanusColorScheme6.UseThemes = False
+        JanusColorScheme6.VisualStyle = Janus.Windows.Common.VisualStyle.Standard
+        JanusColorScheme6.WindowColor = System.Drawing.Color.White
+        JanusColorScheme6.WindowTextColor = System.Drawing.Color.DarkBlue
+        Me.VSForOpticalshop.ColorSchemes.Add(JanusColorScheme6)
+        Me.VSForOpticalshop.DefaultColorScheme = "Header"
         '
         'PictItem
         '
@@ -142,7 +166,7 @@ Partial Class UCDepartCurrentStock
         Me.PictItem.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.PictItem.Location = New System.Drawing.Point(577, 232)
         Me.PictItem.Name = "PictItem"
-        Me.PictItem.Size = New System.Drawing.Size(109, 220)
+        Me.PictItem.Size = New System.Drawing.Size(109, 205)
         Me.PictItem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictItem.TabIndex = 9
         Me.PictItem.TabStop = False
@@ -150,7 +174,7 @@ Partial Class UCDepartCurrentStock
         '
         'lbLocaInCabi
         '
-        Me.lbLocaInCabi.BackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.lbLocaInCabi.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(124, Byte), Integer))
         Me.lbLocaInCabi.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.lbLocaInCabi.Dock = System.Windows.Forms.DockStyle.Top
         Me.lbLocaInCabi.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -197,7 +221,7 @@ Partial Class UCDepartCurrentStock
         Me.gridItemUsed.RecordNavigator = True
         Me.gridItemUsed.RowHeaderContent = Janus.Windows.GridEX.RowHeaderContent.RowPosition
         Me.gridItemUsed.RowHeaders = Janus.Windows.GridEX.InheritableBoolean.[True]
-        Me.gridItemUsed.Size = New System.Drawing.Size(255, 423)
+        Me.gridItemUsed.Size = New System.Drawing.Size(255, 408)
         Me.gridItemUsed.TabIndex = 14
         Me.gridItemUsed.TotalRow = Janus.Windows.GridEX.InheritableBoolean.[True]
         Me.gridItemUsed.VisualStyleManager = Me.VSForOpticalshop
@@ -331,106 +355,121 @@ Partial Class UCDepartCurrentStock
         '
         'ToolStrip1
         '
+        Me.ToolStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(124, Byte), Integer))
         Me.ToolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden
         Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(24, 24)
         Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BtnInitialItem, Me.ToolStripSeparator4, Me.BtnAdjustStock, Me.ToolStripSeparator3, Me.BtnUsedItem, Me.ToolStripSeparator1, Me.BtnRefreshData, Me.ToolStripSeparator5, Me.BtnPrint, Me.ToolStripSeparator2, Me.BtnUseTemplet, Me.ToolStripSeparator6, Me.BtnViewHistory})
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
         Me.ToolStrip1.Name = "ToolStrip1"
         Me.ToolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional
-        Me.ToolStrip1.Size = New System.Drawing.Size(951, 31)
+        Me.ToolStrip1.Size = New System.Drawing.Size(951, 46)
         Me.ToolStrip1.TabIndex = 2
         Me.ToolStrip1.Text = "ToolStrip1"
         '
         'BtnInitialItem
         '
-        Me.BtnInitialItem.Image = Global.TakeoHospitalInventory.My.Resources.Resources.download
+        Me.BtnInitialItem.ForeColor = System.Drawing.Color.White
+        Me.BtnInitialItem.Image = CType(resources.GetObject("BtnInitialItem.Image"), System.Drawing.Image)
         Me.BtnInitialItem.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.BtnInitialItem.Name = "BtnInitialItem"
-        Me.BtnInitialItem.Size = New System.Drawing.Size(91, 28)
+        Me.BtnInitialItem.Size = New System.Drawing.Size(67, 43)
         Me.BtnInitialItem.Text = "Initial Item"
+        Me.BtnInitialItem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         '
         'ToolStripSeparator4
         '
         Me.ToolStripSeparator4.Name = "ToolStripSeparator4"
-        Me.ToolStripSeparator4.Size = New System.Drawing.Size(6, 31)
+        Me.ToolStripSeparator4.Size = New System.Drawing.Size(6, 46)
         '
         'BtnAdjustStock
         '
-        Me.BtnAdjustStock.Image = Global.TakeoHospitalInventory.My.Resources.Resources.configuration_edit
+        Me.BtnAdjustStock.ForeColor = System.Drawing.Color.White
+        Me.BtnAdjustStock.Image = CType(resources.GetObject("BtnAdjustStock.Image"), System.Drawing.Image)
         Me.BtnAdjustStock.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.BtnAdjustStock.Name = "BtnAdjustStock"
-        Me.BtnAdjustStock.Size = New System.Drawing.Size(101, 28)
+        Me.BtnAdjustStock.Size = New System.Drawing.Size(77, 43)
         Me.BtnAdjustStock.Text = "Adjust Stock"
+        Me.BtnAdjustStock.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         '
         'ToolStripSeparator3
         '
         Me.ToolStripSeparator3.Name = "ToolStripSeparator3"
-        Me.ToolStripSeparator3.Size = New System.Drawing.Size(6, 31)
+        Me.ToolStripSeparator3.Size = New System.Drawing.Size(6, 46)
         '
         'BtnUsedItem
         '
-        Me.BtnUsedItem.Image = Global.TakeoHospitalInventory.My.Resources.Resources.Mac
+        Me.BtnUsedItem.ForeColor = System.Drawing.Color.White
+        Me.BtnUsedItem.Image = CType(resources.GetObject("BtnUsedItem.Image"), System.Drawing.Image)
         Me.BtnUsedItem.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.BtnUsedItem.Name = "BtnUsedItem"
-        Me.BtnUsedItem.Size = New System.Drawing.Size(138, 28)
+        Me.BtnUsedItem.Size = New System.Drawing.Size(114, 43)
         Me.BtnUsedItem.Text = "In-house Used Item"
+        Me.BtnUsedItem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         '
         'ToolStripSeparator1
         '
         Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
-        Me.ToolStripSeparator1.Size = New System.Drawing.Size(6, 31)
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(6, 46)
         '
         'BtnRefreshData
         '
-        Me.BtnRefreshData.Image = Global.TakeoHospitalInventory.My.Resources.Resources.view_refresh
+        Me.BtnRefreshData.ForeColor = System.Drawing.Color.White
+        Me.BtnRefreshData.Image = CType(resources.GetObject("BtnRefreshData.Image"), System.Drawing.Image)
         Me.BtnRefreshData.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.BtnRefreshData.Name = "BtnRefreshData"
-        Me.BtnRefreshData.Size = New System.Drawing.Size(101, 28)
+        Me.BtnRefreshData.Size = New System.Drawing.Size(77, 43)
         Me.BtnRefreshData.Text = "Refresh Data"
+        Me.BtnRefreshData.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         '
         'ToolStripSeparator5
         '
         Me.ToolStripSeparator5.Name = "ToolStripSeparator5"
-        Me.ToolStripSeparator5.Size = New System.Drawing.Size(6, 31)
+        Me.ToolStripSeparator5.Size = New System.Drawing.Size(6, 46)
         '
         'BtnPrint
         '
-        Me.BtnPrint.Image = Global.TakeoHospitalInventory.My.Resources.Resources.document_print
+        Me.BtnPrint.ForeColor = System.Drawing.Color.White
+        Me.BtnPrint.Image = CType(resources.GetObject("BtnPrint.Image"), System.Drawing.Image)
         Me.BtnPrint.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.BtnPrint.Name = "BtnPrint"
-        Me.BtnPrint.Size = New System.Drawing.Size(92, 28)
+        Me.BtnPrint.Size = New System.Drawing.Size(68, 43)
         Me.BtnPrint.Text = "Print Items"
+        Me.BtnPrint.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         '
         'ToolStripSeparator2
         '
         Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
-        Me.ToolStripSeparator2.Size = New System.Drawing.Size(6, 31)
+        Me.ToolStripSeparator2.Size = New System.Drawing.Size(6, 46)
         '
         'BtnUseTemplet
         '
-        Me.BtnUseTemplet.Image = Global.TakeoHospitalInventory.My.Resources.Resources.document_print
+        Me.BtnUseTemplet.ForeColor = System.Drawing.Color.White
+        Me.BtnUseTemplet.Image = CType(resources.GetObject("BtnUseTemplet.Image"), System.Drawing.Image)
         Me.BtnUseTemplet.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.BtnUseTemplet.Name = "BtnUseTemplet"
-        Me.BtnUseTemplet.Size = New System.Drawing.Size(155, 28)
+        Me.BtnUseTemplet.Size = New System.Drawing.Size(131, 43)
         Me.BtnUseTemplet.Text = "Monthly Used Templet"
+        Me.BtnUseTemplet.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         '
         'ToolStripSeparator6
         '
         Me.ToolStripSeparator6.Name = "ToolStripSeparator6"
-        Me.ToolStripSeparator6.Size = New System.Drawing.Size(6, 31)
+        Me.ToolStripSeparator6.Size = New System.Drawing.Size(6, 46)
         '
         'BtnViewHistory
         '
-        Me.BtnViewHistory.Image = Global.TakeoHospitalInventory.My.Resources.Resources._1316761851_ark2
+        Me.BtnViewHistory.ForeColor = System.Drawing.Color.White
+        Me.BtnViewHistory.Image = CType(resources.GetObject("BtnViewHistory.Image"), System.Drawing.Image)
         Me.BtnViewHistory.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.BtnViewHistory.Name = "BtnViewHistory"
-        Me.BtnViewHistory.Size = New System.Drawing.Size(157, 28)
+        Me.BtnViewHistory.Size = New System.Drawing.Size(133, 43)
         Me.BtnViewHistory.Text = "View History Used Item"
+        Me.BtnViewHistory.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         '
         'SplitContainer2
         '
         Me.SplitContainer2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.SplitContainer2.Location = New System.Drawing.Point(0, 31)
+        Me.SplitContainer2.Location = New System.Drawing.Point(0, 46)
         Me.SplitContainer2.Margin = New System.Windows.Forms.Padding(2)
         Me.SplitContainer2.Name = "SplitContainer2"
         Me.SplitContainer2.Orientation = System.Windows.Forms.Orientation.Horizontal
@@ -443,7 +482,7 @@ Partial Class UCDepartCurrentStock
         '
         Me.SplitContainer2.Panel2.Controls.Add(Me.CRVItemMonthlyUsed)
         Me.SplitContainer2.Panel2Collapsed = True
-        Me.SplitContainer2.Size = New System.Drawing.Size(951, 495)
+        Me.SplitContainer2.Size = New System.Drawing.Size(951, 480)
         Me.SplitContainer2.SplitterDistance = 329
         Me.SplitContainer2.SplitterWidth = 3
         Me.SplitContainer2.TabIndex = 1
@@ -466,30 +505,6 @@ Partial Class UCDepartCurrentStock
         'BgLoadingReport
         '
         Me.BgLoadingReport.WorkerSupportsCancellation = True
-        '
-        'VSForOpticalshop
-        '
-        JanusColorScheme1.ActiveCaptionColor = System.Drawing.Color.Tomato
-        JanusColorScheme1.ActiveCaptionTextColor = System.Drawing.Color.White
-        JanusColorScheme1.ControlDarkColor = System.Drawing.SystemColors.Control
-        JanusColorScheme1.ControlTextColor = System.Drawing.Color.Black
-        JanusColorScheme1.DisabledColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(150, Byte), Integer), CType(CType(102, Byte), Integer))
-        JanusColorScheme1.GrayTextColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
-        JanusColorScheme1.HighlightColor = System.Drawing.Color.FromArgb(CType(CType(43, Byte), Integer), CType(CType(99, Byte), Integer), CType(CType(67, Byte), Integer))
-        JanusColorScheme1.HighlightTextColor = System.Drawing.Color.WhiteSmoke
-        JanusColorScheme1.InfoColor = System.Drawing.Color.WhiteSmoke
-        JanusColorScheme1.InfoTextColor = System.Drawing.Color.FloralWhite
-        JanusColorScheme1.MenuColor = System.Drawing.SystemColors.ActiveCaption
-        JanusColorScheme1.MenuTextColor = System.Drawing.Color.DimGray
-        JanusColorScheme1.Name = "Header"
-        JanusColorScheme1.Office2007ColorScheme = Janus.Windows.Common.Office2007ColorScheme.Silver
-        JanusColorScheme1.Office2007CustomColor = System.Drawing.SystemColors.Control
-        JanusColorScheme1.UseThemes = False
-        JanusColorScheme1.VisualStyle = Janus.Windows.Common.VisualStyle.Standard
-        JanusColorScheme1.WindowColor = System.Drawing.Color.White
-        JanusColorScheme1.WindowTextColor = System.Drawing.Color.DarkBlue
-        Me.VSForOpticalshop.ColorSchemes.Add(JanusColorScheme1)
-        Me.VSForOpticalshop.DefaultColorScheme = "Header"
         '
         'UCDepartCurrentStock
         '
