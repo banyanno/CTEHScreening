@@ -26,6 +26,7 @@ Partial Class UCDepartCurrentStock
         Dim gridDepartItems_DesignTimeLayout As Janus.Windows.GridEX.GridEXLayout = New Janus.Windows.GridEX.GridEXLayout
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(UCDepartCurrentStock))
         Dim gridItemUsed_DesignTimeLayout As Janus.Windows.GridEX.GridEXLayout = New Janus.Windows.GridEX.GridEXLayout
+        Dim JanusColorScheme1 As Janus.Windows.Common.JanusColorScheme = New Janus.Windows.Common.JanusColorScheme
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer
         Me.GroupBox1 = New System.Windows.Forms.GroupBox
         Me.gridDepartItems = New Janus.Windows.GridEX.GridEX
@@ -63,6 +64,7 @@ Partial Class UCDepartCurrentStock
         Me.SplitContainer2 = New System.Windows.Forms.SplitContainer
         Me.CRVItemMonthlyUsed = New CrystalDecisions.Windows.Forms.CrystalReportViewer
         Me.BgLoadingReport = New System.ComponentModel.BackgroundWorker
+        Me.VSForOpticalshop = New Janus.Windows.Common.VisualStyleManager(Me.components)
         Me.SplitContainer1.Panel1.SuspendLayout()
         Me.SplitContainer1.Panel2.SuspendLayout()
         Me.SplitContainer1.SuspendLayout()
@@ -119,14 +121,19 @@ Partial Class UCDepartCurrentStock
         Me.gridDepartItems.Dock = System.Windows.Forms.DockStyle.Fill
         Me.gridDepartItems.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!)
         Me.gridDepartItems.GroupByBoxVisible = False
+        Me.gridDepartItems.HeaderFormatStyle.Appearance = Janus.Windows.GridEX.Appearance.Flat
+        Me.gridDepartItems.HeaderFormatStyle.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(67, Byte), Integer), CType(CType(82, Byte), Integer))
+        Me.gridDepartItems.HeaderFormatStyle.ForeColor = System.Drawing.Color.White
         Me.gridDepartItems.HideSelection = Janus.Windows.GridEX.HideSelection.HighlightInactive
         Me.gridDepartItems.Location = New System.Drawing.Point(3, 99)
         Me.gridDepartItems.Name = "gridDepartItems"
+        Me.gridDepartItems.Office2007ColorScheme = Janus.Windows.GridEX.Office2007ColorScheme.Silver
+        Me.gridDepartItems.Office2007CustomColor = System.Drawing.SystemColors.Control
         Me.gridDepartItems.RecordNavigator = True
         Me.gridDepartItems.RowHeaderContent = Janus.Windows.GridEX.RowHeaderContent.RowPosition
         Me.gridDepartItems.Size = New System.Drawing.Size(686, 393)
         Me.gridDepartItems.TabIndex = 13
-        Me.gridDepartItems.VisualStyle = Janus.Windows.GridEX.VisualStyle.VS2005
+        Me.gridDepartItems.VisualStyleManager = Me.VSForOpticalshop
         '
         'PictItem
         '
@@ -170,6 +177,7 @@ Partial Class UCDepartCurrentStock
         Me.FilterEditor1.ScrollStep = 15
         Me.FilterEditor1.Size = New System.Drawing.Size(686, 54)
         Me.FilterEditor1.SourceControl = Me.gridDepartItems
+        Me.FilterEditor1.VisualStyleManager = Me.VSForOpticalshop
         '
         'gridItemUsed
         '
@@ -178,16 +186,21 @@ Partial Class UCDepartCurrentStock
         Me.gridItemUsed.Dock = System.Windows.Forms.DockStyle.Fill
         Me.gridItemUsed.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!)
         Me.gridItemUsed.GroupByBoxVisible = False
+        Me.gridItemUsed.HeaderFormatStyle.Appearance = Janus.Windows.GridEX.Appearance.Flat
+        Me.gridItemUsed.HeaderFormatStyle.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(67, Byte), Integer), CType(CType(82, Byte), Integer))
+        Me.gridItemUsed.HeaderFormatStyle.ForeColor = System.Drawing.Color.White
         Me.gridItemUsed.Hierarchical = True
         Me.gridItemUsed.Location = New System.Drawing.Point(0, 72)
         Me.gridItemUsed.Name = "gridItemUsed"
+        Me.gridItemUsed.Office2007ColorScheme = Janus.Windows.GridEX.Office2007ColorScheme.Silver
+        Me.gridItemUsed.Office2007CustomColor = System.Drawing.SystemColors.Control
         Me.gridItemUsed.RecordNavigator = True
         Me.gridItemUsed.RowHeaderContent = Janus.Windows.GridEX.RowHeaderContent.RowPosition
         Me.gridItemUsed.RowHeaders = Janus.Windows.GridEX.InheritableBoolean.[True]
         Me.gridItemUsed.Size = New System.Drawing.Size(255, 423)
         Me.gridItemUsed.TabIndex = 14
         Me.gridItemUsed.TotalRow = Janus.Windows.GridEX.InheritableBoolean.[True]
-        Me.gridItemUsed.VisualStyle = Janus.Windows.GridEX.VisualStyle.Office2003
+        Me.gridItemUsed.VisualStyleManager = Me.VSForOpticalshop
         '
         'Search
         '
@@ -454,6 +467,30 @@ Partial Class UCDepartCurrentStock
         '
         Me.BgLoadingReport.WorkerSupportsCancellation = True
         '
+        'VSForOpticalshop
+        '
+        JanusColorScheme1.ActiveCaptionColor = System.Drawing.Color.Tomato
+        JanusColorScheme1.ActiveCaptionTextColor = System.Drawing.Color.White
+        JanusColorScheme1.ControlDarkColor = System.Drawing.SystemColors.Control
+        JanusColorScheme1.ControlTextColor = System.Drawing.Color.Black
+        JanusColorScheme1.DisabledColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(150, Byte), Integer), CType(CType(102, Byte), Integer))
+        JanusColorScheme1.GrayTextColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
+        JanusColorScheme1.HighlightColor = System.Drawing.Color.FromArgb(CType(CType(43, Byte), Integer), CType(CType(99, Byte), Integer), CType(CType(67, Byte), Integer))
+        JanusColorScheme1.HighlightTextColor = System.Drawing.Color.WhiteSmoke
+        JanusColorScheme1.InfoColor = System.Drawing.Color.WhiteSmoke
+        JanusColorScheme1.InfoTextColor = System.Drawing.Color.FloralWhite
+        JanusColorScheme1.MenuColor = System.Drawing.SystemColors.ActiveCaption
+        JanusColorScheme1.MenuTextColor = System.Drawing.Color.DimGray
+        JanusColorScheme1.Name = "Header"
+        JanusColorScheme1.Office2007ColorScheme = Janus.Windows.Common.Office2007ColorScheme.Silver
+        JanusColorScheme1.Office2007CustomColor = System.Drawing.SystemColors.Control
+        JanusColorScheme1.UseThemes = False
+        JanusColorScheme1.VisualStyle = Janus.Windows.Common.VisualStyle.Standard
+        JanusColorScheme1.WindowColor = System.Drawing.Color.White
+        JanusColorScheme1.WindowTextColor = System.Drawing.Color.DarkBlue
+        Me.VSForOpticalshop.ColorSchemes.Add(JanusColorScheme1)
+        Me.VSForOpticalshop.DefaultColorScheme = "Header"
+        '
         'UCDepartCurrentStock
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -522,5 +559,6 @@ Partial Class UCDepartCurrentStock
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents gridItemUsed As Janus.Windows.GridEX.GridEX
     Friend WithEvents BgLoadingReport As System.ComponentModel.BackgroundWorker
+    Friend WithEvents VSForOpticalshop As Janus.Windows.Common.VisualStyleManager
 
 End Class

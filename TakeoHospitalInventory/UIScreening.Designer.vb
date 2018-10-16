@@ -113,9 +113,9 @@ Partial Class UIScreening
         Me.Label2.ForeColor = System.Drawing.Color.Blue
         Me.Label2.Location = New System.Drawing.Point(549, 64)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(150, 20)
+        Me.Label2.Size = New System.Drawing.Size(168, 20)
         Me.Label2.TabIndex = 7
-        Me.Label2.Text = "Screening Inventory"
+        Me.Label2.Text = "Patient Screening List:"
         '
         'MenuVertical
         '
@@ -313,6 +313,7 @@ Partial Class UIScreening
         'UiComboBox1
         '
         Me.UiComboBox1.BorderStyle = Janus.Windows.UI.BorderStyle.Flat
+        Me.UiComboBox1.ComboStyle = Janus.Windows.EditControls.ComboStyle.DropDownList
         Me.UiComboBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!)
         UiComboBoxItem1.FormatStyle.Alpha = 0
         UiComboBoxItem1.IsSeparator = False

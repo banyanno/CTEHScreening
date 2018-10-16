@@ -24,7 +24,7 @@ Public Class UCDepartCurrentStock
 
     End Sub
     Private Sub UCDepartCurrentStock_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-        gridDepartItems.DataSource = ItemListInDepartDataAdapter.GetItemDataByDepartID(CInt(DEPART_ID))
+        'gridDepartItems.DataSource = ItemListInDepartDataAdapter.GetItemDataByDepartID(CInt(DEPART_ID))
 
     End Sub
 

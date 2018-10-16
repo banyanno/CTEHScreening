@@ -49,6 +49,8 @@ Partial Class MainOpticalShop
         Me.BGLoadOpticalShop = New System.ComponentModel.BackgroundWorker
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer
         Me.GridListWaitingPay = New Janus.Windows.GridEX.GridEX
+        Me.Label3 = New System.Windows.Forms.Label
+        Me.Label4 = New System.Windows.Forms.Label
         CType(Me.ErrReceipt, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridReceipt, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
@@ -108,7 +110,7 @@ Partial Class MainOpticalShop
         Me.GridReceipt.RowHeaderContent = Janus.Windows.GridEX.RowHeaderContent.RowPosition
         Me.GridReceipt.RowHeaders = Janus.Windows.GridEX.InheritableBoolean.[True]
         Me.GridReceipt.SelectedInactiveFormatStyle.BackColor = System.Drawing.SystemColors.Highlight
-        Me.GridReceipt.Size = New System.Drawing.Size(664, 486)
+        Me.GridReceipt.Size = New System.Drawing.Size(664, 462)
         Me.GridReceipt.TabIndex = 3
         Me.GridReceipt.ThemedAreas = Janus.Windows.GridEX.ThemedArea.None
         Me.GridReceipt.VisualStyleManager = Me.VSForOpticalshop
@@ -140,6 +142,8 @@ Partial Class MainOpticalShop
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(236, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(241, Byte), Integer))
+        Me.Panel1.Controls.Add(Me.Label4)
+        Me.Panel1.Controls.Add(Me.Label3)
         Me.Panel1.Controls.Add(Me.BtnEditDonateOptical)
         Me.Panel1.Controls.Add(Me.BtnEditeDateReceipt)
         Me.Panel1.Controls.Add(Me.BtnPrintInvoice)
@@ -155,7 +159,7 @@ Partial Class MainOpticalShop
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1368, 73)
+        Me.Panel1.Size = New System.Drawing.Size(1368, 97)
         Me.Panel1.TabIndex = 5
         '
         'BtnEditDonateOptical
@@ -326,7 +330,7 @@ Partial Class MainOpticalShop
         'Splitter1
         '
         Me.Splitter1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Splitter1.Location = New System.Drawing.Point(0, 73)
+        Me.Splitter1.Location = New System.Drawing.Point(0, 97)
         Me.Splitter1.Name = "Splitter1"
         Me.Splitter1.Size = New System.Drawing.Size(1368, 3)
         Me.Splitter1.TabIndex = 7
@@ -339,7 +343,7 @@ Partial Class MainOpticalShop
         '
         Me.SplitContainer1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.SplitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel1
-        Me.SplitContainer1.Location = New System.Drawing.Point(0, 76)
+        Me.SplitContainer1.Location = New System.Drawing.Point(0, 100)
         Me.SplitContainer1.Name = "SplitContainer1"
         '
         'SplitContainer1.Panel1
@@ -349,7 +353,7 @@ Partial Class MainOpticalShop
         'SplitContainer1.Panel2
         '
         Me.SplitContainer1.Panel2.Controls.Add(Me.GridReceipt)
-        Me.SplitContainer1.Size = New System.Drawing.Size(1368, 486)
+        Me.SplitContainer1.Size = New System.Drawing.Size(1368, 462)
         Me.SplitContainer1.SplitterDistance = 700
         Me.SplitContainer1.TabIndex = 8
         '
@@ -360,6 +364,7 @@ Partial Class MainOpticalShop
         GridListWaitingPay_DesignTimeLayout.LayoutString = resources.GetString("GridListWaitingPay_DesignTimeLayout.LayoutString")
         Me.GridListWaitingPay.DesignTimeLayout = GridListWaitingPay_DesignTimeLayout
         Me.GridListWaitingPay.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.GridListWaitingPay.FocusStyle = Janus.Windows.GridEX.FocusStyle.Solid
         Me.GridListWaitingPay.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GridListWaitingPay.GridLineStyle = Janus.Windows.GridEX.GridLineStyle.Solid
         Me.GridListWaitingPay.GroupByBoxVisible = False
@@ -376,9 +381,31 @@ Partial Class MainOpticalShop
         Me.GridListWaitingPay.RecordNavigator = True
         Me.GridListWaitingPay.RowHeaderContent = Janus.Windows.GridEX.RowHeaderContent.RowIndex
         Me.GridListWaitingPay.RowHeaders = Janus.Windows.GridEX.InheritableBoolean.[True]
-        Me.GridListWaitingPay.Size = New System.Drawing.Size(700, 486)
+        Me.GridListWaitingPay.Size = New System.Drawing.Size(700, 462)
         Me.GridListWaitingPay.TabIndex = 4
         Me.GridListWaitingPay.VisualStyleManager = Me.VSForOpticalshop
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
+        Me.Label3.Location = New System.Drawing.Point(3, 71)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(158, 20)
+        Me.Label3.TabIndex = 16
+        Me.Label3.Text = "List Patient Payment:"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
+        Me.Label4.Location = New System.Drawing.Point(700, 71)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(194, 20)
+        Me.Label4.TabIndex = 17
+        Me.Label4.Text = "List Patient Payment done"
         '
         'MainOpticalShop
         '
@@ -423,5 +450,7 @@ Partial Class MainOpticalShop
     Friend WithEvents VSForOpticalshop As Janus.Windows.Common.VisualStyleManager
     Friend WithEvents SplitContainer1 As System.Windows.Forms.SplitContainer
     Friend WithEvents GridListWaitingPay As Janus.Windows.GridEX.GridEX
+    Friend WithEvents Label3 As System.Windows.Forms.Label
+    Friend WithEvents Label4 As System.Windows.Forms.Label
 
 End Class
