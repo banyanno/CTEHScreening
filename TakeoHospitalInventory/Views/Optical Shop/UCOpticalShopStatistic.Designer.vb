@@ -38,6 +38,7 @@ Partial Class UCOpticalShopStatistic
         Me.Panel1 = New System.Windows.Forms.Panel
         Me.CVStaticPaymentFor = New CrystalDecisions.Windows.Forms.CrystalReportViewer
         Me.GroupBox2 = New System.Windows.Forms.GroupBox
+        Me.RadAllPaymentType = New System.Windows.Forms.RadioButton
         Me.RadOther = New System.Windows.Forms.RadioButton
         Me.RadLV = New System.Windows.Forms.RadioButton
         Me.RadFundRaising = New System.Windows.Forms.RadioButton
@@ -52,7 +53,6 @@ Partial Class UCOpticalShopStatistic
         Me.BacWOPPatientAgeIncome = New System.ComponentModel.BackgroundWorker
         Me.BacWOPPayTypeAgeSta = New System.ComponentModel.BackgroundWorker
         Me.ErrPReportOPT = New System.Windows.Forms.ErrorProvider(Me.components)
-        Me.RadAllPaymentType = New System.Windows.Forms.RadioButton
         Me.SplitContainer1.Panel1.SuspendLayout()
         Me.SplitContainer1.Panel2.SuspendLayout()
         Me.SplitContainer1.SuspendLayout()
@@ -68,6 +68,7 @@ Partial Class UCOpticalShopStatistic
         'SplitContainer1
         '
         Me.SplitContainer1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.SplitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel1
         Me.SplitContainer1.Location = New System.Drawing.Point(0, 0)
         Me.SplitContainer1.Name = "SplitContainer1"
         '
@@ -86,7 +87,7 @@ Partial Class UCOpticalShopStatistic
         '
         Me.SplitContainer1.Panel2.Controls.Add(Me.SplitOpticalShopReport)
         Me.SplitContainer1.Size = New System.Drawing.Size(1138, 600)
-        Me.SplitContainer1.SplitterDistance = 258
+        Me.SplitContainer1.SplitterDistance = 233
         Me.SplitContainer1.TabIndex = 0
         '
         'BtnNillAndFull
@@ -124,6 +125,7 @@ Partial Class UCOpticalShopStatistic
         Me.CheOldPatient.TabIndex = 12
         Me.CheOldPatient.Text = "Old Patient"
         Me.CheOldPatient.UseVisualStyleBackColor = False
+        Me.CheOldPatient.Visible = False
         '
         'BtnOSPatientAgeIncome
         '
@@ -220,7 +222,7 @@ Partial Class UCOpticalShopStatistic
         '
         Me.SplitOpticalShopReport.Panel2.Controls.Add(Me.CRVReportViewer)
         Me.SplitOpticalShopReport.Panel2Collapsed = True
-        Me.SplitOpticalShopReport.Size = New System.Drawing.Size(876, 600)
+        Me.SplitOpticalShopReport.Size = New System.Drawing.Size(901, 600)
         Me.SplitOpticalShopReport.SplitterDistance = 596
         Me.SplitOpticalShopReport.TabIndex = 4
         '
@@ -231,7 +233,7 @@ Partial Class UCOpticalShopStatistic
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(876, 600)
+        Me.Panel1.Size = New System.Drawing.Size(901, 600)
         Me.Panel1.TabIndex = 0
         '
         'CVStaticPaymentFor
@@ -243,7 +245,7 @@ Partial Class UCOpticalShopStatistic
         Me.CVStaticPaymentFor.Location = New System.Drawing.Point(0, 76)
         Me.CVStaticPaymentFor.Name = "CVStaticPaymentFor"
         Me.CVStaticPaymentFor.SelectionFormula = ""
-        Me.CVStaticPaymentFor.Size = New System.Drawing.Size(876, 524)
+        Me.CVStaticPaymentFor.Size = New System.Drawing.Size(901, 524)
         Me.CVStaticPaymentFor.TabIndex = 1
         Me.CVStaticPaymentFor.ViewTimeSelectionFormula = ""
         '
@@ -261,9 +263,21 @@ Partial Class UCOpticalShopStatistic
         Me.GroupBox2.Dock = System.Windows.Forms.DockStyle.Top
         Me.GroupBox2.Location = New System.Drawing.Point(0, 0)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(876, 76)
+        Me.GroupBox2.Size = New System.Drawing.Size(901, 76)
         Me.GroupBox2.TabIndex = 0
         Me.GroupBox2.TabStop = False
+        '
+        'RadAllPaymentType
+        '
+        Me.RadAllPaymentType.AutoSize = True
+        Me.RadAllPaymentType.Checked = True
+        Me.RadAllPaymentType.Location = New System.Drawing.Point(360, 13)
+        Me.RadAllPaymentType.Name = "RadAllPaymentType"
+        Me.RadAllPaymentType.Size = New System.Drawing.Size(107, 17)
+        Me.RadAllPaymentType.TabIndex = 144
+        Me.RadAllPaymentType.TabStop = True
+        Me.RadAllPaymentType.Text = "All Payment Type"
+        Me.RadAllPaymentType.UseVisualStyleBackColor = True
         '
         'RadOther
         '
@@ -376,7 +390,7 @@ Partial Class UCOpticalShopStatistic
         Me.CRVReportViewer.SelectionFormula = ""
         Me.CRVReportViewer.ShowGroupTreeButton = False
         Me.CRVReportViewer.ShowRefreshButton = False
-        Me.CRVReportViewer.Size = New System.Drawing.Size(276, 600)
+        Me.CRVReportViewer.Size = New System.Drawing.Size(96, 100)
         Me.CRVReportViewer.TabIndex = 3
         Me.CRVReportViewer.ViewTimeSelectionFormula = ""
         '
@@ -399,18 +413,6 @@ Partial Class UCOpticalShopStatistic
         'ErrPReportOPT
         '
         Me.ErrPReportOPT.ContainerControl = Me
-        '
-        'RadAllPaymentType
-        '
-        Me.RadAllPaymentType.AutoSize = True
-        Me.RadAllPaymentType.Checked = True
-        Me.RadAllPaymentType.Location = New System.Drawing.Point(360, 13)
-        Me.RadAllPaymentType.Name = "RadAllPaymentType"
-        Me.RadAllPaymentType.Size = New System.Drawing.Size(107, 17)
-        Me.RadAllPaymentType.TabIndex = 144
-        Me.RadAllPaymentType.TabStop = True
-        Me.RadAllPaymentType.Text = "All Payment Type"
-        Me.RadAllPaymentType.UseVisualStyleBackColor = True
         '
         'UCOpticalShopStatistic
         '

@@ -11,19 +11,23 @@
     Dim DAOPPayTypeAge As New DSOpticalShopTableAdapters.V_OpticalShopPaymentTypeByAgeStatisticTableAdapter
 
     Dim MTakeoInventory As MainTakeoInventory
-
+    Dim MScreening As MainScreening
     Public Sub New(ByVal MTakeo As MainTakeoInventory)
         ' This call is required by the Windows Form Designer.
         InitializeComponent()
         Me.MTakeoInventory = MTakeo
         ' Add any initialization after the InitializeComponent() call.
     End Sub
+    Public Sub New(ByVal MScreening As MainScreening)
+        InitializeComponent()
+        Me.MScreening = MScreening
+    End Sub
 
     Private Sub BtnOPCusAgeStatistic_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnOPCusAgeStatistic.Click
         If ValidateDateTimePicker(DTPFDate, "", ErrPReportOPT) = False Then Exit Sub
         If ValidateDateTimePicker(DTPToDate, "", ErrPReportOPT) = False Then Exit Sub
         SplitOpticalShopReport.Panel1Collapsed = True
-        MTakeoInventory.StatusLoading(True)
+        MScreening.StatusLoading(True, "Loading")
         Application.DoEvents()
         BacWOPCusAgeSta.RunWorkerAsync()
     End Sub
@@ -61,13 +65,13 @@
     End Sub
 
     Private Sub BacWOPCusAgeSta_RunWorkerCompleted(ByVal sender As Object, ByVal e As System.ComponentModel.RunWorkerCompletedEventArgs) Handles BacWOPCusAgeSta.RunWorkerCompleted
-        MTakeoInventory.StatusLoading(False)
+        MScreening.StatusLoading(False, "")
     End Sub
 
     Private Sub BtnOPItemSaleOff_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnOPItemSaleOff.Click
         If ValidateDateTimePicker(DTPFDate, "", ErrPReportOPT) = False Then Exit Sub
         If ValidateDateTimePicker(DTPToDate, "", ErrPReportOPT) = False Then Exit Sub
-        MTakeoInventory.StatusLoading(True)
+        MScreening.StatusLoading(True, "Loading")
         Application.DoEvents()
         SplitOpticalShopReport.Panel1Collapsed = True
         BacWOPItemSaleOff.RunWorkerAsync()
@@ -80,13 +84,13 @@
     End Sub
 
     Private Sub BacWOPItemSaleOff_RunWorkerCompleted(ByVal sender As Object, ByVal e As System.ComponentModel.RunWorkerCompletedEventArgs) Handles BacWOPItemSaleOff.RunWorkerCompleted
-        MTakeoInventory.StatusLoading(False)
+        MScreening.StatusLoading(False, "")
     End Sub
 
     Private Sub BtnOSPatientAgeIncome_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnOSPatientAgeIncome.Click
         If ValidateDateTimePicker(DTPFDate, "", ErrPReportOPT) = False Then Exit Sub
         If ValidateDateTimePicker(DTPToDate, "", ErrPReportOPT) = False Then Exit Sub
-        MTakeoInventory.StatusLoading(True)
+        MScreening.StatusLoading(True, "Loading")
         SplitOpticalShopReport.Panel1Collapsed = True
         Application.DoEvents()
         BacWOPPatientAgeIncome.RunWorkerAsync()
@@ -97,7 +101,7 @@
     End Sub
 
     Private Sub BacWOPPatientAgeIncome_RunWorkerCompleted(ByVal sender As Object, ByVal e As System.ComponentModel.RunWorkerCompletedEventArgs) Handles BacWOPPatientAgeIncome.RunWorkerCompleted
-        MTakeoInventory.StatusLoading(False)
+        MScreening.StatusLoading(False, "")
     End Sub
     '--- Optical Shop Patient Age Income Statistic
     Sub ViewReportPatientAgeIncomStatis()
@@ -147,13 +151,13 @@
     End Sub
 
     Private Sub BacWOPPayTypeAgeSta_DoWork(ByVal sender As Object, ByVal e As System.ComponentModel.DoWorkEventArgs) Handles BacWOPPayTypeAgeSta.DoWork
-        MTakeoInventory.StatusLoading(True)
+        MScreening.StatusLoading(True, "Loading")
         Application.DoEvents()
         Me.ViewReportPaymentTypeByAgeStatis()
     End Sub
 
     Private Sub BacWOPPayTypeAgeSta_RunWorkerCompleted(ByVal sender As Object, ByVal e As System.ComponentModel.RunWorkerCompletedEventArgs) Handles BacWOPPayTypeAgeSta.RunWorkerCompleted
-        MTakeoInventory.StatusLoading(False)
+        MScreening.StatusLoading(False, "")
     End Sub
 
     Private Sub BtnNillAndFull_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnNillAndFull.Click
@@ -164,7 +168,7 @@
     Private Sub BtnPrintPreviewPayfor_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnPrintPreviewPayfor.Click
         If ValidateDateTimePicker(DTPFDate, "", ErrPReportOPT) = False Then Exit Sub
         If ValidateDateTimePicker(DTPToDate, "", ErrPReportOPT) = False Then Exit Sub
-        MTakeoInventory.StatusLoading(True)
+        MScreening.StatusLoading(True, "Loading")
         Application.DoEvents()
         BacWOPPayTypeAgeSta.RunWorkerAsync()
     End Sub

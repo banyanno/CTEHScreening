@@ -256,7 +256,7 @@
 
         Login.UpdateLabelStatus("Creating user interface 50.", True)
         Application.DoEvents()
-        ' UOPStatisticReport = New UCOpticalShopStatistic(Me)
+        UOPStatisticReport = New UCOpticalShopStatistic(UIMainScreening)
         Login.UpdateLabelStatus("It is done creatint user interface.", True)
         Application.DoEvents()
         'UDasboardNil = New UCDashBoardNil(Me)
@@ -334,5 +334,10 @@
 
     Private Sub BtnReports_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnReports.Click
         AddUserControl(UIMainScreening.PanelHeader, UIMainScreening.PanelDedail, DashReportUtility, "", True)
+    End Sub
+
+    Private Sub BtnOpticalShopReport_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnOpticalShopReport.Click
+
+        AddUserControl(UIMainScreening.PanelHeader, UIMainScreening.PanelDedail, UOPStatisticReport, "", True)
     End Sub
 End Class
