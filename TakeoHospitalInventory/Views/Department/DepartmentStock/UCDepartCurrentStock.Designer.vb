@@ -25,7 +25,7 @@ Partial Class UCDepartCurrentStock
         Me.components = New System.ComponentModel.Container
         Dim gridDepartItems_DesignTimeLayout As Janus.Windows.GridEX.GridEXLayout = New Janus.Windows.GridEX.GridEXLayout
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(UCDepartCurrentStock))
-        Dim JanusColorScheme6 As Janus.Windows.Common.JanusColorScheme = New Janus.Windows.Common.JanusColorScheme
+        Dim JanusColorScheme1 As Janus.Windows.Common.JanusColorScheme = New Janus.Windows.Common.JanusColorScheme
         Dim gridItemUsed_DesignTimeLayout As Janus.Windows.GridEX.GridEXLayout = New Janus.Windows.GridEX.GridEXLayout
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer
         Me.GroupBox1 = New System.Windows.Forms.GroupBox
@@ -83,6 +83,7 @@ Partial Class UCDepartCurrentStock
         'SplitContainer1
         '
         Me.SplitContainer1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.SplitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel1
         Me.SplitContainer1.Location = New System.Drawing.Point(0, 0)
         Me.SplitContainer1.Name = "SplitContainer1"
         '
@@ -95,8 +96,8 @@ Partial Class UCDepartCurrentStock
         Me.SplitContainer1.Panel2.Controls.Add(Me.gridItemUsed)
         Me.SplitContainer1.Panel2.Controls.Add(Me.Search)
         Me.SplitContainer1.Panel2.Controls.Add(Me.ToolStrip2)
-        Me.SplitContainer1.Size = New System.Drawing.Size(951, 480)
-        Me.SplitContainer1.SplitterDistance = 692
+        Me.SplitContainer1.Size = New System.Drawing.Size(1610, 628)
+        Me.SplitContainer1.SplitterDistance = 874
         Me.SplitContainer1.TabIndex = 0
         '
         'GroupBox1
@@ -108,7 +109,7 @@ Partial Class UCDepartCurrentStock
         Me.GroupBox1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GroupBox1.Location = New System.Drawing.Point(0, 0)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(692, 480)
+        Me.GroupBox1.Size = New System.Drawing.Size(874, 628)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Search"
@@ -119,44 +120,46 @@ Partial Class UCDepartCurrentStock
         gridDepartItems_DesignTimeLayout.LayoutString = resources.GetString("gridDepartItems_DesignTimeLayout.LayoutString")
         Me.gridDepartItems.DesignTimeLayout = gridDepartItems_DesignTimeLayout
         Me.gridDepartItems.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.gridDepartItems.FocusStyle = Janus.Windows.GridEX.FocusStyle.Solid
         Me.gridDepartItems.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!)
+        Me.gridDepartItems.GridLineStyle = Janus.Windows.GridEX.GridLineStyle.Solid
         Me.gridDepartItems.GroupByBoxVisible = False
         Me.gridDepartItems.HeaderFormatStyle.Appearance = Janus.Windows.GridEX.Appearance.Flat
         Me.gridDepartItems.HeaderFormatStyle.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(67, Byte), Integer), CType(CType(82, Byte), Integer))
         Me.gridDepartItems.HeaderFormatStyle.ForeColor = System.Drawing.Color.White
         Me.gridDepartItems.HideSelection = Janus.Windows.GridEX.HideSelection.HighlightInactive
-        Me.gridDepartItems.Location = New System.Drawing.Point(3, 99)
+        Me.gridDepartItems.Location = New System.Drawing.Point(3, 88)
         Me.gridDepartItems.Name = "gridDepartItems"
         Me.gridDepartItems.Office2007ColorScheme = Janus.Windows.GridEX.Office2007ColorScheme.Silver
         Me.gridDepartItems.Office2007CustomColor = System.Drawing.SystemColors.Control
         Me.gridDepartItems.RecordNavigator = True
         Me.gridDepartItems.RowHeaderContent = Janus.Windows.GridEX.RowHeaderContent.RowPosition
-        Me.gridDepartItems.Size = New System.Drawing.Size(686, 378)
+        Me.gridDepartItems.Size = New System.Drawing.Size(868, 537)
         Me.gridDepartItems.TabIndex = 13
         Me.gridDepartItems.VisualStyleManager = Me.VSForOpticalshop
         '
         'VSForOpticalshop
         '
-        JanusColorScheme6.ActiveCaptionColor = System.Drawing.Color.Tomato
-        JanusColorScheme6.ActiveCaptionTextColor = System.Drawing.Color.White
-        JanusColorScheme6.ControlDarkColor = System.Drawing.SystemColors.Control
-        JanusColorScheme6.ControlTextColor = System.Drawing.Color.Black
-        JanusColorScheme6.DisabledColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(150, Byte), Integer), CType(CType(102, Byte), Integer))
-        JanusColorScheme6.GrayTextColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
-        JanusColorScheme6.HighlightColor = System.Drawing.Color.FromArgb(CType(CType(43, Byte), Integer), CType(CType(99, Byte), Integer), CType(CType(67, Byte), Integer))
-        JanusColorScheme6.HighlightTextColor = System.Drawing.Color.WhiteSmoke
-        JanusColorScheme6.InfoColor = System.Drawing.Color.WhiteSmoke
-        JanusColorScheme6.InfoTextColor = System.Drawing.Color.FloralWhite
-        JanusColorScheme6.MenuColor = System.Drawing.SystemColors.ActiveCaption
-        JanusColorScheme6.MenuTextColor = System.Drawing.Color.DimGray
-        JanusColorScheme6.Name = "Header"
-        JanusColorScheme6.Office2007ColorScheme = Janus.Windows.Common.Office2007ColorScheme.Silver
-        JanusColorScheme6.Office2007CustomColor = System.Drawing.SystemColors.Control
-        JanusColorScheme6.UseThemes = False
-        JanusColorScheme6.VisualStyle = Janus.Windows.Common.VisualStyle.Standard
-        JanusColorScheme6.WindowColor = System.Drawing.Color.White
-        JanusColorScheme6.WindowTextColor = System.Drawing.Color.DarkBlue
-        Me.VSForOpticalshop.ColorSchemes.Add(JanusColorScheme6)
+        JanusColorScheme1.ActiveCaptionColor = System.Drawing.Color.Tomato
+        JanusColorScheme1.ActiveCaptionTextColor = System.Drawing.Color.White
+        JanusColorScheme1.ControlDarkColor = System.Drawing.SystemColors.Control
+        JanusColorScheme1.ControlTextColor = System.Drawing.Color.Black
+        JanusColorScheme1.DisabledColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(150, Byte), Integer), CType(CType(102, Byte), Integer))
+        JanusColorScheme1.GrayTextColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
+        JanusColorScheme1.HighlightColor = System.Drawing.Color.FromArgb(CType(CType(43, Byte), Integer), CType(CType(99, Byte), Integer), CType(CType(67, Byte), Integer))
+        JanusColorScheme1.HighlightTextColor = System.Drawing.Color.WhiteSmoke
+        JanusColorScheme1.InfoColor = System.Drawing.Color.WhiteSmoke
+        JanusColorScheme1.InfoTextColor = System.Drawing.Color.FloralWhite
+        JanusColorScheme1.MenuColor = System.Drawing.SystemColors.ActiveCaption
+        JanusColorScheme1.MenuTextColor = System.Drawing.Color.DimGray
+        JanusColorScheme1.Name = "Header"
+        JanusColorScheme1.Office2007ColorScheme = Janus.Windows.Common.Office2007ColorScheme.Silver
+        JanusColorScheme1.Office2007CustomColor = System.Drawing.SystemColors.Control
+        JanusColorScheme1.UseThemes = False
+        JanusColorScheme1.VisualStyle = Janus.Windows.Common.VisualStyle.Standard
+        JanusColorScheme1.WindowColor = System.Drawing.Color.White
+        JanusColorScheme1.WindowTextColor = System.Drawing.Color.DarkBlue
+        Me.VSForOpticalshop.ColorSchemes.Add(JanusColorScheme1)
         Me.VSForOpticalshop.DefaultColorScheme = "Header"
         '
         'PictItem
@@ -164,9 +167,9 @@ Partial Class UCDepartCurrentStock
         Me.PictItem.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.PictItem.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.PictItem.Location = New System.Drawing.Point(577, 232)
+        Me.PictItem.Location = New System.Drawing.Point(759, 232)
         Me.PictItem.Name = "PictItem"
-        Me.PictItem.Size = New System.Drawing.Size(109, 205)
+        Me.PictItem.Size = New System.Drawing.Size(109, 353)
         Me.PictItem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictItem.TabIndex = 9
         Me.PictItem.TabStop = False
@@ -179,9 +182,9 @@ Partial Class UCDepartCurrentStock
         Me.lbLocaInCabi.Dock = System.Windows.Forms.DockStyle.Top
         Me.lbLocaInCabi.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbLocaInCabi.ForeColor = System.Drawing.Color.White
-        Me.lbLocaInCabi.Location = New System.Drawing.Point(3, 70)
+        Me.lbLocaInCabi.Location = New System.Drawing.Point(3, 59)
         Me.lbLocaInCabi.Name = "lbLocaInCabi"
-        Me.lbLocaInCabi.Size = New System.Drawing.Size(686, 29)
+        Me.lbLocaInCabi.Size = New System.Drawing.Size(868, 29)
         Me.lbLocaInCabi.TabIndex = 12
         Me.lbLocaInCabi.Text = "Item Dashboard"
         Me.lbLocaInCabi.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -199,7 +202,7 @@ Partial Class UCDepartCurrentStock
         Me.FilterEditor1.Office2007ColorScheme = Janus.Windows.Common.Office2007ColorScheme.[Default]
         Me.FilterEditor1.ScrollMode = Janus.Windows.UI.Dock.ScrollMode.Both
         Me.FilterEditor1.ScrollStep = 15
-        Me.FilterEditor1.Size = New System.Drawing.Size(686, 54)
+        Me.FilterEditor1.Size = New System.Drawing.Size(868, 43)
         Me.FilterEditor1.SourceControl = Me.gridDepartItems
         Me.FilterEditor1.VisualStyleManager = Me.VSForOpticalshop
         '
@@ -208,7 +211,9 @@ Partial Class UCDepartCurrentStock
         gridItemUsed_DesignTimeLayout.LayoutString = resources.GetString("gridItemUsed_DesignTimeLayout.LayoutString")
         Me.gridItemUsed.DesignTimeLayout = gridItemUsed_DesignTimeLayout
         Me.gridItemUsed.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.gridItemUsed.FocusStyle = Janus.Windows.GridEX.FocusStyle.Solid
         Me.gridItemUsed.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!)
+        Me.gridItemUsed.GridLineStyle = Janus.Windows.GridEX.GridLineStyle.Solid
         Me.gridItemUsed.GroupByBoxVisible = False
         Me.gridItemUsed.HeaderFormatStyle.Appearance = Janus.Windows.GridEX.Appearance.Flat
         Me.gridItemUsed.HeaderFormatStyle.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(67, Byte), Integer), CType(CType(82, Byte), Integer))
@@ -221,7 +226,7 @@ Partial Class UCDepartCurrentStock
         Me.gridItemUsed.RecordNavigator = True
         Me.gridItemUsed.RowHeaderContent = Janus.Windows.GridEX.RowHeaderContent.RowPosition
         Me.gridItemUsed.RowHeaders = Janus.Windows.GridEX.InheritableBoolean.[True]
-        Me.gridItemUsed.Size = New System.Drawing.Size(255, 408)
+        Me.gridItemUsed.Size = New System.Drawing.Size(732, 556)
         Me.gridItemUsed.TabIndex = 14
         Me.gridItemUsed.TotalRow = Janus.Windows.GridEX.InheritableBoolean.[True]
         Me.gridItemUsed.VisualStyleManager = Me.VSForOpticalshop
@@ -237,7 +242,7 @@ Partial Class UCDepartCurrentStock
         Me.Search.Dock = System.Windows.Forms.DockStyle.Top
         Me.Search.Location = New System.Drawing.Point(0, 0)
         Me.Search.Name = "Search"
-        Me.Search.Size = New System.Drawing.Size(255, 72)
+        Me.Search.Size = New System.Drawing.Size(732, 72)
         Me.Search.TabIndex = 13
         Me.Search.TabStop = False
         Me.Search.Text = "Print"
@@ -362,7 +367,7 @@ Partial Class UCDepartCurrentStock
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
         Me.ToolStrip1.Name = "ToolStrip1"
         Me.ToolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional
-        Me.ToolStrip1.Size = New System.Drawing.Size(951, 46)
+        Me.ToolStrip1.Size = New System.Drawing.Size(1610, 46)
         Me.ToolStrip1.TabIndex = 2
         Me.ToolStrip1.Text = "ToolStrip1"
         '
@@ -482,7 +487,7 @@ Partial Class UCDepartCurrentStock
         '
         Me.SplitContainer2.Panel2.Controls.Add(Me.CRVItemMonthlyUsed)
         Me.SplitContainer2.Panel2Collapsed = True
-        Me.SplitContainer2.Size = New System.Drawing.Size(951, 480)
+        Me.SplitContainer2.Size = New System.Drawing.Size(1610, 628)
         Me.SplitContainer2.SplitterDistance = 329
         Me.SplitContainer2.SplitterWidth = 3
         Me.SplitContainer2.TabIndex = 1
@@ -515,7 +520,7 @@ Partial Class UCDepartCurrentStock
         Me.Controls.Add(Me.SplitContainer2)
         Me.Controls.Add(Me.ToolStrip1)
         Me.Name = "UCDepartCurrentStock"
-        Me.Size = New System.Drawing.Size(951, 526)
+        Me.Size = New System.Drawing.Size(1610, 674)
         Me.SplitContainer1.Panel1.ResumeLayout(False)
         Me.SplitContainer1.Panel2.ResumeLayout(False)
         Me.SplitContainer1.Panel2.PerformLayout()
