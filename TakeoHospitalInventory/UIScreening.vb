@@ -176,7 +176,7 @@
         UBarcode = New UIBarcodeGenerator
         Login.UpdateLabelStatus("Creating user interface 28.", True)
         Application.DoEvents()
-        'UReportItemTransaction = New UCReportItemTransaction(Me)
+        UReportItemTransaction = New UCReportItemTransaction(UIMainScreening)
         Login.UpdateLabelStatus("Creating user interface 29.", True)
         Application.DoEvents()
         URefferral = New UCRefferralOfTEH
@@ -215,7 +215,7 @@
 
         Login.UpdateLabelStatus("Creating user interface 39.", True)
         Application.DoEvents()
-        ' UIncomeStatementOpticalShop = New UCOpticalshopIncomStatement(Me)
+        UIncomeStatementOpticalShop = New UCOpticalshopIncomStatement(UIMainScreening)
         Login.UpdateLabelStatus("Creating user interface 40.", True)
         Application.DoEvents()
         UReciepReques = New UCReceivedRequest
@@ -339,5 +339,21 @@
     Private Sub BtnOpticalShopReport_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnOpticalShopReport.Click
 
         AddUserControl(UIMainScreening.PanelHeader, UIMainScreening.PanelDedail, UOPStatisticReport, "", True)
+    End Sub
+
+    Private Sub BtnOpticalIncome_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnOpticalIncome.Click
+
+        AddUserControl(UIMainScreening.PanelHeader, UIMainScreening.PanelDedail, UIncomeStatementOpticalShop, "", True)
+    End Sub
+
+    Private Sub BtnRequestItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnRequestItem.Click
+        AddUserControl(UIMainScreening.PanelHeader, UIMainScreening.PanelDedail, URequestOrderDep, "", True)
+
+    End Sub
+
+    Private Sub BtnItemTransaction_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnItemTransaction.Click
+
+
+        AddUserControl(UIMainScreening.PanelHeader, UIMainScreening.PanelDedail, UReportItemTransaction, "", True)
     End Sub
 End Class

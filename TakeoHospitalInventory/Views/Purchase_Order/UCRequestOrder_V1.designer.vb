@@ -28,6 +28,7 @@ Partial Class UCRequestOrder_V1
         Dim GridItemRequestDetail_DesignTimeLayout As Janus.Windows.GridEX.GridEXLayout = New Janus.Windows.GridEX.GridEXLayout
         Dim gridRequestHis_DesignTimeLayout As Janus.Windows.GridEX.GridEXLayout = New Janus.Windows.GridEX.GridEXLayout
         Dim GridItemDetial_DesignTimeLayout As Janus.Windows.GridEX.GridEXLayout = New Janus.Windows.GridEX.GridEXLayout
+        Dim JanusColorScheme4 As Janus.Windows.Common.JanusColorScheme = New Janus.Windows.Common.JanusColorScheme
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer
         Me.GroupBox1 = New System.Windows.Forms.GroupBox
         Me.RadReceived = New System.Windows.Forms.RadioButton
@@ -45,7 +46,9 @@ Partial Class UCRequestOrder_V1
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.btnCompareStock = New System.Windows.Forms.ToolStripMenuItem
         Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripSeparator
+        Me.SplitContainer4 = New System.Windows.Forms.SplitContainer
         Me.gridRequestHis = New Janus.Windows.GridEX.GridEX
+        Me.GridItemDetial = New Janus.Windows.GridEX.GridEX
         Me.GroupBox3 = New System.Windows.Forms.GroupBox
         Me.btnGridDisplay = New System.Windows.Forms.Button
         Me.dptToDate = New System.Windows.Forms.DateTimePicker
@@ -70,8 +73,7 @@ Partial Class UCRequestOrder_V1
         Me.ToolStripSeparator7 = New System.Windows.Forms.ToolStripSeparator
         Me.BtnRefresh = New System.Windows.Forms.ToolStripButton
         Me.ImgTV = New System.Windows.Forms.ImageList(Me.components)
-        Me.SplitContainer4 = New System.Windows.Forms.SplitContainer
-        Me.GridItemDetial = New Janus.Windows.GridEX.GridEX
+        Me.VSForOpticalshop = New Janus.Windows.Common.VisualStyleManager(Me.components)
         Me.SplitContainer1.Panel1.SuspendLayout()
         Me.SplitContainer1.Panel2.SuspendLayout()
         Me.SplitContainer1.SuspendLayout()
@@ -86,13 +88,13 @@ Partial Class UCRequestOrder_V1
         Me.GroupBox2.SuspendLayout()
         CType(Me.GridItemRequestDetail, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ContextMenuStrip1.SuspendLayout()
-        CType(Me.gridRequestHis, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupBox3.SuspendLayout()
-        Me.ToolStrip1.SuspendLayout()
         Me.SplitContainer4.Panel1.SuspendLayout()
         Me.SplitContainer4.Panel2.SuspendLayout()
         Me.SplitContainer4.SuspendLayout()
+        CType(Me.gridRequestHis, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridItemDetial, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox3.SuspendLayout()
+        Me.ToolStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'SplitContainer1
@@ -119,18 +121,19 @@ Partial Class UCRequestOrder_V1
         '
         'GroupBox1
         '
-        Me.GroupBox1.BackColor = System.Drawing.SystemColors.Control
+        Me.GroupBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(124, Byte), Integer))
         Me.GroupBox1.Controls.Add(Me.RadReceived)
         Me.GroupBox1.Controls.Add(Me.RadResponse)
         Me.GroupBox1.Controls.Add(Me.RadSent)
         Me.GroupBox1.Controls.Add(Me.RadOpen)
         Me.GroupBox1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.GroupBox1.ForeColor = System.Drawing.Color.White
         Me.GroupBox1.Location = New System.Drawing.Point(0, 213)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(138, 622)
         Me.GroupBox1.TabIndex = 2
         Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Request History"
+        Me.GroupBox1.Text = "History"
         '
         'RadReceived
         '
@@ -191,9 +194,11 @@ Partial Class UCRequestOrder_V1
         '
         'TVRequestOrderStatus
         '
-        Me.TVRequestOrderStatus.BackColor = System.Drawing.SystemColors.Window
+        Me.TVRequestOrderStatus.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(124, Byte), Integer))
+        Me.TVRequestOrderStatus.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TVRequestOrderStatus.Dock = System.Windows.Forms.DockStyle.Top
         Me.TVRequestOrderStatus.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TVRequestOrderStatus.ForeColor = System.Drawing.Color.White
         Me.TVRequestOrderStatus.HideSelection = False
         Me.TVRequestOrderStatus.Location = New System.Drawing.Point(0, 0)
         Me.TVRequestOrderStatus.Margin = New System.Windows.Forms.Padding(5)
@@ -238,7 +243,7 @@ Partial Class UCRequestOrder_V1
         '
         Me.SplitContainer2.Panel2.Controls.Add(Me.GroupBox2)
         Me.SplitContainer2.Size = New System.Drawing.Size(897, 510)
-        Me.SplitContainer2.SplitterDistance = 247
+        Me.SplitContainer2.SplitterDistance = 246
         Me.SplitContainer2.SplitterWidth = 5
         Me.SplitContainer2.TabIndex = 0
         '
@@ -249,20 +254,25 @@ Partial Class UCRequestOrder_V1
         Me.GridRequestDetail.DesignTimeLayout = GridRequestDetail_DesignTimeLayout
         Me.GridRequestDetail.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GridRequestDetail.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!)
+        Me.GridRequestDetail.GridLineStyle = Janus.Windows.GridEX.GridLineStyle.Solid
         Me.GridRequestDetail.GroupByBoxVisible = False
+        Me.GridRequestDetail.HeaderFormatStyle.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(67, Byte), Integer), CType(CType(82, Byte), Integer))
+        Me.GridRequestDetail.HeaderFormatStyle.ForeColor = System.Drawing.Color.White
         Me.GridRequestDetail.Location = New System.Drawing.Point(0, 27)
         Me.GridRequestDetail.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.GridRequestDetail.Name = "GridRequestDetail"
+        Me.GridRequestDetail.Office2007ColorScheme = Janus.Windows.GridEX.Office2007ColorScheme.Silver
+        Me.GridRequestDetail.Office2007CustomColor = System.Drawing.SystemColors.Control
         Me.GridRequestDetail.RecordNavigator = True
         Me.GridRequestDetail.RowHeaderContent = Janus.Windows.GridEX.RowHeaderContent.RowPosition
         Me.GridRequestDetail.RowHeaders = Janus.Windows.GridEX.InheritableBoolean.[True]
-        Me.GridRequestDetail.Size = New System.Drawing.Size(897, 220)
+        Me.GridRequestDetail.Size = New System.Drawing.Size(897, 219)
         Me.GridRequestDetail.TabIndex = 0
-        Me.GridRequestDetail.VisualStyle = Janus.Windows.GridEX.VisualStyle.VS2005
+        Me.GridRequestDetail.VisualStyleManager = Me.VSForOpticalshop
         '
         'Label1
         '
-        Me.Label1.BackColor = System.Drawing.SystemColors.Desktop
+        Me.Label1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(124, Byte), Integer))
         Me.Label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Label1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
@@ -282,7 +292,7 @@ Partial Class UCRequestOrder_V1
         Me.GroupBox2.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Padding = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.GroupBox2.Size = New System.Drawing.Size(897, 258)
+        Me.GroupBox2.Size = New System.Drawing.Size(897, 259)
         Me.GroupBox2.TabIndex = 0
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Request Item Detaile"
@@ -295,16 +305,21 @@ Partial Class UCRequestOrder_V1
         Me.GridItemRequestDetail.DesignTimeLayout = GridItemRequestDetail_DesignTimeLayout
         Me.GridItemRequestDetail.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GridItemRequestDetail.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!)
+        Me.GridItemRequestDetail.GridLineStyle = Janus.Windows.GridEX.GridLineStyle.Solid
         Me.GridItemRequestDetail.GroupByBoxVisible = False
+        Me.GridItemRequestDetail.HeaderFormatStyle.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(67, Byte), Integer), CType(CType(82, Byte), Integer))
+        Me.GridItemRequestDetail.HeaderFormatStyle.ForeColor = System.Drawing.Color.White
         Me.GridItemRequestDetail.Location = New System.Drawing.Point(3, 17)
         Me.GridItemRequestDetail.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.GridItemRequestDetail.Name = "GridItemRequestDetail"
+        Me.GridItemRequestDetail.Office2007ColorScheme = Janus.Windows.GridEX.Office2007ColorScheme.Silver
+        Me.GridItemRequestDetail.Office2007CustomColor = System.Drawing.SystemColors.Control
         Me.GridItemRequestDetail.RecordNavigator = True
         Me.GridItemRequestDetail.RowHeaderContent = Janus.Windows.GridEX.RowHeaderContent.RowPosition
         Me.GridItemRequestDetail.RowHeaders = Janus.Windows.GridEX.InheritableBoolean.[True]
-        Me.GridItemRequestDetail.Size = New System.Drawing.Size(891, 237)
+        Me.GridItemRequestDetail.Size = New System.Drawing.Size(891, 238)
         Me.GridItemRequestDetail.TabIndex = 1
-        Me.GridItemRequestDetail.VisualStyle = Janus.Windows.GridEX.VisualStyle.VS2005
+        Me.GridItemRequestDetail.VisualStyleManager = Me.VSForOpticalshop
         '
         'ContextMenuStrip1
         '
@@ -323,6 +338,24 @@ Partial Class UCRequestOrder_V1
         Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
         Me.ToolStripMenuItem1.Size = New System.Drawing.Size(119, 6)
         '
+        'SplitContainer4
+        '
+        Me.SplitContainer4.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.SplitContainer4.Location = New System.Drawing.Point(0, 48)
+        Me.SplitContainer4.Name = "SplitContainer4"
+        Me.SplitContainer4.Orientation = System.Windows.Forms.Orientation.Horizontal
+        '
+        'SplitContainer4.Panel1
+        '
+        Me.SplitContainer4.Panel1.Controls.Add(Me.gridRequestHis)
+        '
+        'SplitContainer4.Panel2
+        '
+        Me.SplitContainer4.Panel2.Controls.Add(Me.GridItemDetial)
+        Me.SplitContainer4.Size = New System.Drawing.Size(897, 273)
+        Me.SplitContainer4.SplitterDistance = 148
+        Me.SplitContainer4.TabIndex = 5
+        '
         'gridRequestHis
         '
         Me.gridRequestHis.AllowEdit = Janus.Windows.GridEX.InheritableBoolean.[False]
@@ -331,16 +364,43 @@ Partial Class UCRequestOrder_V1
         Me.gridRequestHis.Dock = System.Windows.Forms.DockStyle.Fill
         Me.gridRequestHis.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!)
         Me.gridRequestHis.GroupByBoxVisible = False
+        Me.gridRequestHis.HeaderFormatStyle.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(124, Byte), Integer))
+        Me.gridRequestHis.HeaderFormatStyle.ForeColor = System.Drawing.Color.White
         Me.gridRequestHis.HideSelection = Janus.Windows.GridEX.HideSelection.HighlightInactive
         Me.gridRequestHis.Hierarchical = True
         Me.gridRequestHis.Location = New System.Drawing.Point(0, 0)
         Me.gridRequestHis.Name = "gridRequestHis"
+        Me.gridRequestHis.Office2007ColorScheme = Janus.Windows.GridEX.Office2007ColorScheme.Silver
+        Me.gridRequestHis.Office2007CustomColor = System.Drawing.SystemColors.Control
         Me.gridRequestHis.RecordNavigator = True
         Me.gridRequestHis.RowHeaderContent = Janus.Windows.GridEX.RowHeaderContent.RowPosition
         Me.gridRequestHis.RowHeaders = Janus.Windows.GridEX.InheritableBoolean.[True]
         Me.gridRequestHis.Size = New System.Drawing.Size(897, 148)
         Me.gridRequestHis.TabIndex = 3
-        Me.gridRequestHis.VisualStyle = Janus.Windows.GridEX.VisualStyle.VS2005
+        Me.gridRequestHis.VisualStyleManager = Me.VSForOpticalshop
+        '
+        'GridItemDetial
+        '
+        Me.GridItemDetial.AllowEdit = Janus.Windows.GridEX.InheritableBoolean.[False]
+        GridItemDetial_DesignTimeLayout.LayoutString = resources.GetString("GridItemDetial_DesignTimeLayout.LayoutString")
+        Me.GridItemDetial.DesignTimeLayout = GridItemDetial_DesignTimeLayout
+        Me.GridItemDetial.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.GridItemDetial.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!)
+        Me.GridItemDetial.GroupByBoxVisible = False
+        Me.GridItemDetial.HeaderFormatStyle.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(124, Byte), Integer))
+        Me.GridItemDetial.HeaderFormatStyle.ForeColor = System.Drawing.Color.White
+        Me.GridItemDetial.HideSelection = Janus.Windows.GridEX.HideSelection.HighlightInactive
+        Me.GridItemDetial.Hierarchical = True
+        Me.GridItemDetial.Location = New System.Drawing.Point(0, 0)
+        Me.GridItemDetial.Name = "GridItemDetial"
+        Me.GridItemDetial.Office2007ColorScheme = Janus.Windows.GridEX.Office2007ColorScheme.Silver
+        Me.GridItemDetial.Office2007CustomColor = System.Drawing.SystemColors.Control
+        Me.GridItemDetial.RecordNavigator = True
+        Me.GridItemDetial.RowHeaderContent = Janus.Windows.GridEX.RowHeaderContent.RowPosition
+        Me.GridItemDetial.RowHeaders = Janus.Windows.GridEX.InheritableBoolean.[True]
+        Me.GridItemDetial.Size = New System.Drawing.Size(897, 121)
+        Me.GridItemDetial.TabIndex = 4
+        Me.GridItemDetial.VisualStyleManager = Me.VSForOpticalshop
         '
         'GroupBox3
         '
@@ -360,15 +420,19 @@ Partial Class UCRequestOrder_V1
         '
         'btnGridDisplay
         '
+        Me.btnGridDisplay.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
         Me.btnGridDisplay.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnGridDisplay.Image = Global.TakeoHospitalInventory.My.Resources.Resources.search
+        Me.btnGridDisplay.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnGridDisplay.ForeColor = System.Drawing.Color.White
+        Me.btnGridDisplay.Image = CType(resources.GetObject("btnGridDisplay.Image"), System.Drawing.Image)
         Me.btnGridDisplay.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnGridDisplay.Location = New System.Drawing.Point(451, 10)
+        Me.btnGridDisplay.Location = New System.Drawing.Point(451, 9)
         Me.btnGridDisplay.Name = "btnGridDisplay"
-        Me.btnGridDisplay.Size = New System.Drawing.Size(93, 32)
+        Me.btnGridDisplay.Size = New System.Drawing.Size(112, 35)
         Me.btnGridDisplay.TabIndex = 17
         Me.btnGridDisplay.Text = "Display"
-        Me.btnGridDisplay.UseVisualStyleBackColor = True
+        Me.btnGridDisplay.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnGridDisplay.UseVisualStyleBackColor = False
         '
         'dptToDate
         '
@@ -394,15 +458,19 @@ Partial Class UCRequestOrder_V1
         '
         'btnPreview
         '
+        Me.btnPreview.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
         Me.btnPreview.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnPreview.Image = Global.TakeoHospitalInventory.My.Resources.Resources.preview
+        Me.btnPreview.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnPreview.ForeColor = System.Drawing.Color.White
+        Me.btnPreview.Image = CType(resources.GetObject("btnPreview.Image"), System.Drawing.Image)
         Me.btnPreview.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnPreview.Location = New System.Drawing.Point(550, 9)
+        Me.btnPreview.Location = New System.Drawing.Point(566, 9)
         Me.btnPreview.Name = "btnPreview"
-        Me.btnPreview.Size = New System.Drawing.Size(93, 32)
+        Me.btnPreview.Size = New System.Drawing.Size(112, 35)
         Me.btnPreview.TabIndex = 2
         Me.btnPreview.Text = "Preview"
-        Me.btnPreview.UseVisualStyleBackColor = True
+        Me.btnPreview.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnPreview.UseVisualStyleBackColor = False
         '
         'dptFromDate
         '
@@ -448,7 +516,7 @@ Partial Class UCRequestOrder_V1
         '
         'ToolStrip1
         '
-        Me.ToolStrip1.AutoSize = False
+        Me.ToolStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(124, Byte), Integer))
         Me.ToolStrip1.Font = New System.Drawing.Font("Tahoma", 9.0!)
         Me.ToolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden
         Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(32, 32)
@@ -466,7 +534,8 @@ Partial Class UCRequestOrder_V1
         '
         Me.BtnNew.AutoSize = False
         Me.BtnNew.CheckOnClick = True
-        Me.BtnNew.Image = Global.TakeoHospitalInventory.My.Resources.Resources.blue_new
+        Me.BtnNew.ForeColor = System.Drawing.Color.White
+        Me.BtnNew.Image = CType(resources.GetObject("BtnNew.Image"), System.Drawing.Image)
         Me.BtnNew.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.BtnNew.Name = "BtnNew"
         Me.BtnNew.Size = New System.Drawing.Size(70, 31)
@@ -476,7 +545,8 @@ Partial Class UCRequestOrder_V1
         '
         Me.btnEdit.AutoSize = False
         Me.btnEdit.CheckOnClick = True
-        Me.btnEdit.Image = Global.TakeoHospitalInventory.My.Resources.Resources.configuration_edit
+        Me.btnEdit.ForeColor = System.Drawing.Color.White
+        Me.btnEdit.Image = CType(resources.GetObject("btnEdit.Image"), System.Drawing.Image)
         Me.btnEdit.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btnEdit.Name = "btnEdit"
         Me.btnEdit.Size = New System.Drawing.Size(70, 31)
@@ -486,7 +556,8 @@ Partial Class UCRequestOrder_V1
         '
         Me.btnMarkOrderChecked.AutoSize = False
         Me.btnMarkOrderChecked.CheckOnClick = True
-        Me.btnMarkOrderChecked.Image = Global.TakeoHospitalInventory.My.Resources.Resources.send
+        Me.btnMarkOrderChecked.ForeColor = System.Drawing.Color.White
+        Me.btnMarkOrderChecked.Image = CType(resources.GetObject("btnMarkOrderChecked.Image"), System.Drawing.Image)
         Me.btnMarkOrderChecked.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btnMarkOrderChecked.Name = "btnMarkOrderChecked"
         Me.btnMarkOrderChecked.Size = New System.Drawing.Size(70, 31)
@@ -501,7 +572,8 @@ Partial Class UCRequestOrder_V1
         '
         Me.btnDelete.AutoSize = False
         Me.btnDelete.CheckOnClick = True
-        Me.btnDelete.Image = Global.TakeoHospitalInventory.My.Resources.Resources.edit_trash
+        Me.btnDelete.ForeColor = System.Drawing.Color.White
+        Me.btnDelete.Image = CType(resources.GetObject("btnDelete.Image"), System.Drawing.Image)
         Me.btnDelete.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btnDelete.Name = "btnDelete"
         Me.btnDelete.Size = New System.Drawing.Size(80, 31)
@@ -510,6 +582,7 @@ Partial Class UCRequestOrder_V1
         'btnPatialReceived
         '
         Me.btnPatialReceived.AutoSize = False
+        Me.btnPatialReceived.ForeColor = System.Drawing.Color.White
         Me.btnPatialReceived.Image = CType(resources.GetObject("btnPatialReceived.Image"), System.Drawing.Image)
         Me.btnPatialReceived.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btnPatialReceived.Name = "btnPatialReceived"
@@ -526,7 +599,8 @@ Partial Class UCRequestOrder_V1
         'btnReceivedAll
         '
         Me.btnReceivedAll.AutoSize = False
-        Me.btnReceivedAll.Image = Global.TakeoHospitalInventory.My.Resources.Resources.download
+        Me.btnReceivedAll.ForeColor = System.Drawing.Color.White
+        Me.btnReceivedAll.Image = CType(resources.GetObject("btnReceivedAll.Image"), System.Drawing.Image)
         Me.btnReceivedAll.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btnReceivedAll.Name = "btnReceivedAll"
         Me.btnReceivedAll.Size = New System.Drawing.Size(120, 31)
@@ -535,7 +609,8 @@ Partial Class UCRequestOrder_V1
         'btnPrintRequest
         '
         Me.btnPrintRequest.AutoSize = False
-        Me.btnPrintRequest.Image = Global.TakeoHospitalInventory.My.Resources.Resources.document_print
+        Me.btnPrintRequest.ForeColor = System.Drawing.Color.White
+        Me.btnPrintRequest.Image = CType(resources.GetObject("btnPrintRequest.Image"), System.Drawing.Image)
         Me.btnPrintRequest.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btnPrintRequest.Name = "btnPrintRequest"
         Me.btnPrintRequest.Size = New System.Drawing.Size(70, 31)
@@ -550,7 +625,8 @@ Partial Class UCRequestOrder_V1
         '
         Me.BtnRefresh.AutoSize = False
         Me.BtnRefresh.CheckOnClick = True
-        Me.BtnRefresh.Image = Global.TakeoHospitalInventory.My.Resources.Resources.view_refresh
+        Me.BtnRefresh.ForeColor = System.Drawing.Color.White
+        Me.BtnRefresh.Image = CType(resources.GetObject("BtnRefresh.Image"), System.Drawing.Image)
         Me.BtnRefresh.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.BtnRefresh.Name = "BtnRefresh"
         Me.BtnRefresh.Size = New System.Drawing.Size(120, 31)
@@ -560,47 +636,34 @@ Partial Class UCRequestOrder_V1
         '
         Me.ImgTV.ImageStream = CType(resources.GetObject("ImgTV.ImageStream"), System.Windows.Forms.ImageListStreamer)
         Me.ImgTV.TransparentColor = System.Drawing.Color.Transparent
-        Me.ImgTV.Images.SetKeyName(0, "Open1.ico")
-        Me.ImgTV.Images.SetKeyName(1, "Send Document.png")
-        Me.ImgTV.Images.SetKeyName(2, "Forward.png")
-        Me.ImgTV.Images.SetKeyName(3, "mail-get.ico")
+        Me.ImgTV.Images.SetKeyName(0, "Open_30px.png")
+        Me.ImgTV.Images.SetKeyName(1, "Send_30px.png")
+        Me.ImgTV.Images.SetKeyName(2, "Reply_30px.png")
+        Me.ImgTV.Images.SetKeyName(3, "Receive Cash_30px.png")
         '
-        'SplitContainer4
+        'VSForOpticalshop
         '
-        Me.SplitContainer4.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.SplitContainer4.Location = New System.Drawing.Point(0, 48)
-        Me.SplitContainer4.Name = "SplitContainer4"
-        Me.SplitContainer4.Orientation = System.Windows.Forms.Orientation.Horizontal
-        '
-        'SplitContainer4.Panel1
-        '
-        Me.SplitContainer4.Panel1.Controls.Add(Me.gridRequestHis)
-        '
-        'SplitContainer4.Panel2
-        '
-        Me.SplitContainer4.Panel2.Controls.Add(Me.GridItemDetial)
-        Me.SplitContainer4.Size = New System.Drawing.Size(897, 273)
-        Me.SplitContainer4.SplitterDistance = 148
-        Me.SplitContainer4.TabIndex = 5
-        '
-        'GridItemDetial
-        '
-        Me.GridItemDetial.AllowEdit = Janus.Windows.GridEX.InheritableBoolean.[False]
-        GridItemDetial_DesignTimeLayout.LayoutString = resources.GetString("GridItemDetial_DesignTimeLayout.LayoutString")
-        Me.GridItemDetial.DesignTimeLayout = GridItemDetial_DesignTimeLayout
-        Me.GridItemDetial.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GridItemDetial.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!)
-        Me.GridItemDetial.GroupByBoxVisible = False
-        Me.GridItemDetial.HideSelection = Janus.Windows.GridEX.HideSelection.HighlightInactive
-        Me.GridItemDetial.Hierarchical = True
-        Me.GridItemDetial.Location = New System.Drawing.Point(0, 0)
-        Me.GridItemDetial.Name = "GridItemDetial"
-        Me.GridItemDetial.RecordNavigator = True
-        Me.GridItemDetial.RowHeaderContent = Janus.Windows.GridEX.RowHeaderContent.RowPosition
-        Me.GridItemDetial.RowHeaders = Janus.Windows.GridEX.InheritableBoolean.[True]
-        Me.GridItemDetial.Size = New System.Drawing.Size(897, 121)
-        Me.GridItemDetial.TabIndex = 4
-        Me.GridItemDetial.VisualStyle = Janus.Windows.GridEX.VisualStyle.VS2005
+        JanusColorScheme4.ActiveCaptionColor = System.Drawing.Color.Tomato
+        JanusColorScheme4.ActiveCaptionTextColor = System.Drawing.Color.White
+        JanusColorScheme4.ControlDarkColor = System.Drawing.SystemColors.Control
+        JanusColorScheme4.ControlTextColor = System.Drawing.Color.Black
+        JanusColorScheme4.DisabledColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(150, Byte), Integer), CType(CType(102, Byte), Integer))
+        JanusColorScheme4.GrayTextColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
+        JanusColorScheme4.HighlightColor = System.Drawing.Color.FromArgb(CType(CType(43, Byte), Integer), CType(CType(99, Byte), Integer), CType(CType(67, Byte), Integer))
+        JanusColorScheme4.HighlightTextColor = System.Drawing.Color.WhiteSmoke
+        JanusColorScheme4.InfoColor = System.Drawing.Color.WhiteSmoke
+        JanusColorScheme4.InfoTextColor = System.Drawing.Color.FloralWhite
+        JanusColorScheme4.MenuColor = System.Drawing.SystemColors.ActiveCaption
+        JanusColorScheme4.MenuTextColor = System.Drawing.Color.DimGray
+        JanusColorScheme4.Name = "Header"
+        JanusColorScheme4.Office2007ColorScheme = Janus.Windows.Common.Office2007ColorScheme.Silver
+        JanusColorScheme4.Office2007CustomColor = System.Drawing.SystemColors.Control
+        JanusColorScheme4.UseThemes = False
+        JanusColorScheme4.VisualStyle = Janus.Windows.Common.VisualStyle.Standard
+        JanusColorScheme4.WindowColor = System.Drawing.Color.White
+        JanusColorScheme4.WindowTextColor = System.Drawing.Color.DarkBlue
+        Me.VSForOpticalshop.ColorSchemes.Add(JanusColorScheme4)
+        Me.VSForOpticalshop.DefaultColorScheme = "Header"
         '
         'UCRequestOrder_V1
         '
@@ -625,16 +688,17 @@ Partial Class UCRequestOrder_V1
         Me.GroupBox2.ResumeLayout(False)
         CType(Me.GridItemRequestDetail, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ContextMenuStrip1.ResumeLayout(False)
+        Me.SplitContainer4.Panel1.ResumeLayout(False)
+        Me.SplitContainer4.Panel2.ResumeLayout(False)
+        Me.SplitContainer4.ResumeLayout(False)
         CType(Me.gridRequestHis, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GridItemDetial, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
         Me.ToolStrip1.ResumeLayout(False)
         Me.ToolStrip1.PerformLayout()
-        Me.SplitContainer4.Panel1.ResumeLayout(False)
-        Me.SplitContainer4.Panel2.ResumeLayout(False)
-        Me.SplitContainer4.ResumeLayout(False)
-        CType(Me.GridItemDetial, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents SplitContainer1 As System.Windows.Forms.SplitContainer
@@ -681,5 +745,6 @@ Partial Class UCRequestOrder_V1
     Protected Friend WithEvents Splitter1 As System.Windows.Forms.Splitter
     Friend WithEvents SplitContainer4 As System.Windows.Forms.SplitContainer
     Friend WithEvents GridItemDetial As Janus.Windows.GridEX.GridEX
+    Friend WithEvents VSForOpticalshop As Janus.Windows.Common.VisualStyleManager
 
 End Class

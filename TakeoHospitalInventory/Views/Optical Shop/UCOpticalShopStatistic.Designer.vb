@@ -23,6 +23,7 @@ Partial Class UCOpticalShopStatistic
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(UCOpticalShopStatistic))
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer
         Me.BtnNillAndFull = New System.Windows.Forms.Button
         Me.GroupBox1 = New System.Windows.Forms.GroupBox
@@ -67,6 +68,7 @@ Partial Class UCOpticalShopStatistic
         '
         'SplitContainer1
         '
+        Me.SplitContainer1.BackColor = System.Drawing.Color.FromArgb(CType(CType(236, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(241, Byte), Integer))
         Me.SplitContainer1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.SplitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel1
         Me.SplitContainer1.Location = New System.Drawing.Point(0, 0)
@@ -87,20 +89,24 @@ Partial Class UCOpticalShopStatistic
         '
         Me.SplitContainer1.Panel2.Controls.Add(Me.SplitOpticalShopReport)
         Me.SplitContainer1.Size = New System.Drawing.Size(1138, 600)
-        Me.SplitContainer1.SplitterDistance = 233
+        Me.SplitContainer1.SplitterDistance = 256
         Me.SplitContainer1.TabIndex = 0
         '
         'BtnNillAndFull
         '
+        Me.BtnNillAndFull.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
         Me.BtnNillAndFull.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnNillAndFull.Image = Global.TakeoHospitalInventory.My.Resources.Resources.column_chart32
-        Me.BtnNillAndFull.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnNillAndFull.Location = New System.Drawing.Point(19, 342)
+        Me.BtnNillAndFull.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnNillAndFull.ForeColor = System.Drawing.Color.White
+        Me.BtnNillAndFull.Image = CType(resources.GetObject("BtnNillAndFull.Image"), System.Drawing.Image)
+        Me.BtnNillAndFull.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.BtnNillAndFull.Location = New System.Drawing.Point(19, 339)
         Me.BtnNillAndFull.Name = "BtnNillAndFull"
         Me.BtnNillAndFull.Size = New System.Drawing.Size(199, 60)
         Me.BtnNillAndFull.TabIndex = 16
         Me.BtnNillAndFull.Text = "Statistic Payment Type"
-        Me.BtnNillAndFull.UseVisualStyleBackColor = True
+        Me.BtnNillAndFull.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        Me.BtnNillAndFull.UseVisualStyleBackColor = False
         '
         'GroupBox1
         '
@@ -129,8 +135,11 @@ Partial Class UCOpticalShopStatistic
         '
         'BtnOSPatientAgeIncome
         '
+        Me.BtnOSPatientAgeIncome.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
         Me.BtnOSPatientAgeIncome.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnOSPatientAgeIncome.Image = Global.TakeoHospitalInventory.My.Resources.Resources.document_print
+        Me.BtnOSPatientAgeIncome.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnOSPatientAgeIncome.ForeColor = System.Drawing.Color.White
+        Me.BtnOSPatientAgeIncome.Image = CType(resources.GetObject("BtnOSPatientAgeIncome.Image"), System.Drawing.Image)
         Me.BtnOSPatientAgeIncome.ImageAlign = System.Drawing.ContentAlignment.TopCenter
         Me.BtnOSPatientAgeIncome.Location = New System.Drawing.Point(14, 48)
         Me.BtnOSPatientAgeIncome.Name = "BtnOSPatientAgeIncome"
@@ -138,12 +147,15 @@ Partial Class UCOpticalShopStatistic
         Me.BtnOSPatientAgeIncome.TabIndex = 11
         Me.BtnOSPatientAgeIncome.Text = "Optical Shop Patient’s age Statistic"
         Me.BtnOSPatientAgeIncome.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
-        Me.BtnOSPatientAgeIncome.UseVisualStyleBackColor = True
+        Me.BtnOSPatientAgeIncome.UseVisualStyleBackColor = False
         '
         'BtnOPItemSaleOff
         '
+        Me.BtnOPItemSaleOff.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
         Me.BtnOPItemSaleOff.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnOPItemSaleOff.Image = Global.TakeoHospitalInventory.My.Resources.Resources.document_print
+        Me.BtnOPItemSaleOff.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnOPItemSaleOff.ForeColor = System.Drawing.Color.White
+        Me.BtnOPItemSaleOff.Image = CType(resources.GetObject("BtnOPItemSaleOff.Image"), System.Drawing.Image)
         Me.BtnOPItemSaleOff.ImageAlign = System.Drawing.ContentAlignment.TopCenter
         Me.BtnOPItemSaleOff.Location = New System.Drawing.Point(19, 272)
         Me.BtnOPItemSaleOff.Name = "BtnOPItemSaleOff"
@@ -151,7 +163,7 @@ Partial Class UCOpticalShopStatistic
         Me.BtnOPItemSaleOff.TabIndex = 10
         Me.BtnOPItemSaleOff.Text = "Optical Shop Item Sole"
         Me.BtnOPItemSaleOff.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
-        Me.BtnOPItemSaleOff.UseVisualStyleBackColor = True
+        Me.BtnOPItemSaleOff.UseVisualStyleBackColor = False
         '
         'Label2
         '
@@ -197,8 +209,11 @@ Partial Class UCOpticalShopStatistic
         '
         'BtnOPCusAgeStatistic
         '
+        Me.BtnOPCusAgeStatistic.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
         Me.BtnOPCusAgeStatistic.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnOPCusAgeStatistic.Image = Global.TakeoHospitalInventory.My.Resources.Resources.document_print
+        Me.BtnOPCusAgeStatistic.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnOPCusAgeStatistic.ForeColor = System.Drawing.Color.White
+        Me.BtnOPCusAgeStatistic.Image = CType(resources.GetObject("BtnOPCusAgeStatistic.Image"), System.Drawing.Image)
         Me.BtnOPCusAgeStatistic.ImageAlign = System.Drawing.ContentAlignment.TopCenter
         Me.BtnOPCusAgeStatistic.Location = New System.Drawing.Point(19, 205)
         Me.BtnOPCusAgeStatistic.Name = "BtnOPCusAgeStatistic"
@@ -206,7 +221,7 @@ Partial Class UCOpticalShopStatistic
         Me.BtnOPCusAgeStatistic.TabIndex = 0
         Me.BtnOPCusAgeStatistic.Text = "Optical Shop Customer’s age Statistic"
         Me.BtnOPCusAgeStatistic.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
-        Me.BtnOPCusAgeStatistic.UseVisualStyleBackColor = True
+        Me.BtnOPCusAgeStatistic.UseVisualStyleBackColor = False
         '
         'SplitOpticalShopReport
         '
@@ -222,7 +237,7 @@ Partial Class UCOpticalShopStatistic
         '
         Me.SplitOpticalShopReport.Panel2.Controls.Add(Me.CRVReportViewer)
         Me.SplitOpticalShopReport.Panel2Collapsed = True
-        Me.SplitOpticalShopReport.Size = New System.Drawing.Size(901, 600)
+        Me.SplitOpticalShopReport.Size = New System.Drawing.Size(878, 600)
         Me.SplitOpticalShopReport.SplitterDistance = 596
         Me.SplitOpticalShopReport.TabIndex = 4
         '
@@ -233,7 +248,7 @@ Partial Class UCOpticalShopStatistic
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(901, 600)
+        Me.Panel1.Size = New System.Drawing.Size(878, 600)
         Me.Panel1.TabIndex = 0
         '
         'CVStaticPaymentFor
@@ -245,7 +260,7 @@ Partial Class UCOpticalShopStatistic
         Me.CVStaticPaymentFor.Location = New System.Drawing.Point(0, 76)
         Me.CVStaticPaymentFor.Name = "CVStaticPaymentFor"
         Me.CVStaticPaymentFor.SelectionFormula = ""
-        Me.CVStaticPaymentFor.Size = New System.Drawing.Size(901, 524)
+        Me.CVStaticPaymentFor.Size = New System.Drawing.Size(878, 524)
         Me.CVStaticPaymentFor.TabIndex = 1
         Me.CVStaticPaymentFor.ViewTimeSelectionFormula = ""
         '
@@ -263,7 +278,7 @@ Partial Class UCOpticalShopStatistic
         Me.GroupBox2.Dock = System.Windows.Forms.DockStyle.Top
         Me.GroupBox2.Location = New System.Drawing.Point(0, 0)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(901, 76)
+        Me.GroupBox2.Size = New System.Drawing.Size(878, 76)
         Me.GroupBox2.TabIndex = 0
         Me.GroupBox2.TabStop = False
         '
@@ -370,13 +385,19 @@ Partial Class UCOpticalShopStatistic
         '
         'BtnPrintPreviewPayfor
         '
+        Me.BtnPrintPreviewPayfor.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
         Me.BtnPrintPreviewPayfor.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnPrintPreviewPayfor.Location = New System.Drawing.Point(490, 18)
+        Me.BtnPrintPreviewPayfor.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnPrintPreviewPayfor.ForeColor = System.Drawing.Color.White
+        Me.BtnPrintPreviewPayfor.Image = CType(resources.GetObject("BtnPrintPreviewPayfor.Image"), System.Drawing.Image)
+        Me.BtnPrintPreviewPayfor.Location = New System.Drawing.Point(490, 16)
         Me.BtnPrintPreviewPayfor.Name = "BtnPrintPreviewPayfor"
-        Me.BtnPrintPreviewPayfor.Size = New System.Drawing.Size(125, 44)
+        Me.BtnPrintPreviewPayfor.Size = New System.Drawing.Size(146, 57)
         Me.BtnPrintPreviewPayfor.TabIndex = 12
         Me.BtnPrintPreviewPayfor.Text = "Print Preview"
-        Me.BtnPrintPreviewPayfor.UseVisualStyleBackColor = True
+        Me.BtnPrintPreviewPayfor.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.BtnPrintPreviewPayfor.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        Me.BtnPrintPreviewPayfor.UseVisualStyleBackColor = False
         '
         'CRVReportViewer
         '
@@ -418,6 +439,7 @@ Partial Class UCOpticalShopStatistic
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(236, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(241, Byte), Integer))
         Me.Controls.Add(Me.SplitContainer1)
         Me.Name = "UCOpticalShopStatistic"
         Me.Size = New System.Drawing.Size(1138, 600)

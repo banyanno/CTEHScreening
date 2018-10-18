@@ -28,9 +28,13 @@
         If Me.InvokeRequired Then
             Me.Invoke(New Action(AddressOf PrintReportUtiliy))
         Else
+            'If ChScreeningPlace.Checked = True Then
+            '    TableReport = DAScreening.SelectTotalScreeningByPlaceDtoD(CboScreeningPlace.Text, DateFrom.Value.Date, DateTo.Value.Date)
+            'Else
             If RadAllScreening.Checked = True Then
                 If ChScreeningPlace.Checked = True Then
-                    TableReport = DAScreening.SelectTotalRefractionWithPlace(DateFrom.Value.Date, DateTo.Value.Date, CboScreeningPlace.SelectedValue)
+                    'TableReport = DAScreening.SelectTotalRefractionWithPlace(DateFrom.Value.Date, DateTo.Value.Date, CboScreeningPlace.SelectedValue)
+                    TableReport = DAScreening.SelectTotalScreeningByPlaceDtoD(CboScreeningPlace.Text, DateFrom.Value.Date, DateTo.Value.Date)
                 Else
                     TableReport = DAScreening.SelectTotalScreening(DateFrom.Value.Date, DateTo.Value.Date)
                 End If
@@ -60,9 +64,11 @@
                     TableReport = DAScreening.SelectTotalOpticalShop(DateFrom.Value.Date, DateTo.Value.Date)
                 End If
             End If
+            'End If
+
         End If
 
-        
+
     End Sub
 
     Private Sub BGloadingReport_RunWorkerCompleted(ByVal sender As System.Object, ByVal e As System.ComponentModel.RunWorkerCompletedEventArgs) Handles BGloadingReport.RunWorkerCompleted

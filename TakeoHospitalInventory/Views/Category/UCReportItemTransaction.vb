@@ -30,12 +30,28 @@ Public Class UCReportItemTransaction
     Private cbCateSelectedValue As Integer
     Private MTakeoInventory As MainTakeoInventory
 
-
+    Dim MScreening As MainScreening
     Public Sub New(ByVal MTakeoInventory As MainTakeoInventory)
 
         ' This call is required by the Windows Form Designer.
         InitializeComponent()
         Me.MTakeoInventory = MTakeoInventory
+        CateDataAdapter = New DSCategoriesAndItemsTableAdapters.tblCategoryTableAdapter
+        ItemDataAdapter = New DSCategoriesAndItemsTableAdapters.VItemListTableAdapter
+        DepartDataAdapter = New DSDepartmentTableAdapters.tblDepartmentTableAdapter
+        VRunEndofDayResultDataAdapter = New DSEndofDayRunTableAdapters.VRunEndofDayResultTableAdapter
+        VRunEndofMonthDataAdapter = New DSEndofDayRunTableAdapters.VRunEndOfPeriodMonthTableAdapter
+        VRunEndOfMonthResultDataAdapter = New DSEndofDayRunTableAdapters.tblEndofMonthRunTableAdapter
+        ItemInDepartDataAdapter = New DSCategoriesAndItemsTableAdapters.VItemListInDepartTableAdapter
+        VDataStockAdjustmentDataAdapter = New DSDepartmentStockTableAdapters.VAdjustStockHistoryTableAdapter
+        ' Add any initialization after the InitializeComponent() call.
+
+    End Sub
+    Sub New(ByVal MScreening As MainScreening)
+
+        ' This call is required by the Windows Form Designer.
+        InitializeComponent()
+        Me.MScreening = MScreening
         CateDataAdapter = New DSCategoriesAndItemsTableAdapters.tblCategoryTableAdapter
         ItemDataAdapter = New DSCategoriesAndItemsTableAdapters.VItemListTableAdapter
         DepartDataAdapter = New DSDepartmentTableAdapters.tblDepartmentTableAdapter
@@ -114,7 +130,7 @@ Public Class UCReportItemTransaction
         If Me.InvokeRequired Then
             Me.Invoke(New MethodInvoker(AddressOf PreviewByCate))
         Else
-            MTakeoInventory.StatusLoading(True)
+            MScreening.StatusLoading(True, "Loading")
             DFrom = dptFromDate.Value.Date
             DTo = dptToDate.Value.Date
             Dim paramFields As New ParameterFields
@@ -289,7 +305,7 @@ Public Class UCReportItemTransaction
         If Me.InvokeRequired Then
             Me.Invoke(New MethodInvoker(AddressOf PreviewByItem))
         Else
-            MTakeoInventory.StatusLoading(True)
+            MScreening.StatusLoading(True, "Loading")
             DFrom = dptFromDate.Value.Date
             DTo = dptToDate.Value.Date
             Dim paramFields As New ParameterFields
@@ -450,7 +466,7 @@ Public Class UCReportItemTransaction
         If Me.InvokeRequired Then
             Me.Invoke(New MethodInvoker(AddressOf PreviewByDepart))
         Else
-            MTakeoInventory.StatusLoading(True)
+            MScreening.StatusLoading(True, "Loading")
             DFrom = dptFromDate.Value.Date
             DTo = dptToDate.Value.Date
             Dim paramFields As New ParameterFields
@@ -674,7 +690,7 @@ Public Class UCReportItemTransaction
             Me.Invoke(New MethodInvoker(AddressOf PreviewStockAdjustment))
         Else
             Try
-                MTakeoInventory.StatusLoading(True)
+                MScreening.StatusLoading(True, "Loading")
                 DFrom = dptFromDate.Value.Date
                 DTo = dptToDate.Value.Date
                 Dim stockAdjustmentDT As DataTable = VDataStockAdjustmentDataAdapter.GetDataAdjustStockInPeriodTime(CInt(cbDepart.SelectedValue), DFrom, DTo)
@@ -720,7 +736,7 @@ Public Class UCReportItemTransaction
     End Sub
 
     Private Sub BgLoadingReport_RunWorkerCompleted(ByVal sender As Object, ByVal e As System.ComponentModel.RunWorkerCompletedEventArgs) Handles BgLoadingReport.RunWorkerCompleted
-        MTakeoInventory.StatusLoading(False)
+        MScreening.StatusLoading(False, "")
     End Sub
 
     Private Sub RadCate_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RadCate.CheckedChanged

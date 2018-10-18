@@ -22,8 +22,10 @@ Partial Class UCOpticalshopIncomStatement
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim GridReceipt_DesignTimeLayout As Janus.Windows.GridEX.GridEXLayout = New Janus.Windows.GridEX.GridEXLayout
+        Me.components = New System.ComponentModel.Container
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(UCOpticalshopIncomStatement))
+        Dim GridReceipt_DesignTimeLayout As Janus.Windows.GridEX.GridEXLayout = New Janus.Windows.GridEX.GridEXLayout
+        Dim JanusColorScheme1 As Janus.Windows.Common.JanusColorScheme = New Janus.Windows.Common.JanusColorScheme
         Me.GroupBox1 = New System.Windows.Forms.GroupBox
         Me.RadReportNil = New System.Windows.Forms.RadioButton
         Me.RadReceiptNil = New System.Windows.Forms.RadioButton
@@ -40,6 +42,7 @@ Partial Class UCOpticalshopIncomStatement
         Me.GridReceipt = New Janus.Windows.GridEX.GridEX
         Me.CryViewOpticalshopIncome = New CrystalDecisions.Windows.Forms.CrystalReportViewer
         Me.BgLoadingReport = New System.ComponentModel.BackgroundWorker
+        Me.VSForOpticalshop = New Janus.Windows.Common.VisualStyleManager(Me.components)
         Me.GroupBox1.SuspendLayout()
         Me.SplitContainerIncomstatement.Panel1.SuspendLayout()
         Me.SplitContainerIncomstatement.Panel2.SuspendLayout()
@@ -63,7 +66,7 @@ Partial Class UCOpticalshopIncomStatement
         Me.GroupBox1.Dock = System.Windows.Forms.DockStyle.Top
         Me.GroupBox1.Location = New System.Drawing.Point(0, 0)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(874, 62)
+        Me.GroupBox1.Size = New System.Drawing.Size(1149, 62)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Optical Shop Income Statement"
@@ -132,13 +135,18 @@ Partial Class UCOpticalshopIncomStatement
         '
         'BtnPrintPreview
         '
+        Me.BtnPrintPreview.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
         Me.BtnPrintPreview.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnPrintPreview.Location = New System.Drawing.Point(330, 22)
+        Me.BtnPrintPreview.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnPrintPreview.ForeColor = System.Drawing.Color.White
+        Me.BtnPrintPreview.Image = CType(resources.GetObject("BtnPrintPreview.Image"), System.Drawing.Image)
+        Me.BtnPrintPreview.Location = New System.Drawing.Point(327, 16)
         Me.BtnPrintPreview.Name = "BtnPrintPreview"
-        Me.BtnPrintPreview.Size = New System.Drawing.Size(126, 32)
+        Me.BtnPrintPreview.Size = New System.Drawing.Size(131, 39)
         Me.BtnPrintPreview.TabIndex = 2
         Me.BtnPrintPreview.Text = "Print Preview"
-        Me.BtnPrintPreview.UseVisualStyleBackColor = True
+        Me.BtnPrintPreview.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.BtnPrintPreview.UseVisualStyleBackColor = False
         '
         'DateTo
         '
@@ -192,7 +200,7 @@ Partial Class UCOpticalshopIncomStatement
         '
         Me.SplitContainerIncomstatement.Panel2.Controls.Add(Me.CryViewOpticalshopIncome)
         Me.SplitContainerIncomstatement.Panel2Collapsed = True
-        Me.SplitContainerIncomstatement.Size = New System.Drawing.Size(874, 532)
+        Me.SplitContainerIncomstatement.Size = New System.Drawing.Size(1149, 532)
         Me.SplitContainerIncomstatement.SplitterDistance = 220
         Me.SplitContainerIncomstatement.TabIndex = 1
         '
@@ -203,17 +211,21 @@ Partial Class UCOpticalshopIncomStatement
         Me.GridReceipt.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GridReceipt.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!)
         Me.GridReceipt.GroupByBoxVisible = False
+        Me.GridReceipt.HeaderFormatStyle.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(67, Byte), Integer), CType(CType(82, Byte), Integer))
+        Me.GridReceipt.HeaderFormatStyle.ForeColor = System.Drawing.Color.White
         Me.GridReceipt.HideSelection = Janus.Windows.GridEX.HideSelection.Highlight
         Me.GridReceipt.Location = New System.Drawing.Point(0, 0)
         Me.GridReceipt.Margin = New System.Windows.Forms.Padding(2)
         Me.GridReceipt.Name = "GridReceipt"
+        Me.GridReceipt.Office2007ColorScheme = Janus.Windows.GridEX.Office2007ColorScheme.Silver
+        Me.GridReceipt.Office2007CustomColor = System.Drawing.SystemColors.Control
         Me.GridReceipt.RecordNavigator = True
         Me.GridReceipt.RowHeaderContent = Janus.Windows.GridEX.RowHeaderContent.RowPosition
         Me.GridReceipt.RowHeaders = Janus.Windows.GridEX.InheritableBoolean.[True]
-        Me.GridReceipt.Size = New System.Drawing.Size(874, 532)
+        Me.GridReceipt.Size = New System.Drawing.Size(1149, 532)
         Me.GridReceipt.TabIndex = 4
         Me.GridReceipt.TotalRow = Janus.Windows.GridEX.InheritableBoolean.[True]
-        Me.GridReceipt.VisualStyle = Janus.Windows.GridEX.VisualStyle.VS2005
+        Me.GridReceipt.VisualStyleManager = Me.VSForOpticalshop
         '
         'CryViewOpticalshopIncome
         '
@@ -236,6 +248,30 @@ Partial Class UCOpticalshopIncomStatement
         Me.BgLoadingReport.WorkerReportsProgress = True
         Me.BgLoadingReport.WorkerSupportsCancellation = True
         '
+        'VSForOpticalshop
+        '
+        JanusColorScheme1.ActiveCaptionColor = System.Drawing.Color.Tomato
+        JanusColorScheme1.ActiveCaptionTextColor = System.Drawing.Color.White
+        JanusColorScheme1.ControlDarkColor = System.Drawing.SystemColors.Control
+        JanusColorScheme1.ControlTextColor = System.Drawing.Color.Black
+        JanusColorScheme1.DisabledColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(150, Byte), Integer), CType(CType(102, Byte), Integer))
+        JanusColorScheme1.GrayTextColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
+        JanusColorScheme1.HighlightColor = System.Drawing.Color.FromArgb(CType(CType(43, Byte), Integer), CType(CType(99, Byte), Integer), CType(CType(67, Byte), Integer))
+        JanusColorScheme1.HighlightTextColor = System.Drawing.Color.WhiteSmoke
+        JanusColorScheme1.InfoColor = System.Drawing.Color.WhiteSmoke
+        JanusColorScheme1.InfoTextColor = System.Drawing.Color.FloralWhite
+        JanusColorScheme1.MenuColor = System.Drawing.SystemColors.ActiveCaption
+        JanusColorScheme1.MenuTextColor = System.Drawing.Color.DimGray
+        JanusColorScheme1.Name = "Header"
+        JanusColorScheme1.Office2007ColorScheme = Janus.Windows.Common.Office2007ColorScheme.Silver
+        JanusColorScheme1.Office2007CustomColor = System.Drawing.SystemColors.Control
+        JanusColorScheme1.UseThemes = False
+        JanusColorScheme1.VisualStyle = Janus.Windows.Common.VisualStyle.Standard
+        JanusColorScheme1.WindowColor = System.Drawing.Color.White
+        JanusColorScheme1.WindowTextColor = System.Drawing.Color.DarkBlue
+        Me.VSForOpticalshop.ColorSchemes.Add(JanusColorScheme1)
+        Me.VSForOpticalshop.DefaultColorScheme = "Header"
+        '
         'UCOpticalshopIncomStatement
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -243,7 +279,7 @@ Partial Class UCOpticalshopIncomStatement
         Me.Controls.Add(Me.SplitContainerIncomstatement)
         Me.Controls.Add(Me.GroupBox1)
         Me.Name = "UCOpticalshopIncomStatement"
-        Me.Size = New System.Drawing.Size(874, 594)
+        Me.Size = New System.Drawing.Size(1149, 594)
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.SplitContainerIncomstatement.Panel1.ResumeLayout(False)
@@ -269,5 +305,6 @@ Partial Class UCOpticalshopIncomStatement
     Friend WithEvents BgLoadingReport As System.ComponentModel.BackgroundWorker
     Friend WithEvents RadReportNil As System.Windows.Forms.RadioButton
     Friend WithEvents RadReceiptNil As System.Windows.Forms.RadioButton
+    Friend WithEvents VSForOpticalshop As Janus.Windows.Common.VisualStyleManager
 
 End Class

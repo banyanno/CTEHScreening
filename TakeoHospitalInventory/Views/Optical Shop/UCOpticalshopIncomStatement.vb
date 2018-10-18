@@ -2,6 +2,7 @@
     Dim DAOpticalShopIncomeS As New DSOpticalShopTableAdapters.VMainReceiptDetailTableAdapter
     Dim ObjReportIncome As New CryIncomeOpticalShop
     Dim MTakeoInventory As MainTakeoInventory
+    Dim MScreening As MainScreening
     Sub New(ByVal MainForm As MainTakeoInventory)
 
         ' This call is required by the Windows Form Designer.
@@ -9,16 +10,25 @@
         MTakeoInventory = MainForm
         ' Add any initialization after the InitializeComponent() call.
     End Sub
+    Sub New(ByVal MScreening As MainScreening)
+
+        ' This call is required by the Windows Form Designer.
+        InitializeComponent()
+        Me.MScreening = MScreening
+        ' Add any initialization after the InitializeComponent() call.
+
+    End Sub
     Private Sub BtnPrintPreview_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnPrintPreview.Click
         Try
             RadAsTable.Checked = True
-            MTakeoInventory.StatusLoading(True)
+            MScreening.StatusLoading(True, "Loading")
             BgLoadingReport.RunWorkerAsync()
         Catch ex As Exception
 
         End Try
        
     End Sub
+
     Sub LoadingAndPreviewReport()
         If Me.InvokeRequired Then
             Me.Invoke(New MethodInvoker(AddressOf LoadingAndPreviewReport))
@@ -73,7 +83,7 @@
 
     Private Sub RadViewReport_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RadViewReport.CheckedChanged
         Try
-            MTakeoInventory.StatusLoading(True)
+            MScreening.StatusLoading(True, "Loading")
             BgLoadingReport.RunWorkerAsync()
         Catch ex As Exception
 
@@ -82,7 +92,7 @@
 
     Private Sub RadAsTable_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RadAsTable.CheckedChanged
         Try
-            MTakeoInventory.StatusLoading(True)
+            MScreening.StatusLoading(True, "Loading")
             BgLoadingReport.RunWorkerAsync()
         Catch ex As Exception
 
@@ -91,7 +101,7 @@
 
     Private Sub RadReceiptCancel_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RadReceiptCancel.CheckedChanged
         Try
-            MTakeoInventory.StatusLoading(True)
+            MScreening.StatusLoading(True, "Loading")
             BgLoadingReport.RunWorkerAsync()
         Catch ex As Exception
 
@@ -101,7 +111,7 @@
 
     Private Sub RadReportCancel_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RadReportCancel.CheckedChanged
         Try
-            MTakeoInventory.StatusLoading(True)
+            MScreening.StatusLoading(True, "Loading")
             BgLoadingReport.RunWorkerAsync()
         Catch ex As Exception
 
@@ -114,12 +124,12 @@
     End Sub
 
     Private Sub BgLoadingReport_RunWorkerCompleted(ByVal sender As System.Object, ByVal e As System.ComponentModel.RunWorkerCompletedEventArgs) Handles BgLoadingReport.RunWorkerCompleted
-        MTakeoInventory.StatusLoading(False)
+        MScreening.StatusLoading(False, "")
     End Sub
 
     Private Sub RadReceiptNil_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RadReceiptNil.CheckedChanged
         Try
-            MTakeoInventory.StatusLoading(True)
+            MScreening.StatusLoading(True, "Loading")
             BgLoadingReport.RunWorkerAsync()
         Catch ex As Exception
 
@@ -128,7 +138,7 @@
 
     Private Sub RadReportNil_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RadReportNil.CheckedChanged
         Try
-            MTakeoInventory.StatusLoading(True)
+            MScreening.StatusLoading(True, "Loading")
             BgLoadingReport.RunWorkerAsync()
         Catch ex As Exception
 

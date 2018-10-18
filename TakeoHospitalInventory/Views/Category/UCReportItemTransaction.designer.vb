@@ -23,6 +23,7 @@ Partial Class UCReportItemTransaction
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(UCReportItemTransaction))
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer
         Me.Label1 = New System.Windows.Forms.Label
         Me.Label3 = New System.Windows.Forms.Label
@@ -35,6 +36,7 @@ Partial Class UCReportItemTransaction
         Me.rbMontly = New System.Windows.Forms.RadioButton
         Me.rbDaily = New System.Windows.Forms.RadioButton
         Me.gbDepart = New System.Windows.Forms.GroupBox
+        Me.ChSoldOptical = New System.Windows.Forms.CheckBox
         Me.RadItem = New System.Windows.Forms.RadioButton
         Me.btnPreviewByCate = New System.Windows.Forms.Button
         Me.RadCate = New System.Windows.Forms.RadioButton
@@ -51,7 +53,6 @@ Partial Class UCReportItemTransaction
         Me.BgLoadingReport = New System.ComponentModel.BackgroundWorker
         Me.ContainerLoading = New Janus.Windows.Ribbon.ContainerControlCommand
         Me.ErrReport = New System.Windows.Forms.ErrorProvider(Me.components)
-        Me.ChSoldOptical = New System.Windows.Forms.CheckBox
         Me.SplitContainer1.Panel1.SuspendLayout()
         Me.SplitContainer1.Panel2.SuspendLayout()
         Me.SplitContainer1.SuspendLayout()
@@ -65,6 +66,7 @@ Partial Class UCReportItemTransaction
         'SplitContainer1
         '
         Me.SplitContainer1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.SplitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel1
         Me.SplitContainer1.Location = New System.Drawing.Point(0, 0)
         Me.SplitContainer1.Name = "SplitContainer1"
         Me.SplitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal
@@ -79,7 +81,7 @@ Partial Class UCReportItemTransaction
         'SplitContainer1.Panel2
         '
         Me.SplitContainer1.Panel2.Controls.Add(Me.CRVItemTransaction)
-        Me.SplitContainer1.Size = New System.Drawing.Size(952, 549)
+        Me.SplitContainer1.Size = New System.Drawing.Size(1207, 549)
         Me.SplitContainer1.SplitterDistance = 192
         Me.SplitContainer1.TabIndex = 0
         '
@@ -216,6 +218,16 @@ Partial Class UCReportItemTransaction
         Me.gbDepart.TabStop = False
         Me.gbDepart.Text = "Department Item Transaction Report"
         '
+        'ChSoldOptical
+        '
+        Me.ChSoldOptical.AutoSize = True
+        Me.ChSoldOptical.Location = New System.Drawing.Point(298, 146)
+        Me.ChSoldOptical.Name = "ChSoldOptical"
+        Me.ChSoldOptical.Size = New System.Drawing.Size(101, 17)
+        Me.ChSoldOptical.TabIndex = 23
+        Me.ChSoldOptical.Text = "Item Sold in Opt"
+        Me.ChSoldOptical.UseVisualStyleBackColor = True
+        '
         'RadItem
         '
         Me.RadItem.AutoSize = True
@@ -228,16 +240,19 @@ Partial Class UCReportItemTransaction
         '
         'btnPreviewByCate
         '
+        Me.btnPreviewByCate.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
         Me.btnPreviewByCate.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnPreviewByCate.Enabled = False
-        Me.btnPreviewByCate.Image = Global.TakeoHospitalInventory.My.Resources.Resources.preview
+        Me.btnPreviewByCate.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnPreviewByCate.ForeColor = System.Drawing.Color.White
+        Me.btnPreviewByCate.Image = CType(resources.GetObject("btnPreviewByCate.Image"), System.Drawing.Image)
         Me.btnPreviewByCate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnPreviewByCate.Location = New System.Drawing.Point(348, 54)
         Me.btnPreviewByCate.Name = "btnPreviewByCate"
-        Me.btnPreviewByCate.Size = New System.Drawing.Size(93, 30)
+        Me.btnPreviewByCate.Size = New System.Drawing.Size(123, 37)
         Me.btnPreviewByCate.TabIndex = 21
         Me.btnPreviewByCate.Text = "Preview"
-        Me.btnPreviewByCate.UseVisualStyleBackColor = True
+        Me.btnPreviewByCate.UseVisualStyleBackColor = False
         '
         'RadCate
         '
@@ -251,50 +266,59 @@ Partial Class UCReportItemTransaction
         '
         'btnPreviewByItem
         '
+        Me.btnPreviewByItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
         Me.btnPreviewByItem.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnPreviewByItem.Enabled = False
-        Me.btnPreviewByItem.Image = Global.TakeoHospitalInventory.My.Resources.Resources.preview
+        Me.btnPreviewByItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnPreviewByItem.ForeColor = System.Drawing.Color.White
+        Me.btnPreviewByItem.Image = CType(resources.GetObject("btnPreviewByItem.Image"), System.Drawing.Image)
         Me.btnPreviewByItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnPreviewByItem.Location = New System.Drawing.Point(348, 91)
+        Me.btnPreviewByItem.Location = New System.Drawing.Point(348, 94)
         Me.btnPreviewByItem.Name = "btnPreviewByItem"
-        Me.btnPreviewByItem.Size = New System.Drawing.Size(93, 31)
+        Me.btnPreviewByItem.Size = New System.Drawing.Size(123, 38)
         Me.btnPreviewByItem.TabIndex = 21
         Me.btnPreviewByItem.Text = "Preview"
-        Me.btnPreviewByItem.UseVisualStyleBackColor = True
+        Me.btnPreviewByItem.UseVisualStyleBackColor = False
         '
         'btnStockAdjustment
         '
+        Me.btnStockAdjustment.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
         Me.btnStockAdjustment.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnStockAdjustment.Image = Global.TakeoHospitalInventory.My.Resources.Resources.preview
+        Me.btnStockAdjustment.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnStockAdjustment.ForeColor = System.Drawing.Color.White
+        Me.btnStockAdjustment.Image = CType(resources.GetObject("btnStockAdjustment.Image"), System.Drawing.Image)
         Me.btnStockAdjustment.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnStockAdjustment.Location = New System.Drawing.Point(6, 135)
         Me.btnStockAdjustment.Name = "btnStockAdjustment"
-        Me.btnStockAdjustment.Size = New System.Drawing.Size(237, 34)
+        Me.btnStockAdjustment.Size = New System.Drawing.Size(260, 37)
         Me.btnStockAdjustment.TabIndex = 22
         Me.btnStockAdjustment.Text = "Preview Department Stock Adjustment"
-        Me.btnStockAdjustment.UseVisualStyleBackColor = True
+        Me.btnStockAdjustment.UseVisualStyleBackColor = False
         '
         'cbCate
         '
         Me.cbCate.Enabled = False
         Me.cbCate.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
         Me.cbCate.FormattingEnabled = True
-        Me.cbCate.Location = New System.Drawing.Point(93, 56)
+        Me.cbCate.Location = New System.Drawing.Point(93, 63)
         Me.cbCate.Name = "cbCate"
         Me.cbCate.Size = New System.Drawing.Size(238, 28)
         Me.cbCate.TabIndex = 19
         '
         'btnPreviewByDepart
         '
+        Me.btnPreviewByDepart.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
         Me.btnPreviewByDepart.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnPreviewByDepart.Image = Global.TakeoHospitalInventory.My.Resources.Resources.preview
+        Me.btnPreviewByDepart.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnPreviewByDepart.ForeColor = System.Drawing.Color.White
+        Me.btnPreviewByDepart.Image = CType(resources.GetObject("btnPreviewByDepart.Image"), System.Drawing.Image)
         Me.btnPreviewByDepart.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnPreviewByDepart.Location = New System.Drawing.Point(348, 18)
+        Me.btnPreviewByDepart.Location = New System.Drawing.Point(348, 12)
         Me.btnPreviewByDepart.Name = "btnPreviewByDepart"
-        Me.btnPreviewByDepart.Size = New System.Drawing.Size(93, 31)
+        Me.btnPreviewByDepart.Size = New System.Drawing.Size(123, 38)
         Me.btnPreviewByDepart.TabIndex = 21
         Me.btnPreviewByDepart.Text = "Preview"
-        Me.btnPreviewByDepart.UseVisualStyleBackColor = True
+        Me.btnPreviewByDepart.UseVisualStyleBackColor = False
         '
         'cbItems
         '
@@ -303,7 +327,7 @@ Partial Class UCReportItemTransaction
         Me.cbItems.Enabled = False
         Me.cbItems.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
         Me.cbItems.FormattingEnabled = True
-        Me.cbItems.Location = New System.Drawing.Point(93, 92)
+        Me.cbItems.Location = New System.Drawing.Point(93, 104)
         Me.cbItems.Name = "cbItems"
         Me.cbItems.Size = New System.Drawing.Size(238, 28)
         Me.cbItems.TabIndex = 19
@@ -321,7 +345,7 @@ Partial Class UCReportItemTransaction
         '
         Me.cbDepart.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
         Me.cbDepart.FormattingEnabled = True
-        Me.cbDepart.Location = New System.Drawing.Point(93, 19)
+        Me.cbDepart.Location = New System.Drawing.Point(93, 22)
         Me.cbDepart.Name = "cbDepart"
         Me.cbDepart.Size = New System.Drawing.Size(238, 28)
         Me.cbDepart.TabIndex = 19
@@ -338,7 +362,7 @@ Partial Class UCReportItemTransaction
         Me.CRVItemTransaction.SelectionFormula = ""
         Me.CRVItemTransaction.ShowGroupTreeButton = False
         Me.CRVItemTransaction.ShowRefreshButton = False
-        Me.CRVItemTransaction.Size = New System.Drawing.Size(952, 353)
+        Me.CRVItemTransaction.Size = New System.Drawing.Size(1207, 353)
         Me.CRVItemTransaction.TabIndex = 7
         Me.CRVItemTransaction.ViewTimeSelectionFormula = ""
         '
@@ -380,16 +404,6 @@ Partial Class UCReportItemTransaction
         '
         Me.ErrReport.ContainerControl = Me
         '
-        'ChSoldOptical
-        '
-        Me.ChSoldOptical.AutoSize = True
-        Me.ChSoldOptical.Location = New System.Drawing.Point(262, 145)
-        Me.ChSoldOptical.Name = "ChSoldOptical"
-        Me.ChSoldOptical.Size = New System.Drawing.Size(101, 17)
-        Me.ChSoldOptical.TabIndex = 23
-        Me.ChSoldOptical.Text = "Item Sold in Opt"
-        Me.ChSoldOptical.UseVisualStyleBackColor = True
-        '
         'UCReportItemTransaction
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -397,7 +411,7 @@ Partial Class UCReportItemTransaction
         Me.BackColor = System.Drawing.SystemColors.Control
         Me.Controls.Add(Me.SplitContainer1)
         Me.Name = "UCReportItemTransaction"
-        Me.Size = New System.Drawing.Size(952, 549)
+        Me.Size = New System.Drawing.Size(1207, 549)
         Me.SplitContainer1.Panel1.ResumeLayout(False)
         Me.SplitContainer1.Panel1.PerformLayout()
         Me.SplitContainer1.Panel2.ResumeLayout(False)
