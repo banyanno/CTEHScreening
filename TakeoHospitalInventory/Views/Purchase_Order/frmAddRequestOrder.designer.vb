@@ -23,7 +23,8 @@ Partial Class frmAddRequestOrder
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
+        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
+        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmAddRequestOrder))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox
         Me.rtbComment = New System.Windows.Forms.RichTextBox
@@ -107,9 +108,10 @@ Partial Class frmAddRequestOrder
         'rtbComment
         '
         Me.rtbComment.BackColor = System.Drawing.SystemColors.Window
+        Me.rtbComment.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.rtbComment.Location = New System.Drawing.Point(563, 174)
         Me.rtbComment.Name = "rtbComment"
-        Me.rtbComment.Size = New System.Drawing.Size(345, 96)
+        Me.rtbComment.Size = New System.Drawing.Size(345, 89)
         Me.rtbComment.TabIndex = 18
         Me.rtbComment.Text = ""
         Me.rtbComment.Visible = False
@@ -215,6 +217,7 @@ Partial Class frmAddRequestOrder
         'rtbDes
         '
         Me.rtbDes.BackColor = System.Drawing.SystemColors.Window
+        Me.rtbDes.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.rtbDes.Location = New System.Drawing.Point(141, 178)
         Me.rtbDes.Name = "rtbDes"
         Me.rtbDes.Size = New System.Drawing.Size(395, 86)
@@ -244,7 +247,6 @@ Partial Class frmAddRequestOrder
         'cbDepart
         '
         Me.cbDepart.BackColor = System.Drawing.SystemColors.Window
-        Me.cbDepart.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.cbDepart.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
         Me.cbDepart.ForeColor = System.Drawing.SystemColors.InfoText
         Me.cbDepart.Location = New System.Drawing.Point(141, 145)
@@ -319,10 +321,21 @@ Partial Class frmAddRequestOrder
         Me.DGVRequestItemsDetail.AllowUserToAddRows = False
         Me.DGVRequestItemsDetail.BackgroundColor = System.Drawing.SystemColors.Window
         Me.DGVRequestItemsDetail.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.DGVRequestItemsDetail.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText
+        Me.DGVRequestItemsDetail.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
+        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(67, Byte), Integer), CType(CType(82, Byte), Integer))
+        DataGridViewCellStyle11.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle11.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DGVRequestItemsDetail.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle11
         Me.DGVRequestItemsDetail.ColumnHeadersHeight = 30
         Me.DGVRequestItemsDetail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.DGVRequestItemsDetail.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.cItemNo, Me.cItemName, Me.cCategory, Me.cUnitItem, Me.cContaining, Me.cInStock, Me.cRQuantity, Me.cBarcode})
         Me.DGVRequestItemsDetail.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.DGVRequestItemsDetail.EnableHeadersVisualStyles = False
         Me.DGVRequestItemsDetail.Location = New System.Drawing.Point(3, 41)
         Me.DGVRequestItemsDetail.Name = "DGVRequestItemsDetail"
         Me.DGVRequestItemsDetail.RowTemplate.Height = 24
@@ -379,9 +392,9 @@ Partial Class frmAddRequestOrder
         'cRQuantity
         '
         Me.cRQuantity.DataPropertyName = "Quantity"
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.cRQuantity.DefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.cRQuantity.DefaultCellStyle = DataGridViewCellStyle12
         Me.cRQuantity.HeaderText = "Request Quantity"
         Me.cRQuantity.Name = "cRQuantity"
         Me.cRQuantity.Width = 140
@@ -394,6 +407,7 @@ Partial Class frmAddRequestOrder
         '
         'ToolStrip1
         '
+        Me.ToolStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(67, Byte), Integer), CType(CType(82, Byte), Integer))
         Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.btnAddItemReDetail1, Me.ToolStripSeparator1, Me.btnRemoveItem1, Me.ToolStripSeparator2, Me.ToolStripLabel1, Me.lbNumEntries})
         Me.ToolStrip1.Location = New System.Drawing.Point(3, 16)
         Me.ToolStrip1.Name = "ToolStrip1"
@@ -403,10 +417,11 @@ Partial Class frmAddRequestOrder
         '
         'btnAddItemReDetail1
         '
-        Me.btnAddItemReDetail1.Image = Global.TakeoHospitalInventory.My.Resources.Resources._new
+        Me.btnAddItemReDetail1.ForeColor = System.Drawing.Color.White
+        Me.btnAddItemReDetail1.Image = CType(resources.GetObject("btnAddItemReDetail1.Image"), System.Drawing.Image)
         Me.btnAddItemReDetail1.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btnAddItemReDetail1.Name = "btnAddItemReDetail1"
-        Me.btnAddItemReDetail1.Size = New System.Drawing.Size(149, 22)
+        Me.btnAddItemReDetail1.Size = New System.Drawing.Size(159, 22)
         Me.btnAddItemReDetail1.Text = "Add Items Request Detail"
         '
         'ToolStripSeparator1
@@ -416,10 +431,11 @@ Partial Class frmAddRequestOrder
         '
         'btnRemoveItem1
         '
-        Me.btnRemoveItem1.Image = Global.TakeoHospitalInventory.My.Resources.Resources.Close1
+        Me.btnRemoveItem1.ForeColor = System.Drawing.Color.White
+        Me.btnRemoveItem1.Image = CType(resources.GetObject("btnRemoveItem1.Image"), System.Drawing.Image)
         Me.btnRemoveItem1.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btnRemoveItem1.Name = "btnRemoveItem1"
-        Me.btnRemoveItem1.Size = New System.Drawing.Size(208, 22)
+        Me.btnRemoveItem1.Size = New System.Drawing.Size(222, 22)
         Me.btnRemoveItem1.Text = "Remove Selected Item Request Detail"
         '
         'ToolStripSeparator2
@@ -429,12 +445,14 @@ Partial Class frmAddRequestOrder
         '
         'ToolStripLabel1
         '
+        Me.ToolStripLabel1.ForeColor = System.Drawing.Color.White
         Me.ToolStripLabel1.Name = "ToolStripLabel1"
-        Me.ToolStripLabel1.Size = New System.Drawing.Size(100, 22)
+        Me.ToolStripLabel1.Size = New System.Drawing.Size(109, 22)
         Me.ToolStripLabel1.Text = "Number of entries :"
         '
         'lbNumEntries
         '
+        Me.lbNumEntries.ForeColor = System.Drawing.Color.White
         Me.lbNumEntries.Name = "lbNumEntries"
         Me.lbNumEntries.Size = New System.Drawing.Size(13, 22)
         Me.lbNumEntries.Text = "0"
@@ -446,38 +464,42 @@ Partial Class frmAddRequestOrder
         'btnCancel
         '
         Me.btnCancel.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnCancel.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
         Me.btnCancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnCancel.ForeColor = System.Drawing.SystemColors.MenuText
-        Me.btnCancel.Image = Global.TakeoHospitalInventory.My.Resources.Resources.cancel
+        Me.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCancel.ForeColor = System.Drawing.Color.White
+        Me.btnCancel.Image = CType(resources.GetObject("btnCancel.Image"), System.Drawing.Image)
         Me.btnCancel.Location = New System.Drawing.Point(987, 569)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.Size = New System.Drawing.Size(85, 41)
         Me.btnCancel.TabIndex = 37
         Me.btnCancel.Text = "&Cancel"
         Me.btnCancel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnCancel.UseVisualStyleBackColor = True
+        Me.btnCancel.UseVisualStyleBackColor = False
         '
         'btnSave
         '
         Me.btnSave.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnSave.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
         Me.btnSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.btnSave.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnSave.ForeColor = System.Drawing.SystemColors.MenuText
-        Me.btnSave.Image = Global.TakeoHospitalInventory.My.Resources.Resources.save
+        Me.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSave.ForeColor = System.Drawing.Color.White
+        Me.btnSave.Image = CType(resources.GetObject("btnSave.Image"), System.Drawing.Image)
         Me.btnSave.Location = New System.Drawing.Point(896, 570)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(85, 41)
         Me.btnSave.TabIndex = 36
         Me.btnSave.Text = "&Save"
         Me.btnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnSave.UseVisualStyleBackColor = True
+        Me.btnSave.UseVisualStyleBackColor = False
         '
         'frmAddRequestOrder
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.SystemColors.Control
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(236, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(241, Byte), Integer))
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(1087, 614)
         Me.Controls.Add(Me.btnCancel)

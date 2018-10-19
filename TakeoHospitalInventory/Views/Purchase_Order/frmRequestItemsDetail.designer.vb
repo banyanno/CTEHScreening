@@ -22,9 +22,12 @@ Partial Class frmRequestItemsDetail
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
+        Me.components = New System.ComponentModel.Container
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
         Dim GridItemUsed_DesignTimeLayout As Janus.Windows.GridEX.GridEXLayout = New Janus.Windows.GridEX.GridEXLayout
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmRequestItemsDetail))
+        Dim JanusColorScheme2 As Janus.Windows.Common.JanusColorScheme = New Janus.Windows.Common.JanusColorScheme
         Me.Label1 = New System.Windows.Forms.Label
         Me.btnFind = New System.Windows.Forms.Button
         Me.DGVItemInStock = New System.Windows.Forms.DataGridView
@@ -54,6 +57,7 @@ Partial Class frmRequestItemsDetail
         Me.Label3 = New System.Windows.Forms.Label
         Me.Label2 = New System.Windows.Forms.Label
         Me.ChItemUsed = New System.Windows.Forms.CheckBox
+        Me.VSForOpticalshop = New Janus.Windows.Common.VisualStyleManager(Me.components)
         CType(Me.DGVItemInStock, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainer1.Panel1.SuspendLayout()
         Me.SplitContainer1.Panel2.SuspendLayout()
@@ -75,13 +79,17 @@ Partial Class frmRequestItemsDetail
         '
         'btnFind
         '
+        Me.btnFind.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
         Me.btnFind.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnFind.FlatAppearance.BorderSize = 0
+        Me.btnFind.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnFind.ForeColor = System.Drawing.Color.White
         Me.btnFind.Location = New System.Drawing.Point(543, 17)
         Me.btnFind.Name = "btnFind"
         Me.btnFind.Size = New System.Drawing.Size(75, 29)
         Me.btnFind.TabIndex = 7
         Me.btnFind.Text = "&Find"
-        Me.btnFind.UseVisualStyleBackColor = True
+        Me.btnFind.UseVisualStyleBackColor = False
         '
         'DGVItemInStock
         '
@@ -91,9 +99,20 @@ Partial Class frmRequestItemsDetail
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.DGVItemInStock.BackgroundColor = System.Drawing.SystemColors.Window
         Me.DGVItemInStock.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.DGVItemInStock.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText
+        Me.DGVItemInStock.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(67, Byte), Integer), CType(CType(82, Byte), Integer))
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DGVItemInStock.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.DGVItemInStock.ColumnHeadersHeight = 35
         Me.DGVItemInStock.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.DGVItemInStock.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.cChecked, Me.cItemNo, Me.cItemName, Me.cCategory, Me.cUnitItem, Me.cContaining, Me.cInStock, Me.cRQuantity, Me.cBarcode, Me.cLaboratory, Me.UnitsInStock, Me.DepartID})
+        Me.DGVItemInStock.EnableHeadersVisualStyles = False
         Me.DGVItemInStock.Location = New System.Drawing.Point(10, 78)
         Me.DGVItemInStock.MultiSelect = False
         Me.DGVItemInStock.Name = "DGVItemInStock"
@@ -174,10 +193,10 @@ Partial Class frmRequestItemsDetail
         'UnitsInStock
         '
         Me.UnitsInStock.DataPropertyName = "UnitsInStock"
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.UnitsInStock.DefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.UnitsInStock.DefaultCellStyle = DataGridViewCellStyle4
         Me.UnitsInStock.HeaderText = "Units InStock"
         Me.UnitsInStock.Name = "UnitsInStock"
         Me.UnitsInStock.ReadOnly = True
@@ -194,11 +213,11 @@ Partial Class frmRequestItemsDetail
         '
         Me.LblItemInstock.AutoSize = True
         Me.LblItemInstock.BackColor = System.Drawing.SystemColors.Control
-        Me.LblItemInstock.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblItemInstock.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LblItemInstock.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.LblItemInstock.Location = New System.Drawing.Point(6, 55)
         Me.LblItemInstock.Name = "LblItemInstock"
-        Me.LblItemInstock.Size = New System.Drawing.Size(159, 20)
+        Me.LblItemInstock.Size = New System.Drawing.Size(152, 20)
         Me.LblItemInstock.TabIndex = 9
         Me.LblItemInstock.Tag = "C"
         Me.LblItemInstock.Text = "Items available in stock "
@@ -206,24 +225,32 @@ Partial Class frmRequestItemsDetail
         'btnOK
         '
         Me.btnOK.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnOK.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
         Me.btnOK.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnOK.FlatAppearance.BorderSize = 0
+        Me.btnOK.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnOK.ForeColor = System.Drawing.Color.White
         Me.btnOK.Location = New System.Drawing.Point(841, 561)
         Me.btnOK.Name = "btnOK"
         Me.btnOK.Size = New System.Drawing.Size(83, 31)
         Me.btnOK.TabIndex = 15
         Me.btnOK.Text = "OK"
-        Me.btnOK.UseVisualStyleBackColor = True
+        Me.btnOK.UseVisualStyleBackColor = False
         '
         'btnCancel
         '
         Me.btnCancel.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnCancel.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
         Me.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnCancel.FlatAppearance.BorderSize = 0
+        Me.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCancel.ForeColor = System.Drawing.Color.White
         Me.btnCancel.Location = New System.Drawing.Point(930, 560)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.Size = New System.Drawing.Size(83, 32)
         Me.btnCancel.TabIndex = 16
         Me.btnCancel.Text = "Cancel"
-        Me.btnCancel.UseVisualStyleBackColor = True
+        Me.btnCancel.UseVisualStyleBackColor = False
         '
         'cbItems
         '
@@ -292,25 +319,35 @@ Partial Class frmRequestItemsDetail
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         GridItemUsed_DesignTimeLayout.LayoutString = resources.GetString("GridItemUsed_DesignTimeLayout.LayoutString")
         Me.GridItemUsed.DesignTimeLayout = GridItemUsed_DesignTimeLayout
+        Me.GridItemUsed.GridLineStyle = Janus.Windows.GridEX.GridLineStyle.Solid
         Me.GridItemUsed.GroupByBoxVisible = False
+        Me.GridItemUsed.HeaderFormatStyle.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(67, Byte), Integer), CType(CType(82, Byte), Integer))
         Me.GridItemUsed.HeaderFormatStyle.FontSize = 12.0!
+        Me.GridItemUsed.HeaderFormatStyle.ForeColor = System.Drawing.Color.White
         Me.GridItemUsed.HeaderFormatStyle.TextAlignment = Janus.Windows.GridEX.TextAlignment.Center
         Me.GridItemUsed.Location = New System.Drawing.Point(10, 51)
         Me.GridItemUsed.Name = "GridItemUsed"
+        Me.GridItemUsed.Office2007ColorScheme = Janus.Windows.GridEX.Office2007ColorScheme.Silver
+        Me.GridItemUsed.Office2007CustomColor = System.Drawing.SystemColors.Control
         Me.GridItemUsed.RecordNavigator = True
         Me.GridItemUsed.RowFormatStyle.FontSize = 12.0!
         Me.GridItemUsed.Size = New System.Drawing.Size(995, 216)
         Me.GridItemUsed.TabIndex = 5
+        Me.GridItemUsed.VisualStyleManager = Me.VSForOpticalshop
         '
         'BtnViewItemUsed
         '
+        Me.BtnViewItemUsed.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
         Me.BtnViewItemUsed.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnViewItemUsed.FlatAppearance.BorderSize = 0
+        Me.BtnViewItemUsed.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnViewItemUsed.ForeColor = System.Drawing.Color.White
         Me.BtnViewItemUsed.Location = New System.Drawing.Point(462, 16)
         Me.BtnViewItemUsed.Name = "BtnViewItemUsed"
         Me.BtnViewItemUsed.Size = New System.Drawing.Size(107, 28)
         Me.BtnViewItemUsed.TabIndex = 4
         Me.BtnViewItemUsed.Text = "View Item Used"
-        Me.BtnViewItemUsed.UseVisualStyleBackColor = True
+        Me.BtnViewItemUsed.UseVisualStyleBackColor = False
         '
         'DateUsedTo
         '
@@ -363,11 +400,35 @@ Partial Class frmRequestItemsDetail
         Me.ChItemUsed.Text = "Add Reques from Item used"
         Me.ChItemUsed.UseVisualStyleBackColor = True
         '
+        'VSForOpticalshop
+        '
+        JanusColorScheme2.ActiveCaptionColor = System.Drawing.Color.Tomato
+        JanusColorScheme2.ActiveCaptionTextColor = System.Drawing.Color.White
+        JanusColorScheme2.ControlDarkColor = System.Drawing.SystemColors.Control
+        JanusColorScheme2.ControlTextColor = System.Drawing.Color.Black
+        JanusColorScheme2.DisabledColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(150, Byte), Integer), CType(CType(102, Byte), Integer))
+        JanusColorScheme2.GrayTextColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
+        JanusColorScheme2.HighlightColor = System.Drawing.Color.FromArgb(CType(CType(43, Byte), Integer), CType(CType(99, Byte), Integer), CType(CType(67, Byte), Integer))
+        JanusColorScheme2.HighlightTextColor = System.Drawing.Color.WhiteSmoke
+        JanusColorScheme2.InfoColor = System.Drawing.Color.WhiteSmoke
+        JanusColorScheme2.InfoTextColor = System.Drawing.Color.FloralWhite
+        JanusColorScheme2.MenuColor = System.Drawing.SystemColors.ActiveCaption
+        JanusColorScheme2.MenuTextColor = System.Drawing.Color.DimGray
+        JanusColorScheme2.Name = "Header"
+        JanusColorScheme2.Office2007ColorScheme = Janus.Windows.Common.Office2007ColorScheme.Silver
+        JanusColorScheme2.Office2007CustomColor = System.Drawing.SystemColors.Control
+        JanusColorScheme2.UseThemes = False
+        JanusColorScheme2.VisualStyle = Janus.Windows.Common.VisualStyle.Standard
+        JanusColorScheme2.WindowColor = System.Drawing.Color.White
+        JanusColorScheme2.WindowTextColor = System.Drawing.Color.DarkBlue
+        Me.VSForOpticalshop.ColorSchemes.Add(JanusColorScheme2)
+        Me.VSForOpticalshop.DefaultColorScheme = "Header"
+        '
         'frmRequestItemsDetail
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.SystemColors.Control
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(236, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(241, Byte), Integer))
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(1016, 596)
         Me.Controls.Add(Me.ChItemUsed)
@@ -378,7 +439,6 @@ Partial Class frmRequestItemsDetail
         Me.Name = "frmRequestItemsDetail"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Items"
-        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         CType(Me.DGVItemInStock, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SplitContainer1.Panel1.ResumeLayout(False)
         Me.SplitContainer1.Panel2.ResumeLayout(False)
@@ -420,4 +480,5 @@ Partial Class frmRequestItemsDetail
     Friend WithEvents BtnViewItemUsed As System.Windows.Forms.Button
     Friend WithEvents GridItemUsed As Janus.Windows.GridEX.GridEX
     Friend WithEvents ChItemUsed As System.Windows.Forms.CheckBox
+    Friend WithEvents VSForOpticalshop As Janus.Windows.Common.VisualStyleManager
 End Class

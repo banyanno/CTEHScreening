@@ -293,8 +293,6 @@
             MenuVertical.Width = 0
             Me.BtnNavigationBar.Image = Global.TakeoHospitalInventory.My.Resources.Resources.Switch_Off_40px
         End If
-
-
     End Sub
 
 
