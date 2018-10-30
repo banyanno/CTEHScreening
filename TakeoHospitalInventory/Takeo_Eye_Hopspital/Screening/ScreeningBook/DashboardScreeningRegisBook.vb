@@ -443,4 +443,10 @@
     Private Sub DGScreeningBook_ColumnHeaderMouseClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellMouseEventArgs) Handles DGScreeningBook.ColumnHeaderMouseClick
         CheckBlankDiagnosis(Me.DGScreeningBook)
     End Sub
+
+    Private Sub TxtPatienNo_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles TxtPatienNo.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            BtnUpdateScreening_Click(sender, e)
+        End If
+    End Sub
 End Class

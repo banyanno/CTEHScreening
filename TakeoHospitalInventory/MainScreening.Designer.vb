@@ -68,10 +68,10 @@ Partial Class MainScreening
         '
         'Panel1
         '
+        Me.Panel1.Controls.Add(Me.PictureBox2)
         Me.Panel1.Controls.Add(Me.Label5)
         Me.Panel1.Controls.Add(Me.Label3)
         Me.Panel1.Controls.Add(Me.Label1)
-        Me.Panel1.Controls.Add(Me.PictureBox2)
         Me.Panel1.Controls.Add(Me.Label4)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Right
         Me.Panel1.Location = New System.Drawing.Point(811, 0)
@@ -84,44 +84,48 @@ Partial Class MainScreening
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(142, Byte), Integer), CType(CType(78, Byte), Integer), CType(CType(69, Byte), Integer))
-        Me.Label5.Location = New System.Drawing.Point(297, 77)
+        Me.Label5.Location = New System.Drawing.Point(48, 26)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(167, 17)
         Me.Label5.TabIndex = 1
         Me.Label5.Text = "Your Vision, Our Mission."
+        Me.Label5.Visible = False
         '
         'Label3
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(74, Byte), Integer), CType(CType(76, Byte), Integer), CType(CType(97, Byte), Integer))
-        Me.Label3.Location = New System.Drawing.Point(273, 36)
+        Me.Label3.Location = New System.Drawing.Point(48, 11)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(190, 18)
         Me.Label3.TabIndex = 1
         Me.Label3.Text = "TAKEO EYE  HOSPITAL"
+        Me.Label3.Visible = False
         '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Khmer Mool1", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(100, Byte), Integer), CType(CType(84, Byte), Integer))
-        Me.Label1.Location = New System.Drawing.Point(269, 0)
+        Me.Label1.Location = New System.Drawing.Point(20, 11)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(202, 43)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "មន្ទីរពេទ្យ ភ្នែក តាកែវ"
+        Me.Label1.Visible = False
         '
         'PictureBox2
         '
+        Me.PictureBox2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
-        Me.PictureBox2.Location = New System.Drawing.Point(110, 49)
+        Me.PictureBox2.Location = New System.Drawing.Point(174, 2)
         Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(68, 42)
+        Me.PictureBox2.Size = New System.Drawing.Size(311, 105)
         Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox2.TabIndex = 1
         Me.PictureBox2.TabStop = False
-        Me.PictureBox2.Visible = False
         '
         'Label4
         '
@@ -129,11 +133,12 @@ Partial Class MainScreening
         Me.Label4.BackColor = System.Drawing.Color.Transparent
         Me.Label4.Font = New System.Drawing.Font("Khmer OS Battambang", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(142, Byte), Integer), CType(CType(78, Byte), Integer), CType(CType(69, Byte), Integer))
-        Me.Label4.Location = New System.Drawing.Point(259, 54)
+        Me.Label4.Location = New System.Drawing.Point(23, 36)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(229, 25)
         Me.Label4.TabIndex = 1
         Me.Label4.Text = "គំហើញរបស់អ្នក ជាបេសកម្មរបស់យើង"
+        Me.Label4.Visible = False
         '
         'BtnHome
         '

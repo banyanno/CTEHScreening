@@ -116,11 +116,12 @@ Partial Class UIScreening
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.Blue
-        Me.Label2.Location = New System.Drawing.Point(809, 64)
+        Me.Label2.Location = New System.Drawing.Point(809, 372)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(168, 20)
         Me.Label2.TabIndex = 7
         Me.Label2.Text = "Patient Screening List:"
+        Me.Label2.Visible = False
         '
         'MenuVertical
         '
@@ -425,11 +426,12 @@ Partial Class UIScreening
         UiComboBoxItem3.Text = "Patient Name"
         UiComboBoxItem3.Value = "Patient Name"
         Me.UiComboBox1.Items.AddRange(New Janus.Windows.EditControls.UIComboBoxItem() {UiComboBoxItem1, UiComboBoxItem2, UiComboBoxItem3})
-        Me.UiComboBox1.Location = New System.Drawing.Point(813, 13)
+        Me.UiComboBox1.Location = New System.Drawing.Point(813, 321)
         Me.UiComboBox1.Name = "UiComboBox1"
         Me.UiComboBox1.Size = New System.Drawing.Size(163, 30)
         Me.UiComboBox1.TabIndex = 27
         Me.UiComboBox1.Text = "Search By:"
+        Me.UiComboBox1.Visible = False
         '
         'DGScreeningBook
         '
@@ -463,7 +465,7 @@ Partial Class UIScreening
         Me.DGScreeningBook.DefaultCellStyle = DataGridViewCellStyle7
         Me.DGScreeningBook.EnableHeadersVisualStyles = False
         Me.DGScreeningBook.GridColor = System.Drawing.Color.SteelBlue
-        Me.DGScreeningBook.Location = New System.Drawing.Point(813, 89)
+        Me.DGScreeningBook.Location = New System.Drawing.Point(813, 405)
         Me.DGScreeningBook.Margin = New System.Windows.Forms.Padding(5)
         Me.DGScreeningBook.Name = "DGScreeningBook"
         Me.DGScreeningBook.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
@@ -478,8 +480,9 @@ Partial Class UIScreening
         Me.DGScreeningBook.RowHeadersWidth = 50
         Me.DGScreeningBook.RowTemplate.Height = 35
         Me.DGScreeningBook.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DGScreeningBook.Size = New System.Drawing.Size(465, 828)
+        Me.DGScreeningBook.Size = New System.Drawing.Size(465, 512)
         Me.DGScreeningBook.TabIndex = 26
+        Me.DGScreeningBook.Visible = False
         '
         'IMPORT_STATUS
         '
@@ -766,19 +769,21 @@ Partial Class UIScreening
         Me.Button13.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button13.ForeColor = System.Drawing.Color.White
         Me.Button13.Image = CType(resources.GetObject("Button13.Image"), System.Drawing.Image)
-        Me.Button13.Location = New System.Drawing.Point(1231, 13)
+        Me.Button13.Location = New System.Drawing.Point(1231, 321)
         Me.Button13.Name = "Button13"
         Me.Button13.Size = New System.Drawing.Size(36, 30)
         Me.Button13.TabIndex = 19
         Me.Button13.UseVisualStyleBackColor = False
+        Me.Button13.Visible = False
         '
         'TextBox1
         '
         Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(977, 13)
+        Me.TextBox1.Location = New System.Drawing.Point(977, 321)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(248, 30)
         Me.TextBox1.TabIndex = 18
+        Me.TextBox1.Visible = False
         '
         'BtnNavigationBar
         '

@@ -1,4 +1,6 @@
 ﻿Imports System.Runtime.InteropServices
+Imports CrystalDecisions.Shared
+
 Public Class FormPatientRegister
     Dim DashScreeningRegis As DashboardScreeningRegisBook
     Dim IS_ONSCRENNING As Boolean = False
@@ -295,10 +297,17 @@ Public Class FormPatientRegister
 
             If SaveProcessForNewPatient() = True Then
                 MessageBox.Show("Patient registration successful!", "Register", MessageBoxButtons.OK, MessageBoxIcon.Information)
+               
                 If IS_ONSCRENNING = True Then
                     Me.DashScreeningRegis.RefreshAfterScreenRegis(DateRegis.Value.Date, DateRegis.Value.Date, PatientNo.Text)
                 End If
-                ResetFormRegister()
+                If ChPrintRegistration.Checked = True Then
+                    UIMainScreening.StatusLoading(True, "Loading")
+                    BgLoadingform.RunWorkerAsync()
+                Else
+                    ResetFormRegister()
+                End If
+
             Else
                 MessageBox.Show("Error Patient registration. Please verify data entry again!", "Register", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End If
@@ -313,6 +322,7 @@ Public Class FormPatientRegister
         TxtPatientName.Focus()
         TxtPatientName.Select()
         TxtPatientName.SelectAll()
+        TxtPatientNameKh.Text = ""
         CboSex.SelectedIndex = -1
         TxtAge.Text = ""
         TxtTel.Text = ""
@@ -323,6 +333,7 @@ Public Class FormPatientRegister
         ChRefraction.Checked = False
         ChOpticalshop.Checked = False
         TxtRegisterNote.Text = ""
+        TxtReferencePatientNote.Text = ""
         LoadDefaultAddressSetting()
     End Sub
 
@@ -354,5 +365,66 @@ Public Class FormPatientRegister
 
     Private Sub TxtReferencePatientNote_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TxtReferencePatientNote.KeyPress
         SetDisableKeyString(e)
+    End Sub
+
+    
+
+    Private Sub BgLoading_DoWork(ByVal sender As System.Object, ByVal e As System.ComponentModel.DoWorkEventArgs) Handles BgLoadingform.DoWork
+        RefreshData()
+    End Sub
+    Dim DABookScreening As New DataSetScreeningBookTableAdapters.SCREENING_BOOK_VIEWTableAdapter
+    Private Sub RefreshData()
+        If Me.InvokeRequired Then
+            Me.Invoke(New Action(AddressOf RefreshData))
+        Else
+            ' If ValReport = 1 Then
+
+            Dim WReport As New ViewMedicalCertificat
+
+            Dim screenForm As New ScreeningPatientForm
+            Dim TPatient As DataTable = DABookScreening.SelectByPatientNo(PatientNo.Text)
+            screenForm.SetDataSource(TPatient)
+
+            ' RMedicalCertificate.PrintToPrinter(1, False, 1, 1)
+
+
+
+            Dim CrExportOptionsBig As ExportOptions
+            Dim CrDiskFileDestinationOptionsBig As New DiskFileDestinationOptions()
+            CrDiskFileDestinationOptionsBig.DiskFileName = My.Application.Info.DirectoryPath & "\PatientCertificate.pdf"
+            CrExportOptionsBig = screenForm.ExportOptions
+            With CrExportOptionsBig
+                .ExportDestinationType = ExportDestinationType.DiskFile
+                .ExportFormatType = ExportFormatType.PortableDocFormat
+                .DestinationOptions = CrDiskFileDestinationOptionsBig
+                .FormatOptions = CrFormatTypeOptionsBig
+            End With
+
+            screenForm.Export()
+            WReport.AxAcroPDF1.src = My.Application.Info.DirectoryPath & "\PatientCertificate.pdf"
+            WReport.AxAcroPDF1.setZoom(50)
+            WReport.ShowDialog()
+
+
+            'End If
+            'Try
+            '    If TxtPatientNo.Text = "" Then
+            '        GridMedicalCertificate.DataSource = DA_MecicalCertificate.GetDataByDToD(DFrom.Value.Date, DateTo.Value.Date)
+            '        ValReport = 0
+            '    Else
+            '        GridMedicalCertificate.DataSource = DA_MecicalCertificate.GetDataByDateAndPatientNo(DFrom.Value.Date, DateTo.Value.Date, TxtPatientNo.Text)
+            '        ValReport = 0
+            '    End If
+            'Catch ex As Exception
+            '    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            'End Try
+
+        End If
+
+    End Sub
+
+    Private Sub BgLoadingform_RunWorkerCompleted(ByVal sender As System.Object, ByVal e As System.ComponentModel.RunWorkerCompletedEventArgs) Handles BgLoadingform.RunWorkerCompleted
+        UIMainScreening.StatusLoading(False, "Loading")
+        ResetFormRegister()
     End Sub
 End Class

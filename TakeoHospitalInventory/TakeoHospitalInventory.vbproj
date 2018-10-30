@@ -730,6 +730,12 @@
     <Compile Include="Takeo_Eye_Hopspital\Screening\ScreeningBook\Refraction\FormRefraction.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Takeo_Eye_Hopspital\Screening\ScreeningBook\ScreeningPatientForm.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ScreeningPatientForm.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Takeo_Eye_Hopspital\Screening\ScreeningBook\UpdateScreeningBook.Designer.vb">
       <DependentUpon>UpdateScreeningBook.vb</DependentUpon>
     </Compile>
@@ -3336,6 +3342,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Takeo_Eye_Hopspital\Screening\ScreeningBook\Refraction\FormRefraction.resx">
       <DependentUpon>FormRefraction.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Takeo_Eye_Hopspital\Screening\ScreeningBook\ScreeningPatientForm.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ScreeningPatientForm.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Takeo_Eye_Hopspital\Screening\ScreeningBook\UpdateScreeningBook.resx">
       <DependentUpon>UpdateScreeningBook.vb</DependentUpon>

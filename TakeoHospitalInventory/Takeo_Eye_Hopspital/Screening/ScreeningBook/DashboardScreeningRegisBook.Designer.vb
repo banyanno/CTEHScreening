@@ -1033,7 +1033,7 @@ Partial Class DashboardScreeningRegisBook
         DataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle13.BackColor = System.Drawing.Color.White
         DataGridViewCellStyle13.Font = New System.Drawing.Font("Century Gothic", 12.0!)
-        DataGridViewCellStyle13.ForeColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
+        DataGridViewCellStyle13.ForeColor = System.Drawing.Color.Cornsilk
         DataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight
         DataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]

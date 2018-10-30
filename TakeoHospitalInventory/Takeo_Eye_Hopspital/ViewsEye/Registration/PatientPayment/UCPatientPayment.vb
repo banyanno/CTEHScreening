@@ -15,9 +15,11 @@ Imports System.Data.Sql
 Imports System.Data.SqlClient
 Imports System.Data.SqlTypes
 Imports System.Timers
+Imports CrystalDecisions.Shared
+
 Public Class UCPatientPayment
-   
- 
+
+
     Dim startDate As DateTime
 
     Private patientNoSearh As String
@@ -75,10 +77,10 @@ Public Class UCPatientPayment
         ' Add any initialization after the InitializeComponent() call.
 
     End Sub
-  
 
 
-   
+
+
     Public Function FindingPatient()
 
     End Function
@@ -129,8 +131,8 @@ Public Class UCPatientPayment
 
     Private Sub bgPatient_RunWorkerCompleted(ByVal sender As System.Object, ByVal e As System.ComponentModel.RunWorkerCompletedEventArgs) Handles bgPatient.RunWorkerCompleted
         Try
-           
-         
+
+
             'ProgrestData.Value = 100
 
             'ProgrestData.Visible = False
@@ -285,7 +287,7 @@ Public Class UCPatientPayment
         End Select
     End Sub
 
-  
+
 
 
     Private Sub txtPatientNoFee_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs)
@@ -429,7 +431,7 @@ Public Class UCPatientPayment
         SetDisableKey(e)
     End Sub
     Dim DAPatientReceipt As New DSDashboardPatientTableAdapters.tblPatientReceiptTableAdapter
-   
+
     Public Function CheckIsPatientConsult(ByVal PatientNo As Double, ByVal Status As Integer) As Boolean
         Dim DataTbl As DataTable = DA_Consult_Detail.GetDataByCheckTotalConsult(PatientNo, Status, True)
         'Dim strConsultfor As String = ""
@@ -564,7 +566,7 @@ Public Class UCPatientPayment
         End If
     End Sub
 
-    
+
     Sub ClearForm()
         TxtPatientNo.Text = ""
         TxtNameEng.Text = ""
@@ -692,7 +694,7 @@ Public Class UCPatientPayment
         Me.CboCommNo.SelectAll()
     End Sub
 
- 
+
     Private Sub TxtPatientNo_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TxtPatientNo.KeyPress
         If Asc(e.KeyChar) = Keys.Enter Then
             Me.TxtNameEng.Focus()
@@ -727,7 +729,7 @@ Public Class UCPatientPayment
     End Sub
 
 
-   
+
 
 
     Public Sub ViewPatientDetail(ByVal FPatientUpdate As UpdatePatient)
@@ -823,7 +825,7 @@ Public Class UCPatientPayment
             'LblTotalConsult.Text = 0
             'LblConsultFor.Text = "No Consult"
         End Try
-       
+
     End Sub
     Sub LoadPatientBooks(ByVal PatientNo As String)
         GridNewOutpatient.Refresh()
@@ -970,9 +972,9 @@ Public Class UCPatientPayment
 
         End Try
     End Sub
-  
 
-    
+
+
 
     Private Sub MenuCreateOldPatient_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MCreateOldPatient.Click
         If GridPatientInformation.SelectedItems.Count = 0 Then
@@ -1078,8 +1080,8 @@ Public Class UCPatientPayment
         'FAchieveNew.Close()
     End Sub
 
-   
-    
+
+
     Private Sub GridInpatient_CellDoubleClick_1(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles GridInpatient.CellDoubleClick
         For i As Integer = 0 To TBLACCESS_ROLE.Rows.Count - 1
             With TBLACCESS_ROLE.Rows(i)
@@ -1134,7 +1136,7 @@ Public Class UCPatientPayment
     End Sub
 
 
- 
+
 
     Private Sub CreateNewoutPatientBookToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CreateNewoutPatientBook.Click
         If GridPatientInformation.SelectedItems.Count = 0 Then
@@ -1181,7 +1183,7 @@ Public Class UCPatientPayment
         End If
 
     End Sub
-   
+
     Dim CheckPanel As Boolean = False
     Private Sub TShowPatientBook_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnShowBook.Click
         If CheckPanel = False Then
@@ -1241,7 +1243,7 @@ Public Class UCPatientPayment
         End If
     End Sub
 
-   
+
     Private Sub BtnPrintRegistrationForm_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         'If GridPatientInformation.SelectedItems(0).Table.Key = "PatientInfo" Then
         '    ShowRegistrationFormByNew()
@@ -1305,7 +1307,7 @@ Public Class UCPatientPayment
         'Catch ex As Exception
 
         'End Try
-        
+
     End Sub
 
     Private Sub BtnPrintRegisV2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnPrintRegisV2.Click
@@ -1324,15 +1326,15 @@ Public Class UCPatientPayment
         End Try
     End Sub
 
-   
-   
+
+
 
     Private Sub BtnFindPatient_Click(ByVal sender As System.Object, ByVal e As Janus.Windows.Ribbon.CommandEventArgs)
         Dim FFindePatient As New FindPatient(Me)
         FFindePatient.ShowDialog()
     End Sub
 
- 
+
 
     Private Sub BtnNewV1_Click(ByVal sender As System.Object, ByVal e As Janus.Windows.Ribbon.CommandEventArgs)
         Dim FNewPatientPay As New NewPatientPayment
@@ -1538,7 +1540,7 @@ Public Class UCPatientPayment
         End If
     End Sub
 
-  
+
 
     Private Sub btnFind_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnFind.Click
         Me.ActionFindPatien(EmptyString(TxtPatientSearchNo.Text.Trim), EmptyString(TxtOldPatientNo.Text.Trim), DateRFrom.Value, DateRTo.Value, _
@@ -1560,5 +1562,57 @@ Public Class UCPatientPayment
         Dim FUpdatePatient As New UpdatePatient(Me)
         ViewPatientDetail(FUpdatePatient)
         FUpdatePatient.ShowDialog()
+    End Sub
+
+    Private Sub BtnPrintRegistration_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnPrintRegistration.Click
+        If GridPatientInformation.SelectedItems.Count = 0 Then Exit Sub
+        UIMainScreening.StatusLoading(True, "Loading")
+        BgLoading.RunWorkerAsync()
+    End Sub
+    Private Sub BgLoading_DoWork(ByVal sender As System.Object, ByVal e As System.ComponentModel.DoWorkEventArgs) Handles BgLoading.DoWork
+        RefreshData()
+    End Sub
+    Dim DABookScreening As New DataSetScreeningBookTableAdapters.SCREENING_BOOK_VIEWTableAdapter
+    Private Sub RefreshData()
+        If Me.InvokeRequired Then
+            Me.Invoke(New Action(AddressOf RefreshData))
+        Else
+            ' If ValReport = 1 Then
+
+            Dim WReport As New ViewMedicalCertificat
+
+            Dim screenForm As New ScreeningPatientForm
+            Dim TPatient As DataTable = DABookScreening.SelectByPatientNo(GridPatientInformation.GetRow.Cells("PatientNo").Value)
+            screenForm.SetDataSource(TPatient)
+
+            ' RMedicalCertificate.PrintToPrinter(1, False, 1, 1)
+
+
+
+            Dim CrExportOptionsBig As ExportOptions
+            Dim CrDiskFileDestinationOptionsBig As New DiskFileDestinationOptions()
+            CrDiskFileDestinationOptionsBig.DiskFileName = My.Application.Info.DirectoryPath & "\PatientCertificate.pdf"
+            CrExportOptionsBig = screenForm.ExportOptions
+            With CrExportOptionsBig
+                .ExportDestinationType = ExportDestinationType.DiskFile
+                .ExportFormatType = ExportFormatType.PortableDocFormat
+                .DestinationOptions = CrDiskFileDestinationOptionsBig
+                .FormatOptions = CrFormatTypeOptionsBig
+            End With
+
+            screenForm.Export()
+            WReport.AxAcroPDF1.src = My.Application.Info.DirectoryPath & "\PatientCertificate.pdf"
+            WReport.AxAcroPDF1.setZoom(50)
+            WReport.ShowDialog()
+
+
+
+
+        End If
+
+    End Sub
+
+    Private Sub BgLoading_RunWorkerCompleted(ByVal sender As System.Object, ByVal e As System.ComponentModel.RunWorkerCompletedEventArgs) Handles BgLoading.RunWorkerCompleted
+        UIMainScreening.StatusLoading(False, "Loading")
     End Sub
 End Class
