@@ -36,6 +36,7 @@ Partial Class FormReferral
         Me.DateAppointment = New System.Windows.Forms.DateTimePicker
         Me.Label12 = New System.Windows.Forms.Label
         Me.BtnNewVA = New System.Windows.Forms.Button
+        Me.LblScreenBookID = New System.Windows.Forms.Label
         Me.LblSaveOption = New System.Windows.Forms.Label
         Me.DateScreening = New System.Windows.Forms.DateTimePicker
         Me.Label14 = New System.Windows.Forms.Label
@@ -55,7 +56,6 @@ Partial Class FormReferral
         Me.Label5 = New System.Windows.Forms.Label
         Me.PatientNo = New System.Windows.Forms.TextBox
         Me.Label4 = New System.Windows.Forms.Label
-        Me.LblScreenBookID = New System.Windows.Forms.Label
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
@@ -245,6 +245,16 @@ Partial Class FormReferral
         Me.BtnNewVA.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.BtnNewVA.UseVisualStyleBackColor = False
         '
+        'LblScreenBookID
+        '
+        Me.LblScreenBookID.AutoSize = True
+        Me.LblScreenBookID.Location = New System.Drawing.Point(428, 63)
+        Me.LblScreenBookID.Name = "LblScreenBookID"
+        Me.LblScreenBookID.Size = New System.Drawing.Size(18, 20)
+        Me.LblScreenBookID.TabIndex = 42
+        Me.LblScreenBookID.Text = "0"
+        Me.LblScreenBookID.Visible = False
+        '
         'LblSaveOption
         '
         Me.LblSaveOption.AutoSize = True
@@ -429,16 +439,6 @@ Partial Class FormReferral
         Me.Label4.Size = New System.Drawing.Size(87, 20)
         Me.Label4.TabIndex = 23
         Me.Label4.Text = "Patient No:"
-        '
-        'LblScreenBookID
-        '
-        Me.LblScreenBookID.AutoSize = True
-        Me.LblScreenBookID.Location = New System.Drawing.Point(450, 67)
-        Me.LblScreenBookID.Name = "LblScreenBookID"
-        Me.LblScreenBookID.Size = New System.Drawing.Size(18, 20)
-        Me.LblScreenBookID.TabIndex = 42
-        Me.LblScreenBookID.Text = "0"
-        Me.LblScreenBookID.Visible = False
         '
         'FormReferral
         '

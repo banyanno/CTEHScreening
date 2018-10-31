@@ -1602,7 +1602,7 @@ Public Class UCPatientPayment
 
             screenForm.Export()
             WReport.AxAcroPDF1.src = My.Application.Info.DirectoryPath & "\PatientCertificate.pdf"
-            WReport.AxAcroPDF1.setZoom(50)
+            WReport.AxAcroPDF1.setZoom(100)
             WReport.ShowDialog()
 
 

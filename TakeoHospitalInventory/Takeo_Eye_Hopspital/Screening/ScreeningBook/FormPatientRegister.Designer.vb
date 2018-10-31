@@ -124,7 +124,7 @@ Partial Class FormPatientRegister
         Me.BtnClose.Location = New System.Drawing.Point(200, 605)
         Me.BtnClose.Name = "BtnClose"
         Me.BtnClose.Size = New System.Drawing.Size(100, 37)
-        Me.BtnClose.TabIndex = 1
+        Me.BtnClose.TabIndex = 2
         Me.BtnClose.Text = "Close"
         Me.BtnClose.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.BtnClose.UseVisualStyleBackColor = False
@@ -141,7 +141,7 @@ Partial Class FormPatientRegister
         Me.BtnSave.Location = New System.Drawing.Point(94, 605)
         Me.BtnSave.Name = "BtnSave"
         Me.BtnSave.Size = New System.Drawing.Size(100, 37)
-        Me.BtnSave.TabIndex = 0
+        Me.BtnSave.TabIndex = 1
         Me.BtnSave.Text = "Save"
         Me.BtnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.BtnSave.UseVisualStyleBackColor = False
@@ -643,6 +643,7 @@ Partial Class FormPatientRegister
         '
         'FormPatientRegister
         '
+        Me.AcceptButton = Me.BtnSave
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(236, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(241, Byte), Integer))
