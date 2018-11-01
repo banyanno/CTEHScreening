@@ -161,19 +161,70 @@
         UpdateSNBook.TxtMoreInfo.Text = GRows.Cells("SCREEN_NOTE").Value
         UpdateSNBook.ChRefraction.Checked = GRows.Cells("IS_REFRACTION").Value
         UpdateSNBook.ChOpticalshop.Checked = GRows.Cells("IS_OPTICALSHOP").Value
-        If GRows.Cells("IS_REFER_BYSELF").Value = True Then
-            UpdateSNBook.ChReferral.Checked = True
-            UpdateSNBook.RadReferAndComeBySelf.Checked = GRows.Cells("IS_REFER_BYSELF").Value
-        End If
-        If GRows.Cells("IS_REFER_PICKUP").Value = True Then
-            UpdateSNBook.ChReferral.Checked = True
-            UpdateSNBook.RadReferAndPickup.Checked = GRows.Cells("IS_REFER_PICKUP").Value
-        End If
+       
+        ' Call view update Referal
+        GetInfoRefer(UpdateSNBook, UpdateSNBook.LblSaveOption.Text)
+
+        '============ Call View upate Refracton ======================
+        GetInfoRefraction(UpdateSNBook, UpdateSNBook.LblSaveOption.Text)
 
         If UpdateSNBook.ShowDialog = DialogResult.OK Then
             DGScreeningBook.DataSource = DAScreeningBookDetail.SelectScreenBookDateToDateWithPatientNo(DateFrom.Value.Date, DateTo.Value.Date, EmptyString(UpdateSNBook.PatientNo.Text))
             DisplayUtiliyBookByScreenID(CDbl(UpdateSNBook.LblSaveOption.Text))
             ModCommon.NumberAllRowHeaderDataGrid(DGScreeningBook)
+        End If
+    End Sub
+    Private Sub GetInfoRefer(ByVal UpdateSNBook As UpdateScreeningBook, ByVal BookID As Double)
+        'Dim GRows As DataGridViewRow = GetDataRowGridView(DGScreeningBook)
+        Dim TblRefer As DataTable = DAReferralBookDetail.SelectReferralByScreenBookID(BookID)
+        If TblRefer.Rows.Count > 0 Then
+            For Each rows As DataRow In TblRefer.Rows
+                UpdateSNBook.ChReferral.Checked = True
+                If rows("STATUS_PICKUP") = True Then
+                    UpdateSNBook.RadReferAndPickup.Checked = True
+                    UpdateSNBook.DateAppointment.Checked = True
+                    UpdateSNBook.DateAppointment.Value = rows("CREATE_DATE")
+                Else
+                    UpdateSNBook.DateAppointment.Checked = False
+                    UpdateSNBook.RadReferAndComeBySelf.Checked = True
+                End If
+                UpdateSNBook.TxtReferMoreInfo.Text = rows("REFERRAL_NOTE")
+            Next
+
+        End If
+
+    End Sub
+    Private Sub GetInfoRefraction(ByVal UpdateSNBook As UpdateScreeningBook, ByVal BookID As Double)
+        'Dim GRows As DataGridViewRow = GetDataRowGridView(DGScreeningBook)
+        Dim TblRefraction As DataTable = DARefractionBookDedail.SelectRefractionByScreenBookID(BookID)
+        If TblRefraction.Rows.Count > 0 Then
+            For Each rows As DataRow In TblRefraction.Rows
+                UpdateSNBook.ChRefraction.Checked = True
+                UpdateSNBook.TxtREPlus.Text = rows("RE_PLUS")
+                UpdateSNBook.TxtLEPlus.Text = rows("LE_PLUS")
+
+                UpdateSNBook.CboREPlusVARefract.Text = rows("RE_VA")
+                UpdateSNBook.CboLEPlusVARefrac.Text = rows("LE_VA")
+                UpdateSNBook.CboAdd.Text = rows("REFRACT_ADD")
+                UpdateSNBook.TxtRefractNote.Text = rows("REFRACT_NOTE")
+            Next
+        End If
+    End Sub
+    Private Sub GetInfoOpticalShop(ByVal UpdateSNBook As UpdateScreeningBook, ByVal bookId As Double)
+        Dim GRows As DataGridViewRow = GetDataRowGridView(DGScreeningBook)
+        Dim TblRefraction As DataTable = DAReferralBookDetail.SelectReferralByScreenBookID(GRows.Cells("SCREEN_BOOKID").Value)
+        If TblRefraction.Rows.Count > 0 Then
+            For Each rows As DataRow In TblRefraction.Rows
+                UpdateSNBook.ChRefraction.Checked = True
+                UpdateSNBook.TxtREPlus.Text = rows("RE_PLUS")
+                UpdateSNBook.TxtLEPlus.Text = rows("LE_PLUS")
+
+                UpdateSNBook.CboREPlusVARefract.Text = rows("RE_VA")
+                UpdateSNBook.CboLEPlusVARefrac.Text = rows("LE_VA")
+                UpdateSNBook.CboAdd.Text = rows("REFRACT_ADD")
+                UpdateSNBook.TxtReferMoreInfo.Text = rows("REFRACT_NOTE")
+
+            Next
         End If
     End Sub
     Public Sub RefreshAfterScreenRegis(ByVal DFrom As Date, ByVal DTo As Date, ByVal PatientNo As Double)

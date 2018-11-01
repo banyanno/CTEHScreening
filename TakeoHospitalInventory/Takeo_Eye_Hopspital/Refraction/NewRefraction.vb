@@ -57,7 +57,6 @@
         Dim NewRefVA As New NewRefracVA
         If NewRefVA.ShowDialog = Windows.Forms.DialogResult.OK Then
             RefreshVA()
-
         End If
     End Sub
     Private Sub RefreshVA()

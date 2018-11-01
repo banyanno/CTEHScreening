@@ -24,16 +24,36 @@ Partial Class UpdateScreeningBook
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(UpdateScreeningBook))
-        Dim JanusColorScheme2 As Janus.Windows.Common.JanusColorScheme = New Janus.Windows.Common.JanusColorScheme
+        Dim JanusColorScheme1 As Janus.Windows.Common.JanusColorScheme = New Janus.Windows.Common.JanusColorScheme
         Me.Panel1 = New System.Windows.Forms.Panel
         Me.BtnClose = New System.Windows.Forms.Button
         Me.BtnSave = New System.Windows.Forms.Button
         Me.Panel2 = New System.Windows.Forms.Panel
+        Me.UiTab1 = New Janus.Windows.UI.Tab.UITab
+        Me.UiTabPage1 = New Janus.Windows.UI.Tab.UITabPage
         Me.ChReferral = New System.Windows.Forms.CheckBox
         Me.GBReferral = New System.Windows.Forms.GroupBox
+        Me.TxtReferMoreInfo = New System.Windows.Forms.TextBox
         Me.RadReferAndComeBySelf = New System.Windows.Forms.RadioButton
         Me.RadReferAndPickup = New System.Windows.Forms.RadioButton
-        Me.GroupBox3 = New System.Windows.Forms.GroupBox
+        Me.Label17 = New System.Windows.Forms.Label
+        Me.Label16 = New System.Windows.Forms.Label
+        Me.DateAppointment = New System.Windows.Forms.DateTimePicker
+        Me.UiTabPage2 = New Janus.Windows.UI.Tab.UITabPage
+        Me.GroupRefraction = New System.Windows.Forms.GroupBox
+        Me.BtnMoreAdd = New System.Windows.Forms.Button
+        Me.Label22 = New System.Windows.Forms.Label
+        Me.Label23 = New System.Windows.Forms.Label
+        Me.Label18 = New System.Windows.Forms.Label
+        Me.TxtRefractNote = New System.Windows.Forms.TextBox
+        Me.CboAdd = New System.Windows.Forms.ComboBox
+        Me.Label21 = New System.Windows.Forms.Label
+        Me.CboLEPlusVARefrac = New System.Windows.Forms.ComboBox
+        Me.Label20 = New System.Windows.Forms.Label
+        Me.CboREPlusVARefract = New System.Windows.Forms.ComboBox
+        Me.Label19 = New System.Windows.Forms.Label
+        Me.TxtLEPlus = New System.Windows.Forms.TextBox
+        Me.TxtREPlus = New System.Windows.Forms.TextBox
         Me.ChRefraction = New System.Windows.Forms.CheckBox
         Me.ChOpticalshop = New System.Windows.Forms.CheckBox
         Me.TxtPlaceScreening = New System.Windows.Forms.TextBox
@@ -66,40 +86,16 @@ Partial Class UpdateScreeningBook
         Me.Label3 = New System.Windows.Forms.Label
         Me.Label1 = New System.Windows.Forms.Label
         Me.ErrUpdateScreen = New System.Windows.Forms.ErrorProvider(Me.components)
-        Me.UiTab1 = New Janus.Windows.UI.Tab.UITab
-        Me.UiTabPage1 = New Janus.Windows.UI.Tab.UITabPage
-        Me.UiTabPage2 = New Janus.Windows.UI.Tab.UITabPage
         Me.VSForOpticalshop = New Janus.Windows.Common.VisualStyleManager(Me.components)
-        Me.UiTabPage3 = New Janus.Windows.UI.Tab.UITabPage
-        Me.TextBox1 = New System.Windows.Forms.TextBox
-        Me.Label16 = New System.Windows.Forms.Label
-        Me.ChPickup = New System.Windows.Forms.CheckBox
-        Me.DateAppointment = New System.Windows.Forms.DateTimePicker
-        Me.Label17 = New System.Windows.Forms.Label
-        Me.Label18 = New System.Windows.Forms.Label
-        Me.CboAdd = New System.Windows.Forms.ComboBox
-        Me.CboLEPlusVA = New System.Windows.Forms.ComboBox
-        Me.CboREPlusVA = New System.Windows.Forms.ComboBox
-        Me.TxtLEPlus = New System.Windows.Forms.TextBox
-        Me.TxtREPlus = New System.Windows.Forms.TextBox
-        Me.Label19 = New System.Windows.Forms.Label
-        Me.Label20 = New System.Windows.Forms.Label
-        Me.Label21 = New System.Windows.Forms.Label
-        Me.Label22 = New System.Windows.Forms.Label
-        Me.TextBox2 = New System.Windows.Forms.TextBox
-        Me.Label23 = New System.Windows.Forms.Label
-        Me.TextBox3 = New System.Windows.Forms.TextBox
-        Me.Label24 = New System.Windows.Forms.Label
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
-        Me.GBReferral.SuspendLayout()
-        Me.GroupBox3.SuspendLayout()
-        CType(Me.ErrUpdateScreen, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.UiTab1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.UiTab1.SuspendLayout()
         Me.UiTabPage1.SuspendLayout()
+        Me.GBReferral.SuspendLayout()
         Me.UiTabPage2.SuspendLayout()
-        Me.UiTabPage3.SuspendLayout()
+        Me.GroupRefraction.SuspendLayout()
+        CType(Me.ErrUpdateScreen, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
@@ -115,7 +111,7 @@ Partial Class UpdateScreeningBook
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(975, 661)
+        Me.Panel1.Size = New System.Drawing.Size(863, 661)
         Me.Panel1.TabIndex = 0
         '
         'BtnClose
@@ -127,10 +123,10 @@ Partial Class UpdateScreeningBook
         Me.BtnClose.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnClose.ForeColor = System.Drawing.Color.White
         Me.BtnClose.Image = CType(resources.GetObject("BtnClose.Image"), System.Drawing.Image)
-        Me.BtnClose.Location = New System.Drawing.Point(111, 616)
+        Me.BtnClose.Location = New System.Drawing.Point(754, 616)
         Me.BtnClose.Name = "BtnClose"
         Me.BtnClose.Size = New System.Drawing.Size(100, 37)
-        Me.BtnClose.TabIndex = 2
+        Me.BtnClose.TabIndex = 1
         Me.BtnClose.Text = "Close"
         Me.BtnClose.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.BtnClose.UseVisualStyleBackColor = False
@@ -144,10 +140,10 @@ Partial Class UpdateScreeningBook
         Me.BtnSave.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnSave.ForeColor = System.Drawing.Color.White
         Me.BtnSave.Image = CType(resources.GetObject("BtnSave.Image"), System.Drawing.Image)
-        Me.BtnSave.Location = New System.Drawing.Point(5, 616)
+        Me.BtnSave.Location = New System.Drawing.Point(648, 616)
         Me.BtnSave.Name = "BtnSave"
         Me.BtnSave.Size = New System.Drawing.Size(100, 37)
-        Me.BtnSave.TabIndex = 1
+        Me.BtnSave.TabIndex = 0
         Me.BtnSave.Text = "Save"
         Me.BtnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.BtnSave.UseVisualStyleBackColor = False
@@ -157,9 +153,6 @@ Partial Class UpdateScreeningBook
         Me.Panel2.BackColor = System.Drawing.Color.White
         Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel2.Controls.Add(Me.UiTab1)
-        Me.Panel2.Controls.Add(Me.ChReferral)
-        Me.Panel2.Controls.Add(Me.GBReferral)
-        Me.Panel2.Controls.Add(Me.GroupBox3)
         Me.Panel2.Controls.Add(Me.TxtPlaceScreening)
         Me.Panel2.Controls.Add(Me.Label15)
         Me.Panel2.Controls.Add(Me.BtnNewVA)
@@ -190,73 +183,280 @@ Partial Class UpdateScreeningBook
         Me.Panel2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
         Me.Panel2.Location = New System.Drawing.Point(7, 88)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(960, 522)
+        Me.Panel2.Size = New System.Drawing.Size(848, 522)
         Me.Panel2.TabIndex = 0
+        '
+        'UiTab1
+        '
+        Me.UiTab1.FlatBorderColor = System.Drawing.SystemColors.ActiveBorder
+        Me.UiTab1.Location = New System.Drawing.Point(434, 17)
+        Me.UiTab1.Name = "UiTab1"
+        Me.UiTab1.Office2007ColorScheme = Janus.Windows.UI.Office2007ColorScheme.Black
+        Me.UiTab1.Size = New System.Drawing.Size(407, 495)
+        Me.UiTab1.TabIndex = 27
+        Me.UiTab1.TabPages.AddRange(New Janus.Windows.UI.Tab.UITabPage() {Me.UiTabPage1, Me.UiTabPage2})
+        '
+        'UiTabPage1
+        '
+        Me.UiTabPage1.Controls.Add(Me.ChReferral)
+        Me.UiTabPage1.Controls.Add(Me.GBReferral)
+        Me.UiTabPage1.Location = New System.Drawing.Point(1, 28)
+        Me.UiTabPage1.Name = "UiTabPage1"
+        Me.UiTabPage1.Size = New System.Drawing.Size(403, 464)
+        Me.UiTabPage1.TabStop = True
+        Me.UiTabPage1.Text = "Refer"
         '
         'ChReferral
         '
         Me.ChReferral.AutoSize = True
         Me.ChReferral.ForeColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
-        Me.ChReferral.Location = New System.Drawing.Point(432, 3)
+        Me.ChReferral.Location = New System.Drawing.Point(14, 13)
         Me.ChReferral.Name = "ChReferral"
-        Me.ChReferral.Size = New System.Drawing.Size(85, 24)
-        Me.ChReferral.TabIndex = 25
-        Me.ChReferral.Text = "Referral"
+        Me.ChReferral.Size = New System.Drawing.Size(68, 24)
+        Me.ChReferral.TabIndex = 0
+        Me.ChReferral.Text = "Refer"
         Me.ChReferral.UseVisualStyleBackColor = True
         '
         'GBReferral
         '
+        Me.GBReferral.Controls.Add(Me.TxtReferMoreInfo)
         Me.GBReferral.Controls.Add(Me.RadReferAndComeBySelf)
         Me.GBReferral.Controls.Add(Me.RadReferAndPickup)
+        Me.GBReferral.Controls.Add(Me.Label17)
+        Me.GBReferral.Controls.Add(Me.Label16)
+        Me.GBReferral.Controls.Add(Me.DateAppointment)
         Me.GBReferral.Enabled = False
         Me.GBReferral.ForeColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
-        Me.GBReferral.Location = New System.Drawing.Point(432, 23)
+        Me.GBReferral.Location = New System.Drawing.Point(5, 33)
         Me.GBReferral.Name = "GBReferral"
-        Me.GBReferral.Size = New System.Drawing.Size(268, 84)
-        Me.GBReferral.TabIndex = 26
+        Me.GBReferral.Size = New System.Drawing.Size(391, 428)
+        Me.GBReferral.TabIndex = 1
         Me.GBReferral.TabStop = False
+        '
+        'TxtRerMoreInfo
+        '
+        Me.TxtReferMoreInfo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TxtReferMoreInfo.Location = New System.Drawing.Point(18, 185)
+        Me.TxtReferMoreInfo.Multiline = True
+        Me.TxtReferMoreInfo.Name = "TxtRerMoreInfo"
+        Me.TxtReferMoreInfo.Size = New System.Drawing.Size(363, 72)
+        Me.TxtReferMoreInfo.TabIndex = 3
         '
         'RadReferAndComeBySelf
         '
         Me.RadReferAndComeBySelf.AutoSize = True
-        Me.RadReferAndComeBySelf.Location = New System.Drawing.Point(14, 52)
+        Me.RadReferAndComeBySelf.Location = New System.Drawing.Point(197, 76)
         Me.RadReferAndComeBySelf.Name = "RadReferAndComeBySelf"
-        Me.RadReferAndComeBySelf.Size = New System.Drawing.Size(184, 24)
+        Me.RadReferAndComeBySelf.Size = New System.Drawing.Size(167, 24)
         Me.RadReferAndComeBySelf.TabIndex = 1
         Me.RadReferAndComeBySelf.TabStop = True
-        Me.RadReferAndComeBySelf.Text = "Referral Come By Self"
+        Me.RadReferAndComeBySelf.Text = "Refer Come By Self"
         Me.RadReferAndComeBySelf.UseVisualStyleBackColor = True
         '
         'RadReferAndPickup
         '
         Me.RadReferAndPickup.AutoSize = True
-        Me.RadReferAndPickup.Location = New System.Drawing.Point(14, 17)
+        Me.RadReferAndPickup.Location = New System.Drawing.Point(18, 76)
         Me.RadReferAndPickup.Name = "RadReferAndPickup"
-        Me.RadReferAndPickup.Size = New System.Drawing.Size(157, 24)
+        Me.RadReferAndPickup.Size = New System.Drawing.Size(140, 24)
         Me.RadReferAndPickup.TabIndex = 0
         Me.RadReferAndPickup.TabStop = True
-        Me.RadReferAndPickup.Text = "Referral By Pickup"
+        Me.RadReferAndPickup.Text = "Refer By Pickup"
         Me.RadReferAndPickup.UseVisualStyleBackColor = True
         '
-        'GroupBox3
+        'Label17
         '
-        Me.GroupBox3.Controls.Add(Me.ChRefraction)
-        Me.GroupBox3.Controls.Add(Me.ChOpticalshop)
-        Me.GroupBox3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
-        Me.GroupBox3.Location = New System.Drawing.Point(708, 23)
-        Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(244, 84)
-        Me.GroupBox3.TabIndex = 24
-        Me.GroupBox3.TabStop = False
+        Me.Label17.AutoSize = True
+        Me.Label17.Location = New System.Drawing.Point(18, 124)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(107, 20)
+        Me.Label17.TabIndex = 48
+        Me.Label17.Text = "Date Appoint:"
+        '
+        'Label16
+        '
+        Me.Label16.AutoSize = True
+        Me.Label16.Location = New System.Drawing.Point(18, 160)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(81, 20)
+        Me.Label16.TabIndex = 51
+        Me.Label16.Text = "More Info:"
+        '
+        'DateAppointment
+        '
+        Me.DateAppointment.Checked = False
+        Me.DateAppointment.CustomFormat = "dd/MM/yyyy"
+        Me.DateAppointment.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.DateAppointment.Location = New System.Drawing.Point(131, 118)
+        Me.DateAppointment.Name = "DateAppointment"
+        Me.DateAppointment.ShowCheckBox = True
+        Me.DateAppointment.Size = New System.Drawing.Size(136, 26)
+        Me.DateAppointment.TabIndex = 2
+        '
+        'UiTabPage2
+        '
+        Me.UiTabPage2.Controls.Add(Me.GroupRefraction)
+        Me.UiTabPage2.Controls.Add(Me.ChOpticalshop)
+        Me.UiTabPage2.Controls.Add(Me.ChRefraction)
+        Me.UiTabPage2.Location = New System.Drawing.Point(1, 28)
+        Me.UiTabPage2.Name = "UiTabPage2"
+        Me.UiTabPage2.Size = New System.Drawing.Size(403, 464)
+        Me.UiTabPage2.TabStop = True
+        Me.UiTabPage2.Text = "Refraction"
+        '
+        'GroupRefraction
+        '
+        Me.GroupRefraction.Controls.Add(Me.BtnMoreAdd)
+        Me.GroupRefraction.Controls.Add(Me.Label22)
+        Me.GroupRefraction.Controls.Add(Me.Label23)
+        Me.GroupRefraction.Controls.Add(Me.Label18)
+        Me.GroupRefraction.Controls.Add(Me.TxtRefractNote)
+        Me.GroupRefraction.Controls.Add(Me.CboAdd)
+        Me.GroupRefraction.Controls.Add(Me.Label21)
+        Me.GroupRefraction.Controls.Add(Me.CboLEPlusVARefrac)
+        Me.GroupRefraction.Controls.Add(Me.Label20)
+        Me.GroupRefraction.Controls.Add(Me.CboREPlusVARefract)
+        Me.GroupRefraction.Controls.Add(Me.Label19)
+        Me.GroupRefraction.Controls.Add(Me.TxtLEPlus)
+        Me.GroupRefraction.Controls.Add(Me.TxtREPlus)
+        Me.GroupRefraction.Enabled = False
+        Me.GroupRefraction.Location = New System.Drawing.Point(5, 33)
+        Me.GroupRefraction.Name = "GroupRefraction"
+        Me.GroupRefraction.Size = New System.Drawing.Size(391, 428)
+        Me.GroupRefraction.TabIndex = 1
+        Me.GroupRefraction.TabStop = False
+        '
+        'BtnMoreAdd
+        '
+        Me.BtnMoreAdd.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
+        Me.BtnMoreAdd.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnMoreAdd.FlatAppearance.BorderSize = 0
+        Me.BtnMoreAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnMoreAdd.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnMoreAdd.ForeColor = System.Drawing.Color.White
+        Me.BtnMoreAdd.Location = New System.Drawing.Point(356, 138)
+        Me.BtnMoreAdd.Name = "BtnMoreAdd"
+        Me.BtnMoreAdd.Size = New System.Drawing.Size(29, 29)
+        Me.BtnMoreAdd.TabIndex = 5
+        Me.BtnMoreAdd.Text = "..."
+        Me.BtnMoreAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.BtnMoreAdd.UseVisualStyleBackColor = False
+        '
+        'Label22
+        '
+        Me.Label22.AutoSize = True
+        Me.Label22.Location = New System.Drawing.Point(11, 79)
+        Me.Label22.Name = "Label22"
+        Me.Label22.Size = New System.Drawing.Size(65, 20)
+        Me.Label22.TabIndex = 56
+        Me.Label22.Text = "(RE) P+"
+        '
+        'Label23
+        '
+        Me.Label23.AutoSize = True
+        Me.Label23.Location = New System.Drawing.Point(10, 172)
+        Me.Label23.Name = "Label23"
+        Me.Label23.Size = New System.Drawing.Size(81, 20)
+        Me.Label23.TabIndex = 52
+        Me.Label23.Text = "More Info:"
+        '
+        'Label18
+        '
+        Me.Label18.AutoSize = True
+        Me.Label18.Location = New System.Drawing.Point(12, 147)
+        Me.Label18.Name = "Label18"
+        Me.Label18.Size = New System.Drawing.Size(44, 20)
+        Me.Label18.TabIndex = 63
+        Me.Label18.Text = "ADD"
+        '
+        'TxtRefractNote
+        '
+        Me.TxtRefractNote.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TxtRefractNote.Location = New System.Drawing.Point(10, 195)
+        Me.TxtRefractNote.Multiline = True
+        Me.TxtRefractNote.Name = "TxtRefractNote"
+        Me.TxtRefractNote.Size = New System.Drawing.Size(375, 72)
+        Me.TxtRefractNote.TabIndex = 6
+        '
+        'CboAdd
+        '
+        Me.CboAdd.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.CboAdd.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
+        Me.CboAdd.FormattingEnabled = True
+        Me.CboAdd.Location = New System.Drawing.Point(95, 139)
+        Me.CboAdd.Name = "CboAdd"
+        Me.CboAdd.Size = New System.Drawing.Size(259, 28)
+        Me.CboAdd.TabIndex = 4
+        '
+        'Label21
+        '
+        Me.Label21.AutoSize = True
+        Me.Label21.Location = New System.Drawing.Point(233, 79)
+        Me.Label21.Name = "Label21"
+        Me.Label21.Size = New System.Drawing.Size(31, 20)
+        Me.Label21.TabIndex = 57
+        Me.Label21.Text = "VA"
+        '
+        'CboLEPlusVARefrac
+        '
+        Me.CboLEPlusVARefrac.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.CboLEPlusVARefrac.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
+        Me.CboLEPlusVARefrac.FormattingEnabled = True
+        Me.CboLEPlusVARefrac.Location = New System.Drawing.Point(270, 105)
+        Me.CboLEPlusVARefrac.Name = "CboLEPlusVARefrac"
+        Me.CboLEPlusVARefrac.Size = New System.Drawing.Size(115, 28)
+        Me.CboLEPlusVARefrac.TabIndex = 3
+        '
+        'Label20
+        '
+        Me.Label20.AutoSize = True
+        Me.Label20.Location = New System.Drawing.Point(233, 113)
+        Me.Label20.Name = "Label20"
+        Me.Label20.Size = New System.Drawing.Size(31, 20)
+        Me.Label20.TabIndex = 54
+        Me.Label20.Text = "VA"
+        '
+        'CboREPlusVARefract
+        '
+        Me.CboREPlusVARefract.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.CboREPlusVARefract.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
+        Me.CboREPlusVARefract.FormattingEnabled = True
+        Me.CboREPlusVARefract.Location = New System.Drawing.Point(270, 71)
+        Me.CboREPlusVARefract.Name = "CboREPlusVARefract"
+        Me.CboREPlusVARefract.Size = New System.Drawing.Size(115, 28)
+        Me.CboREPlusVARefract.TabIndex = 1
+        '
+        'Label19
+        '
+        Me.Label19.AutoSize = True
+        Me.Label19.Location = New System.Drawing.Point(11, 113)
+        Me.Label19.Name = "Label19"
+        Me.Label19.Size = New System.Drawing.Size(62, 20)
+        Me.Label19.TabIndex = 55
+        Me.Label19.Text = "(LE) P+"
+        '
+        'TxtLEPlus
+        '
+        Me.TxtLEPlus.Location = New System.Drawing.Point(95, 107)
+        Me.TxtLEPlus.Name = "TxtLEPlus"
+        Me.TxtLEPlus.Size = New System.Drawing.Size(131, 26)
+        Me.TxtLEPlus.TabIndex = 2
+        '
+        'TxtREPlus
+        '
+        Me.TxtREPlus.Location = New System.Drawing.Point(95, 73)
+        Me.TxtREPlus.Name = "TxtREPlus"
+        Me.TxtREPlus.Size = New System.Drawing.Size(131, 26)
+        Me.TxtREPlus.TabIndex = 0
         '
         'ChRefraction
         '
         Me.ChRefraction.AutoSize = True
         Me.ChRefraction.ForeColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
-        Me.ChRefraction.Location = New System.Drawing.Point(10, 25)
+        Me.ChRefraction.Location = New System.Drawing.Point(14, 13)
         Me.ChRefraction.Name = "ChRefraction"
         Me.ChRefraction.Size = New System.Drawing.Size(102, 24)
-        Me.ChRefraction.TabIndex = 1
+        Me.ChRefraction.TabIndex = 0
         Me.ChRefraction.Text = "Refraction"
         Me.ChRefraction.UseVisualStyleBackColor = True
         '
@@ -264,10 +464,10 @@ Partial Class UpdateScreeningBook
         '
         Me.ChOpticalshop.AutoSize = True
         Me.ChOpticalshop.ForeColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
-        Me.ChOpticalshop.Location = New System.Drawing.Point(118, 25)
+        Me.ChOpticalshop.Location = New System.Drawing.Point(150, 12)
         Me.ChOpticalshop.Name = "ChOpticalshop"
         Me.ChOpticalshop.Size = New System.Drawing.Size(119, 24)
-        Me.ChOpticalshop.TabIndex = 3
+        Me.ChOpticalshop.TabIndex = 0
         Me.ChOpticalshop.Text = "Optical Shop"
         Me.ChOpticalshop.UseVisualStyleBackColor = True
         '
@@ -308,7 +508,7 @@ Partial Class UpdateScreeningBook
         'LblSaveOption
         '
         Me.LblSaveOption.AutoSize = True
-        Me.LblSaveOption.Location = New System.Drawing.Point(29, 186)
+        Me.LblSaveOption.Location = New System.Drawing.Point(19, 192)
         Me.LblSaveOption.Name = "LblSaveOption"
         Me.LblSaveOption.Size = New System.Drawing.Size(18, 20)
         Me.LblSaveOption.TabIndex = 19
@@ -523,7 +723,7 @@ Partial Class UpdateScreeningBook
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(202, Byte), Integer), CType(CType(81, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Label2.Location = New System.Drawing.Point(435, 61)
+        Me.Label2.Location = New System.Drawing.Point(379, 61)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(103, 18)
         Me.Label2.TabIndex = 6
@@ -534,7 +734,7 @@ Partial Class UpdateScreeningBook
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(202, Byte), Integer), CType(CType(81, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Label3.Location = New System.Drawing.Point(401, 41)
+        Me.Label3.Location = New System.Drawing.Point(345, 41)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(171, 18)
         Me.Label3.TabIndex = 5
@@ -545,7 +745,7 @@ Partial Class UpdateScreeningBook
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Khmer Mool1", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(100, Byte), Integer), CType(CType(84, Byte), Integer))
-        Me.Label1.Location = New System.Drawing.Point(385, 4)
+        Me.Label1.Location = New System.Drawing.Point(329, 4)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(202, 43)
         Me.Label1.TabIndex = 4
@@ -555,262 +755,35 @@ Partial Class UpdateScreeningBook
         '
         Me.ErrUpdateScreen.ContainerControl = Me
         '
-        'UiTab1
-        '
-        Me.UiTab1.FlatBorderColor = System.Drawing.SystemColors.ActiveBorder
-        Me.UiTab1.Location = New System.Drawing.Point(434, 116)
-        Me.UiTab1.Name = "UiTab1"
-        Me.UiTab1.Office2007ColorScheme = Janus.Windows.UI.Office2007ColorScheme.Black
-        Me.UiTab1.Size = New System.Drawing.Size(519, 396)
-        Me.UiTab1.TabIndex = 27
-        Me.UiTab1.TabPages.AddRange(New Janus.Windows.UI.Tab.UITabPage() {Me.UiTabPage1, Me.UiTabPage2, Me.UiTabPage3})
-        '
-        'UiTabPage1
-        '
-        Me.UiTabPage1.Controls.Add(Me.TextBox1)
-        Me.UiTabPage1.Controls.Add(Me.Label16)
-        Me.UiTabPage1.Controls.Add(Me.ChPickup)
-        Me.UiTabPage1.Controls.Add(Me.DateAppointment)
-        Me.UiTabPage1.Controls.Add(Me.Label17)
-        Me.UiTabPage1.Location = New System.Drawing.Point(1, 28)
-        Me.UiTabPage1.Name = "UiTabPage1"
-        Me.UiTabPage1.Size = New System.Drawing.Size(515, 365)
-        Me.UiTabPage1.TabStop = True
-        Me.UiTabPage1.Text = "Refer"
-        '
-        'UiTabPage2
-        '
-        Me.UiTabPage2.Controls.Add(Me.Label18)
-        Me.UiTabPage2.Controls.Add(Me.CboAdd)
-        Me.UiTabPage2.Controls.Add(Me.CboLEPlusVA)
-        Me.UiTabPage2.Controls.Add(Me.CboREPlusVA)
-        Me.UiTabPage2.Controls.Add(Me.TxtLEPlus)
-        Me.UiTabPage2.Controls.Add(Me.TxtREPlus)
-        Me.UiTabPage2.Controls.Add(Me.Label19)
-        Me.UiTabPage2.Controls.Add(Me.Label20)
-        Me.UiTabPage2.Controls.Add(Me.Label21)
-        Me.UiTabPage2.Controls.Add(Me.Label22)
-        Me.UiTabPage2.Controls.Add(Me.TextBox2)
-        Me.UiTabPage2.Controls.Add(Me.Label23)
-        Me.UiTabPage2.Location = New System.Drawing.Point(1, 28)
-        Me.UiTabPage2.Name = "UiTabPage2"
-        Me.UiTabPage2.Size = New System.Drawing.Size(515, 365)
-        Me.UiTabPage2.TabStop = True
-        Me.UiTabPage2.Text = "Refraction"
-        '
         'VSForOpticalshop
         '
-        JanusColorScheme2.ActiveCaptionColor = System.Drawing.Color.Tomato
-        JanusColorScheme2.ActiveCaptionTextColor = System.Drawing.Color.White
-        JanusColorScheme2.ControlDarkColor = System.Drawing.SystemColors.Control
-        JanusColorScheme2.ControlTextColor = System.Drawing.Color.Black
-        JanusColorScheme2.DisabledColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(150, Byte), Integer), CType(CType(102, Byte), Integer))
-        JanusColorScheme2.GrayTextColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
-        JanusColorScheme2.HighlightColor = System.Drawing.Color.FromArgb(CType(CType(43, Byte), Integer), CType(CType(99, Byte), Integer), CType(CType(67, Byte), Integer))
-        JanusColorScheme2.HighlightTextColor = System.Drawing.Color.WhiteSmoke
-        JanusColorScheme2.InfoColor = System.Drawing.Color.WhiteSmoke
-        JanusColorScheme2.InfoTextColor = System.Drawing.Color.FloralWhite
-        JanusColorScheme2.MenuColor = System.Drawing.SystemColors.ActiveCaption
-        JanusColorScheme2.MenuTextColor = System.Drawing.Color.DimGray
-        JanusColorScheme2.Name = "Header"
-        JanusColorScheme2.Office2007ColorScheme = Janus.Windows.Common.Office2007ColorScheme.Silver
-        JanusColorScheme2.Office2007CustomColor = System.Drawing.SystemColors.Control
-        JanusColorScheme2.UseThemes = False
-        JanusColorScheme2.VisualStyle = Janus.Windows.Common.VisualStyle.Standard
-        JanusColorScheme2.WindowColor = System.Drawing.Color.White
-        JanusColorScheme2.WindowTextColor = System.Drawing.Color.DarkBlue
-        Me.VSForOpticalshop.ColorSchemes.Add(JanusColorScheme2)
+        JanusColorScheme1.ActiveCaptionColor = System.Drawing.Color.Tomato
+        JanusColorScheme1.ActiveCaptionTextColor = System.Drawing.Color.White
+        JanusColorScheme1.ControlDarkColor = System.Drawing.SystemColors.Control
+        JanusColorScheme1.ControlTextColor = System.Drawing.Color.Black
+        JanusColorScheme1.DisabledColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(150, Byte), Integer), CType(CType(102, Byte), Integer))
+        JanusColorScheme1.GrayTextColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
+        JanusColorScheme1.HighlightColor = System.Drawing.Color.FromArgb(CType(CType(43, Byte), Integer), CType(CType(99, Byte), Integer), CType(CType(67, Byte), Integer))
+        JanusColorScheme1.HighlightTextColor = System.Drawing.Color.WhiteSmoke
+        JanusColorScheme1.InfoColor = System.Drawing.Color.WhiteSmoke
+        JanusColorScheme1.InfoTextColor = System.Drawing.Color.FloralWhite
+        JanusColorScheme1.MenuColor = System.Drawing.SystemColors.ActiveCaption
+        JanusColorScheme1.MenuTextColor = System.Drawing.Color.DimGray
+        JanusColorScheme1.Name = "Header"
+        JanusColorScheme1.Office2007ColorScheme = Janus.Windows.Common.Office2007ColorScheme.Silver
+        JanusColorScheme1.Office2007CustomColor = System.Drawing.SystemColors.Control
+        JanusColorScheme1.UseThemes = False
+        JanusColorScheme1.VisualStyle = Janus.Windows.Common.VisualStyle.Standard
+        JanusColorScheme1.WindowColor = System.Drawing.Color.White
+        JanusColorScheme1.WindowTextColor = System.Drawing.Color.DarkBlue
+        Me.VSForOpticalshop.ColorSchemes.Add(JanusColorScheme1)
         Me.VSForOpticalshop.DefaultColorScheme = "Header"
-        '
-        'UiTabPage3
-        '
-        Me.UiTabPage3.Controls.Add(Me.TextBox3)
-        Me.UiTabPage3.Controls.Add(Me.Label24)
-        Me.UiTabPage3.Location = New System.Drawing.Point(1, 28)
-        Me.UiTabPage3.Name = "UiTabPage3"
-        Me.UiTabPage3.Size = New System.Drawing.Size(515, 365)
-        Me.UiTabPage3.TabStop = True
-        Me.UiTabPage3.Text = "Optical Shop"
-        '
-        'TextBox1
-        '
-        Me.TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox1.Location = New System.Drawing.Point(19, 124)
-        Me.TextBox1.Multiline = True
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(402, 72)
-        Me.TextBox1.TabIndex = 52
-        '
-        'Label16
-        '
-        Me.Label16.AutoSize = True
-        Me.Label16.Location = New System.Drawing.Point(19, 99)
-        Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(81, 20)
-        Me.Label16.TabIndex = 51
-        Me.Label16.Text = "More Info:"
-        '
-        'ChPickup
-        '
-        Me.ChPickup.AutoSize = True
-        Me.ChPickup.Enabled = False
-        Me.ChPickup.Location = New System.Drawing.Point(167, 66)
-        Me.ChPickup.Name = "ChPickup"
-        Me.ChPickup.Size = New System.Drawing.Size(287, 24)
-        Me.ChPickup.TabIndex = 50
-        Me.ChPickup.Text = "Pick Up or By Self (Cheked = Pickup)"
-        Me.ChPickup.UseVisualStyleBackColor = True
-        '
-        'DateAppointment
-        '
-        Me.DateAppointment.Checked = False
-        Me.DateAppointment.CustomFormat = "dd/MM/yyyy"
-        Me.DateAppointment.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.DateAppointment.Location = New System.Drawing.Point(19, 66)
-        Me.DateAppointment.Name = "DateAppointment"
-        Me.DateAppointment.ShowCheckBox = True
-        Me.DateAppointment.Size = New System.Drawing.Size(136, 26)
-        Me.DateAppointment.TabIndex = 49
-        '
-        'Label17
-        '
-        Me.Label17.AutoSize = True
-        Me.Label17.Location = New System.Drawing.Point(19, 38)
-        Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(107, 20)
-        Me.Label17.TabIndex = 48
-        Me.Label17.Text = "Date Appoint:"
-        '
-        'Label18
-        '
-        Me.Label18.AutoSize = True
-        Me.Label18.Location = New System.Drawing.Point(31, 179)
-        Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(44, 20)
-        Me.Label18.TabIndex = 63
-        Me.Label18.Text = "ADD"
-        '
-        'CboAdd
-        '
-        Me.CboAdd.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
-        Me.CboAdd.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
-        Me.CboAdd.FormattingEnabled = True
-        Me.CboAdd.Location = New System.Drawing.Point(97, 171)
-        Me.CboAdd.Name = "CboAdd"
-        Me.CboAdd.Size = New System.Drawing.Size(290, 28)
-        Me.CboAdd.TabIndex = 60
-        '
-        'CboLEPlusVA
-        '
-        Me.CboLEPlusVA.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
-        Me.CboLEPlusVA.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
-        Me.CboLEPlusVA.FormattingEnabled = True
-        Me.CboLEPlusVA.Location = New System.Drawing.Point(273, 128)
-        Me.CboLEPlusVA.Name = "CboLEPlusVA"
-        Me.CboLEPlusVA.Size = New System.Drawing.Size(115, 28)
-        Me.CboLEPlusVA.TabIndex = 61
-        '
-        'CboREPlusVA
-        '
-        Me.CboREPlusVA.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
-        Me.CboREPlusVA.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
-        Me.CboREPlusVA.FormattingEnabled = True
-        Me.CboREPlusVA.Location = New System.Drawing.Point(273, 80)
-        Me.CboREPlusVA.Name = "CboREPlusVA"
-        Me.CboREPlusVA.Size = New System.Drawing.Size(115, 28)
-        Me.CboREPlusVA.TabIndex = 62
-        '
-        'TxtLEPlus
-        '
-        Me.TxtLEPlus.Location = New System.Drawing.Point(97, 130)
-        Me.TxtLEPlus.Name = "TxtLEPlus"
-        Me.TxtLEPlus.Size = New System.Drawing.Size(131, 26)
-        Me.TxtLEPlus.TabIndex = 58
-        '
-        'TxtREPlus
-        '
-        Me.TxtREPlus.Location = New System.Drawing.Point(97, 82)
-        Me.TxtREPlus.Name = "TxtREPlus"
-        Me.TxtREPlus.Size = New System.Drawing.Size(131, 26)
-        Me.TxtREPlus.TabIndex = 59
-        '
-        'Label19
-        '
-        Me.Label19.AutoSize = True
-        Me.Label19.Location = New System.Drawing.Point(31, 136)
-        Me.Label19.Name = "Label19"
-        Me.Label19.Size = New System.Drawing.Size(62, 20)
-        Me.Label19.TabIndex = 55
-        Me.Label19.Text = "(LE) P+"
-        '
-        'Label20
-        '
-        Me.Label20.AutoSize = True
-        Me.Label20.Location = New System.Drawing.Point(236, 136)
-        Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(31, 20)
-        Me.Label20.TabIndex = 54
-        Me.Label20.Text = "VA"
-        '
-        'Label21
-        '
-        Me.Label21.AutoSize = True
-        Me.Label21.Location = New System.Drawing.Point(236, 88)
-        Me.Label21.Name = "Label21"
-        Me.Label21.Size = New System.Drawing.Size(31, 20)
-        Me.Label21.TabIndex = 57
-        Me.Label21.Text = "VA"
-        '
-        'Label22
-        '
-        Me.Label22.AutoSize = True
-        Me.Label22.Location = New System.Drawing.Point(31, 88)
-        Me.Label22.Name = "Label22"
-        Me.Label22.Size = New System.Drawing.Size(65, 20)
-        Me.Label22.TabIndex = 56
-        Me.Label22.Text = "(RE) P+"
-        '
-        'TextBox2
-        '
-        Me.TextBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox2.Location = New System.Drawing.Point(30, 227)
-        Me.TextBox2.Multiline = True
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(414, 72)
-        Me.TextBox2.TabIndex = 53
-        '
-        'Label23
-        '
-        Me.Label23.AutoSize = True
-        Me.Label23.Location = New System.Drawing.Point(26, 204)
-        Me.Label23.Name = "Label23"
-        Me.Label23.Size = New System.Drawing.Size(81, 20)
-        Me.Label23.TabIndex = 52
-        Me.Label23.Text = "More Info:"
-        '
-        'TextBox3
-        '
-        Me.TextBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox3.Location = New System.Drawing.Point(15, 56)
-        Me.TextBox3.Multiline = True
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(543, 72)
-        Me.TextBox3.TabIndex = 49
-        '
-        'Label24
-        '
-        Me.Label24.AutoSize = True
-        Me.Label24.Location = New System.Drawing.Point(15, 31)
-        Me.Label24.Name = "Label24"
-        Me.Label24.Size = New System.Drawing.Size(81, 20)
-        Me.Label24.TabIndex = 48
-        Me.Label24.Text = "More Info:"
         '
         'UpdateScreeningBook
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(975, 661)
+        Me.ClientSize = New System.Drawing.Size(863, 661)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -823,19 +796,17 @@ Partial Class UpdateScreeningBook
         Me.Panel1.PerformLayout()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
-        Me.GBReferral.ResumeLayout(False)
-        Me.GBReferral.PerformLayout()
-        Me.GroupBox3.ResumeLayout(False)
-        Me.GroupBox3.PerformLayout()
-        CType(Me.ErrUpdateScreen, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.UiTab1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.UiTab1.ResumeLayout(False)
         Me.UiTabPage1.ResumeLayout(False)
         Me.UiTabPage1.PerformLayout()
+        Me.GBReferral.ResumeLayout(False)
+        Me.GBReferral.PerformLayout()
         Me.UiTabPage2.ResumeLayout(False)
         Me.UiTabPage2.PerformLayout()
-        Me.UiTabPage3.ResumeLayout(False)
-        Me.UiTabPage3.PerformLayout()
+        Me.GroupRefraction.ResumeLayout(False)
+        Me.GroupRefraction.PerformLayout()
+        CType(Me.ErrUpdateScreen, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -873,7 +844,6 @@ Partial Class UpdateScreeningBook
     Friend WithEvents ErrUpdateScreen As System.Windows.Forms.ErrorProvider
     Friend WithEvents TxtPlaceScreening As System.Windows.Forms.TextBox
     Friend WithEvents Label15 As System.Windows.Forms.Label
-    Friend WithEvents GroupBox3 As System.Windows.Forms.GroupBox
     Friend WithEvents ChRefraction As System.Windows.Forms.CheckBox
     Friend WithEvents ChOpticalshop As System.Windows.Forms.CheckBox
     Friend WithEvents ChReferral As System.Windows.Forms.CheckBox
@@ -884,24 +854,22 @@ Partial Class UpdateScreeningBook
     Friend WithEvents UiTabPage1 As Janus.Windows.UI.Tab.UITabPage
     Friend WithEvents UiTabPage2 As Janus.Windows.UI.Tab.UITabPage
     Friend WithEvents VSForOpticalshop As Janus.Windows.Common.VisualStyleManager
-    Friend WithEvents UiTabPage3 As Janus.Windows.UI.Tab.UITabPage
-    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
+    Friend WithEvents TxtReferMoreInfo As System.Windows.Forms.TextBox
     Friend WithEvents Label16 As System.Windows.Forms.Label
-    Friend WithEvents ChPickup As System.Windows.Forms.CheckBox
     Friend WithEvents DateAppointment As System.Windows.Forms.DateTimePicker
     Friend WithEvents Label17 As System.Windows.Forms.Label
     Friend WithEvents Label18 As System.Windows.Forms.Label
     Friend WithEvents CboAdd As System.Windows.Forms.ComboBox
-    Friend WithEvents CboLEPlusVA As System.Windows.Forms.ComboBox
-    Friend WithEvents CboREPlusVA As System.Windows.Forms.ComboBox
+    Friend WithEvents CboLEPlusVARefrac As System.Windows.Forms.ComboBox
+    Friend WithEvents CboREPlusVARefract As System.Windows.Forms.ComboBox
     Friend WithEvents TxtLEPlus As System.Windows.Forms.TextBox
     Friend WithEvents TxtREPlus As System.Windows.Forms.TextBox
     Friend WithEvents Label19 As System.Windows.Forms.Label
     Friend WithEvents Label20 As System.Windows.Forms.Label
     Friend WithEvents Label21 As System.Windows.Forms.Label
     Friend WithEvents Label22 As System.Windows.Forms.Label
-    Friend WithEvents TextBox2 As System.Windows.Forms.TextBox
+    Friend WithEvents TxtRefractNote As System.Windows.Forms.TextBox
     Friend WithEvents Label23 As System.Windows.Forms.Label
-    Friend WithEvents TextBox3 As System.Windows.Forms.TextBox
-    Friend WithEvents Label24 As System.Windows.Forms.Label
+    Friend WithEvents GroupRefraction As System.Windows.Forms.GroupBox
+    Friend WithEvents BtnMoreAdd As System.Windows.Forms.Button
 End Class

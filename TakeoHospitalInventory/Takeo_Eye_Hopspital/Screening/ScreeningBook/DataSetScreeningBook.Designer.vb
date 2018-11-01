@@ -12329,7 +12329,7 @@ Namespace DataSetScreeningBookTableAdapters
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(6) {}
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(7) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT        REFERRAL_ID, SCREENING_BOOKID, PATIENT_NO, VA_RIGHT, VA_LEFT, DIAGN"& _ 
@@ -12367,33 +12367,40 @@ Namespace DataSetScreeningBookTableAdapters
             Me._commandCollection(4).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@PATIENT_NO", Global.System.Data.SqlDbType.[Decimal], 9, Global.System.Data.ParameterDirection.Input, 18, 0, "PATIENT_NO", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(5) = New Global.System.Data.SqlClient.SqlCommand
             Me._commandCollection(5).Connection = Me.Connection
-            Me._commandCollection(5).CommandText = "INSERT INTO SCREENING_REFERRAL_BOOK"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         (SCREENING_BOOKID, "& _ 
+            Me._commandCollection(5).CommandText = "SELECT        REFERRAL_ID, SCREENING_BOOKID, PATIENT_NO, VA_RIGHT, VA_LEFT, DIAGN"& _ 
+                "OSIS, DATE_MEETING, STATUS_PICKUP, REFERRAL_NOTE, CREATE_DATE, ARRIVED"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM    "& _ 
+                "        SCREENING_REFERRAL_BOOK"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"where "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SCREENING_BOOKID=@SCREENING_BOOKID"
+            Me._commandCollection(5).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(5).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@SCREENING_BOOKID", Global.System.Data.SqlDbType.[Decimal], 9, Global.System.Data.ParameterDirection.Input, 18, 0, "SCREENING_BOOKID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(6) = New Global.System.Data.SqlClient.SqlCommand
+            Me._commandCollection(6).Connection = Me.Connection
+            Me._commandCollection(6).CommandText = "INSERT INTO SCREENING_REFERRAL_BOOK"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         (SCREENING_BOOKID, "& _ 
                 "PATIENT_NO, VA_RIGHT, VA_LEFT, DIAGNOSIS, DATE_MEETING, STATUS_PICKUP, REFERRAL_"& _ 
                 "NOTE, CREATE_DATE)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"VALUES        (@SCREENING_BOOKID,@PATIENT_NO,@VA_RIGHT,@VA_L"& _ 
                 "EFT,@DIAGNOSIS,@DATE_MEETING,@STATUS_PICKUP,@REFERRAL_NOTE,@CREATE_DATE)"
-            Me._commandCollection(5).CommandType = Global.System.Data.CommandType.Text
-            Me._commandCollection(5).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@SCREENING_BOOKID", Global.System.Data.SqlDbType.[Decimal], 9, Global.System.Data.ParameterDirection.Input, 18, 0, "SCREENING_BOOKID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(5).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@PATIENT_NO", Global.System.Data.SqlDbType.[Decimal], 9, Global.System.Data.ParameterDirection.Input, 18, 0, "PATIENT_NO", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(5).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@VA_RIGHT", Global.System.Data.SqlDbType.NVarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "VA_RIGHT", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(5).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@VA_LEFT", Global.System.Data.SqlDbType.NVarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "VA_LEFT", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(5).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@DIAGNOSIS", Global.System.Data.SqlDbType.NVarChar, 100, Global.System.Data.ParameterDirection.Input, 0, 0, "DIAGNOSIS", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(5).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@DATE_MEETING", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "DATE_MEETING", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(5).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@STATUS_PICKUP", Global.System.Data.SqlDbType.Bit, 1, Global.System.Data.ParameterDirection.Input, 0, 0, "STATUS_PICKUP", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(5).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@REFERRAL_NOTE", Global.System.Data.SqlDbType.NVarChar, 150, Global.System.Data.ParameterDirection.Input, 0, 0, "REFERRAL_NOTE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(5).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@CREATE_DATE", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "CREATE_DATE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(6) = New Global.System.Data.SqlClient.SqlCommand
-            Me._commandCollection(6).Connection = Me.Connection
-            Me._commandCollection(6).CommandText = "UPDATE       SCREENING_REFERRAL_BOOK"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SET                VA_RIGHT = @VA_RIGHT, VA"& _ 
-                "_LEFT = @VA_LEFT, DIAGNOSIS = @DIAGNOSIS, DATE_MEETING = @DATE_MEETING, REFERRAL"& _ 
-                "_NOTE = @REFERRAL_NOTE"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (SCREENING_BOOKID = @Original_SCREENING_BOO"& _ 
-                "KID)"
             Me._commandCollection(6).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(6).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@SCREENING_BOOKID", Global.System.Data.SqlDbType.[Decimal], 9, Global.System.Data.ParameterDirection.Input, 18, 0, "SCREENING_BOOKID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(6).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@PATIENT_NO", Global.System.Data.SqlDbType.[Decimal], 9, Global.System.Data.ParameterDirection.Input, 18, 0, "PATIENT_NO", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(6).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@VA_RIGHT", Global.System.Data.SqlDbType.NVarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "VA_RIGHT", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(6).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@VA_LEFT", Global.System.Data.SqlDbType.NVarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "VA_LEFT", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(6).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@DIAGNOSIS", Global.System.Data.SqlDbType.NVarChar, 100, Global.System.Data.ParameterDirection.Input, 0, 0, "DIAGNOSIS", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(6).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@DATE_MEETING", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "DATE_MEETING", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(6).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@STATUS_PICKUP", Global.System.Data.SqlDbType.Bit, 1, Global.System.Data.ParameterDirection.Input, 0, 0, "STATUS_PICKUP", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(6).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@REFERRAL_NOTE", Global.System.Data.SqlDbType.NVarChar, 150, Global.System.Data.ParameterDirection.Input, 0, 0, "REFERRAL_NOTE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(6).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_SCREENING_BOOKID", Global.System.Data.SqlDbType.[Decimal], 9, Global.System.Data.ParameterDirection.Input, 18, 0, "SCREENING_BOOKID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._commandCollection(6).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@CREATE_DATE", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "CREATE_DATE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(7) = New Global.System.Data.SqlClient.SqlCommand
+            Me._commandCollection(7).Connection = Me.Connection
+            Me._commandCollection(7).CommandText = "UPDATE       SCREENING_REFERRAL_BOOK"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SET                VA_RIGHT = @VA_RIGHT, VA"& _ 
+                "_LEFT = @VA_LEFT, DIAGNOSIS = @DIAGNOSIS, DATE_MEETING = @DATE_MEETING, REFERRAL"& _ 
+                "_NOTE = @REFERRAL_NOTE"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (SCREENING_BOOKID = @Original_SCREENING_BOO"& _ 
+                "KID)"
+            Me._commandCollection(7).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(7).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@VA_RIGHT", Global.System.Data.SqlDbType.NVarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "VA_RIGHT", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(7).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@VA_LEFT", Global.System.Data.SqlDbType.NVarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "VA_LEFT", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(7).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@DIAGNOSIS", Global.System.Data.SqlDbType.NVarChar, 100, Global.System.Data.ParameterDirection.Input, 0, 0, "DIAGNOSIS", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(7).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@DATE_MEETING", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "DATE_MEETING", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(7).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@REFERRAL_NOTE", Global.System.Data.SqlDbType.NVarChar, 150, Global.System.Data.ParameterDirection.Input, 0, 0, "REFERRAL_NOTE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(7).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_SCREENING_BOOKID", Global.System.Data.SqlDbType.[Decimal], 9, Global.System.Data.ParameterDirection.Input, 18, 0, "SCREENING_BOOKID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -12506,6 +12513,38 @@ Namespace DataSetScreeningBookTableAdapters
                 Me.Adapter.SelectCommand.Parameters(2).Value = CType(PATIENT_NO.Value,Decimal)
             Else
                 Me.Adapter.SelectCommand.Parameters(2).Value = Global.System.DBNull.Value
+            End If
+            Dim dataTable As DataSetScreeningBook.SCREENING_REFERRAL_BOOKDataTable = New DataSetScreeningBook.SCREENING_REFERRAL_BOOKDataTable
+            Me.Adapter.Fill(dataTable)
+            Return dataTable
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
+        Public Overloads Overridable Function FillBy2(ByVal dataTable As DataSetScreeningBook.SCREENING_REFERRAL_BOOKDataTable, ByVal SCREENING_BOOKID As Global.System.Nullable(Of Decimal)) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(5)
+            If (SCREENING_BOOKID.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(0).Value = CType(SCREENING_BOOKID.Value,Decimal)
+            Else
+                Me.Adapter.SelectCommand.Parameters(0).Value = Global.System.DBNull.Value
+            End If
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
+        Public Overloads Overridable Function SelectReferByBookid(ByVal SCREENING_BOOKID As Global.System.Nullable(Of Decimal)) As DataSetScreeningBook.SCREENING_REFERRAL_BOOKDataTable
+            Me.Adapter.SelectCommand = Me.CommandCollection(5)
+            If (SCREENING_BOOKID.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(0).Value = CType(SCREENING_BOOKID.Value,Decimal)
+            Else
+                Me.Adapter.SelectCommand.Parameters(0).Value = Global.System.DBNull.Value
             End If
             Dim dataTable As DataSetScreeningBook.SCREENING_REFERRAL_BOOKDataTable = New DataSetScreeningBook.SCREENING_REFERRAL_BOOKDataTable
             Me.Adapter.Fill(dataTable)
@@ -12946,7 +12985,7 @@ Namespace DataSetScreeningBookTableAdapters
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, false)>  _
         Public Overloads Overridable Function InsertNewReferral(ByVal SCREENING_BOOKID As Global.System.Nullable(Of Decimal), ByVal PATIENT_NO As Global.System.Nullable(Of Decimal), ByVal VA_RIGHT As String, ByVal VA_LEFT As String, ByVal DIAGNOSIS As String, ByVal DATE_MEETING As Global.System.Nullable(Of Date), ByVal STATUS_PICKUP As Global.System.Nullable(Of Boolean), ByVal REFERRAL_NOTE As String, ByVal CREATE_DATE As Global.System.Nullable(Of Date)) As Integer
-            Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(5)
+            Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(6)
             If (SCREENING_BOOKID.HasValue = true) Then
                 command.Parameters(0).Value = CType(SCREENING_BOOKID.Value,Decimal)
             Else
@@ -13012,7 +13051,7 @@ Namespace DataSetScreeningBookTableAdapters
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, false)>  _
         Public Overloads Overridable Function UpdateReferral(ByVal VA_RIGHT As String, ByVal VA_LEFT As String, ByVal DIAGNOSIS As String, ByVal DATE_MEETING As Global.System.Nullable(Of Date), ByVal REFERRAL_NOTE As String, ByVal Original_SCREENING_BOOKID As Global.System.Nullable(Of Decimal)) As Integer
-            Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(6)
+            Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(7)
             If (VA_RIGHT Is Nothing) Then
                 command.Parameters(0).Value = Global.System.DBNull.Value
             Else
@@ -14484,7 +14523,7 @@ Namespace DataSetScreeningBookTableAdapters
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(4) {}
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(5) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT        REFRACT_ID, SCREEN_BOOK_ID, REFRACT_DATE, PATIENT_NO, VA_RIGHT, VA_"& _ 
@@ -14504,34 +14543,23 @@ Namespace DataSetScreeningBookTableAdapters
             Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@SCREEN_BOOK_ID", Global.System.Data.SqlDbType.[Decimal], 9, Global.System.Data.ParameterDirection.Input, 18, 0, "SCREEN_BOOK_ID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._commandCollection(3) = New Global.System.Data.SqlClient.SqlCommand
             Me._commandCollection(3).Connection = Me.Connection
-            Me._commandCollection(3).CommandText = "INSERT INTO [SCREENING_REFRACTION_BOOK] ([SCREEN_BOOK_ID], [REFRACT_DATE], [PATIE"& _ 
+            Me._commandCollection(3).CommandText = "SELECT        REFRACT_ID, SCREEN_BOOK_ID, REFRACT_DATE, PATIENT_NO, VA_RIGHT, VA_"& _ 
+                "LEFT, DIAGNOSIS, RE_PLUS, RE_VA, LE_PLUS, LE_VA, REFRACT_ADD, SIGNATURE, REFRACT"& _ 
+                "_NOTE"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            SCREENING_REFRACTION_BOOK"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SCREEN_BOOK_ID=@SCREEN_"& _ 
+                "BOOK_ID"
+            Me._commandCollection(3).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@SCREEN_BOOK_ID", Global.System.Data.SqlDbType.[Decimal], 9, Global.System.Data.ParameterDirection.Input, 18, 0, "SCREEN_BOOK_ID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(4) = New Global.System.Data.SqlClient.SqlCommand
+            Me._commandCollection(4).Connection = Me.Connection
+            Me._commandCollection(4).CommandText = "INSERT INTO [SCREENING_REFRACTION_BOOK] ([SCREEN_BOOK_ID], [REFRACT_DATE], [PATIE"& _ 
                 "NT_NO], [VA_RIGHT], [VA_LEFT], [DIAGNOSIS], [RE_PLUS], [RE_VA], [LE_PLUS], [LE_V"& _ 
                 "A], [REFRACT_ADD], [SIGNATURE], [REFRACT_NOTE]) VALUES (@SCREEN_BOOK_ID, @REFRAC"& _ 
                 "T_DATE, @PATIENT_NO, @VA_RIGHT, @VA_LEFT, @DIAGNOSIS, @RE_PLUS, @RE_VA, @LE_PLUS"& _ 
                 ", @LE_VA, @REFRACT_ADD, @SIGNATURE, @REFRACT_NOTE);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)
-            Me._commandCollection(3).CommandType = Global.System.Data.CommandType.Text
-            Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@SCREEN_BOOK_ID", Global.System.Data.SqlDbType.[Decimal], 9, Global.System.Data.ParameterDirection.Input, 18, 0, "SCREEN_BOOK_ID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@REFRACT_DATE", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "REFRACT_DATE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@PATIENT_NO", Global.System.Data.SqlDbType.[Decimal], 9, Global.System.Data.ParameterDirection.Input, 18, 0, "PATIENT_NO", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@VA_RIGHT", Global.System.Data.SqlDbType.NVarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "VA_RIGHT", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@VA_LEFT", Global.System.Data.SqlDbType.NVarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "VA_LEFT", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@DIAGNOSIS", Global.System.Data.SqlDbType.NVarChar, 150, Global.System.Data.ParameterDirection.Input, 0, 0, "DIAGNOSIS", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@RE_PLUS", Global.System.Data.SqlDbType.NVarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "RE_PLUS", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@RE_VA", Global.System.Data.SqlDbType.NVarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "RE_VA", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@LE_PLUS", Global.System.Data.SqlDbType.NVarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "LE_PLUS", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@LE_VA", Global.System.Data.SqlDbType.NVarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "LE_VA", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@REFRACT_ADD", Global.System.Data.SqlDbType.NVarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "REFRACT_ADD", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@SIGNATURE", Global.System.Data.SqlDbType.Bit, 1, Global.System.Data.ParameterDirection.Input, 0, 0, "SIGNATURE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@REFRACT_NOTE", Global.System.Data.SqlDbType.NVarChar, 250, Global.System.Data.ParameterDirection.Input, 0, 0, "REFRACT_NOTE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(4) = New Global.System.Data.SqlClient.SqlCommand
-            Me._commandCollection(4).Connection = Me.Connection
-            Me._commandCollection(4).CommandText = "UPDATE       SCREENING_REFRACTION_BOOK"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SET                REFRACT_DATE = @REFRAC"& _ 
-                "T_DATE, VA_RIGHT = @VA_RIGHT, VA_LEFT = @VA_LEFT, DIAGNOSIS = @DIAGNOSIS, RE_PLU"& _ 
-                "S = @RE_PLUS, RE_VA = @RE_VA, LE_PLUS = @LE_PLUS, LE_VA = @LE_VA, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"            "& _ 
-                "             REFRACT_ADD = @REFRACT_ADD, SIGNATURE = @SIGNATURE, REFRACT_NOTE = "& _ 
-                "@REFRACT_NOTE"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (SCREEN_BOOK_ID = @SCREEN_BOOK_ID); "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)
             Me._commandCollection(4).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(4).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@SCREEN_BOOK_ID", Global.System.Data.SqlDbType.[Decimal], 9, Global.System.Data.ParameterDirection.Input, 18, 0, "SCREEN_BOOK_ID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(4).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@REFRACT_DATE", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "REFRACT_DATE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(4).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@PATIENT_NO", Global.System.Data.SqlDbType.[Decimal], 9, Global.System.Data.ParameterDirection.Input, 18, 0, "PATIENT_NO", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(4).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@VA_RIGHT", Global.System.Data.SqlDbType.NVarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "VA_RIGHT", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(4).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@VA_LEFT", Global.System.Data.SqlDbType.NVarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "VA_LEFT", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(4).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@DIAGNOSIS", Global.System.Data.SqlDbType.NVarChar, 150, Global.System.Data.ParameterDirection.Input, 0, 0, "DIAGNOSIS", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -14542,7 +14570,26 @@ Namespace DataSetScreeningBookTableAdapters
             Me._commandCollection(4).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@REFRACT_ADD", Global.System.Data.SqlDbType.NVarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "REFRACT_ADD", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(4).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@SIGNATURE", Global.System.Data.SqlDbType.Bit, 1, Global.System.Data.ParameterDirection.Input, 0, 0, "SIGNATURE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(4).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@REFRACT_NOTE", Global.System.Data.SqlDbType.NVarChar, 250, Global.System.Data.ParameterDirection.Input, 0, 0, "REFRACT_NOTE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(4).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@SCREEN_BOOK_ID", Global.System.Data.SqlDbType.[Decimal], 9, Global.System.Data.ParameterDirection.Input, 18, 0, "SCREEN_BOOK_ID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._commandCollection(5) = New Global.System.Data.SqlClient.SqlCommand
+            Me._commandCollection(5).Connection = Me.Connection
+            Me._commandCollection(5).CommandText = "UPDATE       SCREENING_REFRACTION_BOOK"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SET                REFRACT_DATE = @REFRAC"& _ 
+                "T_DATE, VA_RIGHT = @VA_RIGHT, VA_LEFT = @VA_LEFT, DIAGNOSIS = @DIAGNOSIS, RE_PLU"& _ 
+                "S = @RE_PLUS, RE_VA = @RE_VA, LE_PLUS = @LE_PLUS, LE_VA = @LE_VA, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"            "& _ 
+                "             REFRACT_ADD = @REFRACT_ADD, SIGNATURE = @SIGNATURE, REFRACT_NOTE = "& _ 
+                "@REFRACT_NOTE"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (SCREEN_BOOK_ID = @SCREEN_BOOK_ID); "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)
+            Me._commandCollection(5).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(5).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@REFRACT_DATE", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "REFRACT_DATE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(5).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@VA_RIGHT", Global.System.Data.SqlDbType.NVarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "VA_RIGHT", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(5).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@VA_LEFT", Global.System.Data.SqlDbType.NVarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "VA_LEFT", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(5).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@DIAGNOSIS", Global.System.Data.SqlDbType.NVarChar, 150, Global.System.Data.ParameterDirection.Input, 0, 0, "DIAGNOSIS", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(5).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@RE_PLUS", Global.System.Data.SqlDbType.NVarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "RE_PLUS", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(5).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@RE_VA", Global.System.Data.SqlDbType.NVarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "RE_VA", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(5).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@LE_PLUS", Global.System.Data.SqlDbType.NVarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "LE_PLUS", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(5).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@LE_VA", Global.System.Data.SqlDbType.NVarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "LE_VA", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(5).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@REFRACT_ADD", Global.System.Data.SqlDbType.NVarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "REFRACT_ADD", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(5).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@SIGNATURE", Global.System.Data.SqlDbType.Bit, 1, Global.System.Data.ParameterDirection.Input, 0, 0, "SIGNATURE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(5).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@REFRACT_NOTE", Global.System.Data.SqlDbType.NVarChar, 250, Global.System.Data.ParameterDirection.Input, 0, 0, "REFRACT_NOTE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(5).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@SCREEN_BOOK_ID", Global.System.Data.SqlDbType.[Decimal], 9, Global.System.Data.ParameterDirection.Input, 18, 0, "SCREEN_BOOK_ID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -14562,6 +14609,38 @@ Namespace DataSetScreeningBookTableAdapters
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
         Public Overloads Overridable Function GetData() As DataSetScreeningBook.SCREENING_REFRACTION_BOOKDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            Dim dataTable As DataSetScreeningBook.SCREENING_REFRACTION_BOOKDataTable = New DataSetScreeningBook.SCREENING_REFRACTION_BOOKDataTable
+            Me.Adapter.Fill(dataTable)
+            Return dataTable
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
+        Public Overloads Overridable Function FillBy(ByVal dataTable As DataSetScreeningBook.SCREENING_REFRACTION_BOOKDataTable, ByVal SCREEN_BOOK_ID As Global.System.Nullable(Of Decimal)) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(3)
+            If (SCREEN_BOOK_ID.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(0).Value = CType(SCREEN_BOOK_ID.Value,Decimal)
+            Else
+                Me.Adapter.SelectCommand.Parameters(0).Value = Global.System.DBNull.Value
+            End If
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
+        Public Overloads Overridable Function SelectRefractionByBookID(ByVal SCREEN_BOOK_ID As Global.System.Nullable(Of Decimal)) As DataSetScreeningBook.SCREENING_REFRACTION_BOOKDataTable
+            Me.Adapter.SelectCommand = Me.CommandCollection(3)
+            If (SCREEN_BOOK_ID.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(0).Value = CType(SCREEN_BOOK_ID.Value,Decimal)
+            Else
+                Me.Adapter.SelectCommand.Parameters(0).Value = Global.System.DBNull.Value
+            End If
             Dim dataTable As DataSetScreeningBook.SCREENING_REFRACTION_BOOKDataTable = New DataSetScreeningBook.SCREENING_REFRACTION_BOOKDataTable
             Me.Adapter.Fill(dataTable)
             Return dataTable
@@ -15085,7 +15164,7 @@ Namespace DataSetScreeningBookTableAdapters
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, false)>  _
         Public Overloads Overridable Function InsertNewRefraction(ByVal SCREEN_BOOK_ID As Global.System.Nullable(Of Decimal), ByVal REFRACT_DATE As Global.System.Nullable(Of Date), ByVal PATIENT_NO As Global.System.Nullable(Of Decimal), ByVal VA_RIGHT As String, ByVal VA_LEFT As String, ByVal DIAGNOSIS As String, ByVal RE_PLUS As String, ByVal RE_VA As String, ByVal LE_PLUS As String, ByVal LE_VA As String, ByVal REFRACT_ADD As String, ByVal SIGNATURE As Global.System.Nullable(Of Boolean), ByVal REFRACT_NOTE As String) As Integer
-            Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(3)
+            Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(4)
             If (SCREEN_BOOK_ID.HasValue = true) Then
                 command.Parameters(0).Value = CType(SCREEN_BOOK_ID.Value,Decimal)
             Else
@@ -15171,7 +15250,7 @@ Namespace DataSetScreeningBookTableAdapters
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, false)>  _
         Public Overloads Overridable Function UpdateRefraction(ByVal REFRACT_DATE As Global.System.Nullable(Of Date), ByVal VA_RIGHT As String, ByVal VA_LEFT As String, ByVal DIAGNOSIS As String, ByVal RE_PLUS As String, ByVal RE_VA As String, ByVal LE_PLUS As String, ByVal LE_VA As String, ByVal REFRACT_ADD As String, ByVal SIGNATURE As Global.System.Nullable(Of Boolean), ByVal REFRACT_NOTE As String, ByVal SCREEN_BOOK_ID As Global.System.Nullable(Of Decimal)) As Integer
-            Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(4)
+            Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(5)
             If (REFRACT_DATE.HasValue = true) Then
                 command.Parameters(0).Value = CType(REFRACT_DATE.Value,Date)
             Else
