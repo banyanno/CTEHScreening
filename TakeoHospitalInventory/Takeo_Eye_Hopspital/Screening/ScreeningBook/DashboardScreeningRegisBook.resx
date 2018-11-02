@@ -267,6 +267,15 @@
   <metadata name="CMScreeningBook.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <data name="BtnUpdateScreening.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAABGdBTUEAALGPC/xhBQAAAMBJREFUKFNt
+        kDsKwkAURcdGF2JlI6hoYWtnby9EYmdlGrESXIBBC2tr0QVYuqCB/Mp47jgRCblweL+bN48YKc/zaZZl
+        IewgcM0myZSm6Yz4TJLkQBxZa7uK3vKVjIpsvgnqOdwhLsuy5UxS3aicF070A17oqXZqMhI39Fd8sFTt
+        JGN1IzzI++oVRbEn31amNcR+28ujO49wgTOEMg7gzTCCRY1IM3mqrVcYuuJP6mnmS3f4hN/Q9uVP9DoY
+        x8YY8wFJYto2xjehBAAAAABJRU5ErkJggg==
+</value>
+  </data>
   <metadata name="REFERRAL_ID.UserAddedColumn" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -566,15 +575,6 @@
         D1T6yLw6/oY7HiuibLh7dHT0UDNv+oL2WdtW9Yv/OiNfZq3RL3Ou4SHMxYbSdmR2FXCMjtTNh8txVsOd
         6ZGon3S9B9nnSZep7aFdaI8T/c2ZOPEm+Af+Xocz9d5lO3/vMWrTd1DvJAYVF66ES+CZZV0Q0EMPPfTQ
         Qw/lY8aM/wPOIjA+HVQL+AAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="BtnUpdateScreening.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAABGdBTUEAALGPC/xhBQAAAMBJREFUKFNt
-        kDsKwkAURcdGF2JlI6hoYWtnby9EYmdlGrESXIBBC2tr0QVYuqCB/Mp47jgRCblweL+bN48YKc/zaZZl
-        IewgcM0myZSm6Yz4TJLkQBxZa7uK3vKVjIpsvgnqOdwhLsuy5UxS3aicF070A17oqXZqMhI39Fd8sFTt
-        JGN1IzzI++oVRbEn31amNcR+28ujO49wgTOEMg7gzTCCRY1IM3mqrVcYuuJP6mnmS3f4hN/Q9uVP9DoY
-        x8YY8wFJYto2xjehBAAAAABJRU5ErkJggg==
 </value>
   </data>
   <metadata name="BGScreeningBook.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">

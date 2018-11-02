@@ -24,25 +24,25 @@ Partial Class DashboardScreeningRegisBook
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(DashboardScreeningRegisBook))
-        Dim DataGridViewCellStyle32 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
-        Dim DataGridViewCellStyle38 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
-        Dim DataGridViewCellStyle39 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
-        Dim DataGridViewCellStyle33 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
-        Dim DataGridViewCellStyle34 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
-        Dim DataGridViewCellStyle35 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
-        Dim DataGridViewCellStyle36 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
-        Dim DataGridViewCellStyle37 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
-        Dim DataGridViewCellStyle18 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
-        Dim DataGridViewCellStyle24 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
-        Dim DataGridViewCellStyle25 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
-        Dim DataGridViewCellStyle40 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
-        Dim DataGridViewCellStyle41 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
-        Dim DataGridViewCellStyle42 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
-        Dim DataGridViewCellStyle43 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
-        Dim DataGridViewCellStyle44 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
-        Dim DataGridViewCellStyle45 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
+        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
+        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
+        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
+        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
+        Dim DataGridViewCellStyle13 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
+        Dim DataGridViewCellStyle14 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
+        Dim DataGridViewCellStyle15 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
+        Dim DataGridViewCellStyle16 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
+        Dim DataGridViewCellStyle17 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
         Me.Panel1 = New System.Windows.Forms.Panel
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox
+        Me.NotFillDiagnosis = New System.Windows.Forms.PictureBox
         Me.Panel6 = New System.Windows.Forms.Panel
         Me.LblTotalNotFillDiagnosis = New System.Windows.Forms.Label
         Me.Label9 = New System.Windows.Forms.Label
@@ -179,7 +179,7 @@ Partial Class DashboardScreeningRegisBook
         Me.BGScreeningBook = New System.ComponentModel.BackgroundWorker
         Me.BGImportToTEH = New System.ComponentModel.BackgroundWorker
         Me.Panel1.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NotFillDiagnosis, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel6.SuspendLayout()
         CType(Me.PicStartImport, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel5.SuspendLayout()
@@ -211,7 +211,7 @@ Partial Class DashboardScreeningRegisBook
                     Or System.Windows.Forms.AnchorStyles.Left) _
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(236, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(241, Byte), Integer))
-        Me.Panel1.Controls.Add(Me.PictureBox1)
+        Me.Panel1.Controls.Add(Me.NotFillDiagnosis)
         Me.Panel1.Controls.Add(Me.Panel6)
         Me.Panel1.Controls.Add(Me.PicStartImport)
         Me.Panel1.Controls.Add(Me.Panel5)
@@ -239,15 +239,15 @@ Partial Class DashboardScreeningRegisBook
         '
         'PictureBox1
         '
-        Me.PictureBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(124, Byte), Integer))
-        Me.PictureBox1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(758, 5)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(40, 38)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 33
-        Me.PictureBox1.TabStop = False
+        Me.NotFillDiagnosis.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(124, Byte), Integer))
+        Me.NotFillDiagnosis.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.NotFillDiagnosis.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.NotFillDiagnosis.Location = New System.Drawing.Point(758, 5)
+        Me.NotFillDiagnosis.Name = "PictureBox1"
+        Me.NotFillDiagnosis.Size = New System.Drawing.Size(40, 38)
+        Me.NotFillDiagnosis.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.NotFillDiagnosis.TabIndex = 33
+        Me.NotFillDiagnosis.TabStop = False
         '
         'Panel6
         '
@@ -370,25 +370,25 @@ Partial Class DashboardScreeningRegisBook
         Me.DGScreeningBook.BackgroundColor = System.Drawing.Color.White
         Me.DGScreeningBook.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText
         Me.DGScreeningBook.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle32.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(67, Byte), Integer), CType(CType(82, Byte), Integer))
-        DataGridViewCellStyle32.Font = New System.Drawing.Font("Century Gothic", 12.0!)
-        DataGridViewCellStyle32.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle32.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle32.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle32.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DGScreeningBook.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle32
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(67, Byte), Integer), CType(CType(82, Byte), Integer))
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Century Gothic", 12.0!)
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DGScreeningBook.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.DGScreeningBook.ColumnHeadersHeight = 40
         Me.DGScreeningBook.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IMPORT_STATUS, Me.SCREEN_BOOKID, Me.SYS_SETTING, Me.SCREAN_DATE, Me.PatientNo, Me.REFERENCE_PATIENNOTE, Me.NameEng, Me.NameKhmer, Me.Age, Me.Sex, Me.Address, Me.SCREEN_PLACE, Me.ON_EYE, Me.DIAGNOSISScreening, Me.VA_RIGHTScreening, Me.VA_LEFTScreening, Me.PRESENTING_COMPLAIN, Me.IS_REFRACTION, Me.IS_OPTICALSHOP, Me.IS_REFER_PICKUP, Me.IS_REFER_BYSELF, Me.SCREEN_NOTE, Me.Province, Me.District, Me.Commune, Me.Male, Me.Female, Me.Occupation, Me.Telephone})
         Me.DGScreeningBook.ContextMenuStrip = Me.CMScreeningBook
-        DataGridViewCellStyle38.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle38.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle38.Font = New System.Drawing.Font("Century Gothic", 12.0!)
-        DataGridViewCellStyle38.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle38.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle38.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle38.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DGScreeningBook.DefaultCellStyle = DataGridViewCellStyle38
+        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle7.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle7.Font = New System.Drawing.Font("Century Gothic", 12.0!)
+        DataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DGScreeningBook.DefaultCellStyle = DataGridViewCellStyle7
         Me.DGScreeningBook.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DGScreeningBook.EnableHeadersVisualStyles = False
         Me.DGScreeningBook.GridColor = System.Drawing.Color.SteelBlue
@@ -396,14 +396,14 @@ Partial Class DashboardScreeningRegisBook
         Me.DGScreeningBook.Margin = New System.Windows.Forms.Padding(5)
         Me.DGScreeningBook.Name = "DGScreeningBook"
         Me.DGScreeningBook.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle39.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle39.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(67, Byte), Integer), CType(CType(82, Byte), Integer))
-        DataGridViewCellStyle39.Font = New System.Drawing.Font("Century Gothic", 12.0!)
-        DataGridViewCellStyle39.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle39.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle39.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle39.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DGScreeningBook.RowHeadersDefaultCellStyle = DataGridViewCellStyle39
+        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(67, Byte), Integer), CType(CType(82, Byte), Integer))
+        DataGridViewCellStyle8.Font = New System.Drawing.Font("Century Gothic", 12.0!)
+        DataGridViewCellStyle8.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DGScreeningBook.RowHeadersDefaultCellStyle = DataGridViewCellStyle8
         Me.DGScreeningBook.RowHeadersWidth = 50
         Me.DGScreeningBook.RowTemplate.Height = 35
         Me.DGScreeningBook.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
@@ -440,8 +440,8 @@ Partial Class DashboardScreeningRegisBook
         '
         Me.SCREAN_DATE.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
         Me.SCREAN_DATE.DataPropertyName = "SCREAN_DATE"
-        DataGridViewCellStyle33.Format = "dd/MM/yyyy"
-        Me.SCREAN_DATE.DefaultCellStyle = DataGridViewCellStyle33
+        DataGridViewCellStyle2.Format = "dd/MM/yyyy"
+        Me.SCREAN_DATE.DefaultCellStyle = DataGridViewCellStyle2
         Me.SCREAN_DATE.FillWeight = 1035.533!
         Me.SCREAN_DATE.HeaderText = "Regist-Date"
         Me.SCREAN_DATE.Name = "SCREAN_DATE"
@@ -472,8 +472,8 @@ Partial Class DashboardScreeningRegisBook
         '
         Me.NameEng.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
         Me.NameEng.DataPropertyName = "NameEng"
-        DataGridViewCellStyle34.Font = New System.Drawing.Font("Khmer OS Battambang", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.NameEng.DefaultCellStyle = DataGridViewCellStyle34
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Khmer OS Battambang", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.NameEng.DefaultCellStyle = DataGridViewCellStyle3
         Me.NameEng.FillWeight = 50.72639!
         Me.NameEng.HeaderText = "Name Eng"
         Me.NameEng.Name = "NameEng"
@@ -484,8 +484,8 @@ Partial Class DashboardScreeningRegisBook
         '
         Me.NameKhmer.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
         Me.NameKhmer.DataPropertyName = "NameKhmer"
-        DataGridViewCellStyle35.Font = New System.Drawing.Font("Wat Phnom T3", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.NameKhmer.DefaultCellStyle = DataGridViewCellStyle35
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Wat Phnom T3", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.NameKhmer.DefaultCellStyle = DataGridViewCellStyle4
         Me.NameKhmer.FillWeight = 50.72639!
         Me.NameKhmer.HeaderText = "Name Kh"
         Me.NameKhmer.Name = "NameKhmer"
@@ -496,8 +496,8 @@ Partial Class DashboardScreeningRegisBook
         '
         Me.Age.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
         Me.Age.DataPropertyName = "Age"
-        DataGridViewCellStyle36.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.Age.DefaultCellStyle = DataGridViewCellStyle36
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.Age.DefaultCellStyle = DataGridViewCellStyle5
         Me.Age.FillWeight = 50.16895!
         Me.Age.HeaderText = "Age"
         Me.Age.Name = "Age"
@@ -508,8 +508,8 @@ Partial Class DashboardScreeningRegisBook
         '
         Me.Sex.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
         Me.Sex.DataPropertyName = "Sex"
-        DataGridViewCellStyle37.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.Sex.DefaultCellStyle = DataGridViewCellStyle37
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.Sex.DefaultCellStyle = DataGridViewCellStyle6
         Me.Sex.FillWeight = 39.44817!
         Me.Sex.HeaderText = "Sex"
         Me.Sex.Name = "Sex"
@@ -729,6 +729,7 @@ Partial Class DashboardScreeningRegisBook
         Me.BtnRefraction.Name = "BtnRefraction"
         Me.BtnRefraction.Size = New System.Drawing.Size(248, 26)
         Me.BtnRefraction.Text = "Refraction ..."
+        Me.BtnRefraction.Visible = False
         '
         'UpdateRefractionToolStripMenuItem
         '
@@ -750,6 +751,7 @@ Partial Class DashboardScreeningRegisBook
         '
         Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
         Me.ToolStripMenuItem2.Size = New System.Drawing.Size(245, 6)
+        Me.ToolStripMenuItem2.Visible = False
         '
         'BtnReferral
         '
@@ -759,6 +761,7 @@ Partial Class DashboardScreeningRegisBook
         Me.BtnReferral.Overflow = System.Windows.Forms.ToolStripItemOverflow.Always
         Me.BtnReferral.Size = New System.Drawing.Size(248, 26)
         Me.BtnReferral.Text = "Refer ..."
+        Me.BtnReferral.Visible = False
         '
         'BtnUpdateReferral
         '
@@ -781,6 +784,7 @@ Partial Class DashboardScreeningRegisBook
         '
         Me.ToolStripMenuItem3.Name = "ToolStripMenuItem3"
         Me.ToolStripMenuItem3.Size = New System.Drawing.Size(245, 6)
+        Me.ToolStripMenuItem3.Visible = False
         '
         'BtnOpticalShop
         '
@@ -789,6 +793,7 @@ Partial Class DashboardScreeningRegisBook
         Me.BtnOpticalShop.Name = "BtnOpticalShop"
         Me.BtnOpticalShop.Size = New System.Drawing.Size(248, 26)
         Me.BtnOpticalShop.Text = "Optical Shop ..."
+        Me.BtnOpticalShop.Visible = False
         '
         'BtnUpdateOpticalshop
         '
@@ -849,24 +854,24 @@ Partial Class DashboardScreeningRegisBook
         Me.DGReferral.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DGReferral.BackgroundColor = System.Drawing.Color.White
         Me.DGReferral.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle18.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(67, Byte), Integer), CType(CType(82, Byte), Integer))
-        DataGridViewCellStyle18.Font = New System.Drawing.Font("Century Gothic", 12.0!)
-        DataGridViewCellStyle18.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DGReferral.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle18
+        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(67, Byte), Integer), CType(CType(82, Byte), Integer))
+        DataGridViewCellStyle9.Font = New System.Drawing.Font("Century Gothic", 12.0!)
+        DataGridViewCellStyle9.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DGReferral.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle9
         Me.DGReferral.ColumnHeadersHeight = 35
         Me.DGReferral.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.REFERRAL_ID, Me.CREATE_DATE, Me.SCREENING_BOOKID, Me.PATIENT_NO, Me.NameEngReferral, Me.NameKhmerReferra, Me.AgeReferral, Me.SexReferral, Me.AddressReferral, Me.VA_RIGHT, Me.VA_LEFT, Me.DIAGNOSIS, Me.DATE_MEETING, Me.STATUS_PICKUP, Me.ARRIVED, Me.REFERRAL_NOTE})
-        DataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle24.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle24.Font = New System.Drawing.Font("Century Gothic", 12.0!)
-        DataGridViewCellStyle24.ForeColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
-        DataGridViewCellStyle24.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle24.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DGReferral.DefaultCellStyle = DataGridViewCellStyle24
+        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle10.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle10.Font = New System.Drawing.Font("Century Gothic", 12.0!)
+        DataGridViewCellStyle10.ForeColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
+        DataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DGReferral.DefaultCellStyle = DataGridViewCellStyle10
         Me.DGReferral.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DGReferral.EnableHeadersVisualStyles = False
         Me.DGReferral.GridColor = System.Drawing.Color.SteelBlue
@@ -874,14 +879,14 @@ Partial Class DashboardScreeningRegisBook
         Me.DGReferral.Margin = New System.Windows.Forms.Padding(5)
         Me.DGReferral.Name = "DGReferral"
         Me.DGReferral.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle25.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(67, Byte), Integer), CType(CType(82, Byte), Integer))
-        DataGridViewCellStyle25.Font = New System.Drawing.Font("Century Gothic", 12.0!)
-        DataGridViewCellStyle25.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle25.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle25.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle25.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DGReferral.RowHeadersDefaultCellStyle = DataGridViewCellStyle25
+        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(67, Byte), Integer), CType(CType(82, Byte), Integer))
+        DataGridViewCellStyle11.Font = New System.Drawing.Font("Century Gothic", 12.0!)
+        DataGridViewCellStyle11.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DGReferral.RowHeadersDefaultCellStyle = DataGridViewCellStyle11
         Me.DGReferral.RowTemplate.Height = 35
         Me.DGReferral.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DGReferral.Size = New System.Drawing.Size(1289, 310)
@@ -1020,24 +1025,24 @@ Partial Class DashboardScreeningRegisBook
         Me.DGRefraction.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DGRefraction.BackgroundColor = System.Drawing.Color.White
         Me.DGRefraction.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle40.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle40.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(67, Byte), Integer), CType(CType(82, Byte), Integer))
-        DataGridViewCellStyle40.Font = New System.Drawing.Font("Century Gothic", 12.0!)
-        DataGridViewCellStyle40.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle40.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle40.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle40.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DGRefraction.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle40
+        DataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(67, Byte), Integer), CType(CType(82, Byte), Integer))
+        DataGridViewCellStyle12.Font = New System.Drawing.Font("Century Gothic", 12.0!)
+        DataGridViewCellStyle12.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DGRefraction.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle12
         Me.DGRefraction.ColumnHeadersHeight = 35
         Me.DGRefraction.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.REFRACT_DATE, Me.REFRACT_ID, Me.SCREEN_BOOK_ID, Me.NameEngRefraction, Me.NameKhmerRefraction, Me.AgeRefraction, Me.SexRefraction, Me.AddressRefraction, Me.VA_RIGHTRefraction, Me.VA_LEFTRefraction, Me.DIAGNOSISRefraction, Me.RE_PLUS, Me.RE_VA, Me.LE_PLUS, Me.LE_VA, Me.REFRACT_ADD, Me.SIGNATURE, Me.REFRACT_NOTE})
-        DataGridViewCellStyle41.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle41.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle41.Font = New System.Drawing.Font("Century Gothic", 12.0!)
-        DataGridViewCellStyle41.ForeColor = System.Drawing.Color.Cornsilk
-        DataGridViewCellStyle41.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle41.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle41.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DGRefraction.DefaultCellStyle = DataGridViewCellStyle41
+        DataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle13.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle13.Font = New System.Drawing.Font("Century Gothic", 12.0!)
+        DataGridViewCellStyle13.ForeColor = System.Drawing.Color.Cornsilk
+        DataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DGRefraction.DefaultCellStyle = DataGridViewCellStyle13
         Me.DGRefraction.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DGRefraction.EnableHeadersVisualStyles = False
         Me.DGRefraction.GridColor = System.Drawing.Color.SteelBlue
@@ -1045,14 +1050,14 @@ Partial Class DashboardScreeningRegisBook
         Me.DGRefraction.Margin = New System.Windows.Forms.Padding(5)
         Me.DGRefraction.Name = "DGRefraction"
         Me.DGRefraction.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle42.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle42.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(67, Byte), Integer), CType(CType(82, Byte), Integer))
-        DataGridViewCellStyle42.Font = New System.Drawing.Font("Century Gothic", 12.0!)
-        DataGridViewCellStyle42.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle42.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle42.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle42.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DGRefraction.RowHeadersDefaultCellStyle = DataGridViewCellStyle42
+        DataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(67, Byte), Integer), CType(CType(82, Byte), Integer))
+        DataGridViewCellStyle14.Font = New System.Drawing.Font("Century Gothic", 12.0!)
+        DataGridViewCellStyle14.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DGRefraction.RowHeadersDefaultCellStyle = DataGridViewCellStyle14
         Me.DGRefraction.RowTemplate.Height = 35
         Me.DGRefraction.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DGRefraction.Size = New System.Drawing.Size(1289, 310)
@@ -1204,24 +1209,24 @@ Partial Class DashboardScreeningRegisBook
         Me.DGOpticalShop.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DGOpticalShop.BackgroundColor = System.Drawing.Color.White
         Me.DGOpticalShop.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle43.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle43.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(67, Byte), Integer), CType(CType(82, Byte), Integer))
-        DataGridViewCellStyle43.Font = New System.Drawing.Font("Century Gothic", 12.0!)
-        DataGridViewCellStyle43.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle43.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle43.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle43.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DGOpticalShop.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle43
+        DataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle15.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(67, Byte), Integer), CType(CType(82, Byte), Integer))
+        DataGridViewCellStyle15.Font = New System.Drawing.Font("Century Gothic", 12.0!)
+        DataGridViewCellStyle15.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DGOpticalShop.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle15
         Me.DGOpticalShop.ColumnHeadersHeight = 35
         Me.DGOpticalShop.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DATE_SCREENING, Me.PATIENT_NOOpticalshop, Me.NameEngOpticalshop, Me.NameKhmerOpticalShop, Me.AgeOpticalshop, Me.SexOpticalShop, Me.AddressOpticalshop, Me.OPTICAL_ID, Me.SCREENBOOK_ID, Me.STATUS_PAY, Me.OPTICALSHOP_NOTE})
-        DataGridViewCellStyle44.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle44.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle44.Font = New System.Drawing.Font("Century Gothic", 12.0!)
-        DataGridViewCellStyle44.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle44.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle44.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle44.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DGOpticalShop.DefaultCellStyle = DataGridViewCellStyle44
+        DataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle16.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle16.Font = New System.Drawing.Font("Century Gothic", 12.0!)
+        DataGridViewCellStyle16.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DGOpticalShop.DefaultCellStyle = DataGridViewCellStyle16
         Me.DGOpticalShop.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DGOpticalShop.EnableHeadersVisualStyles = False
         Me.DGOpticalShop.GridColor = System.Drawing.Color.SteelBlue
@@ -1229,14 +1234,14 @@ Partial Class DashboardScreeningRegisBook
         Me.DGOpticalShop.Margin = New System.Windows.Forms.Padding(5)
         Me.DGOpticalShop.Name = "DGOpticalShop"
         Me.DGOpticalShop.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle45.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle45.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(67, Byte), Integer), CType(CType(82, Byte), Integer))
-        DataGridViewCellStyle45.Font = New System.Drawing.Font("Century Gothic", 12.0!)
-        DataGridViewCellStyle45.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle45.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle45.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle45.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DGOpticalShop.RowHeadersDefaultCellStyle = DataGridViewCellStyle45
+        DataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(67, Byte), Integer), CType(CType(82, Byte), Integer))
+        DataGridViewCellStyle17.Font = New System.Drawing.Font("Century Gothic", 12.0!)
+        DataGridViewCellStyle17.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DGOpticalShop.RowHeadersDefaultCellStyle = DataGridViewCellStyle17
         Me.DGOpticalShop.RowTemplate.Height = 35
         Me.DGOpticalShop.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DGOpticalShop.Size = New System.Drawing.Size(1289, 310)
@@ -1538,9 +1543,9 @@ Partial Class DashboardScreeningRegisBook
         Me.Label6.ForeColor = System.Drawing.Color.White
         Me.Label6.Location = New System.Drawing.Point(67, 1)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(67, 21)
+        Me.Label6.Size = New System.Drawing.Size(50, 21)
         Me.Label6.TabIndex = 0
-        Me.Label6.Text = "Referall"
+        Me.Label6.Text = "Refer"
         '
         'Panel2
         '
@@ -1628,7 +1633,7 @@ Partial Class DashboardScreeningRegisBook
         Me.Size = New System.Drawing.Size(1320, 863)
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.NotFillDiagnosis, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel6.ResumeLayout(False)
         Me.Panel6.PerformLayout()
         CType(Me.PicStartImport, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1794,7 +1799,7 @@ Partial Class DashboardScreeningRegisBook
     Friend WithEvents Female As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Occupation As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Telephone As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
+    Friend WithEvents NotFillDiagnosis As System.Windows.Forms.PictureBox
     Friend WithEvents Panel6 As System.Windows.Forms.Panel
     Friend WithEvents LblTotalNotFillDiagnosis As System.Windows.Forms.Label
     Friend WithEvents Label9 As System.Windows.Forms.Label

@@ -29,20 +29,27 @@ Partial Class DashboardReportUtility
         Me.Label13 = New System.Windows.Forms.Label
         Me.Label12 = New System.Windows.Forms.Label
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer
-        Me.CRVScreeningUtility = New CrystalDecisions.Windows.Forms.CrystalReportViewer
-        Me.ChScreeningPlace = New System.Windows.Forms.CheckBox
-        Me.CboScreeningPlace = New System.Windows.Forms.ComboBox
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox
-        Me.RadAllScreening = New System.Windows.Forms.RadioButton
-        Me.RadRefraction = New System.Windows.Forms.RadioButton
-        Me.RadReferalBySelf = New System.Windows.Forms.RadioButton
-        Me.RadReferPickup = New System.Windows.Forms.RadioButton
+        Me.RadByStatistics = New System.Windows.Forms.RadioButton
+        Me.RadByBooks = New System.Windows.Forms.RadioButton
+        Me.GroupByScreenBook = New System.Windows.Forms.GroupBox
+        Me.RadRefractBook = New System.Windows.Forms.RadioButton
+        Me.RadReferBook = New System.Windows.Forms.RadioButton
+        Me.RadScreenBook = New System.Windows.Forms.RadioButton
+        Me.GroupByStatistict = New System.Windows.Forms.GroupBox
         Me.RadOpticalShop = New System.Windows.Forms.RadioButton
+        Me.RadReferPickup = New System.Windows.Forms.RadioButton
+        Me.RadReferalBySelf = New System.Windows.Forms.RadioButton
+        Me.RadRefraction = New System.Windows.Forms.RadioButton
+        Me.RadAllScreening = New System.Windows.Forms.RadioButton
+        Me.CboScreeningPlace = New System.Windows.Forms.ComboBox
+        Me.ChScreeningPlace = New System.Windows.Forms.CheckBox
+        Me.CRVScreeningUtility = New CrystalDecisions.Windows.Forms.CrystalReportViewer
         Me.BGloadingReport = New System.ComponentModel.BackgroundWorker
         Me.SplitContainer1.Panel1.SuspendLayout()
         Me.SplitContainer1.Panel2.SuspendLayout()
         Me.SplitContainer1.SuspendLayout()
-        Me.GroupBox1.SuspendLayout()
+        Me.GroupByScreenBook.SuspendLayout()
+        Me.GroupByStatistict.SuspendLayout()
         Me.SuspendLayout()
         '
         'BtnScreeningBook
@@ -55,7 +62,7 @@ Partial Class DashboardReportUtility
         Me.BtnScreeningBook.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnScreeningBook.ForeColor = System.Drawing.Color.White
         Me.BtnScreeningBook.Image = CType(resources.GetObject("BtnScreeningBook.Image"), System.Drawing.Image)
-        Me.BtnScreeningBook.Location = New System.Drawing.Point(7, 352)
+        Me.BtnScreeningBook.Location = New System.Drawing.Point(8, 535)
         Me.BtnScreeningBook.Name = "BtnScreeningBook"
         Me.BtnScreeningBook.Size = New System.Drawing.Size(228, 72)
         Me.BtnScreeningBook.TabIndex = 4
@@ -113,7 +120,10 @@ Partial Class DashboardReportUtility
         '
         'SplitContainer1.Panel1
         '
-        Me.SplitContainer1.Panel1.Controls.Add(Me.GroupBox1)
+        Me.SplitContainer1.Panel1.Controls.Add(Me.RadByStatistics)
+        Me.SplitContainer1.Panel1.Controls.Add(Me.RadByBooks)
+        Me.SplitContainer1.Panel1.Controls.Add(Me.GroupByScreenBook)
+        Me.SplitContainer1.Panel1.Controls.Add(Me.GroupByStatistict)
         Me.SplitContainer1.Panel1.Controls.Add(Me.CboScreeningPlace)
         Me.SplitContainer1.Panel1.Controls.Add(Me.ChScreeningPlace)
         Me.SplitContainer1.Panel1.Controls.Add(Me.Label12)
@@ -129,57 +139,132 @@ Partial Class DashboardReportUtility
         Me.SplitContainer1.SplitterDistance = 246
         Me.SplitContainer1.TabIndex = 33
         '
-        'CRVScreeningUtility
+        'RadByStatistics
         '
-        Me.CRVScreeningUtility.ActiveViewIndex = -1
-        Me.CRVScreeningUtility.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.CRVScreeningUtility.DisplayGroupTree = False
-        Me.CRVScreeningUtility.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.CRVScreeningUtility.Location = New System.Drawing.Point(0, 0)
-        Me.CRVScreeningUtility.Name = "CRVScreeningUtility"
-        Me.CRVScreeningUtility.SelectionFormula = ""
-        Me.CRVScreeningUtility.ShowGroupTreeButton = False
-        Me.CRVScreeningUtility.ShowRefreshButton = False
-        Me.CRVScreeningUtility.Size = New System.Drawing.Size(1248, 938)
-        Me.CRVScreeningUtility.TabIndex = 0
-        Me.CRVScreeningUtility.ViewTimeSelectionFormula = ""
+        Me.RadByStatistics.AutoSize = True
+        Me.RadByStatistics.Checked = True
+        Me.RadByStatistics.Location = New System.Drawing.Point(7, 152)
+        Me.RadByStatistics.Name = "RadByStatistics"
+        Me.RadByStatistics.Size = New System.Drawing.Size(124, 25)
+        Me.RadByStatistics.TabIndex = 38
+        Me.RadByStatistics.TabStop = True
+        Me.RadByStatistics.Text = "By Statisticts"
+        Me.RadByStatistics.UseVisualStyleBackColor = True
         '
-        'ChScreeningPlace
+        'RadByBooks
         '
-        Me.ChScreeningPlace.AutoSize = True
-        Me.ChScreeningPlace.ForeColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
-        Me.ChScreeningPlace.Location = New System.Drawing.Point(7, 86)
-        Me.ChScreeningPlace.Name = "ChScreeningPlace"
-        Me.ChScreeningPlace.Size = New System.Drawing.Size(157, 25)
-        Me.ChScreeningPlace.TabIndex = 33
-        Me.ChScreeningPlace.Text = "Screening Place:"
-        Me.ChScreeningPlace.UseVisualStyleBackColor = True
+        Me.RadByBooks.AutoSize = True
+        Me.RadByBooks.Location = New System.Drawing.Point(132, 152)
+        Me.RadByBooks.Name = "RadByBooks"
+        Me.RadByBooks.Size = New System.Drawing.Size(128, 25)
+        Me.RadByBooks.TabIndex = 37
+        Me.RadByBooks.Text = "View By Book"
+        Me.RadByBooks.UseVisualStyleBackColor = True
         '
-        'CboScreeningPlace
+        'GroupByScreenBook
         '
-        Me.CboScreeningPlace.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
-        Me.CboScreeningPlace.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
-        Me.CboScreeningPlace.Enabled = False
-        Me.CboScreeningPlace.FormattingEnabled = True
-        Me.CboScreeningPlace.Location = New System.Drawing.Point(7, 112)
-        Me.CboScreeningPlace.Name = "CboScreeningPlace"
-        Me.CboScreeningPlace.Size = New System.Drawing.Size(227, 29)
-        Me.CboScreeningPlace.TabIndex = 34
+        Me.GroupByScreenBook.Controls.Add(Me.RadRefractBook)
+        Me.GroupByScreenBook.Controls.Add(Me.RadReferBook)
+        Me.GroupByScreenBook.Controls.Add(Me.RadScreenBook)
+        Me.GroupByScreenBook.Enabled = False
+        Me.GroupByScreenBook.ForeColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
+        Me.GroupByScreenBook.Location = New System.Drawing.Point(9, 389)
+        Me.GroupByScreenBook.Name = "GroupByScreenBook"
+        Me.GroupByScreenBook.Size = New System.Drawing.Size(224, 140)
+        Me.GroupByScreenBook.TabIndex = 36
+        Me.GroupByScreenBook.TabStop = False
+        Me.GroupByScreenBook.Text = "Screening Books"
         '
-        'GroupBox1
+        'RadRefractBook
         '
-        Me.GroupBox1.Controls.Add(Me.RadOpticalShop)
-        Me.GroupBox1.Controls.Add(Me.RadReferPickup)
-        Me.GroupBox1.Controls.Add(Me.RadReferalBySelf)
-        Me.GroupBox1.Controls.Add(Me.RadRefraction)
-        Me.GroupBox1.Controls.Add(Me.RadAllScreening)
-        Me.GroupBox1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
-        Me.GroupBox1.Location = New System.Drawing.Point(7, 156)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(227, 190)
-        Me.GroupBox1.TabIndex = 35
-        Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "View By:"
+        Me.RadRefractBook.AutoSize = True
+        Me.RadRefractBook.ForeColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
+        Me.RadRefractBook.Location = New System.Drawing.Point(17, 105)
+        Me.RadRefractBook.Name = "RadRefractBook"
+        Me.RadRefractBook.Size = New System.Drawing.Size(150, 25)
+        Me.RadRefractBook.TabIndex = 3
+        Me.RadRefractBook.Text = "Refraction Book"
+        Me.RadRefractBook.UseVisualStyleBackColor = True
+        '
+        'RadReferBook
+        '
+        Me.RadReferBook.AutoSize = True
+        Me.RadReferBook.ForeColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
+        Me.RadReferBook.Location = New System.Drawing.Point(17, 70)
+        Me.RadReferBook.Name = "RadReferBook"
+        Me.RadReferBook.Size = New System.Drawing.Size(109, 25)
+        Me.RadReferBook.TabIndex = 2
+        Me.RadReferBook.Text = "Refer Book"
+        Me.RadReferBook.UseVisualStyleBackColor = True
+        '
+        'RadScreenBook
+        '
+        Me.RadScreenBook.AutoSize = True
+        Me.RadScreenBook.Checked = True
+        Me.RadScreenBook.ForeColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
+        Me.RadScreenBook.Location = New System.Drawing.Point(17, 36)
+        Me.RadScreenBook.Name = "RadScreenBook"
+        Me.RadScreenBook.Size = New System.Drawing.Size(146, 25)
+        Me.RadScreenBook.TabIndex = 1
+        Me.RadScreenBook.TabStop = True
+        Me.RadScreenBook.Text = "Screening Book"
+        Me.RadScreenBook.UseVisualStyleBackColor = True
+        '
+        'GroupByStatistict
+        '
+        Me.GroupByStatistict.Controls.Add(Me.RadOpticalShop)
+        Me.GroupByStatistict.Controls.Add(Me.RadReferPickup)
+        Me.GroupByStatistict.Controls.Add(Me.RadReferalBySelf)
+        Me.GroupByStatistict.Controls.Add(Me.RadRefraction)
+        Me.GroupByStatistict.Controls.Add(Me.RadAllScreening)
+        Me.GroupByStatistict.ForeColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
+        Me.GroupByStatistict.Location = New System.Drawing.Point(7, 191)
+        Me.GroupByStatistict.Name = "GroupByStatistict"
+        Me.GroupByStatistict.Size = New System.Drawing.Size(229, 190)
+        Me.GroupByStatistict.TabIndex = 35
+        Me.GroupByStatistict.TabStop = False
+        Me.GroupByStatistict.Text = "View By:"
+        '
+        'RadOpticalShop
+        '
+        Me.RadOpticalShop.AutoSize = True
+        Me.RadOpticalShop.Location = New System.Drawing.Point(6, 150)
+        Me.RadOpticalShop.Name = "RadOpticalShop"
+        Me.RadOpticalShop.Size = New System.Drawing.Size(130, 25)
+        Me.RadOpticalShop.TabIndex = 0
+        Me.RadOpticalShop.Text = "Optical Shop"
+        Me.RadOpticalShop.UseVisualStyleBackColor = True
+        '
+        'RadReferPickup
+        '
+        Me.RadReferPickup.AutoSize = True
+        Me.RadReferPickup.Location = New System.Drawing.Point(6, 88)
+        Me.RadReferPickup.Name = "RadReferPickup"
+        Me.RadReferPickup.Size = New System.Drawing.Size(177, 25)
+        Me.RadReferPickup.TabIndex = 0
+        Me.RadReferPickup.Text = "Refer To TEH Pickup"
+        Me.RadReferPickup.UseVisualStyleBackColor = True
+        '
+        'RadReferalBySelf
+        '
+        Me.RadReferalBySelf.AutoSize = True
+        Me.RadReferalBySelf.Location = New System.Drawing.Point(6, 57)
+        Me.RadReferalBySelf.Name = "RadReferalBySelf"
+        Me.RadReferalBySelf.Size = New System.Drawing.Size(167, 25)
+        Me.RadReferalBySelf.TabIndex = 0
+        Me.RadReferalBySelf.Text = "Refer To TEH Byself"
+        Me.RadReferalBySelf.UseVisualStyleBackColor = True
+        '
+        'RadRefraction
+        '
+        Me.RadRefraction.AutoSize = True
+        Me.RadRefraction.ForeColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
+        Me.RadRefraction.Location = New System.Drawing.Point(6, 119)
+        Me.RadRefraction.Name = "RadRefraction"
+        Me.RadRefraction.Size = New System.Drawing.Size(109, 25)
+        Me.RadRefraction.TabIndex = 0
+        Me.RadRefraction.Text = "Refraction"
+        Me.RadRefraction.UseVisualStyleBackColor = True
         '
         'RadAllScreening
         '
@@ -194,46 +279,42 @@ Partial Class DashboardReportUtility
         Me.RadAllScreening.Text = "All Screening"
         Me.RadAllScreening.UseVisualStyleBackColor = True
         '
-        'RadRefraction
+        'CboScreeningPlace
         '
-        Me.RadRefraction.AutoSize = True
-        Me.RadRefraction.ForeColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
-        Me.RadRefraction.Location = New System.Drawing.Point(6, 57)
-        Me.RadRefraction.Name = "RadRefraction"
-        Me.RadRefraction.Size = New System.Drawing.Size(109, 25)
-        Me.RadRefraction.TabIndex = 0
-        Me.RadRefraction.Text = "Refraction"
-        Me.RadRefraction.UseVisualStyleBackColor = True
+        Me.CboScreeningPlace.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.CboScreeningPlace.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
+        Me.CboScreeningPlace.Enabled = False
+        Me.CboScreeningPlace.FormattingEnabled = True
+        Me.CboScreeningPlace.Location = New System.Drawing.Point(7, 112)
+        Me.CboScreeningPlace.Name = "CboScreeningPlace"
+        Me.CboScreeningPlace.Size = New System.Drawing.Size(227, 29)
+        Me.CboScreeningPlace.TabIndex = 34
         '
-        'RadReferalBySelf
+        'ChScreeningPlace
         '
-        Me.RadReferalBySelf.AutoSize = True
-        Me.RadReferalBySelf.Location = New System.Drawing.Point(6, 88)
-        Me.RadReferalBySelf.Name = "RadReferalBySelf"
-        Me.RadReferalBySelf.Size = New System.Drawing.Size(181, 25)
-        Me.RadReferalBySelf.TabIndex = 0
-        Me.RadReferalBySelf.Text = "Referal To TEH Byself"
-        Me.RadReferalBySelf.UseVisualStyleBackColor = True
+        Me.ChScreeningPlace.AutoSize = True
+        Me.ChScreeningPlace.ForeColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
+        Me.ChScreeningPlace.Location = New System.Drawing.Point(7, 86)
+        Me.ChScreeningPlace.Name = "ChScreeningPlace"
+        Me.ChScreeningPlace.Size = New System.Drawing.Size(157, 25)
+        Me.ChScreeningPlace.TabIndex = 33
+        Me.ChScreeningPlace.Text = "Screening Place:"
+        Me.ChScreeningPlace.UseVisualStyleBackColor = True
         '
-        'RadReferPickup
+        'CRVScreeningUtility
         '
-        Me.RadReferPickup.AutoSize = True
-        Me.RadReferPickup.Location = New System.Drawing.Point(6, 119)
-        Me.RadReferPickup.Name = "RadReferPickup"
-        Me.RadReferPickup.Size = New System.Drawing.Size(191, 25)
-        Me.RadReferPickup.TabIndex = 0
-        Me.RadReferPickup.Text = "Referal To TEH Pickup"
-        Me.RadReferPickup.UseVisualStyleBackColor = True
-        '
-        'RadOpticalShop
-        '
-        Me.RadOpticalShop.AutoSize = True
-        Me.RadOpticalShop.Location = New System.Drawing.Point(6, 150)
-        Me.RadOpticalShop.Name = "RadOpticalShop"
-        Me.RadOpticalShop.Size = New System.Drawing.Size(130, 25)
-        Me.RadOpticalShop.TabIndex = 0
-        Me.RadOpticalShop.Text = "Optical Shop"
-        Me.RadOpticalShop.UseVisualStyleBackColor = True
+        Me.CRVScreeningUtility.ActiveViewIndex = -1
+        Me.CRVScreeningUtility.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.CRVScreeningUtility.DisplayGroupTree = False
+        Me.CRVScreeningUtility.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.CRVScreeningUtility.Location = New System.Drawing.Point(0, 0)
+        Me.CRVScreeningUtility.Name = "CRVScreeningUtility"
+        Me.CRVScreeningUtility.SelectionFormula = ""
+        Me.CRVScreeningUtility.ShowGroupTreeButton = False
+        Me.CRVScreeningUtility.ShowRefreshButton = False
+        Me.CRVScreeningUtility.Size = New System.Drawing.Size(1248, 938)
+        Me.CRVScreeningUtility.TabIndex = 0
+        Me.CRVScreeningUtility.ViewTimeSelectionFormula = ""
         '
         'BGloadingReport
         '
@@ -252,8 +333,10 @@ Partial Class DashboardReportUtility
         Me.SplitContainer1.Panel1.PerformLayout()
         Me.SplitContainer1.Panel2.ResumeLayout(False)
         Me.SplitContainer1.ResumeLayout(False)
-        Me.GroupBox1.ResumeLayout(False)
-        Me.GroupBox1.PerformLayout()
+        Me.GroupByScreenBook.ResumeLayout(False)
+        Me.GroupByScreenBook.PerformLayout()
+        Me.GroupByStatistict.ResumeLayout(False)
+        Me.GroupByStatistict.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -266,12 +349,18 @@ Partial Class DashboardReportUtility
     Friend WithEvents CRVScreeningUtility As CrystalDecisions.Windows.Forms.CrystalReportViewer
     Friend WithEvents ChScreeningPlace As System.Windows.Forms.CheckBox
     Friend WithEvents CboScreeningPlace As System.Windows.Forms.ComboBox
-    Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
+    Friend WithEvents GroupByStatistict As System.Windows.Forms.GroupBox
     Friend WithEvents RadReferalBySelf As System.Windows.Forms.RadioButton
     Friend WithEvents RadRefraction As System.Windows.Forms.RadioButton
     Friend WithEvents RadAllScreening As System.Windows.Forms.RadioButton
     Friend WithEvents RadReferPickup As System.Windows.Forms.RadioButton
     Friend WithEvents RadOpticalShop As System.Windows.Forms.RadioButton
     Friend WithEvents BGloadingReport As System.ComponentModel.BackgroundWorker
+    Friend WithEvents GroupByScreenBook As System.Windows.Forms.GroupBox
+    Friend WithEvents RadRefractBook As System.Windows.Forms.RadioButton
+    Friend WithEvents RadReferBook As System.Windows.Forms.RadioButton
+    Friend WithEvents RadScreenBook As System.Windows.Forms.RadioButton
+    Friend WithEvents RadByStatistics As System.Windows.Forms.RadioButton
+    Friend WithEvents RadByBooks As System.Windows.Forms.RadioButton
 
 End Class

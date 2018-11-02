@@ -675,6 +675,24 @@
       <DependentUpon>ReportAllRefraction.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Takeo_Eye_Hopspital\Screening\BookReports\ReferBookDetail.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReferBookDetail.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Takeo_Eye_Hopspital\Screening\BookReports\RefractionBookDetail.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RefractionBookDetail.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Takeo_Eye_Hopspital\Screening\BookReports\ScreeningBook.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ScreeningBook.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Takeo_Eye_Hopspital\Screening\ReportScreening\ReportScreening.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -3320,6 +3338,18 @@
     <EmbeddedResource Include="Takeo_Eye_Hopspital\Refraction\ReportAllRefraction.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>ReportAllRefraction.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Takeo_Eye_Hopspital\Screening\BookReports\ReferBookDetail.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReferBookDetail.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Takeo_Eye_Hopspital\Screening\BookReports\RefractionBookDetail.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RefractionBookDetail.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Takeo_Eye_Hopspital\Screening\BookReports\ScreeningBook.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ScreeningBook.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Takeo_Eye_Hopspital\Screening\ReportScreening\ReportScreening.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

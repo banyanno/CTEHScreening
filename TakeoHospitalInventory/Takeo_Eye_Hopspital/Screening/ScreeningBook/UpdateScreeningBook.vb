@@ -86,7 +86,10 @@
                     If ChRefraction.Checked = True Then
                         If DARefraction.CheckExistingRefraction(LblSaveOption.Text) = 0 Then
                             DARefraction.InsertNewRefraction(LblSaveOption.Text, DateScreening.Value.Date, PatientNo.Text, CboVARight.Text, CboVALeft.Text, cboDiagnosis.Text, TxtREPlus.Text, CboREPlusVARefract.Text, TxtLEPlus.Text, CboLEPlusVARefrac.Text, CboAdd.Text, True, TxtRefractNote.Text)
+                        Else
+                            DARefraction.UpdateRefraction(DateScreening.Value.Date, CboVARight.Text, CboVALeft.Text, cboDiagnosis.Text, TxtREPlus.Text, CboREPlusVARefract.Text, TxtREPlus.Text, CboLEPlusVARefrac.Text, CboAdd.Text, True, TxtRefractNote.Text, LblSaveOption.Text)
                         End If
+
                     Else
                         DARefraction.DeleteRefraction(LblSaveOption.Text)
                     End If

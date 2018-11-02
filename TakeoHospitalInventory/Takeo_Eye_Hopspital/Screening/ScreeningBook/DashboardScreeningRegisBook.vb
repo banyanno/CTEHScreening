@@ -85,6 +85,10 @@
         DGReferral.AutoGenerateColumns = False
         DGRefraction.AutoGenerateColumns = False
         DGOpticalShop.AutoGenerateColumns = False
+        TxtPatienNo.Focus()
+        TxtPatienNo.Select()
+        TxtPatienNo.SelectAll()
+
         'For Each items As ToolStripItem In CMScreeningBook.Items
         '    If TypeOf items Is ToolStripMenuItem Then
         '        MsgBox(items.Name)
@@ -499,5 +503,9 @@
         If e.KeyCode = Keys.Enter Then
             BtnUpdateScreening_Click(sender, e)
         End If
+    End Sub
+
+    Private Sub NotFillDiagnosis_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles NotFillDiagnosis.Click
+        CheckBlankDiagnosis(Me.DGScreeningBook)
     End Sub
 End Class
