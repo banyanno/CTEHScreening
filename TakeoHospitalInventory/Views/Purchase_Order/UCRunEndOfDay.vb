@@ -2,7 +2,7 @@
 Imports Janus.Windows.GridEX
 
 Public Class UCRunEndOfDay
-
+    Dim MScreening As MainScreening
     Dim ItemInDepartDataAdapter As DSCategoriesAndItemsTableAdapters.VItemListInDepartTableAdapter
     Dim MainStockItemDataAdapter As DSCategoriesAndItemsTableAdapters.VItemListTableAdapter
     Dim EndofDayRunDataAdapter As DSEndofDayRunTableAdapters.VRunEndofDayResultTableAdapter
@@ -22,6 +22,19 @@ Public Class UCRunEndOfDay
         MainStockItemDataAdapter = New DSCategoriesAndItemsTableAdapters.VItemListTableAdapter
         VEODAccessRightDA = New DSUserManagementTableAdapters.VEODAccessRightTableAdapter
         ' Add any initialization after the InitializeComponent() call.
+    End Sub
+    Sub New(ByVal MScreening As MainScreening)
+
+        ' This call is required by the Windows Form Designer.
+        InitializeComponent()
+        Me.MScreening = MScreening
+        EndofDayRunDataAdapter = New DSEndofDayRunTableAdapters.VRunEndofDayResultTableAdapter
+        DepartDataAdapter = New DSDepartmentTableAdapters.tblDepartmentTableAdapter
+        ItemInDepartDataAdapter = New DSCategoriesAndItemsTableAdapters.VItemListInDepartTableAdapter
+        MainStockItemDataAdapter = New DSCategoriesAndItemsTableAdapters.VItemListTableAdapter
+        VEODAccessRightDA = New DSUserManagementTableAdapters.VEODAccessRightTableAdapter
+        ' Add any initialization after the InitializeComponent() call.
+
     End Sub
 
     Private Sub UCRunEndOfDay_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
@@ -270,7 +283,8 @@ Public Class UCRunEndOfDay
     End Sub
 
     Private Sub BgLoadingRunEOD_RunWorkerCompleted(ByVal sender As Object, ByVal e As System.ComponentModel.RunWorkerCompletedEventArgs) Handles BgLoadingRunEOD.RunWorkerCompleted
-        MTakeoInventory.StatusLoading(False)
+        'MTakeoInventory.StatusLoading(False)
+        MScreening.StatusLoading(False, "Loading")
         Try
             MenuReceivedAll.Enabled = True
         Catch ex As Exception
@@ -288,7 +302,8 @@ Public Class UCRunEndOfDay
    
     Public Sub BtnEndofDay_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnEndofDay.Click
         'If MessageBox.Show("Do you want process run end of day ?", "Info", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
-        MTakeoInventory.StatusLoading(True)
+        '   MTakeoInventory.StatusLoading(True)
+        MScreening.StatusLoading(True, "Loading")
         Application.DoEvents()
         If BgLoadingRunEOD.IsBusy = True Then
             BgLoadingRunEOD.CancelAsync()

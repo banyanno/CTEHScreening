@@ -92,6 +92,8 @@ Partial Class UIScreening
         Me.BtnScreeningSetting = New System.Windows.Forms.Button
         Me.BtnReports = New System.Windows.Forms.Button
         Me.BtnInventory = New System.Windows.Forms.Button
+        Me.Label4 = New System.Windows.Forms.Label
+        Me.Label5 = New System.Windows.Forms.Label
         Me.MenuVertical.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.DGScreeningBook, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -116,7 +118,7 @@ Partial Class UIScreening
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.Blue
-        Me.Label2.Location = New System.Drawing.Point(809, 372)
+        Me.Label2.Location = New System.Drawing.Point(40, 532)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(168, 20)
         Me.Label2.TabIndex = 7
@@ -298,6 +300,8 @@ Partial Class UIScreening
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(236, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(241, Byte), Integer))
+        Me.Panel2.Controls.Add(Me.Label5)
+        Me.Panel2.Controls.Add(Me.Label4)
         Me.Panel2.Controls.Add(Me.Label3)
         Me.Panel2.Controls.Add(Me.BtnRequestItem)
         Me.Panel2.Controls.Add(Me.BtnItemTransaction)
@@ -426,9 +430,9 @@ Partial Class UIScreening
         UiComboBoxItem3.Text = "Patient Name"
         UiComboBoxItem3.Value = "Patient Name"
         Me.UiComboBox1.Items.AddRange(New Janus.Windows.EditControls.UIComboBoxItem() {UiComboBoxItem1, UiComboBoxItem2, UiComboBoxItem3})
-        Me.UiComboBox1.Location = New System.Drawing.Point(813, 321)
+        Me.UiComboBox1.Location = New System.Drawing.Point(44, 481)
         Me.UiComboBox1.Name = "UiComboBox1"
-        Me.UiComboBox1.Size = New System.Drawing.Size(163, 30)
+        Me.UiComboBox1.Size = New System.Drawing.Size(206, 30)
         Me.UiComboBox1.TabIndex = 27
         Me.UiComboBox1.Text = "Search By:"
         Me.UiComboBox1.Visible = False
@@ -465,7 +469,7 @@ Partial Class UIScreening
         Me.DGScreeningBook.DefaultCellStyle = DataGridViewCellStyle7
         Me.DGScreeningBook.EnableHeadersVisualStyles = False
         Me.DGScreeningBook.GridColor = System.Drawing.Color.SteelBlue
-        Me.DGScreeningBook.Location = New System.Drawing.Point(813, 405)
+        Me.DGScreeningBook.Location = New System.Drawing.Point(44, 566)
         Me.DGScreeningBook.Margin = New System.Windows.Forms.Padding(5)
         Me.DGScreeningBook.Name = "DGScreeningBook"
         Me.DGScreeningBook.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
@@ -480,7 +484,7 @@ Partial Class UIScreening
         Me.DGScreeningBook.RowHeadersWidth = 50
         Me.DGScreeningBook.RowTemplate.Height = 35
         Me.DGScreeningBook.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DGScreeningBook.Size = New System.Drawing.Size(465, 512)
+        Me.DGScreeningBook.Size = New System.Drawing.Size(165, 79)
         Me.DGScreeningBook.TabIndex = 26
         Me.DGScreeningBook.Visible = False
         '
@@ -769,7 +773,7 @@ Partial Class UIScreening
         Me.Button13.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button13.ForeColor = System.Drawing.Color.White
         Me.Button13.Image = CType(resources.GetObject("Button13.Image"), System.Drawing.Image)
-        Me.Button13.Location = New System.Drawing.Point(1231, 321)
+        Me.Button13.Location = New System.Drawing.Point(256, 481)
         Me.Button13.Name = "Button13"
         Me.Button13.Size = New System.Drawing.Size(36, 30)
         Me.Button13.TabIndex = 19
@@ -779,7 +783,7 @@ Partial Class UIScreening
         'TextBox1
         '
         Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(977, 321)
+        Me.TextBox1.Location = New System.Drawing.Point(44, 445)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(248, 30)
         Me.TextBox1.TabIndex = 18
@@ -916,6 +920,28 @@ Partial Class UIScreening
         Me.BtnInventory.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         Me.BtnInventory.UseVisualStyleBackColor = False
         '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
+        Me.Label4.Location = New System.Drawing.Point(401, 64)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(176, 20)
+        Me.Label4.TabIndex = 31
+        Me.Label4.Text = "Opticalshop Dashboard"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
+        Me.Label5.Location = New System.Drawing.Point(865, 67)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(176, 20)
+        Me.Label5.TabIndex = 32
+        Me.Label5.Text = "Opticalshop Dashboard"
+        '
         'UIScreening
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -990,5 +1016,7 @@ Partial Class UIScreening
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents BtnOpticalIncome As System.Windows.Forms.Button
     Friend WithEvents BtnItemTransaction As System.Windows.Forms.Button
+    Friend WithEvents Label4 As System.Windows.Forms.Label
+    Friend WithEvents Label5 As System.Windows.Forms.Label
 
 End Class

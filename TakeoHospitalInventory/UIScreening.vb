@@ -164,7 +164,7 @@
         ProvinceAndOccupation = New UCProvinceAndOccupation
         Login.UpdateLabelStatus("Creating user interface 24.", True)
         Application.DoEvents()
-        ' URunEOD = New UCRunEndOfDay(Me)
+        URunEOD = New UCRunEndOfDay(UIMainScreening)
         Login.UpdateLabelStatus("Creating user interface 25.", True)
         Application.DoEvents()
         ' UShowAllItemBalacne = New UIShowAllItemBalanceInDeppartment(Me)
