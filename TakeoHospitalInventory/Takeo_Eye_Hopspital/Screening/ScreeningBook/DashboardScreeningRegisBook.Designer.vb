@@ -237,13 +237,13 @@ Partial Class DashboardScreeningRegisBook
         Me.Panel1.Size = New System.Drawing.Size(1309, 852)
         Me.Panel1.TabIndex = 0
         '
-        'PictureBox1
+        'NotFillDiagnosis
         '
         Me.NotFillDiagnosis.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(124, Byte), Integer))
         Me.NotFillDiagnosis.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.NotFillDiagnosis.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.NotFillDiagnosis.Image = CType(resources.GetObject("NotFillDiagnosis.Image"), System.Drawing.Image)
         Me.NotFillDiagnosis.Location = New System.Drawing.Point(758, 5)
-        Me.NotFillDiagnosis.Name = "PictureBox1"
+        Me.NotFillDiagnosis.Name = "NotFillDiagnosis"
         Me.NotFillDiagnosis.Size = New System.Drawing.Size(40, 38)
         Me.NotFillDiagnosis.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.NotFillDiagnosis.TabIndex = 33
@@ -695,7 +695,7 @@ Partial Class DashboardScreeningRegisBook
         Me.CMScreeningBook.Name = "CMScreeningBook"
         Me.CMScreeningBook.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional
         Me.CMScreeningBook.ShowImageMargin = False
-        Me.CMScreeningBook.Size = New System.Drawing.Size(249, 164)
+        Me.CMScreeningBook.Size = New System.Drawing.Size(249, 182)
         '
         'BtnNewScreeningRegist
         '
@@ -715,7 +715,7 @@ Partial Class DashboardScreeningRegisBook
         Me.BtnUpdateScreening.Image = CType(resources.GetObject("BtnUpdateScreening.Image"), System.Drawing.Image)
         Me.BtnUpdateScreening.Name = "BtnUpdateScreening"
         Me.BtnUpdateScreening.Size = New System.Drawing.Size(248, 26)
-        Me.BtnUpdateScreening.Text = "Insert Diagnosis and VA"
+        Me.BtnUpdateScreening.Text = "Update Screening Utility"
         '
         'ToolStripMenuItem1
         '

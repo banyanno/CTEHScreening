@@ -95,7 +95,7 @@
             If RadReceiptCancel.Checked = True Then
                 LoadingReceiptByDateCancel(DateTo.Value, DateFrom.Value, 2)
             End If
-            LoadingWaitingPayment(DateFrom.Value.Date, DateTo.Value)
+
         End If
         
     End Sub
@@ -323,4 +323,7 @@
         
     End Sub
 
+    Private Sub BtnRefreshPayment_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnRefreshPayment.Click
+        LoadingWaitingPayment(DateFrom.Value.Date, DateTo.Value)
+    End Sub
 End Class
