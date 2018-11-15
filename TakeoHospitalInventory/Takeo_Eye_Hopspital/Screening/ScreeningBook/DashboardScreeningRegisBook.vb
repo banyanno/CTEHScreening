@@ -165,6 +165,11 @@
         UpdateSNBook.TxtMoreInfo.Text = GRows.Cells("SCREEN_NOTE").Value
         UpdateSNBook.ChRefraction.Checked = GRows.Cells("IS_REFRACTION").Value
         UpdateSNBook.ChOpticalshop.Checked = GRows.Cells("IS_OPTICALSHOP").Value
+        UpdateSNBook.ChHearing.Checked = GRows.Cells("IS_HEARING").Value
+        UpdateSNBook.ChUnderstanding.Checked = GRows.Cells("IS_UNDERSTANDING").Value
+        UpdateSNBook.ChPhysicalDisability.Checked = GRows.Cells("IS_PHYSICAL").Value
+        UpdateSNBook.ChSeeing.Checked = GRows.Cells("IS_SEEING").Value
+        UpdateSNBook.ChIsOld.Checked = GRows.Cells("IS_OLDPATIENT").Value
        
         ' Call view update Referal
         GetInfoRefer(UpdateSNBook, UpdateSNBook.LblSaveOption.Text)

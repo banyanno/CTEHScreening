@@ -63,7 +63,7 @@
     Private Sub BtnSave_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnSave.Click
         If LblSaveOption.Text <> "0" Then
             If MessageBox.Show("Do you want to update screening book?", "Update", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
-                If DAScreeningBook.UpdateScreeningBook(DateScreening.Value.Date, ChRefraction.Checked, ChOpticalshop.Checked, RadReferAndPickup.Checked, RadReferAndComeBySelf.Checked, TxtMoreInfo.Text, CboOnEye.Text, TxtComplain.Text, cboDiagnosis.Text, CboVARight.Text, CboVALeft.Text, TxtPlaceScreening.Text, LblSaveOption.Text) = 1 Then
+                If DAScreeningBook.UpdateScreeningBook(DateScreening.Value.Date, ChRefraction.Checked, ChOpticalshop.Checked, RadReferAndPickup.Checked, RadReferAndComeBySelf.Checked, TxtMoreInfo.Text, CboOnEye.Text, TxtComplain.Text, cboDiagnosis.Text, CboVARight.Text, CboVALeft.Text, TxtPlaceScreening.Text, ChHearing.Checked, ChUnderstanding.Checked, ChPhysicalDisability.Checked, ChSeeing.Checked, ChIsOld.Checked, LblSaveOption.Text) = 1 Then
                     ' Check in Referral
                     If ChReferral.Checked = True Then
                         If DAReferral.CheckExistingBookID(LblSaveOption.Text) = 0 Then

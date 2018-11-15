@@ -12,13 +12,13 @@ Partial Class FrmNewReceipt
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container
-        Dim JanusColorScheme1 As Janus.Windows.Common.JanusColorScheme = New Janus.Windows.Common.JanusColorScheme
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
+        Dim JanusColorScheme3 As Janus.Windows.Common.JanusColorScheme = New Janus.Windows.Common.JanusColorScheme
+        Dim DataGridViewCellStyle13 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
+        Dim DataGridViewCellStyle18 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
+        Dim DataGridViewCellStyle14 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
+        Dim DataGridViewCellStyle15 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
+        Dim DataGridViewCellStyle16 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
+        Dim DataGridViewCellStyle17 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
         Dim GridListOfItem_DesignTimeLayout As Janus.Windows.GridEX.GridEXLayout = New Janus.Windows.GridEX.GridEXLayout
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmNewReceipt))
         Me.DateCreateReceipt = New System.Windows.Forms.DateTimePicker
@@ -324,26 +324,26 @@ Partial Class FrmNewReceipt
         '
         'VisualStyleManager1
         '
-        JanusColorScheme1.ActiveCaptionColor = System.Drawing.Color.FromArgb(CType(CType(126, Byte), Integer), CType(CType(126, Byte), Integer), CType(CType(126, Byte), Integer))
-        JanusColorScheme1.ActiveCaptionTextColor = System.Drawing.Color.White
-        JanusColorScheme1.ControlColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        JanusColorScheme1.ControlDarkColor = System.Drawing.Color.FromArgb(CType(CType(126, Byte), Integer), CType(CType(126, Byte), Integer), CType(CType(126, Byte), Integer))
-        JanusColorScheme1.ControlTextColor = System.Drawing.Color.Black
-        JanusColorScheme1.DisabledColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        JanusColorScheme1.GrayTextColor = System.Drawing.Color.FromArgb(CType(CType(126, Byte), Integer), CType(CType(126, Byte), Integer), CType(CType(126, Byte), Integer))
-        JanusColorScheme1.HighlightColor = System.Drawing.Color.FromArgb(CType(CType(126, Byte), Integer), CType(CType(126, Byte), Integer), CType(CType(126, Byte), Integer))
-        JanusColorScheme1.HighlightTextColor = System.Drawing.Color.White
-        JanusColorScheme1.InfoColor = System.Drawing.Color.White
-        JanusColorScheme1.InfoTextColor = System.Drawing.Color.Black
-        JanusColorScheme1.MenuColor = System.Drawing.Color.White
-        JanusColorScheme1.MenuTextColor = System.Drawing.Color.Black
-        JanusColorScheme1.Name = "Scheme0"
-        JanusColorScheme1.Office2007CustomColor = System.Drawing.Color.Empty
-        JanusColorScheme1.UseThemes = False
-        JanusColorScheme1.VisualStyle = Janus.Windows.Common.VisualStyle.Standard
-        JanusColorScheme1.WindowColor = System.Drawing.Color.White
-        JanusColorScheme1.WindowTextColor = System.Drawing.Color.Black
-        Me.VisualStyleManager1.ColorSchemes.Add(JanusColorScheme1)
+        JanusColorScheme3.ActiveCaptionColor = System.Drawing.Color.FromArgb(CType(CType(126, Byte), Integer), CType(CType(126, Byte), Integer), CType(CType(126, Byte), Integer))
+        JanusColorScheme3.ActiveCaptionTextColor = System.Drawing.Color.White
+        JanusColorScheme3.ControlColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        JanusColorScheme3.ControlDarkColor = System.Drawing.Color.FromArgb(CType(CType(126, Byte), Integer), CType(CType(126, Byte), Integer), CType(CType(126, Byte), Integer))
+        JanusColorScheme3.ControlTextColor = System.Drawing.Color.Black
+        JanusColorScheme3.DisabledColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        JanusColorScheme3.GrayTextColor = System.Drawing.Color.FromArgb(CType(CType(126, Byte), Integer), CType(CType(126, Byte), Integer), CType(CType(126, Byte), Integer))
+        JanusColorScheme3.HighlightColor = System.Drawing.Color.FromArgb(CType(CType(126, Byte), Integer), CType(CType(126, Byte), Integer), CType(CType(126, Byte), Integer))
+        JanusColorScheme3.HighlightTextColor = System.Drawing.Color.White
+        JanusColorScheme3.InfoColor = System.Drawing.Color.White
+        JanusColorScheme3.InfoTextColor = System.Drawing.Color.Black
+        JanusColorScheme3.MenuColor = System.Drawing.Color.White
+        JanusColorScheme3.MenuTextColor = System.Drawing.Color.Black
+        JanusColorScheme3.Name = "Scheme0"
+        JanusColorScheme3.Office2007CustomColor = System.Drawing.Color.Empty
+        JanusColorScheme3.UseThemes = False
+        JanusColorScheme3.VisualStyle = Janus.Windows.Common.VisualStyle.Standard
+        JanusColorScheme3.WindowColor = System.Drawing.Color.White
+        JanusColorScheme3.WindowTextColor = System.Drawing.Color.Black
+        Me.VisualStyleManager1.ColorSchemes.Add(JanusColorScheme3)
         '
         'Label3
         '
@@ -495,37 +495,36 @@ Partial Class FrmNewReceipt
         Me.GridItemDetail.AccessibleRole = System.Windows.Forms.AccessibleRole.TitleBar
         Me.GridItemDetail.AllowUserToAddRows = False
         Me.GridItemDetail.AllowUserToDeleteRows = False
-        Me.GridItemDetail.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                    Or System.Windows.Forms.AnchorStyles.Left) _
+        Me.GridItemDetail.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GridItemDetail.BackgroundColor = System.Drawing.SystemColors.Window
         Me.GridItemDetail.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(67, Byte), Integer), CType(CType(82, Byte), Integer))
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.GridItemDetail.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(67, Byte), Integer), CType(CType(82, Byte), Integer))
+        DataGridViewCellStyle13.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle13.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.GridItemDetail.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle13
         Me.GridItemDetail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.GridItemDetail.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ColumnItemID, Me.ColumnBarcode, Me.ColumnName, Me.ColumnPrice, Me.ColumnQTY, Me.SubTotal, Me.SubTotalDolar, Me.Picture, Me.ItemCost, Me.EXCHANGE_RATE})
         Me.GridItemDetail.EnableHeadersVisualStyles = False
-        Me.GridItemDetail.Location = New System.Drawing.Point(3, 296)
+        Me.GridItemDetail.Location = New System.Drawing.Point(3, 354)
         Me.GridItemDetail.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.GridItemDetail.Name = "GridItemDetail"
         Me.GridItemDetail.ReadOnly = True
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle6.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.GridItemDetail.RowHeadersDefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle18.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.GridItemDetail.RowHeadersDefaultCellStyle = DataGridViewCellStyle18
         Me.GridItemDetail.RowTemplate.Height = 30
         Me.GridItemDetail.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.GridItemDetail.Size = New System.Drawing.Size(536, 440)
+        Me.GridItemDetail.Size = New System.Drawing.Size(536, 382)
         Me.GridItemDetail.TabIndex = 3
         '
         'ColumnItemID
@@ -559,8 +558,8 @@ Partial Class FrmNewReceipt
         '
         Me.ColumnPrice.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
         Me.ColumnPrice.DataPropertyName = "ColumnPrice"
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        Me.ColumnPrice.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        Me.ColumnPrice.DefaultCellStyle = DataGridViewCellStyle14
         Me.ColumnPrice.HeaderText = "Price"
         Me.ColumnPrice.Name = "ColumnPrice"
         Me.ColumnPrice.ReadOnly = True
@@ -570,8 +569,8 @@ Partial Class FrmNewReceipt
         '
         Me.ColumnQTY.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
         Me.ColumnQTY.DataPropertyName = "ColumnQTY"
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        Me.ColumnQTY.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        Me.ColumnQTY.DefaultCellStyle = DataGridViewCellStyle15
         Me.ColumnQTY.HeaderText = "Qty"
         Me.ColumnQTY.Name = "ColumnQTY"
         Me.ColumnQTY.ReadOnly = True
@@ -581,10 +580,10 @@ Partial Class FrmNewReceipt
         '
         Me.SubTotal.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
         Me.SubTotal.DataPropertyName = "SubTotalReal"
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle4.Format = "R"
-        DataGridViewCellStyle4.NullValue = Nothing
-        Me.SubTotal.DefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle16.Format = "R"
+        DataGridViewCellStyle16.NullValue = Nothing
+        Me.SubTotal.DefaultCellStyle = DataGridViewCellStyle16
         Me.SubTotal.HeaderText = "Total R"
         Me.SubTotal.Name = "SubTotal"
         Me.SubTotal.ReadOnly = True
@@ -594,8 +593,8 @@ Partial Class FrmNewReceipt
         '
         Me.SubTotalDolar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
         Me.SubTotalDolar.DataPropertyName = "SubTotalDolar"
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        Me.SubTotalDolar.DefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        Me.SubTotalDolar.DefaultCellStyle = DataGridViewCellStyle17
         Me.SubTotalDolar.HeaderText = "Total $"
         Me.SubTotalDolar.Name = "SubTotalDolar"
         Me.SubTotalDolar.ReadOnly = True
@@ -1620,6 +1619,9 @@ Partial Class FrmNewReceipt
         '
         'GridListOfItem
         '
+        Me.GridListOfItem.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+                    Or System.Windows.Forms.AnchorStyles.Left) _
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GridListOfItem.BackColor = System.Drawing.Color.White
         Me.GridListOfItem.BorderStyle = Janus.Windows.GridEX.BorderStyle.Flat
         GridListOfItem_DesignTimeLayout.LayoutString = resources.GetString("GridListOfItem_DesignTimeLayout.LayoutString")
@@ -1634,18 +1636,20 @@ Partial Class FrmNewReceipt
         Me.GridListOfItem.HeaderFormatStyle.TextAlignment = Janus.Windows.GridEX.TextAlignment.Center
         Me.GridListOfItem.Location = New System.Drawing.Point(5, 5)
         Me.GridListOfItem.Name = "GridListOfItem"
-        Me.GridListOfItem.Size = New System.Drawing.Size(533, 244)
+        Me.GridListOfItem.Size = New System.Drawing.Size(533, 303)
         Me.GridListOfItem.TabIndex = 21
         Me.GridListOfItem.ThemedAreas = Janus.Windows.GridEX.ThemedArea.None
         Me.GridListOfItem.VisualStyleManager = Me.VisualStyleManager1
         '
         'BtnRemoveV1
         '
+        Me.BtnRemoveV1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.BtnRemoveV1.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
         Me.BtnRemoveV1.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BtnRemoveV1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnRemoveV1.Image = CType(resources.GetObject("BtnRemoveV1.Image"), System.Drawing.Image)
-        Me.BtnRemoveV1.Location = New System.Drawing.Point(241, 255)
+        Me.BtnRemoveV1.Location = New System.Drawing.Point(241, 314)
         Me.BtnRemoveV1.Name = "BtnRemoveV1"
         Me.BtnRemoveV1.Size = New System.Drawing.Size(43, 37)
         Me.BtnRemoveV1.TabIndex = 22

@@ -1908,6 +1908,16 @@ Partial Public Class DataSetScreeningBook
         
         Private columnTelephone As Global.System.Data.DataColumn
         
+        Private columnIS_HEARING As Global.System.Data.DataColumn
+        
+        Private columnIS_UNDERSTANDING As Global.System.Data.DataColumn
+        
+        Private columnIS_PHYSICAL As Global.System.Data.DataColumn
+        
+        Private columnIS_SEEING As Global.System.Data.DataColumn
+        
+        Private columnIS_OLDPATIENT As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Public Sub New()
             MyBase.New
@@ -2143,6 +2153,41 @@ Partial Public Class DataSetScreeningBook
             End Get
         End Property
         
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public ReadOnly Property IS_HEARINGColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnIS_HEARING
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public ReadOnly Property IS_UNDERSTANDINGColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnIS_UNDERSTANDING
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public ReadOnly Property IS_PHYSICALColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnIS_PHYSICAL
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public ReadOnly Property IS_SEEINGColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnIS_SEEING
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public ReadOnly Property IS_OLDPATIENTColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnIS_OLDPATIENT
+            End Get
+        End Property
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -2201,12 +2246,22 @@ Partial Public Class DataSetScreeningBook
                     ByVal Male As String,  _
                     ByVal Female As String,  _
                     ByVal Occupation As String,  _
-                    ByVal Telephone As String) As SCREENING_BOOK_VIEWRow
+                    ByVal Telephone As String,  _
+                    ByVal IS_HEARING As Boolean,  _
+                    ByVal IS_UNDERSTANDING As Boolean,  _
+                    ByVal IS_PHYSICAL As Boolean,  _
+                    ByVal IS_SEEING As Boolean,  _
+                    ByVal IS_OLDPATIENT As Boolean) As SCREENING_BOOK_VIEWRow
             Dim rowSCREENING_BOOK_VIEWRow As SCREENING_BOOK_VIEWRow = CType(Me.NewRow,SCREENING_BOOK_VIEWRow)
-            Dim columnValuesArray() As Object = New Object() {PatientNo, NameEng, NameKhmer, Age, Sex, SCREEN_BOOKID, IS_REFRACTION, IS_OPTICALSHOP, IS_REFER_PICKUP, IS_REFER_BYSELF, Address, SCREAN_DATE, SYS_SETTING, SCREEN_PLACE, SCREEN_NOTE, DIAGNOSIS, VA_RIGHT, VA_LEFT, PRESENTING_COMPLAIN, ON_EYE, REFERENCE_PATIENNOTE, IMPORT_STATUS, Province, District, Commune, Male, Female, Occupation, Telephone}
+            Dim columnValuesArray() As Object = New Object() {PatientNo, NameEng, NameKhmer, Age, Sex, SCREEN_BOOKID, IS_REFRACTION, IS_OPTICALSHOP, IS_REFER_PICKUP, IS_REFER_BYSELF, Address, SCREAN_DATE, SYS_SETTING, SCREEN_PLACE, SCREEN_NOTE, DIAGNOSIS, VA_RIGHT, VA_LEFT, PRESENTING_COMPLAIN, ON_EYE, REFERENCE_PATIENNOTE, IMPORT_STATUS, Province, District, Commune, Male, Female, Occupation, Telephone, IS_HEARING, IS_UNDERSTANDING, IS_PHYSICAL, IS_SEEING, IS_OLDPATIENT}
             rowSCREENING_BOOK_VIEWRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowSCREENING_BOOK_VIEWRow)
             Return rowSCREENING_BOOK_VIEWRow
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Function FindByPatientNoSCREEN_BOOKID(ByVal PatientNo As Decimal, ByVal SCREEN_BOOKID As Decimal) As SCREENING_BOOK_VIEWRow
+            Return CType(Me.Rows.Find(New Object() {PatientNo, SCREEN_BOOKID}),SCREENING_BOOK_VIEWRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
@@ -2252,6 +2307,11 @@ Partial Public Class DataSetScreeningBook
             Me.columnFemale = MyBase.Columns("Female")
             Me.columnOccupation = MyBase.Columns("Occupation")
             Me.columnTelephone = MyBase.Columns("Telephone")
+            Me.columnIS_HEARING = MyBase.Columns("IS_HEARING")
+            Me.columnIS_UNDERSTANDING = MyBase.Columns("IS_UNDERSTANDING")
+            Me.columnIS_PHYSICAL = MyBase.Columns("IS_PHYSICAL")
+            Me.columnIS_SEEING = MyBase.Columns("IS_SEEING")
+            Me.columnIS_OLDPATIENT = MyBase.Columns("IS_OLDPATIENT")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
@@ -2314,6 +2374,17 @@ Partial Public Class DataSetScreeningBook
             MyBase.Columns.Add(Me.columnOccupation)
             Me.columnTelephone = New Global.System.Data.DataColumn("Telephone", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnTelephone)
+            Me.columnIS_HEARING = New Global.System.Data.DataColumn("IS_HEARING", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnIS_HEARING)
+            Me.columnIS_UNDERSTANDING = New Global.System.Data.DataColumn("IS_UNDERSTANDING", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnIS_UNDERSTANDING)
+            Me.columnIS_PHYSICAL = New Global.System.Data.DataColumn("IS_PHYSICAL", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnIS_PHYSICAL)
+            Me.columnIS_SEEING = New Global.System.Data.DataColumn("IS_SEEING", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnIS_SEEING)
+            Me.columnIS_OLDPATIENT = New Global.System.Data.DataColumn("IS_OLDPATIENT", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnIS_OLDPATIENT)
+            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnPatientNo, Me.columnSCREEN_BOOKID}, true))
             Me.columnPatientNo.AllowDBNull = false
             Me.columnNameEng.MaxLength = 50
             Me.columnNameKhmer.MaxLength = 50
@@ -3163,6 +3234,16 @@ Partial Public Class DataSetScreeningBook
         
         Private columnIMPORT_STATUS As Global.System.Data.DataColumn
         
+        Private columnIS_HEARING As Global.System.Data.DataColumn
+        
+        Private columnIS_UNDERSTANDING As Global.System.Data.DataColumn
+        
+        Private columnIS_PHYSICAL As Global.System.Data.DataColumn
+        
+        Private columnIS_SEEING As Global.System.Data.DataColumn
+        
+        Private columnIS_OLDPATIENT As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Public Sub New()
             MyBase.New
@@ -3314,6 +3395,41 @@ Partial Public Class DataSetScreeningBook
             End Get
         End Property
         
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public ReadOnly Property IS_HEARINGColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnIS_HEARING
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public ReadOnly Property IS_UNDERSTANDINGColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnIS_UNDERSTANDING
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public ReadOnly Property IS_PHYSICALColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnIS_PHYSICAL
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public ReadOnly Property IS_SEEINGColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnIS_SEEING
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public ReadOnly Property IS_OLDPATIENTColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnIS_OLDPATIENT
+            End Get
+        End Property
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -3359,9 +3475,14 @@ Partial Public Class DataSetScreeningBook
                     ByVal VA_RIGHT As String,  _
                     ByVal VA_LEFT As String,  _
                     ByVal REFERENCE_PATIENNOTE As String,  _
-                    ByVal IMPORT_STATUS As Boolean) As SCREENING_BOOKRow
+                    ByVal IMPORT_STATUS As Boolean,  _
+                    ByVal IS_HEARING As Boolean,  _
+                    ByVal IS_UNDERSTANDING As Boolean,  _
+                    ByVal IS_PHYSICAL As Boolean,  _
+                    ByVal IS_SEEING As Boolean,  _
+                    ByVal IS_OLDPATIENT As Boolean) As SCREENING_BOOKRow
             Dim rowSCREENING_BOOKRow As SCREENING_BOOKRow = CType(Me.NewRow,SCREENING_BOOKRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, SCREAN_DATE, SYS_SETTING, SCREEN_PLACE, PATIENT_NO, IS_REFRACTION, IS_OPTICALSHOP, IS_REFER_PICKUP, IS_REFER_BYSELF, SCREEN_NOTE, ON_EYE, PRESENTING_COMPLAIN, DIAGNOSIS, VA_RIGHT, VA_LEFT, REFERENCE_PATIENNOTE, IMPORT_STATUS}
+            Dim columnValuesArray() As Object = New Object() {Nothing, SCREAN_DATE, SYS_SETTING, SCREEN_PLACE, PATIENT_NO, IS_REFRACTION, IS_OPTICALSHOP, IS_REFER_PICKUP, IS_REFER_BYSELF, SCREEN_NOTE, ON_EYE, PRESENTING_COMPLAIN, DIAGNOSIS, VA_RIGHT, VA_LEFT, REFERENCE_PATIENNOTE, IMPORT_STATUS, IS_HEARING, IS_UNDERSTANDING, IS_PHYSICAL, IS_SEEING, IS_OLDPATIENT}
             rowSCREENING_BOOKRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowSCREENING_BOOKRow)
             Return rowSCREENING_BOOKRow
@@ -3403,6 +3524,11 @@ Partial Public Class DataSetScreeningBook
             Me.columnVA_LEFT = MyBase.Columns("VA_LEFT")
             Me.columnREFERENCE_PATIENNOTE = MyBase.Columns("REFERENCE_PATIENNOTE")
             Me.columnIMPORT_STATUS = MyBase.Columns("IMPORT_STATUS")
+            Me.columnIS_HEARING = MyBase.Columns("IS_HEARING")
+            Me.columnIS_UNDERSTANDING = MyBase.Columns("IS_UNDERSTANDING")
+            Me.columnIS_PHYSICAL = MyBase.Columns("IS_PHYSICAL")
+            Me.columnIS_SEEING = MyBase.Columns("IS_SEEING")
+            Me.columnIS_OLDPATIENT = MyBase.Columns("IS_OLDPATIENT")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
@@ -3441,6 +3567,16 @@ Partial Public Class DataSetScreeningBook
             MyBase.Columns.Add(Me.columnREFERENCE_PATIENNOTE)
             Me.columnIMPORT_STATUS = New Global.System.Data.DataColumn("IMPORT_STATUS", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnIMPORT_STATUS)
+            Me.columnIS_HEARING = New Global.System.Data.DataColumn("IS_HEARING", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnIS_HEARING)
+            Me.columnIS_UNDERSTANDING = New Global.System.Data.DataColumn("IS_UNDERSTANDING", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnIS_UNDERSTANDING)
+            Me.columnIS_PHYSICAL = New Global.System.Data.DataColumn("IS_PHYSICAL", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnIS_PHYSICAL)
+            Me.columnIS_SEEING = New Global.System.Data.DataColumn("IS_SEEING", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnIS_SEEING)
+            Me.columnIS_OLDPATIENT = New Global.System.Data.DataColumn("IS_OLDPATIENT", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnIS_OLDPATIENT)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnSCREEN_BOOKID}, true))
             Me.columnSCREEN_BOOKID.AutoIncrement = true
             Me.columnSCREEN_BOOKID.AutoIncrementSeed = -1
@@ -6622,6 +6758,77 @@ Partial Public Class DataSetScreeningBook
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Property IS_HEARING() As Boolean
+            Get
+                Try 
+                    Return CType(Me(Me.tableSCREENING_BOOK_VIEW.IS_HEARINGColumn),Boolean)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'IS_HEARING' in table 'SCREENING_BOOK_VIEW' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableSCREENING_BOOK_VIEW.IS_HEARINGColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Property IS_UNDERSTANDING() As Boolean
+            Get
+                Try 
+                    Return CType(Me(Me.tableSCREENING_BOOK_VIEW.IS_UNDERSTANDINGColumn),Boolean)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'IS_UNDERSTANDING' in table 'SCREENING_BOOK_VIEW' is DBNull."& _ 
+                            "", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableSCREENING_BOOK_VIEW.IS_UNDERSTANDINGColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Property IS_PHYSICAL() As Boolean
+            Get
+                Try 
+                    Return CType(Me(Me.tableSCREENING_BOOK_VIEW.IS_PHYSICALColumn),Boolean)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'IS_PHYSICAL' in table 'SCREENING_BOOK_VIEW' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableSCREENING_BOOK_VIEW.IS_PHYSICALColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Property IS_SEEING() As Boolean
+            Get
+                Try 
+                    Return CType(Me(Me.tableSCREENING_BOOK_VIEW.IS_SEEINGColumn),Boolean)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'IS_SEEING' in table 'SCREENING_BOOK_VIEW' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableSCREENING_BOOK_VIEW.IS_SEEINGColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Property IS_OLDPATIENT() As Boolean
+            Get
+                Try 
+                    Return CType(Me(Me.tableSCREENING_BOOK_VIEW.IS_OLDPATIENTColumn),Boolean)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'IS_OLDPATIENT' in table 'SCREENING_BOOK_VIEW' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableSCREENING_BOOK_VIEW.IS_OLDPATIENTColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Public Function IsNameEngNull() As Boolean
             Return Me.IsNull(Me.tableSCREENING_BOOK_VIEW.NameEngColumn)
         End Function
@@ -6889,6 +7096,56 @@ Partial Public Class DataSetScreeningBook
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Public Sub SetTelephoneNull()
             Me(Me.tableSCREENING_BOOK_VIEW.TelephoneColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Function IsIS_HEARINGNull() As Boolean
+            Return Me.IsNull(Me.tableSCREENING_BOOK_VIEW.IS_HEARINGColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Sub SetIS_HEARINGNull()
+            Me(Me.tableSCREENING_BOOK_VIEW.IS_HEARINGColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Function IsIS_UNDERSTANDINGNull() As Boolean
+            Return Me.IsNull(Me.tableSCREENING_BOOK_VIEW.IS_UNDERSTANDINGColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Sub SetIS_UNDERSTANDINGNull()
+            Me(Me.tableSCREENING_BOOK_VIEW.IS_UNDERSTANDINGColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Function IsIS_PHYSICALNull() As Boolean
+            Return Me.IsNull(Me.tableSCREENING_BOOK_VIEW.IS_PHYSICALColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Sub SetIS_PHYSICALNull()
+            Me(Me.tableSCREENING_BOOK_VIEW.IS_PHYSICALColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Function IsIS_SEEINGNull() As Boolean
+            Return Me.IsNull(Me.tableSCREENING_BOOK_VIEW.IS_SEEINGColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Sub SetIS_SEEINGNull()
+            Me(Me.tableSCREENING_BOOK_VIEW.IS_SEEINGColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Function IsIS_OLDPATIENTNull() As Boolean
+            Return Me.IsNull(Me.tableSCREENING_BOOK_VIEW.IS_OLDPATIENTColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Sub SetIS_OLDPATIENTNull()
+            Me(Me.tableSCREENING_BOOK_VIEW.IS_OLDPATIENTColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -7563,6 +7820,76 @@ Partial Public Class DataSetScreeningBook
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Property IS_HEARING() As Boolean
+            Get
+                Try 
+                    Return CType(Me(Me.tableSCREENING_BOOK.IS_HEARINGColumn),Boolean)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'IS_HEARING' in table 'SCREENING_BOOK' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableSCREENING_BOOK.IS_HEARINGColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Property IS_UNDERSTANDING() As Boolean
+            Get
+                Try 
+                    Return CType(Me(Me.tableSCREENING_BOOK.IS_UNDERSTANDINGColumn),Boolean)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'IS_UNDERSTANDING' in table 'SCREENING_BOOK' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableSCREENING_BOOK.IS_UNDERSTANDINGColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Property IS_PHYSICAL() As Boolean
+            Get
+                Try 
+                    Return CType(Me(Me.tableSCREENING_BOOK.IS_PHYSICALColumn),Boolean)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'IS_PHYSICAL' in table 'SCREENING_BOOK' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableSCREENING_BOOK.IS_PHYSICALColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Property IS_SEEING() As Boolean
+            Get
+                Try 
+                    Return CType(Me(Me.tableSCREENING_BOOK.IS_SEEINGColumn),Boolean)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'IS_SEEING' in table 'SCREENING_BOOK' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableSCREENING_BOOK.IS_SEEINGColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Property IS_OLDPATIENT() As Boolean
+            Get
+                Try 
+                    Return CType(Me(Me.tableSCREENING_BOOK.IS_OLDPATIENTColumn),Boolean)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'IS_OLDPATIENT' in table 'SCREENING_BOOK' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableSCREENING_BOOK.IS_OLDPATIENTColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Public Function IsSCREAN_DATENull() As Boolean
             Return Me.IsNull(Me.tableSCREENING_BOOK.SCREAN_DATEColumn)
         End Function
@@ -7720,6 +8047,56 @@ Partial Public Class DataSetScreeningBook
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Public Sub SetIMPORT_STATUSNull()
             Me(Me.tableSCREENING_BOOK.IMPORT_STATUSColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Function IsIS_HEARINGNull() As Boolean
+            Return Me.IsNull(Me.tableSCREENING_BOOK.IS_HEARINGColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Sub SetIS_HEARINGNull()
+            Me(Me.tableSCREENING_BOOK.IS_HEARINGColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Function IsIS_UNDERSTANDINGNull() As Boolean
+            Return Me.IsNull(Me.tableSCREENING_BOOK.IS_UNDERSTANDINGColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Sub SetIS_UNDERSTANDINGNull()
+            Me(Me.tableSCREENING_BOOK.IS_UNDERSTANDINGColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Function IsIS_PHYSICALNull() As Boolean
+            Return Me.IsNull(Me.tableSCREENING_BOOK.IS_PHYSICALColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Sub SetIS_PHYSICALNull()
+            Me(Me.tableSCREENING_BOOK.IS_PHYSICALColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Function IsIS_SEEINGNull() As Boolean
+            Return Me.IsNull(Me.tableSCREENING_BOOK.IS_SEEINGColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Sub SetIS_SEEINGNull()
+            Me(Me.tableSCREENING_BOOK.IS_SEEINGColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Function IsIS_OLDPATIENTNull() As Boolean
+            Return Me.IsNull(Me.tableSCREENING_BOOK.IS_OLDPATIENTColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Sub SetIS_OLDPATIENTNull()
+            Me(Me.tableSCREENING_BOOK.IS_OLDPATIENTColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -10316,6 +10693,11 @@ Namespace DataSetScreeningBookTableAdapters
             tableMapping.ColumnMappings.Add("Female", "Female")
             tableMapping.ColumnMappings.Add("Occupation", "Occupation")
             tableMapping.ColumnMappings.Add("Telephone", "Telephone")
+            tableMapping.ColumnMappings.Add("IS_HEARING", "IS_HEARING")
+            tableMapping.ColumnMappings.Add("IS_UNDERSTANDING", "IS_UNDERSTANDING")
+            tableMapping.ColumnMappings.Add("IS_PHYSICAL", "IS_PHYSICAL")
+            tableMapping.ColumnMappings.Add("IS_SEEING", "IS_SEEING")
+            tableMapping.ColumnMappings.Add("IS_OLDPATIENT", "IS_OLDPATIENT")
             Me._adapter.TableMappings.Add(tableMapping)
         End Sub
         
@@ -10334,175 +10716,178 @@ Namespace DataSetScreeningBookTableAdapters
                 "EN_PLACE, SCREEN_BOOKID, IS_REFRACTION, IS_OPTICALSHOP, IS_REFER_PICKUP, IS_REFE"& _ 
                 "R_BYSELF, SYS_SETTING, SCREEN_NOTE, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         DIAGNOSIS, VA_RIG"& _ 
                 "HT, VA_LEFT, PRESENTING_COMPLAIN, ON_EYE, REFERENCE_PATIENNOTE, IMPORT_STATUS, P"& _ 
-                "rovince, District, Commune, Male, Female, Occupation, Telephone"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM           "& _ 
-                " SCREENING_BOOK_VIEW"
+                "rovince, District, Commune, Male, Female, Occupation, Telephone, IS_HEARING, IS_"& _ 
+                "UNDERSTANDING, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         IS_PHYSICAL, IS_SEEING, IS_OLDPATIENT"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            SCREENING_BOOK_VIEW"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand
             Me._commandCollection(1).Connection = Me.Connection
-            Me._commandCollection(1).CommandText = "SELECT Address, Age, Commune, DIAGNOSIS, District, Female, IMPORT_STATUS, IS_OPTI"& _ 
-                "CALSHOP, IS_REFER_BYSELF, IS_REFER_PICKUP, IS_REFRACTION, Male, NameEng, NameKhm"& _ 
-                "er, ON_EYE, Occupation, PRESENTING_COMPLAIN, PatientNo, Province, REFERENCE_PATI"& _ 
-                "ENNOTE, SCREAN_DATE, SCREEN_BOOKID, SCREEN_NOTE, SCREEN_PLACE, SYS_SETTING, Sex,"& _ 
-                " Telephone, VA_LEFT, VA_RIGHT FROM SCREENING_BOOK_VIEW WHERE (SCREAN_DATE BETWEE"& _ 
-                "N @DFROM AND @DTo)"
+            Me._commandCollection(1).CommandText = "SELECT Address, Age, Commune, DIAGNOSIS, District, Female, IMPORT_STATUS, IS_HEAR"& _ 
+                "ING, IS_OLDPATIENT, IS_OPTICALSHOP, IS_PHYSICAL, IS_REFER_BYSELF, IS_REFER_PICKU"& _ 
+                "P, IS_REFRACTION, IS_SEEING, IS_UNDERSTANDING, Male, NameEng, NameKhmer, ON_EYE,"& _ 
+                " Occupation, PRESENTING_COMPLAIN, PatientNo, Province, REFERENCE_PATIENNOTE, SCR"& _ 
+                "EAN_DATE, SCREEN_BOOKID, SCREEN_NOTE, SCREEN_PLACE, SYS_SETTING, Sex, Telephone,"& _ 
+                " VA_LEFT, VA_RIGHT FROM SCREENING_BOOK_VIEW WHERE (SCREAN_DATE BETWEEN @DFROM AN"& _ 
+                "D @DTo)"
             Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@DFROM", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "SCREAN_DATE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@DTo", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "SCREAN_DATE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(2) = New Global.System.Data.SqlClient.SqlCommand
             Me._commandCollection(2).Connection = Me.Connection
-            Me._commandCollection(2).CommandText = "SELECT Address, Age, Commune, DIAGNOSIS, District, Female, IMPORT_STATUS, IS_OPTI"& _ 
-                "CALSHOP, IS_REFER_BYSELF, IS_REFER_PICKUP, IS_REFRACTION, Male, NameEng, NameKhm"& _ 
-                "er, ON_EYE, Occupation, PRESENTING_COMPLAIN, PatientNo, Province, REFERENCE_PATI"& _ 
-                "ENNOTE, SCREAN_DATE, SCREEN_BOOKID, SCREEN_NOTE, SCREEN_PLACE, SYS_SETTING, Sex,"& _ 
-                " Telephone, VA_LEFT, VA_RIGHT FROM SCREENING_BOOK_VIEW WHERE (SCREAN_DATE BETWEE"& _ 
-                "N @DFrom AND @DTo) AND (PatientNo = @PatientNo)"
+            Me._commandCollection(2).CommandText = "SELECT Address, Age, Commune, DIAGNOSIS, District, Female, IMPORT_STATUS, IS_HEAR"& _ 
+                "ING, IS_OLDPATIENT, IS_OPTICALSHOP, IS_PHYSICAL, IS_REFER_BYSELF, IS_REFER_PICKU"& _ 
+                "P, IS_REFRACTION, IS_SEEING, IS_UNDERSTANDING, Male, NameEng, NameKhmer, ON_EYE,"& _ 
+                " Occupation, PRESENTING_COMPLAIN, PatientNo, Province, REFERENCE_PATIENNOTE, SCR"& _ 
+                "EAN_DATE, SCREEN_BOOKID, SCREEN_NOTE, SCREEN_PLACE, SYS_SETTING, Sex, Telephone,"& _ 
+                " VA_LEFT, VA_RIGHT FROM SCREENING_BOOK_VIEW WHERE (SCREAN_DATE BETWEEN @DFrom AN"& _ 
+                "D @DTo) AND (PatientNo = @PatientNo)"
             Me._commandCollection(2).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@DFrom", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "SCREAN_DATE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@DTo", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "SCREAN_DATE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@PatientNo", Global.System.Data.SqlDbType.[Decimal], 9, Global.System.Data.ParameterDirection.Input, 18, 0, "PatientNo", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(3) = New Global.System.Data.SqlClient.SqlCommand
             Me._commandCollection(3).Connection = Me.Connection
-            Me._commandCollection(3).CommandText = "SELECT        SCREAN_DATE, PatientNo, NameEng, NameKhmer, Age, Sex, Address, SCRE"& _ 
-                "EN_PLACE, SCREEN_BOOKID, IS_REFRACTION, IS_OPTICALSHOP, IS_REFER_PICKUP, IS_REFE"& _ 
-                "R_BYSELF, SYS_SETTING, SCREEN_NOTE, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         DIAGNOSIS, VA_RIG"& _ 
-                "HT, VA_LEFT, PRESENTING_COMPLAIN, ON_EYE, REFERENCE_PATIENNOTE, IMPORT_STATUS, P"& _ 
-                "rovince, District, Commune, Male, Female, Occupation, Telephone"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM           "& _ 
-                " SCREENING_BOOK_VIEW"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"IS_REFER_BYSELF=1 and SCREAN_DATE between @Dfrom an"& _ 
-                "d @Dto"
+            Me._commandCollection(3).CommandText = "SELECT Address, Age, Commune, DIAGNOSIS, District, Female, IMPORT_STATUS, IS_HEAR"& _ 
+                "ING, IS_OLDPATIENT, IS_OPTICALSHOP, IS_PHYSICAL, IS_REFER_BYSELF, IS_REFER_PICKU"& _ 
+                "P, IS_REFRACTION, IS_SEEING, IS_UNDERSTANDING, Male, NameEng, NameKhmer, ON_EYE,"& _ 
+                " Occupation, PRESENTING_COMPLAIN, PatientNo, Province, REFERENCE_PATIENNOTE, SCR"& _ 
+                "EAN_DATE, SCREEN_BOOKID, SCREEN_NOTE, SCREEN_PLACE, SYS_SETTING, Sex, Telephone,"& _ 
+                " VA_LEFT, VA_RIGHT FROM SCREENING_BOOK_VIEW WHERE (IS_REFER_BYSELF = 1) AND (SCR"& _ 
+                "EAN_DATE BETWEEN @Dfrom AND @Dto)"
             Me._commandCollection(3).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Dfrom", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "SCREAN_DATE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Dto", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "SCREAN_DATE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(4) = New Global.System.Data.SqlClient.SqlCommand
             Me._commandCollection(4).Connection = Me.Connection
-            Me._commandCollection(4).CommandText = "SELECT        SCREAN_DATE, PatientNo, NameEng, NameKhmer, Age, Sex, Address, SCRE"& _ 
-                "EN_PLACE, SCREEN_BOOKID, IS_REFRACTION, IS_OPTICALSHOP, IS_REFER_PICKUP, IS_REFE"& _ 
-                "R_BYSELF, SYS_SETTING, SCREEN_NOTE, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         DIAGNOSIS, VA_RIG"& _ 
-                "HT, VA_LEFT, PRESENTING_COMPLAIN, ON_EYE, REFERENCE_PATIENNOTE, IMPORT_STATUS, P"& _ 
-                "rovince, District, Commune, Male, Female, Occupation, Telephone"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM           "& _ 
-                " SCREENING_BOOK_VIEW"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"(IS_REFER_BYSELF=1) and (SCREAN_DATE between @Dfrom"& _ 
-                " and @Dto) and SYS_SETTING=@SYS_SETTING"
+            Me._commandCollection(4).CommandText = "SELECT Address, Age, Commune, DIAGNOSIS, District, Female, IMPORT_STATUS, IS_HEAR"& _ 
+                "ING, IS_OLDPATIENT, IS_OPTICALSHOP, IS_PHYSICAL, IS_REFER_BYSELF, IS_REFER_PICKU"& _ 
+                "P, IS_REFRACTION, IS_SEEING, IS_UNDERSTANDING, Male, NameEng, NameKhmer, ON_EYE,"& _ 
+                " Occupation, PRESENTING_COMPLAIN, PatientNo, Province, REFERENCE_PATIENNOTE, SCR"& _ 
+                "EAN_DATE, SCREEN_BOOKID, SCREEN_NOTE, SCREEN_PLACE, SYS_SETTING, Sex, Telephone,"& _ 
+                " VA_LEFT, VA_RIGHT FROM SCREENING_BOOK_VIEW WHERE (IS_REFER_BYSELF = 1) AND (SCR"& _ 
+                "EAN_DATE BETWEEN @Dfrom AND @Dto) AND (SYS_SETTING = @SYS_SETTING)"
             Me._commandCollection(4).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(4).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Dfrom", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "SCREAN_DATE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(4).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Dto", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "SCREAN_DATE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(4).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@SYS_SETTING", Global.System.Data.SqlDbType.[Decimal], 9, Global.System.Data.ParameterDirection.Input, 18, 0, "SYS_SETTING", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(5) = New Global.System.Data.SqlClient.SqlCommand
             Me._commandCollection(5).Connection = Me.Connection
-            Me._commandCollection(5).CommandText = "SELECT        SCREAN_DATE, PatientNo, NameEng, NameKhmer, Age, Sex, Address, SCRE"& _ 
-                "EN_PLACE, SCREEN_BOOKID, IS_REFRACTION, IS_OPTICALSHOP, IS_REFER_PICKUP, IS_REFE"& _ 
-                "R_BYSELF, SYS_SETTING, SCREEN_NOTE, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         DIAGNOSIS, VA_RIG"& _ 
-                "HT, VA_LEFT, PRESENTING_COMPLAIN, ON_EYE, REFERENCE_PATIENNOTE, IMPORT_STATUS, P"& _ 
-                "rovince, District, Commune, Male, Female, Occupation, Telephone"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM           "& _ 
-                " SCREENING_BOOK_VIEW"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"(SCREEN_PLACE =@SCREEN_PLACE) AND  (SCREAN_DATE bet"& _ 
-                "ween @Dfrom and @DTo)"
+            Me._commandCollection(5).CommandText = "SELECT Address, Age, Commune, DIAGNOSIS, District, Female, IMPORT_STATUS, IS_HEAR"& _ 
+                "ING, IS_OLDPATIENT, IS_OPTICALSHOP, IS_PHYSICAL, IS_REFER_BYSELF, IS_REFER_PICKU"& _ 
+                "P, IS_REFRACTION, IS_SEEING, IS_UNDERSTANDING, Male, NameEng, NameKhmer, ON_EYE,"& _ 
+                " Occupation, PRESENTING_COMPLAIN, PatientNo, Province, REFERENCE_PATIENNOTE, SCR"& _ 
+                "EAN_DATE, SCREEN_BOOKID, SCREEN_NOTE, SCREEN_PLACE, SYS_SETTING, Sex, Telephone,"& _ 
+                " VA_LEFT, VA_RIGHT FROM SCREENING_BOOK_VIEW WHERE (SCREEN_PLACE = @SCREEN_PLACE)"& _ 
+                " AND (SCREAN_DATE BETWEEN @Dfrom AND @DTo)"
             Me._commandCollection(5).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(5).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@SCREEN_PLACE", Global.System.Data.SqlDbType.NVarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "SCREEN_PLACE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(5).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Dfrom", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "SCREAN_DATE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(5).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@DTo", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "SCREAN_DATE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(6) = New Global.System.Data.SqlClient.SqlCommand
             Me._commandCollection(6).Connection = Me.Connection
-            Me._commandCollection(6).CommandText = "SELECT        SCREAN_DATE, PatientNo, NameEng, NameKhmer, Age, Sex, Address, SCRE"& _ 
-                "EN_PLACE, SCREEN_BOOKID, IS_REFRACTION, IS_OPTICALSHOP, IS_REFER_PICKUP, IS_REFE"& _ 
-                "R_BYSELF, SYS_SETTING, SCREEN_NOTE, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         DIAGNOSIS, VA_RIG"& _ 
-                "HT, VA_LEFT, PRESENTING_COMPLAIN, ON_EYE, REFERENCE_PATIENNOTE, IMPORT_STATUS, P"& _ 
-                "rovince, District, Commune, Male, Female, Occupation, Telephone"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM           "& _ 
-                " SCREENING_BOOK_VIEW"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"where"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"patientNo=@PatientNo"
+            Me._commandCollection(6).CommandText = "SELECT Address, Age, Commune, DIAGNOSIS, District, Female, IMPORT_STATUS, IS_HEAR"& _ 
+                "ING, IS_OLDPATIENT, IS_OPTICALSHOP, IS_PHYSICAL, IS_REFER_BYSELF, IS_REFER_PICKU"& _ 
+                "P, IS_REFRACTION, IS_SEEING, IS_UNDERSTANDING, Male, NameEng, NameKhmer, ON_EYE,"& _ 
+                " Occupation, PRESENTING_COMPLAIN, PatientNo, Province, REFERENCE_PATIENNOTE, SCR"& _ 
+                "EAN_DATE, SCREEN_BOOKID, SCREEN_NOTE, SCREEN_PLACE, SYS_SETTING, Sex, Telephone,"& _ 
+                " VA_LEFT, VA_RIGHT FROM SCREENING_BOOK_VIEW WHERE (PatientNo = @PatientNo)"
             Me._commandCollection(6).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(6).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@PatientNo", Global.System.Data.SqlDbType.[Decimal], 9, Global.System.Data.ParameterDirection.Input, 18, 0, "PatientNo", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(7) = New Global.System.Data.SqlClient.SqlCommand
             Me._commandCollection(7).Connection = Me.Connection
-            Me._commandCollection(7).CommandText = "SELECT        SCREAN_DATE, PatientNo, NameEng, NameKhmer, Age, Sex, Address, SCRE"& _ 
-                "EN_PLACE, SCREEN_BOOKID, IS_REFRACTION, IS_OPTICALSHOP, IS_REFER_PICKUP, IS_REFE"& _ 
-                "R_BYSELF, SYS_SETTING, SCREEN_NOTE, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         DIAGNOSIS, VA_RIG"& _ 
-                "HT, VA_LEFT, PRESENTING_COMPLAIN, ON_EYE, REFERENCE_PATIENNOTE, IMPORT_STATUS, P"& _ 
-                "rovince, District, Commune, Male, Female, Occupation, Telephone"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM           "& _ 
-                " SCREENING_BOOK_VIEW"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"(SCREAN_DATE between @Dfrom and @Dto)"
+            Me._commandCollection(7).CommandText = "SELECT Address, Age, Commune, DIAGNOSIS, District, Female, IMPORT_STATUS, IS_HEAR"& _ 
+                "ING, IS_OLDPATIENT, IS_OPTICALSHOP, IS_PHYSICAL, IS_REFER_BYSELF, IS_REFER_PICKU"& _ 
+                "P, IS_REFRACTION, IS_SEEING, IS_UNDERSTANDING, Male, NameEng, NameKhmer, ON_EYE,"& _ 
+                " Occupation, PRESENTING_COMPLAIN, PatientNo, Province, REFERENCE_PATIENNOTE, SCR"& _ 
+                "EAN_DATE, SCREEN_BOOKID, SCREEN_NOTE, SCREEN_PLACE, SYS_SETTING, Sex, Telephone,"& _ 
+                " VA_LEFT, VA_RIGHT FROM SCREENING_BOOK_VIEW WHERE (SCREAN_DATE BETWEEN @Dfrom AN"& _ 
+                "D @Dto)"
             Me._commandCollection(7).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(7).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Dfrom", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "SCREAN_DATE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(7).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Dto", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "SCREAN_DATE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(8) = New Global.System.Data.SqlClient.SqlCommand
             Me._commandCollection(8).Connection = Me.Connection
-            Me._commandCollection(8).CommandText = "SELECT        SCREAN_DATE, PatientNo, NameEng, NameKhmer, Age, Sex, Address, SCRE"& _ 
-                "EN_PLACE, SCREEN_BOOKID, IS_REFRACTION, IS_OPTICALSHOP, IS_REFER_PICKUP, IS_REFE"& _ 
-                "R_BYSELF, SYS_SETTING, SCREEN_NOTE, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         DIAGNOSIS, VA_RIG"& _ 
-                "HT, VA_LEFT, PRESENTING_COMPLAIN, ON_EYE, REFERENCE_PATIENNOTE, IMPORT_STATUS, P"& _ 
-                "rovince, District, Commune, Male, Female, Occupation, Telephone"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM           "& _ 
-                " SCREENING_BOOK_VIEW"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"(SCREAN_DATE between @Dfrom and @Dto) and SYS_SETTI"& _ 
-                "NG=@SettingID"
+            Me._commandCollection(8).CommandText = "SELECT Address, Age, Commune, DIAGNOSIS, District, Female, IMPORT_STATUS, IS_HEAR"& _ 
+                "ING, IS_OLDPATIENT, IS_OPTICALSHOP, IS_PHYSICAL, IS_REFER_BYSELF, IS_REFER_PICKU"& _ 
+                "P, IS_REFRACTION, IS_SEEING, IS_UNDERSTANDING, Male, NameEng, NameKhmer, ON_EYE,"& _ 
+                " Occupation, PRESENTING_COMPLAIN, PatientNo, Province, REFERENCE_PATIENNOTE, SCR"& _ 
+                "EAN_DATE, SCREEN_BOOKID, SCREEN_NOTE, SCREEN_PLACE, SYS_SETTING, Sex, Telephone,"& _ 
+                " VA_LEFT, VA_RIGHT FROM SCREENING_BOOK_VIEW WHERE (SCREAN_DATE BETWEEN @Dfrom AN"& _ 
+                "D @Dto) AND (SYS_SETTING = @SettingID)"
             Me._commandCollection(8).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(8).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Dfrom", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "SCREAN_DATE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(8).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Dto", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "SCREAN_DATE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(8).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@SettingID", Global.System.Data.SqlDbType.[Decimal], 9, Global.System.Data.ParameterDirection.Input, 18, 0, "SYS_SETTING", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(9) = New Global.System.Data.SqlClient.SqlCommand
             Me._commandCollection(9).Connection = Me.Connection
-            Me._commandCollection(9).CommandText = "SELECT        SCREAN_DATE, PatientNo, NameEng, NameKhmer, Age, Sex, Address, SCRE"& _ 
-                "EN_PLACE, SCREEN_BOOKID, IS_REFRACTION, IS_OPTICALSHOP, IS_REFER_PICKUP, IS_REFE"& _ 
-                "R_BYSELF, SYS_SETTING, SCREEN_NOTE, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         DIAGNOSIS, VA_RIG"& _ 
-                "HT, VA_LEFT, PRESENTING_COMPLAIN, ON_EYE, REFERENCE_PATIENNOTE, IMPORT_STATUS, P"& _ 
-                "rovince, District, Commune, Male, Female, Occupation, Telephone"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM           "& _ 
-                " SCREENING_BOOK_VIEW"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"(IS_REFRACTION=1) and   (SCREAN_DATE between @Dfro"& _ 
-                "m and @DTo)"
+            Me._commandCollection(9).CommandText = "SELECT Address, Age, Commune, DIAGNOSIS, District, Female, IMPORT_STATUS, IS_HEAR"& _ 
+                "ING, IS_OLDPATIENT, IS_OPTICALSHOP, IS_PHYSICAL, IS_REFER_BYSELF, IS_REFER_PICKU"& _ 
+                "P, IS_REFRACTION, IS_SEEING, IS_UNDERSTANDING, Male, NameEng, NameKhmer, ON_EYE,"& _ 
+                " Occupation, PRESENTING_COMPLAIN, PatientNo, Province, REFERENCE_PATIENNOTE, SCR"& _ 
+                "EAN_DATE, SCREEN_BOOKID, SCREEN_NOTE, SCREEN_PLACE, SYS_SETTING, Sex, Telephone,"& _ 
+                " VA_LEFT, VA_RIGHT FROM SCREENING_BOOK_VIEW WHERE (IS_REFRACTION = 1) AND (SCREA"& _ 
+                "N_DATE BETWEEN @Dfrom AND @DTo)"
             Me._commandCollection(9).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(9).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Dfrom", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "SCREAN_DATE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(9).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@DTo", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "SCREAN_DATE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(10) = New Global.System.Data.SqlClient.SqlCommand
             Me._commandCollection(10).Connection = Me.Connection
-            Me._commandCollection(10).CommandText = "SELECT        SCREAN_DATE, PatientNo, NameEng, NameKhmer, Age, Sex, Address, SCRE"& _ 
-                "EN_PLACE, SCREEN_BOOKID, IS_REFRACTION, IS_OPTICALSHOP, IS_REFER_PICKUP, IS_REFE"& _ 
-                "R_BYSELF, SYS_SETTING, SCREEN_NOTE, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         DIAGNOSIS, VA_RIG"& _ 
-                "HT, VA_LEFT, PRESENTING_COMPLAIN, ON_EYE, REFERENCE_PATIENNOTE, IMPORT_STATUS, P"& _ 
-                "rovince, District, Commune, Male, Female, Occupation, Telephone"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM           "& _ 
-                " SCREENING_BOOK_VIEW"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"(IS_REFRACTION=1) and   (SCREAN_DATE between @Dfro"& _ 
-                "m and @DTo) and  SYS_SETTING=@SYS_SETTING"
+            Me._commandCollection(10).CommandText = "SELECT Address, Age, Commune, DIAGNOSIS, District, Female, IMPORT_STATUS, IS_HEAR"& _ 
+                "ING, IS_OLDPATIENT, IS_OPTICALSHOP, IS_PHYSICAL, IS_REFER_BYSELF, IS_REFER_PICKU"& _ 
+                "P, IS_REFRACTION, IS_SEEING, IS_UNDERSTANDING, Male, NameEng, NameKhmer, ON_EYE,"& _ 
+                " Occupation, PRESENTING_COMPLAIN, PatientNo, Province, REFERENCE_PATIENNOTE, SCR"& _ 
+                "EAN_DATE, SCREEN_BOOKID, SCREEN_NOTE, SCREEN_PLACE, SYS_SETTING, Sex, Telephone,"& _ 
+                " VA_LEFT, VA_RIGHT FROM SCREENING_BOOK_VIEW WHERE (IS_REFRACTION = 1) AND (SCREA"& _ 
+                "N_DATE BETWEEN @Dfrom AND @DTo) AND (SYS_SETTING = @SYS_SETTING)"
             Me._commandCollection(10).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(10).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Dfrom", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "SCREAN_DATE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(10).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@DTo", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "SCREAN_DATE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(10).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@SYS_SETTING", Global.System.Data.SqlDbType.[Decimal], 9, Global.System.Data.ParameterDirection.Input, 18, 0, "SYS_SETTING", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(11) = New Global.System.Data.SqlClient.SqlCommand
             Me._commandCollection(11).Connection = Me.Connection
-            Me._commandCollection(11).CommandText = "SELECT        SCREAN_DATE, PatientNo, NameEng, NameKhmer, Age, Sex, Address, SCRE"& _ 
-                "EN_PLACE, SCREEN_BOOKID, IS_REFRACTION, IS_OPTICALSHOP, IS_REFER_PICKUP, IS_REFE"& _ 
-                "R_BYSELF, SYS_SETTING, SCREEN_NOTE, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         DIAGNOSIS, VA_RIG"& _ 
-                "HT, VA_LEFT, PRESENTING_COMPLAIN, ON_EYE, REFERENCE_PATIENNOTE, IMPORT_STATUS, P"& _ 
-                "rovince, District, Commune, Male, Female, Occupation, Telephone"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM           "& _ 
-                " SCREENING_BOOK_VIEW"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"IS_OPTICALSHOP =1 and (SCREAN_DATE between @DFrom a"& _ 
-                "nd @Dto)"
+            Me._commandCollection(11).CommandText = "SELECT Address, Age, Commune, DIAGNOSIS, District, Female, IMPORT_STATUS, IS_HEAR"& _ 
+                "ING, IS_OLDPATIENT, IS_OPTICALSHOP, IS_PHYSICAL, IS_REFER_BYSELF, IS_REFER_PICKU"& _ 
+                "P, IS_REFRACTION, IS_SEEING, IS_UNDERSTANDING, Male, NameEng, NameKhmer, ON_EYE,"& _ 
+                " Occupation, PRESENTING_COMPLAIN, PatientNo, Province, REFERENCE_PATIENNOTE, SCR"& _ 
+                "EAN_DATE, SCREEN_BOOKID, SCREEN_NOTE, SCREEN_PLACE, SYS_SETTING, Sex, Telephone,"& _ 
+                " VA_LEFT, VA_RIGHT FROM SCREENING_BOOK_VIEW WHERE (IS_OPTICALSHOP = 1) AND (SCRE"& _ 
+                "AN_DATE BETWEEN @DFrom AND @Dto)"
             Me._commandCollection(11).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(11).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@DFrom", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "SCREAN_DATE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(11).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Dto", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "SCREAN_DATE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(12) = New Global.System.Data.SqlClient.SqlCommand
             Me._commandCollection(12).Connection = Me.Connection
-            Me._commandCollection(12).CommandText = "SELECT        SCREAN_DATE, PatientNo, NameEng, NameKhmer, Age, Sex, Address, SCRE"& _ 
-                "EN_PLACE, SCREEN_BOOKID, IS_REFRACTION, IS_OPTICALSHOP, IS_REFER_PICKUP, IS_REFE"& _ 
-                "R_BYSELF, SYS_SETTING, SCREEN_NOTE, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         DIAGNOSIS, VA_RIG"& _ 
-                "HT, VA_LEFT, PRESENTING_COMPLAIN, ON_EYE, REFERENCE_PATIENNOTE, IMPORT_STATUS, P"& _ 
-                "rovince, District, Commune, Male, Female, Occupation, Telephone"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM           "& _ 
-                " SCREENING_BOOK_VIEW"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"IS_OPTICALSHOP =1 and (SCREAN_DATE between @DFrom a"& _ 
-                "nd @Dto) and SYS_SETTING =@SYS_SETTING"
+            Me._commandCollection(12).CommandText = "SELECT Address, Age, Commune, DIAGNOSIS, District, Female, IMPORT_STATUS, IS_HEAR"& _ 
+                "ING, IS_OLDPATIENT, IS_OPTICALSHOP, IS_PHYSICAL, IS_REFER_BYSELF, IS_REFER_PICKU"& _ 
+                "P, IS_REFRACTION, IS_SEEING, IS_UNDERSTANDING, Male, NameEng, NameKhmer, ON_EYE,"& _ 
+                " Occupation, PRESENTING_COMPLAIN, PatientNo, Province, REFERENCE_PATIENNOTE, SCR"& _ 
+                "EAN_DATE, SCREEN_BOOKID, SCREEN_NOTE, SCREEN_PLACE, SYS_SETTING, Sex, Telephone,"& _ 
+                " VA_LEFT, VA_RIGHT FROM SCREENING_BOOK_VIEW WHERE (IS_OPTICALSHOP = 1) AND (SCRE"& _ 
+                "AN_DATE BETWEEN @DFrom AND @Dto) AND (SYS_SETTING = @SYS_SETTING)"
             Me._commandCollection(12).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(12).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@DFrom", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "SCREAN_DATE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(12).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Dto", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "SCREAN_DATE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(12).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@SYS_SETTING", Global.System.Data.SqlDbType.[Decimal], 9, Global.System.Data.ParameterDirection.Input, 18, 0, "SYS_SETTING", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(13) = New Global.System.Data.SqlClient.SqlCommand
             Me._commandCollection(13).Connection = Me.Connection
-            Me._commandCollection(13).CommandText = "SELECT        SCREAN_DATE, PatientNo, NameEng, NameKhmer, Age, Sex, Address, SCRE"& _ 
-                "EN_PLACE, SCREEN_BOOKID, IS_REFRACTION, IS_OPTICALSHOP, IS_REFER_PICKUP, IS_REFE"& _ 
-                "R_BYSELF, SYS_SETTING, SCREEN_NOTE, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         DIAGNOSIS, VA_RIG"& _ 
-                "HT, VA_LEFT, PRESENTING_COMPLAIN, ON_EYE, REFERENCE_PATIENNOTE, IMPORT_STATUS, P"& _ 
-                "rovince, District, Commune, Male, Female, Occupation, Telephone"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM           "& _ 
-                " SCREENING_BOOK_VIEW"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"IS_REFER_PICKUP=1 and SCREAN_DATE  between @DFrom a"& _ 
-                "nd @Dto"
+            Me._commandCollection(13).CommandText = "SELECT Address, Age, Commune, DIAGNOSIS, District, Female, IMPORT_STATUS, IS_HEAR"& _ 
+                "ING, IS_OLDPATIENT, IS_OPTICALSHOP, IS_PHYSICAL, IS_REFER_BYSELF, IS_REFER_PICKU"& _ 
+                "P, IS_REFRACTION, IS_SEEING, IS_UNDERSTANDING, Male, NameEng, NameKhmer, ON_EYE,"& _ 
+                " Occupation, PRESENTING_COMPLAIN, PatientNo, Province, REFERENCE_PATIENNOTE, SCR"& _ 
+                "EAN_DATE, SCREEN_BOOKID, SCREEN_NOTE, SCREEN_PLACE, SYS_SETTING, Sex, Telephone,"& _ 
+                " VA_LEFT, VA_RIGHT FROM SCREENING_BOOK_VIEW WHERE (IS_REFER_PICKUP = 1) AND (SCR"& _ 
+                "EAN_DATE BETWEEN @DFrom AND @Dto)"
             Me._commandCollection(13).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(13).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@DFrom", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "SCREAN_DATE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(13).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Dto", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "SCREAN_DATE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(14) = New Global.System.Data.SqlClient.SqlCommand
             Me._commandCollection(14).Connection = Me.Connection
-            Me._commandCollection(14).CommandText = "SELECT        SCREAN_DATE, PatientNo, NameEng, NameKhmer, Age, Sex, Address, SCRE"& _ 
-                "EN_PLACE, SCREEN_BOOKID, IS_REFRACTION, IS_OPTICALSHOP, IS_REFER_PICKUP, IS_REFE"& _ 
-                "R_BYSELF, SYS_SETTING, SCREEN_NOTE, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         DIAGNOSIS, VA_RIG"& _ 
-                "HT, VA_LEFT, PRESENTING_COMPLAIN, ON_EYE, REFERENCE_PATIENNOTE, IMPORT_STATUS, P"& _ 
-                "rovince, District, Commune, Male, Female, Occupation, Telephone"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM           "& _ 
-                " SCREENING_BOOK_VIEW"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"IS_REFER_PICKUP=1 and (SCREAN_DATE  between @DFrom "& _ 
-                "and @Dto) and (SYS_SETTING=@SYS_SETTING)"
+            Me._commandCollection(14).CommandText = "SELECT Address, Age, Commune, DIAGNOSIS, District, Female, IMPORT_STATUS, IS_HEAR"& _ 
+                "ING, IS_OLDPATIENT, IS_OPTICALSHOP, IS_PHYSICAL, IS_REFER_BYSELF, IS_REFER_PICKU"& _ 
+                "P, IS_REFRACTION, IS_SEEING, IS_UNDERSTANDING, Male, NameEng, NameKhmer, ON_EYE,"& _ 
+                " Occupation, PRESENTING_COMPLAIN, PatientNo, Province, REFERENCE_PATIENNOTE, SCR"& _ 
+                "EAN_DATE, SCREEN_BOOKID, SCREEN_NOTE, SCREEN_PLACE, SYS_SETTING, Sex, Telephone,"& _ 
+                " VA_LEFT, VA_RIGHT FROM SCREENING_BOOK_VIEW WHERE (IS_REFER_PICKUP = 1) AND (SCR"& _ 
+                "EAN_DATE BETWEEN @DFrom AND @Dto) AND (SYS_SETTING = @SYS_SETTING)"
             Me._commandCollection(14).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(14).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@DFrom", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "SCREAN_DATE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(14).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Dto", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "SCREAN_DATE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -13237,6 +13622,11 @@ Namespace DataSetScreeningBookTableAdapters
             tableMapping.ColumnMappings.Add("VA_LEFT", "VA_LEFT")
             tableMapping.ColumnMappings.Add("REFERENCE_PATIENNOTE", "REFERENCE_PATIENNOTE")
             tableMapping.ColumnMappings.Add("IMPORT_STATUS", "IMPORT_STATUS")
+            tableMapping.ColumnMappings.Add("IS_HEARING", "IS_HEARING")
+            tableMapping.ColumnMappings.Add("IS_UNDERSTANDING", "IS_UNDERSTANDING")
+            tableMapping.ColumnMappings.Add("IS_PHYSICAL", "IS_PHYSICAL")
+            tableMapping.ColumnMappings.Add("IS_SEEING", "IS_SEEING")
+            tableMapping.ColumnMappings.Add("IS_OLDPATIENT", "IS_OLDPATIENT")
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand
             Me._adapter.DeleteCommand.Connection = Me.Connection
@@ -13262,7 +13652,13 @@ Namespace DataSetScreeningBookTableAdapters
                 " AND ((@IsNull_REFERENCE_PATIENNOTE = 1 AND [REFERENCE_PATIENNOTE] IS NULL) OR ("& _ 
                 "[REFERENCE_PATIENNOTE] = @Original_REFERENCE_PATIENNOTE)) AND ((@IsNull_IMPORT_S"& _ 
                 "TATUS = 1 AND [IMPORT_STATUS] IS NULL) OR ([IMPORT_STATUS] = @Original_IMPORT_ST"& _ 
-                "ATUS)))"
+                "ATUS)) AND ((@IsNull_IS_HEARING = 1 AND [IS_HEARING] IS NULL) OR ([IS_HEARING] ="& _ 
+                " @Original_IS_HEARING)) AND ((@IsNull_IS_UNDERSTANDING = 1 AND [IS_UNDERSTANDING"& _ 
+                "] IS NULL) OR ([IS_UNDERSTANDING] = @Original_IS_UNDERSTANDING)) AND ((@IsNull_I"& _ 
+                "S_PHYSICAL = 1 AND [IS_PHYSICAL] IS NULL) OR ([IS_PHYSICAL] = @Original_IS_PHYSI"& _ 
+                "CAL)) AND ((@IsNull_IS_SEEING = 1 AND [IS_SEEING] IS NULL) OR ([IS_SEEING] = @Or"& _ 
+                "iginal_IS_SEEING)) AND ((@IsNull_IS_OLDPATIENT = 1 AND [IS_OLDPATIENT] IS NULL) "& _ 
+                "OR ([IS_OLDPATIENT] = @Original_IS_OLDPATIENT)))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_SCREEN_BOOKID", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 18, 0, "SCREEN_BOOKID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_SCREAN_DATE", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "SCREAN_DATE", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
@@ -13297,19 +13693,32 @@ Namespace DataSetScreeningBookTableAdapters
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_REFERENCE_PATIENNOTE", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "REFERENCE_PATIENNOTE", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_IMPORT_STATUS", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "IMPORT_STATUS", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_IMPORT_STATUS", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "IMPORT_STATUS", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_IS_HEARING", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "IS_HEARING", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_IS_HEARING", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "IS_HEARING", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_IS_UNDERSTANDING", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "IS_UNDERSTANDING", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_IS_UNDERSTANDING", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "IS_UNDERSTANDING", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_IS_PHYSICAL", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "IS_PHYSICAL", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_IS_PHYSICAL", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "IS_PHYSICAL", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_IS_SEEING", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "IS_SEEING", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_IS_SEEING", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "IS_SEEING", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_IS_OLDPATIENT", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "IS_OLDPATIENT", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_IS_OLDPATIENT", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "IS_OLDPATIENT", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand
             Me._adapter.InsertCommand.Connection = Me.Connection
             Me._adapter.InsertCommand.CommandText = "INSERT INTO [SCREENING_BOOK] ([SCREAN_DATE], [SYS_SETTING], [SCREEN_PLACE], [PATI"& _ 
                 "ENT_NO], [IS_REFRACTION], [IS_OPTICALSHOP], [IS_REFER_PICKUP], [IS_REFER_BYSELF]"& _ 
                 ", [SCREEN_NOTE], [ON_EYE], [PRESENTING_COMPLAIN], [DIAGNOSIS], [VA_RIGHT], [VA_L"& _ 
-                "EFT], [REFERENCE_PATIENNOTE], [IMPORT_STATUS]) VALUES (@SCREAN_DATE, @SYS_SETTIN"& _ 
-                "G, @SCREEN_PLACE, @PATIENT_NO, @IS_REFRACTION, @IS_OPTICALSHOP, @IS_REFER_PICKUP"& _ 
-                ", @IS_REFER_BYSELF, @SCREEN_NOTE, @ON_EYE, @PRESENTING_COMPLAIN, @DIAGNOSIS, @VA"& _ 
-                "_RIGHT, @VA_LEFT, @REFERENCE_PATIENNOTE, @IMPORT_STATUS);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT SCREEN_BOOKID,"& _ 
-                " SCREAN_DATE, SYS_SETTING, SCREEN_PLACE, PATIENT_NO, IS_REFRACTION, IS_OPTICALSH"& _ 
-                "OP, IS_REFER_PICKUP, IS_REFER_BYSELF, SCREEN_NOTE, ON_EYE, PRESENTING_COMPLAIN, "& _ 
-                "DIAGNOSIS, VA_RIGHT, VA_LEFT, REFERENCE_PATIENNOTE, IMPORT_STATUS FROM SCREENING"& _ 
-                "_BOOK WHERE (SCREEN_BOOKID = SCOPE_IDENTITY())"
+                "EFT], [REFERENCE_PATIENNOTE], [IMPORT_STATUS], [IS_HEARING], [IS_UNDERSTANDING],"& _ 
+                " [IS_PHYSICAL], [IS_SEEING], [IS_OLDPATIENT]) VALUES (@SCREAN_DATE, @SYS_SETTING"& _ 
+                ", @SCREEN_PLACE, @PATIENT_NO, @IS_REFRACTION, @IS_OPTICALSHOP, @IS_REFER_PICKUP,"& _ 
+                " @IS_REFER_BYSELF, @SCREEN_NOTE, @ON_EYE, @PRESENTING_COMPLAIN, @DIAGNOSIS, @VA_"& _ 
+                "RIGHT, @VA_LEFT, @REFERENCE_PATIENNOTE, @IMPORT_STATUS, @IS_HEARING, @IS_UNDERST"& _ 
+                "ANDING, @IS_PHYSICAL, @IS_SEEING, @IS_OLDPATIENT);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT SCREEN_BOOKID, SCREAN"& _ 
+                "_DATE, SYS_SETTING, SCREEN_PLACE, PATIENT_NO, IS_REFRACTION, IS_OPTICALSHOP, IS_"& _ 
+                "REFER_PICKUP, IS_REFER_BYSELF, SCREEN_NOTE, ON_EYE, PRESENTING_COMPLAIN, DIAGNOS"& _ 
+                "IS, VA_RIGHT, VA_LEFT, REFERENCE_PATIENNOTE, IMPORT_STATUS, IS_HEARING, IS_UNDER"& _ 
+                "STANDING, IS_PHYSICAL, IS_SEEING, IS_OLDPATIENT FROM SCREENING_BOOK WHERE (SCREE"& _ 
+                "N_BOOKID = SCOPE_IDENTITY())"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@SCREAN_DATE", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "SCREAN_DATE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@SYS_SETTING", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 18, 0, "SYS_SETTING", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -13327,6 +13736,11 @@ Namespace DataSetScreeningBookTableAdapters
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@VA_LEFT", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "VA_LEFT", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@REFERENCE_PATIENNOTE", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "REFERENCE_PATIENNOTE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IMPORT_STATUS", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "IMPORT_STATUS", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IS_HEARING", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "IS_HEARING", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IS_UNDERSTANDING", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "IS_UNDERSTANDING", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IS_PHYSICAL", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "IS_PHYSICAL", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IS_SEEING", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "IS_SEEING", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IS_OLDPATIENT", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "IS_OLDPATIENT", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand
             Me._adapter.UpdateCommand.Connection = Me.Connection
             Me._adapter.UpdateCommand.CommandText = "UPDATE [SCREENING_BOOK] SET [SCREAN_DATE] = @SCREAN_DATE, [SYS_SETTING] = @SYS_SE"& _ 
@@ -13335,33 +13749,42 @@ Namespace DataSetScreeningBookTableAdapters
                 "_REFER_PICKUP, [IS_REFER_BYSELF] = @IS_REFER_BYSELF, [SCREEN_NOTE] = @SCREEN_NOT"& _ 
                 "E, [ON_EYE] = @ON_EYE, [PRESENTING_COMPLAIN] = @PRESENTING_COMPLAIN, [DIAGNOSIS]"& _ 
                 " = @DIAGNOSIS, [VA_RIGHT] = @VA_RIGHT, [VA_LEFT] = @VA_LEFT, [REFERENCE_PATIENNO"& _ 
-                "TE] = @REFERENCE_PATIENNOTE, [IMPORT_STATUS] = @IMPORT_STATUS WHERE (([SCREEN_BO"& _ 
-                "OKID] = @Original_SCREEN_BOOKID) AND ((@IsNull_SCREAN_DATE = 1 AND [SCREAN_DATE]"& _ 
-                " IS NULL) OR ([SCREAN_DATE] = @Original_SCREAN_DATE)) AND ((@IsNull_SYS_SETTING "& _ 
-                "= 1 AND [SYS_SETTING] IS NULL) OR ([SYS_SETTING] = @Original_SYS_SETTING)) AND ("& _ 
-                "(@IsNull_SCREEN_PLACE = 1 AND [SCREEN_PLACE] IS NULL) OR ([SCREEN_PLACE] = @Orig"& _ 
-                "inal_SCREEN_PLACE)) AND ((@IsNull_PATIENT_NO = 1 AND [PATIENT_NO] IS NULL) OR (["& _ 
-                "PATIENT_NO] = @Original_PATIENT_NO)) AND ((@IsNull_IS_REFRACTION = 1 AND [IS_REF"& _ 
-                "RACTION] IS NULL) OR ([IS_REFRACTION] = @Original_IS_REFRACTION)) AND ((@IsNull_"& _ 
-                "IS_OPTICALSHOP = 1 AND [IS_OPTICALSHOP] IS NULL) OR ([IS_OPTICALSHOP] = @Origina"& _ 
-                "l_IS_OPTICALSHOP)) AND ((@IsNull_IS_REFER_PICKUP = 1 AND [IS_REFER_PICKUP] IS NU"& _ 
-                "LL) OR ([IS_REFER_PICKUP] = @Original_IS_REFER_PICKUP)) AND ((@IsNull_IS_REFER_B"& _ 
-                "YSELF = 1 AND [IS_REFER_BYSELF] IS NULL) OR ([IS_REFER_BYSELF] = @Original_IS_RE"& _ 
-                "FER_BYSELF)) AND ((@IsNull_SCREEN_NOTE = 1 AND [SCREEN_NOTE] IS NULL) OR ([SCREE"& _ 
-                "N_NOTE] = @Original_SCREEN_NOTE)) AND ((@IsNull_ON_EYE = 1 AND [ON_EYE] IS NULL)"& _ 
-                " OR ([ON_EYE] = @Original_ON_EYE)) AND ((@IsNull_PRESENTING_COMPLAIN = 1 AND [PR"& _ 
-                "ESENTING_COMPLAIN] IS NULL) OR ([PRESENTING_COMPLAIN] = @Original_PRESENTING_COM"& _ 
-                "PLAIN)) AND ((@IsNull_DIAGNOSIS = 1 AND [DIAGNOSIS] IS NULL) OR ([DIAGNOSIS] = @"& _ 
-                "Original_DIAGNOSIS)) AND ((@IsNull_VA_RIGHT = 1 AND [VA_RIGHT] IS NULL) OR ([VA_"& _ 
-                "RIGHT] = @Original_VA_RIGHT)) AND ((@IsNull_VA_LEFT = 1 AND [VA_LEFT] IS NULL) O"& _ 
-                "R ([VA_LEFT] = @Original_VA_LEFT)) AND ((@IsNull_REFERENCE_PATIENNOTE = 1 AND [R"& _ 
-                "EFERENCE_PATIENNOTE] IS NULL) OR ([REFERENCE_PATIENNOTE] = @Original_REFERENCE_P"& _ 
-                "ATIENNOTE)) AND ((@IsNull_IMPORT_STATUS = 1 AND [IMPORT_STATUS] IS NULL) OR ([IM"& _ 
-                "PORT_STATUS] = @Original_IMPORT_STATUS)));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT SCREEN_BOOKID, SCREAN_DATE, S"& _ 
-                "YS_SETTING, SCREEN_PLACE, PATIENT_NO, IS_REFRACTION, IS_OPTICALSHOP, IS_REFER_PI"& _ 
-                "CKUP, IS_REFER_BYSELF, SCREEN_NOTE, ON_EYE, PRESENTING_COMPLAIN, DIAGNOSIS, VA_R"& _ 
-                "IGHT, VA_LEFT, REFERENCE_PATIENNOTE, IMPORT_STATUS FROM SCREENING_BOOK WHERE (SC"& _ 
-                "REEN_BOOKID = @SCREEN_BOOKID)"
+                "TE] = @REFERENCE_PATIENNOTE, [IMPORT_STATUS] = @IMPORT_STATUS, [IS_HEARING] = @I"& _ 
+                "S_HEARING, [IS_UNDERSTANDING] = @IS_UNDERSTANDING, [IS_PHYSICAL] = @IS_PHYSICAL,"& _ 
+                " [IS_SEEING] = @IS_SEEING, [IS_OLDPATIENT] = @IS_OLDPATIENT WHERE (([SCREEN_BOOK"& _ 
+                "ID] = @Original_SCREEN_BOOKID) AND ((@IsNull_SCREAN_DATE = 1 AND [SCREAN_DATE] I"& _ 
+                "S NULL) OR ([SCREAN_DATE] = @Original_SCREAN_DATE)) AND ((@IsNull_SYS_SETTING = "& _ 
+                "1 AND [SYS_SETTING] IS NULL) OR ([SYS_SETTING] = @Original_SYS_SETTING)) AND ((@"& _ 
+                "IsNull_SCREEN_PLACE = 1 AND [SCREEN_PLACE] IS NULL) OR ([SCREEN_PLACE] = @Origin"& _ 
+                "al_SCREEN_PLACE)) AND ((@IsNull_PATIENT_NO = 1 AND [PATIENT_NO] IS NULL) OR ([PA"& _ 
+                "TIENT_NO] = @Original_PATIENT_NO)) AND ((@IsNull_IS_REFRACTION = 1 AND [IS_REFRA"& _ 
+                "CTION] IS NULL) OR ([IS_REFRACTION] = @Original_IS_REFRACTION)) AND ((@IsNull_IS"& _ 
+                "_OPTICALSHOP = 1 AND [IS_OPTICALSHOP] IS NULL) OR ([IS_OPTICALSHOP] = @Original_"& _ 
+                "IS_OPTICALSHOP)) AND ((@IsNull_IS_REFER_PICKUP = 1 AND [IS_REFER_PICKUP] IS NULL"& _ 
+                ") OR ([IS_REFER_PICKUP] = @Original_IS_REFER_PICKUP)) AND ((@IsNull_IS_REFER_BYS"& _ 
+                "ELF = 1 AND [IS_REFER_BYSELF] IS NULL) OR ([IS_REFER_BYSELF] = @Original_IS_REFE"& _ 
+                "R_BYSELF)) AND ((@IsNull_SCREEN_NOTE = 1 AND [SCREEN_NOTE] IS NULL) OR ([SCREEN_"& _ 
+                "NOTE] = @Original_SCREEN_NOTE)) AND ((@IsNull_ON_EYE = 1 AND [ON_EYE] IS NULL) O"& _ 
+                "R ([ON_EYE] = @Original_ON_EYE)) AND ((@IsNull_PRESENTING_COMPLAIN = 1 AND [PRES"& _ 
+                "ENTING_COMPLAIN] IS NULL) OR ([PRESENTING_COMPLAIN] = @Original_PRESENTING_COMPL"& _ 
+                "AIN)) AND ((@IsNull_DIAGNOSIS = 1 AND [DIAGNOSIS] IS NULL) OR ([DIAGNOSIS] = @Or"& _ 
+                "iginal_DIAGNOSIS)) AND ((@IsNull_VA_RIGHT = 1 AND [VA_RIGHT] IS NULL) OR ([VA_RI"& _ 
+                "GHT] = @Original_VA_RIGHT)) AND ((@IsNull_VA_LEFT = 1 AND [VA_LEFT] IS NULL) OR "& _ 
+                "([VA_LEFT] = @Original_VA_LEFT)) AND ((@IsNull_REFERENCE_PATIENNOTE = 1 AND [REF"& _ 
+                "ERENCE_PATIENNOTE] IS NULL) OR ([REFERENCE_PATIENNOTE] = @Original_REFERENCE_PAT"& _ 
+                "IENNOTE)) AND ((@IsNull_IMPORT_STATUS = 1 AND [IMPORT_STATUS] IS NULL) OR ([IMPO"& _ 
+                "RT_STATUS] = @Original_IMPORT_STATUS)) AND ((@IsNull_IS_HEARING = 1 AND [IS_HEAR"& _ 
+                "ING] IS NULL) OR ([IS_HEARING] = @Original_IS_HEARING)) AND ((@IsNull_IS_UNDERST"& _ 
+                "ANDING = 1 AND [IS_UNDERSTANDING] IS NULL) OR ([IS_UNDERSTANDING] = @Original_IS"& _ 
+                "_UNDERSTANDING)) AND ((@IsNull_IS_PHYSICAL = 1 AND [IS_PHYSICAL] IS NULL) OR ([I"& _ 
+                "S_PHYSICAL] = @Original_IS_PHYSICAL)) AND ((@IsNull_IS_SEEING = 1 AND [IS_SEEING"& _ 
+                "] IS NULL) OR ([IS_SEEING] = @Original_IS_SEEING)) AND ((@IsNull_IS_OLDPATIENT ="& _ 
+                " 1 AND [IS_OLDPATIENT] IS NULL) OR ([IS_OLDPATIENT] = @Original_IS_OLDPATIENT)))"& _ 
+                ";"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT SCREEN_BOOKID, SCREAN_DATE, SYS_SETTING, SCREEN_PLACE, PATIENT_NO, IS_"& _ 
+                "REFRACTION, IS_OPTICALSHOP, IS_REFER_PICKUP, IS_REFER_BYSELF, SCREEN_NOTE, ON_EY"& _ 
+                "E, PRESENTING_COMPLAIN, DIAGNOSIS, VA_RIGHT, VA_LEFT, REFERENCE_PATIENNOTE, IMPO"& _ 
+                "RT_STATUS, IS_HEARING, IS_UNDERSTANDING, IS_PHYSICAL, IS_SEEING, IS_OLDPATIENT F"& _ 
+                "ROM SCREENING_BOOK WHERE (SCREEN_BOOKID = @SCREEN_BOOKID)"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@SCREAN_DATE", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "SCREAN_DATE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@SYS_SETTING", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 18, 0, "SYS_SETTING", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -13379,6 +13802,11 @@ Namespace DataSetScreeningBookTableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@VA_LEFT", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "VA_LEFT", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@REFERENCE_PATIENNOTE", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "REFERENCE_PATIENNOTE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IMPORT_STATUS", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "IMPORT_STATUS", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IS_HEARING", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "IS_HEARING", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IS_UNDERSTANDING", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "IS_UNDERSTANDING", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IS_PHYSICAL", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "IS_PHYSICAL", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IS_SEEING", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "IS_SEEING", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IS_OLDPATIENT", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "IS_OLDPATIENT", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_SCREEN_BOOKID", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 18, 0, "SCREEN_BOOKID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_SCREAN_DATE", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "SCREAN_DATE", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_SCREAN_DATE", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "SCREAN_DATE", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
@@ -13412,6 +13840,16 @@ Namespace DataSetScreeningBookTableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_REFERENCE_PATIENNOTE", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "REFERENCE_PATIENNOTE", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_IMPORT_STATUS", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "IMPORT_STATUS", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_IMPORT_STATUS", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "IMPORT_STATUS", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_IS_HEARING", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "IS_HEARING", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_IS_HEARING", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "IS_HEARING", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_IS_UNDERSTANDING", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "IS_UNDERSTANDING", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_IS_UNDERSTANDING", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "IS_UNDERSTANDING", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_IS_PHYSICAL", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "IS_PHYSICAL", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_IS_PHYSICAL", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "IS_PHYSICAL", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_IS_SEEING", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "IS_SEEING", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_IS_SEEING", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "IS_SEEING", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_IS_OLDPATIENT", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "IS_OLDPATIENT", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_IS_OLDPATIENT", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "IS_OLDPATIENT", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@SCREEN_BOOKID", Global.System.Data.SqlDbType.[Decimal], 9, Global.System.Data.ParameterDirection.Input, 18, 0, "SCREEN_BOOKID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
@@ -13429,7 +13867,8 @@ Namespace DataSetScreeningBookTableAdapters
             Me._commandCollection(0).CommandText = "SELECT        SCREEN_BOOKID, SCREAN_DATE, SYS_SETTING, SCREEN_PLACE, PATIENT_NO, "& _ 
                 "IS_REFRACTION, IS_OPTICALSHOP, IS_REFER_PICKUP, IS_REFER_BYSELF, SCREEN_NOTE, ON"& _ 
                 "_EYE, PRESENTING_COMPLAIN, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         DIAGNOSIS, VA_RIGHT, VA_LE"& _ 
-                "FT, REFERENCE_PATIENNOTE, IMPORT_STATUS"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            SCREENING_BOOK"
+                "FT, REFERENCE_PATIENNOTE, IMPORT_STATUS, IS_HEARING, IS_UNDERSTANDING, IS_PHYSIC"& _ 
+                "AL, IS_SEEING, IS_OLDPATIENT"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            SCREENING_BOOK"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand
             Me._commandCollection(1).Connection = Me.Connection
@@ -13454,8 +13893,10 @@ Namespace DataSetScreeningBookTableAdapters
                 "IS_REFER_PICKUP, IS_REFER_BYSELF = @IS_REFER_BYSELF, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         "& _ 
                 "SCREEN_NOTE = @SCREEN_NOTE, ON_EYE = @ON_EYE, PRESENTING_COMPLAIN = @PRESENTING_"& _ 
                 "COMPLAIN, DIAGNOSIS = @DIAGNOSIS, VA_RIGHT = @VA_RIGHT, VA_LEFT = @VA_LEFT, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"  "& _ 
-                "                       SCREEN_PLACE = @SCREEN_PLACE"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (SCREEN_BOOKID"& _ 
-                " = @Original_SCREEN_BOOKID)"
+                "                       SCREEN_PLACE = @SCREEN_PLACE, IS_HEARING = @IS_HEARING, I"& _ 
+                "S_UNDERSTANDING = @IS_UNDERSTANDING, IS_PHYSICAL = @IS_PHYSICAL, IS_SEEING = @IS"& _ 
+                "_SEEING, IS_OLDPATIENT = @IS_OLDPATIENT"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (SCREEN_BOOKID = @Original"& _ 
+                "_SCREEN_BOOKID)"
             Me._commandCollection(4).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(4).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@SCREAN_DATE", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "SCREAN_DATE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(4).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IS_REFRACTION", Global.System.Data.SqlDbType.Bit, 1, Global.System.Data.ParameterDirection.Input, 0, 0, "IS_REFRACTION", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -13469,6 +13910,11 @@ Namespace DataSetScreeningBookTableAdapters
             Me._commandCollection(4).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@VA_RIGHT", Global.System.Data.SqlDbType.NVarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "VA_RIGHT", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(4).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@VA_LEFT", Global.System.Data.SqlDbType.NVarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "VA_LEFT", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(4).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@SCREEN_PLACE", Global.System.Data.SqlDbType.NVarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "SCREEN_PLACE", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(4).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IS_HEARING", Global.System.Data.SqlDbType.Bit, 1, Global.System.Data.ParameterDirection.Input, 0, 0, "IS_HEARING", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(4).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IS_UNDERSTANDING", Global.System.Data.SqlDbType.Bit, 1, Global.System.Data.ParameterDirection.Input, 0, 0, "IS_UNDERSTANDING", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(4).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IS_PHYSICAL", Global.System.Data.SqlDbType.Bit, 1, Global.System.Data.ParameterDirection.Input, 0, 0, "IS_PHYSICAL", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(4).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IS_SEEING", Global.System.Data.SqlDbType.Bit, 1, Global.System.Data.ParameterDirection.Input, 0, 0, "IS_SEEING", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(4).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IS_OLDPATIENT", Global.System.Data.SqlDbType.Bit, 1, Global.System.Data.ParameterDirection.Input, 0, 0, "IS_OLDPATIENT", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(4).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_SCREEN_BOOKID", Global.System.Data.SqlDbType.[Decimal], 9, Global.System.Data.ParameterDirection.Input, 18, 0, "SCREEN_BOOKID", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
         End Sub
         
@@ -13538,7 +13984,12 @@ Namespace DataSetScreeningBookTableAdapters
                     ByVal Original_VA_RIGHT As String,  _
                     ByVal Original_VA_LEFT As String,  _
                     ByVal Original_REFERENCE_PATIENNOTE As String,  _
-                    ByVal Original_IMPORT_STATUS As Global.System.Nullable(Of Boolean)) As Integer
+                    ByVal Original_IMPORT_STATUS As Global.System.Nullable(Of Boolean),  _
+                    ByVal Original_IS_HEARING As Global.System.Nullable(Of Boolean),  _
+                    ByVal Original_IS_UNDERSTANDING As Global.System.Nullable(Of Boolean),  _
+                    ByVal Original_IS_PHYSICAL As Global.System.Nullable(Of Boolean),  _
+                    ByVal Original_IS_SEEING As Global.System.Nullable(Of Boolean),  _
+                    ByVal Original_IS_OLDPATIENT As Global.System.Nullable(Of Boolean)) As Integer
             Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_SCREEN_BOOKID,Decimal)
             If (Original_SCREAN_DATE.HasValue = true) Then
                 Me.Adapter.DeleteCommand.Parameters(1).Value = CType(0,Object)
@@ -13652,6 +14103,41 @@ Namespace DataSetScreeningBookTableAdapters
                 Me.Adapter.DeleteCommand.Parameters(31).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(32).Value = Global.System.DBNull.Value
             End If
+            If (Original_IS_HEARING.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(33).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(34).Value = CType(Original_IS_HEARING.Value,Boolean)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(33).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(34).Value = Global.System.DBNull.Value
+            End If
+            If (Original_IS_UNDERSTANDING.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(35).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(36).Value = CType(Original_IS_UNDERSTANDING.Value,Boolean)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(35).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(36).Value = Global.System.DBNull.Value
+            End If
+            If (Original_IS_PHYSICAL.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(37).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(38).Value = CType(Original_IS_PHYSICAL.Value,Boolean)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(37).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(38).Value = Global.System.DBNull.Value
+            End If
+            If (Original_IS_SEEING.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(39).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(40).Value = CType(Original_IS_SEEING.Value,Boolean)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(39).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(40).Value = Global.System.DBNull.Value
+            End If
+            If (Original_IS_OLDPATIENT.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(41).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(42).Value = CType(Original_IS_OLDPATIENT.Value,Boolean)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(41).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(42).Value = Global.System.DBNull.Value
+            End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
             If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -13686,7 +14172,12 @@ Namespace DataSetScreeningBookTableAdapters
                     ByVal VA_RIGHT As String,  _
                     ByVal VA_LEFT As String,  _
                     ByVal REFERENCE_PATIENNOTE As String,  _
-                    ByVal IMPORT_STATUS As Global.System.Nullable(Of Boolean)) As Integer
+                    ByVal IMPORT_STATUS As Global.System.Nullable(Of Boolean),  _
+                    ByVal IS_HEARING As Global.System.Nullable(Of Boolean),  _
+                    ByVal IS_UNDERSTANDING As Global.System.Nullable(Of Boolean),  _
+                    ByVal IS_PHYSICAL As Global.System.Nullable(Of Boolean),  _
+                    ByVal IS_SEEING As Global.System.Nullable(Of Boolean),  _
+                    ByVal IS_OLDPATIENT As Global.System.Nullable(Of Boolean)) As Integer
             If (SCREAN_DATE.HasValue = true) Then
                 Me.Adapter.InsertCommand.Parameters(0).Value = CType(SCREAN_DATE.Value,Date)
             Else
@@ -13767,6 +14258,31 @@ Namespace DataSetScreeningBookTableAdapters
             Else
                 Me.Adapter.InsertCommand.Parameters(15).Value = Global.System.DBNull.Value
             End If
+            If (IS_HEARING.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(16).Value = CType(IS_HEARING.Value,Boolean)
+            Else
+                Me.Adapter.InsertCommand.Parameters(16).Value = Global.System.DBNull.Value
+            End If
+            If (IS_UNDERSTANDING.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(17).Value = CType(IS_UNDERSTANDING.Value,Boolean)
+            Else
+                Me.Adapter.InsertCommand.Parameters(17).Value = Global.System.DBNull.Value
+            End If
+            If (IS_PHYSICAL.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(18).Value = CType(IS_PHYSICAL.Value,Boolean)
+            Else
+                Me.Adapter.InsertCommand.Parameters(18).Value = Global.System.DBNull.Value
+            End If
+            If (IS_SEEING.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(19).Value = CType(IS_SEEING.Value,Boolean)
+            Else
+                Me.Adapter.InsertCommand.Parameters(19).Value = Global.System.DBNull.Value
+            End If
+            If (IS_OLDPATIENT.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(20).Value = CType(IS_OLDPATIENT.Value,Boolean)
+            Else
+                Me.Adapter.InsertCommand.Parameters(20).Value = Global.System.DBNull.Value
+            End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
             If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -13802,6 +14318,11 @@ Namespace DataSetScreeningBookTableAdapters
                     ByVal VA_LEFT As String,  _
                     ByVal REFERENCE_PATIENNOTE As String,  _
                     ByVal IMPORT_STATUS As Global.System.Nullable(Of Boolean),  _
+                    ByVal IS_HEARING As Global.System.Nullable(Of Boolean),  _
+                    ByVal IS_UNDERSTANDING As Global.System.Nullable(Of Boolean),  _
+                    ByVal IS_PHYSICAL As Global.System.Nullable(Of Boolean),  _
+                    ByVal IS_SEEING As Global.System.Nullable(Of Boolean),  _
+                    ByVal IS_OLDPATIENT As Global.System.Nullable(Of Boolean),  _
                     ByVal Original_SCREEN_BOOKID As Decimal,  _
                     ByVal Original_SCREAN_DATE As Global.System.Nullable(Of Date),  _
                     ByVal Original_SYS_SETTING As Global.System.Nullable(Of Decimal),  _
@@ -13819,6 +14340,11 @@ Namespace DataSetScreeningBookTableAdapters
                     ByVal Original_VA_LEFT As String,  _
                     ByVal Original_REFERENCE_PATIENNOTE As String,  _
                     ByVal Original_IMPORT_STATUS As Global.System.Nullable(Of Boolean),  _
+                    ByVal Original_IS_HEARING As Global.System.Nullable(Of Boolean),  _
+                    ByVal Original_IS_UNDERSTANDING As Global.System.Nullable(Of Boolean),  _
+                    ByVal Original_IS_PHYSICAL As Global.System.Nullable(Of Boolean),  _
+                    ByVal Original_IS_SEEING As Global.System.Nullable(Of Boolean),  _
+                    ByVal Original_IS_OLDPATIENT As Global.System.Nullable(Of Boolean),  _
                     ByVal SCREEN_BOOKID As Decimal) As Integer
             If (SCREAN_DATE.HasValue = true) Then
                 Me.Adapter.UpdateCommand.Parameters(0).Value = CType(SCREAN_DATE.Value,Date)
@@ -13900,120 +14426,180 @@ Namespace DataSetScreeningBookTableAdapters
             Else
                 Me.Adapter.UpdateCommand.Parameters(15).Value = Global.System.DBNull.Value
             End If
-            Me.Adapter.UpdateCommand.Parameters(16).Value = CType(Original_SCREEN_BOOKID,Decimal)
-            If (Original_SCREAN_DATE.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(Original_SCREAN_DATE.Value,Date)
+            If (IS_HEARING.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(IS_HEARING.Value,Boolean)
             Else
-                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(16).Value = Global.System.DBNull.Value
+            End If
+            If (IS_UNDERSTANDING.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(IS_UNDERSTANDING.Value,Boolean)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(17).Value = Global.System.DBNull.Value
+            End If
+            If (IS_PHYSICAL.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(IS_PHYSICAL.Value,Boolean)
+            Else
                 Me.Adapter.UpdateCommand.Parameters(18).Value = Global.System.DBNull.Value
             End If
-            If (Original_SYS_SETTING.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(20).Value = CType(Original_SYS_SETTING.Value,Decimal)
+            If (IS_SEEING.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(IS_SEEING.Value,Boolean)
             Else
-                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(19).Value = Global.System.DBNull.Value
+            End If
+            If (IS_OLDPATIENT.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(20).Value = CType(IS_OLDPATIENT.Value,Boolean)
+            Else
                 Me.Adapter.UpdateCommand.Parameters(20).Value = Global.System.DBNull.Value
             End If
-            If (Original_SCREEN_PLACE Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(21).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(22).Value = Global.System.DBNull.Value
+            Me.Adapter.UpdateCommand.Parameters(21).Value = CType(Original_SCREEN_BOOKID,Decimal)
+            If (Original_SCREAN_DATE.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(22).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(23).Value = CType(Original_SCREAN_DATE.Value,Date)
             Else
-                Me.Adapter.UpdateCommand.Parameters(21).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(22).Value = CType(Original_SCREEN_PLACE,String)
+                Me.Adapter.UpdateCommand.Parameters(22).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(23).Value = Global.System.DBNull.Value
+            End If
+            If (Original_SYS_SETTING.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(24).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(25).Value = CType(Original_SYS_SETTING.Value,Decimal)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(24).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(25).Value = Global.System.DBNull.Value
+            End If
+            If (Original_SCREEN_PLACE Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(26).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(27).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(26).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(27).Value = CType(Original_SCREEN_PLACE,String)
             End If
             If (Original_PATIENT_NO.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(23).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(24).Value = CType(Original_PATIENT_NO.Value,Decimal)
+                Me.Adapter.UpdateCommand.Parameters(28).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(29).Value = CType(Original_PATIENT_NO.Value,Decimal)
             Else
-                Me.Adapter.UpdateCommand.Parameters(23).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(24).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(28).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(29).Value = Global.System.DBNull.Value
             End If
             If (Original_IS_REFRACTION.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(25).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(26).Value = CType(Original_IS_REFRACTION.Value,Boolean)
+                Me.Adapter.UpdateCommand.Parameters(30).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(31).Value = CType(Original_IS_REFRACTION.Value,Boolean)
             Else
-                Me.Adapter.UpdateCommand.Parameters(25).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(26).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(30).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(31).Value = Global.System.DBNull.Value
             End If
             If (Original_IS_OPTICALSHOP.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(27).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(28).Value = CType(Original_IS_OPTICALSHOP.Value,Boolean)
+                Me.Adapter.UpdateCommand.Parameters(32).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(33).Value = CType(Original_IS_OPTICALSHOP.Value,Boolean)
             Else
-                Me.Adapter.UpdateCommand.Parameters(27).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(28).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(32).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(33).Value = Global.System.DBNull.Value
             End If
             If (Original_IS_REFER_PICKUP.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(29).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(30).Value = CType(Original_IS_REFER_PICKUP.Value,Boolean)
+                Me.Adapter.UpdateCommand.Parameters(34).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(35).Value = CType(Original_IS_REFER_PICKUP.Value,Boolean)
             Else
-                Me.Adapter.UpdateCommand.Parameters(29).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(30).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(34).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(35).Value = Global.System.DBNull.Value
             End If
             If (Original_IS_REFER_BYSELF.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(31).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(32).Value = CType(Original_IS_REFER_BYSELF.Value,Boolean)
+                Me.Adapter.UpdateCommand.Parameters(36).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(37).Value = CType(Original_IS_REFER_BYSELF.Value,Boolean)
             Else
-                Me.Adapter.UpdateCommand.Parameters(31).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(32).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(36).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(37).Value = Global.System.DBNull.Value
             End If
             If (Original_SCREEN_NOTE Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(33).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(34).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(38).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(39).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(33).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(34).Value = CType(Original_SCREEN_NOTE,String)
+                Me.Adapter.UpdateCommand.Parameters(38).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(39).Value = CType(Original_SCREEN_NOTE,String)
             End If
             If (Original_ON_EYE Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(35).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(36).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(40).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(41).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(35).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(36).Value = CType(Original_ON_EYE,String)
+                Me.Adapter.UpdateCommand.Parameters(40).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(41).Value = CType(Original_ON_EYE,String)
             End If
             If (Original_PRESENTING_COMPLAIN Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(37).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(38).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(42).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(43).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(37).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(38).Value = CType(Original_PRESENTING_COMPLAIN,String)
+                Me.Adapter.UpdateCommand.Parameters(42).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(43).Value = CType(Original_PRESENTING_COMPLAIN,String)
             End If
             If (Original_DIAGNOSIS Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(39).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(40).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(44).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(45).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(39).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(40).Value = CType(Original_DIAGNOSIS,String)
+                Me.Adapter.UpdateCommand.Parameters(44).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(45).Value = CType(Original_DIAGNOSIS,String)
             End If
             If (Original_VA_RIGHT Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(41).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(42).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(46).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(47).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(41).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(42).Value = CType(Original_VA_RIGHT,String)
+                Me.Adapter.UpdateCommand.Parameters(46).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(47).Value = CType(Original_VA_RIGHT,String)
             End If
             If (Original_VA_LEFT Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(43).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(44).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(48).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(49).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(43).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(44).Value = CType(Original_VA_LEFT,String)
+                Me.Adapter.UpdateCommand.Parameters(48).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(49).Value = CType(Original_VA_LEFT,String)
             End If
             If (Original_REFERENCE_PATIENNOTE Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(45).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(46).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(50).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(51).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(45).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(46).Value = CType(Original_REFERENCE_PATIENNOTE,String)
+                Me.Adapter.UpdateCommand.Parameters(50).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(51).Value = CType(Original_REFERENCE_PATIENNOTE,String)
             End If
             If (Original_IMPORT_STATUS.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(47).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(48).Value = CType(Original_IMPORT_STATUS.Value,Boolean)
+                Me.Adapter.UpdateCommand.Parameters(52).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(53).Value = CType(Original_IMPORT_STATUS.Value,Boolean)
             Else
-                Me.Adapter.UpdateCommand.Parameters(47).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(48).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(52).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(53).Value = Global.System.DBNull.Value
             End If
-            Me.Adapter.UpdateCommand.Parameters(49).Value = CType(SCREEN_BOOKID,Decimal)
+            If (Original_IS_HEARING.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(54).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(55).Value = CType(Original_IS_HEARING.Value,Boolean)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(54).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(55).Value = Global.System.DBNull.Value
+            End If
+            If (Original_IS_UNDERSTANDING.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(56).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(57).Value = CType(Original_IS_UNDERSTANDING.Value,Boolean)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(56).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(57).Value = Global.System.DBNull.Value
+            End If
+            If (Original_IS_PHYSICAL.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(58).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(59).Value = CType(Original_IS_PHYSICAL.Value,Boolean)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(58).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(59).Value = Global.System.DBNull.Value
+            End If
+            If (Original_IS_SEEING.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(60).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(61).Value = CType(Original_IS_SEEING.Value,Boolean)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(60).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(61).Value = Global.System.DBNull.Value
+            End If
+            If (Original_IS_OLDPATIENT.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(62).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(63).Value = CType(Original_IS_OLDPATIENT.Value,Boolean)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(62).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(63).Value = Global.System.DBNull.Value
+            End If
+            Me.Adapter.UpdateCommand.Parameters(64).Value = CType(SCREEN_BOOKID,Decimal)
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
             If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -14049,6 +14635,11 @@ Namespace DataSetScreeningBookTableAdapters
                     ByVal VA_LEFT As String,  _
                     ByVal REFERENCE_PATIENNOTE As String,  _
                     ByVal IMPORT_STATUS As Global.System.Nullable(Of Boolean),  _
+                    ByVal IS_HEARING As Global.System.Nullable(Of Boolean),  _
+                    ByVal IS_UNDERSTANDING As Global.System.Nullable(Of Boolean),  _
+                    ByVal IS_PHYSICAL As Global.System.Nullable(Of Boolean),  _
+                    ByVal IS_SEEING As Global.System.Nullable(Of Boolean),  _
+                    ByVal IS_OLDPATIENT As Global.System.Nullable(Of Boolean),  _
                     ByVal Original_SCREEN_BOOKID As Decimal,  _
                     ByVal Original_SCREAN_DATE As Global.System.Nullable(Of Date),  _
                     ByVal Original_SYS_SETTING As Global.System.Nullable(Of Decimal),  _
@@ -14065,8 +14656,13 @@ Namespace DataSetScreeningBookTableAdapters
                     ByVal Original_VA_RIGHT As String,  _
                     ByVal Original_VA_LEFT As String,  _
                     ByVal Original_REFERENCE_PATIENNOTE As String,  _
-                    ByVal Original_IMPORT_STATUS As Global.System.Nullable(Of Boolean)) As Integer
-            Return Me.Update(SCREAN_DATE, SYS_SETTING, SCREEN_PLACE, PATIENT_NO, IS_REFRACTION, IS_OPTICALSHOP, IS_REFER_PICKUP, IS_REFER_BYSELF, SCREEN_NOTE, ON_EYE, PRESENTING_COMPLAIN, DIAGNOSIS, VA_RIGHT, VA_LEFT, REFERENCE_PATIENNOTE, IMPORT_STATUS, Original_SCREEN_BOOKID, Original_SCREAN_DATE, Original_SYS_SETTING, Original_SCREEN_PLACE, Original_PATIENT_NO, Original_IS_REFRACTION, Original_IS_OPTICALSHOP, Original_IS_REFER_PICKUP, Original_IS_REFER_BYSELF, Original_SCREEN_NOTE, Original_ON_EYE, Original_PRESENTING_COMPLAIN, Original_DIAGNOSIS, Original_VA_RIGHT, Original_VA_LEFT, Original_REFERENCE_PATIENNOTE, Original_IMPORT_STATUS, Original_SCREEN_BOOKID)
+                    ByVal Original_IMPORT_STATUS As Global.System.Nullable(Of Boolean),  _
+                    ByVal Original_IS_HEARING As Global.System.Nullable(Of Boolean),  _
+                    ByVal Original_IS_UNDERSTANDING As Global.System.Nullable(Of Boolean),  _
+                    ByVal Original_IS_PHYSICAL As Global.System.Nullable(Of Boolean),  _
+                    ByVal Original_IS_SEEING As Global.System.Nullable(Of Boolean),  _
+                    ByVal Original_IS_OLDPATIENT As Global.System.Nullable(Of Boolean)) As Integer
+            Return Me.Update(SCREAN_DATE, SYS_SETTING, SCREEN_PLACE, PATIENT_NO, IS_REFRACTION, IS_OPTICALSHOP, IS_REFER_PICKUP, IS_REFER_BYSELF, SCREEN_NOTE, ON_EYE, PRESENTING_COMPLAIN, DIAGNOSIS, VA_RIGHT, VA_LEFT, REFERENCE_PATIENNOTE, IMPORT_STATUS, IS_HEARING, IS_UNDERSTANDING, IS_PHYSICAL, IS_SEEING, IS_OLDPATIENT, Original_SCREEN_BOOKID, Original_SCREAN_DATE, Original_SYS_SETTING, Original_SCREEN_PLACE, Original_PATIENT_NO, Original_IS_REFRACTION, Original_IS_OPTICALSHOP, Original_IS_REFER_PICKUP, Original_IS_REFER_BYSELF, Original_SCREEN_NOTE, Original_ON_EYE, Original_PRESENTING_COMPLAIN, Original_DIAGNOSIS, Original_VA_RIGHT, Original_VA_LEFT, Original_REFERENCE_PATIENNOTE, Original_IMPORT_STATUS, Original_IS_HEARING, Original_IS_UNDERSTANDING, Original_IS_PHYSICAL, Original_IS_SEEING, Original_IS_OLDPATIENT, Original_SCREEN_BOOKID)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -14158,7 +14754,25 @@ Namespace DataSetScreeningBookTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, false)>  _
-        Public Overloads Overridable Function UpdateScreeningBook(ByVal SCREAN_DATE As Global.System.Nullable(Of Date), ByVal IS_REFRACTION As Global.System.Nullable(Of Boolean), ByVal IS_OPTICALSHOP As Global.System.Nullable(Of Boolean), ByVal IS_REFER_PICKUP As Global.System.Nullable(Of Boolean), ByVal IS_REFER_BYSELF As Global.System.Nullable(Of Boolean), ByVal SCREEN_NOTE As String, ByVal ON_EYE As String, ByVal PRESENTING_COMPLAIN As String, ByVal DIAGNOSIS As String, ByVal VA_RIGHT As String, ByVal VA_LEFT As String, ByVal SCREEN_PLACE As String, ByVal Original_SCREEN_BOOKID As Decimal) As Integer
+        Public Overloads Overridable Function UpdateScreeningBook( _
+                    ByVal SCREAN_DATE As Global.System.Nullable(Of Date),  _
+                    ByVal IS_REFRACTION As Global.System.Nullable(Of Boolean),  _
+                    ByVal IS_OPTICALSHOP As Global.System.Nullable(Of Boolean),  _
+                    ByVal IS_REFER_PICKUP As Global.System.Nullable(Of Boolean),  _
+                    ByVal IS_REFER_BYSELF As Global.System.Nullable(Of Boolean),  _
+                    ByVal SCREEN_NOTE As String,  _
+                    ByVal ON_EYE As String,  _
+                    ByVal PRESENTING_COMPLAIN As String,  _
+                    ByVal DIAGNOSIS As String,  _
+                    ByVal VA_RIGHT As String,  _
+                    ByVal VA_LEFT As String,  _
+                    ByVal SCREEN_PLACE As String,  _
+                    ByVal IS_HEARING As Global.System.Nullable(Of Boolean),  _
+                    ByVal IS_UNDERSTANDING As Global.System.Nullable(Of Boolean),  _
+                    ByVal IS_PHYSICAL As Global.System.Nullable(Of Boolean),  _
+                    ByVal IS_SEEING As Global.System.Nullable(Of Boolean),  _
+                    ByVal IS_OLDPATIENT As Global.System.Nullable(Of Boolean),  _
+                    ByVal Original_SCREEN_BOOKID As Decimal) As Integer
             Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(4)
             If (SCREAN_DATE.HasValue = true) Then
                 command.Parameters(0).Value = CType(SCREAN_DATE.Value,Date)
@@ -14220,7 +14834,32 @@ Namespace DataSetScreeningBookTableAdapters
             Else
                 command.Parameters(11).Value = CType(SCREEN_PLACE,String)
             End If
-            command.Parameters(12).Value = CType(Original_SCREEN_BOOKID,Decimal)
+            If (IS_HEARING.HasValue = true) Then
+                command.Parameters(12).Value = CType(IS_HEARING.Value,Boolean)
+            Else
+                command.Parameters(12).Value = Global.System.DBNull.Value
+            End If
+            If (IS_UNDERSTANDING.HasValue = true) Then
+                command.Parameters(13).Value = CType(IS_UNDERSTANDING.Value,Boolean)
+            Else
+                command.Parameters(13).Value = Global.System.DBNull.Value
+            End If
+            If (IS_PHYSICAL.HasValue = true) Then
+                command.Parameters(14).Value = CType(IS_PHYSICAL.Value,Boolean)
+            Else
+                command.Parameters(14).Value = Global.System.DBNull.Value
+            End If
+            If (IS_SEEING.HasValue = true) Then
+                command.Parameters(15).Value = CType(IS_SEEING.Value,Boolean)
+            Else
+                command.Parameters(15).Value = Global.System.DBNull.Value
+            End If
+            If (IS_OLDPATIENT.HasValue = true) Then
+                command.Parameters(16).Value = CType(IS_OLDPATIENT.Value,Boolean)
+            Else
+                command.Parameters(16).Value = Global.System.DBNull.Value
+            End If
+            command.Parameters(17).Value = CType(Original_SCREEN_BOOKID,Decimal)
             Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
             If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then

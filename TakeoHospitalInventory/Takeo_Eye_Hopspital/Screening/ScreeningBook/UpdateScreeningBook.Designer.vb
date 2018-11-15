@@ -29,6 +29,8 @@ Partial Class UpdateScreeningBook
         Me.BtnClose = New System.Windows.Forms.Button
         Me.BtnSave = New System.Windows.Forms.Button
         Me.Panel2 = New System.Windows.Forms.Panel
+        Me.UiTab1 = New Janus.Windows.UI.Tab.UITab
+        Me.UiTabPage1 = New Janus.Windows.UI.Tab.UITabPage
         Me.GroupRefraction = New System.Windows.Forms.GroupBox
         Me.BtnMoreAdd = New System.Windows.Forms.Button
         Me.Label22 = New System.Windows.Forms.Label
@@ -43,8 +45,6 @@ Partial Class UpdateScreeningBook
         Me.Label19 = New System.Windows.Forms.Label
         Me.TxtLEPlus = New System.Windows.Forms.TextBox
         Me.TxtREPlus = New System.Windows.Forms.TextBox
-        Me.UiTab1 = New Janus.Windows.UI.Tab.UITab
-        Me.UiTabPage1 = New Janus.Windows.UI.Tab.UITabPage
         Me.ChReferral = New System.Windows.Forms.CheckBox
         Me.ChOpticalshop = New System.Windows.Forms.CheckBox
         Me.ChRefraction = New System.Windows.Forms.CheckBox
@@ -86,14 +86,22 @@ Partial Class UpdateScreeningBook
         Me.Label1 = New System.Windows.Forms.Label
         Me.ErrUpdateScreen = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.VSForOpticalshop = New Janus.Windows.Common.VisualStyleManager(Me.components)
+        Me.Panel3 = New System.Windows.Forms.Panel
+        Me.ChIsOld = New System.Windows.Forms.CheckBox
+        Me.ChSeeing = New System.Windows.Forms.CheckBox
+        Me.ChPhysicalDisability = New System.Windows.Forms.CheckBox
+        Me.ChUnderstanding = New System.Windows.Forms.CheckBox
+        Me.ChHearing = New System.Windows.Forms.CheckBox
+        Me.Label24 = New System.Windows.Forms.Label
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
-        Me.GroupRefraction.SuspendLayout()
         CType(Me.UiTab1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.UiTab1.SuspendLayout()
         Me.UiTabPage1.SuspendLayout()
+        Me.GroupRefraction.SuspendLayout()
         Me.GBReferral.SuspendLayout()
         CType(Me.ErrUpdateScreen, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel3.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
@@ -150,6 +158,7 @@ Partial Class UpdateScreeningBook
         '
         Me.Panel2.BackColor = System.Drawing.Color.White
         Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel2.Controls.Add(Me.Panel3)
         Me.Panel2.Controls.Add(Me.UiTab1)
         Me.Panel2.Controls.Add(Me.TxtPlaceScreening)
         Me.Panel2.Controls.Add(Me.Label15)
@@ -184,6 +193,29 @@ Partial Class UpdateScreeningBook
         Me.Panel2.Size = New System.Drawing.Size(848, 522)
         Me.Panel2.TabIndex = 0
         '
+        'UiTab1
+        '
+        Me.UiTab1.FlatBorderColor = System.Drawing.SystemColors.ActiveBorder
+        Me.UiTab1.Location = New System.Drawing.Point(429, 146)
+        Me.UiTab1.Name = "UiTab1"
+        Me.UiTab1.Office2007ColorScheme = Janus.Windows.UI.Office2007ColorScheme.Black
+        Me.UiTab1.Size = New System.Drawing.Size(410, 366)
+        Me.UiTab1.TabIndex = 27
+        Me.UiTab1.TabPages.AddRange(New Janus.Windows.UI.Tab.UITabPage() {Me.UiTabPage1})
+        '
+        'UiTabPage1
+        '
+        Me.UiTabPage1.Controls.Add(Me.GroupRefraction)
+        Me.UiTabPage1.Controls.Add(Me.ChReferral)
+        Me.UiTabPage1.Controls.Add(Me.ChOpticalshop)
+        Me.UiTabPage1.Controls.Add(Me.ChRefraction)
+        Me.UiTabPage1.Controls.Add(Me.GBReferral)
+        Me.UiTabPage1.Location = New System.Drawing.Point(1, 28)
+        Me.UiTabPage1.Name = "UiTabPage1"
+        Me.UiTabPage1.Size = New System.Drawing.Size(406, 335)
+        Me.UiTabPage1.TabStop = True
+        Me.UiTabPage1.Text = "Fuction Untility"
+        '
         'GroupRefraction
         '
         Me.GroupRefraction.Controls.Add(Me.BtnMoreAdd)
@@ -200,7 +232,7 @@ Partial Class UpdateScreeningBook
         Me.GroupRefraction.Controls.Add(Me.TxtLEPlus)
         Me.GroupRefraction.Controls.Add(Me.TxtREPlus)
         Me.GroupRefraction.Enabled = False
-        Me.GroupRefraction.Location = New System.Drawing.Point(5, 231)
+        Me.GroupRefraction.Location = New System.Drawing.Point(5, 224)
         Me.GroupRefraction.Name = "GroupRefraction"
         Me.GroupRefraction.Size = New System.Drawing.Size(391, 230)
         Me.GroupRefraction.TabIndex = 1
@@ -330,29 +362,6 @@ Partial Class UpdateScreeningBook
         Me.TxtREPlus.Size = New System.Drawing.Size(131, 26)
         Me.TxtREPlus.TabIndex = 0
         '
-        'UiTab1
-        '
-        Me.UiTab1.FlatBorderColor = System.Drawing.SystemColors.ActiveBorder
-        Me.UiTab1.Location = New System.Drawing.Point(429, 17)
-        Me.UiTab1.Name = "UiTab1"
-        Me.UiTab1.Office2007ColorScheme = Janus.Windows.UI.Office2007ColorScheme.Black
-        Me.UiTab1.Size = New System.Drawing.Size(413, 495)
-        Me.UiTab1.TabIndex = 27
-        Me.UiTab1.TabPages.AddRange(New Janus.Windows.UI.Tab.UITabPage() {Me.UiTabPage1})
-        '
-        'UiTabPage1
-        '
-        Me.UiTabPage1.Controls.Add(Me.GroupRefraction)
-        Me.UiTabPage1.Controls.Add(Me.ChReferral)
-        Me.UiTabPage1.Controls.Add(Me.ChOpticalshop)
-        Me.UiTabPage1.Controls.Add(Me.ChRefraction)
-        Me.UiTabPage1.Controls.Add(Me.GBReferral)
-        Me.UiTabPage1.Location = New System.Drawing.Point(1, 28)
-        Me.UiTabPage1.Name = "UiTabPage1"
-        Me.UiTabPage1.Size = New System.Drawing.Size(409, 464)
-        Me.UiTabPage1.TabStop = True
-        Me.UiTabPage1.Text = "Fuction Untility"
-        '
         'ChReferral
         '
         Me.ChReferral.AutoSize = True
@@ -396,7 +405,7 @@ Partial Class UpdateScreeningBook
         Me.GBReferral.Controls.Add(Me.DateAppointment)
         Me.GBReferral.Enabled = False
         Me.GBReferral.ForeColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
-        Me.GBReferral.Location = New System.Drawing.Point(5, 48)
+        Me.GBReferral.Location = New System.Drawing.Point(5, 40)
         Me.GBReferral.Name = "GBReferral"
         Me.GBReferral.Size = New System.Drawing.Size(391, 179)
         Me.GBReferral.TabIndex = 1
@@ -771,6 +780,82 @@ Partial Class UpdateScreeningBook
         Me.VSForOpticalshop.ColorSchemes.Add(JanusColorScheme3)
         Me.VSForOpticalshop.DefaultColorScheme = "Header"
         '
+        'Panel3
+        '
+        Me.Panel3.BackColor = System.Drawing.Color.White
+        Me.Panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel3.Controls.Add(Me.ChIsOld)
+        Me.Panel3.Controls.Add(Me.ChSeeing)
+        Me.Panel3.Controls.Add(Me.ChPhysicalDisability)
+        Me.Panel3.Controls.Add(Me.ChUnderstanding)
+        Me.Panel3.Controls.Add(Me.ChHearing)
+        Me.Panel3.Controls.Add(Me.Label24)
+        Me.Panel3.Location = New System.Drawing.Point(428, 15)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(410, 122)
+        Me.Panel3.TabIndex = 28
+        '
+        'ChIsOld
+        '
+        Me.ChIsOld.AutoSize = True
+        Me.ChIsOld.ForeColor = System.Drawing.Color.Red
+        Me.ChIsOld.Location = New System.Drawing.Point(9, 92)
+        Me.ChIsOld.Name = "ChIsOld"
+        Me.ChIsOld.Size = New System.Drawing.Size(119, 24)
+        Me.ChIsOld.TabIndex = 5
+        Me.ChIsOld.Text = "Is old patient"
+        Me.ChIsOld.UseVisualStyleBackColor = True
+        '
+        'ChSeeing
+        '
+        Me.ChSeeing.AutoSize = True
+        Me.ChSeeing.Location = New System.Drawing.Point(190, 62)
+        Me.ChSeeing.Name = "ChSeeing"
+        Me.ChSeeing.Size = New System.Drawing.Size(78, 24)
+        Me.ChSeeing.TabIndex = 4
+        Me.ChSeeing.Text = "Seeing"
+        Me.ChSeeing.UseVisualStyleBackColor = True
+        '
+        'ChPhysicalDisability
+        '
+        Me.ChPhysicalDisability.AutoSize = True
+        Me.ChPhysicalDisability.Location = New System.Drawing.Point(9, 62)
+        Me.ChPhysicalDisability.Name = "ChPhysicalDisability"
+        Me.ChPhysicalDisability.Size = New System.Drawing.Size(151, 24)
+        Me.ChPhysicalDisability.TabIndex = 3
+        Me.ChPhysicalDisability.Text = "Physical Disability"
+        Me.ChPhysicalDisability.UseVisualStyleBackColor = True
+        '
+        'ChUnderstanding
+        '
+        Me.ChUnderstanding.AutoSize = True
+        Me.ChUnderstanding.Location = New System.Drawing.Point(190, 32)
+        Me.ChUnderstanding.Name = "ChUnderstanding"
+        Me.ChUnderstanding.Size = New System.Drawing.Size(214, 24)
+        Me.ChUnderstanding.TabIndex = 2
+        Me.ChUnderstanding.Text = "Understanding/Intellectual"
+        Me.ChUnderstanding.UseVisualStyleBackColor = True
+        '
+        'ChHearing
+        '
+        Me.ChHearing.AutoSize = True
+        Me.ChHearing.Location = New System.Drawing.Point(9, 32)
+        Me.ChHearing.Name = "ChHearing"
+        Me.ChHearing.Size = New System.Drawing.Size(84, 24)
+        Me.ChHearing.TabIndex = 1
+        Me.ChHearing.Text = "Hearing"
+        Me.ChHearing.UseVisualStyleBackColor = True
+        '
+        'Label24
+        '
+        Me.Label24.AutoSize = True
+        Me.Label24.Font = New System.Drawing.Font("Khmer OS Battambang", 10.0!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label24.Location = New System.Drawing.Point(2, 2)
+        Me.Label24.Name = "Label24"
+        Me.Label24.Size = New System.Drawing.Size(65, 25)
+        Me.Label24.TabIndex = 0
+        Me.Label24.Text = "Difficulty"
+        '
         'UpdateScreeningBook
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -788,15 +873,17 @@ Partial Class UpdateScreeningBook
         Me.Panel1.PerformLayout()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
-        Me.GroupRefraction.ResumeLayout(False)
-        Me.GroupRefraction.PerformLayout()
         CType(Me.UiTab1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.UiTab1.ResumeLayout(False)
         Me.UiTabPage1.ResumeLayout(False)
         Me.UiTabPage1.PerformLayout()
+        Me.GroupRefraction.ResumeLayout(False)
+        Me.GroupRefraction.PerformLayout()
         Me.GBReferral.ResumeLayout(False)
         Me.GBReferral.PerformLayout()
         CType(Me.ErrUpdateScreen, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel3.ResumeLayout(False)
+        Me.Panel3.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -861,4 +948,11 @@ Partial Class UpdateScreeningBook
     Friend WithEvents Label23 As System.Windows.Forms.Label
     Friend WithEvents GroupRefraction As System.Windows.Forms.GroupBox
     Friend WithEvents BtnMoreAdd As System.Windows.Forms.Button
+    Friend WithEvents Panel3 As System.Windows.Forms.Panel
+    Friend WithEvents ChIsOld As System.Windows.Forms.CheckBox
+    Friend WithEvents ChSeeing As System.Windows.Forms.CheckBox
+    Friend WithEvents ChPhysicalDisability As System.Windows.Forms.CheckBox
+    Friend WithEvents ChUnderstanding As System.Windows.Forms.CheckBox
+    Friend WithEvents ChHearing As System.Windows.Forms.CheckBox
+    Friend WithEvents Label24 As System.Windows.Forms.Label
 End Class

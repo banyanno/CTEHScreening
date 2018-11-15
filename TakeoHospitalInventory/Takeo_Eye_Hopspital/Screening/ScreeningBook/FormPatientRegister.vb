@@ -228,10 +228,10 @@ Public Class FormPatientRegister
     End Function
     '==================================== Screening Book =========================================
     Private Function ScreeningBook() As String
-        Return InsertScreenBook(DateRegis.Value.Date, TxtHealthNameCenter.Text, LblSettingID.Text, PatientNo.Text, ChRefraction.Checked, ChOpticalshop.Checked, RadReferAndPickup.Checked, RadReferAndComeBySelf.Checked, TxtRegisterNote.Text, EmptyString(TxtReferencePatientNote.Text))
+        Return InsertScreenBook(DateRegis.Value.Date, TxtHealthNameCenter.Text, LblSettingID.Text, PatientNo.Text, ChRefraction.Checked, ChOpticalshop.Checked, RadReferAndPickup.Checked, RadReferAndComeBySelf.Checked, TxtRegisterNote.Text, EmptyString(TxtReferencePatientNote.Text), ChHearing.Checked, ChUnderstanding.Checked, ChPhysicalDisability.Checked, ChSeeing.Checked, ChIsOld.Checked)
     End Function
-    Private Function InsertScreenBook(ByVal SCREAN_DATE As DateTime, ByVal SCREEN_PLACE As String, ByVal SCREEN_ID As Integer, ByVal PATIENT_NO As Double, ByVal IS_REFRACTION As Boolean, ByVal IS_OPTICALSHOP As Boolean, ByVal IS_REFER_PICKUP As Boolean, ByVal IS_REFER_BYSELF As Boolean, ByVal SCREEN_NOTE As String, ByVal REFERENCE_PATIENNOTE As String) As String
-        Dim sql As String = "INSERT INTO SCREENING_BOOK (SCREAN_DATE,SCREEN_PLACE,SYS_SETTING,PATIENT_NO,IS_REFRACTION,IS_OPTICALSHOP,IS_REFER_PICKUP,IS_REFER_BYSELF,SCREEN_NOTE,REFERENCE_PATIENNOTE) VALUES('" & SCREAN_DATE & "',N'" & SCREEN_PLACE & "'," & SCREEN_ID & "," & PATIENT_NO & ",'" & IS_REFRACTION & "','" & IS_OPTICALSHOP & "','" & IS_REFER_PICKUP & "','" & IS_REFER_BYSELF & "',N'" & SCREEN_NOTE & "','" & REFERENCE_PATIENNOTE & "')"
+    Private Function InsertScreenBook(ByVal SCREAN_DATE As DateTime, ByVal SCREEN_PLACE As String, ByVal SCREEN_ID As Integer, ByVal PATIENT_NO As Double, ByVal IS_REFRACTION As Boolean, ByVal IS_OPTICALSHOP As Boolean, ByVal IS_REFER_PICKUP As Boolean, ByVal IS_REFER_BYSELF As Boolean, ByVal SCREEN_NOTE As String, ByVal REFERENCE_PATIENNOTE As String, ByVal IS_HEARING As Boolean, ByVal IS_UNDERSTANDING As Boolean, ByVal IS_PHYSICAL As Boolean, ByVal IS_SEEING As Boolean, ByVal IS_OLDPATIENT As Boolean) As String
+        Dim sql As String = "INSERT INTO SCREENING_BOOK (SCREAN_DATE,SCREEN_PLACE,SYS_SETTING,PATIENT_NO,IS_REFRACTION,IS_OPTICALSHOP,IS_REFER_PICKUP,IS_REFER_BYSELF,SCREEN_NOTE,REFERENCE_PATIENNOTE,IS_HEARING,IS_UNDERSTANDING,IS_PHYSICAL,IS_SEEING,IS_OLDPATIENT) VALUES('" & SCREAN_DATE & "',N'" & SCREEN_PLACE & "'," & SCREEN_ID & "," & PATIENT_NO & ",'" & IS_REFRACTION & "','" & IS_OPTICALSHOP & "','" & IS_REFER_PICKUP & "','" & IS_REFER_BYSELF & "',N'" & SCREEN_NOTE & "','" & REFERENCE_PATIENNOTE & "','" & IS_HEARING & "','" & IS_UNDERSTANDING & "','" & IS_PHYSICAL & "','" & IS_SEEING & "','" & IS_OLDPATIENT & "')"
         Return sql
     End Function
     Private Function GetLastScreeningBookID() As String
@@ -290,7 +290,7 @@ Public Class FormPatientRegister
         If ValidateCombobox(CboProNo, "", ErrSaveRegis) = False Then Exit Sub
         If ValidateCombobox(CboDisNo, "", ErrSaveRegis) = False Then Exit Sub
         If ValidateCombobox(CboCommNo, "", ErrSaveRegis) = False Then Exit Sub
-        If ValidateTextField(TxtFullAddress, "", ErrSaveRegis) = False Then Exit Sub
+        'If ValidateTextField(TxtFullAddress, "", ErrSaveRegis) = False Then Exit Sub
         If MessageBox.Show("Do you want to save patient registration.", "save", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
 
             ' Function save new pateint register and screening book
@@ -298,9 +298,9 @@ Public Class FormPatientRegister
             If SaveProcessForNewPatient() = True Then
                 MessageBox.Show("Patient registration successful!", "Register", MessageBoxButtons.OK, MessageBoxIcon.Information)
                
-                If IS_ONSCRENNING = True Then
-                    Me.DashScreeningRegis.RefreshAfterScreenRegis(DateRegis.Value.Date, DateRegis.Value.Date, PatientNo.Text)
-                End If
+                'If IS_ONSCRENNING = True Then
+                '    Me.DashScreeningRegis.RefreshAfterScreenRegis(DateRegis.Value.Date, DateRegis.Value.Date, PatientNo.Text)
+                'End If
                 If ChPrintRegistration.Checked = True Then
                     UIMainScreening.StatusLoading(True, "Loading")
                     BgLoadingform.RunWorkerAsync()
@@ -318,15 +318,20 @@ Public Class FormPatientRegister
 
     Private Sub ResetFormRegister()
         LoadNewPatientNo()
-        TxtPatientName.Text = ""
         TxtPatientName.Focus()
         TxtPatientName.Select()
         TxtPatientName.SelectAll()
+        TxtPatientName.Text = ""
         TxtPatientNameKh.Text = ""
         CboSex.SelectedIndex = -1
         TxtAge.Text = ""
         TxtTel.Text = ""
-        TxtFullAddress.Text = ""
+        'TxtFullAddress.Text = ""
+        ChHearing.Checked = False
+        ChUnderstanding.Checked = False
+        ChPhysicalDisability.Checked = False
+        ChSeeing.Checked = False
+        ChIsOld.Checked = False
         ChReferral.Checked = False
         RadReferAndPickup.Checked = False
         RadReferAndComeBySelf.Checked = False

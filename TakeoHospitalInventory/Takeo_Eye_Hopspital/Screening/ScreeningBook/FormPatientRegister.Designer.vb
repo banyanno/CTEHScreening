@@ -32,6 +32,13 @@ Partial Class FormPatientRegister
         Me.Label3 = New System.Windows.Forms.Label
         Me.Label1 = New System.Windows.Forms.Label
         Me.Panel3 = New System.Windows.Forms.Panel
+        Me.Panel1 = New System.Windows.Forms.Panel
+        Me.ChIsOld = New System.Windows.Forms.CheckBox
+        Me.ChSeeing = New System.Windows.Forms.CheckBox
+        Me.ChPhysicalDisability = New System.Windows.Forms.CheckBox
+        Me.ChUnderstanding = New System.Windows.Forms.CheckBox
+        Me.ChHearing = New System.Windows.Forms.CheckBox
+        Me.Label19 = New System.Windows.Forms.Label
         Me.TxtPatientNameKh = New System.Windows.Forms.TextBox
         Me.Label16 = New System.Windows.Forms.Label
         Me.TxtTel = New System.Windows.Forms.TextBox
@@ -77,6 +84,7 @@ Partial Class FormPatientRegister
         Me.PanelMain.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel3.SuspendLayout()
+        Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         Me.GBReferral.SuspendLayout()
@@ -99,13 +107,13 @@ Partial Class FormPatientRegister
         Me.PanelMain.Font = New System.Drawing.Font("Khmer OS Battambang", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.PanelMain.Location = New System.Drawing.Point(0, 0)
         Me.PanelMain.Name = "PanelMain"
-        Me.PanelMain.Size = New System.Drawing.Size(386, 651)
+        Me.PanelMain.Size = New System.Drawing.Size(742, 542)
         Me.PanelMain.TabIndex = 0
         '
         'PictureBox1
         '
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(26, -1)
+        Me.PictureBox1.Location = New System.Drawing.Point(129, -1)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(94, 92)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -121,10 +129,10 @@ Partial Class FormPatientRegister
         Me.BtnClose.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnClose.ForeColor = System.Drawing.Color.White
         Me.BtnClose.Image = CType(resources.GetObject("BtnClose.Image"), System.Drawing.Image)
-        Me.BtnClose.Location = New System.Drawing.Point(200, 605)
+        Me.BtnClose.Location = New System.Drawing.Point(373, 498)
         Me.BtnClose.Name = "BtnClose"
         Me.BtnClose.Size = New System.Drawing.Size(100, 37)
-        Me.BtnClose.TabIndex = 2
+        Me.BtnClose.TabIndex = 3
         Me.BtnClose.Text = "Close"
         Me.BtnClose.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.BtnClose.UseVisualStyleBackColor = False
@@ -138,10 +146,10 @@ Partial Class FormPatientRegister
         Me.BtnSave.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnSave.ForeColor = System.Drawing.Color.White
         Me.BtnSave.Image = CType(resources.GetObject("BtnSave.Image"), System.Drawing.Image)
-        Me.BtnSave.Location = New System.Drawing.Point(94, 605)
+        Me.BtnSave.Location = New System.Drawing.Point(267, 498)
         Me.BtnSave.Name = "BtnSave"
         Me.BtnSave.Size = New System.Drawing.Size(100, 37)
-        Me.BtnSave.TabIndex = 1
+        Me.BtnSave.TabIndex = 2
         Me.BtnSave.Text = "Save"
         Me.BtnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.BtnSave.UseVisualStyleBackColor = False
@@ -151,7 +159,7 @@ Partial Class FormPatientRegister
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(202, Byte), Integer), CType(CType(81, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Label2.Location = New System.Drawing.Point(130, 65)
+        Me.Label2.Location = New System.Drawing.Point(267, 65)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(208, 18)
         Me.Label2.TabIndex = 3
@@ -162,7 +170,7 @@ Partial Class FormPatientRegister
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(202, Byte), Integer), CType(CType(81, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Label3.Location = New System.Drawing.Point(145, 45)
+        Me.Label3.Location = New System.Drawing.Point(282, 45)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(171, 18)
         Me.Label3.TabIndex = 2
@@ -173,7 +181,7 @@ Partial Class FormPatientRegister
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Khmer Mool1", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(100, Byte), Integer), CType(CType(84, Byte), Integer))
-        Me.Label1.Location = New System.Drawing.Point(129, 8)
+        Me.Label1.Location = New System.Drawing.Point(266, 8)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(202, 43)
         Me.Label1.TabIndex = 1
@@ -183,6 +191,8 @@ Partial Class FormPatientRegister
         '
         Me.Panel3.BackColor = System.Drawing.Color.White
         Me.Panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel3.Controls.Add(Me.ChIsOld)
+        Me.Panel3.Controls.Add(Me.Panel1)
         Me.Panel3.Controls.Add(Me.TxtPatientNameKh)
         Me.Panel3.Controls.Add(Me.Label16)
         Me.Panel3.Controls.Add(Me.TxtTel)
@@ -204,14 +214,89 @@ Partial Class FormPatientRegister
         Me.Panel3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
         Me.Panel3.Location = New System.Drawing.Point(5, 91)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(373, 508)
+        Me.Panel3.Size = New System.Drawing.Size(733, 403)
         Me.Panel3.TabIndex = 0
+        '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.Color.White
+        Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel1.Controls.Add(Me.ChSeeing)
+        Me.Panel1.Controls.Add(Me.ChPhysicalDisability)
+        Me.Panel1.Controls.Add(Me.ChUnderstanding)
+        Me.Panel1.Controls.Add(Me.ChHearing)
+        Me.Panel1.Controls.Add(Me.Label19)
+        Me.Panel1.Location = New System.Drawing.Point(374, 32)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(351, 103)
+        Me.Panel1.TabIndex = 8
+        '
+        'ChIsOld
+        '
+        Me.ChIsOld.AutoSize = True
+        Me.ChIsOld.ForeColor = System.Drawing.Color.Red
+        Me.ChIsOld.Location = New System.Drawing.Point(382, 141)
+        Me.ChIsOld.Name = "ChIsOld"
+        Me.ChIsOld.Size = New System.Drawing.Size(112, 29)
+        Me.ChIsOld.TabIndex = 4
+        Me.ChIsOld.Text = "Is old patient"
+        Me.ChIsOld.UseVisualStyleBackColor = True
+        '
+        'ChSeeing
+        '
+        Me.ChSeeing.AutoSize = True
+        Me.ChSeeing.Location = New System.Drawing.Point(154, 53)
+        Me.ChSeeing.Name = "ChSeeing"
+        Me.ChSeeing.Size = New System.Drawing.Size(75, 29)
+        Me.ChSeeing.TabIndex = 3
+        Me.ChSeeing.Text = "Seeing"
+        Me.ChSeeing.UseVisualStyleBackColor = True
+        '
+        'ChPhysicalDisability
+        '
+        Me.ChPhysicalDisability.AutoSize = True
+        Me.ChPhysicalDisability.Location = New System.Drawing.Point(7, 53)
+        Me.ChPhysicalDisability.Name = "ChPhysicalDisability"
+        Me.ChPhysicalDisability.Size = New System.Drawing.Size(143, 29)
+        Me.ChPhysicalDisability.TabIndex = 2
+        Me.ChPhysicalDisability.Text = "Physical Disability"
+        Me.ChPhysicalDisability.UseVisualStyleBackColor = True
+        '
+        'ChUnderstanding
+        '
+        Me.ChUnderstanding.AutoSize = True
+        Me.ChUnderstanding.Location = New System.Drawing.Point(154, 30)
+        Me.ChUnderstanding.Name = "ChUnderstanding"
+        Me.ChUnderstanding.Size = New System.Drawing.Size(196, 29)
+        Me.ChUnderstanding.TabIndex = 1
+        Me.ChUnderstanding.Text = "Understanding/Intellectual"
+        Me.ChUnderstanding.UseVisualStyleBackColor = True
+        '
+        'ChHearing
+        '
+        Me.ChHearing.AutoSize = True
+        Me.ChHearing.Location = New System.Drawing.Point(7, 31)
+        Me.ChHearing.Name = "ChHearing"
+        Me.ChHearing.Size = New System.Drawing.Size(81, 29)
+        Me.ChHearing.TabIndex = 0
+        Me.ChHearing.Text = "Hearing"
+        Me.ChHearing.UseVisualStyleBackColor = True
+        '
+        'Label19
+        '
+        Me.Label19.AutoSize = True
+        Me.Label19.Font = New System.Drawing.Font("Khmer OS Battambang", 10.0!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label19.Location = New System.Drawing.Point(-1, -3)
+        Me.Label19.Name = "Label19"
+        Me.Label19.Size = New System.Drawing.Size(65, 25)
+        Me.Label19.TabIndex = 0
+        Me.Label19.Text = "Difficulty"
         '
         'TxtPatientNameKh
         '
         Me.TxtPatientNameKh.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TxtPatientNameKh.Font = New System.Drawing.Font("Wat Phnom T3", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtPatientNameKh.Location = New System.Drawing.Point(9, 210)
+        Me.TxtPatientNameKh.Location = New System.Drawing.Point(9, 227)
         Me.TxtPatientNameKh.Name = "TxtPatientNameKh"
         Me.TxtPatientNameKh.Size = New System.Drawing.Size(344, 39)
         Me.TxtPatientNameKh.TabIndex = 4
@@ -220,7 +305,7 @@ Partial Class FormPatientRegister
         '
         Me.Label16.AutoSize = True
         Me.Label16.ForeColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
-        Me.Label16.Location = New System.Drawing.Point(9, 310)
+        Me.Label16.Location = New System.Drawing.Point(9, 327)
         Me.Label16.Name = "Label16"
         Me.Label16.Size = New System.Drawing.Size(84, 25)
         Me.Label16.TabIndex = 17
@@ -230,10 +315,10 @@ Partial Class FormPatientRegister
         '
         Me.TxtTel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TxtTel.Font = New System.Drawing.Font("Khmer OS Battambang", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtTel.Location = New System.Drawing.Point(9, 337)
+        Me.TxtTel.Location = New System.Drawing.Point(9, 354)
         Me.TxtTel.Name = "TxtTel"
         Me.TxtTel.Size = New System.Drawing.Size(344, 40)
-        Me.TxtTel.TabIndex = 8
+        Me.TxtTel.TabIndex = 7
         '
         'Label4
         '
@@ -302,7 +387,7 @@ Partial Class FormPatientRegister
         '
         Me.Label6.AutoSize = True
         Me.Label6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
-        Me.Label6.Location = New System.Drawing.Point(9, 137)
+        Me.Label6.Location = New System.Drawing.Point(9, 154)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(235, 25)
         Me.Label6.TabIndex = 4
@@ -321,9 +406,9 @@ Partial Class FormPatientRegister
         Me.Panel2.Controls.Add(Me.LblSettingID)
         Me.Panel2.Controls.Add(Me.Label14)
         Me.Panel2.Controls.Add(Me.Label13)
-        Me.Panel2.Location = New System.Drawing.Point(376, 99)
+        Me.Panel2.Location = New System.Drawing.Point(490, 407)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(10, 206)
+        Me.Panel2.Size = New System.Drawing.Size(158, 25)
         Me.Panel2.TabIndex = 11
         Me.Panel2.Visible = False
         '
@@ -478,7 +563,7 @@ Partial Class FormPatientRegister
         '
         Me.TxtPatientName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TxtPatientName.Font = New System.Drawing.Font("Khmer OS Battambang", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtPatientName.Location = New System.Drawing.Point(9, 164)
+        Me.TxtPatientName.Location = New System.Drawing.Point(9, 181)
         Me.TxtPatientName.Name = "TxtPatientName"
         Me.TxtPatientName.Size = New System.Drawing.Size(344, 40)
         Me.TxtPatientName.TabIndex = 3
@@ -487,7 +572,7 @@ Partial Class FormPatientRegister
         '
         Me.Label7.AutoSize = True
         Me.Label7.ForeColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
-        Me.Label7.Location = New System.Drawing.Point(54, 249)
+        Me.Label7.Location = New System.Drawing.Point(54, 266)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(40, 25)
         Me.Label7.TabIndex = 6
@@ -498,7 +583,7 @@ Partial Class FormPatientRegister
         Me.CboSex.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.CboSex.FormattingEnabled = True
         Me.CboSex.Items.AddRange(New Object() {"", "F", "M"})
-        Me.CboSex.Location = New System.Drawing.Point(9, 274)
+        Me.CboSex.Location = New System.Drawing.Point(9, 291)
         Me.CboSex.Name = "CboSex"
         Me.CboSex.Size = New System.Drawing.Size(143, 32)
         Me.CboSex.TabIndex = 5
@@ -507,7 +592,7 @@ Partial Class FormPatientRegister
         '
         Me.Label8.AutoSize = True
         Me.Label8.ForeColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
-        Me.Label8.Location = New System.Drawing.Point(266, 248)
+        Me.Label8.Location = New System.Drawing.Point(266, 265)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(41, 25)
         Me.Label8.TabIndex = 7
@@ -524,10 +609,10 @@ Partial Class FormPatientRegister
         Me.GroupBox1.Controls.Add(Me.Label10)
         Me.GroupBox1.Controls.Add(Me.Label9)
         Me.GroupBox1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
-        Me.GroupBox1.Location = New System.Drawing.Point(9, 383)
+        Me.GroupBox1.Location = New System.Drawing.Point(374, 168)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(344, 117)
-        Me.GroupBox1.TabIndex = 9
+        Me.GroupBox1.Size = New System.Drawing.Size(351, 121)
+        Me.GroupBox1.TabIndex = 10
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Address"
         '
@@ -618,7 +703,7 @@ Partial Class FormPatientRegister
         'TxtAge
         '
         Me.TxtAge.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TxtAge.Location = New System.Drawing.Point(205, 275)
+        Me.TxtAge.Location = New System.Drawing.Point(205, 292)
         Me.TxtAge.Name = "TxtAge"
         Me.TxtAge.Size = New System.Drawing.Size(148, 32)
         Me.TxtAge.TabIndex = 6
@@ -627,10 +712,10 @@ Partial Class FormPatientRegister
         'ChPrintRegistration
         '
         Me.ChPrintRegistration.AutoSize = True
-        Me.ChPrintRegistration.Location = New System.Drawing.Point(207, 309)
+        Me.ChPrintRegistration.Location = New System.Drawing.Point(531, 141)
         Me.ChPrintRegistration.Name = "ChPrintRegistration"
         Me.ChPrintRegistration.Size = New System.Drawing.Size(140, 29)
-        Me.ChPrintRegistration.TabIndex = 7
+        Me.ChPrintRegistration.TabIndex = 9
         Me.ChPrintRegistration.Text = "Print Registration"
         Me.ChPrintRegistration.UseVisualStyleBackColor = True
         '
@@ -647,7 +732,7 @@ Partial Class FormPatientRegister
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(236, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(241, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(386, 651)
+        Me.ClientSize = New System.Drawing.Size(742, 542)
         Me.Controls.Add(Me.PanelMain)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -660,6 +745,8 @@ Partial Class FormPatientRegister
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
         Me.GroupBox3.ResumeLayout(False)
@@ -722,4 +809,11 @@ Partial Class FormPatientRegister
     Friend WithEvents TxtPatientNameKh As System.Windows.Forms.TextBox
     Friend WithEvents ChPrintRegistration As System.Windows.Forms.CheckBox
     Friend WithEvents BgLoadingform As System.ComponentModel.BackgroundWorker
+    Friend WithEvents Panel1 As System.Windows.Forms.Panel
+    Friend WithEvents ChSeeing As System.Windows.Forms.CheckBox
+    Friend WithEvents ChPhysicalDisability As System.Windows.Forms.CheckBox
+    Friend WithEvents ChUnderstanding As System.Windows.Forms.CheckBox
+    Friend WithEvents ChHearing As System.Windows.Forms.CheckBox
+    Friend WithEvents Label19 As System.Windows.Forms.Label
+    Friend WithEvents ChIsOld As System.Windows.Forms.CheckBox
 End Class

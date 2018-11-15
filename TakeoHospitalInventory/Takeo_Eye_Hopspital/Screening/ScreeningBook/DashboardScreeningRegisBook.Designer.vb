@@ -82,6 +82,11 @@ Partial Class DashboardScreeningRegisBook
         Me.Female = New System.Windows.Forms.DataGridViewTextBoxColumn
         Me.Occupation = New System.Windows.Forms.DataGridViewTextBoxColumn
         Me.Telephone = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.IS_HEARING = New System.Windows.Forms.DataGridViewCheckBoxColumn
+        Me.IS_UNDERSTANDING = New System.Windows.Forms.DataGridViewCheckBoxColumn
+        Me.IS_PHYSICAL = New System.Windows.Forms.DataGridViewCheckBoxColumn
+        Me.IS_SEEING = New System.Windows.Forms.DataGridViewCheckBoxColumn
+        Me.IS_OLDPATIENT = New System.Windows.Forms.DataGridViewCheckBoxColumn
         Me.CMScreeningBook = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.BtnNewScreeningRegist = New System.Windows.Forms.ToolStripMenuItem
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator
@@ -242,7 +247,7 @@ Partial Class DashboardScreeningRegisBook
         Me.NotFillDiagnosis.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(124, Byte), Integer))
         Me.NotFillDiagnosis.Cursor = System.Windows.Forms.Cursors.Hand
         Me.NotFillDiagnosis.Image = CType(resources.GetObject("NotFillDiagnosis.Image"), System.Drawing.Image)
-        Me.NotFillDiagnosis.Location = New System.Drawing.Point(758, 5)
+        Me.NotFillDiagnosis.Location = New System.Drawing.Point(758, -1)
         Me.NotFillDiagnosis.Name = "NotFillDiagnosis"
         Me.NotFillDiagnosis.Size = New System.Drawing.Size(40, 38)
         Me.NotFillDiagnosis.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -256,7 +261,7 @@ Partial Class DashboardScreeningRegisBook
         Me.Panel6.Controls.Add(Me.LblTotalNotFillDiagnosis)
         Me.Panel6.Controls.Add(Me.Label9)
         Me.Panel6.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Panel6.Location = New System.Drawing.Point(750, 24)
+        Me.Panel6.Location = New System.Drawing.Point(750, 18)
         Me.Panel6.Name = "Panel6"
         Me.Panel6.Size = New System.Drawing.Size(143, 70)
         Me.Panel6.TabIndex = 32
@@ -288,7 +293,7 @@ Partial Class DashboardScreeningRegisBook
         Me.PicStartImport.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(124, Byte), Integer))
         Me.PicStartImport.Cursor = System.Windows.Forms.Cursors.Hand
         Me.PicStartImport.Image = CType(resources.GetObject("PicStartImport.Image"), System.Drawing.Image)
-        Me.PicStartImport.Location = New System.Drawing.Point(618, 4)
+        Me.PicStartImport.Location = New System.Drawing.Point(618, -2)
         Me.PicStartImport.Name = "PicStartImport"
         Me.PicStartImport.Size = New System.Drawing.Size(40, 39)
         Me.PicStartImport.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -302,7 +307,7 @@ Partial Class DashboardScreeningRegisBook
         Me.Panel5.Controls.Add(Me.TxtTotalNotYetImport)
         Me.Panel5.Controls.Add(Me.Label5)
         Me.Panel5.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Panel5.Location = New System.Drawing.Point(610, 24)
+        Me.Panel5.Location = New System.Drawing.Point(610, 18)
         Me.Panel5.Name = "Panel5"
         Me.Panel5.Size = New System.Drawing.Size(135, 70)
         Me.Panel5.TabIndex = 30
@@ -379,7 +384,7 @@ Partial Class DashboardScreeningRegisBook
         DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.DGScreeningBook.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.DGScreeningBook.ColumnHeadersHeight = 40
-        Me.DGScreeningBook.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IMPORT_STATUS, Me.SCREEN_BOOKID, Me.SYS_SETTING, Me.SCREAN_DATE, Me.PatientNo, Me.REFERENCE_PATIENNOTE, Me.NameEng, Me.NameKhmer, Me.Age, Me.Sex, Me.Address, Me.SCREEN_PLACE, Me.ON_EYE, Me.DIAGNOSISScreening, Me.VA_RIGHTScreening, Me.VA_LEFTScreening, Me.PRESENTING_COMPLAIN, Me.IS_REFRACTION, Me.IS_OPTICALSHOP, Me.IS_REFER_PICKUP, Me.IS_REFER_BYSELF, Me.SCREEN_NOTE, Me.Province, Me.District, Me.Commune, Me.Male, Me.Female, Me.Occupation, Me.Telephone})
+        Me.DGScreeningBook.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IMPORT_STATUS, Me.SCREEN_BOOKID, Me.SYS_SETTING, Me.SCREAN_DATE, Me.PatientNo, Me.REFERENCE_PATIENNOTE, Me.NameEng, Me.NameKhmer, Me.Age, Me.Sex, Me.Address, Me.SCREEN_PLACE, Me.ON_EYE, Me.DIAGNOSISScreening, Me.VA_RIGHTScreening, Me.VA_LEFTScreening, Me.PRESENTING_COMPLAIN, Me.IS_REFRACTION, Me.IS_OPTICALSHOP, Me.IS_REFER_PICKUP, Me.IS_REFER_BYSELF, Me.SCREEN_NOTE, Me.Province, Me.District, Me.Commune, Me.Male, Me.Female, Me.Occupation, Me.Telephone, Me.IS_HEARING, Me.IS_UNDERSTANDING, Me.IS_PHYSICAL, Me.IS_SEEING, Me.IS_OLDPATIENT})
         Me.DGScreeningBook.ContextMenuStrip = Me.CMScreeningBook
         DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle7.BackColor = System.Drawing.Color.White
@@ -685,6 +690,46 @@ Partial Class DashboardScreeningRegisBook
         Me.Telephone.Name = "Telephone"
         Me.Telephone.Visible = False
         '
+        'IS_HEARING
+        '
+        Me.IS_HEARING.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.IS_HEARING.DataPropertyName = "IS_HEARING"
+        Me.IS_HEARING.HeaderText = "Hearing"
+        Me.IS_HEARING.Name = "IS_HEARING"
+        Me.IS_HEARING.Width = 150
+        '
+        'IS_UNDERSTANDING
+        '
+        Me.IS_UNDERSTANDING.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.IS_UNDERSTANDING.DataPropertyName = "IS_UNDERSTANDING"
+        Me.IS_UNDERSTANDING.HeaderText = "Understanding"
+        Me.IS_UNDERSTANDING.Name = "IS_UNDERSTANDING"
+        Me.IS_UNDERSTANDING.Width = 150
+        '
+        'IS_PHYSICAL
+        '
+        Me.IS_PHYSICAL.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.IS_PHYSICAL.DataPropertyName = "IS_PHYSICAL"
+        Me.IS_PHYSICAL.HeaderText = "IS_PHYSICAL"
+        Me.IS_PHYSICAL.Name = "IS_PHYSICAL"
+        Me.IS_PHYSICAL.Width = 150
+        '
+        'IS_SEEING
+        '
+        Me.IS_SEEING.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.IS_SEEING.DataPropertyName = "IS_SEEING"
+        Me.IS_SEEING.HeaderText = "SEEING"
+        Me.IS_SEEING.Name = "IS_SEEING"
+        Me.IS_SEEING.Width = 150
+        '
+        'IS_OLDPATIENT
+        '
+        Me.IS_OLDPATIENT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.IS_OLDPATIENT.DataPropertyName = "IS_OLDPATIENT"
+        Me.IS_OLDPATIENT.HeaderText = "Old Patient"
+        Me.IS_OLDPATIENT.Name = "IS_OLDPATIENT"
+        Me.IS_OLDPATIENT.Width = 150
+        '
         'CMScreeningBook
         '
         Me.CMScreeningBook.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
@@ -695,7 +740,7 @@ Partial Class DashboardScreeningRegisBook
         Me.CMScreeningBook.Name = "CMScreeningBook"
         Me.CMScreeningBook.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional
         Me.CMScreeningBook.ShowImageMargin = False
-        Me.CMScreeningBook.Size = New System.Drawing.Size(249, 182)
+        Me.CMScreeningBook.Size = New System.Drawing.Size(249, 164)
         '
         'BtnNewScreeningRegist
         '
@@ -1400,7 +1445,7 @@ Partial Class DashboardScreeningRegisBook
         Me.PicOpticalShop.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(124, Byte), Integer))
         Me.PicOpticalShop.Cursor = System.Windows.Forms.Cursors.Hand
         Me.PicOpticalShop.Image = CType(resources.GetObject("PicOpticalShop.Image"), System.Drawing.Image)
-        Me.PicOpticalShop.Location = New System.Drawing.Point(487, 5)
+        Me.PicOpticalShop.Location = New System.Drawing.Point(487, -1)
         Me.PicOpticalShop.Name = "PicOpticalShop"
         Me.PicOpticalShop.Size = New System.Drawing.Size(40, 38)
         Me.PicOpticalShop.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -1414,7 +1459,7 @@ Partial Class DashboardScreeningRegisBook
         Me.Panel4.Controls.Add(Me.TxtTotalOpticalShop)
         Me.Panel4.Controls.Add(Me.Label11)
         Me.Panel4.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Panel4.Location = New System.Drawing.Point(479, 24)
+        Me.Panel4.Location = New System.Drawing.Point(479, 18)
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(125, 70)
         Me.Panel4.TabIndex = 16
@@ -1446,7 +1491,7 @@ Partial Class DashboardScreeningRegisBook
         Me.PicReferral.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(124, Byte), Integer))
         Me.PicReferral.Cursor = System.Windows.Forms.Cursors.Hand
         Me.PicReferral.Image = CType(resources.GetObject("PicReferral.Image"), System.Drawing.Image)
-        Me.PicReferral.Location = New System.Drawing.Point(322, 5)
+        Me.PicReferral.Location = New System.Drawing.Point(322, -1)
         Me.PicReferral.Name = "PicReferral"
         Me.PicReferral.Size = New System.Drawing.Size(40, 38)
         Me.PicReferral.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -1458,7 +1503,7 @@ Partial Class DashboardScreeningRegisBook
         Me.PicRefraction.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(124, Byte), Integer))
         Me.PicRefraction.Cursor = System.Windows.Forms.Cursors.Hand
         Me.PicRefraction.Image = CType(resources.GetObject("PicRefraction.Image"), System.Drawing.Image)
-        Me.PicRefraction.Location = New System.Drawing.Point(178, 6)
+        Me.PicRefraction.Location = New System.Drawing.Point(178, 0)
         Me.PicRefraction.Name = "PicRefraction"
         Me.PicRefraction.Size = New System.Drawing.Size(40, 38)
         Me.PicRefraction.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -1470,7 +1515,7 @@ Partial Class DashboardScreeningRegisBook
         Me.PicRgister.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(124, Byte), Integer))
         Me.PicRgister.Cursor = System.Windows.Forms.Cursors.Hand
         Me.PicRgister.Image = CType(resources.GetObject("PicRgister.Image"), System.Drawing.Image)
-        Me.PicRgister.Location = New System.Drawing.Point(17, 6)
+        Me.PicRgister.Location = New System.Drawing.Point(17, 0)
         Me.PicRgister.Name = "PicRgister"
         Me.PicRgister.Size = New System.Drawing.Size(40, 38)
         Me.PicRgister.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -1487,7 +1532,7 @@ Partial Class DashboardScreeningRegisBook
         Me.Panel3.Controls.Add(Me.TxtTotalReferralPickup)
         Me.Panel3.Controls.Add(Me.Label6)
         Me.Panel3.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Panel3.Location = New System.Drawing.Point(314, 25)
+        Me.Panel3.Location = New System.Drawing.Point(314, 19)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(160, 70)
         Me.Panel3.TabIndex = 10
@@ -1554,7 +1599,7 @@ Partial Class DashboardScreeningRegisBook
         Me.Panel2.Controls.Add(Me.TxtTotalRefraction)
         Me.Panel2.Controls.Add(Me.Label4)
         Me.Panel2.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Panel2.Location = New System.Drawing.Point(170, 25)
+        Me.Panel2.Location = New System.Drawing.Point(170, 19)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(139, 70)
         Me.Panel2.TabIndex = 9
@@ -1588,7 +1633,7 @@ Partial Class DashboardScreeningRegisBook
         Me.PanelSend.Controls.Add(Me.TxtTotalRegister)
         Me.PanelSend.Controls.Add(Me.Label1)
         Me.PanelSend.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PanelSend.Location = New System.Drawing.Point(9, 25)
+        Me.PanelSend.Location = New System.Drawing.Point(9, 19)
         Me.PanelSend.Name = "PanelSend"
         Me.PanelSend.Size = New System.Drawing.Size(156, 70)
         Me.PanelSend.TabIndex = 8
@@ -1770,6 +1815,10 @@ Partial Class DashboardScreeningRegisBook
     Friend WithEvents TxtTotalNotYetImport As System.Windows.Forms.Label
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents BGImportToTEH As System.ComponentModel.BackgroundWorker
+    Friend WithEvents NotFillDiagnosis As System.Windows.Forms.PictureBox
+    Friend WithEvents Panel6 As System.Windows.Forms.Panel
+    Friend WithEvents LblTotalNotFillDiagnosis As System.Windows.Forms.Label
+    Friend WithEvents Label9 As System.Windows.Forms.Label
     Friend WithEvents IMPORT_STATUS As System.Windows.Forms.DataGridViewCheckBoxColumn
     Friend WithEvents SCREEN_BOOKID As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents SYS_SETTING As System.Windows.Forms.DataGridViewTextBoxColumn
@@ -1799,9 +1848,10 @@ Partial Class DashboardScreeningRegisBook
     Friend WithEvents Female As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Occupation As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Telephone As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents NotFillDiagnosis As System.Windows.Forms.PictureBox
-    Friend WithEvents Panel6 As System.Windows.Forms.Panel
-    Friend WithEvents LblTotalNotFillDiagnosis As System.Windows.Forms.Label
-    Friend WithEvents Label9 As System.Windows.Forms.Label
+    Friend WithEvents IS_HEARING As System.Windows.Forms.DataGridViewCheckBoxColumn
+    Friend WithEvents IS_UNDERSTANDING As System.Windows.Forms.DataGridViewCheckBoxColumn
+    Friend WithEvents IS_PHYSICAL As System.Windows.Forms.DataGridViewCheckBoxColumn
+    Friend WithEvents IS_SEEING As System.Windows.Forms.DataGridViewCheckBoxColumn
+    Friend WithEvents IS_OLDPATIENT As System.Windows.Forms.DataGridViewCheckBoxColumn
 
 End Class
