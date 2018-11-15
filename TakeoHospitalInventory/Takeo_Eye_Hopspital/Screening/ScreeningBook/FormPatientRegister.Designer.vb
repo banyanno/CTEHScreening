@@ -32,8 +32,8 @@ Partial Class FormPatientRegister
         Me.Label3 = New System.Windows.Forms.Label
         Me.Label1 = New System.Windows.Forms.Label
         Me.Panel3 = New System.Windows.Forms.Panel
-        Me.Panel1 = New System.Windows.Forms.Panel
         Me.ChIsOld = New System.Windows.Forms.CheckBox
+        Me.Panel1 = New System.Windows.Forms.Panel
         Me.ChSeeing = New System.Windows.Forms.CheckBox
         Me.ChPhysicalDisability = New System.Windows.Forms.CheckBox
         Me.ChUnderstanding = New System.Windows.Forms.CheckBox
@@ -132,7 +132,7 @@ Partial Class FormPatientRegister
         Me.BtnClose.Location = New System.Drawing.Point(373, 498)
         Me.BtnClose.Name = "BtnClose"
         Me.BtnClose.Size = New System.Drawing.Size(100, 37)
-        Me.BtnClose.TabIndex = 3
+        Me.BtnClose.TabIndex = 2
         Me.BtnClose.Text = "Close"
         Me.BtnClose.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.BtnClose.UseVisualStyleBackColor = False
@@ -149,7 +149,7 @@ Partial Class FormPatientRegister
         Me.BtnSave.Location = New System.Drawing.Point(267, 498)
         Me.BtnSave.Name = "BtnSave"
         Me.BtnSave.Size = New System.Drawing.Size(100, 37)
-        Me.BtnSave.TabIndex = 2
+        Me.BtnSave.TabIndex = 1
         Me.BtnSave.Text = "Save"
         Me.BtnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.BtnSave.UseVisualStyleBackColor = False
@@ -217,6 +217,17 @@ Partial Class FormPatientRegister
         Me.Panel3.Size = New System.Drawing.Size(733, 403)
         Me.Panel3.TabIndex = 0
         '
+        'ChIsOld
+        '
+        Me.ChIsOld.AutoSize = True
+        Me.ChIsOld.ForeColor = System.Drawing.Color.Red
+        Me.ChIsOld.Location = New System.Drawing.Point(382, 141)
+        Me.ChIsOld.Name = "ChIsOld"
+        Me.ChIsOld.Size = New System.Drawing.Size(112, 29)
+        Me.ChIsOld.TabIndex = 9
+        Me.ChIsOld.Text = "Is old patient"
+        Me.ChIsOld.UseVisualStyleBackColor = True
+        '
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.White
@@ -231,21 +242,10 @@ Partial Class FormPatientRegister
         Me.Panel1.Size = New System.Drawing.Size(351, 103)
         Me.Panel1.TabIndex = 8
         '
-        'ChIsOld
-        '
-        Me.ChIsOld.AutoSize = True
-        Me.ChIsOld.ForeColor = System.Drawing.Color.Red
-        Me.ChIsOld.Location = New System.Drawing.Point(382, 141)
-        Me.ChIsOld.Name = "ChIsOld"
-        Me.ChIsOld.Size = New System.Drawing.Size(112, 29)
-        Me.ChIsOld.TabIndex = 4
-        Me.ChIsOld.Text = "Is old patient"
-        Me.ChIsOld.UseVisualStyleBackColor = True
-        '
         'ChSeeing
         '
         Me.ChSeeing.AutoSize = True
-        Me.ChSeeing.Location = New System.Drawing.Point(154, 53)
+        Me.ChSeeing.Location = New System.Drawing.Point(154, 55)
         Me.ChSeeing.Name = "ChSeeing"
         Me.ChSeeing.Size = New System.Drawing.Size(75, 29)
         Me.ChSeeing.TabIndex = 3
@@ -255,7 +255,7 @@ Partial Class FormPatientRegister
         'ChPhysicalDisability
         '
         Me.ChPhysicalDisability.AutoSize = True
-        Me.ChPhysicalDisability.Location = New System.Drawing.Point(7, 53)
+        Me.ChPhysicalDisability.Location = New System.Drawing.Point(7, 55)
         Me.ChPhysicalDisability.Name = "ChPhysicalDisability"
         Me.ChPhysicalDisability.Size = New System.Drawing.Size(143, 29)
         Me.ChPhysicalDisability.TabIndex = 2
@@ -265,7 +265,7 @@ Partial Class FormPatientRegister
         'ChUnderstanding
         '
         Me.ChUnderstanding.AutoSize = True
-        Me.ChUnderstanding.Location = New System.Drawing.Point(154, 30)
+        Me.ChUnderstanding.Location = New System.Drawing.Point(154, 27)
         Me.ChUnderstanding.Name = "ChUnderstanding"
         Me.ChUnderstanding.Size = New System.Drawing.Size(196, 29)
         Me.ChUnderstanding.TabIndex = 1
@@ -275,7 +275,7 @@ Partial Class FormPatientRegister
         'ChHearing
         '
         Me.ChHearing.AutoSize = True
-        Me.ChHearing.Location = New System.Drawing.Point(7, 31)
+        Me.ChHearing.Location = New System.Drawing.Point(7, 28)
         Me.ChHearing.Name = "ChHearing"
         Me.ChHearing.Size = New System.Drawing.Size(81, 29)
         Me.ChHearing.TabIndex = 0
@@ -612,7 +612,7 @@ Partial Class FormPatientRegister
         Me.GroupBox1.Location = New System.Drawing.Point(374, 168)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(351, 121)
-        Me.GroupBox1.TabIndex = 10
+        Me.GroupBox1.TabIndex = 11
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Address"
         '
@@ -715,7 +715,7 @@ Partial Class FormPatientRegister
         Me.ChPrintRegistration.Location = New System.Drawing.Point(531, 141)
         Me.ChPrintRegistration.Name = "ChPrintRegistration"
         Me.ChPrintRegistration.Size = New System.Drawing.Size(140, 29)
-        Me.ChPrintRegistration.TabIndex = 9
+        Me.ChPrintRegistration.TabIndex = 10
         Me.ChPrintRegistration.Text = "Print Registration"
         Me.ChPrintRegistration.UseVisualStyleBackColor = True
         '

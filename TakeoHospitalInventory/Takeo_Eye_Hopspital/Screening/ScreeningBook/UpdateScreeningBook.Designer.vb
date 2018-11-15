@@ -24,11 +24,18 @@ Partial Class UpdateScreeningBook
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(UpdateScreeningBook))
-        Dim JanusColorScheme3 As Janus.Windows.Common.JanusColorScheme = New Janus.Windows.Common.JanusColorScheme
+        Dim JanusColorScheme1 As Janus.Windows.Common.JanusColorScheme = New Janus.Windows.Common.JanusColorScheme
         Me.Panel1 = New System.Windows.Forms.Panel
         Me.BtnClose = New System.Windows.Forms.Button
         Me.BtnSave = New System.Windows.Forms.Button
         Me.Panel2 = New System.Windows.Forms.Panel
+        Me.Panel3 = New System.Windows.Forms.Panel
+        Me.ChIsOld = New System.Windows.Forms.CheckBox
+        Me.ChSeeing = New System.Windows.Forms.CheckBox
+        Me.ChPhysicalDisability = New System.Windows.Forms.CheckBox
+        Me.ChUnderstanding = New System.Windows.Forms.CheckBox
+        Me.ChHearing = New System.Windows.Forms.CheckBox
+        Me.Label24 = New System.Windows.Forms.Label
         Me.UiTab1 = New Janus.Windows.UI.Tab.UITab
         Me.UiTabPage1 = New Janus.Windows.UI.Tab.UITabPage
         Me.GroupRefraction = New System.Windows.Forms.GroupBox
@@ -86,22 +93,15 @@ Partial Class UpdateScreeningBook
         Me.Label1 = New System.Windows.Forms.Label
         Me.ErrUpdateScreen = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.VSForOpticalshop = New Janus.Windows.Common.VisualStyleManager(Me.components)
-        Me.Panel3 = New System.Windows.Forms.Panel
-        Me.ChIsOld = New System.Windows.Forms.CheckBox
-        Me.ChSeeing = New System.Windows.Forms.CheckBox
-        Me.ChPhysicalDisability = New System.Windows.Forms.CheckBox
-        Me.ChUnderstanding = New System.Windows.Forms.CheckBox
-        Me.ChHearing = New System.Windows.Forms.CheckBox
-        Me.Label24 = New System.Windows.Forms.Label
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
+        Me.Panel3.SuspendLayout()
         CType(Me.UiTab1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.UiTab1.SuspendLayout()
         Me.UiTabPage1.SuspendLayout()
         Me.GroupRefraction.SuspendLayout()
         Me.GBReferral.SuspendLayout()
         CType(Me.ErrUpdateScreen, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel3.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
@@ -193,6 +193,82 @@ Partial Class UpdateScreeningBook
         Me.Panel2.Size = New System.Drawing.Size(848, 522)
         Me.Panel2.TabIndex = 0
         '
+        'Panel3
+        '
+        Me.Panel3.BackColor = System.Drawing.Color.White
+        Me.Panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel3.Controls.Add(Me.ChIsOld)
+        Me.Panel3.Controls.Add(Me.ChSeeing)
+        Me.Panel3.Controls.Add(Me.ChPhysicalDisability)
+        Me.Panel3.Controls.Add(Me.ChUnderstanding)
+        Me.Panel3.Controls.Add(Me.ChHearing)
+        Me.Panel3.Controls.Add(Me.Label24)
+        Me.Panel3.Location = New System.Drawing.Point(428, 15)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(410, 122)
+        Me.Panel3.TabIndex = 28
+        '
+        'ChIsOld
+        '
+        Me.ChIsOld.AutoSize = True
+        Me.ChIsOld.ForeColor = System.Drawing.Color.Red
+        Me.ChIsOld.Location = New System.Drawing.Point(9, 92)
+        Me.ChIsOld.Name = "ChIsOld"
+        Me.ChIsOld.Size = New System.Drawing.Size(119, 24)
+        Me.ChIsOld.TabIndex = 5
+        Me.ChIsOld.Text = "Is old patient"
+        Me.ChIsOld.UseVisualStyleBackColor = True
+        '
+        'ChSeeing
+        '
+        Me.ChSeeing.AutoSize = True
+        Me.ChSeeing.Location = New System.Drawing.Point(190, 62)
+        Me.ChSeeing.Name = "ChSeeing"
+        Me.ChSeeing.Size = New System.Drawing.Size(78, 24)
+        Me.ChSeeing.TabIndex = 4
+        Me.ChSeeing.Text = "Seeing"
+        Me.ChSeeing.UseVisualStyleBackColor = True
+        '
+        'ChPhysicalDisability
+        '
+        Me.ChPhysicalDisability.AutoSize = True
+        Me.ChPhysicalDisability.Location = New System.Drawing.Point(9, 62)
+        Me.ChPhysicalDisability.Name = "ChPhysicalDisability"
+        Me.ChPhysicalDisability.Size = New System.Drawing.Size(151, 24)
+        Me.ChPhysicalDisability.TabIndex = 3
+        Me.ChPhysicalDisability.Text = "Physical Disability"
+        Me.ChPhysicalDisability.UseVisualStyleBackColor = True
+        '
+        'ChUnderstanding
+        '
+        Me.ChUnderstanding.AutoSize = True
+        Me.ChUnderstanding.Location = New System.Drawing.Point(190, 32)
+        Me.ChUnderstanding.Name = "ChUnderstanding"
+        Me.ChUnderstanding.Size = New System.Drawing.Size(214, 24)
+        Me.ChUnderstanding.TabIndex = 2
+        Me.ChUnderstanding.Text = "Understanding/Intellectual"
+        Me.ChUnderstanding.UseVisualStyleBackColor = True
+        '
+        'ChHearing
+        '
+        Me.ChHearing.AutoSize = True
+        Me.ChHearing.Location = New System.Drawing.Point(9, 32)
+        Me.ChHearing.Name = "ChHearing"
+        Me.ChHearing.Size = New System.Drawing.Size(84, 24)
+        Me.ChHearing.TabIndex = 1
+        Me.ChHearing.Text = "Hearing"
+        Me.ChHearing.UseVisualStyleBackColor = True
+        '
+        'Label24
+        '
+        Me.Label24.AutoSize = True
+        Me.Label24.Font = New System.Drawing.Font("Khmer OS Battambang", 10.0!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label24.Location = New System.Drawing.Point(2, 2)
+        Me.Label24.Name = "Label24"
+        Me.Label24.Size = New System.Drawing.Size(65, 25)
+        Me.Label24.TabIndex = 0
+        Me.Label24.Text = "Difficulty"
+        '
         'UiTab1
         '
         Me.UiTab1.FlatBorderColor = System.Drawing.SystemColors.ActiveBorder
@@ -232,9 +308,9 @@ Partial Class UpdateScreeningBook
         Me.GroupRefraction.Controls.Add(Me.TxtLEPlus)
         Me.GroupRefraction.Controls.Add(Me.TxtREPlus)
         Me.GroupRefraction.Enabled = False
-        Me.GroupRefraction.Location = New System.Drawing.Point(5, 224)
+        Me.GroupRefraction.Location = New System.Drawing.Point(14, 225)
         Me.GroupRefraction.Name = "GroupRefraction"
-        Me.GroupRefraction.Size = New System.Drawing.Size(391, 230)
+        Me.GroupRefraction.Size = New System.Drawing.Size(240, 188)
         Me.GroupRefraction.TabIndex = 1
         Me.GroupRefraction.TabStop = False
         Me.GroupRefraction.Text = "Refraction info"
@@ -758,103 +834,27 @@ Partial Class UpdateScreeningBook
         '
         'VSForOpticalshop
         '
-        JanusColorScheme3.ActiveCaptionColor = System.Drawing.Color.Tomato
-        JanusColorScheme3.ActiveCaptionTextColor = System.Drawing.Color.White
-        JanusColorScheme3.ControlDarkColor = System.Drawing.SystemColors.Control
-        JanusColorScheme3.ControlTextColor = System.Drawing.Color.Black
-        JanusColorScheme3.DisabledColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(150, Byte), Integer), CType(CType(102, Byte), Integer))
-        JanusColorScheme3.GrayTextColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
-        JanusColorScheme3.HighlightColor = System.Drawing.Color.FromArgb(CType(CType(43, Byte), Integer), CType(CType(99, Byte), Integer), CType(CType(67, Byte), Integer))
-        JanusColorScheme3.HighlightTextColor = System.Drawing.Color.WhiteSmoke
-        JanusColorScheme3.InfoColor = System.Drawing.Color.WhiteSmoke
-        JanusColorScheme3.InfoTextColor = System.Drawing.Color.FloralWhite
-        JanusColorScheme3.MenuColor = System.Drawing.SystemColors.ActiveCaption
-        JanusColorScheme3.MenuTextColor = System.Drawing.Color.DimGray
-        JanusColorScheme3.Name = "Header"
-        JanusColorScheme3.Office2007ColorScheme = Janus.Windows.Common.Office2007ColorScheme.Silver
-        JanusColorScheme3.Office2007CustomColor = System.Drawing.SystemColors.Control
-        JanusColorScheme3.UseThemes = False
-        JanusColorScheme3.VisualStyle = Janus.Windows.Common.VisualStyle.Standard
-        JanusColorScheme3.WindowColor = System.Drawing.Color.White
-        JanusColorScheme3.WindowTextColor = System.Drawing.Color.DarkBlue
-        Me.VSForOpticalshop.ColorSchemes.Add(JanusColorScheme3)
+        JanusColorScheme1.ActiveCaptionColor = System.Drawing.Color.Tomato
+        JanusColorScheme1.ActiveCaptionTextColor = System.Drawing.Color.White
+        JanusColorScheme1.ControlDarkColor = System.Drawing.SystemColors.Control
+        JanusColorScheme1.ControlTextColor = System.Drawing.Color.Black
+        JanusColorScheme1.DisabledColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(150, Byte), Integer), CType(CType(102, Byte), Integer))
+        JanusColorScheme1.GrayTextColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
+        JanusColorScheme1.HighlightColor = System.Drawing.Color.FromArgb(CType(CType(43, Byte), Integer), CType(CType(99, Byte), Integer), CType(CType(67, Byte), Integer))
+        JanusColorScheme1.HighlightTextColor = System.Drawing.Color.WhiteSmoke
+        JanusColorScheme1.InfoColor = System.Drawing.Color.WhiteSmoke
+        JanusColorScheme1.InfoTextColor = System.Drawing.Color.FloralWhite
+        JanusColorScheme1.MenuColor = System.Drawing.SystemColors.ActiveCaption
+        JanusColorScheme1.MenuTextColor = System.Drawing.Color.DimGray
+        JanusColorScheme1.Name = "Header"
+        JanusColorScheme1.Office2007ColorScheme = Janus.Windows.Common.Office2007ColorScheme.Silver
+        JanusColorScheme1.Office2007CustomColor = System.Drawing.SystemColors.Control
+        JanusColorScheme1.UseThemes = False
+        JanusColorScheme1.VisualStyle = Janus.Windows.Common.VisualStyle.Standard
+        JanusColorScheme1.WindowColor = System.Drawing.Color.White
+        JanusColorScheme1.WindowTextColor = System.Drawing.Color.DarkBlue
+        Me.VSForOpticalshop.ColorSchemes.Add(JanusColorScheme1)
         Me.VSForOpticalshop.DefaultColorScheme = "Header"
-        '
-        'Panel3
-        '
-        Me.Panel3.BackColor = System.Drawing.Color.White
-        Me.Panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel3.Controls.Add(Me.ChIsOld)
-        Me.Panel3.Controls.Add(Me.ChSeeing)
-        Me.Panel3.Controls.Add(Me.ChPhysicalDisability)
-        Me.Panel3.Controls.Add(Me.ChUnderstanding)
-        Me.Panel3.Controls.Add(Me.ChHearing)
-        Me.Panel3.Controls.Add(Me.Label24)
-        Me.Panel3.Location = New System.Drawing.Point(428, 15)
-        Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(410, 122)
-        Me.Panel3.TabIndex = 28
-        '
-        'ChIsOld
-        '
-        Me.ChIsOld.AutoSize = True
-        Me.ChIsOld.ForeColor = System.Drawing.Color.Red
-        Me.ChIsOld.Location = New System.Drawing.Point(9, 92)
-        Me.ChIsOld.Name = "ChIsOld"
-        Me.ChIsOld.Size = New System.Drawing.Size(119, 24)
-        Me.ChIsOld.TabIndex = 5
-        Me.ChIsOld.Text = "Is old patient"
-        Me.ChIsOld.UseVisualStyleBackColor = True
-        '
-        'ChSeeing
-        '
-        Me.ChSeeing.AutoSize = True
-        Me.ChSeeing.Location = New System.Drawing.Point(190, 62)
-        Me.ChSeeing.Name = "ChSeeing"
-        Me.ChSeeing.Size = New System.Drawing.Size(78, 24)
-        Me.ChSeeing.TabIndex = 4
-        Me.ChSeeing.Text = "Seeing"
-        Me.ChSeeing.UseVisualStyleBackColor = True
-        '
-        'ChPhysicalDisability
-        '
-        Me.ChPhysicalDisability.AutoSize = True
-        Me.ChPhysicalDisability.Location = New System.Drawing.Point(9, 62)
-        Me.ChPhysicalDisability.Name = "ChPhysicalDisability"
-        Me.ChPhysicalDisability.Size = New System.Drawing.Size(151, 24)
-        Me.ChPhysicalDisability.TabIndex = 3
-        Me.ChPhysicalDisability.Text = "Physical Disability"
-        Me.ChPhysicalDisability.UseVisualStyleBackColor = True
-        '
-        'ChUnderstanding
-        '
-        Me.ChUnderstanding.AutoSize = True
-        Me.ChUnderstanding.Location = New System.Drawing.Point(190, 32)
-        Me.ChUnderstanding.Name = "ChUnderstanding"
-        Me.ChUnderstanding.Size = New System.Drawing.Size(214, 24)
-        Me.ChUnderstanding.TabIndex = 2
-        Me.ChUnderstanding.Text = "Understanding/Intellectual"
-        Me.ChUnderstanding.UseVisualStyleBackColor = True
-        '
-        'ChHearing
-        '
-        Me.ChHearing.AutoSize = True
-        Me.ChHearing.Location = New System.Drawing.Point(9, 32)
-        Me.ChHearing.Name = "ChHearing"
-        Me.ChHearing.Size = New System.Drawing.Size(84, 24)
-        Me.ChHearing.TabIndex = 1
-        Me.ChHearing.Text = "Hearing"
-        Me.ChHearing.UseVisualStyleBackColor = True
-        '
-        'Label24
-        '
-        Me.Label24.AutoSize = True
-        Me.Label24.Font = New System.Drawing.Font("Khmer OS Battambang", 10.0!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label24.Location = New System.Drawing.Point(2, 2)
-        Me.Label24.Name = "Label24"
-        Me.Label24.Size = New System.Drawing.Size(65, 25)
-        Me.Label24.TabIndex = 0
-        Me.Label24.Text = "Difficulty"
         '
         'UpdateScreeningBook
         '
@@ -873,6 +873,8 @@ Partial Class UpdateScreeningBook
         Me.Panel1.PerformLayout()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
+        Me.Panel3.ResumeLayout(False)
+        Me.Panel3.PerformLayout()
         CType(Me.UiTab1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.UiTab1.ResumeLayout(False)
         Me.UiTabPage1.ResumeLayout(False)
@@ -882,8 +884,6 @@ Partial Class UpdateScreeningBook
         Me.GBReferral.ResumeLayout(False)
         Me.GBReferral.PerformLayout()
         CType(Me.ErrUpdateScreen, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel3.ResumeLayout(False)
-        Me.Panel3.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub

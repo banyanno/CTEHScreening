@@ -354,4 +354,14 @@
 
         AddUserControl(UIMainScreening.PanelHeader, UIMainScreening.PanelDedail, UReportItemTransaction, "", True)
     End Sub
+
+    Private Sub BtnRefractionBook_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnRefractionBook.Click
+        AddUserControl(UIMainScreening.PanelHeader, UIMainScreening.PanelDedail, patientRefraction, "", True)
+    End Sub
+
+    Private Sub BtnUserManagement_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnUserManagement.Click
+
+        AddUserControl(UIMainScreening.PanelHeader, UIMainScreening.PanelDedail, Department, "", True)
+        Department.InitDepartment()
+    End Sub
 End Class

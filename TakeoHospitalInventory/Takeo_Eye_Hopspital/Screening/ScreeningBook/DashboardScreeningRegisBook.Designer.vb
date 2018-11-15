@@ -27,11 +27,6 @@ Partial Class DashboardScreeningRegisBook
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
         Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
         Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
         Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
         Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
         Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
@@ -41,6 +36,11 @@ Partial Class DashboardScreeningRegisBook
         Dim DataGridViewCellStyle15 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
         Dim DataGridViewCellStyle16 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
         Dim DataGridViewCellStyle17 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
         Me.Panel1 = New System.Windows.Forms.Panel
         Me.NotFillDiagnosis = New System.Windows.Forms.PictureBox
         Me.Panel6 = New System.Windows.Forms.Panel
@@ -53,40 +53,6 @@ Partial Class DashboardScreeningRegisBook
         Me.Label2 = New System.Windows.Forms.Label
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer
         Me.DGScreeningBook = New System.Windows.Forms.DataGridView
-        Me.IMPORT_STATUS = New System.Windows.Forms.DataGridViewCheckBoxColumn
-        Me.SCREEN_BOOKID = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.SYS_SETTING = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.SCREAN_DATE = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.PatientNo = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.REFERENCE_PATIENNOTE = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.NameEng = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.NameKhmer = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.Age = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.Sex = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.Address = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.SCREEN_PLACE = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.ON_EYE = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.DIAGNOSISScreening = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.VA_RIGHTScreening = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.VA_LEFTScreening = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.PRESENTING_COMPLAIN = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.IS_REFRACTION = New System.Windows.Forms.DataGridViewCheckBoxColumn
-        Me.IS_OPTICALSHOP = New System.Windows.Forms.DataGridViewCheckBoxColumn
-        Me.IS_REFER_PICKUP = New System.Windows.Forms.DataGridViewCheckBoxColumn
-        Me.IS_REFER_BYSELF = New System.Windows.Forms.DataGridViewCheckBoxColumn
-        Me.SCREEN_NOTE = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.Province = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.District = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.Commune = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.Male = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.Female = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.Occupation = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.Telephone = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.IS_HEARING = New System.Windows.Forms.DataGridViewCheckBoxColumn
-        Me.IS_UNDERSTANDING = New System.Windows.Forms.DataGridViewCheckBoxColumn
-        Me.IS_PHYSICAL = New System.Windows.Forms.DataGridViewCheckBoxColumn
-        Me.IS_SEEING = New System.Windows.Forms.DataGridViewCheckBoxColumn
-        Me.IS_OLDPATIENT = New System.Windows.Forms.DataGridViewCheckBoxColumn
         Me.CMScreeningBook = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.BtnNewScreeningRegist = New System.Windows.Forms.ToolStripMenuItem
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator
@@ -183,6 +149,40 @@ Partial Class DashboardScreeningRegisBook
         Me.Label1 = New System.Windows.Forms.Label
         Me.BGScreeningBook = New System.ComponentModel.BackgroundWorker
         Me.BGImportToTEH = New System.ComponentModel.BackgroundWorker
+        Me.IMPORT_STATUS = New System.Windows.Forms.DataGridViewCheckBoxColumn
+        Me.SCREEN_BOOKID = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.SYS_SETTING = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.SCREAN_DATE = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.PatientNo = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.REFERENCE_PATIENNOTE = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.NameEng = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.NameKhmer = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.Age = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.Sex = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.Address = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.SCREEN_PLACE = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.ON_EYE = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.DIAGNOSISScreening = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.VA_RIGHTScreening = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.VA_LEFTScreening = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.PRESENTING_COMPLAIN = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.SCREEN_NOTE = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.IS_REFRACTION = New System.Windows.Forms.DataGridViewCheckBoxColumn
+        Me.IS_OPTICALSHOP = New System.Windows.Forms.DataGridViewCheckBoxColumn
+        Me.IS_REFER_PICKUP = New System.Windows.Forms.DataGridViewCheckBoxColumn
+        Me.IS_REFER_BYSELF = New System.Windows.Forms.DataGridViewCheckBoxColumn
+        Me.Province = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.District = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.Commune = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.Male = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.Female = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.Occupation = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.Telephone = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.IS_HEARING = New System.Windows.Forms.DataGridViewCheckBoxColumn
+        Me.IS_UNDERSTANDING = New System.Windows.Forms.DataGridViewCheckBoxColumn
+        Me.IS_PHYSICAL = New System.Windows.Forms.DataGridViewCheckBoxColumn
+        Me.IS_SEEING = New System.Windows.Forms.DataGridViewCheckBoxColumn
+        Me.IS_OLDPATIENT = New System.Windows.Forms.DataGridViewCheckBoxColumn
         Me.Panel1.SuspendLayout()
         CType(Me.NotFillDiagnosis, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel6.SuspendLayout()
@@ -384,7 +384,7 @@ Partial Class DashboardScreeningRegisBook
         DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.DGScreeningBook.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.DGScreeningBook.ColumnHeadersHeight = 40
-        Me.DGScreeningBook.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IMPORT_STATUS, Me.SCREEN_BOOKID, Me.SYS_SETTING, Me.SCREAN_DATE, Me.PatientNo, Me.REFERENCE_PATIENNOTE, Me.NameEng, Me.NameKhmer, Me.Age, Me.Sex, Me.Address, Me.SCREEN_PLACE, Me.ON_EYE, Me.DIAGNOSISScreening, Me.VA_RIGHTScreening, Me.VA_LEFTScreening, Me.PRESENTING_COMPLAIN, Me.IS_REFRACTION, Me.IS_OPTICALSHOP, Me.IS_REFER_PICKUP, Me.IS_REFER_BYSELF, Me.SCREEN_NOTE, Me.Province, Me.District, Me.Commune, Me.Male, Me.Female, Me.Occupation, Me.Telephone, Me.IS_HEARING, Me.IS_UNDERSTANDING, Me.IS_PHYSICAL, Me.IS_SEEING, Me.IS_OLDPATIENT})
+        Me.DGScreeningBook.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IMPORT_STATUS, Me.SCREEN_BOOKID, Me.SYS_SETTING, Me.SCREAN_DATE, Me.PatientNo, Me.REFERENCE_PATIENNOTE, Me.NameEng, Me.NameKhmer, Me.Age, Me.Sex, Me.Address, Me.SCREEN_PLACE, Me.ON_EYE, Me.DIAGNOSISScreening, Me.VA_RIGHTScreening, Me.VA_LEFTScreening, Me.PRESENTING_COMPLAIN, Me.SCREEN_NOTE, Me.IS_REFRACTION, Me.IS_OPTICALSHOP, Me.IS_REFER_PICKUP, Me.IS_REFER_BYSELF, Me.Province, Me.District, Me.Commune, Me.Male, Me.Female, Me.Occupation, Me.Telephone, Me.IS_HEARING, Me.IS_UNDERSTANDING, Me.IS_PHYSICAL, Me.IS_SEEING, Me.IS_OLDPATIENT})
         Me.DGScreeningBook.ContextMenuStrip = Me.CMScreeningBook
         DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle7.BackColor = System.Drawing.Color.White
@@ -414,321 +414,6 @@ Partial Class DashboardScreeningRegisBook
         Me.DGScreeningBook.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DGScreeningBook.Size = New System.Drawing.Size(1297, 400)
         Me.DGScreeningBook.TabIndex = 25
-        '
-        'IMPORT_STATUS
-        '
-        Me.IMPORT_STATUS.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.IMPORT_STATUS.DataPropertyName = "IMPORT_STATUS"
-        Me.IMPORT_STATUS.FillWeight = 49.81596!
-        Me.IMPORT_STATUS.HeaderText = "Import Status"
-        Me.IMPORT_STATUS.Name = "IMPORT_STATUS"
-        Me.IMPORT_STATUS.ReadOnly = True
-        Me.IMPORT_STATUS.Width = 150
-        '
-        'SCREEN_BOOKID
-        '
-        Me.SCREEN_BOOKID.DataPropertyName = "SCREEN_BOOKID"
-        Me.SCREEN_BOOKID.HeaderText = "SCREEN_BOOKID"
-        Me.SCREEN_BOOKID.Name = "SCREEN_BOOKID"
-        Me.SCREEN_BOOKID.ReadOnly = True
-        Me.SCREEN_BOOKID.Visible = False
-        '
-        'SYS_SETTING
-        '
-        Me.SYS_SETTING.DataPropertyName = "SYS_SETTING"
-        Me.SYS_SETTING.HeaderText = "SYS_SETTING"
-        Me.SYS_SETTING.Name = "SYS_SETTING"
-        Me.SYS_SETTING.ReadOnly = True
-        Me.SYS_SETTING.Visible = False
-        '
-        'SCREAN_DATE
-        '
-        Me.SCREAN_DATE.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.SCREAN_DATE.DataPropertyName = "SCREAN_DATE"
-        DataGridViewCellStyle2.Format = "dd/MM/yyyy"
-        Me.SCREAN_DATE.DefaultCellStyle = DataGridViewCellStyle2
-        Me.SCREAN_DATE.FillWeight = 1035.533!
-        Me.SCREAN_DATE.HeaderText = "Regist-Date"
-        Me.SCREAN_DATE.Name = "SCREAN_DATE"
-        Me.SCREAN_DATE.ReadOnly = True
-        Me.SCREAN_DATE.Width = 150
-        '
-        'PatientNo
-        '
-        Me.PatientNo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.PatientNo.DataPropertyName = "PatientNo"
-        Me.PatientNo.FillWeight = 69.60071!
-        Me.PatientNo.HeaderText = "Patient No"
-        Me.PatientNo.Name = "PatientNo"
-        Me.PatientNo.ReadOnly = True
-        Me.PatientNo.Width = 150
-        '
-        'REFERENCE_PATIENNOTE
-        '
-        Me.REFERENCE_PATIENNOTE.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.REFERENCE_PATIENNOTE.DataPropertyName = "REFERENCE_PATIENNOTE"
-        Me.REFERENCE_PATIENNOTE.FillWeight = 49.81596!
-        Me.REFERENCE_PATIENNOTE.HeaderText = "Ref-No"
-        Me.REFERENCE_PATIENNOTE.Name = "REFERENCE_PATIENNOTE"
-        Me.REFERENCE_PATIENNOTE.ReadOnly = True
-        Me.REFERENCE_PATIENNOTE.Width = 150
-        '
-        'NameEng
-        '
-        Me.NameEng.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.NameEng.DataPropertyName = "NameEng"
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Khmer OS Battambang", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.NameEng.DefaultCellStyle = DataGridViewCellStyle3
-        Me.NameEng.FillWeight = 50.72639!
-        Me.NameEng.HeaderText = "Name Eng"
-        Me.NameEng.Name = "NameEng"
-        Me.NameEng.ReadOnly = True
-        Me.NameEng.Width = 150
-        '
-        'NameKhmer
-        '
-        Me.NameKhmer.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.NameKhmer.DataPropertyName = "NameKhmer"
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Wat Phnom T3", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.NameKhmer.DefaultCellStyle = DataGridViewCellStyle4
-        Me.NameKhmer.FillWeight = 50.72639!
-        Me.NameKhmer.HeaderText = "Name Kh"
-        Me.NameKhmer.Name = "NameKhmer"
-        Me.NameKhmer.ReadOnly = True
-        Me.NameKhmer.Width = 150
-        '
-        'Age
-        '
-        Me.Age.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.Age.DataPropertyName = "Age"
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.Age.DefaultCellStyle = DataGridViewCellStyle5
-        Me.Age.FillWeight = 50.16895!
-        Me.Age.HeaderText = "Age"
-        Me.Age.Name = "Age"
-        Me.Age.ReadOnly = True
-        Me.Age.Width = 50
-        '
-        'Sex
-        '
-        Me.Sex.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.Sex.DataPropertyName = "Sex"
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.Sex.DefaultCellStyle = DataGridViewCellStyle6
-        Me.Sex.FillWeight = 39.44817!
-        Me.Sex.HeaderText = "Sex"
-        Me.Sex.Name = "Sex"
-        Me.Sex.ReadOnly = True
-        Me.Sex.Width = 50
-        '
-        'Address
-        '
-        Me.Address.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.Address.DataPropertyName = "Address"
-        Me.Address.FillWeight = 50.72639!
-        Me.Address.HeaderText = "Address"
-        Me.Address.Name = "Address"
-        Me.Address.ReadOnly = True
-        Me.Address.Width = 150
-        '
-        'SCREEN_PLACE
-        '
-        Me.SCREEN_PLACE.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.SCREEN_PLACE.DataPropertyName = "SCREEN_PLACE"
-        Me.SCREEN_PLACE.FillWeight = 50.72639!
-        Me.SCREEN_PLACE.HeaderText = "Screen Place"
-        Me.SCREEN_PLACE.Name = "SCREEN_PLACE"
-        Me.SCREEN_PLACE.ReadOnly = True
-        Me.SCREEN_PLACE.Width = 150
-        '
-        'ON_EYE
-        '
-        Me.ON_EYE.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.ON_EYE.DataPropertyName = "ON_EYE"
-        Me.ON_EYE.FillWeight = 49.81596!
-        Me.ON_EYE.HeaderText = "On Eye"
-        Me.ON_EYE.Name = "ON_EYE"
-        Me.ON_EYE.ReadOnly = True
-        Me.ON_EYE.Width = 90
-        '
-        'DIAGNOSISScreening
-        '
-        Me.DIAGNOSISScreening.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.DIAGNOSISScreening.DataPropertyName = "DIAGNOSIS"
-        Me.DIAGNOSISScreening.FillWeight = 49.81596!
-        Me.DIAGNOSISScreening.HeaderText = "Diagnosis"
-        Me.DIAGNOSISScreening.Name = "DIAGNOSISScreening"
-        Me.DIAGNOSISScreening.ReadOnly = True
-        Me.DIAGNOSISScreening.Width = 150
-        '
-        'VA_RIGHTScreening
-        '
-        Me.VA_RIGHTScreening.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.VA_RIGHTScreening.DataPropertyName = "VA_RIGHT"
-        Me.VA_RIGHTScreening.FillWeight = 49.81596!
-        Me.VA_RIGHTScreening.HeaderText = "VA Right"
-        Me.VA_RIGHTScreening.Name = "VA_RIGHTScreening"
-        Me.VA_RIGHTScreening.ReadOnly = True
-        Me.VA_RIGHTScreening.Width = 50
-        '
-        'VA_LEFTScreening
-        '
-        Me.VA_LEFTScreening.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.VA_LEFTScreening.DataPropertyName = "VA_LEFT"
-        Me.VA_LEFTScreening.FillWeight = 49.81596!
-        Me.VA_LEFTScreening.HeaderText = "VA Left"
-        Me.VA_LEFTScreening.Name = "VA_LEFTScreening"
-        Me.VA_LEFTScreening.ReadOnly = True
-        Me.VA_LEFTScreening.Width = 50
-        '
-        'PRESENTING_COMPLAIN
-        '
-        Me.PRESENTING_COMPLAIN.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.PRESENTING_COMPLAIN.DataPropertyName = "PRESENTING_COMPLAIN"
-        Me.PRESENTING_COMPLAIN.FillWeight = 49.81596!
-        Me.PRESENTING_COMPLAIN.HeaderText = "Presenting Complain"
-        Me.PRESENTING_COMPLAIN.Name = "PRESENTING_COMPLAIN"
-        Me.PRESENTING_COMPLAIN.ReadOnly = True
-        Me.PRESENTING_COMPLAIN.Width = 150
-        '
-        'IS_REFRACTION
-        '
-        Me.IS_REFRACTION.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.IS_REFRACTION.DataPropertyName = "IS_REFRACTION"
-        Me.IS_REFRACTION.FillWeight = 50.72639!
-        Me.IS_REFRACTION.HeaderText = "Refraction"
-        Me.IS_REFRACTION.Name = "IS_REFRACTION"
-        Me.IS_REFRACTION.ReadOnly = True
-        Me.IS_REFRACTION.Width = 150
-        '
-        'IS_OPTICALSHOP
-        '
-        Me.IS_OPTICALSHOP.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.IS_OPTICALSHOP.DataPropertyName = "IS_OPTICALSHOP"
-        Me.IS_OPTICALSHOP.FillWeight = 50.72639!
-        Me.IS_OPTICALSHOP.HeaderText = "Optical shop"
-        Me.IS_OPTICALSHOP.Name = "IS_OPTICALSHOP"
-        Me.IS_OPTICALSHOP.ReadOnly = True
-        Me.IS_OPTICALSHOP.Width = 150
-        '
-        'IS_REFER_PICKUP
-        '
-        Me.IS_REFER_PICKUP.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.IS_REFER_PICKUP.DataPropertyName = "IS_REFER_PICKUP"
-        Me.IS_REFER_PICKUP.FillWeight = 50.72639!
-        Me.IS_REFER_PICKUP.HeaderText = "Referral By Pickup"
-        Me.IS_REFER_PICKUP.Name = "IS_REFER_PICKUP"
-        Me.IS_REFER_PICKUP.ReadOnly = True
-        Me.IS_REFER_PICKUP.Width = 150
-        '
-        'IS_REFER_BYSELF
-        '
-        Me.IS_REFER_BYSELF.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.IS_REFER_BYSELF.DataPropertyName = "IS_REFER_BYSELF"
-        Me.IS_REFER_BYSELF.FillWeight = 50.72639!
-        Me.IS_REFER_BYSELF.HeaderText = "Referral By Selft"
-        Me.IS_REFER_BYSELF.Name = "IS_REFER_BYSELF"
-        Me.IS_REFER_BYSELF.ReadOnly = True
-        Me.IS_REFER_BYSELF.Width = 150
-        '
-        'SCREEN_NOTE
-        '
-        Me.SCREEN_NOTE.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.SCREEN_NOTE.DataPropertyName = "SCREEN_NOTE"
-        Me.SCREEN_NOTE.FillWeight = 50.72639!
-        Me.SCREEN_NOTE.HeaderText = "Note"
-        Me.SCREEN_NOTE.Name = "SCREEN_NOTE"
-        Me.SCREEN_NOTE.ReadOnly = True
-        Me.SCREEN_NOTE.Width = 150
-        '
-        'Province
-        '
-        Me.Province.DataPropertyName = "Province"
-        Me.Province.HeaderText = "Province"
-        Me.Province.Name = "Province"
-        Me.Province.Visible = False
-        '
-        'District
-        '
-        Me.District.DataPropertyName = "District"
-        Me.District.HeaderText = "District"
-        Me.District.Name = "District"
-        Me.District.Visible = False
-        '
-        'Commune
-        '
-        Me.Commune.DataPropertyName = "Commune"
-        Me.Commune.HeaderText = "Commune"
-        Me.Commune.Name = "Commune"
-        Me.Commune.Visible = False
-        '
-        'Male
-        '
-        Me.Male.DataPropertyName = "Male"
-        Me.Male.HeaderText = "Male"
-        Me.Male.Name = "Male"
-        Me.Male.Visible = False
-        '
-        'Female
-        '
-        Me.Female.DataPropertyName = "Female"
-        Me.Female.HeaderText = "Female"
-        Me.Female.Name = "Female"
-        Me.Female.Visible = False
-        '
-        'Occupation
-        '
-        Me.Occupation.DataPropertyName = "Occupation"
-        Me.Occupation.HeaderText = "Occupation"
-        Me.Occupation.Name = "Occupation"
-        Me.Occupation.Visible = False
-        '
-        'Telephone
-        '
-        Me.Telephone.DataPropertyName = "Telephone"
-        Me.Telephone.HeaderText = "Telephone"
-        Me.Telephone.Name = "Telephone"
-        Me.Telephone.Visible = False
-        '
-        'IS_HEARING
-        '
-        Me.IS_HEARING.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.IS_HEARING.DataPropertyName = "IS_HEARING"
-        Me.IS_HEARING.HeaderText = "Hearing"
-        Me.IS_HEARING.Name = "IS_HEARING"
-        Me.IS_HEARING.Width = 150
-        '
-        'IS_UNDERSTANDING
-        '
-        Me.IS_UNDERSTANDING.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.IS_UNDERSTANDING.DataPropertyName = "IS_UNDERSTANDING"
-        Me.IS_UNDERSTANDING.HeaderText = "Understanding"
-        Me.IS_UNDERSTANDING.Name = "IS_UNDERSTANDING"
-        Me.IS_UNDERSTANDING.Width = 150
-        '
-        'IS_PHYSICAL
-        '
-        Me.IS_PHYSICAL.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.IS_PHYSICAL.DataPropertyName = "IS_PHYSICAL"
-        Me.IS_PHYSICAL.HeaderText = "IS_PHYSICAL"
-        Me.IS_PHYSICAL.Name = "IS_PHYSICAL"
-        Me.IS_PHYSICAL.Width = 150
-        '
-        'IS_SEEING
-        '
-        Me.IS_SEEING.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.IS_SEEING.DataPropertyName = "IS_SEEING"
-        Me.IS_SEEING.HeaderText = "SEEING"
-        Me.IS_SEEING.Name = "IS_SEEING"
-        Me.IS_SEEING.Width = 150
-        '
-        'IS_OLDPATIENT
-        '
-        Me.IS_OLDPATIENT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.IS_OLDPATIENT.DataPropertyName = "IS_OLDPATIENT"
-        Me.IS_OLDPATIENT.HeaderText = "Old Patient"
-        Me.IS_OLDPATIENT.Name = "IS_OLDPATIENT"
-        Me.IS_OLDPATIENT.Width = 150
         '
         'CMScreeningBook
         '
@@ -1666,6 +1351,329 @@ Partial Class DashboardScreeningRegisBook
         'BGImportToTEH
         '
         '
+        'IMPORT_STATUS
+        '
+        Me.IMPORT_STATUS.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.IMPORT_STATUS.DataPropertyName = "IMPORT_STATUS"
+        Me.IMPORT_STATUS.FillWeight = 49.81596!
+        Me.IMPORT_STATUS.HeaderText = "Import Status"
+        Me.IMPORT_STATUS.Name = "IMPORT_STATUS"
+        Me.IMPORT_STATUS.ReadOnly = True
+        Me.IMPORT_STATUS.Width = 150
+        '
+        'SCREEN_BOOKID
+        '
+        Me.SCREEN_BOOKID.DataPropertyName = "SCREEN_BOOKID"
+        Me.SCREEN_BOOKID.HeaderText = "SCREEN_BOOKID"
+        Me.SCREEN_BOOKID.Name = "SCREEN_BOOKID"
+        Me.SCREEN_BOOKID.ReadOnly = True
+        Me.SCREEN_BOOKID.Visible = False
+        '
+        'SYS_SETTING
+        '
+        Me.SYS_SETTING.DataPropertyName = "SYS_SETTING"
+        Me.SYS_SETTING.HeaderText = "SYS_SETTING"
+        Me.SYS_SETTING.Name = "SYS_SETTING"
+        Me.SYS_SETTING.ReadOnly = True
+        Me.SYS_SETTING.Visible = False
+        '
+        'SCREAN_DATE
+        '
+        Me.SCREAN_DATE.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.SCREAN_DATE.DataPropertyName = "SCREAN_DATE"
+        DataGridViewCellStyle2.Format = "dd/MM/yyyy"
+        Me.SCREAN_DATE.DefaultCellStyle = DataGridViewCellStyle2
+        Me.SCREAN_DATE.FillWeight = 1035.533!
+        Me.SCREAN_DATE.HeaderText = "Regist-Date"
+        Me.SCREAN_DATE.Name = "SCREAN_DATE"
+        Me.SCREAN_DATE.ReadOnly = True
+        Me.SCREAN_DATE.Width = 150
+        '
+        'PatientNo
+        '
+        Me.PatientNo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.PatientNo.DataPropertyName = "PatientNo"
+        Me.PatientNo.FillWeight = 69.60071!
+        Me.PatientNo.HeaderText = "Patient No"
+        Me.PatientNo.Name = "PatientNo"
+        Me.PatientNo.ReadOnly = True
+        Me.PatientNo.Width = 150
+        '
+        'REFERENCE_PATIENNOTE
+        '
+        Me.REFERENCE_PATIENNOTE.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.REFERENCE_PATIENNOTE.DataPropertyName = "REFERENCE_PATIENNOTE"
+        Me.REFERENCE_PATIENNOTE.FillWeight = 49.81596!
+        Me.REFERENCE_PATIENNOTE.HeaderText = "Ref-No"
+        Me.REFERENCE_PATIENNOTE.Name = "REFERENCE_PATIENNOTE"
+        Me.REFERENCE_PATIENNOTE.ReadOnly = True
+        Me.REFERENCE_PATIENNOTE.Visible = False
+        Me.REFERENCE_PATIENNOTE.Width = 150
+        '
+        'NameEng
+        '
+        Me.NameEng.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.NameEng.DataPropertyName = "NameEng"
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Khmer OS Battambang", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.NameEng.DefaultCellStyle = DataGridViewCellStyle3
+        Me.NameEng.FillWeight = 50.72639!
+        Me.NameEng.HeaderText = "Name Eng"
+        Me.NameEng.Name = "NameEng"
+        Me.NameEng.ReadOnly = True
+        Me.NameEng.Width = 150
+        '
+        'NameKhmer
+        '
+        Me.NameKhmer.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.NameKhmer.DataPropertyName = "NameKhmer"
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Wat Phnom T3", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.NameKhmer.DefaultCellStyle = DataGridViewCellStyle4
+        Me.NameKhmer.FillWeight = 50.72639!
+        Me.NameKhmer.HeaderText = "Name Kh"
+        Me.NameKhmer.Name = "NameKhmer"
+        Me.NameKhmer.ReadOnly = True
+        Me.NameKhmer.Width = 150
+        '
+        'Age
+        '
+        Me.Age.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.Age.DataPropertyName = "Age"
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.Age.DefaultCellStyle = DataGridViewCellStyle5
+        Me.Age.FillWeight = 50.16895!
+        Me.Age.HeaderText = "Age"
+        Me.Age.Name = "Age"
+        Me.Age.ReadOnly = True
+        Me.Age.Width = 50
+        '
+        'Sex
+        '
+        Me.Sex.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.Sex.DataPropertyName = "Sex"
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.Sex.DefaultCellStyle = DataGridViewCellStyle6
+        Me.Sex.FillWeight = 39.44817!
+        Me.Sex.HeaderText = "Sex"
+        Me.Sex.Name = "Sex"
+        Me.Sex.ReadOnly = True
+        Me.Sex.Width = 50
+        '
+        'Address
+        '
+        Me.Address.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.Address.DataPropertyName = "Address"
+        Me.Address.FillWeight = 50.72639!
+        Me.Address.HeaderText = "Address"
+        Me.Address.Name = "Address"
+        Me.Address.ReadOnly = True
+        Me.Address.Width = 150
+        '
+        'SCREEN_PLACE
+        '
+        Me.SCREEN_PLACE.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.SCREEN_PLACE.DataPropertyName = "SCREEN_PLACE"
+        Me.SCREEN_PLACE.FillWeight = 50.72639!
+        Me.SCREEN_PLACE.HeaderText = "Screen Place"
+        Me.SCREEN_PLACE.Name = "SCREEN_PLACE"
+        Me.SCREEN_PLACE.ReadOnly = True
+        Me.SCREEN_PLACE.Width = 150
+        '
+        'ON_EYE
+        '
+        Me.ON_EYE.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.ON_EYE.DataPropertyName = "ON_EYE"
+        Me.ON_EYE.FillWeight = 49.81596!
+        Me.ON_EYE.HeaderText = "On Eye"
+        Me.ON_EYE.Name = "ON_EYE"
+        Me.ON_EYE.ReadOnly = True
+        Me.ON_EYE.Width = 90
+        '
+        'DIAGNOSISScreening
+        '
+        Me.DIAGNOSISScreening.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.DIAGNOSISScreening.DataPropertyName = "DIAGNOSIS"
+        Me.DIAGNOSISScreening.FillWeight = 49.81596!
+        Me.DIAGNOSISScreening.HeaderText = "Diagnosis"
+        Me.DIAGNOSISScreening.Name = "DIAGNOSISScreening"
+        Me.DIAGNOSISScreening.ReadOnly = True
+        Me.DIAGNOSISScreening.Width = 150
+        '
+        'VA_RIGHTScreening
+        '
+        Me.VA_RIGHTScreening.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.VA_RIGHTScreening.DataPropertyName = "VA_RIGHT"
+        Me.VA_RIGHTScreening.FillWeight = 49.81596!
+        Me.VA_RIGHTScreening.HeaderText = "VA Right"
+        Me.VA_RIGHTScreening.Name = "VA_RIGHTScreening"
+        Me.VA_RIGHTScreening.ReadOnly = True
+        Me.VA_RIGHTScreening.Width = 50
+        '
+        'VA_LEFTScreening
+        '
+        Me.VA_LEFTScreening.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.VA_LEFTScreening.DataPropertyName = "VA_LEFT"
+        Me.VA_LEFTScreening.FillWeight = 49.81596!
+        Me.VA_LEFTScreening.HeaderText = "VA Left"
+        Me.VA_LEFTScreening.Name = "VA_LEFTScreening"
+        Me.VA_LEFTScreening.ReadOnly = True
+        Me.VA_LEFTScreening.Width = 50
+        '
+        'PRESENTING_COMPLAIN
+        '
+        Me.PRESENTING_COMPLAIN.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.PRESENTING_COMPLAIN.DataPropertyName = "PRESENTING_COMPLAIN"
+        Me.PRESENTING_COMPLAIN.FillWeight = 49.81596!
+        Me.PRESENTING_COMPLAIN.HeaderText = "Presenting Complain"
+        Me.PRESENTING_COMPLAIN.Name = "PRESENTING_COMPLAIN"
+        Me.PRESENTING_COMPLAIN.ReadOnly = True
+        Me.PRESENTING_COMPLAIN.Width = 150
+        '
+        'SCREEN_NOTE
+        '
+        Me.SCREEN_NOTE.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.SCREEN_NOTE.DataPropertyName = "SCREEN_NOTE"
+        Me.SCREEN_NOTE.FillWeight = 50.72639!
+        Me.SCREEN_NOTE.HeaderText = "Note"
+        Me.SCREEN_NOTE.Name = "SCREEN_NOTE"
+        Me.SCREEN_NOTE.ReadOnly = True
+        Me.SCREEN_NOTE.Width = 150
+        '
+        'IS_REFRACTION
+        '
+        Me.IS_REFRACTION.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.IS_REFRACTION.DataPropertyName = "IS_REFRACTION"
+        Me.IS_REFRACTION.FillWeight = 50.72639!
+        Me.IS_REFRACTION.HeaderText = "Refraction"
+        Me.IS_REFRACTION.Name = "IS_REFRACTION"
+        Me.IS_REFRACTION.ReadOnly = True
+        Me.IS_REFRACTION.Visible = False
+        Me.IS_REFRACTION.Width = 150
+        '
+        'IS_OPTICALSHOP
+        '
+        Me.IS_OPTICALSHOP.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.IS_OPTICALSHOP.DataPropertyName = "IS_OPTICALSHOP"
+        Me.IS_OPTICALSHOP.FillWeight = 50.72639!
+        Me.IS_OPTICALSHOP.HeaderText = "Optical shop"
+        Me.IS_OPTICALSHOP.Name = "IS_OPTICALSHOP"
+        Me.IS_OPTICALSHOP.ReadOnly = True
+        Me.IS_OPTICALSHOP.Visible = False
+        Me.IS_OPTICALSHOP.Width = 150
+        '
+        'IS_REFER_PICKUP
+        '
+        Me.IS_REFER_PICKUP.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.IS_REFER_PICKUP.DataPropertyName = "IS_REFER_PICKUP"
+        Me.IS_REFER_PICKUP.FillWeight = 50.72639!
+        Me.IS_REFER_PICKUP.HeaderText = "Referral By Pickup"
+        Me.IS_REFER_PICKUP.Name = "IS_REFER_PICKUP"
+        Me.IS_REFER_PICKUP.ReadOnly = True
+        Me.IS_REFER_PICKUP.Width = 150
+        '
+        'IS_REFER_BYSELF
+        '
+        Me.IS_REFER_BYSELF.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.IS_REFER_BYSELF.DataPropertyName = "IS_REFER_BYSELF"
+        Me.IS_REFER_BYSELF.FillWeight = 50.72639!
+        Me.IS_REFER_BYSELF.HeaderText = "Referral By Selft"
+        Me.IS_REFER_BYSELF.Name = "IS_REFER_BYSELF"
+        Me.IS_REFER_BYSELF.ReadOnly = True
+        Me.IS_REFER_BYSELF.Width = 150
+        '
+        'Province
+        '
+        Me.Province.DataPropertyName = "Province"
+        Me.Province.HeaderText = "Province"
+        Me.Province.Name = "Province"
+        Me.Province.Visible = False
+        '
+        'District
+        '
+        Me.District.DataPropertyName = "District"
+        Me.District.HeaderText = "District"
+        Me.District.Name = "District"
+        Me.District.Visible = False
+        '
+        'Commune
+        '
+        Me.Commune.DataPropertyName = "Commune"
+        Me.Commune.HeaderText = "Commune"
+        Me.Commune.Name = "Commune"
+        Me.Commune.Visible = False
+        '
+        'Male
+        '
+        Me.Male.DataPropertyName = "Male"
+        Me.Male.HeaderText = "Male"
+        Me.Male.Name = "Male"
+        Me.Male.Visible = False
+        '
+        'Female
+        '
+        Me.Female.DataPropertyName = "Female"
+        Me.Female.HeaderText = "Female"
+        Me.Female.Name = "Female"
+        Me.Female.Visible = False
+        '
+        'Occupation
+        '
+        Me.Occupation.DataPropertyName = "Occupation"
+        Me.Occupation.HeaderText = "Occupation"
+        Me.Occupation.Name = "Occupation"
+        Me.Occupation.Visible = False
+        '
+        'Telephone
+        '
+        Me.Telephone.DataPropertyName = "Telephone"
+        Me.Telephone.HeaderText = "Telephone"
+        Me.Telephone.Name = "Telephone"
+        Me.Telephone.Visible = False
+        '
+        'IS_HEARING
+        '
+        Me.IS_HEARING.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.IS_HEARING.DataPropertyName = "IS_HEARING"
+        Me.IS_HEARING.HeaderText = "Hearing"
+        Me.IS_HEARING.Name = "IS_HEARING"
+        Me.IS_HEARING.ReadOnly = True
+        Me.IS_HEARING.Width = 150
+        '
+        'IS_UNDERSTANDING
+        '
+        Me.IS_UNDERSTANDING.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.IS_UNDERSTANDING.DataPropertyName = "IS_UNDERSTANDING"
+        Me.IS_UNDERSTANDING.HeaderText = "Understanding"
+        Me.IS_UNDERSTANDING.Name = "IS_UNDERSTANDING"
+        Me.IS_UNDERSTANDING.ReadOnly = True
+        Me.IS_UNDERSTANDING.Width = 150
+        '
+        'IS_PHYSICAL
+        '
+        Me.IS_PHYSICAL.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.IS_PHYSICAL.DataPropertyName = "IS_PHYSICAL"
+        Me.IS_PHYSICAL.HeaderText = "IS_PHYSICAL"
+        Me.IS_PHYSICAL.Name = "IS_PHYSICAL"
+        Me.IS_PHYSICAL.ReadOnly = True
+        Me.IS_PHYSICAL.Width = 150
+        '
+        'IS_SEEING
+        '
+        Me.IS_SEEING.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.IS_SEEING.DataPropertyName = "IS_SEEING"
+        Me.IS_SEEING.HeaderText = "SEEING"
+        Me.IS_SEEING.Name = "IS_SEEING"
+        Me.IS_SEEING.ReadOnly = True
+        Me.IS_SEEING.Width = 150
+        '
+        'IS_OLDPATIENT
+        '
+        Me.IS_OLDPATIENT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.IS_OLDPATIENT.DataPropertyName = "IS_OLDPATIENT"
+        Me.IS_OLDPATIENT.HeaderText = "Old Patient"
+        Me.IS_OLDPATIENT.Name = "IS_OLDPATIENT"
+        Me.IS_OLDPATIENT.ReadOnly = True
+        Me.IS_OLDPATIENT.Width = 150
+        '
         'DashboardScreeningRegisBook
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(10.0!, 21.0!)
@@ -1836,11 +1844,11 @@ Partial Class DashboardScreeningRegisBook
     Friend WithEvents VA_RIGHTScreening As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents VA_LEFTScreening As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents PRESENTING_COMPLAIN As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents SCREEN_NOTE As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents IS_REFRACTION As System.Windows.Forms.DataGridViewCheckBoxColumn
     Friend WithEvents IS_OPTICALSHOP As System.Windows.Forms.DataGridViewCheckBoxColumn
     Friend WithEvents IS_REFER_PICKUP As System.Windows.Forms.DataGridViewCheckBoxColumn
     Friend WithEvents IS_REFER_BYSELF As System.Windows.Forms.DataGridViewCheckBoxColumn
-    Friend WithEvents SCREEN_NOTE As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Province As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents District As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Commune As System.Windows.Forms.DataGridViewTextBoxColumn

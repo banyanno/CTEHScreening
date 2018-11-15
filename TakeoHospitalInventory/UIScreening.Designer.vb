@@ -23,17 +23,17 @@ Partial Class UIScreening
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(UIScreening))
-        Dim UiComboBoxItem4 As Janus.Windows.EditControls.UIComboBoxItem = New Janus.Windows.EditControls.UIComboBoxItem
-        Dim UiComboBoxItem5 As Janus.Windows.EditControls.UIComboBoxItem = New Janus.Windows.EditControls.UIComboBoxItem
-        Dim UiComboBoxItem6 As Janus.Windows.EditControls.UIComboBoxItem = New Janus.Windows.EditControls.UIComboBoxItem
-        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
-        Dim DataGridViewCellStyle15 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
-        Dim DataGridViewCellStyle16 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
-        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
-        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
-        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
-        Dim DataGridViewCellStyle13 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
-        Dim DataGridViewCellStyle14 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
+        Dim UiComboBoxItem7 As Janus.Windows.EditControls.UIComboBoxItem = New Janus.Windows.EditControls.UIComboBoxItem
+        Dim UiComboBoxItem8 As Janus.Windows.EditControls.UIComboBoxItem = New Janus.Windows.EditControls.UIComboBoxItem
+        Dim UiComboBoxItem9 As Janus.Windows.EditControls.UIComboBoxItem = New Janus.Windows.EditControls.UIComboBoxItem
+        Dim DataGridViewCellStyle17 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
+        Dim DataGridViewCellStyle23 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
+        Dim DataGridViewCellStyle24 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
+        Dim DataGridViewCellStyle18 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
+        Dim DataGridViewCellStyle19 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
+        Dim DataGridViewCellStyle20 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
+        Dim DataGridViewCellStyle21 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
+        Dim DataGridViewCellStyle22 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
         Me.Label1 = New System.Windows.Forms.Label
         Me.Label2 = New System.Windows.Forms.Label
         Me.MenuVertical = New System.Windows.Forms.Panel
@@ -93,6 +93,8 @@ Partial Class UIScreening
         Me.BtnScreeningSetting = New System.Windows.Forms.Button
         Me.BtnReports = New System.Windows.Forms.Button
         Me.BtnInventory = New System.Windows.Forms.Button
+        Me.BtnRefractionBook = New System.Windows.Forms.Button
+        Me.BtnUserManagement = New System.Windows.Forms.Button
         Me.MenuVertical.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.DGScreeningBook, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -103,7 +105,7 @@ Partial Class UIScreening
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
-        Me.Label1.Location = New System.Drawing.Point(4, 64)
+        Me.Label1.Location = New System.Drawing.Point(10, 67)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(164, 20)
         Me.Label1.TabIndex = 1
@@ -117,7 +119,7 @@ Partial Class UIScreening
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.Blue
-        Me.Label2.Location = New System.Drawing.Point(40, 532)
+        Me.Label2.Location = New System.Drawing.Point(56, 775)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(168, 20)
         Me.Label2.TabIndex = 7
@@ -299,6 +301,7 @@ Partial Class UIScreening
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(236, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(241, Byte), Integer))
+        Me.Panel2.Controls.Add(Me.BtnUserManagement)
         Me.Panel2.Controls.Add(Me.Label4)
         Me.Panel2.Controls.Add(Me.Label3)
         Me.Panel2.Controls.Add(Me.BtnRequestItem)
@@ -313,6 +316,7 @@ Partial Class UIScreening
         Me.Panel2.Controls.Add(Me.BtnNavigationBar)
         Me.Panel2.Controls.Add(Me.Button1)
         Me.Panel2.Controls.Add(Me.BtnOpticalShop)
+        Me.Panel2.Controls.Add(Me.BtnRefractionBook)
         Me.Panel2.Controls.Add(Me.BtnScreeningBook)
         Me.Panel2.Controls.Add(Me.BtnScreeningSetting)
         Me.Panel2.Controls.Add(Me.BtnReports)
@@ -329,7 +333,7 @@ Partial Class UIScreening
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
-        Me.Label4.Location = New System.Drawing.Point(401, 64)
+        Me.Label4.Location = New System.Drawing.Point(408, 67)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(176, 20)
         Me.Label4.TabIndex = 31
@@ -355,9 +359,9 @@ Partial Class UIScreening
         Me.BtnRequestItem.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnRequestItem.ForeColor = System.Drawing.Color.White
         Me.BtnRequestItem.Image = CType(resources.GetObject("BtnRequestItem.Image"), System.Drawing.Image)
-        Me.BtnRequestItem.Location = New System.Drawing.Point(405, 194)
+        Me.BtnRequestItem.Location = New System.Drawing.Point(411, 192)
         Me.BtnRequestItem.Name = "BtnRequestItem"
-        Me.BtnRequestItem.Size = New System.Drawing.Size(147, 377)
+        Me.BtnRequestItem.Size = New System.Drawing.Size(148, 369)
         Me.BtnRequestItem.TabIndex = 29
         Me.BtnRequestItem.Text = "Request Product"
         Me.BtnRequestItem.TextAlign = System.Drawing.ContentAlignment.BottomCenter
@@ -374,7 +378,7 @@ Partial Class UIScreening
         Me.BtnItemTransaction.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnItemTransaction.ForeColor = System.Drawing.Color.White
         Me.BtnItemTransaction.Image = CType(resources.GetObject("BtnItemTransaction.Image"), System.Drawing.Image)
-        Me.BtnItemTransaction.Location = New System.Drawing.Point(558, 384)
+        Me.BtnItemTransaction.Location = New System.Drawing.Point(558, 376)
         Me.BtnItemTransaction.Name = "BtnItemTransaction"
         Me.BtnItemTransaction.Size = New System.Drawing.Size(229, 93)
         Me.BtnItemTransaction.TabIndex = 28
@@ -393,7 +397,7 @@ Partial Class UIScreening
         Me.BtnOpticalIncome.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnOpticalIncome.ForeColor = System.Drawing.Color.White
         Me.BtnOpticalIncome.Image = CType(resources.GetObject("BtnOpticalIncome.Image"), System.Drawing.Image)
-        Me.BtnOpticalIncome.Location = New System.Drawing.Point(558, 289)
+        Me.BtnOpticalIncome.Location = New System.Drawing.Point(558, 284)
         Me.BtnOpticalIncome.Name = "BtnOpticalIncome"
         Me.BtnOpticalIncome.Size = New System.Drawing.Size(229, 93)
         Me.BtnOpticalIncome.TabIndex = 28
@@ -412,7 +416,7 @@ Partial Class UIScreening
         Me.BtnOpticalShopReport.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnOpticalShopReport.ForeColor = System.Drawing.Color.White
         Me.BtnOpticalShopReport.Image = CType(resources.GetObject("BtnOpticalShopReport.Image"), System.Drawing.Image)
-        Me.BtnOpticalShopReport.Location = New System.Drawing.Point(558, 478)
+        Me.BtnOpticalShopReport.Location = New System.Drawing.Point(558, 468)
         Me.BtnOpticalShopReport.Name = "BtnOpticalShopReport"
         Me.BtnOpticalShopReport.Size = New System.Drawing.Size(229, 93)
         Me.BtnOpticalShopReport.TabIndex = 28
@@ -426,20 +430,20 @@ Partial Class UIScreening
         Me.UiComboBox1.BorderStyle = Janus.Windows.UI.BorderStyle.Flat
         Me.UiComboBox1.ComboStyle = Janus.Windows.EditControls.ComboStyle.DropDownList
         Me.UiComboBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!)
-        UiComboBoxItem4.FormatStyle.Alpha = 0
-        UiComboBoxItem4.IsSeparator = False
-        UiComboBoxItem4.Text = "Referent No"
-        UiComboBoxItem4.Value = "Referent No"
-        UiComboBoxItem5.FormatStyle.Alpha = 0
-        UiComboBoxItem5.IsSeparator = False
-        UiComboBoxItem5.Text = "Patient No"
-        UiComboBoxItem5.Value = "Patient No"
-        UiComboBoxItem6.FormatStyle.Alpha = 0
-        UiComboBoxItem6.IsSeparator = False
-        UiComboBoxItem6.Text = "Patient Name"
-        UiComboBoxItem6.Value = "Patient Name"
-        Me.UiComboBox1.Items.AddRange(New Janus.Windows.EditControls.UIComboBoxItem() {UiComboBoxItem4, UiComboBoxItem5, UiComboBoxItem6})
-        Me.UiComboBox1.Location = New System.Drawing.Point(44, 481)
+        UiComboBoxItem7.FormatStyle.Alpha = 0
+        UiComboBoxItem7.IsSeparator = False
+        UiComboBoxItem7.Text = "Referent No"
+        UiComboBoxItem7.Value = "Referent No"
+        UiComboBoxItem8.FormatStyle.Alpha = 0
+        UiComboBoxItem8.IsSeparator = False
+        UiComboBoxItem8.Text = "Patient No"
+        UiComboBoxItem8.Value = "Patient No"
+        UiComboBoxItem9.FormatStyle.Alpha = 0
+        UiComboBoxItem9.IsSeparator = False
+        UiComboBoxItem9.Text = "Patient Name"
+        UiComboBoxItem9.Value = "Patient Name"
+        Me.UiComboBox1.Items.AddRange(New Janus.Windows.EditControls.UIComboBoxItem() {UiComboBoxItem7, UiComboBoxItem8, UiComboBoxItem9})
+        Me.UiComboBox1.Location = New System.Drawing.Point(60, 724)
         Me.UiComboBox1.Name = "UiComboBox1"
         Me.UiComboBox1.Size = New System.Drawing.Size(206, 30)
         Me.UiComboBox1.TabIndex = 27
@@ -458,38 +462,38 @@ Partial Class UIScreening
         Me.DGScreeningBook.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.DGScreeningBook.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText
         Me.DGScreeningBook.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(67, Byte), Integer), CType(CType(82, Byte), Integer))
-        DataGridViewCellStyle9.Font = New System.Drawing.Font("Century Gothic", 12.0!)
-        DataGridViewCellStyle9.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DGScreeningBook.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle9
+        DataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(67, Byte), Integer), CType(CType(82, Byte), Integer))
+        DataGridViewCellStyle17.Font = New System.Drawing.Font("Century Gothic", 12.0!)
+        DataGridViewCellStyle17.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DGScreeningBook.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle17
         Me.DGScreeningBook.ColumnHeadersHeight = 40
         Me.DGScreeningBook.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IMPORT_STATUS, Me.SCREEN_BOOKID, Me.SYS_SETTING, Me.SCREAN_DATE, Me.PatientNo, Me.REFERENCE_PATIENNOTE, Me.NameEng, Me.NameKhmer, Me.Age, Me.Sex, Me.Address, Me.SCREEN_PLACE, Me.ON_EYE, Me.DIAGNOSISScreening, Me.VA_RIGHTScreening, Me.VA_LEFTScreening, Me.PRESENTING_COMPLAIN, Me.IS_REFRACTION, Me.IS_OPTICALSHOP, Me.IS_REFER_PICKUP, Me.IS_REFER_BYSELF, Me.SCREEN_NOTE, Me.Province, Me.District, Me.Commune, Me.Male, Me.Female, Me.Occupation, Me.Telephone})
-        DataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle15.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle15.Font = New System.Drawing.Font("Century Gothic", 12.0!)
-        DataGridViewCellStyle15.ForeColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
-        DataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DGScreeningBook.DefaultCellStyle = DataGridViewCellStyle15
+        DataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle23.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle23.Font = New System.Drawing.Font("Century Gothic", 12.0!)
+        DataGridViewCellStyle23.ForeColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
+        DataGridViewCellStyle23.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DGScreeningBook.DefaultCellStyle = DataGridViewCellStyle23
         Me.DGScreeningBook.EnableHeadersVisualStyles = False
         Me.DGScreeningBook.GridColor = System.Drawing.Color.SteelBlue
-        Me.DGScreeningBook.Location = New System.Drawing.Point(44, 566)
+        Me.DGScreeningBook.Location = New System.Drawing.Point(60, 809)
         Me.DGScreeningBook.Margin = New System.Windows.Forms.Padding(5)
         Me.DGScreeningBook.Name = "DGScreeningBook"
         Me.DGScreeningBook.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(67, Byte), Integer), CType(CType(82, Byte), Integer))
-        DataGridViewCellStyle16.Font = New System.Drawing.Font("Century Gothic", 12.0!)
-        DataGridViewCellStyle16.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DGScreeningBook.RowHeadersDefaultCellStyle = DataGridViewCellStyle16
+        DataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle24.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(67, Byte), Integer), CType(CType(82, Byte), Integer))
+        DataGridViewCellStyle24.Font = New System.Drawing.Font("Century Gothic", 12.0!)
+        DataGridViewCellStyle24.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle24.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle24.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DGScreeningBook.RowHeadersDefaultCellStyle = DataGridViewCellStyle24
         Me.DGScreeningBook.RowHeadersWidth = 50
         Me.DGScreeningBook.RowTemplate.Height = 35
         Me.DGScreeningBook.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
@@ -527,8 +531,8 @@ Partial Class UIScreening
         '
         Me.SCREAN_DATE.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
         Me.SCREAN_DATE.DataPropertyName = "SCREAN_DATE"
-        DataGridViewCellStyle10.Format = "dd/MM/yyyy"
-        Me.SCREAN_DATE.DefaultCellStyle = DataGridViewCellStyle10
+        DataGridViewCellStyle18.Format = "dd/MM/yyyy"
+        Me.SCREAN_DATE.DefaultCellStyle = DataGridViewCellStyle18
         Me.SCREAN_DATE.FillWeight = 1035.533!
         Me.SCREAN_DATE.HeaderText = "Regist-Date"
         Me.SCREAN_DATE.Name = "SCREAN_DATE"
@@ -559,8 +563,8 @@ Partial Class UIScreening
         '
         Me.NameEng.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
         Me.NameEng.DataPropertyName = "NameEng"
-        DataGridViewCellStyle11.Font = New System.Drawing.Font("Khmer OS Battambang", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.NameEng.DefaultCellStyle = DataGridViewCellStyle11
+        DataGridViewCellStyle19.Font = New System.Drawing.Font("Khmer OS Battambang", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.NameEng.DefaultCellStyle = DataGridViewCellStyle19
         Me.NameEng.FillWeight = 50.72639!
         Me.NameEng.HeaderText = "Name Eng"
         Me.NameEng.Name = "NameEng"
@@ -571,8 +575,8 @@ Partial Class UIScreening
         '
         Me.NameKhmer.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
         Me.NameKhmer.DataPropertyName = "NameKhmer"
-        DataGridViewCellStyle12.Font = New System.Drawing.Font("Wat Phnom T3", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.NameKhmer.DefaultCellStyle = DataGridViewCellStyle12
+        DataGridViewCellStyle20.Font = New System.Drawing.Font("Wat Phnom T3", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.NameKhmer.DefaultCellStyle = DataGridViewCellStyle20
         Me.NameKhmer.FillWeight = 50.72639!
         Me.NameKhmer.HeaderText = "Name Kh"
         Me.NameKhmer.Name = "NameKhmer"
@@ -583,8 +587,8 @@ Partial Class UIScreening
         '
         Me.Age.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
         Me.Age.DataPropertyName = "Age"
-        DataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.Age.DefaultCellStyle = DataGridViewCellStyle13
+        DataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.Age.DefaultCellStyle = DataGridViewCellStyle21
         Me.Age.FillWeight = 50.16895!
         Me.Age.HeaderText = "Age"
         Me.Age.Name = "Age"
@@ -595,8 +599,8 @@ Partial Class UIScreening
         '
         Me.Sex.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
         Me.Sex.DataPropertyName = "Sex"
-        DataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.Sex.DefaultCellStyle = DataGridViewCellStyle14
+        DataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.Sex.DefaultCellStyle = DataGridViewCellStyle22
         Me.Sex.FillWeight = 39.44817!
         Me.Sex.HeaderText = "Sex"
         Me.Sex.Name = "Sex"
@@ -782,7 +786,7 @@ Partial Class UIScreening
         Me.Button13.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button13.ForeColor = System.Drawing.Color.White
         Me.Button13.Image = CType(resources.GetObject("Button13.Image"), System.Drawing.Image)
-        Me.Button13.Location = New System.Drawing.Point(256, 481)
+        Me.Button13.Location = New System.Drawing.Point(314, 690)
         Me.Button13.Name = "Button13"
         Me.Button13.Size = New System.Drawing.Size(36, 30)
         Me.Button13.TabIndex = 19
@@ -792,7 +796,7 @@ Partial Class UIScreening
         'TextBox1
         '
         Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(44, 445)
+        Me.TextBox1.Location = New System.Drawing.Point(60, 688)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(248, 30)
         Me.TextBox1.TabIndex = 18
@@ -825,9 +829,9 @@ Partial Class UIScreening
         Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button1.ForeColor = System.Drawing.Color.White
         Me.Button1.Image = CType(resources.GetObject("Button1.Image"), System.Drawing.Image)
-        Me.Button1.Location = New System.Drawing.Point(8, 100)
+        Me.Button1.Location = New System.Drawing.Point(14, 100)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(112, 282)
+        Me.Button1.Size = New System.Drawing.Size(112, 368)
         Me.Button1.TabIndex = 0
         Me.Button1.Text = "Patient Registration"
         Me.Button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter
@@ -844,9 +848,9 @@ Partial Class UIScreening
         Me.BtnOpticalShop.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnOpticalShop.ForeColor = System.Drawing.Color.White
         Me.BtnOpticalShop.Image = CType(resources.GetObject("BtnOpticalShop.Image"), System.Drawing.Image)
-        Me.BtnOpticalShop.Location = New System.Drawing.Point(405, 100)
+        Me.BtnOpticalShop.Location = New System.Drawing.Point(411, 100)
         Me.BtnOpticalShop.Name = "BtnOpticalShop"
-        Me.BtnOpticalShop.Size = New System.Drawing.Size(382, 93)
+        Me.BtnOpticalShop.Size = New System.Drawing.Size(377, 93)
         Me.BtnOpticalShop.TabIndex = 2
         Me.BtnOpticalShop.Text = "Sale In Optical Shop"
         Me.BtnOpticalShop.TextAlign = System.Drawing.ContentAlignment.BottomCenter
@@ -882,7 +886,7 @@ Partial Class UIScreening
         Me.BtnScreeningSetting.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnScreeningSetting.ForeColor = System.Drawing.Color.White
         Me.BtnScreeningSetting.Image = CType(resources.GetObject("BtnScreeningSetting.Image"), System.Drawing.Image)
-        Me.BtnScreeningSetting.Location = New System.Drawing.Point(126, 289)
+        Me.BtnScreeningSetting.Location = New System.Drawing.Point(126, 375)
         Me.BtnScreeningSetting.Name = "BtnScreeningSetting"
         Me.BtnScreeningSetting.Size = New System.Drawing.Size(252, 93)
         Me.BtnScreeningSetting.TabIndex = 4
@@ -901,7 +905,7 @@ Partial Class UIScreening
         Me.BtnReports.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnReports.ForeColor = System.Drawing.Color.White
         Me.BtnReports.Image = CType(resources.GetObject("BtnReports.Image"), System.Drawing.Image)
-        Me.BtnReports.Location = New System.Drawing.Point(126, 194)
+        Me.BtnReports.Location = New System.Drawing.Point(126, 283)
         Me.BtnReports.Name = "BtnReports"
         Me.BtnReports.Size = New System.Drawing.Size(252, 93)
         Me.BtnReports.TabIndex = 5
@@ -920,7 +924,7 @@ Partial Class UIScreening
         Me.BtnInventory.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnInventory.ForeColor = System.Drawing.Color.White
         Me.BtnInventory.Image = CType(resources.GetObject("BtnInventory.Image"), System.Drawing.Image)
-        Me.BtnInventory.Location = New System.Drawing.Point(558, 194)
+        Me.BtnInventory.Location = New System.Drawing.Point(558, 192)
         Me.BtnInventory.Name = "BtnInventory"
         Me.BtnInventory.Size = New System.Drawing.Size(229, 93)
         Me.BtnInventory.TabIndex = 6
@@ -928,6 +932,44 @@ Partial Class UIScreening
         Me.BtnInventory.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.BtnInventory.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         Me.BtnInventory.UseVisualStyleBackColor = False
+        '
+        'BtnRefractionBook
+        '
+        Me.BtnRefractionBook.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
+        Me.BtnRefractionBook.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnRefractionBook.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.BtnRefractionBook.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver
+        Me.BtnRefractionBook.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnRefractionBook.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnRefractionBook.ForeColor = System.Drawing.Color.White
+        Me.BtnRefractionBook.Image = CType(resources.GetObject("BtnRefractionBook.Image"), System.Drawing.Image)
+        Me.BtnRefractionBook.Location = New System.Drawing.Point(126, 191)
+        Me.BtnRefractionBook.Name = "BtnRefractionBook"
+        Me.BtnRefractionBook.Size = New System.Drawing.Size(252, 93)
+        Me.BtnRefractionBook.TabIndex = 3
+        Me.BtnRefractionBook.Text = "Refraction Book"
+        Me.BtnRefractionBook.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.BtnRefractionBook.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        Me.BtnRefractionBook.UseVisualStyleBackColor = False
+        '
+        'BtnUserManagement
+        '
+        Me.BtnUserManagement.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
+        Me.BtnUserManagement.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnUserManagement.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.BtnUserManagement.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver
+        Me.BtnUserManagement.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnUserManagement.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnUserManagement.ForeColor = System.Drawing.Color.White
+        Me.BtnUserManagement.Image = CType(resources.GetObject("BtnUserManagement.Image"), System.Drawing.Image)
+        Me.BtnUserManagement.Location = New System.Drawing.Point(14, 467)
+        Me.BtnUserManagement.Name = "BtnUserManagement"
+        Me.BtnUserManagement.Size = New System.Drawing.Size(364, 93)
+        Me.BtnUserManagement.TabIndex = 32
+        Me.BtnUserManagement.Text = "Users Management"
+        Me.BtnUserManagement.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.BtnUserManagement.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        Me.BtnUserManagement.UseVisualStyleBackColor = False
         '
         'UIScreening
         '
@@ -1004,5 +1046,7 @@ Partial Class UIScreening
     Friend WithEvents BtnOpticalIncome As System.Windows.Forms.Button
     Friend WithEvents BtnItemTransaction As System.Windows.Forms.Button
     Friend WithEvents Label4 As System.Windows.Forms.Label
+    Friend WithEvents BtnRefractionBook As System.Windows.Forms.Button
+    Friend WithEvents BtnUserManagement As System.Windows.Forms.Button
 
 End Class
