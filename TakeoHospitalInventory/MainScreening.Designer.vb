@@ -25,10 +25,10 @@ Partial Class MainScreening
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MainScreening))
         Me.PanelHeader = New System.Windows.Forms.Panel
         Me.Panel1 = New System.Windows.Forms.Panel
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox
         Me.Label5 = New System.Windows.Forms.Label
         Me.Label3 = New System.Windows.Forms.Label
         Me.Label1 = New System.Windows.Forms.Label
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox
         Me.Label4 = New System.Windows.Forms.Label
         Me.BtnHome = New System.Windows.Forms.Button
         Me.BtnExit = New System.Windows.Forms.Button
@@ -45,6 +45,7 @@ Partial Class MainScreening
         Me.BtnDateTimeServer = New Janus.Windows.Ribbon.LabelCommand
         Me.ContainerPicloading = New Janus.Windows.Ribbon.ContainerControlCommand
         Me.PictureBox3 = New System.Windows.Forms.PictureBox
+        Me.LabelDepartment = New Janus.Windows.Ribbon.LabelCommand
         Me.PanelHeader.SuspendLayout()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -78,6 +79,18 @@ Partial Class MainScreening
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(489, 109)
         Me.Panel1.TabIndex = 0
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
+        Me.PictureBox2.Location = New System.Drawing.Point(174, 2)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(311, 105)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox2.TabIndex = 1
+        Me.PictureBox2.TabStop = False
         '
         'Label5
         '
@@ -114,18 +127,6 @@ Partial Class MainScreening
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "មន្ទីរពេទ្យ ភ្នែក តាកែវ"
         Me.Label1.Visible = False
-        '
-        'PictureBox2
-        '
-        Me.PictureBox2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
-        Me.PictureBox2.Location = New System.Drawing.Point(174, 2)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(311, 105)
-        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox2.TabIndex = 1
-        Me.PictureBox2.TabStop = False
         '
         'Label4
         '
@@ -217,7 +218,7 @@ Partial Class MainScreening
         Me.RibboStatusBar.Name = "RibboStatusBar"
         Me.RibboStatusBar.Office2007ColorScheme = Janus.Windows.Ribbon.Office2007ColorScheme.Custom
         Me.RibboStatusBar.Office2007CustomColor = System.Drawing.Color.Green
-        Me.RibboStatusBar.RightPanelCommands.AddRange(New Janus.Windows.Ribbon.CommandBase() {Me.ContainerPicloading})
+        Me.RibboStatusBar.RightPanelCommands.AddRange(New Janus.Windows.Ribbon.CommandBase() {Me.ContainerPicloading, Me.LabelDepartment})
         Me.RibboStatusBar.ShowToolTips = False
         Me.RibboStatusBar.Size = New System.Drawing.Size(1300, 27)
         '
@@ -302,6 +303,12 @@ Partial Class MainScreening
         Me.PictureBox3.TabIndex = 19
         Me.PictureBox3.TabStop = False
         '
+        'LabelDepartment
+        '
+        Me.LabelDepartment.Key = "LabelDepartment"
+        Me.LabelDepartment.Name = "LabelDepartment"
+        Me.LabelDepartment.Text = ""
+        '
         'MainScreening
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -345,4 +352,5 @@ Partial Class MainScreening
     Friend WithEvents BtnDateTimeServer As Janus.Windows.Ribbon.LabelCommand
     Friend WithEvents PictureBox3 As System.Windows.Forms.PictureBox
     Friend WithEvents ContainerPicloading As Janus.Windows.Ribbon.ContainerControlCommand
+    Friend WithEvents LabelDepartment As Janus.Windows.Ribbon.LabelCommand
 End Class

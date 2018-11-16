@@ -123,69 +123,86 @@
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="BtnNewRefraction.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        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
+        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
 </value>
   </data>
   <data name="BtnParameter.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        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
-        RMTsptnNAAAAAElFTkSuQmCC
+        iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAALoSURBVEhLzZZLSJRhFIa9dNOFtXBRSQXZRqNoIQzRHaMi
+        Wka0CQqiCJI2klltKtqUFbjSwKLQQDOiFkHLNhHkqiJLzEU7kyIiUwlnet6P12nU+b3M/AtfePj+c877
+        nTOX//9mChaUksnkBngMffAlR/pSqVQXa6XbzizMizEPwDM4Q3wqF7QXnkM/8SK3jxbGjRhTrCVO5Sza
+        lLpXtVPRwlQjs8NJopagtDcK6hW2pkVeg2scRitqMPkDys8kPAMsRd4S5Hxeg5/APYfTxJbl1Idhn1NB
+        eQ0mLCc/Brucyirqj6DDYVBeg8nVge7OQqeyCs9+GMG3wqm8B/fDV3gxCy9hHC5667wGV+Htcaj4NvwF
+        fX9zYQQG6VGq/epFXBWaTRWFMmjD1JUJuffwCxK2yrsKdDg0m9N4V7qsQTqAekVmL0GuDcpsDc3Cx8va
+        OgW90057lsId0E32OaOZjlXlmoiX2KubTHsn9fOM/x+7AiUdpkVeH107pSJWHX+fYKvLaVHfTl4v4Km9
+        7TDsclqaQX7ug+EkfINwMmHVoJtwA7bZuwaGqB1njW3wW6h37hw0wGqoYNsF1jrXzsMbiG3wH9jh3N1Q
+        zBC5Vq874TfENngIDjr3AOuyYEDEJcr5+hAMQmyDO+Ghc9WOrxhdh+eUtQN0R8c2eBPokTmmPNZirisE
+        1+HXiOsTMAp6YfEM9vVRGMWm53c31/qIxR7QL5eGHrF3/oNZ9G5qoQV07r4KJkRtC3E36IcgiGvdePp/
+        ttk29dPfJu1Vj1psxcrbP32wjXpedWfqu2sk/ZNV70CPygSX4Za55NwEV0HndROoh3qpZ0u2wZXwHWQ8
+        TD0c8BJxApLaNFdhf+ftepel6gnq/YN4vUuziw33odthpPDoB0Rn9LRjNSfxKnUzjbGWO5VVeOqh12H+
+        YmAhDfUn/axTWUX9AzQ6jEc0vAYfQed0Nq7DOC9yrbfEI5qug9c07omCerPtC1UFBf8AdcUYEe958X0A
+        AAAASUVORK5CYII=
 </value>
   </data>
+  <data name="ToolStripSplitButton1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEeSURBVEhL7ZVNasJQFIUztSMHbqPFsd1A56VraBdQB+7A
+        HbgCwVGFrkDoLjqyO9BRdWDid+RIqvnBNi9g4X1wuHnn3twTSCBJJHJOlmW9NE0fqU+Sr3tutwMhD2hD
+        0Any1PNYeFg+d9CEMpZ8Le/NY3+DBfdodFz8U/hf1Kpg9cruGaGB15fDwBCl3BAU7YRXx5xC/4bmlrqi
+        PlMPH09TsesFrdE36jguB/OOQT3du61gaKd339rKwe+7ObcVDO3UbujbypGpzqXBzH1IPtYSNJjRleRj
+        Lf83mPZCMxUsPFagcTC9GVpaO+t4nnmsAL34jnNkqnNpMHNTycdaggb/hqsP/qQUfm9N5J2iOrhlSoO7
+        qPTXFlBdx0UibZEke0lX3Gm5lAQVAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="BtnRefreshListAprove.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJsSURBVEhLtZbNahRBFIUn0ZUrCW6EPECEaAgBdy4UBAVB
+        SJCIugoSFPzZqUweQJ9BXQUXEcGID2AUF3EVxU0Qsk7AzYw9P/6S9rs9ZzrV1Z1UAlMHDk3dc+490z3d
+        1V07CFqt1sl2u70AP3Q6nbVut3slTdNhyYNHkiQnCHtLWCpusp6QHAec5TVCfjmhTTtzyXFAyC1Ct53Q
+        lPVNyXFAyGlCfruh8Av/6ZAsg4cNJ+SrF2q8LUscEHDZC7RLvN1sNkdkiQNC3Du4z3XJccBlPkzIDy/U
+        uChLEMw4gv+uHVUKg7Od8AL7fCxLEMx4aT0cl1QKA/MFLzAj9Qey7Am8973ee5KKYDO4wdCHfbJLLXmN
+        GdFeuT62y6sakYPaGbS/Xt8fq8uyA4RPrnG/pG9VIzKwPk59y/eJW6bL2gPFUfjdMe2H5h/ViP4NueLo
+        VXxnPrX0wOU+xy/6V2Eu0Xz4z6o1A/Unvm8Xlm9QBi5UGEvEV1dLBmoz1Ar7+W6Ub1qtPXAZhhBe+2aX
+        pptPLfa6HKOe+L4AaUvGNKKHRqNxlOEbFWYL3TBd1gzUVqu8IdL3USN2wP93CgG9YOxYXZYc9iiizztc
+        NH8Fn8Pcx7yLGlGEBuaNrK9L2hMMfOT2Of3nZQmDhmdqfKpSEHgr726Cx2UJwzZ4zqBuR5WCIOSFHwob
+        zDgkSxzwQ7/5wdSWJccBj8gxQkrPM7VLssQBIXf8UPjZfe4HDoYPE1L4RuNM7ZN4SpY4IMCeTzfULvm8
+        5DggxL5Y8k8l1j95/85KjgNCJgnL38Gs35T24UHC/lNC5ghb5/ge1g+0SdRqtf9/EBvfG3mD1AAAAABJ
+        RU5ErkJggg==
+</value>
+  </data>
+  <data name="BtnDeleteRefraction.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGaSURBVEhL7ZY9TsNQEIQtDCVUNKAAV+AECASipkSCQ3AP
+        GgQXoKHn7wKIROK3QqJDoiChggqipLH55mkjnGCw/WwERUYajXff7k4cP/8EQ/wZ4jiehItVMIqimo3N
+        Bg1rsBJgvGVjs0G9M6bpHtn3Ib1XqLfxjqUKQ4ZD40z8B+MHeOjJO2/jKuBlTNMBMu9DerdRb+Phrv4R
+        tIzQswmP4AsUpNpsG1q30nT4GFM7Ay/VJ3D8Bl+lllLuAn7/0qCm6OZaobaJqucM0ZsptFkhuSV4butP
+        yKwzGgQLzjgvGNY13UVS/07y+gF7VnedWkeyd8aZDxDKbqy2joRQt5Ku8bhmSRUrr3WOG6jq151ZEuRz
+        X2NqTq122eITixuwJrX42NZXk3EfyBcxfoYdykctnoA9M+Wldej+AcIxjruwqbgPLBYx/jKEeBq2bUYb
+        TtmSA3ELdiz8REHjXznjzE8fah5R1VZ3jfOAAe+mlezq3J+3DFiAtxxrWLn7uCgYNAfLP7l8wMDyz2pf
+        MDv5dmqZmW4dPeUG3k5B8AFRvdO+/06oKwAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <metadata name="VSForOpticalshop.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>256, 12</value>
+  </metadata>
   <data name="GridRefraction_DesignTimeLayout.LayoutString" xml:space="preserve">
     <value>&lt;GridEXLayoutData&gt;&lt;RootTable&gt;&lt;Columns Collection="true" ElementName="Column"&gt;&lt;Column0 ID="REFRACT_ID"&gt;&lt;Caption&gt;REFRACT_ID&lt;/Caption&gt;&lt;DataMember&gt;REFRACT_ID&lt;/DataMember&gt;&lt;Key&gt;REFRACT_ID&lt;/Key&gt;&lt;Position&gt;0&lt;/Position&gt;&lt;Visible&gt;False&lt;/Visible&gt;&lt;/Column0&gt;&lt;Column1 ID="PATIENT_NO"&gt;&lt;Caption&gt;Patient No&lt;/Caption&gt;&lt;DataMember&gt;PATIENT_NO&lt;/DataMember&gt;&lt;Key&gt;PATIENT_NO&lt;/Key&gt;&lt;Position&gt;1&lt;/Position&gt;&lt;/Column1&gt;&lt;Column2 ID="PATIENT_NAME"&gt;&lt;Caption&gt;Patient Name&lt;/Caption&gt;&lt;DataMember&gt;PATIENT_NAME&lt;/DataMember&gt;&lt;Key&gt;PATIENT_NAME&lt;/Key&gt;&lt;Position&gt;2&lt;/Position&gt;&lt;/Column2&gt;&lt;Column3 ID="PATEINT_SEX"&gt;&lt;Caption&gt;Sex&lt;/Caption&gt;&lt;DataMember&gt;PATEINT_SEX&lt;/DataMember&gt;&lt;Key&gt;PATEINT_SEX&lt;/Key&gt;&lt;Position&gt;3&lt;/Position&gt;&lt;Width&gt;39&lt;/Width&gt;&lt;/Column3&gt;&lt;Column4 ID="PATIENT_AGE"&gt;&lt;Caption&gt;Age&lt;/Caption&gt;&lt;DataMember&gt;PATIENT_AGE&lt;/DataMember&gt;&lt;Key&gt;PATIENT_AGE&lt;/Key&gt;&lt;Position&gt;4&lt;/Position&gt;&lt;Width&gt;42&lt;/Width&gt;&lt;/Column4&gt;&lt;Column5 ID="PATIENT_TEL"&gt;&lt;Caption&gt;Tel&lt;/Caption&gt;&lt;DataMember&gt;PATIENT_TEL&lt;/DataMember&gt;&lt;Key&gt;PATIENT_TEL&lt;/Key&gt;&lt;Position&gt;5&lt;/Position&gt;&lt;Visible&gt;False&lt;/Visible&gt;&lt;Width&gt;59&lt;/Width&gt;&lt;/Column5&gt;&lt;Column6 ID="PATIENT_ADDRESS"&gt;&lt;Caption&gt;Address&lt;/Caption&gt;&lt;DataMember&gt;PATIENT_ADDRESS&lt;/DataMember&gt;&lt;Key&gt;PATIENT_ADDRESS&lt;/Key&gt;&lt;Position&gt;6&lt;/Position&gt;&lt;Width&gt;56&lt;/Width&gt;&lt;/Column6&gt;&lt;Column7 ID="REFRATION_DATE"&gt;&lt;Caption&gt;Refraction Date&lt;/Caption&gt;&lt;DataMember&gt;REFRATION_DATE&lt;/DataMember&gt;&lt;FormatString&gt;dd/MM/yyyy&lt;/FormatString&gt;&lt;Key&gt;REFRATION_DATE&lt;/Key&gt;&lt;Position&gt;7&lt;/Position&gt;&lt;/Column7&gt;&lt;Column8 ID="OLD_LVA"&gt;&lt;Caption&gt;Old LVA&lt;/Caption&gt;&lt;DataMember&gt;OLD_LVA&lt;/DataMember&gt;&lt;Key&gt;OLD_LVA&lt;/Key&gt;&lt;Position&gt;8&lt;/Position&gt;&lt;/Column8&gt;&lt;Column9 ID="OLD_RVA"&gt;&lt;Caption&gt;Old RVA&lt;/Caption&gt;&lt;DataMember&gt;OLD_RVA&lt;/DataMember&gt;&lt;Key&gt;OLD_RVA&lt;/Key&gt;&lt;Position&gt;9&lt;/Position&gt;&lt;/Column9&gt;&lt;Column10 ID="DIAGNOSIS"&gt;&lt;Caption&gt;Diagnosis&lt;/Caption&gt;&lt;DataMember&gt;DIAGNOSIS&lt;/DataMember&gt;&lt;Key&gt;DIAGNOSIS&lt;/Key&gt;&lt;Position&gt;10&lt;/Position&gt;&lt;/Column10&gt;&lt;Column11 ID="R_GLASSES"&gt;&lt;Caption&gt;R Glasses&lt;/Caption&gt;&lt;DataMember&gt;R_GLASSES&lt;/DataMember&gt;&lt;Key&gt;R_GLASSES&lt;/Key&gt;&lt;Position&gt;11&lt;/Position&gt;&lt;/Column11&gt;&lt;Column12 ID="R_AXIS"&gt;&lt;Caption&gt;R AXIS&lt;/Caption&gt;&lt;DataMember&gt;R_AXIS&lt;/DataMember&gt;&lt;Key&gt;R_AXIS&lt;/Key&gt;&lt;Position&gt;12&lt;/Position&gt;&lt;/Column12&gt;&lt;Column13 ID="RVA_REFRACTION"&gt;&lt;Caption&gt;ADD&lt;/Caption&gt;&lt;DataMember&gt;RVA_REFRACTION&lt;/DataMember&gt;&lt;Key&gt;RVA_REFRACTION&lt;/Key&gt;&lt;Position&gt;13&lt;/Position&gt;&lt;/Column13&gt;&lt;Column14 ID="L_GLASSES"&gt;&lt;Caption&gt;L Glasses&lt;/Caption&gt;&lt;DataMember&gt;L_GLASSES&lt;/DataMember&gt;&lt;Key&gt;L_GLASSES&lt;/Key&gt;&lt;Position&gt;14&lt;/Position&gt;&lt;/Column14&gt;&lt;Column15 ID="L_AXIS"&gt;&lt;Caption&gt;L AXIS&lt;/Caption&gt;&lt;DataMember&gt;L_AXIS&lt;/DataMember&gt;&lt;Key&gt;L_AXIS&lt;/Key&gt;&lt;Position&gt;15&lt;/Position&gt;&lt;/Column15&gt;&lt;Column16 ID="LVA_REFRACTION"&gt;&lt;Caption&gt;LVA Refraction&lt;/Caption&gt;&lt;DataMember&gt;LVA_REFRACTION&lt;/DataMember&gt;&lt;Key&gt;LVA_REFRACTION&lt;/Key&gt;&lt;Position&gt;16&lt;/Position&gt;&lt;/Column16&gt;&lt;Column17 ID="RVA_READING"&gt;&lt;Caption&gt;R VA Reading&lt;/Caption&gt;&lt;DataMember&gt;RVA_READING&lt;/DataMember&gt;&lt;Key&gt;RVA_READING&lt;/Key&gt;&lt;Position&gt;17&lt;/Position&gt;&lt;/Column17&gt;&lt;Column18 ID="LVA_READING"&gt;&lt;Caption&gt;L VA Reading&lt;/Caption&gt;&lt;DataMember&gt;LVA_READING&lt;/DataMember&gt;&lt;Key&gt;LVA_READING&lt;/Key&gt;&lt;Position&gt;18&lt;/Position&gt;&lt;/Column18&gt;&lt;Column19 ID="IS_PRESCRIPTION"&gt;&lt;Caption&gt;Improve&lt;/Caption&gt;&lt;ColumnType&gt;CheckBox&lt;/ColumnType&gt;&lt;DataMember&gt;IS_PRESCRIPTION&lt;/DataMember&gt;&lt;EditType&gt;CheckBox&lt;/EditType&gt;&lt;Key&gt;IS_PRESCRIPTION&lt;/Key&gt;&lt;Position&gt;19&lt;/Position&gt;&lt;/Column19&gt;&lt;Column20 ID="PRESCRIPT_STATUS"&gt;&lt;Caption&gt;Prescription Status&lt;/Caption&gt;&lt;DataMember&gt;PRESCRIPT_STATUS&lt;/DataMember&gt;&lt;Key&gt;PRESCRIPT_STATUS&lt;/Key&gt;&lt;Position&gt;20&lt;/Position&gt;&lt;Width&gt;122&lt;/Width&gt;&lt;/Column20&gt;&lt;Column21 ID="REFRACTION_NOTE"&gt;&lt;Caption&gt;Note&lt;/Caption&gt;&lt;DataMember&gt;REFRACTION_NOTE&lt;/DataMember&gt;&lt;Key&gt;REFRACTION_NOTE&lt;/Key&gt;&lt;Position&gt;21&lt;/Position&gt;&lt;/Column21&gt;&lt;Column22 ID="IS_DELETE"&gt;&lt;Caption&gt;IS_DELETE&lt;/Caption&gt;&lt;DataMember&gt;IS_DELETE&lt;/DataMember&gt;&lt;Key&gt;IS_DELETE&lt;/Key&gt;&lt;Position&gt;22&lt;/Position&gt;&lt;Visible&gt;False&lt;/Visible&gt;&lt;/Column22&gt;&lt;Column23 ID="IS_OLD_OR_NEW"&gt;&lt;Caption&gt;IS_OLD_OR_NEW&lt;/Caption&gt;&lt;DataMember&gt;IS_OLD_OR_NEW&lt;/DataMember&gt;&lt;Key&gt;IS_OLD_OR_NEW&lt;/Key&gt;&lt;Position&gt;23&lt;/Position&gt;&lt;Visible&gt;False&lt;/Visible&gt;&lt;/Column23&gt;&lt;/Columns&gt;&lt;FormatConditions Collection="true" ElementName="Condition"&gt;&lt;Condition0 ID="FormatCondition1"&gt;&lt;ColIndex&gt;22&lt;/ColIndex&gt;&lt;FormatStyle&gt;&lt;ForeColor&gt;Red&lt;/ForeColor&gt;&lt;FontStrikeout&gt;True&lt;/FontStrikeout&gt;&lt;/FormatStyle&gt;&lt;PreviewRowFormatStyle&gt;&lt;ForeColor&gt;Red&lt;/ForeColor&gt;&lt;FontStrikeout&gt;True&lt;/FontStrikeout&gt;&lt;/PreviewRowFormatStyle&gt;&lt;Value1&gt;1&lt;/Value1&gt;&lt;Value2&gt;1&lt;/Value2&gt;&lt;Key&gt;FormatCondition1&lt;/Key&gt;&lt;/Condition0&gt;&lt;Condition1 ID="IsPrescriptionRequest"&gt;&lt;ColIndex&gt;19&lt;/ColIndex&gt;&lt;FormatStyle&gt;&lt;BackColor&gt;255, 224, 192&lt;/BackColor&gt;&lt;ForeColor&gt;192, 64, 0&lt;/ForeColor&gt;&lt;/FormatStyle&gt;&lt;PreviewRowFormatStyle&gt;&lt;BackColor&gt;255, 224, 192&lt;/BackColor&gt;&lt;ForeColor&gt;192, 64, 0&lt;/ForeColor&gt;&lt;/PreviewRowFormatStyle&gt;&lt;Value1&gt;1&lt;/Value1&gt;&lt;Value2&gt;1&lt;/Value2&gt;&lt;Key&gt;IsPrescriptionRequest&lt;/Key&gt;&lt;/Condition1&gt;&lt;Condition2 ID="Send"&gt;&lt;ColIndex&gt;20&lt;/ColIndex&gt;&lt;FormatStyle&gt;&lt;BackColor&gt;192, 192, 255&lt;/BackColor&gt;&lt;/FormatStyle&gt;&lt;PreviewRowFormatStyle&gt;&lt;BackColor&gt;192, 192, 255&lt;/BackColor&gt;&lt;/PreviewRowFormatStyle&gt;&lt;Value1&gt;Send&lt;/Value1&gt;&lt;Value2&gt;Send&lt;/Value2&gt;&lt;Key&gt;Send&lt;/Key&gt;&lt;/Condition2&gt;&lt;Condition3 ID="IsPrescriptionApproved"&gt;&lt;ColIndex&gt;20&lt;/ColIndex&gt;&lt;FormatStyle&gt;&lt;BackColor&gt;CornflowerBlue&lt;/BackColor&gt;&lt;ForeColor&gt;192, 64, 0&lt;/ForeColor&gt;&lt;/FormatStyle&gt;&lt;PreviewRowFormatStyle&gt;&lt;BackColor&gt;CornflowerBlue&lt;/BackColor&gt;&lt;ForeColor&gt;192, 64, 0&lt;/ForeColor&gt;&lt;/PreviewRowFormatStyle&gt;&lt;Value1&gt;Received&lt;/Value1&gt;&lt;Value2&gt;Received&lt;/Value2&gt;&lt;Key&gt;IsPrescriptionApproved&lt;/Key&gt;&lt;/Condition3&gt;&lt;/FormatConditions&gt;&lt;GroupCondition /&gt;&lt;RowHeaderContent&gt;RowPosition&lt;/RowHeaderContent&gt;&lt;RowHeight&gt;30&lt;/RowHeight&gt;&lt;/RootTable&gt;&lt;/GridEXLayoutData&gt;</value>
   </data>

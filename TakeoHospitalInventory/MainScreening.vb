@@ -19,6 +19,7 @@
         'CheckPermistionOnForm()
         ' Add any initialization after the InitializeComponent() call.
         AddUserControl(PanelHeader, PanelDedail, UIMainMenu, "", True)
+        LabelDepartment.Text = "USER IN DEPT :" & DEPART_NAME
     End Sub
 
     Sub CreateRegisForm()

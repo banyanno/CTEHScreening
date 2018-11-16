@@ -206,7 +206,7 @@ Partial Class UpdatePatient
         Me.btnSave.ForeColor = System.Drawing.Color.White
         Me.btnSave.Image = CType(resources.GetObject("btnSave.Image"), System.Drawing.Image)
         Me.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnSave.Location = New System.Drawing.Point(324, 457)
+        Me.btnSave.Location = New System.Drawing.Point(96, 459)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(134, 38)
         Me.btnSave.TabIndex = 4
@@ -336,7 +336,7 @@ Partial Class UpdatePatient
         Me.BntClose.ForeColor = System.Drawing.Color.White
         Me.BntClose.Image = CType(resources.GetObject("BntClose.Image"), System.Drawing.Image)
         Me.BntClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BntClose.Location = New System.Drawing.Point(24, 462)
+        Me.BntClose.Location = New System.Drawing.Point(236, 461)
         Me.BntClose.Name = "BntClose"
         Me.BntClose.Size = New System.Drawing.Size(134, 33)
         Me.BntClose.TabIndex = 95
@@ -368,9 +368,9 @@ Partial Class UpdatePatient
         Me.Panel1.Controls.Add(Me.Label16)
         Me.Panel1.Controls.Add(Me.CboSexPatien)
         Me.Panel1.Controls.Add(Me.Label15)
-        Me.Panel1.Location = New System.Drawing.Point(30, 26)
+        Me.Panel1.Location = New System.Drawing.Point(12, 12)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(478, 526)
+        Me.Panel1.Size = New System.Drawing.Size(478, 507)
         Me.Panel1.TabIndex = 96
         '
         'UpdatePatient
@@ -379,7 +379,7 @@ Partial Class UpdatePatient
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(151, Byte), Integer), CType(CType(197, Byte), Integer), CType(CType(249, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(539, 574)
+        Me.ClientSize = New System.Drawing.Size(503, 543)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.MaximizeBox = False

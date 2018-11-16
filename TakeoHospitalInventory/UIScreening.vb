@@ -295,7 +295,140 @@
         End If
     End Sub
 
+    Sub CheckPermistionOnForm()
+        'Try
+        Dim tblPermistion As DataTable = ModUser.GetMenuPermission(USER_NAME)
+        Dim indexBar As Integer
+        Dim indexSubBar As Integer
+        Dim indexMenu As Integer
+        Application.DoEvents()
 
+        For Each ctl As Control In Me.Panel2.Controls
+            If TypeOf ctl Is Button Then
+                For Each row As DataRow In tblPermistion.Rows
+                    If ctl.Text = row("MenuNo") Then
+                        ' MessageBox.Show(row("MenuNo"))
+                        ctl.Enabled = True
+                    End If
+
+                Next
+            End If
+
+        Next
+
+      
+
+        ''--- Department Permission
+        'For indexBar = 0 To MainuDepartmentInventory.Groups.Count - 1
+        '    For indexSubBar = 0 To MainuDepartmentInventory.Groups(indexBar).Items.Count - 1
+        '        For indexMenu = 0 To tblPermistion.Rows.Count - 1
+        '            Application.DoEvents()
+        '            'MsgBox(BottonBarMain.Groups(indexBar).Items(indexSubBar).Key & "    " & tblPermistion.Rows(indexMenu).Item(0))                    
+        '            If MainuDepartmentInventory.Groups(indexBar).Items(indexSubBar).Key = tblPermistion.Rows(indexMenu).Item(0) Then
+        '                'Login.UpdateLabelStatus("Checking menu name " & BottonBarMain.Groups(indexBar).Items(indexSubBar).Text, True)
+        '                'Application.DoEvents()
+        '                MainuDepartmentInventory.Groups(indexBar).Items(indexSubBar).Enabled = Janus.Windows.UI.InheritableBoolean.True
+        '            End If
+        '        Next
+        '    Next
+        'Next
+        'Login.UpdateLabelStatus("Checking user permistion...", True)
+
+        ''--- OpticalShop Permission        
+        'For indexBar = 0 To ButtonBarOpticalShop.Groups.Count - 1
+        '    For indexSubBar = 0 To ButtonBarOpticalShop.Groups(indexBar).Items.Count - 1
+        '        For indexMenu = 0 To tblPermistion.Rows.Count - 1
+        '            Login.UpdateLabelStatus("Checking user permistion...", True)
+        '            Application.DoEvents()
+        '            'MsgBox(BottonBarMain.Groups(indexBar).Items(indexSubBar).Key & "    " & tblPermistion.Rows(indexMenu).Item(0))                    
+        '            If ButtonBarOpticalShop.Groups(indexBar).Items(indexSubBar).Key = tblPermistion.Rows(indexMenu).Item(0) Then
+        '                'Login.UpdateLabelStatus("Checking menu name " & BottonBarMain.Groups(indexBar).Items(indexSubBar).Text, True)
+        '                'Application.DoEvents()
+        '                ButtonBarOpticalShop.Groups(indexBar).Items(indexSubBar).Enabled = Janus.Windows.UI.InheritableBoolean.True
+        '            End If
+        '        Next
+        '    Next
+        'Next
+
+        ''--- MAIN INVEN Permission 
+        'For indexBar = 0 To ButtonMainInventory.Groups.Count - 1
+        '    For indexSubBar = 0 To ButtonMainInventory.Groups(indexBar).Items.Count - 1
+        '        For indexMenu = 0 To tblPermistion.Rows.Count - 1
+        '            Login.UpdateLabelStatus("Checking user permistion...", True)
+        '            Application.DoEvents()
+        '            'MsgBox(BottonBarMain.Groups(indexBar).Items(indexSubBar).Key & "    " & tblPermistion.Rows(indexMenu).Item(0))                    
+        '            If ButtonMainInventory.Groups(indexBar).Items(indexSubBar).Key = tblPermistion.Rows(indexMenu).Item(0) Then
+        '                'Login.UpdateLabelStatus("Checking menu name " & BottonBarMain.Groups(indexBar).Items(indexSubBar).Text, True)
+        '                'Application.DoEvents()
+        '                ButtonMainInventory.Groups(indexBar).Items(indexSubBar).Enabled = Janus.Windows.UI.InheritableBoolean.True
+        '            End If
+        '        Next
+        '    Next
+        'Next
+
+        ''--- Pharmacy Permission
+        'For indexBar = 0 To ButtonBarPharmacy.Groups.Count - 1
+        '    For indexSubBar = 0 To ButtonBarPharmacy.Groups(indexBar).Items.Count - 1
+        '        For indexMenu = 0 To tblPermistion.Rows.Count - 1
+        '            Login.UpdateLabelStatus("Checking user permistion...", True)
+        '            Application.DoEvents()
+        '            'MsgBox(BottonBarMain.Groups(indexBar).Items(indexSubBar).Key & "    " & tblPermistion.Rows(indexMenu).Item(0))                    
+        '            If ButtonBarPharmacy.Groups(indexBar).Items(indexSubBar).Key = tblPermistion.Rows(indexMenu).Item(0) Then
+        '                'Login.UpdateLabelStatus("Checking menu name " & BottonBarMain.Groups(indexBar).Items(indexSubBar).Text, True)
+        '                'Application.DoEvents()
+        '                ButtonBarPharmacy.Groups(indexBar).Items(indexSubBar).Enabled = Janus.Windows.UI.InheritableBoolean.True
+        '            End If
+        '        Next
+        '    Next
+        'Next
+
+        ''--- Preferences Permission        
+        'For indexBar = 0 To ButtonBarPreferences.Groups.Count - 1
+        '    For indexSubBar = 0 To ButtonBarPreferences.Groups(indexBar).Items.Count - 1
+        '        For indexMenu = 0 To tblPermistion.Rows.Count - 1
+        '            Login.UpdateLabelStatus("Checking user permistion...", True)
+        '            Application.DoEvents()
+        '            'MsgBox(BottonBarMain.Groups(indexBar).Items(indexSubBar).Key & "    " & tblPermistion.Rows(indexMenu).Item(0))                    
+        '            If ButtonBarPreferences.Groups(indexBar).Items(indexSubBar).Key = tblPermistion.Rows(indexMenu).Item(0) Then
+        '                'Login.UpdateLabelStatus("Checking menu name " & BottonBarMain.Groups(indexBar).Items(indexSubBar).Text, True)
+        '                'Application.DoEvents()
+        '                ButtonBarPreferences.Groups(indexBar).Items(indexSubBar).Enabled = Janus.Windows.UI.InheritableBoolean.True
+        '            End If
+        '        Next
+        '    Next
+        'Next
+
+
+        ''--- Takeo Eye Operation Permission
+        'For indexBar = 0 To BottonBarMain.Groups.Count - 1
+        '    For indexSubBar = 0 To BottonBarMain.Groups(indexBar).Items.Count - 1
+        '        For indexMenu = 0 To tblPermistion.Rows.Count - 1
+        '            Login.UpdateLabelStatus("Checking user permistion...", True)
+        '            Application.DoEvents()
+        '            'MsgBox(BottonBarMain.Groups(indexBar).Items(indexSubBar).Key & "    " & tblPermistion.Rows(indexMenu).Item(0))                    
+        '            If BottonBarMain.Groups(indexBar).Items(indexSubBar).Key = tblPermistion.Rows(indexMenu).Item(0) Then
+        '                'Login.UpdateLabelStatus("Checking menu name " & BottonBarMain.Groups(indexBar).Items(indexSubBar).Text, True)
+        '                'Application.DoEvents()
+        '                BottonBarMain.Groups(indexBar).Items(indexSubBar).Enabled = Janus.Windows.UI.InheritableBoolean.True
+        '                'For i As Integer = 0 To TBLACCESS_ROLE.Rows.Count - 1
+        '                '    With TBLACCESS_ROLE.Rows(i)
+        '                '        If .Item(0) = "Wards" And BottonBarMain.Groups(indexBar).Items(indexSubBar).Key = "PatientPayment" Then    '------------Ward permission on Patient Payment on weekend----------
+        '                '            If Today.DayOfWeek = DayOfWeek.Saturday Or Today.DayOfWeek = DayOfWeek.Sunday Then
+        '                '                BottonBarMain.Groups(indexBar).Items(indexSubBar).Enabled = True
+        '                '            End If
+        '                '        Else      '----------------------------For all permission refered to roles----------------------------------
+        '                '            BottonBarMain.Groups(indexBar).Items(indexSubBar).Enabled = Janus.Windows.UI.InheritableBoolean.True
+        '                '        End If
+        '                '    End With
+        '                'Next
+        '            End If
+        '        Next
+        '    Next
+        'Next
+
+
+
+    End Sub
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
         'SetVisibleEnvisibleMenu()
         AddUserControl(UIMainScreening.PanelHeader, UIMainScreening.PanelDedail, PatientPayment, "", True)
@@ -363,5 +496,9 @@
 
         AddUserControl(UIMainScreening.PanelHeader, UIMainScreening.PanelDedail, Department, "", True)
         Department.InitDepartment()
+    End Sub
+
+    Private Sub UIScreening_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        CheckPermistionOnForm()
     End Sub
 End Class

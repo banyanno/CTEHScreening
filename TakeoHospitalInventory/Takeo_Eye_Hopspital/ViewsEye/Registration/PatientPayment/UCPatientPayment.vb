@@ -1615,4 +1615,11 @@ Public Class UCPatientPayment
     Private Sub BgLoading_RunWorkerCompleted(ByVal sender As System.Object, ByVal e As System.ComponentModel.RunWorkerCompletedEventArgs) Handles BgLoading.RunWorkerCompleted
         UIMainScreening.StatusLoading(False, "Loading")
     End Sub
+
+    Private Sub GridPatientInformation_RowDoubleClick(ByVal sender As System.Object, ByVal e As Janus.Windows.GridEX.RowActionEventArgs) Handles GridPatientInformation.RowDoubleClick
+        If GridPatientInformation.SelectedItems.Count = 0 Then Exit Sub
+        Dim FUpdatePatient As New UpdatePatient(Me)
+        ViewPatientDetail(FUpdatePatient)
+        FUpdatePatient.ShowDialog()
+    End Sub
 End Class

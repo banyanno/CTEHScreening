@@ -25,6 +25,7 @@ Partial Class MainRefraction
         Me.components = New System.ComponentModel.Container
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MainRefraction))
         Dim GridRefraction_DesignTimeLayout As Janus.Windows.GridEX.GridEXLayout = New Janus.Windows.GridEX.GridEXLayout
+        Dim JanusColorScheme2 As Janus.Windows.Common.JanusColorScheme = New Janus.Windows.Common.JanusColorScheme
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator
         Me.BtnNewRefraction = New System.Windows.Forms.ToolStripButton
@@ -76,6 +77,7 @@ Partial Class MainRefraction
         Me.RadRepNew = New System.Windows.Forms.RadioButton
         Me.RadReportAll = New System.Windows.Forms.RadioButton
         Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
+        Me.VSForOpticalshop = New Janus.Windows.Common.VisualStyleManager(Me.components)
         Me.ToolStrip1.SuspendLayout()
         CType(Me.UiTab1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.UiTab1.SuspendLayout()
@@ -97,7 +99,9 @@ Partial Class MainRefraction
         '
         'ToolStrip1
         '
+        Me.ToolStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(124, Byte), Integer))
         Me.ToolStrip1.Font = New System.Drawing.Font("Segoe UI", 12.0!)
+        Me.ToolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden
         Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(25, 25)
         Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripSeparator1, Me.BtnNewRefraction, Me.ToolStripSeparator3, Me.BtnParameter, Me.ToolStripSeparator2, Me.ToolStripSplitButton1, Me.ToolStripSeparator5, Me.BtnRefreshListAprove, Me.ToolStripSeparator6, Me.BtnDeleteRefraction, Me.ToolStripSeparator4})
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
@@ -113,7 +117,7 @@ Partial Class MainRefraction
         '
         'BtnNewRefraction
         '
-        Me.BtnNewRefraction.ForeColor = System.Drawing.Color.Blue
+        Me.BtnNewRefraction.ForeColor = System.Drawing.Color.White
         Me.BtnNewRefraction.Image = CType(resources.GetObject("BtnNewRefraction.Image"), System.Drawing.Image)
         Me.BtnNewRefraction.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.BtnNewRefraction.Name = "BtnNewRefraction"
@@ -129,7 +133,7 @@ Partial Class MainRefraction
         'BtnParameter
         '
         Me.BtnParameter.Enabled = False
-        Me.BtnParameter.ForeColor = System.Drawing.Color.Blue
+        Me.BtnParameter.ForeColor = System.Drawing.Color.White
         Me.BtnParameter.Image = CType(resources.GetObject("BtnParameter.Image"), System.Drawing.Image)
         Me.BtnParameter.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.BtnParameter.Name = "BtnParameter"
@@ -146,8 +150,8 @@ Partial Class MainRefraction
         '
         Me.ToolStripSplitButton1.DropDownButtonWidth = 25
         Me.ToolStripSplitButton1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BtnReqPrescription, Me.ToolStripMenuItem1, Me.BtnAprovPrescription})
-        Me.ToolStripSplitButton1.ForeColor = System.Drawing.Color.Blue
-        Me.ToolStripSplitButton1.Image = Global.TakeoHospitalInventory.My.Resources.Resources.icons8_doctors_bag_48
+        Me.ToolStripSplitButton1.ForeColor = System.Drawing.Color.White
+        Me.ToolStripSplitButton1.Image = CType(resources.GetObject("ToolStripSplitButton1.Image"), System.Drawing.Image)
         Me.ToolStripSplitButton1.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.ToolStripSplitButton1.Name = "ToolStripSplitButton1"
         Me.ToolStripSplitButton1.Size = New System.Drawing.Size(123, 50)
@@ -181,8 +185,8 @@ Partial Class MainRefraction
         '
         'BtnRefreshListAprove
         '
-        Me.BtnRefreshListAprove.ForeColor = System.Drawing.Color.Blue
-        Me.BtnRefreshListAprove.Image = Global.TakeoHospitalInventory.My.Resources.Resources.refresh
+        Me.BtnRefreshListAprove.ForeColor = System.Drawing.Color.White
+        Me.BtnRefreshListAprove.Image = CType(resources.GetObject("BtnRefreshListAprove.Image"), System.Drawing.Image)
         Me.BtnRefreshListAprove.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.BtnRefreshListAprove.Name = "BtnRefreshListAprove"
         Me.BtnRefreshListAprove.Size = New System.Drawing.Size(134, 50)
@@ -197,8 +201,8 @@ Partial Class MainRefraction
         'BtnDeleteRefraction
         '
         Me.BtnDeleteRefraction.Enabled = False
-        Me.BtnDeleteRefraction.ForeColor = System.Drawing.Color.Blue
-        Me.BtnDeleteRefraction.Image = Global.TakeoHospitalInventory.My.Resources.Resources.delete_appointment
+        Me.BtnDeleteRefraction.ForeColor = System.Drawing.Color.White
+        Me.BtnDeleteRefraction.Image = CType(resources.GetObject("BtnDeleteRefraction.Image"), System.Drawing.Image)
         Me.BtnDeleteRefraction.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.BtnDeleteRefraction.Name = "BtnDeleteRefraction"
         Me.BtnDeleteRefraction.Size = New System.Drawing.Size(133, 50)
@@ -215,10 +219,12 @@ Partial Class MainRefraction
         Me.UiTab1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.UiTab1.Location = New System.Drawing.Point(0, 53)
         Me.UiTab1.Name = "UiTab1"
+        Me.UiTab1.Office2007ColorScheme = Janus.Windows.UI.Office2007ColorScheme.Silver
         Me.UiTab1.Size = New System.Drawing.Size(842, 707)
         Me.UiTab1.TabIndex = 3
         Me.UiTab1.TabPages.AddRange(New Janus.Windows.UI.Tab.UITabPage() {Me.UiTabPage1, Me.UiTabPage2})
         Me.UiTab1.TabStripAlignment = Janus.Windows.UI.Tab.TabStripAlignment.Left
+        Me.UiTab1.VisualStyleManager = Me.VSForOpticalshop
         '
         'UiTabPage1
         '
@@ -226,7 +232,7 @@ Partial Class MainRefraction
         Me.UiTabPage1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.UiTabPage1.Location = New System.Drawing.Point(28, 1)
         Me.UiTabPage1.Name = "UiTabPage1"
-        Me.UiTabPage1.Size = New System.Drawing.Size(811, 703)
+        Me.UiTabPage1.Size = New System.Drawing.Size(813, 705)
         Me.UiTabPage1.StateStyles.FormatStyle.FontSize = 12.0!
         Me.UiTabPage1.StateStyles.FormatStyle.ForeColor = System.Drawing.Color.Blue
         Me.UiTabPage1.TabStop = True
@@ -246,8 +252,8 @@ Partial Class MainRefraction
         'SplitContainer1.Panel2
         '
         Me.SplitContainer1.Panel2.Controls.Add(Me.GroupBox1)
-        Me.SplitContainer1.Size = New System.Drawing.Size(811, 703)
-        Me.SplitContainer1.SplitterDistance = 544
+        Me.SplitContainer1.Size = New System.Drawing.Size(813, 705)
+        Me.SplitContainer1.SplitterDistance = 546
         Me.SplitContainer1.TabIndex = 0
         '
         'GridRefraction
@@ -261,10 +267,13 @@ Partial Class MainRefraction
         Me.GridRefraction.GroupByBoxVisible = False
         Me.GridRefraction.Location = New System.Drawing.Point(0, 0)
         Me.GridRefraction.Name = "GridRefraction"
+        Me.GridRefraction.Office2007ColorScheme = Janus.Windows.GridEX.Office2007ColorScheme.Silver
+        Me.GridRefraction.Office2007CustomColor = System.Drawing.SystemColors.Control
         Me.GridRefraction.RecordNavigator = True
         Me.GridRefraction.RowHeaders = Janus.Windows.GridEX.InheritableBoolean.[True]
-        Me.GridRefraction.Size = New System.Drawing.Size(544, 703)
+        Me.GridRefraction.Size = New System.Drawing.Size(546, 705)
         Me.GridRefraction.TabIndex = 0
+        Me.GridRefraction.VisualStyleManager = Me.VSForOpticalshop
         '
         'GroupBox1
         '
@@ -279,7 +288,7 @@ Partial Class MainRefraction
         Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.Location = New System.Drawing.Point(0, 0)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(263, 703)
+        Me.GroupBox1.Size = New System.Drawing.Size(263, 705)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Find Refraction By:"
@@ -358,7 +367,7 @@ Partial Class MainRefraction
         Me.UiTabPage2.Controls.Add(Me.SplitContainer2)
         Me.UiTabPage2.Location = New System.Drawing.Point(28, 1)
         Me.UiTabPage2.Name = "UiTabPage2"
-        Me.UiTabPage2.Size = New System.Drawing.Size(811, 703)
+        Me.UiTabPage2.Size = New System.Drawing.Size(813, 705)
         Me.UiTabPage2.StateStyles.FormatStyle.FontSize = 12.0!
         Me.UiTabPage2.StateStyles.FormatStyle.ForeColor = System.Drawing.Color.Blue
         Me.UiTabPage2.TabStop = True
@@ -378,8 +387,8 @@ Partial Class MainRefraction
         'SplitContainer2.Panel2
         '
         Me.SplitContainer2.Panel2.Controls.Add(Me.GroupBox2)
-        Me.SplitContainer2.Size = New System.Drawing.Size(811, 703)
-        Me.SplitContainer2.SplitterDistance = 543
+        Me.SplitContainer2.Size = New System.Drawing.Size(813, 705)
+        Me.SplitContainer2.SplitterDistance = 545
         Me.SplitContainer2.TabIndex = 0
         '
         'CrystalReportViewer1
@@ -393,7 +402,7 @@ Partial Class MainRefraction
         Me.CrystalReportViewer1.Name = "CrystalReportViewer1"
         Me.CrystalReportViewer1.SelectionFormula = ""
         Me.CrystalReportViewer1.ShowGroupTreeButton = False
-        Me.CrystalReportViewer1.Size = New System.Drawing.Size(543, 703)
+        Me.CrystalReportViewer1.Size = New System.Drawing.Size(545, 705)
         Me.CrystalReportViewer1.TabIndex = 0
         Me.CrystalReportViewer1.ViewTimeSelectionFormula = ""
         '
@@ -405,7 +414,7 @@ Partial Class MainRefraction
         Me.GroupBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox2.Location = New System.Drawing.Point(0, 0)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(264, 703)
+        Me.GroupBox2.Size = New System.Drawing.Size(264, 705)
         Me.GroupBox2.TabIndex = 1
         Me.GroupBox2.TabStop = False
         '
@@ -622,10 +631,35 @@ Partial Class MainRefraction
         '
         Me.ErrorProvider1.ContainerControl = Me
         '
+        'VSForOpticalshop
+        '
+        JanusColorScheme2.ActiveCaptionColor = System.Drawing.Color.Tomato
+        JanusColorScheme2.ActiveCaptionTextColor = System.Drawing.Color.White
+        JanusColorScheme2.ControlDarkColor = System.Drawing.SystemColors.Control
+        JanusColorScheme2.ControlTextColor = System.Drawing.Color.Black
+        JanusColorScheme2.DisabledColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(150, Byte), Integer), CType(CType(102, Byte), Integer))
+        JanusColorScheme2.GrayTextColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
+        JanusColorScheme2.HighlightColor = System.Drawing.Color.FromArgb(CType(CType(43, Byte), Integer), CType(CType(99, Byte), Integer), CType(CType(67, Byte), Integer))
+        JanusColorScheme2.HighlightTextColor = System.Drawing.Color.WhiteSmoke
+        JanusColorScheme2.InfoColor = System.Drawing.Color.WhiteSmoke
+        JanusColorScheme2.InfoTextColor = System.Drawing.Color.FloralWhite
+        JanusColorScheme2.MenuColor = System.Drawing.SystemColors.ActiveCaption
+        JanusColorScheme2.MenuTextColor = System.Drawing.Color.DimGray
+        JanusColorScheme2.Name = "Header"
+        JanusColorScheme2.Office2007ColorScheme = Janus.Windows.Common.Office2007ColorScheme.Silver
+        JanusColorScheme2.Office2007CustomColor = System.Drawing.SystemColors.Control
+        JanusColorScheme2.UseThemes = False
+        JanusColorScheme2.VisualStyle = Janus.Windows.Common.VisualStyle.Standard
+        JanusColorScheme2.WindowColor = System.Drawing.Color.White
+        JanusColorScheme2.WindowTextColor = System.Drawing.Color.DarkBlue
+        Me.VSForOpticalshop.ColorSchemes.Add(JanusColorScheme2)
+        Me.VSForOpticalshop.DefaultColorScheme = "Header"
+        '
         'MainRefraction
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(236, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(241, Byte), Integer))
         Me.Controls.Add(Me.UiTab1)
         Me.Controls.Add(Me.ToolStrip1)
         Me.Name = "MainRefraction"
@@ -706,5 +740,6 @@ Partial Class MainRefraction
     Friend WithEvents RadStatistictOld As System.Windows.Forms.RadioButton
     Friend WithEvents RadStatisticNew As System.Windows.Forms.RadioButton
     Friend WithEvents RadStatisticAll As System.Windows.Forms.RadioButton
+    Friend WithEvents VSForOpticalshop As Janus.Windows.Common.VisualStyleManager
 
 End Class
