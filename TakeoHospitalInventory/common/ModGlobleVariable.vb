@@ -33,6 +33,7 @@
     Public FRM_LOG_IN As String
     Public LOG_ON_TIME As String
     Public FRM_USER_ACOUNT As String
+    Public DATE_DEFAULT_SETTING As Date
 
     ' Create Agent
     'Public myCharacter As AxAgentObjects.AxAgentEventMulticaster

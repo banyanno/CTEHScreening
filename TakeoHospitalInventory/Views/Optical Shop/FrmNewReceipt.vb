@@ -51,6 +51,9 @@ Public Class FrmNewReceipt
     Private ItemPrice As New DSItemPriceTableAdapters.VItemPriceOpticalShopTableAdapter
 
     Dim IsDolar As Boolean = True
+
+
+    Dim DAPatient As New DSCustomerTableAdapters.TblPatientsTableAdapter
     Sub New(ByVal MainReceipt As MainOpticalShop)
         ' This call is required by the Windows Form Designer.
         InitializeComponent()
@@ -144,7 +147,7 @@ Public Class FrmNewReceipt
     End Sub
 
     Private Sub BtnAddItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnAddItem.Click
-        If TxtCustomerNo.Text = "" Then
+        If TxtSearchPNo.Text = "" Then
             MessageBox.Show("Please select customer first before add Item.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Exit Sub
         End If
@@ -302,7 +305,7 @@ Public Class FrmNewReceipt
                 lblConsultFor.Text = rows("CONSULT_FOR")
                 DateConsult.Value = rows("CONSULING_DATE")
                 DateCreateReceipt.Checked = True
-                DateCreateReceipt.Value = CheckMarkEOD() 'DateConsult.Value
+                DateCreateReceipt.Value = DATE_DEFAULT_SETTING 'CheckMarkEOD() 'DateConsult.Value
                 LblSendBy.Text = rows("APROVE_BY")
                 If rows("DONATE_TYPE") = "Nil" Then
                     RadNil.Checked = True
@@ -482,7 +485,7 @@ Public Class FrmNewReceipt
             LblSendBy.Text = "No Consult"
             DateConsult.Value = Now
             DateCreateReceipt.Checked = True
-            DateCreateReceipt.Value = CheckMarkEOD()
+            DateCreateReceipt.Value = DATE_DEFAULT_SETTING 'CheckMarkEOD()
             LblTotalConsult.Text = "Total Consult: 0"
             GroupPayCorrency.Enabled = True
             GroupBox5.Enabled = True
@@ -503,8 +506,8 @@ Public Class FrmNewReceipt
         ' GetBarcod()
         If IS_UPDATE = False Then
             DateCreateReceipt.Checked = True
-            DateCreateReceipt.Value = CheckMarkEOD()
-            DateCreateReceipt.Enabled = False
+            DateCreateReceipt.Value = DATE_DEFAULT_SETTING 'CheckMarkEOD()
+            'DateCreateReceipt.Enabled = False
         End If
         '--- Loading invoice information for edit invoice purpose
         If LblSaveStatus.Text <> "0" Then
@@ -540,7 +543,7 @@ Public Class FrmNewReceipt
             If TypeOf row("Sex") Is DBNull = False Then TxtSex.Text = row("Sex")
             If TypeOf row("Age") Is DBNull = False Then TxtAge.Text = row("Age")
             If TypeOf row("Address") Is DBNull = False Then txtAddress.Text = row("Address")
-            If TypeOf row("CustomerNo") Is DBNull = False Then TxtCustomerNo.Text = row("CustomerNo")
+            If TypeOf row("CustomerNo") Is DBNull = False Then TxtSearchPNo.Text = row("CustomerNo")
         Next
     End Sub
 
@@ -671,8 +674,8 @@ Public Class FrmNewReceipt
 
     Private Sub BtnSaveReceipt_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnSaveReceipt.Click
         DateCreateReceipt.Checked = True
-        DateCreateReceipt.Value = CheckMarkEOD()
-        DateCreateReceipt.Enabled = False
+        DateCreateReceipt.Value = DATE_DEFAULT_SETTING 'CheckMarkEOD()
+        'DateCreateReceipt.Enabled = False
         BgSaveAndPrinting.RunWorkerAsync()
     End Sub
 
@@ -680,7 +683,7 @@ Public Class FrmNewReceipt
         Dim FUMainCustomer As New MainCustomer(Me)
         If FUMainCustomer.ShowDialog = DialogResult.OK Then
             Me.TxtCustomerID.Text = FUMainCustomer.GridCustomer.SelectedItems(0).GetRow.Cells("CustID").Value
-            Me.TxtCustomerNo.Text = FUMainCustomer.GridCustomer.GetRow.Cells("CustomerNo").Value
+            Me.TxtSearchPNo.Text = FUMainCustomer.GridCustomer.GetRow.Cells("CustomerNo").Value
             Me.TxtCustomerName.Text = FUMainCustomer.GridCustomer.SelectedItems(0).GetRow.Cells("CusName").Value
             Me.TxtCusNameEng.Text = FUMainCustomer.GridCustomer.SelectedItems(0).GetRow.Cells("CusNameEng").Value
             Me.LblCombindReferal.Text = ModNew_Outpatient.Get_CombindReferalInPatient(FUMainCustomer.GridCustomer.GetRow.Cells("CustomerNo").Value)
@@ -819,7 +822,7 @@ Public Class FrmNewReceipt
                     ObjReceipt.TIME_CREATE = Format(GetDateServer, "hh:mm:ss tt").ToString
 
                     '--- In Case user select Customer
-                    ObjReceipt.CustomerNo = EmptyString(TxtCustomerNo.Text)
+                    ObjReceipt.CustomerNo = EmptyString(TxtSearchPNo.Text)
                     ObjReceipt.CustID = EmptyString(TxtCustomerID.Text)
 
                     'Case Patient not yet add to table Receipt_Customer
@@ -981,7 +984,7 @@ Public Class FrmNewReceipt
                         ObjTblPatientReceipt.DateUpdate = Format(Date.Now(), "MM/dd/yyyy")
                         ObjTblPatientReceipt.ReceiptNo = TxtReceiptNo.Text
                         ObjTblPatientReceipt.IDCashReceipt = 0
-                        ObjTblPatientReceipt.HN = TxtCustomerNo.Text
+                        ObjTblPatientReceipt.HN = TxtSearchPNo.Text
                         ObjTblPatientReceipt.PatientName = TxtCustomerName.Text
                         ObjTblPatientReceipt.CashTotal = TxtTotalAsDolar.Text
                         '======== Set valud Cashe
@@ -1202,335 +1205,433 @@ Public Class FrmNewReceipt
                     '============================= Start Save In Optical Receipt ======================================
 
                 Else '--- Add New
-                    Try
-                        If MCashReceipt.CheckDuplicateReceiptNo(Me.TxtReceiptNo.Text, "tblPatientReceipt") = True Then
-                            LoadNewReceiptNo()
-                        End If
-                        Dim ReceiptType As String = ""
-                        UIMainScreening.StatusLoading(True, "Loading")
-                        Application.DoEvents()
+                    ' Try
+                    If MCashReceipt.CheckDuplicateReceiptNo(Me.TxtReceiptNo.Text, "tblPatientReceipt") = True Then
+                        LoadNewReceiptNo()
+                    End If
+                    Dim ReceiptType As String = ""
+                    UIMainScreening.StatusLoading(True, "Loading")
+                    Application.DoEvents()
 
-                        '-------- Set Object For Receip TblPatientReceipt----------
-                        Dim ObjTblPatientReceipt As New tblPatientReceipt
-                        ObjTblPatientReceipt.DateIn = DateCreateReceipt.Value
-                        ObjTblPatientReceipt.DateUpdate = Format(Date.Now(), "MM/dd/yyyy")
-                        ObjTblPatientReceipt.ReceiptNo = TxtReceiptNo.Text
-                        ObjTblPatientReceipt.IDCashReceipt = 0
-                        ObjTblPatientReceipt.HN = TxtCustomerNo.Text
-                        ObjTblPatientReceipt.PatientName = TxtCustomerName.Text
-                        ObjTblPatientReceipt.CashTotal = TxtTotalAsDolar.Text
-                        ObjTblPatientReceipt.TIME_CREATE = Format(GetDateServer, "hh:mm:ss tt").ToString 'Format(GetDateServ, "hh:mm:ss tt").ToString
-                        ' Save traking time
-                        DA_PTrackingTime.UpdateOPT(Format(GetDateServer, "hh:mm:ss tt").ToString, TxtCustomerNo.Text, CheckMarkEOD().Date)
+                    '-------- Set Object For Receip TblPatientReceipt----------
+                    Dim ObjTblPatientReceipt As New tblPatientReceipt
+                    ObjTblPatientReceipt.DateIn = DateCreateReceipt.Value
+                    ObjTblPatientReceipt.DateUpdate = Format(Date.Now(), "MM/dd/yyyy")
+                    ObjTblPatientReceipt.ReceiptNo = TxtReceiptNo.Text
+                    ObjTblPatientReceipt.IDCashReceipt = 0
+                    ObjTblPatientReceipt.HN = TxtSearchPNo.Text
+                    ObjTblPatientReceipt.PatientName = TxtCustomerName.Text
+                    ObjTblPatientReceipt.CashTotal = TxtTotalAsDolar.Text
+                    ObjTblPatientReceipt.TIME_CREATE = Format(GetDateServer, "hh:mm:ss tt").ToString 'Format(GetDateServ, "hh:mm:ss tt").ToString
+                    ' Save traking time
+                    DA_PTrackingTime.UpdateOPT(Format(GetDateServer, "hh:mm:ss tt").ToString, TxtSearchPNo.Text, CheckMarkEOD().Date)
 
-                        '======== Set valud Cashe
-                        ObjTblPatientReceipt.CashUSD = 0
-                        ObjTblPatientReceipt.CashRiel = 0
-                        ObjTblPatientReceipt.TotalUSD = 0
-                        ObjTblPatientReceipt.TotalRiel = 0
-                        ObjTblPatientReceipt.GlassFeeUSD = 0
-                        ObjTblPatientReceipt.GlassFeeRiel = 0
-                        ObjTblPatientReceipt.MedicineFeeRiel = 0
-                        ObjTblPatientReceipt.MedicineFeeUSD = 0
-                        ObjTblPatientReceipt.OtherFeeUSD = 0
-                        ObjTblPatientReceipt.OtherFeeRiel = 0
-                        ObjTblPatientReceipt.ConsultationFeeRiel = 0
-                        ObjTblPatientReceipt.ConsultationFeeUSD = 0
-                        ObjTblPatientReceipt.FollowUpFeeRiel = 0
-                        ObjTblPatientReceipt.FollowUpFeeUSD = 0
-                        ObjTblPatientReceipt.SocialFeeRiel = 0
-                        ObjTblPatientReceipt.SocialFeeUSD = 0
-                        ObjTblPatientReceipt.FullFeeRiel = 0
-                        ObjTblPatientReceipt.FullFeeUSD = 0
-                        If RadKHR.Checked = True Then
-                            If RadFull.Checked = True Then
-                                ObjTblPatientReceipt.CashRiel = EmptyString(TxtFullAmount.Text)
-                                ObjTblPatientReceipt.TotalRiel = EmptyString(TxtFullAmount.Text)
-                            Else
-                                ObjTblPatientReceipt.CashRiel = EmptyString(TxtSocialAmount.Text)
-                                ObjTblPatientReceipt.TotalRiel = EmptyString(TxtSocialAmount.Text)
-                            End If
-
-                        Else
-                            If RadFull.Checked = True Then
-                                ObjTblPatientReceipt.CashUSD = EmptyString(TxtFullAmount.Text)
-                                ObjTblPatientReceipt.TotalUSD = EmptyString(TxtFullAmount.Text)
-                            Else
-                                ObjTblPatientReceipt.CashUSD = EmptyString(TxtSocialAmount.Text)
-                                ObjTblPatientReceipt.TotalUSD = EmptyString(TxtSocialAmount.Text)
-                            End If
-                        End If
-                        If RadCustomerMadeSpectacle.Checked = True Then
-                            If RadKHR.Checked = True Then
-                                If RadFull.Checked = True Then
-                                    ObjTblPatientReceipt.GlassFeeRiel = EmptyString(TxtFullAmount.Text)
-                                Else
-                                    ObjTblPatientReceipt.GlassFeeRiel = EmptyString(TxtSocialAmount.Text)
-                                End If
-                            Else
-                                If RadFull.Checked = True Then
-                                    ObjTblPatientReceipt.GlassFeeUSD = EmptyString(TxtFullAmount.Text)
-                                Else
-                                    ObjTblPatientReceipt.GlassFeeUSD = EmptyString(TxtSocialAmount.Text)
-                                End If
-                            End If
-                        End If
-                        If RadSunGlasses.Checked = True Then
-                            If RadKHR.Checked = True Then
-                                If RadFull.Checked = True Then
-                                    ObjTblPatientReceipt.GlassFeeRiel = EmptyString(TxtFullAmount.Text)
-                                Else
-                                    ObjTblPatientReceipt.GlassFeeRiel = EmptyString(TxtSocialAmount.Text)
-                                End If
-                            Else
-                                If RadFull.Checked = True Then
-                                    ObjTblPatientReceipt.GlassFeeUSD = EmptyString(TxtFullAmount.Text)
-                                Else
-                                    ObjTblPatientReceipt.GlassFeeUSD = EmptyString(TxtSocialAmount.Text)
-                                End If
-                            End If
-
-                        End If
-                        If RadReadyMadeSpectacle.Checked = True Then
-                            If RadKHR.Checked = True Then
-                                If RadFull.Checked = True Then
-                                    ObjTblPatientReceipt.GlassFeeRiel = EmptyString(TxtFullAmount.Text)
-                                Else
-                                    ObjTblPatientReceipt.GlassFeeRiel = EmptyString(TxtSocialAmount.Text)
-                                End If
-                            Else
-                                If RadFull.Checked = True Then
-                                    ObjTblPatientReceipt.GlassFeeUSD = EmptyString(TxtFullAmount.Text)
-                                Else
-                                    ObjTblPatientReceipt.GlassFeeUSD = EmptyString(TxtSocialAmount.Text)
-                                End If
-                            End If
-
-                        End If
-                        If RadMedicine.Checked = True Then
-                            If RadKHR.Checked = True Then
-                                If RadFull.Checked = True Then
-                                    ObjTblPatientReceipt.MedicineFeeRiel = EmptyString(TxtFullAmount.Text)
-                                Else
-                                    ObjTblPatientReceipt.MedicineFeeRiel = EmptyString(TxtSocialAmount.Text)
-                                End If
-                            Else
-                                If RadFull.Checked = True Then
-                                    ObjTblPatientReceipt.MedicineFeeUSD = EmptyString(TxtFullAmount.Text)
-                                Else
-                                    ObjTblPatientReceipt.MedicineFeeUSD = EmptyString(TxtSocialAmount.Text)
-                                End If
-                            End If
-                        End If
-                        If RadFundRaising.Checked = True Then
-                            If RadKHR.Checked = True Then
-                                If RadFull.Checked = True Then
-                                    ObjTblPatientReceipt.OtherFeeRiel = EmptyString(TxtFullAmount.Text)
-                                Else
-                                    ObjTblPatientReceipt.OtherFeeRiel = EmptyString(TxtSocialAmount.Text)
-
-                                End If
-
-                            Else
-                                If RadFull.Checked = True Then
-                                    ObjTblPatientReceipt.OtherFeeUSD = EmptyString(TxtFullAmount.Text)
-                                Else
-                                    ObjTblPatientReceipt.OtherFeeUSD = EmptyString(TxtSocialAmount.Text)
-                                End If
-                            End If
-                        End If
-                        If RadOther.Checked = True Then
-                            If RadKHR.Checked = True Then
-                                If RadFull.Checked = True Then
-                                    ObjTblPatientReceipt.OtherFeeRiel = EmptyString(TxtFullAmount.Text)
-                                Else
-                                    ObjTblPatientReceipt.OtherFeeRiel = EmptyString(TxtSocialAmount.Text)
-
-                                End If
-                            Else
-                                If RadFull.Checked = True Then
-                                    ObjTblPatientReceipt.OtherFeeUSD = EmptyString(TxtFullAmount.Text)
-                                Else
-                                    ObjTblPatientReceipt.OtherFeeUSD = EmptyString(TxtSocialAmount.Text)
-                                End If
-                            End If
-                        End If
-                        If RadLV.Checked = True Then
-                            If RadKHR.Checked = True Then
-                                If RadFull.Checked = True Then
-                                    ObjTblPatientReceipt.GlassFeeRiel = EmptyString(TxtFullAmount.Text)
-                                Else
-                                    ObjTblPatientReceipt.GlassFeeRiel = EmptyString(TxtSocialAmount.Text)
-                                End If
-                            Else
-                                If RadFull.Checked = True Then
-                                    ObjTblPatientReceipt.GlassFeeUSD = EmptyString(TxtFullAmount.Text)
-                                Else
-                                    ObjTblPatientReceipt.GlassFeeUSD = EmptyString(TxtSocialAmount.Text)
-                                End If
-                            End If
-                        End If
-                        ObjTblPatientReceipt.Rates = txtRate.Text
-                        ObjTblPatientReceipt.AmoutWord = ""
-                        ObjTblPatientReceipt.ConPay = "0"
-                        ObjTblPatientReceipt.ConDelete = "0"
-                        ObjTblPatientReceipt.ConGeneral = "OP"
-                        ObjTblPatientReceipt.CashierIn = USER_NAME
-                        ObjTblPatientReceipt.PrintCount = 1
-                        ObjTblPatientReceipt.Years = DateCreateReceipt.Value.Year  'ModGlobleVariable.GeteDateServer.Year
-                        ObjTblPatientReceipt.DateNow = Now
-                        If ChDonation.Checked = True Then
-                            ObjTblPatientReceipt.IsDonation = ChDonation.Checked
-                            ObjTblPatientReceipt.DonationID = CboDonation.SelectedValue
-                            ObjTblPatientReceipt.DonationName = CboDonation.Text
-                            ObjTblPatientReceipt.DonationPay = Val(EmptyString(TxtDonateAmount.Text))
-                            ObjTblPatientReceipt.DonateNote = CboDonation.Text
-                        Else
-                            ObjTblPatientReceipt.IsDonation = False
-                            ObjTblPatientReceipt.DonationPay = 0
-                        End If
-                        If RadKHR.Checked = True Then
-                            ObjTblPatientReceipt.HosFee = TxtTotalAsReal.Text
-                        Else
-                            ObjTblPatientReceipt.CashTotal = TxtTotalAsDolar.Text
-                        End If
-                        ObjTblPatientReceipt.OperationFeeRiel = 0
-                        ObjTblPatientReceipt.OperationFeeUSD = 0
-                        ObjTblPatientReceipt.ArtificialEyeFeeRiel = 0
-                        ObjTblPatientReceipt.ArtificialEyeFeeUSD = 0
-                        ObjTblPatientReceipt.IsPatientNill = False
-                        '======== Set Object To Receipt Optical Shop=============
-
-                        Dim ObjReceipt As New RECEIPT
-                        ObjReceipt.ReceiptID = LblReceiptID.Text
-                        ObjReceipt.ReceiptNo = TxtReceiptNo.Text
-                        ObjReceipt.ReceiptDate = DateCreateReceipt.Value
-                        ObjReceipt.CustID = EmptyString(TxtCustomerID.Text)
-
-                        '--- In Case user select Customer
-                        ObjReceipt.CustomerNo = EmptyString(TxtCustomerNo.Text)
-                        ObjReceipt.CustID = EmptyString(TxtCustomerID.Text)
-                        ObjReceipt.TotalSocial = TotalSocial
-                        ObjReceipt.TIME_CREATE = Format(GetDateServer, "hh:mm:ss tt").ToString
-
-                        'Case Patient not yet add to table Receipt_Customer
-                        'If IsPatient = True Then
-                        Dim Re_Customer As New RECEIPT_CUSTOMER
-                        Re_Customer.CustomerNo = TxtCustomerID.Text
-                        Re_Customer.CusName = TxtCustomerName.Text
-                        Re_Customer.Sex = TxtSex.Text
-                        '--- For Optical shop customer statistic report purpose
-                        If TxtSex.Text = "F" Then
-                            Re_Customer.Female = "F"
-                        Else
-                            Re_Customer.Male = "M"
-                        End If
-                        Re_Customer.Age = CInt(TxtAge.Text)
-                        Re_Customer.Occupation = TxtCusOccupation.Text
-                        Re_Customer.Address = Replace(txtAddress.Text, "'", "")
-                        Re_Customer.IsPatient = True
-                        Re_Customer.CusNameEng = TxtCusNameEng.Text
-                        ObjReceipt.CustomerNo = P_Customer.SaveNewCustomer(Re_Customer)
-                        ObjReceipt.CustID = Re_Customer.CustID
-                        'End If
-
-                        ObjReceipt.MedicReal = 0
-                        ObjReceipt.MedicDolar = 0
-                        ObjReceipt.EyeGlassesReal = 0
-                        ObjReceipt.EyeGlassesDolar = 0
-                        ObjReceipt.FundRaisingDolar = 0
-                        ObjReceipt.FundRaisingR = 0
-                        ObjReceipt.SpectacleDolar = 0
-                        ObjReceipt.SpectacleR = 0
-                        ObjReceipt.ReadyModDolar = 0
-                        ObjReceipt.ReadyModR = 0
-                        ObjReceipt.OtherDolar = 0
-                        ObjReceipt.OtherR = 0
-                        ObjReceipt.TotalReal = TxtTotalAsReal.Text
-                        ObjReceipt.TotalDolar = TxtTotalAsDolar.Text
-                        ObjReceipt.IncomType = IncomeTypeCondition.ToString
-
-
-                        If ChDonation.Checked = True Then ObjReceipt.DonateAmount = Val(EmptyString(TxtDonateAmount.Text))
-                        If ChbNewGlasses.Checked = True Then ObjReceipt.Glasses = Val(EmptyString(TxtNumGlasses.Text))
-
-                        '--- Set  Receipt Type
-                        If RadFundRaising.Checked = True Then ReceiptType = RadFundRaising.Text '"Fund Raising"
-                        If RadOther.Checked = True Then ReceiptType = RadOther.Text '"Other"
-                        If RadReadyMadeSpectacle.Checked = True Then ReceiptType = RadReadyMadeSpectacle.Text '"Ready Made(Glasses)"
-                        If RadMedicine.Checked = True Then ReceiptType = RadMedicine.Text '"Medicine"
-                        If RadSunGlasses.Checked = True Then ReceiptType = RadSunGlasses.Text '"Sun Glasses"
-                        If RadCustomerMadeSpectacle.Checked = True Then ReceiptType = RadCustomerMadeSpectacle.Text '"Spectacle(Glasses)"
-                        If RadLV.Checked = True Then ReceiptType = RadLV.Text
-                        ObjReceipt.ReceiptType = ReceiptType
-                        If RadCustomerMadeSpectacle.Checked = True Then
-                            If RadDistance1.Checked = True Then
-                                ObjReceipt.SubReceiptType = RadDistance1.Text
-                            End If
-                            If RadRedding1.Checked = True Then
-                                ObjReceipt.SubReceiptType = RadRedding1.Text
-                            End If
-                            If RadBifocal.Checked = True Then
-                                ObjReceipt.SubReceiptType = RadBifocal.Text
-                            End If
-                        ElseIf RadReadyMadeSpectacle.Checked = True Then
-                            If RadDistance2.Checked = True Then
-                                ObjReceipt.SubReceiptType = RadDistance2.Text
-                            End If
-                            If RadRedding2.Checked = True Then
-                                ObjReceipt.SubReceiptType = RadRedding2.Text
-                            End If
-                        Else
-                            ObjReceipt.SubReceiptType = Nothing
-                        End If
-
-
-                        If ChDonation.Checked = True Then
-                            ObjReceipt.IsDonation = True
-                            ObjReceipt.DonationID = CboDonation.SelectedValue
-                            If RadNil.Checked = True Then
-                                ModDonation.SaveNewDonatPay(0, TxtCustomerNo.Text, TxtCusNameEng.Text, "", TxtAge.Text, TxtSex.Text, Replace(txtAddress.Text, "'", ""), PaymentTypeLabel, TxtDonateAmount.Text, FormatDateTime(DateCreateReceipt.Value, DateFormat.ShortDate), CboDonation.SelectedValue, CboDonation.Text, PaymentTypeLabel, "", TxtTotalAsReal.Text, 0, "OP", PaymentForGlasessOrMedicine, LblCombindReferal.Text, LblConsultType.Text)
-                            Else
-                                ModDonation.SaveNewDonatPay(TxtReceiptNo.Text, TxtCustomerNo.Text, TxtCusNameEng.Text, "", TxtAge.Text, TxtSex.Text, Replace(txtAddress.Text, "'", ""), "", TxtDonateAmount.Text, FormatDateTime(DateCreateReceipt.Value, DateFormat.ShortDate), CboDonation.SelectedValue, CboDonation.Text, PaymentTypeLabel, "", TxtTotalAsReal.Text, TotalSocial, "OP", PaymentForGlasessOrMedicine, LblCombindReferal.Text, LblConsultType.Text)
-                            End If
-                        Else
-                            ObjReceipt.IsDonation = False
-                            ObjReceipt.PayBySelf = 0
-                            ObjReceipt.PayByDonation = 0
-                        End If
-
-                        ObjReceipt.IsPaid = lblIspaid.Text
-                        ObjReceipt.UserID = USER_ID
-                        ObjReceipt.UserName = USER_NAME
-
-                        '--- Save PaymentType 
+                    '======== Set valud Cashe
+                    ObjTblPatientReceipt.CashUSD = 0
+                    ObjTblPatientReceipt.CashRiel = 0
+                    ObjTblPatientReceipt.TotalUSD = 0
+                    ObjTblPatientReceipt.TotalRiel = 0
+                    ObjTblPatientReceipt.GlassFeeUSD = 0
+                    ObjTblPatientReceipt.GlassFeeRiel = 0
+                    ObjTblPatientReceipt.MedicineFeeRiel = 0
+                    ObjTblPatientReceipt.MedicineFeeUSD = 0
+                    ObjTblPatientReceipt.OtherFeeUSD = 0
+                    ObjTblPatientReceipt.OtherFeeRiel = 0
+                    ObjTblPatientReceipt.ConsultationFeeRiel = 0
+                    ObjTblPatientReceipt.ConsultationFeeUSD = 0
+                    ObjTblPatientReceipt.FollowUpFeeRiel = 0
+                    ObjTblPatientReceipt.FollowUpFeeUSD = 0
+                    ObjTblPatientReceipt.SocialFeeRiel = 0
+                    ObjTblPatientReceipt.SocialFeeUSD = 0
+                    ObjTblPatientReceipt.FullFeeRiel = 0
+                    ObjTblPatientReceipt.FullFeeUSD = 0
+                    If RadKHR.Checked = True Then
                         If RadFull.Checked = True Then
-                            ObjReceipt.PaymentType = 1
-                            ObjReceipt.FullAmount = Val(TxtFullAmount.Text)
-                        ElseIf RadNil.Checked = True Then
-                            ObjReceipt.PaymentType = 2
-                            ObjReceipt.NilAmount = Val(TxtNilAmount.Text)
+                            ObjTblPatientReceipt.CashRiel = EmptyString(TxtFullAmount.Text)
+                            ObjTblPatientReceipt.TotalRiel = EmptyString(TxtFullAmount.Text)
                         Else
-                            ObjReceipt.PaymentType = 3
-                            ObjReceipt.SocialAmount = Val(TxtSocialAmount.Text)
+                            ObjTblPatientReceipt.CashRiel = EmptyString(TxtSocialAmount.Text)
+                            ObjTblPatientReceipt.TotalRiel = EmptyString(TxtSocialAmount.Text)
                         End If
 
-                        '--- Save PaymentType Currency
+                    Else
+                        If RadFull.Checked = True Then
+                            ObjTblPatientReceipt.CashUSD = EmptyString(TxtFullAmount.Text)
+                            ObjTblPatientReceipt.TotalUSD = EmptyString(TxtFullAmount.Text)
+                        Else
+                            ObjTblPatientReceipt.CashUSD = EmptyString(TxtSocialAmount.Text)
+                            ObjTblPatientReceipt.TotalUSD = EmptyString(TxtSocialAmount.Text)
+                        End If
+                    End If
+                    If RadCustomerMadeSpectacle.Checked = True Then
                         If RadKHR.Checked = True Then
-                            ObjReceipt.PaymentCur = "KHR"
+                            If RadFull.Checked = True Then
+                                ObjTblPatientReceipt.GlassFeeRiel = EmptyString(TxtFullAmount.Text)
+                            Else
+                                ObjTblPatientReceipt.GlassFeeRiel = EmptyString(TxtSocialAmount.Text)
+                            End If
                         Else
-                            ObjReceipt.PaymentCur = "USD"
+                            If RadFull.Checked = True Then
+                                ObjTblPatientReceipt.GlassFeeUSD = EmptyString(TxtFullAmount.Text)
+                            Else
+                                ObjTblPatientReceipt.GlassFeeUSD = EmptyString(TxtSocialAmount.Text)
+                            End If
+                        End If
+                    End If
+                    If RadSunGlasses.Checked = True Then
+                        If RadKHR.Checked = True Then
+                            If RadFull.Checked = True Then
+                                ObjTblPatientReceipt.GlassFeeRiel = EmptyString(TxtFullAmount.Text)
+                            Else
+                                ObjTblPatientReceipt.GlassFeeRiel = EmptyString(TxtSocialAmount.Text)
+                            End If
+                        Else
+                            If RadFull.Checked = True Then
+                                ObjTblPatientReceipt.GlassFeeUSD = EmptyString(TxtFullAmount.Text)
+                            Else
+                                ObjTblPatientReceipt.GlassFeeUSD = EmptyString(TxtSocialAmount.Text)
+                            End If
                         End If
 
-                        '--- Save status of Patient
-                        ObjReceipt.IsOldPatient = CheOldPatient.Checked
-                        '..... Save to table TblPatient Receipt .........
+                    End If
+                    If RadReadyMadeSpectacle.Checked = True Then
+                        If RadKHR.Checked = True Then
+                            If RadFull.Checked = True Then
+                                ObjTblPatientReceipt.GlassFeeRiel = EmptyString(TxtFullAmount.Text)
+                            Else
+                                ObjTblPatientReceipt.GlassFeeRiel = EmptyString(TxtSocialAmount.Text)
+                            End If
+                        Else
+                            If RadFull.Checked = True Then
+                                ObjTblPatientReceipt.GlassFeeUSD = EmptyString(TxtFullAmount.Text)
+                            Else
+                                ObjTblPatientReceipt.GlassFeeUSD = EmptyString(TxtSocialAmount.Text)
+                            End If
+                        End If
+
+                    End If
+                    If RadMedicine.Checked = True Then
+                        If RadKHR.Checked = True Then
+                            If RadFull.Checked = True Then
+                                ObjTblPatientReceipt.MedicineFeeRiel = EmptyString(TxtFullAmount.Text)
+                            Else
+                                ObjTblPatientReceipt.MedicineFeeRiel = EmptyString(TxtSocialAmount.Text)
+                            End If
+                        Else
+                            If RadFull.Checked = True Then
+                                ObjTblPatientReceipt.MedicineFeeUSD = EmptyString(TxtFullAmount.Text)
+                            Else
+                                ObjTblPatientReceipt.MedicineFeeUSD = EmptyString(TxtSocialAmount.Text)
+                            End If
+                        End If
+                    End If
+                    If RadFundRaising.Checked = True Then
+                        If RadKHR.Checked = True Then
+                            If RadFull.Checked = True Then
+                                ObjTblPatientReceipt.OtherFeeRiel = EmptyString(TxtFullAmount.Text)
+                            Else
+                                ObjTblPatientReceipt.OtherFeeRiel = EmptyString(TxtSocialAmount.Text)
+
+                            End If
+
+                        Else
+                            If RadFull.Checked = True Then
+                                ObjTblPatientReceipt.OtherFeeUSD = EmptyString(TxtFullAmount.Text)
+                            Else
+                                ObjTblPatientReceipt.OtherFeeUSD = EmptyString(TxtSocialAmount.Text)
+                            End If
+                        End If
+                    End If
+                    If RadOther.Checked = True Then
+                        If RadKHR.Checked = True Then
+                            If RadFull.Checked = True Then
+                                ObjTblPatientReceipt.OtherFeeRiel = EmptyString(TxtFullAmount.Text)
+                            Else
+                                ObjTblPatientReceipt.OtherFeeRiel = EmptyString(TxtSocialAmount.Text)
+
+                            End If
+                        Else
+                            If RadFull.Checked = True Then
+                                ObjTblPatientReceipt.OtherFeeUSD = EmptyString(TxtFullAmount.Text)
+                            Else
+                                ObjTblPatientReceipt.OtherFeeUSD = EmptyString(TxtSocialAmount.Text)
+                            End If
+                        End If
+                    End If
+                    If RadLV.Checked = True Then
+                        If RadKHR.Checked = True Then
+                            If RadFull.Checked = True Then
+                                ObjTblPatientReceipt.GlassFeeRiel = EmptyString(TxtFullAmount.Text)
+                            Else
+                                ObjTblPatientReceipt.GlassFeeRiel = EmptyString(TxtSocialAmount.Text)
+                            End If
+                        Else
+                            If RadFull.Checked = True Then
+                                ObjTblPatientReceipt.GlassFeeUSD = EmptyString(TxtFullAmount.Text)
+                            Else
+                                ObjTblPatientReceipt.GlassFeeUSD = EmptyString(TxtSocialAmount.Text)
+                            End If
+                        End If
+                    End If
+                    ObjTblPatientReceipt.Rates = txtRate.Text
+                    ObjTblPatientReceipt.AmoutWord = ""
+                    ObjTblPatientReceipt.ConPay = "0"
+                    ObjTblPatientReceipt.ConDelete = "0"
+                    ObjTblPatientReceipt.ConGeneral = "OP"
+                    ObjTblPatientReceipt.CashierIn = USER_NAME
+                    ObjTblPatientReceipt.PrintCount = 1
+                    ObjTblPatientReceipt.Years = DateCreateReceipt.Value.Year  'ModGlobleVariable.GeteDateServer.Year
+                    ObjTblPatientReceipt.DateNow = Now
+                    If ChDonation.Checked = True Then
+                        ObjTblPatientReceipt.IsDonation = ChDonation.Checked
+                        ObjTblPatientReceipt.DonationID = CboDonation.SelectedValue
+                        ObjTblPatientReceipt.DonationName = CboDonation.Text
+                        ObjTblPatientReceipt.DonationPay = Val(EmptyString(TxtDonateAmount.Text))
+                        ObjTblPatientReceipt.DonateNote = CboDonation.Text
+                    Else
+                        ObjTblPatientReceipt.IsDonation = False
+                        ObjTblPatientReceipt.DonationPay = 0
+                    End If
+                    If RadKHR.Checked = True Then
+                        ObjTblPatientReceipt.HosFee = TxtTotalAsReal.Text
+                    Else
+                        ObjTblPatientReceipt.CashTotal = TxtTotalAsDolar.Text
+                    End If
+                    ObjTblPatientReceipt.OperationFeeRiel = 0
+                    ObjTblPatientReceipt.OperationFeeUSD = 0
+                    ObjTblPatientReceipt.ArtificialEyeFeeRiel = 0
+                    ObjTblPatientReceipt.ArtificialEyeFeeUSD = 0
+                    ObjTblPatientReceipt.IsPatientNill = False
+                    '======== Set Object To Receipt Optical Shop=============
+
+                    Dim ObjReceipt As New RECEIPT
+                    ObjReceipt.ReceiptID = LblReceiptID.Text
+                    ObjReceipt.ReceiptNo = TxtReceiptNo.Text
+                    ObjReceipt.ReceiptDate = DateCreateReceipt.Value
+                    ObjReceipt.CustID = EmptyString(TxtCustomerID.Text)
+
+                    '--- In Case user select Customer
+                    ObjReceipt.CustomerNo = EmptyString(TxtSearchPNo.Text)
+                    ObjReceipt.CustID = EmptyString(TxtCustomerID.Text)
+                    ObjReceipt.TotalSocial = TotalSocial
+                    ObjReceipt.TIME_CREATE = Format(GetDateServer, "hh:mm:ss tt").ToString
+
+                    'Case Patient not yet add to table Receipt_Customer
+                    'If IsPatient = True Then
+                    Dim Re_Customer As New RECEIPT_CUSTOMER
+                    Re_Customer.CustomerNo = TxtSearchPNo.Text  'TxtCustomerID.Text
+                    Re_Customer.CusName = TxtCustomerName.Text
+                    Re_Customer.Sex = TxtSex.Text
+                    '--- For Optical shop customer statistic report purpose
+                    If TxtSex.Text = "F" Then
+                        Re_Customer.Female = "F"
+                    Else
+                        Re_Customer.Male = "M"
+                    End If
+                    Re_Customer.Age = CInt(TxtAge.Text)
+                    Re_Customer.Occupation = TxtCusOccupation.Text
+                    Re_Customer.Address = Replace(txtAddress.Text, "'", "")
+                    Re_Customer.IsPatient = True
+                    Re_Customer.CusNameEng = TxtCusNameEng.Text
+                    ObjReceipt.CustomerNo = P_Customer.SaveNewCustomer(Re_Customer)
+                    ObjReceipt.CustID = Re_Customer.CustID
+                    'End If
+
+                    ObjReceipt.MedicReal = 0
+                    ObjReceipt.MedicDolar = 0
+                    ObjReceipt.EyeGlassesReal = 0
+                    ObjReceipt.EyeGlassesDolar = 0
+                    ObjReceipt.FundRaisingDolar = 0
+                    ObjReceipt.FundRaisingR = 0
+                    ObjReceipt.SpectacleDolar = 0
+                    ObjReceipt.SpectacleR = 0
+                    ObjReceipt.ReadyModDolar = 0
+                    ObjReceipt.ReadyModR = 0
+                    ObjReceipt.OtherDolar = 0
+                    ObjReceipt.OtherR = 0
+                    ObjReceipt.TotalReal = TxtTotalAsReal.Text
+                    ObjReceipt.TotalDolar = TxtTotalAsDolar.Text
+                    ObjReceipt.IncomType = IncomeTypeCondition.ToString
 
 
-                        '.......... In Cashe Nill -------------------------------
+                    If ChDonation.Checked = True Then ObjReceipt.DonateAmount = Val(EmptyString(TxtDonateAmount.Text))
+                    If ChbNewGlasses.Checked = True Then ObjReceipt.Glasses = Val(EmptyString(TxtNumGlasses.Text))
+
+                    '--- Set  Receipt Type
+                    If RadFundRaising.Checked = True Then ReceiptType = RadFundRaising.Text '"Fund Raising"
+                    If RadOther.Checked = True Then ReceiptType = RadOther.Text '"Other"
+                    If RadReadyMadeSpectacle.Checked = True Then ReceiptType = RadReadyMadeSpectacle.Text '"Ready Made(Glasses)"
+                    If RadMedicine.Checked = True Then ReceiptType = RadMedicine.Text '"Medicine"
+                    If RadSunGlasses.Checked = True Then ReceiptType = RadSunGlasses.Text '"Sun Glasses"
+                    If RadCustomerMadeSpectacle.Checked = True Then ReceiptType = RadCustomerMadeSpectacle.Text '"Spectacle(Glasses)"
+                    If RadLV.Checked = True Then ReceiptType = RadLV.Text
+                    ObjReceipt.ReceiptType = ReceiptType
+                    If RadCustomerMadeSpectacle.Checked = True Then
+                        If RadDistance1.Checked = True Then
+                            ObjReceipt.SubReceiptType = RadDistance1.Text
+                        End If
+                        If RadRedding1.Checked = True Then
+                            ObjReceipt.SubReceiptType = RadRedding1.Text
+                        End If
+                        If RadBifocal.Checked = True Then
+                            ObjReceipt.SubReceiptType = RadBifocal.Text
+                        End If
+                    ElseIf RadReadyMadeSpectacle.Checked = True Then
+                        If RadDistance2.Checked = True Then
+                            ObjReceipt.SubReceiptType = RadDistance2.Text
+                        End If
+                        If RadRedding2.Checked = True Then
+                            ObjReceipt.SubReceiptType = RadRedding2.Text
+                        End If
+                    Else
+                        ObjReceipt.SubReceiptType = Nothing
+                    End If
+
+
+                    If ChDonation.Checked = True Then
+                        ObjReceipt.IsDonation = True
+                        ObjReceipt.DonationID = CboDonation.SelectedValue
                         If RadNil.Checked = True Then
+                            ModDonation.SaveNewDonatPay(0, TxtSearchPNo.Text, TxtCusNameEng.Text, "", TxtAge.Text, TxtSex.Text, Replace(txtAddress.Text, "'", ""), PaymentTypeLabel, TxtDonateAmount.Text, FormatDateTime(DateCreateReceipt.Value, DateFormat.ShortDate), CboDonation.SelectedValue, CboDonation.Text, PaymentTypeLabel, "", TxtTotalAsReal.Text, 0, "OP", PaymentForGlasessOrMedicine, LblCombindReferal.Text, LblConsultType.Text)
+                        Else
+                            ModDonation.SaveNewDonatPay(TxtReceiptNo.Text, TxtSearchPNo.Text, TxtCusNameEng.Text, "", TxtAge.Text, TxtSex.Text, Replace(txtAddress.Text, "'", ""), "", TxtDonateAmount.Text, FormatDateTime(DateCreateReceipt.Value, DateFormat.ShortDate), CboDonation.SelectedValue, CboDonation.Text, PaymentTypeLabel, "", TxtTotalAsReal.Text, TotalSocial, "OP", PaymentForGlasessOrMedicine, LblCombindReferal.Text, LblConsultType.Text)
+                        End If
+                    Else
+                        ObjReceipt.IsDonation = False
+                        ObjReceipt.PayBySelf = 0
+                        ObjReceipt.PayByDonation = 0
+                    End If
+
+                    ObjReceipt.IsPaid = lblIspaid.Text
+                    ObjReceipt.UserID = USER_ID
+                    ObjReceipt.UserName = USER_NAME
+
+                    '--- Save PaymentType 
+                    If RadFull.Checked = True Then
+                        ObjReceipt.PaymentType = 1
+                        ObjReceipt.FullAmount = Val(TxtFullAmount.Text)
+                    ElseIf RadNil.Checked = True Then
+                        ObjReceipt.PaymentType = 2
+                        ObjReceipt.NilAmount = Val(TxtNilAmount.Text)
+                    Else
+                        ObjReceipt.PaymentType = 3
+                        ObjReceipt.SocialAmount = Val(TxtSocialAmount.Text)
+                    End If
+
+                    '--- Save PaymentType Currency
+                    If RadKHR.Checked = True Then
+                        ObjReceipt.PaymentCur = "KHR"
+                    Else
+                        ObjReceipt.PaymentCur = "USD"
+                    End If
+
+                    '--- Save status of Patient
+                    ObjReceipt.IsOldPatient = CheOldPatient.Checked
+                    '..... Save to table TblPatient Receipt .........
+
+
+                    '.......... In Cashe Nill -------------------------------
+                    If RadNil.Checked = True Then
+                        ' New Customer for Patient.
+                        ObjReceipt.ReceiptNo = 0
+                        If OpticalDataControl.SaveNewReceipt(ObjReceipt) = True Then
+                            Dim IDReceipt As Double = ObjReceipt.ReceiptID
+                            'MsgBox(IDReceipt)
+                            For Each row As DataRow In DTblItemDetial.Rows
+                                Dim ObjReceiptDetail As New RECEIPT_DETAIL
+                                ObjReceiptDetail.ReceiptNo = IDReceipt 'TxtReceiptNo.Text
+                                ObjReceiptDetail.ItemID = row("ColumnItemID")
+                                ObjReceiptDetail.ItemPrice = Val(row("ColumnPrice"))
+                                ObjReceiptDetail.ItemQTY = Val(row("ColumnQTY"))
+                                ObjReceiptDetail.SubTotalReal = Val(row("SubTotalReal"))
+                                ObjReceiptDetail.SubTotalDolar = Val(row("SubTotalDolar"))
+                                ObjReceiptDetail.ItemCost = Val(row("ItemCost"))
+                                ObjReceiptDetail.EXCHANGE_RATE = Val(row("EXCHANGE_RATE"))
+                                ObjReceiptDetail.ReceiptDate = DateCreateReceipt.Value
+                                OpticalDataControl.SaveReceiptDetail(ObjReceiptDetail)
+                            Next
+
+                            '--- Process Cut Stock For the Nil ------------------------------------------
+                            '================= Transaction cut stock ================
+                            THIDataContext.getTHIDataContext.Connection.Close()
+                            THIDataContext.getTHIDataContext.Connection.Open()
+                            Dim trans As DbTransaction = THIDataContext.getTHIDataContext.Connection.BeginTransaction
+                            THIDataContext.getTHIDataContext.Transaction = trans
+
+                            Try
+                                For Each Row As DataRow In DTblItemDetial.Rows
+
+                                    Dim itemID As Double = Val(Row("ColumnItemID"))
+                                    Dim unitsInStock As Integer = 0
+                                    '--- Register Begin Balance of item (myRequestToDepartID) 
+                                    Dim qDepartStock = From departStock In THIDataContext.getTHIDataContext.tblDeptStocks Where departStock.DepartID = OPTICALSHOP_DEPART_ID And departStock.ItemID = itemID
+                                    unitsInStock = qDepartStock.SingleOrDefault.UnitsInStock
+                                    Dim q = (From BBT In THIDataContext.getTHIDataContext.tblBeginBalanceTraces Where BBT.Date.Value.Date = GetDateServer.Date And BBT.DepartID = OPTICALSHOP_DEPART_ID And BBT.ItemID = itemID Select BBT.BeginBalanceTraceID).Count
+
+                                    If q = 0 Then
+                                        Dim mytblBeginBalanceTrace As New tblBeginBalanceTrace
+                                        mytblBeginBalanceTrace.Date = GetDateServer()
+                                        mytblBeginBalanceTrace.DepartID = OPTICALSHOP_DEPART_ID
+                                        mytblBeginBalanceTrace.BeginBalanceOfDay = unitsInStock
+                                        mytblBeginBalanceTrace.ItemID = itemID
+                                        THIDataContext.getTHIDataContext.tblBeginBalanceTraces.InsertOnSubmit(mytblBeginBalanceTrace)
+                                        THIDataContext.getTHIDataContext.SubmitChanges()
+                                    End If
+                                Next
+
+                                '--- Insert tblUsed & tblUsedDetail
+                                Dim mytblUsed As New tblUsed
+                                mytblUsed.UsedDepartID = OPTICALSHOP_DEPART_ID
+                                mytblUsed.UsedDate = GetDateServer.Date
+                                mytblUsed.UsedDescription = "Used in Optical Shop Nil Receipt : " & ObjReceipt.ReceiptID
+                                mytblUsed.UsedUserID = CInt(USER_ID)
+                                THIDataContext.getTHIDataContext.tblUseds.InsertOnSubmit(mytblUsed)
+                                THIDataContext.getTHIDataContext.SubmitChanges()
+
+                                For Each Rec As DataRow In DTblItemDetial.Rows
+                                    Dim itemID As Double = Val(Rec("ColumnItemID"))
+                                    '--- Updata Optical Shop stock
+                                    Dim qDepartStock = From departStock In THIDataContext.getTHIDataContext.tblDeptStocks Where departStock.DepartID = OPTICALSHOP_DEPART_ID And departStock.ItemID = itemID
+                                    Dim myDepartStock = qDepartStock.SingleOrDefault
+                                    myDepartStock.UnitsInStock = myDepartStock.UnitsInStock - Val(Rec("ColumnQTY"))
+                                    THIDataContext.getTHIDataContext.SubmitChanges()
+                                    '--- Insert tblUsedDetail
+                                    Dim mytblUsedDetail As New tblUsedDetail
+                                    mytblUsedDetail.UsedID = mytblUsed.UsedID
+                                    mytblUsedDetail.ItemID = itemID
+                                    mytblUsedDetail.UsedQuantity = Val(Rec("ColumnQTY"))
+                                    THIDataContext.getTHIDataContext.tblUsedDetails.InsertOnSubmit(mytblUsedDetail)
+                                    THIDataContext.getTHIDataContext.SubmitChanges()
+                                Next
+                                trans.Commit()
+                                THIDataContext.getTHIDataContext.Connection.Close()
+                            Catch ex As Exception
+                                trans.Rollback()
+                                THIDataContext.getTHIDataContext.Connection.Close()
+                                MessageBox.Show(ex.Message & "--- Update Stock ---", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                            End Try
+                            '---- End Process Cut Stock ----------------------------------------------------------------------
+
+                            'MainReceipt.LoadByReceiptNo(TxtReceiptNo.Text)
+                            If RadNil.Checked = False Then
+                                GenerateReceipt(TxtReceiptNo.Text)
+                            End If
+
+                            '''''''''''''''''''''Clean and Create New Receipt''''''''''''''''
+                            CleanReceiptInfomation()
+                            Me.DialogResult = Windows.Forms.DialogResult.OK
+                            Me.Close()
+                            Me.Dispose()
+                        End If
+                        IsPatient = False
+                        'GetBarcod()
+
+                        '.......... Finish Cashe Nill ------------------------------- 
+                        '------------------------------------------------------------
+                    Else
+                        '1 ......Save to TblPatientReceipt first ...............
+                        If OpticalDataControl.SaveNewReceiptPatient(ObjTblPatientReceipt) = True Then
                             ' New Customer for Patient.
-                            ObjReceipt.ReceiptNo = 0
                             If OpticalDataControl.SaveNewReceipt(ObjReceipt) = True Then
                                 Dim IDReceipt As Double = ObjReceipt.ReceiptID
                                 'MsgBox(IDReceipt)
@@ -1547,129 +1648,31 @@ Public Class FrmNewReceipt
                                     ObjReceiptDetail.ReceiptDate = DateCreateReceipt.Value
                                     OpticalDataControl.SaveReceiptDetail(ObjReceiptDetail)
                                 Next
-
-                                '--- Process Cut Stock For the Nil ------------------------------------------
-                                '================= Transaction cut stock ================
-                                THIDataContext.getTHIDataContext.Connection.Close()
-                                THIDataContext.getTHIDataContext.Connection.Open()
-                                Dim trans As DbTransaction = THIDataContext.getTHIDataContext.Connection.BeginTransaction
-                                THIDataContext.getTHIDataContext.Transaction = trans
-
-                                Try
-                                    For Each Row As DataRow In DTblItemDetial.Rows
-
-                                        Dim itemID As Double = Val(Row("ColumnItemID"))
-                                        Dim unitsInStock As Integer = 0
-                                        '--- Register Begin Balance of item (myRequestToDepartID) 
-                                        Dim qDepartStock = From departStock In THIDataContext.getTHIDataContext.tblDeptStocks Where departStock.DepartID = OPTICALSHOP_DEPART_ID And departStock.ItemID = itemID
-                                        unitsInStock = qDepartStock.SingleOrDefault.UnitsInStock
-                                        Dim q = (From BBT In THIDataContext.getTHIDataContext.tblBeginBalanceTraces Where BBT.Date.Value.Date = GetDateServer.Date And BBT.DepartID = OPTICALSHOP_DEPART_ID And BBT.ItemID = itemID Select BBT.BeginBalanceTraceID).Count
-
-                                        If q = 0 Then
-                                            Dim mytblBeginBalanceTrace As New tblBeginBalanceTrace
-                                            mytblBeginBalanceTrace.Date = GetDateServer()
-                                            mytblBeginBalanceTrace.DepartID = OPTICALSHOP_DEPART_ID
-                                            mytblBeginBalanceTrace.BeginBalanceOfDay = unitsInStock
-                                            mytblBeginBalanceTrace.ItemID = itemID
-                                            THIDataContext.getTHIDataContext.tblBeginBalanceTraces.InsertOnSubmit(mytblBeginBalanceTrace)
-                                            THIDataContext.getTHIDataContext.SubmitChanges()
-                                        End If
-                                    Next
-
-                                    '--- Insert tblUsed & tblUsedDetail
-                                    Dim mytblUsed As New tblUsed
-                                    mytblUsed.UsedDepartID = OPTICALSHOP_DEPART_ID
-                                    mytblUsed.UsedDate = GetDateServer.Date
-                                    mytblUsed.UsedDescription = "Used in Optical Shop Nil Receipt : " & ObjReceipt.ReceiptID
-                                    mytblUsed.UsedUserID = CInt(USER_ID)
-                                    THIDataContext.getTHIDataContext.tblUseds.InsertOnSubmit(mytblUsed)
-                                    THIDataContext.getTHIDataContext.SubmitChanges()
-
-                                    For Each Rec As DataRow In DTblItemDetial.Rows
-                                        Dim itemID As Double = Val(Rec("ColumnItemID"))
-                                        '--- Updata Optical Shop stock
-                                        Dim qDepartStock = From departStock In THIDataContext.getTHIDataContext.tblDeptStocks Where departStock.DepartID = OPTICALSHOP_DEPART_ID And departStock.ItemID = itemID
-                                        Dim myDepartStock = qDepartStock.SingleOrDefault
-                                        myDepartStock.UnitsInStock = myDepartStock.UnitsInStock - Val(Rec("ColumnQTY"))
-                                        THIDataContext.getTHIDataContext.SubmitChanges()
-                                        '--- Insert tblUsedDetail
-                                        Dim mytblUsedDetail As New tblUsedDetail
-                                        mytblUsedDetail.UsedID = mytblUsed.UsedID
-                                        mytblUsedDetail.ItemID = itemID
-                                        mytblUsedDetail.UsedQuantity = Val(Rec("ColumnQTY"))
-                                        THIDataContext.getTHIDataContext.tblUsedDetails.InsertOnSubmit(mytblUsedDetail)
-                                        THIDataContext.getTHIDataContext.SubmitChanges()
-                                    Next
-                                    trans.Commit()
-                                    THIDataContext.getTHIDataContext.Connection.Close()
-                                Catch ex As Exception
-                                    trans.Rollback()
-                                    THIDataContext.getTHIDataContext.Connection.Close()
-                                    MessageBox.Show(ex.Message & "--- Update Stock ---", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                                End Try
-                                '---- End Process Cut Stock ----------------------------------------------------------------------
-
                                 'MainReceipt.LoadByReceiptNo(TxtReceiptNo.Text)
-                                If RadNil.Checked = False Then
-                                    GenerateReceipt(TxtReceiptNo.Text)
-                                End If
-
+                                'If RadNil.Checked = False Then
+                                '    GenerateReceipt(TxtReceiptNo.Text)
+                                'End If
+                                ProcessCut()
                                 '''''''''''''''''''''Clean and Create New Receipt''''''''''''''''
-                                CleanReceiptInfomation()
+                                'CleanReceiptInfomation()
                                 Me.DialogResult = Windows.Forms.DialogResult.OK
                                 Me.Close()
                                 Me.Dispose()
                             End If
                             IsPatient = False
                             'GetBarcod()
-
-                            '.......... Finish Cashe Nill ------------------------------- 
-                            '------------------------------------------------------------
-                        Else
-                            '1 ......Save to TblPatientReceipt first ...............
-                            If OpticalDataControl.SaveNewReceiptPatient(ObjTblPatientReceipt) = True Then
-                                ' New Customer for Patient.
-                                If OpticalDataControl.SaveNewReceipt(ObjReceipt) = True Then
-                                    Dim IDReceipt As Double = ObjReceipt.ReceiptID
-                                    'MsgBox(IDReceipt)
-                                    For Each row As DataRow In DTblItemDetial.Rows
-                                        Dim ObjReceiptDetail As New RECEIPT_DETAIL
-                                        ObjReceiptDetail.ReceiptNo = IDReceipt 'TxtReceiptNo.Text
-                                        ObjReceiptDetail.ItemID = row("ColumnItemID")
-                                        ObjReceiptDetail.ItemPrice = Val(row("ColumnPrice"))
-                                        ObjReceiptDetail.ItemQTY = Val(row("ColumnQTY"))
-                                        ObjReceiptDetail.SubTotalReal = Val(row("SubTotalReal"))
-                                        ObjReceiptDetail.SubTotalDolar = Val(row("SubTotalDolar"))
-                                        ObjReceiptDetail.ItemCost = Val(row("ItemCost"))
-                                        ObjReceiptDetail.EXCHANGE_RATE = Val(row("EXCHANGE_RATE"))
-                                        ObjReceiptDetail.ReceiptDate = DateCreateReceipt.Value
-                                        OpticalDataControl.SaveReceiptDetail(ObjReceiptDetail)
-                                    Next
-                                    'MainReceipt.LoadByReceiptNo(TxtReceiptNo.Text)
-                                    'If RadNil.Checked = False Then
-                                    '    GenerateReceipt(TxtReceiptNo.Text)
-                                    'End If
-                                    ProcessCut()
-                                    '''''''''''''''''''''Clean and Create New Receipt''''''''''''''''
-                                    'CleanReceiptInfomation()
-                                    Me.DialogResult = Windows.Forms.DialogResult.OK
-                                    Me.Close()
-                                    Me.Dispose()
-                                End If
-                                IsPatient = False
-                                'GetBarcod()
-                            End If
                         End If
-                        ' Update Counselling process
-                        'If LblConsultID.Text = "0" Then
-                        'Else
-                        '    DS_Consult.UpdateStatus(1, LblConsultID.Text)
-                        'End If
-                    Catch ex As Exception
-                        MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                        Me.Close()
-                        Me.Dispose()
-                    End Try
+                    End If
+                    ' Update Counselling process
+                    'If LblConsultID.Text = "0" Then
+                    'Else
+                    '    DS_Consult.UpdateStatus(1, LblConsultID.Text)
+                    'End If
+                    'Catch ex As Exception
+                    '    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    '    Me.Close()
+                    '    Me.Dispose()
+                    'End Try
                 End If
             End If
         End If
@@ -2003,7 +2006,7 @@ Public Class FrmNewReceipt
         FSelectPatient.PatientOption = 1 '--- Select Patient to create invoice
         If FSelectPatient.ShowDialog = Windows.Forms.DialogResult.OK Then
             TxtCustomerID.Text = FSelectPatient.GridPatientInformation.GetRow(0).Cells("PatientNo").Value
-            TxtCustomerNo.Text = FSelectPatient.GridPatientInformation.GetRow(0).Cells("PatientNo").Value
+            TxtSearchPNo.Text = FSelectPatient.GridPatientInformation.GetRow(0).Cells("PatientNo").Value
             TxtCustomerName.Text = FSelectPatient.GridPatientInformation.GetRow(0).Cells("NameKhmer").Value
             TxtCusNameEng.Text = FSelectPatient.GridPatientInformation.GetRow(0).Cells("NameEng").Value
             TxtSex.Text = FSelectPatient.GridPatientInformation.GetRow(0).Cells("Sex").Value
@@ -2013,7 +2016,7 @@ Public Class FrmNewReceipt
             Me.LblCombindReferal.Text = ModNew_Outpatient.Get_CombindReferalInPatient(FSelectPatient.GridPatientInformation.GetRow(0).Cells("PatientNo").Value)
             IsPatient = True
             'CheOldPatient.Checked = False
-            CheckIsPatientConsult(EmptyString(TxtCustomerNo.Text), "Optical Shop", 0)
+            CheckIsPatientConsult(EmptyString(TxtSearchPNo.Text), "Optical Shop", 0)
 
         End If
         'Else
@@ -2368,7 +2371,7 @@ Public Class FrmNewReceipt
         SearchItemByName()
     End Sub
     Private Sub SearchItemByName()
-        GridListOfItem.DataSource = ItemPrice.SelectItemNameInopticalShop(TxtItemNameSearch.Text)
+        GridListOfItem.DataSource = ItemPrice.SelectItemNameInopticalShop(TxtItemNameSearch.Text, DEPART_ID)
     End Sub
 
   
@@ -2378,38 +2381,53 @@ Public Class FrmNewReceipt
             MessageBox.Show("Please select item.", "Item", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Exit Sub
         End If
-        Dim ItmePrice As Double = 0
-        Dim SubTotalR As Double
-        Dim SubTotalD As Double
-        If GridListOfItem.GetRow.Cells("UnitsInStock").Value <= 0 Then
-            MessageBox.Show("QTy can not 0. please check again", "Item", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            Exit Sub
-        End If
-        If GridListOfItem.GetRow.Cells("Price").Value = 0 Then
-            MessageBox.Show("Please select item.", "Item", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            Exit Sub
+        Dim FAddNewItem As New FrmAddItemInOpticalShop(Me)
+        If RadNil.Checked = True Then
+            FAddNewItem.IsPaymentNil = True
         Else
-            ItmePrice = GridListOfItem.GetRow.Cells("Price").Value
+            FAddNewItem.IsPaymentNil = False
         End If
-       
-        If IsDolar = True Then
-            SubTotalR = Round((Val(ItmePrice) * Val(txtRate.Text)) * 1) 'Val(TxtItemQTY.Text))
-            'Calculate for Dolar
-            SubTotalD = Round(Val(ItmePrice) * 1, 3) ' Val(TxtItemQTY.Text)
-        Else
-            SubTotalR = Math.Round(Val(ItmePrice) * 1) 'Val(TxtItemQTY.Text))
-            SubTotalD = Round((Val(ItmePrice) / Val(txtRate.Text)) * 1, 3) 'Val(TxtItemQTY.Text)
-        End If
+        FAddNewItem.TxtItemQTY.Focus()
+        FAddNewItem.TxtItemQTY.Select()
+        FAddNewItem.TxtItemQTY.SelectAll()
+        FAddNewItem.TxtBarcode.Text = GridListOfItem.GetRow.Cells("Barcode").Value
+        FAddNewItem.Rate = Val(txtRate.Text)
+        FAddNewItem.SearchItemByBarcode(GridListOfItem.GetRow.Cells("Barcode").Value)
 
-        'If IsPaymentNil = True Then
-        '    'SubTotalR = 0
-        '    'SubTotalD = 0
-        '    Me.FNewReceipt.AddItemDetial(LblItemID.Text, TxtBarcode.Text, TxtItemName.Text, TxtItemPrice.Text, TxtItemQTY.Text, Nothing, SubTotalR, SubTotalD, lblCost.Text)
-        'Else
-        AddItemDetial(GridListOfItem.GetRow.Cells("ItemID").Value, GridListOfItem.GetRow.Cells("Barcode").Value, GridListOfItem.GetRow.Cells("ItemName").Value, ItmePrice, 1, Nothing, SubTotalR, SubTotalD, GridListOfItem.GetRow.Cells("UnitPrice").Value)
+        FAddNewItem.ShowDialog()
+
+        'Dim ItmePrice As Double = 0
+        'Dim SubTotalR As Double
+        'Dim SubTotalD As Double
+        'If GridListOfItem.GetRow.Cells("UnitsInStock").Value <= 0 Then
+        '    MessageBox.Show("QTy can not 0. please check again", "Item", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        '    Exit Sub
         'End If
-        
-        'Me.Close()
+        'If GridListOfItem.GetRow.Cells("Price").Value = 0 Then
+        '    MessageBox.Show("Please select item.", "Item", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        '    Exit Sub
+        'Else
+        '    ItmePrice = GridListOfItem.GetRow.Cells("Price").Value
+        'End If
+
+        'If IsDolar = True Then
+        '    SubTotalR = Round((Val(ItmePrice) * Val(txtRate.Text)) * 1) 'Val(TxtItemQTY.Text))
+        '    'Calculate for Dolar
+        '    SubTotalD = Round(Val(ItmePrice) * 1, 3) ' Val(TxtItemQTY.Text)
+        'Else
+        '    SubTotalR = Math.Round(Val(ItmePrice) * 1) 'Val(TxtItemQTY.Text))
+        '    SubTotalD = Round((Val(ItmePrice) / Val(txtRate.Text)) * 1, 3) 'Val(TxtItemQTY.Text)
+        'End If
+
+        ''If IsPaymentNil = True Then
+        ''    'SubTotalR = 0
+        ''    'SubTotalD = 0
+        ''    Me.FNewReceipt.AddItemDetial(LblItemID.Text, TxtBarcode.Text, TxtItemName.Text, TxtItemPrice.Text, TxtItemQTY.Text, Nothing, SubTotalR, SubTotalD, lblCost.Text)
+        ''Else
+        'AddItemDetial(GridListOfItem.GetRow.Cells("ItemID").Value, GridListOfItem.GetRow.Cells("Barcode").Value, GridListOfItem.GetRow.Cells("ItemName").Value, ItmePrice, 1, Nothing, SubTotalR, SubTotalD, GridListOfItem.GetRow.Cells("UnitPrice").Value)
+        ''End If
+
+        ''Me.Close()
     End Sub
 
   
@@ -2453,8 +2471,8 @@ Public Class FrmNewReceipt
 
     Private Sub BtnSave_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnSave.Click
         DateCreateReceipt.Checked = True
-        DateCreateReceipt.Value = CheckMarkEOD()
-        DateCreateReceipt.Enabled = False
+        DateCreateReceipt.Value = DATE_DEFAULT_SETTING  'CheckMarkEOD()
+        'DateCreateReceipt.Enabled = False
         BgSaveAndPrinting.RunWorkerAsync()
     End Sub
     
@@ -2553,7 +2571,7 @@ Public Class FrmNewReceipt
         ObjTblPatientReceipt.ConPay = "1"
         ObjTblPatientReceipt.ISSUE_BY_DEPART = DEPART_ID
         ObjTblPatientReceipt.TIME_ISSUE = Format(GetDateServer, "hh:mm:ss tt").ToString
-        DA_PTrackingTime.UpdateRECEIPT_OPT(Format(Now, "hh:mm:ss tt").ToString, TxtCustomerNo.Text, CheckMarkEOD().Date)
+        DA_PTrackingTime.UpdateRECEIPT_OPT(Format(Now, "hh:mm:ss tt").ToString, TxtSearchPNo.Text, CheckMarkEOD().Date)
         ObjTblPatientReceipt.AmoutWord = TxtAmountInWord.Text
         ObjReceip.IsPaid = 1
         If OpticalDataControl.UpdateReceiptPay = True Then 'And LblIsPaidStatus.Text <> "1" Then
@@ -2644,5 +2662,34 @@ Public Class FrmNewReceipt
         'If ChReal.Checked = True Then
         '    StrAmountInDolar = AmoundInWordRiel.Convert(TxtAmounInReal.Text)
         'End If
+    End Sub
+
+    Private Sub TxtSearchPNo_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TxtSearchPNo.KeyPress
+        SetDisableKeyString(e)
+    End Sub
+
+    
+    Private Sub BtnSerchPatient_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnSerchPatient.Click
+        If ValidateTextField(TxtSearchPNo, "", ErrReceipt) = False Then Exit Sub
+
+        ViewPatientInf(DAPatient.GetDataByPatientNo(EmptyString(TxtSearchPNo.Text)))
+    End Sub
+    Private Sub ViewPatientInf(ByVal TblPatient As DataTable)
+        If TblPatient.Rows.Count = 0 Then
+            TxtCusNameEng.Text = ""
+            TxtCustomerName.Text = ""
+            TxtSex.Text = ""
+            TxtAge.Text = ""
+            txtAddress.Text = ""
+        Else
+            For Each row As DataRow In TblPatient.Rows
+                TxtCusNameEng.Text = row("NameEng")
+                TxtCustomerName.Text = row("NameKhmer")
+                TxtSex.Text = row("Sex")
+                TxtAge.Text = row("Age")
+                txtAddress.Text = row("Address")
+            Next
+        End If
+        
     End Sub
 End Class

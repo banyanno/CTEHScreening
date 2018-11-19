@@ -171,6 +171,7 @@ Public Class FrmAddItemInOpticalShop
     Private Sub TxtItemQTY_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles TxtItemQTY.KeyDown
         If e.KeyCode = Keys.F2 Then
             Me.Close()
+            Me.Dispose()
         End If
     End Sub
 

@@ -12,6 +12,7 @@ Partial Class FrmNewReceipt
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmNewReceipt))
         Dim JanusColorScheme3 As Janus.Windows.Common.JanusColorScheme = New Janus.Windows.Common.JanusColorScheme
         Dim DataGridViewCellStyle13 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
         Dim DataGridViewCellStyle18 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
@@ -20,21 +21,20 @@ Partial Class FrmNewReceipt
         Dim DataGridViewCellStyle16 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
         Dim DataGridViewCellStyle17 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
         Dim GridListOfItem_DesignTimeLayout As Janus.Windows.GridEX.GridEXLayout = New Janus.Windows.GridEX.GridEXLayout
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmNewReceipt))
         Me.DateCreateReceipt = New System.Windows.Forms.DateTimePicker
         Me.Label2 = New System.Windows.Forms.Label
         Me.Label1 = New System.Windows.Forms.Label
         Me.GroupBox1 = New System.Windows.Forms.GroupBox
+        Me.BtnSerchPatient = New System.Windows.Forms.Button
+        Me.TxtSearchPNo = New System.Windows.Forms.TextBox
+        Me.Label16 = New System.Windows.Forms.Label
         Me.LblCombindReferal = New System.Windows.Forms.Label
         Me.LblReceiptID = New System.Windows.Forms.Label
         Me.CheOldPatient = New System.Windows.Forms.CheckBox
         Me.BtnAddItem = New System.Windows.Forms.Button
         Me.BtnRemoveItem = New System.Windows.Forms.Button
         Me.TxtCusNameEng = New System.Windows.Forms.TextBox
-        Me.BtnSelectPatient = New Janus.Windows.EditControls.UIButton
-        Me.VisualStyleManager1 = New Janus.Windows.Common.VisualStyleManager(Me.components)
         Me.Label3 = New System.Windows.Forms.Label
-        Me.BtnCleanCustomer = New Janus.Windows.EditControls.UIButton
         Me.txtAddress = New System.Windows.Forms.TextBox
         Me.Label11 = New System.Windows.Forms.Label
         Me.Label6 = New System.Windows.Forms.Label
@@ -44,6 +44,9 @@ Partial Class FrmNewReceipt
         Me.TxtCustomerName = New System.Windows.Forms.TextBox
         Me.Label5 = New System.Windows.Forms.Label
         Me.Label4 = New System.Windows.Forms.Label
+        Me.BtnSelectPatient = New Janus.Windows.EditControls.UIButton
+        Me.VisualStyleManager1 = New Janus.Windows.Common.VisualStyleManager(Me.components)
+        Me.BtnCleanCustomer = New Janus.Windows.EditControls.UIButton
         Me.BtnAddCustomer = New Janus.Windows.EditControls.UIButton
         Me.TxtCustomerID = New System.Windows.Forms.TextBox
         Me.GridItemDetail = New System.Windows.Forms.DataGridView
@@ -79,7 +82,6 @@ Partial Class FrmNewReceipt
         Me.RadReadyMadeSpectacle = New System.Windows.Forms.RadioButton
         Me.RadSunGlasses = New System.Windows.Forms.RadioButton
         Me.LblSaveStatus = New System.Windows.Forms.Label
-        Me.TxtCustomerNo = New System.Windows.Forms.TextBox
         Me.Label7 = New System.Windows.Forms.Label
         Me.RadOther = New System.Windows.Forms.RadioButton
         Me.ChDonation = New System.Windows.Forms.CheckBox
@@ -173,11 +175,10 @@ Partial Class FrmNewReceipt
         '
         'DateCreateReceipt
         '
-        Me.DateCreateReceipt.Checked = False
         Me.DateCreateReceipt.CustomFormat = "dd/MM/yyyy"
         Me.DateCreateReceipt.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DateCreateReceipt.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.DateCreateReceipt.Location = New System.Drawing.Point(95, 16)
+        Me.DateCreateReceipt.Location = New System.Drawing.Point(95, 49)
         Me.DateCreateReceipt.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.DateCreateReceipt.Name = "DateCreateReceipt"
         Me.DateCreateReceipt.ShowCheckBox = True
@@ -188,7 +189,7 @@ Partial Class FrmNewReceipt
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(4, 21)
+        Me.Label2.Location = New System.Drawing.Point(4, 54)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(90, 17)
         Me.Label2.TabIndex = 10
@@ -199,7 +200,7 @@ Partial Class FrmNewReceipt
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.Blue
-        Me.Label1.Location = New System.Drawing.Point(5, 54)
+        Me.Label1.Location = New System.Drawing.Point(5, 87)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(78, 17)
         Me.Label1.TabIndex = 11
@@ -209,15 +210,16 @@ Partial Class FrmNewReceipt
         '
         Me.GroupBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox1.Controls.Add(Me.BtnSerchPatient)
+        Me.GroupBox1.Controls.Add(Me.TxtSearchPNo)
+        Me.GroupBox1.Controls.Add(Me.Label16)
         Me.GroupBox1.Controls.Add(Me.LblCombindReferal)
         Me.GroupBox1.Controls.Add(Me.LblReceiptID)
         Me.GroupBox1.Controls.Add(Me.CheOldPatient)
         Me.GroupBox1.Controls.Add(Me.BtnAddItem)
         Me.GroupBox1.Controls.Add(Me.BtnRemoveItem)
         Me.GroupBox1.Controls.Add(Me.TxtCusNameEng)
-        Me.GroupBox1.Controls.Add(Me.BtnSelectPatient)
         Me.GroupBox1.Controls.Add(Me.Label3)
-        Me.GroupBox1.Controls.Add(Me.BtnCleanCustomer)
         Me.GroupBox1.Controls.Add(Me.txtAddress)
         Me.GroupBox1.Controls.Add(Me.Label11)
         Me.GroupBox1.Controls.Add(Me.Label6)
@@ -227,15 +229,44 @@ Partial Class FrmNewReceipt
         Me.GroupBox1.Controls.Add(Me.TxtCustomerName)
         Me.GroupBox1.Controls.Add(Me.Label5)
         Me.GroupBox1.Controls.Add(Me.Label4)
-        Me.GroupBox1.Controls.Add(Me.BtnAddCustomer)
-        Me.GroupBox1.Location = New System.Drawing.Point(3, 161)
+        Me.GroupBox1.Location = New System.Drawing.Point(7, 5)
         Me.GroupBox1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.GroupBox1.Size = New System.Drawing.Size(852, 135)
+        Me.GroupBox1.Size = New System.Drawing.Size(852, 156)
         Me.GroupBox1.TabIndex = 1
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Customer Informatrion"
+        '
+        'BtnSerchPatient
+        '
+        Me.BtnSerchPatient.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
+        Me.BtnSerchPatient.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnSerchPatient.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnSerchPatient.Image = CType(resources.GetObject("BtnSerchPatient.Image"), System.Drawing.Image)
+        Me.BtnSerchPatient.Location = New System.Drawing.Point(305, 30)
+        Me.BtnSerchPatient.Name = "BtnSerchPatient"
+        Me.BtnSerchPatient.Size = New System.Drawing.Size(44, 33)
+        Me.BtnSerchPatient.TabIndex = 21
+        Me.BtnSerchPatient.UseVisualStyleBackColor = False
+        '
+        'TxtSearchPNo
+        '
+        Me.TxtSearchPNo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TxtSearchPNo.Font = New System.Drawing.Font("Microsoft Sans Serif", 17.0!)
+        Me.TxtSearchPNo.Location = New System.Drawing.Point(76, 30)
+        Me.TxtSearchPNo.Name = "TxtSearchPNo"
+        Me.TxtSearchPNo.Size = New System.Drawing.Size(230, 33)
+        Me.TxtSearchPNo.TabIndex = 14
+        '
+        'Label16
+        '
+        Me.Label16.AutoSize = True
+        Me.Label16.Location = New System.Drawing.Point(11, 50)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(34, 13)
+        Me.Label16.TabIndex = 13
+        Me.Label16.Text = "P-No:"
         '
         'LblCombindReferal
         '
@@ -267,7 +298,7 @@ Partial Class FrmNewReceipt
         Me.CheOldPatient.BackColor = System.Drawing.SystemColors.Control
         Me.CheOldPatient.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CheOldPatient.ForeColor = System.Drawing.Color.Red
-        Me.CheOldPatient.Location = New System.Drawing.Point(653, 24)
+        Me.CheOldPatient.Location = New System.Drawing.Point(735, 30)
         Me.CheOldPatient.Name = "CheOldPatient"
         Me.CheOldPatient.Size = New System.Drawing.Size(117, 24)
         Me.CheOldPatient.TabIndex = 10
@@ -303,15 +334,123 @@ Partial Class FrmNewReceipt
         '
         Me.TxtCusNameEng.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TxtCusNameEng.Font = New System.Drawing.Font("Microsoft Sans Serif", 17.0!)
-        Me.TxtCusNameEng.Location = New System.Drawing.Point(309, 24)
+        Me.TxtCusNameEng.Location = New System.Drawing.Point(351, 30)
         Me.TxtCusNameEng.Name = "TxtCusNameEng"
-        Me.TxtCusNameEng.Size = New System.Drawing.Size(217, 33)
+        Me.TxtCusNameEng.ReadOnly = True
+        Me.TxtCusNameEng.Size = New System.Drawing.Size(179, 33)
         Me.TxtCusNameEng.TabIndex = 1
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(10, 89)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(38, 13)
+        Me.Label3.TabIndex = 8
+        Me.Label3.Text = "Name:"
+        '
+        'txtAddress
+        '
+        Me.txtAddress.BackColor = System.Drawing.SystemColors.Control
+        Me.txtAddress.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtAddress.Location = New System.Drawing.Point(76, 109)
+        Me.txtAddress.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txtAddress.Multiline = True
+        Me.txtAddress.Name = "txtAddress"
+        Me.txtAddress.ReadOnly = True
+        Me.txtAddress.Size = New System.Drawing.Size(456, 37)
+        Me.txtAddress.TabIndex = 5
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Location = New System.Drawing.Point(10, 117)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(48, 13)
+        Me.Label11.TabIndex = 2
+        Me.Label11.Text = "Address:"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(585, 105)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(65, 13)
+        Me.Label6.TabIndex = 3
+        Me.Label6.Text = "Occupation:"
+        Me.Label6.Visible = False
+        '
+        'TxtAge
+        '
+        Me.TxtAge.BackColor = System.Drawing.SystemColors.Control
+        Me.TxtAge.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TxtAge.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtAge.Location = New System.Drawing.Point(451, 76)
+        Me.TxtAge.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.TxtAge.Name = "TxtAge"
+        Me.TxtAge.ReadOnly = True
+        Me.TxtAge.Size = New System.Drawing.Size(79, 26)
+        Me.TxtAge.TabIndex = 4
+        '
+        'TxtSex
+        '
+        Me.TxtSex.BackColor = System.Drawing.SystemColors.Control
+        Me.TxtSex.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TxtSex.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtSex.Location = New System.Drawing.Point(351, 76)
+        Me.TxtSex.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.TxtSex.Name = "TxtSex"
+        Me.TxtSex.ReadOnly = True
+        Me.TxtSex.Size = New System.Drawing.Size(48, 26)
+        Me.TxtSex.TabIndex = 3
+        '
+        'TxtCusOccupation
+        '
+        Me.TxtCusOccupation.BackColor = System.Drawing.Color.White
+        Me.TxtCusOccupation.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TxtCusOccupation.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtCusOccupation.Location = New System.Drawing.Point(653, 92)
+        Me.TxtCusOccupation.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.TxtCusOccupation.Name = "TxtCusOccupation"
+        Me.TxtCusOccupation.ReadOnly = True
+        Me.TxtCusOccupation.Size = New System.Drawing.Size(230, 26)
+        Me.TxtCusOccupation.TabIndex = 2
+        Me.TxtCusOccupation.Visible = False
+        '
+        'TxtCustomerName
+        '
+        Me.TxtCustomerName.BackColor = System.Drawing.SystemColors.Control
+        Me.TxtCustomerName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TxtCustomerName.Font = New System.Drawing.Font("Limon S1", 17.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtCustomerName.Location = New System.Drawing.Point(76, 69)
+        Me.TxtCustomerName.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.TxtCustomerName.Name = "TxtCustomerName"
+        Me.TxtCustomerName.ReadOnly = True
+        Me.TxtCustomerName.Size = New System.Drawing.Size(230, 33)
+        Me.TxtCustomerName.TabIndex = 0
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(416, 89)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(29, 13)
+        Me.Label5.TabIndex = 0
+        Me.Label5.Text = "Age:"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(320, 89)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(28, 13)
+        Me.Label4.TabIndex = 0
+        Me.Label4.Text = "Sex:"
         '
         'BtnSelectPatient
         '
         Me.BtnSelectPatient.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnSelectPatient.Location = New System.Drawing.Point(136, 136)
+        Me.BtnSelectPatient.Location = New System.Drawing.Point(734, 131)
         Me.BtnSelectPatient.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.BtnSelectPatient.Name = "BtnSelectPatient"
         Me.BtnSelectPatient.Size = New System.Drawing.Size(119, 34)
@@ -345,19 +484,10 @@ Partial Class FrmNewReceipt
         JanusColorScheme3.WindowTextColor = System.Drawing.Color.Black
         Me.VisualStyleManager1.ColorSchemes.Add(JanusColorScheme3)
         '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(9, 39)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(38, 13)
-        Me.Label3.TabIndex = 8
-        Me.Label3.Text = "Name:"
-        '
         'BtnCleanCustomer
         '
         Me.BtnCleanCustomer.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnCleanCustomer.Location = New System.Drawing.Point(425, 135)
+        Me.BtnCleanCustomer.Location = New System.Drawing.Point(660, 118)
         Me.BtnCleanCustomer.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.BtnCleanCustomer.Name = "BtnCleanCustomer"
         Me.BtnCleanCustomer.Size = New System.Drawing.Size(109, 35)
@@ -368,106 +498,10 @@ Partial Class FrmNewReceipt
         Me.BtnCleanCustomer.Visible = False
         Me.BtnCleanCustomer.VisualStyleManager = Me.VisualStyleManager1
         '
-        'txtAddress
-        '
-        Me.txtAddress.BackColor = System.Drawing.Color.White
-        Me.txtAddress.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtAddress.Location = New System.Drawing.Point(72, 92)
-        Me.txtAddress.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.txtAddress.Multiline = True
-        Me.txtAddress.Name = "txtAddress"
-        Me.txtAddress.ReadOnly = True
-        Me.txtAddress.Size = New System.Drawing.Size(456, 37)
-        Me.txtAddress.TabIndex = 5
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(4, 100)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(48, 13)
-        Me.Label11.TabIndex = 2
-        Me.Label11.Text = "Address:"
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(4, 74)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(65, 13)
-        Me.Label6.TabIndex = 3
-        Me.Label6.Text = "Occupation:"
-        '
-        'TxtAge
-        '
-        Me.TxtAge.BackColor = System.Drawing.Color.White
-        Me.TxtAge.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TxtAge.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtAge.Location = New System.Drawing.Point(447, 61)
-        Me.TxtAge.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.TxtAge.Name = "TxtAge"
-        Me.TxtAge.ReadOnly = True
-        Me.TxtAge.Size = New System.Drawing.Size(79, 26)
-        Me.TxtAge.TabIndex = 4
-        '
-        'TxtSex
-        '
-        Me.TxtSex.BackColor = System.Drawing.Color.White
-        Me.TxtSex.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TxtSex.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtSex.Location = New System.Drawing.Point(347, 61)
-        Me.TxtSex.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.TxtSex.Name = "TxtSex"
-        Me.TxtSex.ReadOnly = True
-        Me.TxtSex.Size = New System.Drawing.Size(48, 26)
-        Me.TxtSex.TabIndex = 3
-        '
-        'TxtCusOccupation
-        '
-        Me.TxtCusOccupation.BackColor = System.Drawing.Color.White
-        Me.TxtCusOccupation.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TxtCusOccupation.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtCusOccupation.Location = New System.Drawing.Point(72, 61)
-        Me.TxtCusOccupation.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.TxtCusOccupation.Name = "TxtCusOccupation"
-        Me.TxtCusOccupation.ReadOnly = True
-        Me.TxtCusOccupation.Size = New System.Drawing.Size(230, 26)
-        Me.TxtCusOccupation.TabIndex = 2
-        '
-        'TxtCustomerName
-        '
-        Me.TxtCustomerName.BackColor = System.Drawing.Color.White
-        Me.TxtCustomerName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TxtCustomerName.Font = New System.Drawing.Font("Limon S1", 17.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtCustomerName.Location = New System.Drawing.Point(72, 24)
-        Me.TxtCustomerName.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.TxtCustomerName.Name = "TxtCustomerName"
-        Me.TxtCustomerName.ReadOnly = True
-        Me.TxtCustomerName.Size = New System.Drawing.Size(230, 33)
-        Me.TxtCustomerName.TabIndex = 0
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(412, 74)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(29, 13)
-        Me.Label5.TabIndex = 0
-        Me.Label5.Text = "Age:"
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(316, 74)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(28, 13)
-        Me.Label4.TabIndex = 0
-        Me.Label4.Text = "Sex:"
-        '
         'BtnAddCustomer
         '
         Me.BtnAddCustomer.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnAddCustomer.Location = New System.Drawing.Point(259, 135)
+        Me.BtnAddCustomer.Location = New System.Drawing.Point(624, 157)
         Me.BtnAddCustomer.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.BtnAddCustomer.Name = "BtnAddCustomer"
         Me.BtnAddCustomer.Size = New System.Drawing.Size(161, 35)
@@ -510,7 +544,7 @@ Partial Class FrmNewReceipt
         Me.GridItemDetail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.GridItemDetail.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ColumnItemID, Me.ColumnBarcode, Me.ColumnName, Me.ColumnPrice, Me.ColumnQTY, Me.SubTotal, Me.SubTotalDolar, Me.Picture, Me.ItemCost, Me.EXCHANGE_RATE})
         Me.GridItemDetail.EnableHeadersVisualStyles = False
-        Me.GridItemDetail.Location = New System.Drawing.Point(3, 354)
+        Me.GridItemDetail.Location = New System.Drawing.Point(5, 481)
         Me.GridItemDetail.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.GridItemDetail.Name = "GridItemDetail"
         Me.GridItemDetail.ReadOnly = True
@@ -524,7 +558,7 @@ Partial Class FrmNewReceipt
         Me.GridItemDetail.RowHeadersDefaultCellStyle = DataGridViewCellStyle18
         Me.GridItemDetail.RowTemplate.Height = 30
         Me.GridItemDetail.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.GridItemDetail.Size = New System.Drawing.Size(536, 382)
+        Me.GridItemDetail.Size = New System.Drawing.Size(536, 393)
         Me.GridItemDetail.TabIndex = 3
         '
         'ColumnItemID
@@ -631,14 +665,12 @@ Partial Class FrmNewReceipt
         Me.GroupBox3.Controls.Add(Me.TxtAmountInWord)
         Me.GroupBox3.Controls.Add(Me.Label15)
         Me.GroupBox3.Controls.Add(Me.GPIncomeType)
-        Me.GroupBox3.Controls.Add(Me.GroupBox2)
-        Me.GroupBox3.Controls.Add(Me.GroupBox6)
         Me.GroupBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox3.Location = New System.Drawing.Point(7, 300)
+        Me.GroupBox3.Location = New System.Drawing.Point(10, 373)
         Me.GroupBox3.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.GroupBox3.Size = New System.Drawing.Size(851, 357)
+        Me.GroupBox3.Size = New System.Drawing.Size(851, 331)
         Me.GroupBox3.TabIndex = 6
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "In payment for"
@@ -649,7 +681,7 @@ Partial Class FrmNewReceipt
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.TxtAmountInWord.BackColor = System.Drawing.Color.White
         Me.TxtAmountInWord.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtAmountInWord.Location = New System.Drawing.Point(6, 116)
+        Me.TxtAmountInWord.Location = New System.Drawing.Point(6, 47)
         Me.TxtAmountInWord.Name = "TxtAmountInWord"
         Me.TxtAmountInWord.ReadOnly = True
         Me.TxtAmountInWord.Size = New System.Drawing.Size(836, 30)
@@ -658,7 +690,7 @@ Partial Class FrmNewReceipt
         'Label15
         '
         Me.Label15.AutoSize = True
-        Me.Label15.Location = New System.Drawing.Point(8, 96)
+        Me.Label15.Location = New System.Drawing.Point(8, 27)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(124, 17)
         Me.Label15.TabIndex = 3
@@ -673,7 +705,6 @@ Partial Class FrmNewReceipt
         Me.GPIncomeType.Controls.Add(Me.RadReadyMadeSpectacle)
         Me.GPIncomeType.Controls.Add(Me.RadSunGlasses)
         Me.GPIncomeType.Controls.Add(Me.LblSaveStatus)
-        Me.GPIncomeType.Controls.Add(Me.TxtCustomerNo)
         Me.GPIncomeType.Controls.Add(Me.Label7)
         Me.GPIncomeType.Controls.Add(Me.RadOther)
         Me.GPIncomeType.Controls.Add(Me.TxtCustomerID)
@@ -683,11 +714,11 @@ Partial Class FrmNewReceipt
         Me.GPIncomeType.Controls.Add(Me.GroupBox5)
         Me.GPIncomeType.Controls.Add(Me.GBoxCustomerMade)
         Me.GPIncomeType.Controls.Add(Me.GBoxReadyMade)
-        Me.GPIncomeType.Location = New System.Drawing.Point(6, 151)
+        Me.GPIncomeType.Location = New System.Drawing.Point(6, 91)
         Me.GPIncomeType.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.GPIncomeType.Name = "GPIncomeType"
         Me.GPIncomeType.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.GPIncomeType.Size = New System.Drawing.Size(836, 200)
+        Me.GPIncomeType.Size = New System.Drawing.Size(836, 233)
         Me.GPIncomeType.TabIndex = 2
         Me.GPIncomeType.TabStop = False
         Me.GPIncomeType.Text = "Select In payment for"
@@ -847,7 +878,7 @@ Partial Class FrmNewReceipt
         'RadLV
         '
         Me.RadLV.AutoSize = True
-        Me.RadLV.Location = New System.Drawing.Point(291, 141)
+        Me.RadLV.Location = New System.Drawing.Point(224, 172)
         Me.RadLV.Name = "RadLV"
         Me.RadLV.Size = New System.Drawing.Size(90, 21)
         Me.RadLV.TabIndex = 6
@@ -860,7 +891,7 @@ Partial Class FrmNewReceipt
         '
         Me.RadCustomerMadeSpectacle.AutoSize = True
         Me.RadCustomerMadeSpectacle.BackColor = System.Drawing.Color.Transparent
-        Me.RadCustomerMadeSpectacle.Location = New System.Drawing.Point(83, 21)
+        Me.RadCustomerMadeSpectacle.Location = New System.Drawing.Point(16, 52)
         Me.RadCustomerMadeSpectacle.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.RadCustomerMadeSpectacle.Name = "RadCustomerMadeSpectacle"
         Me.RadCustomerMadeSpectacle.Size = New System.Drawing.Size(191, 21)
@@ -874,7 +905,7 @@ Partial Class FrmNewReceipt
         '
         Me.RadReadyMadeSpectacle.AutoSize = True
         Me.RadReadyMadeSpectacle.BackColor = System.Drawing.Color.Transparent
-        Me.RadReadyMadeSpectacle.Location = New System.Drawing.Point(83, 125)
+        Me.RadReadyMadeSpectacle.Location = New System.Drawing.Point(16, 156)
         Me.RadReadyMadeSpectacle.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.RadReadyMadeSpectacle.Name = "RadReadyMadeSpectacle"
         Me.RadReadyMadeSpectacle.Size = New System.Drawing.Size(172, 21)
@@ -888,7 +919,7 @@ Partial Class FrmNewReceipt
         '
         Me.RadSunGlasses.AutoSize = True
         Me.RadSunGlasses.BackColor = System.Drawing.Color.Transparent
-        Me.RadSunGlasses.Location = New System.Drawing.Point(284, 37)
+        Me.RadSunGlasses.Location = New System.Drawing.Point(217, 68)
         Me.RadSunGlasses.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.RadSunGlasses.Name = "RadSunGlasses"
         Me.RadSunGlasses.Size = New System.Drawing.Size(106, 21)
@@ -908,24 +939,12 @@ Partial Class FrmNewReceipt
         Me.LblSaveStatus.Text = "0"
         Me.LblSaveStatus.Visible = False
         '
-        'TxtCustomerNo
-        '
-        Me.TxtCustomerNo.BackColor = System.Drawing.Color.White
-        Me.TxtCustomerNo.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtCustomerNo.Location = New System.Drawing.Point(607, 172)
-        Me.TxtCustomerNo.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.TxtCustomerNo.Name = "TxtCustomerNo"
-        Me.TxtCustomerNo.ReadOnly = True
-        Me.TxtCustomerNo.Size = New System.Drawing.Size(73, 26)
-        Me.TxtCustomerNo.TabIndex = 9
-        Me.TxtCustomerNo.Visible = False
-        '
         'Label7
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.Color.Blue
-        Me.Label7.Location = New System.Drawing.Point(7, 34)
+        Me.Label7.Location = New System.Drawing.Point(12, 31)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(65, 13)
         Me.Label7.TabIndex = 1
@@ -935,7 +954,7 @@ Partial Class FrmNewReceipt
         '
         Me.RadOther.AutoSize = True
         Me.RadOther.BackColor = System.Drawing.Color.Transparent
-        Me.RadOther.Location = New System.Drawing.Point(411, 165)
+        Me.RadOther.Location = New System.Drawing.Point(344, 196)
         Me.RadOther.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.RadOther.Name = "RadOther"
         Me.RadOther.Size = New System.Drawing.Size(62, 21)
@@ -962,7 +981,7 @@ Partial Class FrmNewReceipt
         '
         Me.RadFundRaising.AutoSize = True
         Me.RadFundRaising.BackColor = System.Drawing.Color.Transparent
-        Me.RadFundRaising.Location = New System.Drawing.Point(291, 165)
+        Me.RadFundRaising.Location = New System.Drawing.Point(224, 196)
         Me.RadFundRaising.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.RadFundRaising.Name = "RadFundRaising"
         Me.RadFundRaising.Size = New System.Drawing.Size(109, 21)
@@ -976,7 +995,7 @@ Partial Class FrmNewReceipt
         '
         Me.RadMedicine.AutoSize = True
         Me.RadMedicine.BackColor = System.Drawing.Color.Transparent
-        Me.RadMedicine.Location = New System.Drawing.Point(284, 64)
+        Me.RadMedicine.Location = New System.Drawing.Point(217, 95)
         Me.RadMedicine.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.RadMedicine.Name = "RadMedicine"
         Me.RadMedicine.Size = New System.Drawing.Size(82, 21)
@@ -1054,7 +1073,7 @@ Partial Class FrmNewReceipt
         Me.GBoxCustomerMade.Controls.Add(Me.RadRedding1)
         Me.GBoxCustomerMade.Controls.Add(Me.RadBifocal)
         Me.GBoxCustomerMade.Enabled = False
-        Me.GBoxCustomerMade.Location = New System.Drawing.Point(78, 24)
+        Me.GBoxCustomerMade.Location = New System.Drawing.Point(11, 55)
         Me.GBoxCustomerMade.Name = "GBoxCustomerMade"
         Me.GBoxCustomerMade.Size = New System.Drawing.Size(200, 97)
         Me.GBoxCustomerMade.TabIndex = 1
@@ -1098,7 +1117,7 @@ Partial Class FrmNewReceipt
         Me.GBoxReadyMade.Controls.Add(Me.RadDistance2)
         Me.GBoxReadyMade.Controls.Add(Me.RadRedding2)
         Me.GBoxReadyMade.Enabled = False
-        Me.GBoxReadyMade.Location = New System.Drawing.Point(78, 127)
+        Me.GBoxReadyMade.Location = New System.Drawing.Point(11, 158)
         Me.GBoxReadyMade.Name = "GBoxReadyMade"
         Me.GBoxReadyMade.Size = New System.Drawing.Size(200, 67)
         Me.GBoxReadyMade.TabIndex = 3
@@ -1128,13 +1147,15 @@ Partial Class FrmNewReceipt
         '
         'GroupBox2
         '
+        Me.GroupBox2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox2.Controls.Add(Me.TxtTotalAsReal)
         Me.GroupBox2.Controls.Add(Me.Label18)
-        Me.GroupBox2.Location = New System.Drawing.Point(6, 29)
+        Me.GroupBox2.Location = New System.Drawing.Point(3, 878)
         Me.GroupBox2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.GroupBox2.Size = New System.Drawing.Size(268, 65)
+        Me.GroupBox2.Size = New System.Drawing.Size(250, 57)
         Me.GroupBox2.TabIndex = 0
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Total Riel"
@@ -1143,7 +1164,7 @@ Partial Class FrmNewReceipt
         '
         Me.TxtTotalAsReal.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.TxtTotalAsReal.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!)
-        Me.TxtTotalAsReal.Location = New System.Drawing.Point(9, 25)
+        Me.TxtTotalAsReal.Location = New System.Drawing.Point(5, 19)
         Me.TxtTotalAsReal.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.TxtTotalAsReal.Name = "TxtTotalAsReal"
         Me.TxtTotalAsReal.Size = New System.Drawing.Size(226, 30)
@@ -1153,21 +1174,23 @@ Partial Class FrmNewReceipt
         'Label18
         '
         Me.Label18.AutoSize = True
-        Me.Label18.Location = New System.Drawing.Point(245, 37)
+        Me.Label18.Location = New System.Drawing.Point(234, 31)
         Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(18, 17)
+        Me.Label18.Size = New System.Drawing.Size(15, 13)
         Me.Label18.TabIndex = 0
         Me.Label18.Text = "R"
         '
         'GroupBox6
         '
+        Me.GroupBox6.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox6.Controls.Add(Me.TxtTotalAsDolar)
         Me.GroupBox6.Controls.Add(Me.Label8)
-        Me.GroupBox6.Location = New System.Drawing.Point(292, 30)
+        Me.GroupBox6.Location = New System.Drawing.Point(271, 880)
         Me.GroupBox6.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.GroupBox6.Name = "GroupBox6"
         Me.GroupBox6.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.GroupBox6.Size = New System.Drawing.Size(268, 62)
+        Me.GroupBox6.Size = New System.Drawing.Size(270, 57)
         Me.GroupBox6.TabIndex = 1
         Me.GroupBox6.TabStop = False
         Me.GroupBox6.Text = "Total Dolar"
@@ -1176,7 +1199,7 @@ Partial Class FrmNewReceipt
         '
         Me.TxtTotalAsDolar.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.TxtTotalAsDolar.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!)
-        Me.TxtTotalAsDolar.Location = New System.Drawing.Point(15, 25)
+        Me.TxtTotalAsDolar.Location = New System.Drawing.Point(16, 19)
         Me.TxtTotalAsDolar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.TxtTotalAsDolar.Name = "TxtTotalAsDolar"
         Me.TxtTotalAsDolar.ReadOnly = True
@@ -1187,9 +1210,9 @@ Partial Class FrmNewReceipt
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(247, 37)
+        Me.Label8.Location = New System.Drawing.Point(248, 31)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(16, 17)
+        Me.Label8.Size = New System.Drawing.Size(13, 13)
         Me.Label8.TabIndex = 0
         Me.Label8.Text = "$"
         '
@@ -1199,7 +1222,7 @@ Partial Class FrmNewReceipt
         Me.GroupBox8.Controls.Add(Me.cmdAddRate)
         Me.GroupBox8.Controls.Add(Me.txtRate)
         Me.GroupBox8.Font = New System.Drawing.Font("Kh Battambang", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox8.Location = New System.Drawing.Point(597, 74)
+        Me.GroupBox8.Location = New System.Drawing.Point(597, 54)
         Me.GroupBox8.Name = "GroupBox8"
         Me.GroupBox8.Size = New System.Drawing.Size(164, 52)
         Me.GroupBox8.TabIndex = 9
@@ -1296,12 +1319,15 @@ Partial Class FrmNewReceipt
         Me.GroupBox4.Controls.Add(Me.TxtGetBarcode)
         Me.GroupBox4.Controls.Add(Me.DateCreateReceipt)
         Me.GroupBox4.Controls.Add(Me.Label2)
+        Me.GroupBox4.Controls.Add(Me.BtnSelectPatient)
         Me.GroupBox4.Controls.Add(Me.GroupBox8)
-        Me.GroupBox4.Location = New System.Drawing.Point(3, 5)
+        Me.GroupBox4.Controls.Add(Me.BtnAddCustomer)
+        Me.GroupBox4.Controls.Add(Me.BtnCleanCustomer)
+        Me.GroupBox4.Location = New System.Drawing.Point(8, 168)
         Me.GroupBox4.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.GroupBox4.Name = "GroupBox4"
         Me.GroupBox4.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.GroupBox4.Size = New System.Drawing.Size(852, 152)
+        Me.GroupBox4.Size = New System.Drawing.Size(852, 201)
         Me.GroupBox4.TabIndex = 2
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "Invoice Info"
@@ -1313,7 +1339,7 @@ Partial Class FrmNewReceipt
         Me.ChIsPrintFull.CheckState = System.Windows.Forms.CheckState.Checked
         Me.ChIsPrintFull.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ChIsPrintFull.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.ChIsPrintFull.Location = New System.Drawing.Point(397, 129)
+        Me.ChIsPrintFull.Location = New System.Drawing.Point(399, 172)
         Me.ChIsPrintFull.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.ChIsPrintFull.Name = "ChIsPrintFull"
         Me.ChIsPrintFull.Size = New System.Drawing.Size(125, 21)
@@ -1330,7 +1356,7 @@ Partial Class FrmNewReceipt
         Me.GBPaymentType.Controls.Add(Me.RadNil)
         Me.GBPaymentType.Controls.Add(Me.RadSocial)
         Me.GBPaymentType.Controls.Add(Me.RadFull)
-        Me.GBPaymentType.Location = New System.Drawing.Point(231, 9)
+        Me.GBPaymentType.Location = New System.Drawing.Point(231, 47)
         Me.GBPaymentType.Name = "GBPaymentType"
         Me.GBPaymentType.Size = New System.Drawing.Size(360, 117)
         Me.GBPaymentType.TabIndex = 4
@@ -1447,9 +1473,9 @@ Partial Class FrmNewReceipt
         Me.GroupBox7.Controls.Add(Me.TxtNumGlasses)
         Me.GroupBox7.Controls.Add(Me.Label9)
         Me.GroupBox7.Controls.Add(Me.ChbNewGlasses)
-        Me.GroupBox7.Location = New System.Drawing.Point(9, 79)
+        Me.GroupBox7.Location = New System.Drawing.Point(9, 112)
         Me.GroupBox7.Name = "GroupBox7"
-        Me.GroupBox7.Size = New System.Drawing.Size(204, 49)
+        Me.GroupBox7.Size = New System.Drawing.Size(216, 49)
         Me.GroupBox7.TabIndex = 5
         Me.GroupBox7.TabStop = False
         '
@@ -1488,7 +1514,7 @@ Partial Class FrmNewReceipt
         Me.TxtReceiptNo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.TxtReceiptNo.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold)
         Me.TxtReceiptNo.ForeColor = System.Drawing.Color.Red
-        Me.TxtReceiptNo.Location = New System.Drawing.Point(95, 50)
+        Me.TxtReceiptNo.Location = New System.Drawing.Point(95, 83)
         Me.TxtReceiptNo.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.TxtReceiptNo.Name = "TxtReceiptNo"
         Me.TxtReceiptNo.Size = New System.Drawing.Size(65, 22)
@@ -1500,7 +1526,7 @@ Partial Class FrmNewReceipt
         Me.ChPrintPreview.AutoSize = True
         Me.ChPrintPreview.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ChPrintPreview.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.ChPrintPreview.Location = New System.Drawing.Point(231, 129)
+        Me.ChPrintPreview.Location = New System.Drawing.Point(233, 172)
         Me.ChPrintPreview.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.ChPrintPreview.Name = "ChPrintPreview"
         Me.ChPrintPreview.Size = New System.Drawing.Size(157, 21)
@@ -1525,6 +1551,7 @@ Partial Class FrmNewReceipt
         '
         'BtnClose
         '
+        Me.BtnClose.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.BtnClose.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
         Me.BtnClose.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BtnClose.FlatAppearance.BorderSize = 0
@@ -1532,9 +1559,9 @@ Partial Class FrmNewReceipt
         Me.BtnClose.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnClose.ForeColor = System.Drawing.Color.White
         Me.BtnClose.Image = CType(resources.GetObject("BtnClose.Image"), System.Drawing.Image)
-        Me.BtnClose.Location = New System.Drawing.Point(142, 662)
+        Me.BtnClose.Location = New System.Drawing.Point(1292, 9)
         Me.BtnClose.Name = "BtnClose"
-        Me.BtnClose.Size = New System.Drawing.Size(126, 43)
+        Me.BtnClose.Size = New System.Drawing.Size(127, 37)
         Me.BtnClose.TabIndex = 18
         Me.BtnClose.Text = "Close"
         Me.BtnClose.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -1549,9 +1576,9 @@ Partial Class FrmNewReceipt
         Me.BtnSave.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnSave.ForeColor = System.Drawing.Color.White
         Me.BtnSave.Image = CType(resources.GetObject("BtnSave.Image"), System.Drawing.Image)
-        Me.BtnSave.Location = New System.Drawing.Point(8, 662)
+        Me.BtnSave.Location = New System.Drawing.Point(558, 9)
         Me.BtnSave.Name = "BtnSave"
-        Me.BtnSave.Size = New System.Drawing.Size(126, 43)
+        Me.BtnSave.Size = New System.Drawing.Size(127, 37)
         Me.BtnSave.TabIndex = 17
         Me.BtnSave.Text = "Save"
         Me.BtnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -1583,7 +1610,7 @@ Partial Class FrmNewReceipt
         Me.UiTab1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.UiTab1.Location = New System.Drawing.Point(0, 0)
         Me.UiTab1.Name = "UiTab1"
-        Me.UiTab1.Size = New System.Drawing.Size(1424, 829)
+        Me.UiTab1.Size = New System.Drawing.Size(1424, 1030)
         Me.UiTab1.TabIndex = 20
         Me.UiTab1.TabPages.AddRange(New Janus.Windows.UI.Tab.UITabPage() {Me.UiTabPage2})
         Me.UiTab1.VisualStyleManager = Me.VisualStyleManager1
@@ -1592,12 +1619,14 @@ Partial Class FrmNewReceipt
         '
         Me.UiTabPage2.Controls.Add(Me.Panel2)
         Me.UiTabPage2.Controls.Add(Me.Panel1)
+        Me.UiTabPage2.Controls.Add(Me.BtnClose)
         Me.UiTabPage2.Controls.Add(Me.BtnSearch)
         Me.UiTabPage2.Controls.Add(Me.Label19)
         Me.UiTabPage2.Controls.Add(Me.TxtItemNameSearch)
+        Me.UiTabPage2.Controls.Add(Me.BtnSave)
         Me.UiTabPage2.Location = New System.Drawing.Point(1, 28)
         Me.UiTabPage2.Name = "UiTabPage2"
-        Me.UiTabPage2.Size = New System.Drawing.Size(1422, 800)
+        Me.UiTabPage2.Size = New System.Drawing.Size(1422, 1001)
         Me.UiTabPage2.StateStyles.FormatStyle.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
         Me.UiTabPage2.StateStyles.FormatStyle.FontSize = 12.0!
         Me.UiTabPage2.StateStyles.FormatStyle.ForeColor = System.Drawing.Color.White
@@ -1612,9 +1641,11 @@ Partial Class FrmNewReceipt
         Me.Panel2.Controls.Add(Me.GridListOfItem)
         Me.Panel2.Controls.Add(Me.BtnRemoveV1)
         Me.Panel2.Controls.Add(Me.GridItemDetail)
+        Me.Panel2.Controls.Add(Me.GroupBox6)
+        Me.Panel2.Controls.Add(Me.GroupBox2)
         Me.Panel2.Location = New System.Drawing.Point(3, 51)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(546, 741)
+        Me.Panel2.Size = New System.Drawing.Size(546, 942)
         Me.Panel2.TabIndex = 24
         '
         'GridListOfItem
@@ -1636,7 +1667,7 @@ Partial Class FrmNewReceipt
         Me.GridListOfItem.HeaderFormatStyle.TextAlignment = Janus.Windows.GridEX.TextAlignment.Center
         Me.GridListOfItem.Location = New System.Drawing.Point(5, 5)
         Me.GridListOfItem.Name = "GridListOfItem"
-        Me.GridListOfItem.Size = New System.Drawing.Size(533, 303)
+        Me.GridListOfItem.Size = New System.Drawing.Size(533, 430)
         Me.GridListOfItem.TabIndex = 21
         Me.GridListOfItem.ThemedAreas = Janus.Windows.GridEX.ThemedArea.None
         Me.GridListOfItem.VisualStyleManager = Me.VisualStyleManager1
@@ -1649,7 +1680,7 @@ Partial Class FrmNewReceipt
         Me.BtnRemoveV1.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BtnRemoveV1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnRemoveV1.Image = CType(resources.GetObject("BtnRemoveV1.Image"), System.Drawing.Image)
-        Me.BtnRemoveV1.Location = New System.Drawing.Point(241, 314)
+        Me.BtnRemoveV1.Location = New System.Drawing.Point(244, 439)
         Me.BtnRemoveV1.Name = "BtnRemoveV1"
         Me.BtnRemoveV1.Size = New System.Drawing.Size(43, 37)
         Me.BtnRemoveV1.TabIndex = 22
@@ -1663,12 +1694,10 @@ Partial Class FrmNewReceipt
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel1.Controls.Add(Me.GroupBox3)
         Me.Panel1.Controls.Add(Me.GroupBox1)
-        Me.Panel1.Controls.Add(Me.BtnClose)
         Me.Panel1.Controls.Add(Me.GroupBox4)
-        Me.Panel1.Controls.Add(Me.BtnSave)
         Me.Panel1.Location = New System.Drawing.Point(555, 51)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(864, 741)
+        Me.Panel1.Size = New System.Drawing.Size(864, 942)
         Me.Panel1.TabIndex = 23
         '
         'BtnSearch
@@ -1688,7 +1717,7 @@ Partial Class FrmNewReceipt
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
         Me.AutoScroll = True
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(236, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(241, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(1424, 829)
+        Me.ClientSize = New System.Drawing.Size(1424, 1030)
         Me.Controls.Add(Me.UiTab1)
         Me.Controls.Add(Me.ToolStrip1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
@@ -1814,7 +1843,6 @@ Partial Class FrmNewReceipt
     Friend WithEvents GroupBox8 As System.Windows.Forms.GroupBox
     Friend WithEvents cmdAddRate As System.Windows.Forms.Button
     Friend WithEvents txtRate As System.Windows.Forms.TextBox
-    Friend WithEvents TxtCustomerNo As System.Windows.Forms.TextBox
     Friend WithEvents LblCombindReferal As System.Windows.Forms.Label
     Friend WithEvents RadLV As System.Windows.Forms.RadioButton
     Friend WithEvents GBoxReadyMade As System.Windows.Forms.GroupBox
@@ -1867,4 +1895,7 @@ Partial Class FrmNewReceipt
     Friend WithEvents Panel2 As System.Windows.Forms.Panel
     Friend WithEvents TxtAmountInWord As System.Windows.Forms.TextBox
     Friend WithEvents Label15 As System.Windows.Forms.Label
+    Friend WithEvents BtnSerchPatient As System.Windows.Forms.Button
+    Friend WithEvents TxtSearchPNo As System.Windows.Forms.TextBox
+    Friend WithEvents Label16 As System.Windows.Forms.Label
 End Class

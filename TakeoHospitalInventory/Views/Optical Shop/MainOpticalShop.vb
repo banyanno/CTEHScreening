@@ -59,10 +59,7 @@
         GridReceipt.RootTable.ChildTables(0).DataMember = "VMainReceiptDetail_VReceiptDetail"
         GridReceipt.Refresh()
     End Sub
-    Sub LoadingWaitingPayment(ByVal DateFfromVal As Date, ByVal dateToVal As Date)
-        GridListWaitingPay.DataSource = DAOpticalshopBookDetail.SelectScreenOpticalShopDateToDate(DateFfromVal, dateToVal)
-        'GridListWaitingPay.Refresh()
-    End Sub
+   
     Sub LoadByReceiptNo(ByVal receiptNo As String)
         DAReceipt.GetDataByReceiptNo(receiptNo)
         DAReceipt.Fill(DSOpt.VMainReceiptDetail)
@@ -101,19 +98,9 @@
     End Sub
 
     Private Sub BtnNewReceipt1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnNewReceipt1.Click
-        If GridListWaitingPay.SelectedItems.Count = 0 Then
-            MessageBox.Show("Please select patient name!", "Shop", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            Exit Sub
-        End If
+     
         Dim FNewReceipt As New FrmNewReceipt(Me)
-        FNewReceipt.TxtCustomerID.Text = GridListWaitingPay.GetRow.Cells("PATIENT_NO").Value
-        FNewReceipt.TxtCustomerNo.Text = GridListWaitingPay.GetRow.Cells("PATIENT_NO").Value
-        FNewReceipt.TxtCustomerName.Text = GridListWaitingPay.GetRow.Cells("NameKhmer").Value
-        FNewReceipt.TxtCusNameEng.Text = GridListWaitingPay.GetRow.Cells("NameEng").Value
-        FNewReceipt.TxtCusOccupation.Text = ""
-        FNewReceipt.TxtSex.Text = GridListWaitingPay.GetRow.Cells("Sex").Value
-        FNewReceipt.TxtAge.Text = GridListWaitingPay.GetRow.Cells("Age").Value
-        FNewReceipt.txtAddress.Text = GridListWaitingPay.GetRow.Cells("Address").Value
+    
         FNewReceipt.LblCombindReferal.Text = "Screening" 'ModNew_Outpatient.Get_CombindReferalInPatient(FUMainCustomer.GridCustomer.GetRow.Cells("CustomerNo").Value)
         FNewReceipt.lblIspaid.Text = 0
         If FNewReceipt.ShowDialog() = DialogResult.OK Then
@@ -323,7 +310,5 @@
         
     End Sub
 
-    Private Sub BtnRefreshPayment_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnRefreshPayment.Click
-        LoadingWaitingPayment(DateFrom.Value.Date, DateTo.Value)
-    End Sub
+   
 End Class

@@ -1,6 +1,6 @@
 ﻿Public Class MainScreening
     Dim Login As frmLoginInventory
-
+    Dim DA_DefaultSetting As New DataSetSceenSettingTableAdapters.SCREEN_SYSTEMSETTINGTableAdapter
     Private Delegate Sub DelShowLoadingPicture(ByVal visible As Boolean, ByVal TextLable As String)
     Private Delegate Sub DelShowLabel(ByVal TextLable As String)
     Public examinationForm As New UCRegistrationForm
@@ -18,10 +18,22 @@
         UIMainMenu = New UIScreening(Me, Me.Login)
         'CheckPermistionOnForm()
         ' Add any initialization after the InitializeComponent() call.
+        LoadDefaultAddressSetting()
         AddUserControl(PanelHeader, PanelDedail, UIMainMenu, "", True)
         LabelDepartment.Text = "USER IN DEPT :" & DEPART_NAME
     End Sub
-
+    Public Sub LoadDefaultAddressSetting()
+        Dim TblSetting As DataTable = DA_DefaultSetting.SelectDefaultSetting
+        For Each rows As DataRow In TblSetting.Rows
+            'LblSettingID.Text = rows("SETTING_ID").ToString()
+            DATE_DEFAULT_SETTING = rows("SETTING_DATE")
+            'TxtHealthNameCenter.Text = rows("HEALTH_NAME").ToString
+            'CboProNo.Text = rows("PROVINCE").ToString
+            'CboDisNo.Text = rows("DISTRICT").ToString
+            'CboCommNo.Text = rows("COMMUNE").ToString
+            'TxtFullAddress.Text = rows("FULL_ADDRESS").ToString
+        Next
+    End Sub
     Sub CreateRegisForm()
         AddUserControl(PanelHeader, PanelDedail, examinationForm, "", True)
     End Sub

@@ -25,6 +25,7 @@ Partial Class FrmAddItemInOpticalShop
         Me.components = New System.ComponentModel.Container
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmAddItemInOpticalShop))
         Me.GroupBox4 = New System.Windows.Forms.GroupBox
+        Me.lblCost = New System.Windows.Forms.Label
         Me.TxtUnitInstock = New System.Windows.Forms.TextBox
         Me.Label2 = New System.Windows.Forms.Label
         Me.TxtBarcode = New System.Windows.Forms.TextBox
@@ -39,7 +40,6 @@ Partial Class FrmAddItemInOpticalShop
         Me.Label14 = New System.Windows.Forms.Label
         Me.Label13 = New System.Windows.Forms.Label
         Me.ErrReceipt = New System.Windows.Forms.ErrorProvider(Me.components)
-        Me.lblCost = New System.Windows.Forms.Label
         Me.GroupBox4.SuspendLayout()
         CType(Me.PictItem, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ErrReceipt, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -70,9 +70,21 @@ Partial Class FrmAddItemInOpticalShop
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "Item Information"
         '
+        'lblCost
+        '
+        Me.lblCost.AutoSize = True
+        Me.lblCost.Location = New System.Drawing.Point(16, 189)
+        Me.lblCost.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblCost.Name = "lblCost"
+        Me.lblCost.Size = New System.Drawing.Size(13, 13)
+        Me.lblCost.TabIndex = 18
+        Me.lblCost.Text = "0"
+        Me.lblCost.Visible = False
+        '
         'TxtUnitInstock
         '
         Me.TxtUnitInstock.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.TxtUnitInstock.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TxtUnitInstock.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtUnitInstock.Location = New System.Drawing.Point(84, 143)
         Me.TxtUnitInstock.Margin = New System.Windows.Forms.Padding(2)
@@ -93,6 +105,7 @@ Partial Class FrmAddItemInOpticalShop
         '
         'TxtBarcode
         '
+        Me.TxtBarcode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TxtBarcode.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtBarcode.Location = New System.Drawing.Point(85, 17)
         Me.TxtBarcode.Margin = New System.Windows.Forms.Padding(2)
@@ -125,7 +138,7 @@ Partial Class FrmAddItemInOpticalShop
         '
         'PictItem
         '
-        Me.PictItem.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.PictItem.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.PictItem.Location = New System.Drawing.Point(84, 173)
         Me.PictItem.Margin = New System.Windows.Forms.Padding(2)
         Me.PictItem.Name = "PictItem"
@@ -137,6 +150,7 @@ Partial Class FrmAddItemInOpticalShop
         'TxtItemPrice
         '
         Me.TxtItemPrice.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.TxtItemPrice.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TxtItemPrice.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtItemPrice.Location = New System.Drawing.Point(85, 80)
         Me.TxtItemPrice.Margin = New System.Windows.Forms.Padding(2)
@@ -159,6 +173,7 @@ Partial Class FrmAddItemInOpticalShop
         'TxtItemQTY
         '
         Me.TxtItemQTY.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.TxtItemQTY.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TxtItemQTY.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtItemQTY.Location = New System.Drawing.Point(85, 110)
         Me.TxtItemQTY.Margin = New System.Windows.Forms.Padding(2)
@@ -181,6 +196,7 @@ Partial Class FrmAddItemInOpticalShop
         'TxtItemName
         '
         Me.TxtItemName.BackColor = System.Drawing.Color.White
+        Me.TxtItemName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TxtItemName.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtItemName.Location = New System.Drawing.Point(85, 50)
         Me.TxtItemName.Margin = New System.Windows.Forms.Padding(2)
@@ -212,17 +228,6 @@ Partial Class FrmAddItemInOpticalShop
         'ErrReceipt
         '
         Me.ErrReceipt.ContainerControl = Me
-        '
-        'lblCost
-        '
-        Me.lblCost.AutoSize = True
-        Me.lblCost.Location = New System.Drawing.Point(16, 189)
-        Me.lblCost.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.lblCost.Name = "lblCost"
-        Me.lblCost.Size = New System.Drawing.Size(13, 13)
-        Me.lblCost.TabIndex = 18
-        Me.lblCost.Text = "0"
-        Me.lblCost.Visible = False
         '
         'FrmAddItemInOpticalShop
         '
