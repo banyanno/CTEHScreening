@@ -79,7 +79,6 @@ Partial Class FrmAddItemInOpticalShop
         Me.lblCost.Size = New System.Drawing.Size(13, 13)
         Me.lblCost.TabIndex = 18
         Me.lblCost.Text = "0"
-        Me.lblCost.Visible = False
         '
         'TxtUnitInstock
         '
@@ -134,7 +133,6 @@ Partial Class FrmAddItemInOpticalShop
         Me.LblItemID.Size = New System.Drawing.Size(13, 13)
         Me.LblItemID.TabIndex = 14
         Me.LblItemID.Text = "0"
-        Me.LblItemID.Visible = False
         '
         'PictItem
         '

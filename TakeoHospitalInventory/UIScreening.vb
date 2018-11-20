@@ -501,4 +501,9 @@
     Private Sub UIScreening_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         CheckPermistionOnForm()
     End Sub
+
+    Private Sub BtnEndOfDay_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnEndOfDay.Click
+        'GeneralAddControl(uiPanelMainContainer, URunEOD, "Main inventory Run End Of Day.")
+        AddUserControl(UIMainScreening.PanelHeader, UIMainScreening.PanelDedail, URunEOD, "", True)
+    End Sub
 End Class

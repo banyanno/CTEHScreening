@@ -23,8 +23,9 @@ Partial Class UCRunEndOfDay
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(UCRunEndOfDay))
         Dim gridItemsEndofDayRun_DesignTimeLayout As Janus.Windows.GridEX.GridEXLayout = New Janus.Windows.GridEX.GridEXLayout
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(UCRunEndOfDay))
+        Dim JanusColorScheme2 As Janus.Windows.Common.JanusColorScheme = New Janus.Windows.Common.JanusColorScheme
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer
         Me.GroupBox1 = New System.Windows.Forms.GroupBox
         Me.GroupBox2 = New System.Windows.Forms.GroupBox
@@ -53,6 +54,7 @@ Partial Class UCRunEndOfDay
         Me.gridItemsEndofDayRun = New Janus.Windows.GridEX.GridEX
         Me.ErrorEOD = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.BgLoadingRunEOD = New System.ComponentModel.BackgroundWorker
+        Me.VSForOpticalshop = New Janus.Windows.Common.VisualStyleManager(Me.components)
         Me.SplitContainer1.Panel1.SuspendLayout()
         Me.SplitContainer1.Panel2.SuspendLayout()
         Me.SplitContainer1.SuspendLayout()
@@ -66,7 +68,7 @@ Partial Class UCRunEndOfDay
         '
         'SplitContainer1
         '
-        Me.SplitContainer1.BackColor = System.Drawing.SystemColors.Control
+        Me.SplitContainer1.BackColor = System.Drawing.Color.FromArgb(CType(CType(236, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(241, Byte), Integer))
         Me.SplitContainer1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.SplitContainer1.Location = New System.Drawing.Point(0, 0)
         Me.SplitContainer1.Name = "SplitContainer1"
@@ -127,15 +129,19 @@ Partial Class UCRunEndOfDay
         '
         'BtnEndofDay
         '
+        Me.BtnEndofDay.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
         Me.BtnEndofDay.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnEndofDay.Image = Global.TakeoHospitalInventory.My.Resources.Resources.process
+        Me.BtnEndofDay.FlatAppearance.BorderSize = 0
+        Me.BtnEndofDay.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnEndofDay.ForeColor = System.Drawing.Color.White
+        Me.BtnEndofDay.Image = CType(resources.GetObject("BtnEndofDay.Image"), System.Drawing.Image)
         Me.BtnEndofDay.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.BtnEndofDay.Location = New System.Drawing.Point(249, 124)
         Me.BtnEndofDay.Name = "BtnEndofDay"
         Me.BtnEndofDay.Size = New System.Drawing.Size(206, 43)
         Me.BtnEndofDay.TabIndex = 19
         Me.BtnEndofDay.Text = "Process End of Day"
-        Me.BtnEndofDay.UseVisualStyleBackColor = True
+        Me.BtnEndofDay.UseVisualStyleBackColor = False
         '
         'cbDepart
         '
@@ -222,7 +228,7 @@ Partial Class UCRunEndOfDay
         Me.ChBAllS.AutoSize = True
         Me.ChBAllS.Checked = True
         Me.ChBAllS.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.ChBAllS.Location = New System.Drawing.Point(343, 39)
+        Me.ChBAllS.Location = New System.Drawing.Point(343, 44)
         Me.ChBAllS.Name = "ChBAllS"
         Me.ChBAllS.Size = New System.Drawing.Size(45, 17)
         Me.ChBAllS.TabIndex = 23
@@ -231,11 +237,13 @@ Partial Class UCRunEndOfDay
         '
         'cbDepartS
         '
-        Me.cbDepartS.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+        Me.cbDepartS.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.cbDepartS.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
+        Me.cbDepartS.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
         Me.cbDepartS.FormattingEnabled = True
         Me.cbDepartS.Location = New System.Drawing.Point(20, 37)
         Me.cbDepartS.Name = "cbDepartS"
-        Me.cbDepartS.Size = New System.Drawing.Size(308, 21)
+        Me.cbDepartS.Size = New System.Drawing.Size(308, 28)
         Me.cbDepartS.TabIndex = 21
         '
         'Label4
@@ -250,30 +258,37 @@ Partial Class UCRunEndOfDay
         '
         'BtnPrint
         '
+        Me.BtnPrint.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
         Me.BtnPrint.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnPrint.Image = Global.TakeoHospitalInventory.My.Resources.Resources.document_print
-        Me.BtnPrint.Location = New System.Drawing.Point(432, 77)
+        Me.BtnPrint.FlatAppearance.BorderSize = 0
+        Me.BtnPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnPrint.ForeColor = System.Drawing.Color.White
+        Me.BtnPrint.Image = CType(resources.GetObject("BtnPrint.Image"), System.Drawing.Image)
+        Me.BtnPrint.Location = New System.Drawing.Point(393, 72)
         Me.BtnPrint.Margin = New System.Windows.Forms.Padding(2)
         Me.BtnPrint.Name = "BtnPrint"
-        Me.BtnPrint.Size = New System.Drawing.Size(85, 41)
+        Me.BtnPrint.Size = New System.Drawing.Size(124, 41)
         Me.BtnPrint.TabIndex = 14
         Me.BtnPrint.Text = "Print"
         Me.BtnPrint.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.BtnPrint.UseVisualStyleBackColor = True
+        Me.BtnPrint.UseVisualStyleBackColor = False
         '
         'BtnSearch
         '
+        Me.BtnSearch.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
         Me.BtnSearch.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnSearch.ImageIndex = 0
-        Me.BtnSearch.ImageList = Me.ImageStatusbar
-        Me.BtnSearch.Location = New System.Drawing.Point(343, 78)
+        Me.BtnSearch.FlatAppearance.BorderSize = 0
+        Me.BtnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnSearch.ForeColor = System.Drawing.Color.White
+        Me.BtnSearch.Image = CType(resources.GetObject("BtnSearch.Image"), System.Drawing.Image)
+        Me.BtnSearch.Location = New System.Drawing.Point(393, 29)
         Me.BtnSearch.Margin = New System.Windows.Forms.Padding(2)
         Me.BtnSearch.Name = "BtnSearch"
-        Me.BtnSearch.Size = New System.Drawing.Size(85, 39)
+        Me.BtnSearch.Size = New System.Drawing.Size(124, 39)
         Me.BtnSearch.TabIndex = 13
         Me.BtnSearch.Text = "View"
         Me.BtnSearch.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.BtnSearch.UseVisualStyleBackColor = True
+        Me.BtnSearch.UseVisualStyleBackColor = False
         '
         'ImageStatusbar
         '
@@ -356,11 +371,13 @@ Partial Class UCRunEndOfDay
         Me.gridItemsEndofDayRun.GroupMode = Janus.Windows.GridEX.GroupMode.Collapsed
         Me.gridItemsEndofDayRun.Location = New System.Drawing.Point(0, 0)
         Me.gridItemsEndofDayRun.Name = "gridItemsEndofDayRun"
+        Me.gridItemsEndofDayRun.Office2007ColorScheme = Janus.Windows.GridEX.Office2007ColorScheme.Silver
+        Me.gridItemsEndofDayRun.Office2007CustomColor = System.Drawing.SystemColors.Control
         Me.gridItemsEndofDayRun.RecordNavigator = True
         Me.gridItemsEndofDayRun.RowHeaderContent = Janus.Windows.GridEX.RowHeaderContent.RowPosition
         Me.gridItemsEndofDayRun.Size = New System.Drawing.Size(1145, 284)
         Me.gridItemsEndofDayRun.TabIndex = 9
-        Me.gridItemsEndofDayRun.VisualStyle = Janus.Windows.GridEX.VisualStyle.VS2005
+        Me.gridItemsEndofDayRun.VisualStyleManager = Me.VSForOpticalshop
         '
         'ErrorEOD
         '
@@ -370,11 +387,35 @@ Partial Class UCRunEndOfDay
         '
         Me.BgLoadingRunEOD.WorkerSupportsCancellation = True
         '
+        'VSForOpticalshop
+        '
+        JanusColorScheme2.ActiveCaptionColor = System.Drawing.Color.Tomato
+        JanusColorScheme2.ActiveCaptionTextColor = System.Drawing.Color.White
+        JanusColorScheme2.ControlDarkColor = System.Drawing.SystemColors.Control
+        JanusColorScheme2.ControlTextColor = System.Drawing.Color.Black
+        JanusColorScheme2.DisabledColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(150, Byte), Integer), CType(CType(102, Byte), Integer))
+        JanusColorScheme2.GrayTextColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
+        JanusColorScheme2.HighlightColor = System.Drawing.Color.FromArgb(CType(CType(43, Byte), Integer), CType(CType(99, Byte), Integer), CType(CType(67, Byte), Integer))
+        JanusColorScheme2.HighlightTextColor = System.Drawing.Color.WhiteSmoke
+        JanusColorScheme2.InfoColor = System.Drawing.Color.WhiteSmoke
+        JanusColorScheme2.InfoTextColor = System.Drawing.Color.FloralWhite
+        JanusColorScheme2.MenuColor = System.Drawing.SystemColors.ActiveCaption
+        JanusColorScheme2.MenuTextColor = System.Drawing.Color.DimGray
+        JanusColorScheme2.Name = "Header"
+        JanusColorScheme2.Office2007ColorScheme = Janus.Windows.Common.Office2007ColorScheme.Silver
+        JanusColorScheme2.Office2007CustomColor = System.Drawing.SystemColors.Control
+        JanusColorScheme2.UseThemes = False
+        JanusColorScheme2.VisualStyle = Janus.Windows.Common.VisualStyle.Standard
+        JanusColorScheme2.WindowColor = System.Drawing.Color.White
+        JanusColorScheme2.WindowTextColor = System.Drawing.Color.DarkBlue
+        Me.VSForOpticalshop.ColorSchemes.Add(JanusColorScheme2)
+        Me.VSForOpticalshop.DefaultColorScheme = "Header"
+        '
         'UCRunEndOfDay
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.SystemColors.InactiveCaptionText
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(236, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(241, Byte), Integer))
         Me.Controls.Add(Me.SplitContainer1)
         Me.Name = "UCRunEndOfDay"
         Me.Size = New System.Drawing.Size(1145, 504)
@@ -422,5 +463,6 @@ Partial Class UCRunEndOfDay
     Friend WithEvents ChBAllS As System.Windows.Forms.CheckBox
     Friend WithEvents cbDepartS As System.Windows.Forms.ComboBox
     Friend WithEvents Label4 As System.Windows.Forms.Label
+    Friend WithEvents VSForOpticalshop As Janus.Windows.Common.VisualStyleManager
 
 End Class
