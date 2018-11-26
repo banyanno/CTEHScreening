@@ -108,6 +108,7 @@ Partial Class UpdateScreeningBook
         '
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(236, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(241, Byte), Integer))
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel1.Controls.Add(Me.GroupRefraction)
         Me.Panel1.Controls.Add(Me.BtnClose)
         Me.Panel1.Controls.Add(Me.BtnSave)
         Me.Panel1.Controls.Add(Me.Panel2)
@@ -281,7 +282,6 @@ Partial Class UpdateScreeningBook
         '
         'UiTabPage1
         '
-        Me.UiTabPage1.Controls.Add(Me.GroupRefraction)
         Me.UiTabPage1.Controls.Add(Me.ChReferral)
         Me.UiTabPage1.Controls.Add(Me.ChOpticalshop)
         Me.UiTabPage1.Controls.Add(Me.ChRefraction)
@@ -308,12 +308,13 @@ Partial Class UpdateScreeningBook
         Me.GroupRefraction.Controls.Add(Me.TxtLEPlus)
         Me.GroupRefraction.Controls.Add(Me.TxtREPlus)
         Me.GroupRefraction.Enabled = False
-        Me.GroupRefraction.Location = New System.Drawing.Point(14, 225)
+        Me.GroupRefraction.Location = New System.Drawing.Point(16, 616)
         Me.GroupRefraction.Name = "GroupRefraction"
-        Me.GroupRefraction.Size = New System.Drawing.Size(240, 188)
+        Me.GroupRefraction.Size = New System.Drawing.Size(145, 48)
         Me.GroupRefraction.TabIndex = 1
         Me.GroupRefraction.TabStop = False
         Me.GroupRefraction.Text = "Refraction info"
+        Me.GroupRefraction.Visible = False
         '
         'BtnMoreAdd
         '
@@ -336,7 +337,7 @@ Partial Class UpdateScreeningBook
         Me.Label22.AutoSize = True
         Me.Label22.Location = New System.Drawing.Point(8, 30)
         Me.Label22.Name = "Label22"
-        Me.Label22.Size = New System.Drawing.Size(65, 20)
+        Me.Label22.Size = New System.Drawing.Size(44, 13)
         Me.Label22.TabIndex = 56
         Me.Label22.Text = "(RE) P+"
         '
@@ -345,7 +346,7 @@ Partial Class UpdateScreeningBook
         Me.Label23.AutoSize = True
         Me.Label23.Location = New System.Drawing.Point(7, 126)
         Me.Label23.Name = "Label23"
-        Me.Label23.Size = New System.Drawing.Size(81, 20)
+        Me.Label23.Size = New System.Drawing.Size(55, 13)
         Me.Label23.TabIndex = 52
         Me.Label23.Text = "More Info:"
         '
@@ -354,7 +355,7 @@ Partial Class UpdateScreeningBook
         Me.Label18.AutoSize = True
         Me.Label18.Location = New System.Drawing.Point(9, 98)
         Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(44, 20)
+        Me.Label18.Size = New System.Drawing.Size(30, 13)
         Me.Label18.TabIndex = 63
         Me.Label18.Text = "ADD"
         '
@@ -374,7 +375,7 @@ Partial Class UpdateScreeningBook
         Me.CboAdd.FormattingEnabled = True
         Me.CboAdd.Location = New System.Drawing.Point(92, 90)
         Me.CboAdd.Name = "CboAdd"
-        Me.CboAdd.Size = New System.Drawing.Size(259, 28)
+        Me.CboAdd.Size = New System.Drawing.Size(259, 21)
         Me.CboAdd.TabIndex = 4
         '
         'Label21
@@ -382,7 +383,7 @@ Partial Class UpdateScreeningBook
         Me.Label21.AutoSize = True
         Me.Label21.Location = New System.Drawing.Point(230, 30)
         Me.Label21.Name = "Label21"
-        Me.Label21.Size = New System.Drawing.Size(31, 20)
+        Me.Label21.Size = New System.Drawing.Size(21, 13)
         Me.Label21.TabIndex = 57
         Me.Label21.Text = "VA"
         '
@@ -393,7 +394,7 @@ Partial Class UpdateScreeningBook
         Me.CboLEPlusVARefrac.FormattingEnabled = True
         Me.CboLEPlusVARefrac.Location = New System.Drawing.Point(267, 56)
         Me.CboLEPlusVARefrac.Name = "CboLEPlusVARefrac"
-        Me.CboLEPlusVARefrac.Size = New System.Drawing.Size(115, 28)
+        Me.CboLEPlusVARefrac.Size = New System.Drawing.Size(115, 21)
         Me.CboLEPlusVARefrac.TabIndex = 3
         '
         'Label20
@@ -401,7 +402,7 @@ Partial Class UpdateScreeningBook
         Me.Label20.AutoSize = True
         Me.Label20.Location = New System.Drawing.Point(230, 64)
         Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(31, 20)
+        Me.Label20.Size = New System.Drawing.Size(21, 13)
         Me.Label20.TabIndex = 54
         Me.Label20.Text = "VA"
         '
@@ -412,7 +413,7 @@ Partial Class UpdateScreeningBook
         Me.CboREPlusVARefract.FormattingEnabled = True
         Me.CboREPlusVARefract.Location = New System.Drawing.Point(267, 22)
         Me.CboREPlusVARefract.Name = "CboREPlusVARefract"
-        Me.CboREPlusVARefract.Size = New System.Drawing.Size(115, 28)
+        Me.CboREPlusVARefract.Size = New System.Drawing.Size(115, 21)
         Me.CboREPlusVARefract.TabIndex = 1
         '
         'Label19
@@ -420,7 +421,7 @@ Partial Class UpdateScreeningBook
         Me.Label19.AutoSize = True
         Me.Label19.Location = New System.Drawing.Point(8, 64)
         Me.Label19.Name = "Label19"
-        Me.Label19.Size = New System.Drawing.Size(62, 20)
+        Me.Label19.Size = New System.Drawing.Size(42, 13)
         Me.Label19.TabIndex = 55
         Me.Label19.Text = "(LE) P+"
         '
@@ -428,14 +429,14 @@ Partial Class UpdateScreeningBook
         '
         Me.TxtLEPlus.Location = New System.Drawing.Point(92, 58)
         Me.TxtLEPlus.Name = "TxtLEPlus"
-        Me.TxtLEPlus.Size = New System.Drawing.Size(131, 26)
+        Me.TxtLEPlus.Size = New System.Drawing.Size(131, 20)
         Me.TxtLEPlus.TabIndex = 2
         '
         'TxtREPlus
         '
         Me.TxtREPlus.Location = New System.Drawing.Point(92, 24)
         Me.TxtREPlus.Name = "TxtREPlus"
-        Me.TxtREPlus.Size = New System.Drawing.Size(131, 26)
+        Me.TxtREPlus.Size = New System.Drawing.Size(131, 20)
         Me.TxtREPlus.TabIndex = 0
         '
         'ChReferral
@@ -459,6 +460,7 @@ Partial Class UpdateScreeningBook
         Me.ChOpticalshop.TabIndex = 0
         Me.ChOpticalshop.Text = "Optical Shop"
         Me.ChOpticalshop.UseVisualStyleBackColor = True
+        Me.ChOpticalshop.Visible = False
         '
         'ChRefraction
         '
@@ -470,6 +472,7 @@ Partial Class UpdateScreeningBook
         Me.ChRefraction.TabIndex = 0
         Me.ChRefraction.Text = "Refraction"
         Me.ChRefraction.UseVisualStyleBackColor = True
+        Me.ChRefraction.Visible = False
         '
         'GBReferral
         '
@@ -483,7 +486,7 @@ Partial Class UpdateScreeningBook
         Me.GBReferral.ForeColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
         Me.GBReferral.Location = New System.Drawing.Point(5, 40)
         Me.GBReferral.Name = "GBReferral"
-        Me.GBReferral.Size = New System.Drawing.Size(391, 179)
+        Me.GBReferral.Size = New System.Drawing.Size(391, 292)
         Me.GBReferral.TabIndex = 1
         Me.GBReferral.TabStop = False
         Me.GBReferral.Text = "Refer info"
@@ -491,16 +494,16 @@ Partial Class UpdateScreeningBook
         'TxtReferMoreInfo
         '
         Me.TxtReferMoreInfo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TxtReferMoreInfo.Location = New System.Drawing.Point(18, 111)
+        Me.TxtReferMoreInfo.Location = New System.Drawing.Point(11, 123)
         Me.TxtReferMoreInfo.Multiline = True
         Me.TxtReferMoreInfo.Name = "TxtReferMoreInfo"
-        Me.TxtReferMoreInfo.Size = New System.Drawing.Size(363, 59)
+        Me.TxtReferMoreInfo.Size = New System.Drawing.Size(372, 163)
         Me.TxtReferMoreInfo.TabIndex = 3
         '
         'RadReferAndComeBySelf
         '
         Me.RadReferAndComeBySelf.AutoSize = True
-        Me.RadReferAndComeBySelf.Location = New System.Drawing.Point(197, 20)
+        Me.RadReferAndComeBySelf.Location = New System.Drawing.Point(190, 28)
         Me.RadReferAndComeBySelf.Name = "RadReferAndComeBySelf"
         Me.RadReferAndComeBySelf.Size = New System.Drawing.Size(167, 24)
         Me.RadReferAndComeBySelf.TabIndex = 1
@@ -511,7 +514,7 @@ Partial Class UpdateScreeningBook
         'RadReferAndPickup
         '
         Me.RadReferAndPickup.AutoSize = True
-        Me.RadReferAndPickup.Location = New System.Drawing.Point(18, 20)
+        Me.RadReferAndPickup.Location = New System.Drawing.Point(11, 28)
         Me.RadReferAndPickup.Name = "RadReferAndPickup"
         Me.RadReferAndPickup.Size = New System.Drawing.Size(140, 24)
         Me.RadReferAndPickup.TabIndex = 0
@@ -522,7 +525,7 @@ Partial Class UpdateScreeningBook
         'Label17
         '
         Me.Label17.AutoSize = True
-        Me.Label17.Location = New System.Drawing.Point(18, 59)
+        Me.Label17.Location = New System.Drawing.Point(11, 67)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(107, 20)
         Me.Label17.TabIndex = 48
@@ -531,18 +534,18 @@ Partial Class UpdateScreeningBook
         'Label16
         '
         Me.Label16.AutoSize = True
-        Me.Label16.Location = New System.Drawing.Point(18, 86)
+        Me.Label16.Location = New System.Drawing.Point(11, 98)
         Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(81, 20)
+        Me.Label16.Size = New System.Drawing.Size(118, 20)
         Me.Label16.TabIndex = 51
-        Me.Label16.Text = "More Info:"
+        Me.Label16.Text = "More Info refer:"
         '
         'DateAppointment
         '
         Me.DateAppointment.Checked = False
         Me.DateAppointment.CustomFormat = "dd/MM/yyyy"
         Me.DateAppointment.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.DateAppointment.Location = New System.Drawing.Point(131, 53)
+        Me.DateAppointment.Location = New System.Drawing.Point(124, 61)
         Me.DateAppointment.Name = "DateAppointment"
         Me.DateAppointment.ShowCheckBox = True
         Me.DateAppointment.Size = New System.Drawing.Size(136, 26)

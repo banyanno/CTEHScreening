@@ -506,4 +506,9 @@
         'GeneralAddControl(uiPanelMainContainer, URunEOD, "Main inventory Run End Of Day.")
         AddUserControl(UIMainScreening.PanelHeader, UIMainScreening.PanelDedail, URunEOD, "", True)
     End Sub
+
+    Private Sub BtnAdjustock_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnAdjustock.Click
+        'GeneralAddControl(uiPanelMainContainer, UDashboardAdjustStock, "Department items adjust stock.")
+        AddUserControl(UIMainScreening.PanelHeader, UIMainScreening.PanelDedail, UDashboardAdjustStock, "", True)
+    End Sub
 End Class
