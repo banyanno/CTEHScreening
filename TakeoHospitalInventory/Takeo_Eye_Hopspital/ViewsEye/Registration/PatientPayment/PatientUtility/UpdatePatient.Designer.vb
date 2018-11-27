@@ -52,16 +52,21 @@ Partial Class UpdatePatient
         Me.BntClose = New System.Windows.Forms.Button
         Me.ErrPatient = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.Panel1 = New System.Windows.Forms.Panel
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox
+        Me.Label2 = New System.Windows.Forms.Label
+        Me.Label4 = New System.Windows.Forms.Label
+        Me.Label6 = New System.Windows.Forms.Label
         Me.GroupBox4.SuspendLayout()
         CType(Me.ErrPatient, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label12
         '
         Me.Label12.AutoSize = True
         Me.Label12.ForeColor = System.Drawing.Color.Navy
-        Me.Label12.Location = New System.Drawing.Point(23, 199)
+        Me.Label12.Location = New System.Drawing.Point(9, 280)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(25, 13)
         Me.Label12.TabIndex = 94
@@ -71,7 +76,7 @@ Partial Class UpdatePatient
         '
         Me.CboOccupation.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CboOccupation.FormattingEnabled = True
-        Me.CboOccupation.Location = New System.Drawing.Point(267, 157)
+        Me.CboOccupation.Location = New System.Drawing.Point(253, 197)
         Me.CboOccupation.Name = "CboOccupation"
         Me.CboOccupation.Size = New System.Drawing.Size(191, 28)
         Me.CboOccupation.TabIndex = 86
@@ -81,16 +86,16 @@ Partial Class UpdatePatient
         Me.DateRegis.CustomFormat = "dd/MM/yyyy"
         Me.DateRegis.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DateRegis.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.DateRegis.Location = New System.Drawing.Point(93, 36)
+        Me.DateRegis.Location = New System.Drawing.Point(79, 117)
         Me.DateRegis.Name = "DateRegis"
-        Me.DateRegis.Size = New System.Drawing.Size(111, 26)
+        Me.DateRegis.Size = New System.Drawing.Size(156, 26)
         Me.DateRegis.TabIndex = 93
         '
         'TxtAgePatient
         '
         Me.TxtAgePatient.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TxtAgePatient.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtAgePatient.Location = New System.Drawing.Point(93, 161)
+        Me.TxtAgePatient.Location = New System.Drawing.Point(79, 242)
         Me.TxtAgePatient.Name = "TxtAgePatient"
         Me.TxtAgePatient.Size = New System.Drawing.Size(52, 26)
         Me.TxtAgePatient.TabIndex = 82
@@ -106,9 +111,9 @@ Partial Class UpdatePatient
         Me.GroupBox4.Controls.Add(Me.TxtAddress)
         Me.GroupBox4.Controls.Add(Me.CboCommNo)
         Me.GroupBox4.ForeColor = System.Drawing.Color.Navy
-        Me.GroupBox4.Location = New System.Drawing.Point(24, 223)
+        Me.GroupBox4.Location = New System.Drawing.Point(10, 312)
         Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(434, 222)
+        Me.GroupBox4.Size = New System.Drawing.Size(434, 228)
         Me.GroupBox4.TabIndex = 87
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "Address information"
@@ -116,7 +121,7 @@ Partial Class UpdatePatient
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(9, 96)
+        Me.Label5.Location = New System.Drawing.Point(9, 104)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(57, 13)
         Me.Label5.TabIndex = 45
@@ -125,7 +130,7 @@ Partial Class UpdatePatient
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(9, 61)
+        Me.Label9.Location = New System.Drawing.Point(9, 69)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(42, 13)
         Me.Label9.TabIndex = 44
@@ -134,7 +139,7 @@ Partial Class UpdatePatient
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(9, 27)
+        Me.Label10.Location = New System.Drawing.Point(9, 35)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(52, 13)
         Me.Label10.TabIndex = 43
@@ -146,7 +151,7 @@ Partial Class UpdatePatient
         Me.CboProNo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
         Me.CboProNo.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CboProNo.FormattingEnabled = True
-        Me.CboProNo.Location = New System.Drawing.Point(95, 22)
+        Me.CboProNo.Location = New System.Drawing.Point(95, 30)
         Me.CboProNo.Name = "CboProNo"
         Me.CboProNo.Size = New System.Drawing.Size(260, 28)
         Me.CboProNo.TabIndex = 0
@@ -157,7 +162,7 @@ Partial Class UpdatePatient
         Me.CboDisNo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
         Me.CboDisNo.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CboDisNo.FormattingEnabled = True
-        Me.CboDisNo.Location = New System.Drawing.Point(95, 58)
+        Me.CboDisNo.Location = New System.Drawing.Point(95, 66)
         Me.CboDisNo.Name = "CboDisNo"
         Me.CboDisNo.Size = New System.Drawing.Size(260, 28)
         Me.CboDisNo.TabIndex = 1
@@ -165,7 +170,7 @@ Partial Class UpdatePatient
         'Label22
         '
         Me.Label22.AutoSize = True
-        Me.Label22.Location = New System.Drawing.Point(9, 123)
+        Me.Label22.Location = New System.Drawing.Point(9, 131)
         Me.Label22.Name = "Label22"
         Me.Label22.Size = New System.Drawing.Size(48, 13)
         Me.Label22.TabIndex = 42
@@ -176,7 +181,7 @@ Partial Class UpdatePatient
         Me.TxtAddress.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.TxtAddress.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TxtAddress.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtAddress.Location = New System.Drawing.Point(9, 142)
+        Me.TxtAddress.Location = New System.Drawing.Point(9, 150)
         Me.TxtAddress.Multiline = True
         Me.TxtAddress.Name = "TxtAddress"
         Me.TxtAddress.ReadOnly = True
@@ -189,14 +194,14 @@ Partial Class UpdatePatient
         Me.CboCommNo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
         Me.CboCommNo.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CboCommNo.FormattingEnabled = True
-        Me.CboCommNo.Location = New System.Drawing.Point(95, 94)
+        Me.CboCommNo.Location = New System.Drawing.Point(95, 102)
         Me.CboCommNo.Name = "CboCommNo"
         Me.CboCommNo.Size = New System.Drawing.Size(260, 28)
         Me.CboCommNo.TabIndex = 2
         '
         'btnSave
         '
-        Me.btnSave.BackColor = System.Drawing.Color.FromArgb(CType(CType(151, Byte), Integer), CType(CType(197, Byte), Integer), CType(CType(249, Byte), Integer))
+        Me.btnSave.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
         Me.btnSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnSave.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnSave.FlatAppearance.BorderSize = 0
@@ -206,9 +211,9 @@ Partial Class UpdatePatient
         Me.btnSave.ForeColor = System.Drawing.Color.White
         Me.btnSave.Image = CType(resources.GetObject("btnSave.Image"), System.Drawing.Image)
         Me.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnSave.Location = New System.Drawing.Point(96, 459)
+        Me.btnSave.Location = New System.Drawing.Point(90, 546)
         Me.btnSave.Name = "btnSave"
-        Me.btnSave.Size = New System.Drawing.Size(134, 38)
+        Me.btnSave.Size = New System.Drawing.Size(134, 40)
         Me.btnSave.TabIndex = 4
         Me.btnSave.Text = "Update"
         Me.btnSave.UseVisualStyleBackColor = False
@@ -217,7 +222,7 @@ Partial Class UpdatePatient
         '
         Me.TxtTel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TxtTel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtTel.Location = New System.Drawing.Point(93, 194)
+        Me.TxtTel.Location = New System.Drawing.Point(79, 275)
         Me.TxtTel.Name = "TxtTel"
         Me.TxtTel.Size = New System.Drawing.Size(156, 26)
         Me.TxtTel.TabIndex = 85
@@ -228,7 +233,7 @@ Partial Class UpdatePatient
         Me.CboSexPatien.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CboSexPatien.FormattingEnabled = True
         Me.CboSexPatien.Items.AddRange(New Object() {"", "F", "M"})
-        Me.CboSexPatien.Location = New System.Drawing.Point(197, 159)
+        Me.CboSexPatien.Location = New System.Drawing.Point(183, 240)
         Me.CboSexPatien.MaxLength = 1
         Me.CboSexPatien.Name = "CboSexPatien"
         Me.CboSexPatien.Size = New System.Drawing.Size(52, 28)
@@ -238,7 +243,7 @@ Partial Class UpdatePatient
         '
         Me.Label15.AutoSize = True
         Me.Label15.ForeColor = System.Drawing.Color.Navy
-        Me.Label15.Location = New System.Drawing.Point(155, 171)
+        Me.Label15.Location = New System.Drawing.Point(141, 252)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(28, 13)
         Me.Label15.TabIndex = 84
@@ -248,7 +253,7 @@ Partial Class UpdatePatient
         '
         Me.Label16.AutoSize = True
         Me.Label16.ForeColor = System.Drawing.Color.Navy
-        Me.Label16.Location = New System.Drawing.Point(22, 169)
+        Me.Label16.Location = New System.Drawing.Point(8, 250)
         Me.Label16.Name = "Label16"
         Me.Label16.Size = New System.Drawing.Size(29, 13)
         Me.Label16.TabIndex = 91
@@ -258,16 +263,16 @@ Partial Class UpdatePatient
         '
         Me.TxtNameKhmer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TxtNameKhmer.Font = New System.Drawing.Font("Wat Phnom T3", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtNameKhmer.Location = New System.Drawing.Point(267, 109)
+        Me.TxtNameKhmer.Location = New System.Drawing.Point(244, 109)
         Me.TxtNameKhmer.Name = "TxtNameKhmer"
-        Me.TxtNameKhmer.Size = New System.Drawing.Size(191, 37)
+        Me.TxtNameKhmer.Size = New System.Drawing.Size(200, 37)
         Me.TxtNameKhmer.TabIndex = 81
         '
         'TxtNameEng
         '
         Me.TxtNameEng.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TxtNameEng.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtNameEng.Location = New System.Drawing.Point(93, 111)
+        Me.TxtNameEng.Location = New System.Drawing.Point(79, 192)
         Me.TxtNameEng.Name = "TxtNameEng"
         Me.TxtNameEng.Size = New System.Drawing.Size(156, 35)
         Me.TxtNameEng.TabIndex = 80
@@ -276,7 +281,7 @@ Partial Class UpdatePatient
         '
         Me.Label3.AutoSize = True
         Me.Label3.ForeColor = System.Drawing.Color.Navy
-        Me.Label3.Location = New System.Drawing.Point(22, 124)
+        Me.Label3.Location = New System.Drawing.Point(8, 205)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(60, 13)
         Me.Label3.TabIndex = 90
@@ -288,7 +293,7 @@ Partial Class UpdatePatient
         Me.TxtPatientNo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TxtPatientNo.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtPatientNo.ForeColor = System.Drawing.Color.Red
-        Me.TxtPatientNo.Location = New System.Drawing.Point(93, 71)
+        Me.TxtPatientNo.Location = New System.Drawing.Point(79, 152)
         Me.TxtPatientNo.Name = "TxtPatientNo"
         Me.TxtPatientNo.ReadOnly = True
         Me.TxtPatientNo.Size = New System.Drawing.Size(365, 30)
@@ -298,7 +303,7 @@ Partial Class UpdatePatient
         '
         Me.Label19.AutoSize = True
         Me.Label19.ForeColor = System.Drawing.Color.Navy
-        Me.Label19.Location = New System.Drawing.Point(20, 40)
+        Me.Label19.Location = New System.Drawing.Point(6, 121)
         Me.Label19.Name = "Label19"
         Me.Label19.Size = New System.Drawing.Size(63, 13)
         Me.Label19.TabIndex = 89
@@ -308,7 +313,7 @@ Partial Class UpdatePatient
         '
         Me.Label1.AutoSize = True
         Me.Label1.ForeColor = System.Drawing.Color.Navy
-        Me.Label1.Location = New System.Drawing.Point(22, 78)
+        Me.Label1.Location = New System.Drawing.Point(8, 159)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(60, 13)
         Me.Label1.TabIndex = 88
@@ -317,7 +322,7 @@ Partial Class UpdatePatient
         'lblSaveOption
         '
         Me.lblSaveOption.AutoSize = True
-        Me.lblSaveOption.Location = New System.Drawing.Point(253, 36)
+        Me.lblSaveOption.Location = New System.Drawing.Point(241, 14)
         Me.lblSaveOption.Name = "lblSaveOption"
         Me.lblSaveOption.Size = New System.Drawing.Size(13, 13)
         Me.lblSaveOption.TabIndex = 92
@@ -326,7 +331,7 @@ Partial Class UpdatePatient
         '
         'BntClose
         '
-        Me.BntClose.BackColor = System.Drawing.Color.FromArgb(CType(CType(151, Byte), Integer), CType(CType(197, Byte), Integer), CType(CType(249, Byte), Integer))
+        Me.BntClose.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
         Me.BntClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.BntClose.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BntClose.FlatAppearance.BorderSize = 0
@@ -336,9 +341,9 @@ Partial Class UpdatePatient
         Me.BntClose.ForeColor = System.Drawing.Color.White
         Me.BntClose.Image = CType(resources.GetObject("BntClose.Image"), System.Drawing.Image)
         Me.BntClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BntClose.Location = New System.Drawing.Point(236, 461)
+        Me.BntClose.Location = New System.Drawing.Point(230, 546)
         Me.BntClose.Name = "BntClose"
-        Me.BntClose.Size = New System.Drawing.Size(134, 33)
+        Me.BntClose.Size = New System.Drawing.Size(134, 40)
         Me.BntClose.TabIndex = 95
         Me.BntClose.Text = "Close"
         Me.BntClose.UseVisualStyleBackColor = False
@@ -349,9 +354,14 @@ Partial Class UpdatePatient
         '
         'Panel1
         '
-        Me.Panel1.BackColor = System.Drawing.Color.White
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(236, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(241, Byte), Integer))
+        Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel1.Controls.Add(Me.PictureBox1)
+        Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.Controls.Add(Me.Label19)
+        Me.Panel1.Controls.Add(Me.Label4)
         Me.Panel1.Controls.Add(Me.btnSave)
+        Me.Panel1.Controls.Add(Me.Label6)
         Me.Panel1.Controls.Add(Me.BntClose)
         Me.Panel1.Controls.Add(Me.lblSaveOption)
         Me.Panel1.Controls.Add(Me.Label12)
@@ -370,16 +380,59 @@ Partial Class UpdatePatient
         Me.Panel1.Controls.Add(Me.Label15)
         Me.Panel1.Location = New System.Drawing.Point(12, 12)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(478, 507)
+        Me.Panel1.Size = New System.Drawing.Size(460, 591)
         Me.Panel1.TabIndex = 96
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(32, 1)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(94, 92)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 100
+        Me.PictureBox1.TabStop = False
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(202, Byte), Integer), CType(CType(81, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Label2.Location = New System.Drawing.Point(146, 71)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(208, 18)
+        Me.Label2.TabIndex = 99
+        Me.Label2.Text = "Registration for Eye Screening"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(202, Byte), Integer), CType(CType(81, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Label4.Location = New System.Drawing.Point(161, 51)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(171, 18)
+        Me.Label4.TabIndex = 98
+        Me.Label4.Text = "TAKEO EYE  HOSPITAL"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Khmer Mool1", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(100, Byte), Integer), CType(CType(84, Byte), Integer))
+        Me.Label6.Location = New System.Drawing.Point(145, 14)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(202, 43)
+        Me.Label6.TabIndex = 97
+        Me.Label6.Text = "មន្ទីរពេទ្យ ភ្នែក តាកែវ"
         '
         'UpdatePatient
         '
         Me.AcceptButton = Me.btnSave
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(151, Byte), Integer), CType(CType(197, Byte), Integer), CType(CType(249, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(503, 543)
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(236, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(241, Byte), Integer))
+        Me.ClientSize = New System.Drawing.Size(482, 617)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.MaximizeBox = False
@@ -394,6 +447,7 @@ Partial Class UpdatePatient
         CType(Me.ErrPatient, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -425,4 +479,8 @@ Partial Class UpdatePatient
     Friend WithEvents BntClose As System.Windows.Forms.Button
     Friend WithEvents ErrPatient As System.Windows.Forms.ErrorProvider
     Friend WithEvents Panel1 As System.Windows.Forms.Panel
+    Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
+    Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents Label4 As System.Windows.Forms.Label
+    Friend WithEvents Label6 As System.Windows.Forms.Label
 End Class

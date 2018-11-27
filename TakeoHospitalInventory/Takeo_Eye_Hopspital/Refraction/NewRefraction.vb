@@ -127,7 +127,7 @@
     End Sub
 
     Private Sub NewRefraction_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-
+        RefrationDate.Value = GetDateServer.Date
     End Sub
 
     Private Sub BtnNewVARefrac_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnNewVARefrac.Click
@@ -178,11 +178,11 @@
         If ValidateTextField(TxtPatientName, "", ErrRefraction) = False Then Exit Sub
         If ValidateTextField(TxtPatientSex, "", ErrRefraction) = False Then Exit Sub
         If ValidateDateField(RefrationDate, "", ErrRefraction) = False Then Exit Sub
-        If ValidateCombobox(CboDiagnosis, "", ErrRefraction) = False Then Exit Sub
-        If ValidateCombobox(CboLGlasses, "", ErrRefraction) = False Then Exit Sub
-        If ValidateCombobox(CboRGlasses, "", ErrRefraction) = False Then Exit Sub
-        If ValidateCombobox(CboLVARefrac, "", ErrRefraction) = False Then Exit Sub
-        If ValidateCombobox(CboRVARefrac, "", ErrRefraction) = False Then Exit Sub
+        'If ValidateCombobox(CboDiagnosis, "", ErrRefraction) = False Then Exit Sub
+        'If ValidateCombobox(CboLGlasses, "", ErrRefraction) = False Then Exit Sub
+        'If ValidateCombobox(CboRGlasses, "", ErrRefraction) = False Then Exit Sub
+        'If ValidateCombobox(CboLVARefrac, "", ErrRefraction) = False Then Exit Sub
+        'If ValidateCombobox(CboRVARefrac, "", ErrRefraction) = False Then Exit Sub
         If lblSaveOption.Text = "0" Then
             If DARefraction.CheckExistingPatient(TxtPatientNo.Text, RefrationDate.Value) > 0 Then
                 MessageBox.Show("Today patient already register in Refraction.Please check patient again!", "Refraction", MessageBoxButtons.OK, MessageBoxIcon.Error)

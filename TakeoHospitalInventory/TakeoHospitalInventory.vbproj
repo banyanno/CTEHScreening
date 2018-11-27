@@ -755,6 +755,12 @@
       <DependentUpon>ScreeningPatientForm.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Takeo_Eye_Hopspital\Screening\ScreeningBook\ScreeningSearch.Designer.vb">
+      <DependentUpon>ScreeningSearch.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Takeo_Eye_Hopspital\Screening\ScreeningBook\ScreeningSearch.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Takeo_Eye_Hopspital\Screening\ScreeningBook\UpdateScreeningBook.Designer.vb">
       <DependentUpon>UpdateScreeningBook.vb</DependentUpon>
     </Compile>
@@ -3377,6 +3383,9 @@
     <EmbeddedResource Include="Takeo_Eye_Hopspital\Screening\ScreeningBook\ScreeningPatientForm.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>ScreeningPatientForm.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Takeo_Eye_Hopspital\Screening\ScreeningBook\ScreeningSearch.resx">
+      <DependentUpon>ScreeningSearch.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Takeo_Eye_Hopspital\Screening\ScreeningBook\UpdateScreeningBook.resx">
       <DependentUpon>UpdateScreeningBook.vb</DependentUpon>

@@ -212,13 +212,17 @@ Partial Class NewRefraction
         '
         'BtnFindPatient
         '
+        Me.BtnFindPatient.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
         Me.BtnFindPatient.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnFindPatient.FlatAppearance.BorderSize = 0
+        Me.BtnFindPatient.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnFindPatient.ForeColor = System.Drawing.Color.White
         Me.BtnFindPatient.Location = New System.Drawing.Point(333, 13)
         Me.BtnFindPatient.Name = "BtnFindPatient"
         Me.BtnFindPatient.Size = New System.Drawing.Size(52, 27)
         Me.BtnFindPatient.TabIndex = 1
         Me.BtnFindPatient.Text = "..."
-        Me.BtnFindPatient.UseVisualStyleBackColor = True
+        Me.BtnFindPatient.UseVisualStyleBackColor = False
         '
         'TxtPatientNo
         '
@@ -266,6 +270,7 @@ Partial Class NewRefraction
         '
         'TabControl1
         '
+        Me.TabControl1.Appearance = System.Windows.Forms.TabAppearance.Buttons
         Me.TabControl1.Controls.Add(Me.TabPage2)
         Me.TabControl1.Location = New System.Drawing.Point(6, 157)
         Me.TabControl1.Name = "TabControl1"
@@ -275,6 +280,7 @@ Partial Class NewRefraction
         '
         'TabPage2
         '
+        Me.TabPage2.BackColor = System.Drawing.Color.FromArgb(CType(CType(236, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(241, Byte), Integer))
         Me.TabPage2.Controls.Add(Me.ChIsOld)
         Me.TabPage2.Controls.Add(Me.BtnGlassesAxis)
         Me.TabPage2.Controls.Add(Me.CboLAxis)
@@ -294,10 +300,10 @@ Partial Class NewRefraction
         Me.TabPage2.Controls.Add(Me.Label10)
         Me.TabPage2.Controls.Add(Me.Label9)
         Me.TabPage2.Controls.Add(Me.GroupBox2)
-        Me.TabPage2.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage2.Location = New System.Drawing.Point(4, 25)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(559, 406)
+        Me.TabPage2.Size = New System.Drawing.Size(559, 403)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Refraction Info"
         Me.TabPage2.UseVisualStyleBackColor = True
@@ -315,13 +321,17 @@ Partial Class NewRefraction
         '
         'BtnGlassesAxis
         '
+        Me.BtnGlassesAxis.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
         Me.BtnGlassesAxis.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnGlassesAxis.FlatAppearance.BorderSize = 0
+        Me.BtnGlassesAxis.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnGlassesAxis.ForeColor = System.Drawing.Color.White
         Me.BtnGlassesAxis.Location = New System.Drawing.Point(490, 136)
         Me.BtnGlassesAxis.Name = "BtnGlassesAxis"
         Me.BtnGlassesAxis.Size = New System.Drawing.Size(43, 27)
         Me.BtnGlassesAxis.TabIndex = 8
         Me.BtnGlassesAxis.Text = "..."
-        Me.BtnGlassesAxis.UseVisualStyleBackColor = True
+        Me.BtnGlassesAxis.UseVisualStyleBackColor = False
         '
         'CboLAxis
         '
@@ -392,23 +402,31 @@ Partial Class NewRefraction
         '
         'BtnNewDiagnosis
         '
+        Me.BtnNewDiagnosis.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
         Me.BtnNewDiagnosis.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnNewDiagnosis.FlatAppearance.BorderSize = 0
+        Me.BtnNewDiagnosis.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnNewDiagnosis.ForeColor = System.Drawing.Color.White
         Me.BtnNewDiagnosis.Location = New System.Drawing.Point(250, 66)
         Me.BtnNewDiagnosis.Name = "BtnNewDiagnosis"
         Me.BtnNewDiagnosis.Size = New System.Drawing.Size(43, 27)
         Me.BtnNewDiagnosis.TabIndex = 2
         Me.BtnNewDiagnosis.Text = "..."
-        Me.BtnNewDiagnosis.UseVisualStyleBackColor = True
+        Me.BtnNewDiagnosis.UseVisualStyleBackColor = False
         '
         'BtnNewGlasses
         '
+        Me.BtnNewGlasses.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
         Me.BtnNewGlasses.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnNewGlasses.FlatAppearance.BorderSize = 0
+        Me.BtnNewGlasses.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnNewGlasses.ForeColor = System.Drawing.Color.White
         Me.BtnNewGlasses.Location = New System.Drawing.Point(490, 99)
         Me.BtnNewGlasses.Name = "BtnNewGlasses"
         Me.BtnNewGlasses.Size = New System.Drawing.Size(43, 27)
         Me.BtnNewGlasses.TabIndex = 5
         Me.BtnNewGlasses.Text = "..."
-        Me.BtnNewGlasses.UseVisualStyleBackColor = True
+        Me.BtnNewGlasses.UseVisualStyleBackColor = False
         '
         'CboRGlasses
         '
@@ -465,13 +483,17 @@ Partial Class NewRefraction
         '
         'Button1
         '
+        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
         Me.Button1.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button1.FlatAppearance.BorderSize = 0
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.ForeColor = System.Drawing.Color.White
         Me.Button1.Location = New System.Drawing.Point(243, 99)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(43, 27)
         Me.Button1.TabIndex = 7
         Me.Button1.Text = "..."
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.Button1.UseVisualStyleBackColor = False
         '
         'CboLVAReading
         '
@@ -495,13 +517,17 @@ Partial Class NewRefraction
         '
         'BtnVAReading
         '
+        Me.BtnVAReading.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
         Me.BtnVAReading.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnVAReading.FlatAppearance.BorderSize = 0
+        Me.BtnVAReading.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnVAReading.ForeColor = System.Drawing.Color.White
         Me.BtnVAReading.Location = New System.Drawing.Point(486, 100)
         Me.BtnVAReading.Name = "BtnVAReading"
         Me.BtnVAReading.Size = New System.Drawing.Size(43, 27)
         Me.BtnVAReading.TabIndex = 9
         Me.BtnVAReading.Text = "..."
-        Me.BtnVAReading.UseVisualStyleBackColor = True
+        Me.BtnVAReading.UseVisualStyleBackColor = False
         '
         'CboADD
         '
@@ -525,13 +551,17 @@ Partial Class NewRefraction
         '
         'BtnNewVARefrac
         '
+        Me.BtnNewVARefrac.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
         Me.BtnNewVARefrac.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnNewVARefrac.FlatAppearance.BorderSize = 0
+        Me.BtnNewVARefrac.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnNewVARefrac.ForeColor = System.Drawing.Color.White
         Me.BtnNewVARefrac.Location = New System.Drawing.Point(486, 40)
         Me.BtnNewVARefrac.Name = "BtnNewVARefrac"
         Me.BtnNewVARefrac.Size = New System.Drawing.Size(43, 27)
         Me.BtnNewVARefrac.TabIndex = 2
         Me.BtnNewVARefrac.Text = "..."
-        Me.BtnNewVARefrac.UseVisualStyleBackColor = True
+        Me.BtnNewVARefrac.UseVisualStyleBackColor = False
         '
         'CboRVARefrac
         '
@@ -616,13 +646,17 @@ Partial Class NewRefraction
         '
         'BtnNewVA
         '
+        Me.BtnNewVA.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
         Me.BtnNewVA.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnNewVA.FlatAppearance.BorderSize = 0
+        Me.BtnNewVA.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnNewVA.ForeColor = System.Drawing.Color.White
         Me.BtnNewVA.Location = New System.Drawing.Point(484, 18)
         Me.BtnNewVA.Name = "BtnNewVA"
         Me.BtnNewVA.Size = New System.Drawing.Size(43, 27)
         Me.BtnNewVA.TabIndex = 2
         Me.BtnNewVA.Text = "..."
-        Me.BtnNewVA.UseVisualStyleBackColor = True
+        Me.BtnNewVA.UseVisualStyleBackColor = False
         '
         'CboRVAOld
         '
@@ -666,23 +700,31 @@ Partial Class NewRefraction
         '
         'BtnSave
         '
+        Me.BtnSave.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
         Me.BtnSave.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnSave.FlatAppearance.BorderSize = 0
+        Me.BtnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnSave.ForeColor = System.Drawing.Color.White
         Me.BtnSave.Location = New System.Drawing.Point(414, 593)
         Me.BtnSave.Name = "BtnSave"
         Me.BtnSave.Size = New System.Drawing.Size(75, 30)
         Me.BtnSave.TabIndex = 2
         Me.BtnSave.Text = "Save"
-        Me.BtnSave.UseVisualStyleBackColor = True
+        Me.BtnSave.UseVisualStyleBackColor = False
         '
         'BtnCancel
         '
+        Me.BtnCancel.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
         Me.BtnCancel.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnCancel.FlatAppearance.BorderSize = 0
+        Me.BtnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnCancel.ForeColor = System.Drawing.Color.White
         Me.BtnCancel.Location = New System.Drawing.Point(495, 593)
         Me.BtnCancel.Name = "BtnCancel"
         Me.BtnCancel.Size = New System.Drawing.Size(75, 30)
         Me.BtnCancel.TabIndex = 3
         Me.BtnCancel.Text = "Cancel"
-        Me.BtnCancel.UseVisualStyleBackColor = True
+        Me.BtnCancel.UseVisualStyleBackColor = False
         '
         'ErrRefraction
         '
@@ -692,6 +734,7 @@ Partial Class NewRefraction
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(236, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(241, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(578, 626)
         Me.Controls.Add(Me.BtnCancel)
         Me.Controls.Add(Me.BtnSave)

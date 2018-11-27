@@ -102,7 +102,9 @@
     End Sub
 
     Private Sub UpdatePatient_MouseDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles MyBase.MouseDown
-        ModCommon.MoveFormOnMouseDown(e)
+        'ModCommon.MoveFormOnMouseDown(e)
+        ModCommon.ReleaseCapture()
+        ModCommon.SendMessage(Me.Handle, &H112, &HF012, 0)
     End Sub
 
     Private Sub UpdatePatient_MouseMove(ByVal sender As System.Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles MyBase.MouseMove

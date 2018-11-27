@@ -305,7 +305,7 @@ Public Class FrmNewReceipt
                 lblConsultFor.Text = rows("CONSULT_FOR")
                 DateConsult.Value = rows("CONSULING_DATE")
                 DateCreateReceipt.Checked = True
-                DateCreateReceipt.Value = DATE_DEFAULT_SETTING 'CheckMarkEOD() 'DateConsult.Value
+                DateCreateReceipt.Value = GetDateServer.Date  'DATE_DEFAULT_SETTING 'CheckMarkEOD() 'DateConsult.Value
                 LblSendBy.Text = rows("APROVE_BY")
                 If rows("DONATE_TYPE") = "Nil" Then
                     RadNil.Checked = True
@@ -400,7 +400,7 @@ Public Class FrmNewReceipt
             LblSendBy.Text = "No Consult"
             DateConsult.Value = Now
             DateCreateReceipt.Checked = True
-            DateCreateReceipt.Value = DATE_DEFAULT_SETTING 'CheckMarkEOD()
+            DateCreateReceipt.Value = GetDateServer.Date  'DATE_DEFAULT_SETTING 'CheckMarkEOD()
             LblTotalConsult.Text = "Total Consult: 0"
             GroupPayCorrency.Enabled = True
             GroupBox5.Enabled = True
@@ -421,7 +421,7 @@ Public Class FrmNewReceipt
         ' GetBarcod()
         If IS_UPDATE = False Then
             DateCreateReceipt.Checked = True
-            DateCreateReceipt.Value = DATE_DEFAULT_SETTING 'CheckMarkEOD()
+            DateCreateReceipt.Value = GetDateServer.Date 'DATE_DEFAULT_SETTING 'CheckMarkEOD()
             'DateCreateReceipt.Enabled = False
         End If
         '--- Loading invoice information for edit invoice purpose
@@ -472,7 +472,7 @@ Public Class FrmNewReceipt
             If TypeOf row("IsOldPatient") Is DBNull = False Then CheOldPatient.Checked = row("IsOldPatient")
             If TypeOf row("ReceiptDate") Is DBNull = False Then
                 DateCreateReceipt.Checked = True
-                DateCreateReceipt.Value = DATE_DEFAULT_SETTING  'row("ReceiptDate")
+                DateCreateReceipt.Value = GetDateServer.Date 'DATE_DEFAULT_SETTING  'row("ReceiptDate")
             End If
             If TypeOf row("Glasses") Is DBNull = False Then
                 TxtNumGlasses.Text = row("Glasses")
@@ -589,7 +589,7 @@ Public Class FrmNewReceipt
 
     Private Sub BtnSaveReceipt_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnSaveReceipt.Click
         DateCreateReceipt.Checked = True
-        DateCreateReceipt.Value = DATE_DEFAULT_SETTING 'CheckMarkEOD()
+        DateCreateReceipt.Value = GetDateServer.Date 'DATE_DEFAULT_SETTING 'CheckMarkEOD()
         'DateCreateReceipt.Enabled = False
         BgSaveAndPrinting.RunWorkerAsync()
     End Sub
@@ -641,7 +641,7 @@ Public Class FrmNewReceipt
             Me.Invoke(New MethodInvoker(AddressOf SaveReceipt))
         Else
             DateCreateReceipt.Checked = True
-            DateCreateReceipt.Value = DATE_DEFAULT_SETTING  'CheckMarkEOD()
+            DateCreateReceipt.Value = GetDateServer.Date 'DATE_DEFAULT_SETTING  'CheckMarkEOD()
             DateCreateReceipt.Enabled = False
             If ValidateTextField(TxtCustomerName, "", ErrReceipt) = False Then Exit Sub
             If ValidateDateField(DateCreateReceipt, "", ErrReceipt) = False Then Exit Sub
