@@ -52,54 +52,7 @@ Public Class frmDepartInHouseUsedItem
 
     End Sub
 
-    Private Sub BtnAddItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnAddItem.Click
-
-        If ValidateTextField(TxtItemBarcode, "", ErrorInHouseUsed) = False Then Exit Sub
-        If ValidateTextField(TxtUsedQTY, "", ErrorInHouseUsed) = False Then Exit Sub
-
-        If TxtUsedQTY.Text = "0" Then
-            MessageBox.Show("Please input item used quantity.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            Exit Sub
-        End If
-
-        If TxtUsedQTY.Text <> "" Then
-            If Val(TxtUsedQTY.Text) > Val(TxtStockQty.Text) Then
-                MessageBox.Show("Used item quanity cannnot greater than item quantity in stock", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                TxtUsedQTY.Focus()
-                Exit Sub
-            End If
-        End If
-
-
-        If MessageBox.Show("Do you want add this item into Used Item List?", "Add Item", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
-            Dim isItemExist As Boolean = False
-            For Each rRow As Janus.Windows.GridEX.GridEXRow In gridUsedItemDetail.GetRows
-                If rRow.Cells("Barcode").Value = TxtItemBarcode.Text Then
-                    isItemExist = True
-                    Exit For
-                End If
-            Next
-            'Check Item exists in current used item list.
-            If isItemExist = False Then
-                Dim Obj(6) As Object
-                With gridUsedItemDetail
-                    Obj(0) = DEPART_NAME
-                    Obj(1) = TxtItemBarcode.Text
-                    Obj(2) = LblItemID.Text
-                    Obj(3) = cbItem.Text
-                    Obj(4) = TxtStockQty.Text
-                    Obj(5) = TxtUsedQTY.Text
-                    Obj(6) = GetDateServer()
-                    .AddItem(Obj)
-                End With
-                cbItem.SelectedIndex = -1
-                TxtUsedQTY.Text = "0"
-            Else
-                MessageBox.Show("Item already exist in current used item list.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            End If
-        End If
-        CleanForm()
-    End Sub
+  
     Private Sub CleanForm()
         cbItem.SelectedIndex = -1
         TxtItemBarcode.Text = ""
@@ -130,17 +83,13 @@ Public Class frmDepartInHouseUsedItem
             If Val(TxtUsedQTY.Text) > Val(TxtStockQty.Text) Then
                 MessageBox.Show("Used item quanity cannnot greater than item quantity in stock", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 TxtUsedQTY.Focus()
+                Exit Sub
             End If
         End If
 
     End Sub
 
-    Private Sub BtnRemoveItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnRemoveItem.Click
-        If Not gridUsedItemDetail.CurrentRow Is Nothing AndAlso gridUsedItemDetail.CurrentRow.RowType = RowType.Record Then
-            gridUsedItemDetail.SelectedItems(0).GetRow.Delete()
-        End If
-    End Sub
-
+  
     Private Sub BtnNew_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         'Clear item information
         TxtItemBarcode.Text = ""
@@ -149,20 +98,8 @@ Public Class frmDepartInHouseUsedItem
         rtbComment.Text = ""
     End Sub
 
-    Private Sub gridUsedItemDetail_SelectionChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles gridUsedItemDetail.SelectionChanged
-       
-    End Sub
-
-    Private Sub BtnModifyItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnModifyItem.Click
-        If Not gridUsedItemDetail.CurrentRow Is Nothing AndAlso gridUsedItemDetail.CurrentRow.RowType = RowType.Record Then
-            If TxtUsedQTY.Text <> "" Then
-                gridUsedItemDetail.SelectedItems(0).GetRow.BeginEdit()
-                gridUsedItemDetail.SelectedItems(0).GetRow.Cells("UsedQuantity").Value = TxtUsedQTY.Text
-                gridUsedItemDetail.Refresh()
-            End If
-        End If
-        CleanForm()
-    End Sub
+    
+  
 
     Private Sub BtnSaveNewUsed_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnSaveNewUsed.Click
 
@@ -182,8 +119,9 @@ Public Class frmDepartInHouseUsedItem
 
         If rtbComment.Text = "" Then
             MessageBox.Show("Please specify comment for using item.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            rtbComment.Select()
             rtbComment.Focus()
+            rtbComment.Select()
+
             Exit Sub
         End If
 
@@ -322,19 +260,22 @@ Public Class frmDepartInHouseUsedItem
             Else ' In house department used item
                 Dim mytblItem As tblItem = ItemRepo.GetItemByBarcode(TxtItemBarcode.Text)
                 LblItemID.Text = mytblItem.ItemID
+                TxtUsedQTY.Focus()
+                TxtUsedQTY.Select()
+                TxtUsedQTY.SelectAll()
                 TxtStockQty.Text = DepartStockRepo.GetUnitInStockDepartByDepartIDAndItemID(CInt(DEPART_ID), Val(LblItemID.Text))
 
                 ' Get Picture of Item
-                Dim TblTemItem As DataTable = ItemListDataAdapter.GetDataByItemID(cbItem.SelectedValue)
-                For Each row As DataRow In TblTemItem.Rows
-                    If TypeOf row("Picture") Is DBNull Then
-                        PictItem.Visible = False
-                    Else
-                        ImageStream = New System.IO.MemoryStream(CType(row("Picture"), Byte()))
-                        PictItem.Visible = True
-                        PictItem.Image = Image.FromStream(ImageStream)
-                    End If
-                Next
+                'Dim TblTemItem As DataTable = ItemListDataAdapter.GetDataByItemID(cbItem.SelectedValue)
+                'For Each row As DataRow In TblTemItem.Rows
+                '    If TypeOf row("Picture") Is DBNull Then
+                '        PictItem.Visible = False
+                '    Else
+                '        ImageStream = New System.IO.MemoryStream(CType(row("Picture"), Byte()))
+                '        PictItem.Visible = True
+                '        PictItem.Image = Image.FromStream(ImageStream)
+                '    End If
+                'Next
             End If
         Catch ex As Exception
 
@@ -354,6 +295,7 @@ Public Class frmDepartInHouseUsedItem
             TxtStockQty.Text = gridUsedItemDetail.SelectedItems(0).GetRow.Cells("UnitsInStock").Value
             TxtUsedQTY.Text = gridUsedItemDetail.SelectedItems(0).GetRow.Cells("UsedQuantity").Value
             TxtUsedQTY.Focus()
+            TxtUsedQTY.SelectAll()
         End If
     End Sub
 
@@ -425,4 +367,72 @@ Public Class frmDepartInHouseUsedItem
 
        
     End Sub
+
+    Private Sub BtnAdd_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnAdd.Click
+
+        If ValidateTextField(TxtItemBarcode, "", ErrorInHouseUsed) = False Then Exit Sub
+        If ValidateTextField(TxtUsedQTY, "", ErrorInHouseUsed) = False Then Exit Sub
+
+        If TxtUsedQTY.Text = "0" Then
+            MessageBox.Show("Please input item used quantity.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Exit Sub
+        End If
+
+        If TxtUsedQTY.Text <> "" Then
+            If Val(TxtUsedQTY.Text) > Val(TxtStockQty.Text) Then
+                MessageBox.Show("Used item quanity cannnot greater than item quantity in stock", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                TxtUsedQTY.Focus()
+                Exit Sub
+            End If
+        End If
+
+
+        If MessageBox.Show("Do you want add this item into Used Item List?", "Add Item", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
+            Dim isItemExist As Boolean = False
+            For Each rRow As Janus.Windows.GridEX.GridEXRow In gridUsedItemDetail.GetRows
+                If rRow.Cells("Barcode").Value = TxtItemBarcode.Text Then
+                    isItemExist = True
+                    Exit For
+                End If
+            Next
+            'Check Item exists in current used item list.
+            If isItemExist = False Then
+                Dim Obj(6) As Object
+                With gridUsedItemDetail
+                    Obj(0) = DEPART_NAME
+                    Obj(1) = TxtItemBarcode.Text
+                    Obj(2) = LblItemID.Text
+                    Obj(3) = cbItem.Text
+                    Obj(4) = TxtStockQty.Text
+                    Obj(5) = TxtUsedQTY.Text
+                    Obj(6) = GetDateServer()
+                    .AddItem(Obj)
+                End With
+                cbItem.SelectedIndex = -1
+                TxtUsedQTY.Text = "0"
+            Else
+                MessageBox.Show("Item already exist in current used item list.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            End If
+        End If
+        CleanForm()
+    End Sub
+
+    Private Sub BtnModify_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnModify.Click
+        If Not gridUsedItemDetail.CurrentRow Is Nothing AndAlso gridUsedItemDetail.CurrentRow.RowType = RowType.Record Then
+            If TxtUsedQTY.Text <> "" Then
+                gridUsedItemDetail.SelectedItems(0).GetRow.BeginEdit()
+                gridUsedItemDetail.SelectedItems(0).GetRow.Cells("UsedQuantity").Value = TxtUsedQTY.Text
+                gridUsedItemDetail.Refresh()
+            End If
+        End If
+        CleanForm()
+    End Sub
+
+    Private Sub Button3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button3.Click
+        If Not gridUsedItemDetail.CurrentRow Is Nothing AndAlso gridUsedItemDetail.CurrentRow.RowType = RowType.Record Then
+            gridUsedItemDetail.SelectedItems(0).GetRow.Delete()
+        End If
+    End Sub
+
+    
 End Class

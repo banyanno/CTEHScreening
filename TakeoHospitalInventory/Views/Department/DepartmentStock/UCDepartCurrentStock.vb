@@ -84,14 +84,14 @@ Public Class UCDepartCurrentStock
     End Sub
 
     Private Sub gridDepartItems_SelectionChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles gridDepartItems.SelectionChanged
-        Try
-            Dim ItemUseByItem As Double = gridDepartItems.GetRow.Cells("ItemID").Value
-            Dim TemTblUser As DataTable = DAInHouseUsed.GetUsedParticularItemInPeriodOfTime(DEPART_ID, dptFromDate.Value.Date, dptToDate.Value.Date, ItemUseByItem)
-            gridItemUsed.DataSource = TemTblUser
-            PictItem.Image = gridDepartItems.GetRow.Cells("Picture").Value
-        Catch ex As Exception
-            PictItem.Image = Nothing
-        End Try
+        'Try
+        '    Dim ItemUseByItem As Double = gridDepartItems.GetRow.Cells("ItemID").Value
+        '    Dim TemTblUser As DataTable = DAInHouseUsed.GetUsedParticularItemInPeriodOfTime(DEPART_ID, dptFromDate.Value.Date, dptToDate.Value.Date, ItemUseByItem)
+        '    gridItemUsed.DataSource = TemTblUser
+        '    PictItem.Image = gridDepartItems.GetRow.Cells("Picture").Value
+        'Catch ex As Exception
+        '    PictItem.Image = Nothing
+        'End Try
     End Sub
 
     Private Sub BtnUseTemplet_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnUseTemplet.Click
@@ -170,5 +170,16 @@ Public Class UCDepartCurrentStock
     Private Sub BgLoadingReport_RunWorkerCompleted(ByVal sender As System.Object, ByVal e As System.ComponentModel.RunWorkerCompletedEventArgs) Handles BgLoadingReport.RunWorkerCompleted
         'MTakeoInventory.StatusLoading(False)
         Me.MScreening.StatusLoading(False, "Loading")
+    End Sub
+
+    Private Sub gridDepartItems_RowDoubleClick(ByVal sender As System.Object, ByVal e As Janus.Windows.GridEX.RowActionEventArgs) Handles gridDepartItems.RowDoubleClick
+        Try
+            Dim ItemUseByItem As Double = gridDepartItems.GetRow.Cells("ItemID").Value
+            Dim TemTblUser As DataTable = DAInHouseUsed.GetUsedParticularItemInPeriodOfTime(DEPART_ID, dptFromDate.Value.Date, dptToDate.Value.Date, ItemUseByItem)
+            gridItemUsed.DataSource = TemTblUser
+            'PictItem.Image = gridDepartItems.GetRow.Cells("Picture").Value
+        Catch ex As Exception
+            PictItem.Image = Nothing
+        End Try
     End Sub
 End Class

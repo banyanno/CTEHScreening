@@ -25,8 +25,12 @@ Partial Class frmDepartInHouseUsedItem
         Me.components = New System.ComponentModel.Container
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmDepartInHouseUsedItem))
         Dim gridUsedItemDetail_DesignTimeLayout As Janus.Windows.GridEX.GridEXLayout = New Janus.Windows.GridEX.GridEXLayout
+        Dim JanusColorScheme1 As Janus.Windows.Common.JanusColorScheme = New Janus.Windows.Common.JanusColorScheme
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer
         Me.GroupBox4 = New System.Windows.Forms.GroupBox
+        Me.Button3 = New System.Windows.Forms.Button
+        Me.BtnModify = New System.Windows.Forms.Button
+        Me.BtnAdd = New System.Windows.Forms.Button
         Me.Label7 = New System.Windows.Forms.Label
         Me.Label6 = New System.Windows.Forms.Label
         Me.Label4 = New System.Windows.Forms.Label
@@ -38,9 +42,6 @@ Partial Class frmDepartInHouseUsedItem
         Me.Label2 = New System.Windows.Forms.Label
         Me.rtbComment = New System.Windows.Forms.RichTextBox
         Me.Label1 = New System.Windows.Forms.Label
-        Me.BtnRemoveItem = New Janus.Windows.EditControls.UIButton
-        Me.BtnModifyItem = New Janus.Windows.EditControls.UIButton
-        Me.BtnAddItem = New Janus.Windows.EditControls.UIButton
         Me.PictItem = New System.Windows.Forms.PictureBox
         Me.LblItemID = New System.Windows.Forms.Label
         Me.TxtUsedQTY = New System.Windows.Forms.TextBox
@@ -53,6 +54,7 @@ Partial Class frmDepartInHouseUsedItem
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator
         Me.BtnCancel = New System.Windows.Forms.ToolStripButton
         Me.gridUsedItemDetail = New Janus.Windows.GridEX.GridEX
+        Me.VSForOpticalshop = New Janus.Windows.Common.VisualStyleManager(Me.components)
         Me.Label5 = New System.Windows.Forms.Label
         Me.ErrorInHouseUsed = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.SplitContainer1.Panel1.SuspendLayout()
@@ -68,6 +70,7 @@ Partial Class frmDepartInHouseUsedItem
         'SplitContainer1
         '
         Me.SplitContainer1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.SplitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel1
         Me.SplitContainer1.Location = New System.Drawing.Point(0, 0)
         Me.SplitContainer1.Name = "SplitContainer1"
         Me.SplitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal
@@ -81,12 +84,15 @@ Partial Class frmDepartInHouseUsedItem
         '
         Me.SplitContainer1.Panel2.Controls.Add(Me.gridUsedItemDetail)
         Me.SplitContainer1.Panel2.Controls.Add(Me.Label5)
-        Me.SplitContainer1.Size = New System.Drawing.Size(943, 502)
-        Me.SplitContainer1.SplitterDistance = 281
+        Me.SplitContainer1.Size = New System.Drawing.Size(1150, 593)
+        Me.SplitContainer1.SplitterDistance = 285
         Me.SplitContainer1.TabIndex = 0
         '
         'GroupBox4
         '
+        Me.GroupBox4.Controls.Add(Me.Button3)
+        Me.GroupBox4.Controls.Add(Me.BtnModify)
+        Me.GroupBox4.Controls.Add(Me.BtnAdd)
         Me.GroupBox4.Controls.Add(Me.Label7)
         Me.GroupBox4.Controls.Add(Me.Label6)
         Me.GroupBox4.Controls.Add(Me.Label4)
@@ -98,9 +104,6 @@ Partial Class frmDepartInHouseUsedItem
         Me.GroupBox4.Controls.Add(Me.Label2)
         Me.GroupBox4.Controls.Add(Me.rtbComment)
         Me.GroupBox4.Controls.Add(Me.Label1)
-        Me.GroupBox4.Controls.Add(Me.BtnRemoveItem)
-        Me.GroupBox4.Controls.Add(Me.BtnModifyItem)
-        Me.GroupBox4.Controls.Add(Me.BtnAddItem)
         Me.GroupBox4.Controls.Add(Me.PictItem)
         Me.GroupBox4.Controls.Add(Me.LblItemID)
         Me.GroupBox4.Controls.Add(Me.TxtUsedQTY)
@@ -113,39 +116,89 @@ Partial Class frmDepartInHouseUsedItem
         Me.GroupBox4.Margin = New System.Windows.Forms.Padding(2)
         Me.GroupBox4.Name = "GroupBox4"
         Me.GroupBox4.Padding = New System.Windows.Forms.Padding(2)
-        Me.GroupBox4.Size = New System.Drawing.Size(943, 250)
+        Me.GroupBox4.Size = New System.Drawing.Size(1150, 254)
         Me.GroupBox4.TabIndex = 9
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "Item Information"
+        '
+        'Button3
+        '
+        Me.Button3.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
+        Me.Button3.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button3.FlatAppearance.BorderSize = 0
+        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button3.ForeColor = System.Drawing.Color.White
+        Me.Button3.Image = CType(resources.GetObject("Button3.Image"), System.Drawing.Image)
+        Me.Button3.Location = New System.Drawing.Point(465, 103)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(170, 36)
+        Me.Button3.TabIndex = 45
+        Me.Button3.Text = "Remove Item"
+        Me.Button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.Button3.UseVisualStyleBackColor = False
+        '
+        'BtnModify
+        '
+        Me.BtnModify.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
+        Me.BtnModify.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnModify.FlatAppearance.BorderSize = 0
+        Me.BtnModify.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnModify.ForeColor = System.Drawing.Color.White
+        Me.BtnModify.Image = CType(resources.GetObject("BtnModify.Image"), System.Drawing.Image)
+        Me.BtnModify.Location = New System.Drawing.Point(465, 64)
+        Me.BtnModify.Name = "BtnModify"
+        Me.BtnModify.Size = New System.Drawing.Size(170, 36)
+        Me.BtnModify.TabIndex = 44
+        Me.BtnModify.Text = "Update Item"
+        Me.BtnModify.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.BtnModify.UseVisualStyleBackColor = False
+        '
+        'BtnAdd
+        '
+        Me.BtnAdd.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
+        Me.BtnAdd.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnAdd.FlatAppearance.BorderSize = 0
+        Me.BtnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnAdd.ForeColor = System.Drawing.Color.White
+        Me.BtnAdd.Image = CType(resources.GetObject("BtnAdd.Image"), System.Drawing.Image)
+        Me.BtnAdd.Location = New System.Drawing.Point(465, 26)
+        Me.BtnAdd.Name = "BtnAdd"
+        Me.BtnAdd.Size = New System.Drawing.Size(170, 36)
+        Me.BtnAdd.TabIndex = 43
+        Me.BtnAdd.Text = "Add Item"
+        Me.BtnAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.BtnAdd.UseVisualStyleBackColor = False
         '
         'Label7
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.Color.Red
-        Me.Label7.Location = New System.Drawing.Point(420, 165)
+        Me.Label7.Location = New System.Drawing.Point(429, 203)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(15, 20)
         Me.Label7.TabIndex = 42
         Me.Label7.Text = "*"
+        Me.Label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'Label6
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.Color.Red
-        Me.Label6.Location = New System.Drawing.Point(420, 109)
+        Me.Label6.Location = New System.Drawing.Point(427, 130)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(15, 20)
         Me.Label6.TabIndex = 41
         Me.Label6.Text = "*"
+        Me.Label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Label4
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.Red
-        Me.Label4.Location = New System.Drawing.Point(420, 24)
+        Me.Label4.Location = New System.Drawing.Point(427, 34)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(15, 20)
         Me.Label4.TabIndex = 40
@@ -156,7 +209,7 @@ Partial Class frmDepartInHouseUsedItem
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label11.ForeColor = System.Drawing.Color.Red
-        Me.Label11.Location = New System.Drawing.Point(421, 49)
+        Me.Label11.Location = New System.Drawing.Point(428, 67)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(15, 20)
         Me.Label11.TabIndex = 39
@@ -165,7 +218,7 @@ Partial Class frmDepartInHouseUsedItem
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(4, 88)
+        Me.Label3.Location = New System.Drawing.Point(11, 105)
         Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(33, 13)
@@ -178,7 +231,7 @@ Partial Class frmDepartInHouseUsedItem
         Me.dptUsedDate.CustomFormat = "dd/MM/yyyy"
         Me.dptUsedDate.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.dptUsedDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.dptUsedDate.Location = New System.Drawing.Point(104, 79)
+        Me.dptUsedDate.Location = New System.Drawing.Point(111, 96)
         Me.dptUsedDate.Margin = New System.Windows.Forms.Padding(2)
         Me.dptUsedDate.Name = "dptUsedDate"
         Me.dptUsedDate.Size = New System.Drawing.Size(312, 26)
@@ -188,7 +241,7 @@ Partial Class frmDepartInHouseUsedItem
         '
         Me.cbItem.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
         Me.cbItem.FormattingEnabled = True
-        Me.cbItem.Location = New System.Drawing.Point(104, 16)
+        Me.cbItem.Location = New System.Drawing.Point(111, 26)
         Me.cbItem.Name = "cbItem"
         Me.cbItem.Size = New System.Drawing.Size(312, 28)
         Me.cbItem.TabIndex = 0
@@ -197,7 +250,7 @@ Partial Class frmDepartInHouseUsedItem
         '
         Me.TxtStockQty.Enabled = False
         Me.TxtStockQty.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtStockQty.Location = New System.Drawing.Point(104, 139)
+        Me.TxtStockQty.Location = New System.Drawing.Point(111, 164)
         Me.TxtStockQty.Margin = New System.Windows.Forms.Padding(2)
         Me.TxtStockQty.Name = "TxtStockQty"
         Me.TxtStockQty.Size = New System.Drawing.Size(312, 26)
@@ -207,7 +260,7 @@ Partial Class frmDepartInHouseUsedItem
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(4, 146)
+        Me.Label2.Location = New System.Drawing.Point(11, 171)
         Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(83, 13)
@@ -216,7 +269,7 @@ Partial Class frmDepartInHouseUsedItem
         '
         'rtbComment
         '
-        Me.rtbComment.Location = New System.Drawing.Point(104, 167)
+        Me.rtbComment.Location = New System.Drawing.Point(111, 196)
         Me.rtbComment.Name = "rtbComment"
         Me.rtbComment.Size = New System.Drawing.Size(312, 44)
         Me.rtbComment.TabIndex = 5
@@ -225,63 +278,28 @@ Partial Class frmDepartInHouseUsedItem
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(4, 174)
+        Me.Label1.Location = New System.Drawing.Point(11, 203)
         Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(54, 13)
         Me.Label1.TabIndex = 12
         Me.Label1.Text = "Comment:"
         '
-        'BtnRemoveItem
-        '
-        Me.BtnRemoveItem.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnRemoveItem.Icon = CType(resources.GetObject("BtnRemoveItem.Icon"), System.Drawing.Icon)
-        Me.BtnRemoveItem.Location = New System.Drawing.Point(184, 216)
-        Me.BtnRemoveItem.Margin = New System.Windows.Forms.Padding(2)
-        Me.BtnRemoveItem.Name = "BtnRemoveItem"
-        Me.BtnRemoveItem.Size = New System.Drawing.Size(92, 27)
-        Me.BtnRemoveItem.TabIndex = 8
-        Me.BtnRemoveItem.Text = "Remove Item"
-        Me.BtnRemoveItem.VisualStyle = Janus.Windows.UI.VisualStyle.VS2005
-        '
-        'BtnModifyItem
-        '
-        Me.BtnModifyItem.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnModifyItem.Image = Global.TakeoHospitalInventory.My.Resources.Resources.Floppy_s2
-        Me.BtnModifyItem.Location = New System.Drawing.Point(93, 217)
-        Me.BtnModifyItem.Margin = New System.Windows.Forms.Padding(2)
-        Me.BtnModifyItem.Name = "BtnModifyItem"
-        Me.BtnModifyItem.Size = New System.Drawing.Size(85, 27)
-        Me.BtnModifyItem.TabIndex = 7
-        Me.BtnModifyItem.Text = "Update Item"
-        Me.BtnModifyItem.VisualStyle = Janus.Windows.UI.VisualStyle.VS2005
-        '
-        'BtnAddItem
-        '
-        Me.BtnAddItem.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnAddItem.Icon = CType(resources.GetObject("BtnAddItem.Icon"), System.Drawing.Icon)
-        Me.BtnAddItem.Location = New System.Drawing.Point(7, 216)
-        Me.BtnAddItem.Margin = New System.Windows.Forms.Padding(2)
-        Me.BtnAddItem.Name = "BtnAddItem"
-        Me.BtnAddItem.Size = New System.Drawing.Size(82, 27)
-        Me.BtnAddItem.TabIndex = 6
-        Me.BtnAddItem.Text = "Add Item"
-        Me.BtnAddItem.VisualStyle = Janus.Windows.UI.VisualStyle.VS2005
-        '
         'PictItem
         '
         Me.PictItem.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.PictItem.Location = New System.Drawing.Point(441, 22)
+        Me.PictItem.Location = New System.Drawing.Point(863, 79)
         Me.PictItem.Margin = New System.Windows.Forms.Padding(2)
         Me.PictItem.Name = "PictItem"
         Me.PictItem.Size = New System.Drawing.Size(248, 161)
         Me.PictItem.TabIndex = 8
         Me.PictItem.TabStop = False
+        Me.PictItem.Visible = False
         '
         'LblItemID
         '
         Me.LblItemID.AutoSize = True
-        Me.LblItemID.Location = New System.Drawing.Point(827, 170)
+        Me.LblItemID.Location = New System.Drawing.Point(640, 194)
         Me.LblItemID.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.LblItemID.Name = "LblItemID"
         Me.LblItemID.Size = New System.Drawing.Size(13, 13)
@@ -292,7 +310,7 @@ Partial Class frmDepartInHouseUsedItem
         'TxtUsedQTY
         '
         Me.TxtUsedQTY.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtUsedQTY.Location = New System.Drawing.Point(104, 109)
+        Me.TxtUsedQTY.Location = New System.Drawing.Point(111, 130)
         Me.TxtUsedQTY.Margin = New System.Windows.Forms.Padding(2)
         Me.TxtUsedQTY.Name = "TxtUsedQTY"
         Me.TxtUsedQTY.Size = New System.Drawing.Size(312, 26)
@@ -303,7 +321,7 @@ Partial Class frmDepartInHouseUsedItem
         'Label15
         '
         Me.Label15.AutoSize = True
-        Me.Label15.Location = New System.Drawing.Point(4, 116)
+        Me.Label15.Location = New System.Drawing.Point(11, 137)
         Me.Label15.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(54, 13)
@@ -313,7 +331,7 @@ Partial Class frmDepartInHouseUsedItem
         'Label14
         '
         Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(4, 24)
+        Me.Label14.Location = New System.Drawing.Point(11, 34)
         Me.Label14.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(61, 13)
@@ -324,7 +342,7 @@ Partial Class frmDepartInHouseUsedItem
         '
         Me.TxtItemBarcode.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.TxtItemBarcode.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtItemBarcode.Location = New System.Drawing.Point(104, 49)
+        Me.TxtItemBarcode.Location = New System.Drawing.Point(111, 61)
         Me.TxtItemBarcode.Margin = New System.Windows.Forms.Padding(2)
         Me.TxtItemBarcode.Name = "TxtItemBarcode"
         Me.TxtItemBarcode.Size = New System.Drawing.Size(312, 26)
@@ -333,7 +351,7 @@ Partial Class frmDepartInHouseUsedItem
         'Label13
         '
         Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(4, 57)
+        Me.Label13.Location = New System.Drawing.Point(11, 70)
         Me.Label13.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(73, 13)
@@ -342,18 +360,20 @@ Partial Class frmDepartInHouseUsedItem
         '
         'ToolStrip1
         '
+        Me.ToolStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(124, Byte), Integer))
         Me.ToolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden
         Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(24, 24)
         Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BtnSaveNewUsed, Me.ToolStripSeparator1, Me.BtnCancel})
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
         Me.ToolStrip1.Name = "ToolStrip1"
-        Me.ToolStrip1.Size = New System.Drawing.Size(943, 31)
+        Me.ToolStrip1.Size = New System.Drawing.Size(1150, 31)
         Me.ToolStrip1.TabIndex = 0
         Me.ToolStrip1.Text = "ToolStrip1"
         '
         'BtnSaveNewUsed
         '
-        Me.BtnSaveNewUsed.Image = Global.TakeoHospitalInventory.My.Resources.Resources.save
+        Me.BtnSaveNewUsed.ForeColor = System.Drawing.Color.White
+        Me.BtnSaveNewUsed.Image = CType(resources.GetObject("BtnSaveNewUsed.Image"), System.Drawing.Image)
         Me.BtnSaveNewUsed.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.BtnSaveNewUsed.Name = "BtnSaveNewUsed"
         Me.BtnSaveNewUsed.Size = New System.Drawing.Size(136, 28)
@@ -366,7 +386,8 @@ Partial Class frmDepartInHouseUsedItem
         '
         'BtnCancel
         '
-        Me.BtnCancel.Image = Global.TakeoHospitalInventory.My.Resources.Resources.Close1
+        Me.BtnCancel.ForeColor = System.Drawing.Color.White
+        Me.BtnCancel.Image = CType(resources.GetObject("BtnCancel.Image"), System.Drawing.Image)
         Me.BtnCancel.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.BtnCancel.Name = "BtnCancel"
         Me.BtnCancel.Size = New System.Drawing.Size(71, 28)
@@ -379,26 +400,52 @@ Partial Class frmDepartInHouseUsedItem
         Me.gridUsedItemDetail.DesignTimeLayout = gridUsedItemDetail_DesignTimeLayout
         Me.gridUsedItemDetail.Dock = System.Windows.Forms.DockStyle.Fill
         Me.gridUsedItemDetail.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.gridUsedItemDetail.GridLineStyle = Janus.Windows.GridEX.GridLineStyle.Solid
         Me.gridUsedItemDetail.GroupByBoxVisible = False
         Me.gridUsedItemDetail.Location = New System.Drawing.Point(0, 29)
         Me.gridUsedItemDetail.Margin = New System.Windows.Forms.Padding(2)
         Me.gridUsedItemDetail.Name = "gridUsedItemDetail"
+        Me.gridUsedItemDetail.Office2007ColorScheme = Janus.Windows.GridEX.Office2007ColorScheme.Silver
+        Me.gridUsedItemDetail.Office2007CustomColor = System.Drawing.SystemColors.Control
         Me.gridUsedItemDetail.RecordNavigator = True
         Me.gridUsedItemDetail.RowHeaders = Janus.Windows.GridEX.InheritableBoolean.[True]
-        Me.gridUsedItemDetail.Size = New System.Drawing.Size(943, 188)
+        Me.gridUsedItemDetail.Size = New System.Drawing.Size(1150, 275)
         Me.gridUsedItemDetail.TabIndex = 34
-        Me.gridUsedItemDetail.VisualStyle = Janus.Windows.GridEX.VisualStyle.VS2005
+        Me.gridUsedItemDetail.VisualStyleManager = Me.VSForOpticalshop
+        '
+        'VSForOpticalshop
+        '
+        JanusColorScheme1.ActiveCaptionColor = System.Drawing.Color.Tomato
+        JanusColorScheme1.ActiveCaptionTextColor = System.Drawing.Color.White
+        JanusColorScheme1.ControlDarkColor = System.Drawing.SystemColors.Control
+        JanusColorScheme1.ControlTextColor = System.Drawing.Color.Black
+        JanusColorScheme1.DisabledColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(150, Byte), Integer), CType(CType(102, Byte), Integer))
+        JanusColorScheme1.GrayTextColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
+        JanusColorScheme1.HighlightColor = System.Drawing.Color.FromArgb(CType(CType(43, Byte), Integer), CType(CType(99, Byte), Integer), CType(CType(67, Byte), Integer))
+        JanusColorScheme1.HighlightTextColor = System.Drawing.Color.WhiteSmoke
+        JanusColorScheme1.InfoColor = System.Drawing.Color.WhiteSmoke
+        JanusColorScheme1.InfoTextColor = System.Drawing.Color.FloralWhite
+        JanusColorScheme1.MenuColor = System.Drawing.SystemColors.ActiveCaption
+        JanusColorScheme1.MenuTextColor = System.Drawing.Color.DimGray
+        JanusColorScheme1.Name = "Header"
+        JanusColorScheme1.Office2007ColorScheme = Janus.Windows.Common.Office2007ColorScheme.Silver
+        JanusColorScheme1.Office2007CustomColor = System.Drawing.SystemColors.Control
+        JanusColorScheme1.UseThemes = False
+        JanusColorScheme1.VisualStyle = Janus.Windows.Common.VisualStyle.Standard
+        JanusColorScheme1.WindowColor = System.Drawing.Color.White
+        JanusColorScheme1.WindowTextColor = System.Drawing.Color.DarkBlue
+        Me.VSForOpticalshop.ColorSchemes.Add(JanusColorScheme1)
+        Me.VSForOpticalshop.DefaultColorScheme = "Header"
         '
         'Label5
         '
-        Me.Label5.BackColor = System.Drawing.SystemColors.GradientInactiveCaption
-        Me.Label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Label5.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(75, Byte), Integer), CType(CType(124, Byte), Integer))
         Me.Label5.Dock = System.Windows.Forms.DockStyle.Top
         Me.Label5.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.White
         Me.Label5.Location = New System.Drawing.Point(0, 0)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(943, 29)
+        Me.Label5.Size = New System.Drawing.Size(1150, 29)
         Me.Label5.TabIndex = 33
         Me.Label5.Text = "Used Item List"
         Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -411,14 +458,15 @@ Partial Class frmDepartInHouseUsedItem
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.SystemColors.Control
-        Me.ClientSize = New System.Drawing.Size(943, 502)
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(236, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(241, Byte), Integer))
+        Me.ClientSize = New System.Drawing.Size(1150, 593)
         Me.Controls.Add(Me.SplitContainer1)
         Me.Name = "frmDepartInHouseUsedItem"
         Me.ShowIcon = False
         Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "In House Used Item"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.SplitContainer1.Panel1.ResumeLayout(False)
         Me.SplitContainer1.Panel1.PerformLayout()
         Me.SplitContainer1.Panel2.ResumeLayout(False)
@@ -435,9 +483,6 @@ Partial Class frmDepartInHouseUsedItem
     End Sub
     Friend WithEvents SplitContainer1 As System.Windows.Forms.SplitContainer
     Friend WithEvents GroupBox4 As System.Windows.Forms.GroupBox
-    Friend WithEvents BtnRemoveItem As Janus.Windows.EditControls.UIButton
-    Friend WithEvents BtnModifyItem As Janus.Windows.EditControls.UIButton
-    Friend WithEvents BtnAddItem As Janus.Windows.EditControls.UIButton
     Friend WithEvents PictItem As System.Windows.Forms.PictureBox
     Friend WithEvents LblItemID As System.Windows.Forms.Label
     Friend WithEvents TxtUsedQTY As System.Windows.Forms.TextBox
@@ -463,4 +508,8 @@ Partial Class frmDepartInHouseUsedItem
     Friend WithEvents Label11 As System.Windows.Forms.Label
     Friend WithEvents ToolStripSeparator1 As System.Windows.Forms.ToolStripSeparator
     Friend WithEvents BtnCancel As System.Windows.Forms.ToolStripButton
+    Friend WithEvents VSForOpticalshop As Janus.Windows.Common.VisualStyleManager
+    Friend WithEvents BtnAdd As System.Windows.Forms.Button
+    Friend WithEvents Button3 As System.Windows.Forms.Button
+    Friend WithEvents BtnModify As System.Windows.Forms.Button
 End Class

@@ -23,6 +23,7 @@ Partial Class frmInpuItemQty
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmInpuItemQty))
         Me.Label2 = New System.Windows.Forms.Label
         Me.txtAlertQty = New System.Windows.Forms.TextBox
         Me.Label1 = New System.Windows.Forms.Label
@@ -34,10 +35,10 @@ Partial Class frmInpuItemQty
         '
         'Label2
         '
-        Me.Label2.Location = New System.Drawing.Point(38, 61)
+        Me.Label2.Location = New System.Drawing.Point(38, 73)
         Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(130, 35)
+        Me.Label2.Size = New System.Drawing.Size(130, 17)
         Me.Label2.TabIndex = 12
         Me.Label2.Text = "Dep-Stock alert quantity:"
         Me.Label2.Visible = False
@@ -45,8 +46,9 @@ Partial Class frmInpuItemQty
         'txtAlertQty
         '
         Me.txtAlertQty.BackColor = System.Drawing.Color.LightGreen
+        Me.txtAlertQty.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtAlertQty.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
-        Me.txtAlertQty.Location = New System.Drawing.Point(190, 60)
+        Me.txtAlertQty.Location = New System.Drawing.Point(190, 61)
         Me.txtAlertQty.Margin = New System.Windows.Forms.Padding(2)
         Me.txtAlertQty.Name = "txtAlertQty"
         Me.txtAlertQty.Size = New System.Drawing.Size(215, 29)
@@ -67,6 +69,7 @@ Partial Class frmInpuItemQty
         'txtQuantity
         '
         Me.txtQuantity.BackColor = System.Drawing.Color.GreenYellow
+        Me.txtQuantity.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtQuantity.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!)
         Me.txtQuantity.Location = New System.Drawing.Point(190, 25)
         Me.txtQuantity.Margin = New System.Windows.Forms.Padding(2)
@@ -80,7 +83,7 @@ Partial Class frmInpuItemQty
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.Blue
-        Me.Label3.Location = New System.Drawing.Point(12, 123)
+        Me.Label3.Location = New System.Drawing.Point(12, 104)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(371, 20)
         Me.Label3.TabIndex = 13
@@ -94,12 +97,16 @@ Partial Class frmInpuItemQty
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(444, 164)
+        Me.ClientSize = New System.Drawing.Size(431, 140)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.txtAlertQty)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.txtQuantity)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "frmInpuItemQty"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()

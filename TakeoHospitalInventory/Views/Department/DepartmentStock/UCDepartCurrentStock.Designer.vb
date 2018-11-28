@@ -128,13 +128,13 @@ Partial Class UCDepartCurrentStock
         Me.gridDepartItems.HeaderFormatStyle.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(67, Byte), Integer), CType(CType(82, Byte), Integer))
         Me.gridDepartItems.HeaderFormatStyle.ForeColor = System.Drawing.Color.White
         Me.gridDepartItems.HideSelection = Janus.Windows.GridEX.HideSelection.HighlightInactive
-        Me.gridDepartItems.Location = New System.Drawing.Point(3, 88)
+        Me.gridDepartItems.Location = New System.Drawing.Point(3, 93)
         Me.gridDepartItems.Name = "gridDepartItems"
         Me.gridDepartItems.Office2007ColorScheme = Janus.Windows.GridEX.Office2007ColorScheme.Silver
         Me.gridDepartItems.Office2007CustomColor = System.Drawing.SystemColors.Control
         Me.gridDepartItems.RecordNavigator = True
         Me.gridDepartItems.RowHeaderContent = Janus.Windows.GridEX.RowHeaderContent.RowPosition
-        Me.gridDepartItems.Size = New System.Drawing.Size(868, 537)
+        Me.gridDepartItems.Size = New System.Drawing.Size(868, 532)
         Me.gridDepartItems.TabIndex = 13
         Me.gridDepartItems.VisualStyleManager = Me.VSForOpticalshop
         '
@@ -182,7 +182,7 @@ Partial Class UCDepartCurrentStock
         Me.lbLocaInCabi.Dock = System.Windows.Forms.DockStyle.Top
         Me.lbLocaInCabi.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbLocaInCabi.ForeColor = System.Drawing.Color.White
-        Me.lbLocaInCabi.Location = New System.Drawing.Point(3, 59)
+        Me.lbLocaInCabi.Location = New System.Drawing.Point(3, 64)
         Me.lbLocaInCabi.Name = "lbLocaInCabi"
         Me.lbLocaInCabi.Size = New System.Drawing.Size(868, 29)
         Me.lbLocaInCabi.TabIndex = 12
@@ -202,7 +202,7 @@ Partial Class UCDepartCurrentStock
         Me.FilterEditor1.Office2007ColorScheme = Janus.Windows.Common.Office2007ColorScheme.[Default]
         Me.FilterEditor1.ScrollMode = Janus.Windows.UI.Dock.ScrollMode.Both
         Me.FilterEditor1.ScrollStep = 15
-        Me.FilterEditor1.Size = New System.Drawing.Size(868, 43)
+        Me.FilterEditor1.Size = New System.Drawing.Size(868, 48)
         Me.FilterEditor1.SourceControl = Me.gridDepartItems
         Me.FilterEditor1.VisualStyleManager = Me.VSForOpticalshop
         '
