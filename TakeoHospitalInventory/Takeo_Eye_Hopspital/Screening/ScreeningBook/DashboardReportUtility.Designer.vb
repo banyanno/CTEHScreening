@@ -62,7 +62,7 @@ Partial Class DashboardReportUtility
         Me.BtnScreeningBook.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnScreeningBook.ForeColor = System.Drawing.Color.White
         Me.BtnScreeningBook.Image = CType(resources.GetObject("BtnScreeningBook.Image"), System.Drawing.Image)
-        Me.BtnScreeningBook.Location = New System.Drawing.Point(8, 535)
+        Me.BtnScreeningBook.Location = New System.Drawing.Point(7, 558)
         Me.BtnScreeningBook.Name = "BtnScreeningBook"
         Me.BtnScreeningBook.Size = New System.Drawing.Size(228, 72)
         Me.BtnScreeningBook.TabIndex = 4
@@ -143,7 +143,7 @@ Partial Class DashboardReportUtility
         '
         Me.RadByStatistics.AutoSize = True
         Me.RadByStatistics.Checked = True
-        Me.RadByStatistics.Location = New System.Drawing.Point(7, 152)
+        Me.RadByStatistics.Location = New System.Drawing.Point(19, 152)
         Me.RadByStatistics.Name = "RadByStatistics"
         Me.RadByStatistics.Size = New System.Drawing.Size(124, 25)
         Me.RadByStatistics.TabIndex = 38
@@ -154,7 +154,7 @@ Partial Class DashboardReportUtility
         'RadByBooks
         '
         Me.RadByBooks.AutoSize = True
-        Me.RadByBooks.Location = New System.Drawing.Point(132, 152)
+        Me.RadByBooks.Location = New System.Drawing.Point(19, 183)
         Me.RadByBooks.Name = "RadByBooks"
         Me.RadByBooks.Size = New System.Drawing.Size(128, 25)
         Me.RadByBooks.TabIndex = 37
@@ -168,9 +168,9 @@ Partial Class DashboardReportUtility
         Me.GroupByScreenBook.Controls.Add(Me.RadScreenBook)
         Me.GroupByScreenBook.Enabled = False
         Me.GroupByScreenBook.ForeColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
-        Me.GroupByScreenBook.Location = New System.Drawing.Point(9, 389)
+        Me.GroupByScreenBook.Location = New System.Drawing.Point(7, 414)
         Me.GroupByScreenBook.Name = "GroupByScreenBook"
-        Me.GroupByScreenBook.Size = New System.Drawing.Size(224, 140)
+        Me.GroupByScreenBook.Size = New System.Drawing.Size(228, 140)
         Me.GroupByScreenBook.TabIndex = 36
         Me.GroupByScreenBook.TabStop = False
         Me.GroupByScreenBook.Text = "Screening Books"
@@ -218,9 +218,9 @@ Partial Class DashboardReportUtility
         Me.GroupByStatistict.Controls.Add(Me.RadRefraction)
         Me.GroupByStatistict.Controls.Add(Me.RadAllScreening)
         Me.GroupByStatistict.ForeColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
-        Me.GroupByStatistict.Location = New System.Drawing.Point(7, 191)
+        Me.GroupByStatistict.Location = New System.Drawing.Point(7, 216)
         Me.GroupByStatistict.Name = "GroupByStatistict"
-        Me.GroupByStatistict.Size = New System.Drawing.Size(229, 190)
+        Me.GroupByStatistict.Size = New System.Drawing.Size(224, 192)
         Me.GroupByStatistict.TabIndex = 35
         Me.GroupByStatistict.TabStop = False
         Me.GroupByStatistict.Text = "View By:"

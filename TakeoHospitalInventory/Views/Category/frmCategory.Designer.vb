@@ -169,7 +169,7 @@ Partial Class frmCategory
         Me.btnCancel.ForeColor = System.Drawing.SystemColors.MenuText
         Me.btnCancel.Image = Global.TakeoHospitalInventory.My.Resources.Resources.cancel
         Me.btnCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnCancel.Location = New System.Drawing.Point(451, 192)
+        Me.btnCancel.Location = New System.Drawing.Point(451, 188)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.Size = New System.Drawing.Size(85, 41)
         Me.btnCancel.TabIndex = 15
@@ -182,7 +182,7 @@ Partial Class frmCategory
         Me.btnSave.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnSave.ForeColor = System.Drawing.SystemColors.MenuText
         Me.btnSave.Image = Global.TakeoHospitalInventory.My.Resources.Resources.save
-        Me.btnSave.Location = New System.Drawing.Point(359, 192)
+        Me.btnSave.Location = New System.Drawing.Point(359, 188)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(85, 41)
         Me.btnSave.TabIndex = 14
@@ -196,7 +196,7 @@ Partial Class frmCategory
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Control
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(553, 244)
+        Me.ClientSize = New System.Drawing.Size(539, 234)
         Me.Controls.Add(Me.txtTempDepartName)
         Me.Controls.Add(Me.btnCancel)
         Me.Controls.Add(Me.btnSave)

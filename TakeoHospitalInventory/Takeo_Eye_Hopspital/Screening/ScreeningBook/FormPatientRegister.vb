@@ -167,7 +167,7 @@ Public Class FormPatientRegister
                                         CboDisNo.Text, CboCommNo.Text, TxtPatientName.Text, _
                                         TxtPatientNameKh.Text, TxtAge.Text, CboSex.Text, _
                                         TxtFullAddress.Text, "", TxtTel.Text, "", _
-                                        DateRegis.Value.Year, ModGlobleVariable.ACHIEVE, False, GetTextReferralV1, Format(GetDateServer, "hh:mm:ss tt").ToString)
+                                        GetDateServer.Date.Year, ModGlobleVariable.ACHIEVE, False, GetTextReferralV1, Format(GetDateServer, "hh:mm:ss tt").ToString)
     End Function
 
 

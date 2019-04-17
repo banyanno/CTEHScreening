@@ -26,10 +26,6 @@ Partial Class MainScreening
         Me.PanelHeader = New System.Windows.Forms.Panel
         Me.Panel1 = New System.Windows.Forms.Panel
         Me.PictureBox2 = New System.Windows.Forms.PictureBox
-        Me.Label5 = New System.Windows.Forms.Label
-        Me.Label3 = New System.Windows.Forms.Label
-        Me.Label1 = New System.Windows.Forms.Label
-        Me.Label4 = New System.Windows.Forms.Label
         Me.BtnHome = New System.Windows.Forms.Button
         Me.BtnExit = New System.Windows.Forms.Button
         Me.Label2 = New System.Windows.Forms.Label
@@ -70,14 +66,10 @@ Partial Class MainScreening
         'Panel1
         '
         Me.Panel1.Controls.Add(Me.PictureBox2)
-        Me.Panel1.Controls.Add(Me.Label5)
-        Me.Panel1.Controls.Add(Me.Label3)
-        Me.Panel1.Controls.Add(Me.Label1)
-        Me.Panel1.Controls.Add(Me.Label4)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel1.Location = New System.Drawing.Point(811, 0)
+        Me.Panel1.Location = New System.Drawing.Point(982, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(489, 109)
+        Me.Panel1.Size = New System.Drawing.Size(318, 109)
         Me.Panel1.TabIndex = 0
         '
         'PictureBox2
@@ -85,61 +77,12 @@ Partial Class MainScreening
         Me.PictureBox2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
-        Me.PictureBox2.Location = New System.Drawing.Point(174, 2)
+        Me.PictureBox2.Location = New System.Drawing.Point(3, 2)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(311, 105)
         Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox2.TabIndex = 1
         Me.PictureBox2.TabStop = False
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(142, Byte), Integer), CType(CType(78, Byte), Integer), CType(CType(69, Byte), Integer))
-        Me.Label5.Location = New System.Drawing.Point(48, 26)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(167, 17)
-        Me.Label5.TabIndex = 1
-        Me.Label5.Text = "Your Vision, Our Mission."
-        Me.Label5.Visible = False
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(74, Byte), Integer), CType(CType(76, Byte), Integer), CType(CType(97, Byte), Integer))
-        Me.Label3.Location = New System.Drawing.Point(48, 11)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(190, 18)
-        Me.Label3.TabIndex = 1
-        Me.Label3.Text = "TAKEO EYE  HOSPITAL"
-        Me.Label3.Visible = False
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Khmer Mool1", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(100, Byte), Integer), CType(CType(84, Byte), Integer))
-        Me.Label1.Location = New System.Drawing.Point(20, 11)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(202, 43)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "មន្ទីរពេទ្យ ភ្នែក តាកែវ"
-        Me.Label1.Visible = False
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.BackColor = System.Drawing.Color.Transparent
-        Me.Label4.Font = New System.Drawing.Font("Khmer OS Battambang", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(142, Byte), Integer), CType(CType(78, Byte), Integer), CType(CType(69, Byte), Integer))
-        Me.Label4.Location = New System.Drawing.Point(23, 36)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(229, 25)
-        Me.Label4.TabIndex = 1
-        Me.Label4.Text = "គំហើញរបស់អ្នក ជាបេសកម្មរបស់យើង"
-        Me.Label4.Visible = False
         '
         'BtnHome
         '
@@ -323,7 +266,6 @@ Partial Class MainScreening
         Me.Text = "MainScreening"
         Me.PanelHeader.ResumeLayout(False)
         Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
@@ -337,10 +279,6 @@ Partial Class MainScreening
     Friend WithEvents BtnHome As System.Windows.Forms.Button
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Panel1 As System.Windows.Forms.Panel
-    Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents Label3 As System.Windows.Forms.Label
-    Friend WithEvents Label5 As System.Windows.Forms.Label
-    Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents PictureBox2 As System.Windows.Forms.PictureBox
     Friend WithEvents RibboStatusBar As Janus.Windows.Ribbon.RibbonStatusBar
     Friend WithEvents DropDownCommand1 As Janus.Windows.Ribbon.DropDownCommand

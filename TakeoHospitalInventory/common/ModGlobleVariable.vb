@@ -41,6 +41,7 @@
     Public FLogin As frmLoginInventory
     Public MainForm As MainTakeoInventory
     Public UIMainScreening As MainScreening
+
     Public DEP_EOD As UCRunEndOfDay
     ' Display message for character agent
     Public Const MSG_PAYMENT As String = "Click here to update  or find for old patient."

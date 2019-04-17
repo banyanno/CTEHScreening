@@ -52,11 +52,12 @@
     Private Sub BGScreeningBook_RunWorkerCompleted(ByVal sender As System.Object, ByVal e As System.ComponentModel.RunWorkerCompletedEventArgs) Handles BGScreeningBook.RunWorkerCompleted
         'If TxtPatienNo.Text.Trim <> "" Then
         ' Load Data Screening book
-        DGScreeningBook.DataSource = TableScreenBook
-        ModCommon.NumberAllRowHeaderDataGrid(DGScreeningBook)
+        GridEXScreeningBook.DataSource = TableScreenBook
+        'DGScreeningBook.DataSource = TableScreenBook
+        'ModCommon.NumberAllRowHeaderDataGrid(DGScreeningBook)
         ' Load data for referral book
-        DGReferral.DataSource = TableReferralBook
-        ModCommon.NumberAllRowHeaderDataGrid(DGReferral)
+        GridEXReferral.DataSource = TableReferralBook
+        ' ModCommon.NumberAllRowHeaderDataGrid(DGReferral)
         ' Loading data for Refraction Book
         'DGRefraction.DataSource = TableRefractionBook
         ' ModCommon.NumberAllRowHeaderDataGrid(DGRefraction)
@@ -84,12 +85,12 @@
 
         ' Call Total Regis, Refraction, Referral and Optical shop
         DisplayTotalScreening(DateFrom.Value.Date, DateTo.Value.Date)
-        CheckBlankDiagnosis(Me.DGScreeningBook)
+        'CheckBlankDiagnosis(Me.DGScreeningBook)
         UIMainScreening.StatusLoading(False, "Loading")
     End Sub
     Private Sub DashboardScreeningRegisBook_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        DGScreeningBook.AutoGenerateColumns = False
-        DGReferral.AutoGenerateColumns = False
+        'DGScreeningBook.AutoGenerateColumns = False
+        'DGReferral.AutoGenerateColumns = False
         'DGRefraction.AutoGenerateColumns = False
         'DGOpticalShop.AutoGenerateColumns = False
         TxtPatienNo.Focus()
@@ -116,13 +117,13 @@
         'Next
     End Sub
 
-    Private Sub DGScreeningBook_CellDoubleClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles DGScreeningBook.CellDoubleClick
-        If DGScreeningBook.SelectedCells.Count = 0 Then Exit Sub
-        Dim dgRow As DataGridViewRow = DGScreeningBook.Rows(DGScreeningBook.SelectedCells(0).RowIndex)
-        DisplayUtiliyBookByScreenID(dgRow.Cells("SCREEN_BOOKID").Value)
+    Private Sub DGScreeningBook_CellDoubleClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs)
+        'If DGScreeningBook.SelectedCells.Count = 0 Then Exit Sub
+        'Dim dgRow As DataGridViewRow = DGScreeningBook.Rows(DGScreeningBook.SelectedCells(0).RowIndex)
+        'DisplayUtiliyBookByScreenID(dgRow.Cells("SCREEN_BOOKID").Value)
     End Sub
     Private Sub DisplayUtiliyBookByScreenID(ByVal ScreenID As Double)
-        DGReferral.DataSource = DAReferralBookDetail.SelectReferralByScreenBookID(ScreenID)
+        GridEXReferral.DataSource = DAReferralBookDetail.SelectReferralByScreenBookID(ScreenID)
         'DGRefraction.DataSource = DARefractionBookDedail.SelectRefractionByScreenBookID(ScreenID)
         'DGOpticalShop.DataSource = DAOpticalshopBookDetail.SelectOpticalByScreenBookID(ScreenID)
     End Sub
@@ -154,29 +155,30 @@
     End Sub
 
     Private Sub BtnUpdateScreening_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnUpdateScreening.Click
-        If DGScreeningBook.SelectedCells.Count = 0 Then Exit Sub
-        Dim GRows As DataGridViewRow = DGScreeningBook.Rows(DGScreeningBook.SelectedCells(0).RowIndex)
+        'If DGScreeningBook.SelectedCells.Count = 0 Then Exit Sub
+        'Dim GRows As DataGridViewRow = DGScreeningBook.Rows(DGScreeningBook.SelectedCells(0).RowIndex)
+        If GridEXScreeningBook.SelectedItems.Count = 0 Then Exit Sub
         Dim UpdateSNBook As New UpdateScreeningBook
-        UpdateSNBook.LblSaveOption.Text = GRows.Cells("SCREEN_BOOKID").Value
-        UpdateSNBook.DateScreening.Value = GRows.Cells("SCREAN_DATE").Value
-        UpdateSNBook.TxtPlaceScreening.Text = GRows.Cells("SCREEN_PLACE").Value
-        UpdateSNBook.PatientNo.Text = GRows.Cells("PatientNo").Value
-        UpdateSNBook.PatientName.Text = GRows.Cells("NameEng").Value
-        UpdateSNBook.PatientSex.Text = GRows.Cells("Sex").Value
-        UpdateSNBook.PatientAge.Text = GRows.Cells("Age").Value
-        UpdateSNBook.CboOnEye.Text = GRows.Cells("ON_EYE").Value
-        UpdateSNBook.cboDiagnosis.Text = GRows.Cells("DIAGNOSISScreening").Value
-        UpdateSNBook.CboVARight.Text = GRows.Cells("VA_RIGHTScreening").Value
-        UpdateSNBook.CboVALeft.Text = GRows.Cells("VA_LEFTScreening").Value
-        UpdateSNBook.TxtComplain.Text = GRows.Cells("PRESENTING_COMPLAIN").Value
-        UpdateSNBook.TxtMoreInfo.Text = GRows.Cells("SCREEN_NOTE").Value
-        UpdateSNBook.ChRefraction.Checked = GRows.Cells("IS_REFRACTION").Value
-        UpdateSNBook.ChOpticalshop.Checked = GRows.Cells("IS_OPTICALSHOP").Value
-        UpdateSNBook.ChHearing.Checked = GRows.Cells("IS_HEARING").Value
-        UpdateSNBook.ChUnderstanding.Checked = GRows.Cells("IS_UNDERSTANDING").Value
-        UpdateSNBook.ChPhysicalDisability.Checked = GRows.Cells("IS_PHYSICAL").Value
-        UpdateSNBook.ChSeeing.Checked = GRows.Cells("IS_SEEING").Value
-        UpdateSNBook.ChIsOld.Checked = GRows.Cells("IS_OLDPATIENT").Value
+        UpdateSNBook.LblSaveOption.Text = GridEXScreeningBook.GetRow.Cells("SCREEN_BOOKID").Value
+        UpdateSNBook.DateScreening.Value = GridEXScreeningBook.GetRow.Cells("SCREAN_DATE").Value
+        UpdateSNBook.TxtPlaceScreening.Text = GridEXScreeningBook.GetRow.Cells("SCREEN_PLACE").Value
+        UpdateSNBook.PatientNo.Text = GridEXScreeningBook.GetRow.Cells("PatientNo").Value
+        UpdateSNBook.PatientName.Text = GridEXScreeningBook.GetRow.Cells("NameEng").Value
+        UpdateSNBook.PatientSex.Text = GridEXScreeningBook.GetRow.Cells("Sex").Value
+        UpdateSNBook.PatientAge.Text = GridEXScreeningBook.GetRow.Cells("Age").Value
+        UpdateSNBook.CboOnEye.Text = GridEXScreeningBook.GetRow.Cells("ON_EYE").Value
+        UpdateSNBook.cboDiagnosis.Text = GridEXScreeningBook.GetRow.Cells("DIAGNOSIS").Value
+        UpdateSNBook.CboVARight.Text = GridEXScreeningBook.GetRow.Cells("VA_RIGHT").Value
+        UpdateSNBook.CboVALeft.Text = GridEXScreeningBook.GetRow.Cells("VA_LEFT").Value
+        UpdateSNBook.TxtComplain.Text = GridEXScreeningBook.GetRow.Cells("PRESENTING_COMPLAIN").Value
+        UpdateSNBook.TxtMoreInfo.Text = GridEXScreeningBook.GetRow.Cells("SCREEN_NOTE").Value
+        UpdateSNBook.ChRefraction.Checked = GridEXScreeningBook.GetRow.Cells("IS_REFRACTION").Value
+        UpdateSNBook.ChOpticalshop.Checked = GridEXScreeningBook.GetRow.Cells("IS_OPTICALSHOP").Value
+        UpdateSNBook.ChHearing.Checked = GridEXScreeningBook.GetRow.Cells("IS_HEARING").Value
+        UpdateSNBook.ChUnderstanding.Checked = GridEXScreeningBook.GetRow.Cells("IS_UNDERSTANDING").Value
+        UpdateSNBook.ChPhysicalDisability.Checked = GridEXScreeningBook.GetRow.Cells("IS_PHYSICAL").Value
+        UpdateSNBook.ChSeeing.Checked = GridEXScreeningBook.GetRow.Cells("IS_SEEING").Value
+        UpdateSNBook.ChIsOld.Checked = GridEXScreeningBook.GetRow.Cells("IS_OLDPATIENT").Value
        
         ' Call view update Referal
         GetInfoRefer(UpdateSNBook, UpdateSNBook.LblSaveOption.Text)
@@ -185,9 +187,9 @@
         GetInfoRefraction(UpdateSNBook, UpdateSNBook.LblSaveOption.Text)
 
         If UpdateSNBook.ShowDialog = DialogResult.OK Then
-            DGScreeningBook.DataSource = DAScreeningBookDetail.SelectScreenBookDateToDateWithPatientNo(DateFrom.Value.Date, DateTo.Value.Date, EmptyString(UpdateSNBook.PatientNo.Text))
+            GridEXScreeningBook.DataSource = DAScreeningBookDetail.SelectScreenBookDateToDateWithPatientNo(DateFrom.Value.Date, DateTo.Value.Date, EmptyString(UpdateSNBook.PatientNo.Text))
             DisplayUtiliyBookByScreenID(CDbl(UpdateSNBook.LblSaveOption.Text))
-            ModCommon.NumberAllRowHeaderDataGrid(DGScreeningBook)
+            ' ModCommon.NumberAllRowHeaderDataGrid(DGScreeningBook)
         End If
     End Sub
     Private Sub GetInfoRefer(ByVal UpdateSNBook As UpdateScreeningBook, ByVal BookID As Double)
@@ -244,8 +246,8 @@
         End If
     End Sub
     Public Sub RefreshAfterScreenRegis(ByVal DFrom As Date, ByVal DTo As Date, ByVal PatientNo As Double)
-        DGScreeningBook.DataSource = DAScreeningBookDetail.SelectScreenBookDateToDateWithPatientNo(DFrom, DTo, EmptyString(PatientNo))
-        ModCommon.NumberAllRowHeaderDataGrid(DGScreeningBook)
+        GridEXScreeningBook.DataSource = DAScreeningBookDetail.SelectScreenBookDateToDateWithPatientNo(DFrom, DTo, EmptyString(PatientNo))
+
     End Sub
 
     Private Sub BtnNewScreeningRegist_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnNewScreeningRegist.Click
@@ -254,23 +256,23 @@
     End Sub
 
     Private Sub BtnUpdateReferral_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnUpdateReferral.Click
-        If DGScreeningBook.SelectedCells.Count = 0 Then Exit Sub
+        If GridEXScreeningBook.SelectedItems.Count = 0 Then Exit Sub
 
-        Dim GRows As DataGridViewRow = GetDataRowGridView(DGScreeningBook)
-        If (GRows.Cells("IS_REFER_PICKUP").Value) = False AndAlso (GRows.Cells("IS_REFER_BYSELF").Value) = False Then Exit Sub
+        'Dim GRows As DataGridViewRow = GetDataRowGridView(DGScreeningBook)
+        If (GridEXScreeningBook.GetRow.Cells("IS_REFER_PICKUP").Value) = False AndAlso (GridEXScreeningBook.GetRow.Cells("IS_REFER_BYSELF").Value) = False Then Exit Sub
         Dim FReferral As New FormReferral
-        FReferral.LblSaveOption.Text = GRows.Cells("SCREEN_BOOKID").Value
+        FReferral.LblSaveOption.Text = GridEXScreeningBook.GetRow.Cells("SCREEN_BOOKID").Value
 
-        FReferral.DateScreening.Value = GRows.Cells("SCREAN_DATE").Value
-        FReferral.PatientNo.Text = GRows.Cells("PatientNo").Value
-        FReferral.PatientName.Text = GRows.Cells("NameEng").Value
-        FReferral.PatientSex.Text = GRows.Cells("Sex").Value
-        FReferral.PatientAge.Text = GRows.Cells("Age").Value
-        FReferral.CboOnEye.Text = GRows.Cells("ON_EYE").Value
-        FReferral.cboDiagnosis.Text = GRows.Cells("DIAGNOSISScreening").Value
-        FReferral.CboVARight.Text = GRows.Cells("VA_RIGHTScreening").Value
-        FReferral.CboVALeft.Text = GRows.Cells("VA_LEFTScreening").Value
-        If GRows.Cells("IS_REFER_PICKUP").Value = True Then
+        FReferral.DateScreening.Value = GridEXScreeningBook.GetRow.Cells("SCREAN_DATE").Value
+        FReferral.PatientNo.Text = GridEXScreeningBook.GetRow.Cells("PatientNo").Value
+        FReferral.PatientName.Text = GridEXScreeningBook.GetRow.Cells("NameEng").Value
+        FReferral.PatientSex.Text = GridEXScreeningBook.GetRow.Cells("Sex").Value
+        FReferral.PatientAge.Text = GridEXScreeningBook.GetRow.Cells("Age").Value
+        FReferral.CboOnEye.Text = GridEXScreeningBook.GetRow.Cells("ON_EYE").Value
+        FReferral.cboDiagnosis.Text = GridEXScreeningBook.GetRow.Cells("DIAGNOSISScreening").Value
+        FReferral.CboVARight.Text = GridEXScreeningBook.GetRow.Cells("VA_RIGHTScreening").Value
+        FReferral.CboVALeft.Text = GridEXScreeningBook.GetRow.Cells("VA_LEFTScreening").Value
+        If GridEXScreeningBook.GetRow.Cells("IS_REFER_PICKUP").Value = True Then
             FReferral.ChPickup.Checked = True
         Else
             FReferral.ChPickup.Checked = False
@@ -283,28 +285,28 @@
 
 
     Private Sub BtnNewReferral_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnNewReferral.Click
-        If DGScreeningBook.SelectedCells.Count = 0 Then Exit Sub
+        If GridEXScreeningBook.SelectedItems.Count = 0 Then Exit Sub
 
-        Dim GRows As DataGridViewRow = GetDataRowGridView(DGScreeningBook)
-        'If (GRows.Cells("IS_REFER_PICKUP").Value) = False AndAlso (GRows.Cells("IS_REFER_BYSELF").Value) = False Then Exit Sub
+        'Dim GRows As DataGridViewRow = GetDataRowGridView(DGScreeningBook)
+        If (GridEXScreeningBook.GetRow.Cells("IS_REFER_PICKUP").Value) = False AndAlso (GridEXScreeningBook.GetRow.Cells("IS_REFER_BYSELF").Value) = False Then Exit Sub
         Dim FReferral As New FormReferral
-        If FReferral.DAReferralBook.CheckExistingBookID(GRows.Cells("SCREEN_BOOKID").Value) <> 0 Then
+        If FReferral.DAReferralBook.CheckExistingBookID(GridEXScreeningBook.GetRow.Cells("SCREEN_BOOKID").Value) <> 0 Then
             MessageBox.Show("The patient already register into referral book. please check again!", "Screening", MessageBoxButtons.OK, MessageBoxIcon.Error)
             FReferral.Close()
             FReferral.Dispose()
             Exit Sub
         End If
         FReferral.LblSaveOption.Text = "0"
-        FReferral.LblScreenBookID.Text = GRows.Cells("SCREEN_BOOKID").Value
-        FReferral.DateScreening.Value = GRows.Cells("SCREAN_DATE").Value
-        FReferral.PatientNo.Text = GRows.Cells("PatientNo").Value
-        FReferral.PatientName.Text = GRows.Cells("NameEng").Value
-        FReferral.PatientSex.Text = GRows.Cells("Sex").Value
-        FReferral.PatientAge.Text = GRows.Cells("Age").Value
-        FReferral.CboOnEye.Text = GRows.Cells("ON_EYE").Value
-        FReferral.cboDiagnosis.Text = GRows.Cells("DIAGNOSISScreening").Value
-        FReferral.CboVARight.Text = GRows.Cells("VA_RIGHTScreening").Value
-        FReferral.CboVALeft.Text = GRows.Cells("VA_LEFTScreening").Value
+        FReferral.LblScreenBookID.Text = GridEXScreeningBook.GetRow.Cells("SCREEN_BOOKID").Value
+        FReferral.DateScreening.Value = GridEXScreeningBook.GetRow.Cells("SCREAN_DATE").Value
+        FReferral.PatientNo.Text = GridEXScreeningBook.GetRow.Cells("PatientNo").Value
+        FReferral.PatientName.Text = GridEXScreeningBook.GetRow.Cells("NameEng").Value
+        FReferral.PatientSex.Text = GridEXScreeningBook.GetRow.Cells("Sex").Value
+        FReferral.PatientAge.Text = GridEXScreeningBook.GetRow.Cells("Age").Value
+        FReferral.CboOnEye.Text = GridEXScreeningBook.GetRow.Cells("ON_EYE").Value
+        FReferral.cboDiagnosis.Text = GridEXScreeningBook.GetRow.Cells("DIAGNOSISScreening").Value
+        FReferral.CboVARight.Text = GridEXScreeningBook.GetRow.Cells("VA_RIGHTScreening").Value
+        FReferral.CboVALeft.Text = GridEXScreeningBook.GetRow.Cells("VA_LEFTScreening").Value
         FReferral.ChPickup.Enabled = True
         If FReferral.ShowDialog() = DialogResult.OK Then
 
@@ -312,40 +314,40 @@
     End Sub
 
     Private Sub BtnUpdateOpticalshop_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnUpdateOpticalshop.Click
-        If DGScreeningBook.SelectedCells.Count = 0 Then Exit Sub
-        Dim GRows As DataGridViewRow = GetDataRowGridView(DGScreeningBook)
-        If (GRows.Cells("IS_OPTICALSHOP").Value) = False Then Exit Sub
+        If GridEXScreeningBook.SelectedItems.Count = 0 Then Exit Sub
+        'Dim GRows As DataGridViewRow = GetDataRowGridView(DGScreeningBook)
+        If (GridEXScreeningBook.GetRow.Cells("IS_OPTICALSHOP").Value) = False Then Exit Sub
         Dim FOpticalShop As New FormOpticalShop
-        FOpticalShop.LblSaveOption.Text = GRows.Cells("SCREEN_BOOKID").Value
-        FOpticalShop.LblScreenBookID.Text = GRows.Cells("SCREEN_BOOKID").Value
-        FOpticalShop.DateScreening.Value = GRows.Cells("SCREAN_DATE").Value
-        FOpticalShop.PatientNo.Text = GRows.Cells("PatientNo").Value
-        FOpticalShop.PatientName.Text = GRows.Cells("NameEng").Value
-        FOpticalShop.PatientSex.Text = GRows.Cells("Sex").Value
-        FOpticalShop.PatientAge.Text = GRows.Cells("Age").Value
+        FOpticalShop.LblSaveOption.Text = GridEXScreeningBook.GetRow.Cells("SCREEN_BOOKID").Value
+        FOpticalShop.LblScreenBookID.Text = GridEXScreeningBook.GetRow.Cells("SCREEN_BOOKID").Value
+        FOpticalShop.DateScreening.Value = GridEXScreeningBook.GetRow.Cells("SCREAN_DATE").Value
+        FOpticalShop.PatientNo.Text = GridEXScreeningBook.GetRow.Cells("PatientNo").Value
+        FOpticalShop.PatientName.Text = GridEXScreeningBook.GetRow.Cells("NameEng").Value
+        FOpticalShop.PatientSex.Text = GridEXScreeningBook.GetRow.Cells("Sex").Value
+        FOpticalShop.PatientAge.Text = GridEXScreeningBook.GetRow.Cells("Age").Value
         If FOpticalShop.ShowDialog() = DialogResult.OK Then
 
         End If
     End Sub
 
     Private Sub NewOpticalShopToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles NewOpticalShopToolStripMenuItem.Click
-        If DGScreeningBook.SelectedCells.Count = 0 Then Exit Sub
-        Dim GRows As DataGridViewRow = GetDataRowGridView(DGScreeningBook)
-        If (GRows.Cells("IS_OPTICALSHOP").Value) = False Then Exit Sub
+        If GridEXScreeningBook.SelectedItems.Count = 0 Then Exit Sub
+        'Dim GRows As DataGridViewRow = GetDataRowGridView(DGScreeningBook)
+        If (GridEXScreeningBook.GetRow.Cells("IS_OPTICALSHOP").Value) = False Then Exit Sub
         Dim FOpticalShop As New FormOpticalShop
-        If FOpticalShop.DAOpticalShopBook.CheckExistingOpShop(GRows.Cells("SCREEN_BOOKID").Value) <> 0 Then
+        If FOpticalShop.DAOpticalShopBook.CheckExistingOpShop(GridEXScreeningBook.GetRow.Cells("SCREEN_BOOKID").Value) <> 0 Then
             MessageBox.Show("The patient already register into optical shop book. please check again!", "Screening", MessageBoxButtons.OK, MessageBoxIcon.Error)
             FOpticalShop.Close()
             FOpticalShop.Dispose()
             Exit Sub
         End If
         FOpticalShop.LblSaveOption.Text = "0"
-        FOpticalShop.LblScreenBookID.Text = GRows.Cells("SCREEN_BOOKID").Value
-        FOpticalShop.DateScreening.Value = GRows.Cells("SCREAN_DATE").Value
-        FOpticalShop.PatientNo.Text = GRows.Cells("PatientNo").Value
-        FOpticalShop.PatientName.Text = GRows.Cells("NameEng").Value
-        FOpticalShop.PatientSex.Text = GRows.Cells("Sex").Value
-        FOpticalShop.PatientAge.Text = GRows.Cells("Age").Value
+        FOpticalShop.LblScreenBookID.Text = GridEXScreeningBook.GetRow.Cells("SCREEN_BOOKID").Value
+        FOpticalShop.DateScreening.Value = GridEXScreeningBook.GetRow.Cells("SCREAN_DATE").Value
+        FOpticalShop.PatientNo.Text = GridEXScreeningBook.GetRow.Cells("PatientNo").Value
+        FOpticalShop.PatientName.Text = GridEXScreeningBook.GetRow.Cells("NameEng").Value
+        FOpticalShop.PatientSex.Text = GridEXScreeningBook.GetRow.Cells("Sex").Value
+        FOpticalShop.PatientAge.Text = GridEXScreeningBook.GetRow.Cells("Age").Value
         If FOpticalShop.ShowDialog() = DialogResult.OK Then
 
         End If
@@ -353,10 +355,10 @@
 
 
     Private Sub UpdateRefractionToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles UpdateRefractionToolStripMenuItem.Click
-        If DGScreeningBook.SelectedCells.Count = 0 Then Exit Sub
+        If GridEXScreeningBook.SelectedItems.Count = 0 Then Exit Sub
 
-        Dim GRows As DataGridViewRow = GetDataRowGridView(DGScreeningBook)
-        If (GRows.Cells("IS_REFRACTION").Value) = False Then Exit Sub
+        'Dim GRows As DataGridViewRow = GetDataRowGridView(DGScreeningBook)
+        If (GridEXScreeningBook.GetRow.Cells("IS_REFRACTION").Value) = False Then Exit Sub
         Dim FRefraction As New FormRefraction
         'If FReferral.DAReferralBook.CheckExistingBookID(GRows.Cells("SCREEN_BOOKID").Value) <> 0 Then
         '    MessageBox.Show("The patient already register into referral book. please check again!", "Screening", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -365,44 +367,44 @@
         '    Exit Sub
         'End If
         FRefraction.LblSaveOption.Text = "0"
-        FRefraction.LblScreenBookID.Text = GRows.Cells("SCREEN_BOOKID").Value
-        FRefraction.DateScreening.Value = GRows.Cells("SCREAN_DATE").Value
-        FRefraction.PatientNo.Text = GRows.Cells("PatientNo").Value
-        FRefraction.PatientName.Text = GRows.Cells("NameEng").Value
-        FRefraction.PatientSex.Text = GRows.Cells("Sex").Value
-        FRefraction.PatientAge.Text = GRows.Cells("Age").Value
-        FRefraction.CboOnEye.Text = GRows.Cells("ON_EYE").Value
-        FRefraction.cboDiagnosis.Text = GRows.Cells("DIAGNOSISScreening").Value
-        FRefraction.CboVARight.Text = GRows.Cells("VA_RIGHTScreening").Value
-        FRefraction.CboVALeft.Text = GRows.Cells("VA_LEFTScreening").Value
+        FRefraction.LblScreenBookID.Text = GridEXScreeningBook.GetRow.Cells("SCREEN_BOOKID").Value
+        FRefraction.DateScreening.Value = GridEXScreeningBook.GetRow.Cells("SCREAN_DATE").Value
+        FRefraction.PatientNo.Text = GridEXScreeningBook.GetRow.Cells("PatientNo").Value
+        FRefraction.PatientName.Text = GridEXScreeningBook.GetRow.Cells("NameEng").Value
+        FRefraction.PatientSex.Text = GridEXScreeningBook.GetRow.Cells("Sex").Value
+        FRefraction.PatientAge.Text = GridEXScreeningBook.GetRow.Cells("Age").Value
+        FRefraction.CboOnEye.Text = GridEXScreeningBook.GetRow.Cells("ON_EYE").Value
+        FRefraction.cboDiagnosis.Text = GridEXScreeningBook.GetRow.Cells("DIAGNOSISScreening").Value
+        FRefraction.CboVARight.Text = GridEXScreeningBook.GetRow.Cells("VA_RIGHTScreening").Value
+        FRefraction.CboVALeft.Text = GridEXScreeningBook.GetRow.Cells("VA_LEFTScreening").Value
         If FRefraction.ShowDialog() = DialogResult.OK Then
 
         End If
     End Sub
 
     Private Sub NewRefractionToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles NewRefractionToolStripMenuItem.Click
-        If DGScreeningBook.SelectedCells.Count = 0 Then Exit Sub
+        If GridEXScreeningBook.SelectedItems.Count = 0 Then Exit Sub
 
-        Dim GRows As DataGridViewRow = GetDataRowGridView(DGScreeningBook)
-        If (GRows.Cells("IS_REFRACTION").Value) = False Then Exit Sub
+        'Dim GRows As DataGridViewRow = GetDataRowGridView(DGScreeningBook)
+        If (GridEXScreeningBook.GetRow.Cells("IS_REFRACTION").Value) = False Then Exit Sub
         Dim FRefraction As New FormRefraction
-        If FRefraction.DARefraction.CheckExistingRefraction(GRows.Cells("SCREEN_BOOKID").Value) <> 0 Then
+        If FRefraction.DARefraction.CheckExistingRefraction(GridEXScreeningBook.GetRow.Cells("SCREEN_BOOKID").Value) <> 0 Then
             MessageBox.Show("The patient already register into referral book. please check again!", "Screening", MessageBoxButtons.OK, MessageBoxIcon.Error)
             FRefraction.Close()
             FRefraction.Dispose()
             Exit Sub
         End If
-        FRefraction.LblSaveOption.Text = GRows.Cells("SCREEN_BOOKID").Value
-        FRefraction.LblScreenBookID.Text = GRows.Cells("SCREEN_BOOKID").Value
-        FRefraction.DateScreening.Value = GRows.Cells("SCREAN_DATE").Value
-        FRefraction.PatientNo.Text = GRows.Cells("PatientNo").Value
-        FRefraction.PatientName.Text = GRows.Cells("NameEng").Value
-        FRefraction.PatientSex.Text = GRows.Cells("Sex").Value
-        FRefraction.PatientAge.Text = GRows.Cells("Age").Value
-        FRefraction.CboOnEye.Text = GRows.Cells("ON_EYE").Value
-        FRefraction.cboDiagnosis.Text = GRows.Cells("DIAGNOSISScreening").Value
-        FRefraction.CboVARight.Text = GRows.Cells("VA_RIGHTScreening").Value
-        FRefraction.CboVALeft.Text = GRows.Cells("VA_LEFTScreening").Value
+        FRefraction.LblSaveOption.Text = GridEXScreeningBook.GetRow.Cells("SCREEN_BOOKID").Value
+        FRefraction.LblScreenBookID.Text = GridEXScreeningBook.GetRow.Cells("SCREEN_BOOKID").Value
+        FRefraction.DateScreening.Value = GridEXScreeningBook.GetRow.Cells("SCREAN_DATE").Value
+        FRefraction.PatientNo.Text = GridEXScreeningBook.GetRow.Cells("PatientNo").Value
+        FRefraction.PatientName.Text = GridEXScreeningBook.GetRow.Cells("NameEng").Value
+        FRefraction.PatientSex.Text = GridEXScreeningBook.GetRow.Cells("Sex").Value
+        FRefraction.PatientAge.Text = GridEXScreeningBook.GetRow.Cells("Age").Value
+        FRefraction.CboOnEye.Text = GridEXScreeningBook.GetRow.Cells("ON_EYE").Value
+        FRefraction.cboDiagnosis.Text = GridEXScreeningBook.GetRow.Cells("DIAGNOSISScreening").Value
+        FRefraction.CboVARight.Text = GridEXScreeningBook.GetRow.Cells("VA_RIGHTScreening").Value
+        FRefraction.CboVALeft.Text = GridEXScreeningBook.GetRow.Cells("VA_LEFTScreening").Value
         If FRefraction.ShowDialog() = DialogResult.OK Then
 
         End If
@@ -410,7 +412,7 @@
     ' Call Index grid to import user
     Private IndexGrid As Integer = 0
     Private PateintTEHNo As Double = 0
-    Dim DAPatientTEH As New DatasetPatientTEHTableAdapters.PATIENT_SCREENING_INFOTableAdapter
+    Dim DAPatientTEH As New DatasetPatientTEHTableAdapters.IMP_TblPatientsScreeningTableAdapter
     Dim DADateServer As New DatasetPatientTEHTableAdapters.TableGetDateServerTableAdapter
     Private Sub PicStartImport_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PicStartImport.Click
         If MessageBox.Show("Do you want to import patients to TEH sys?", "Screening", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
@@ -424,76 +426,133 @@
     Dim PatientTEHNo As Double
     Dim PatientSEngName, PatientSKhname, PatientSProvince, PatientSDistrict, PatientSCommune, PatientSAddress, PatientSSex, PatientSMale, PatientSFemale, ScreeningPlace As String
     Dim PatientSAge As Integer
-
+    Dim DateScreeningRegis As DateTime
     Private Sub ImportPatientScreeningToTEH()
-        IndexGrid = 0
-        For I As Integer = 0 To DGScreeningBook.Rows.Count - 1 'GRows.Cells.Count - 1
-            IndexGrid = I
-            PatientTEHNo = 0
-            If DAPatientTEH.CheckExistingPatient(GeneratePatientNoForTEH) > 0 Then
-                PateintTEHNo = GeneratePatientNoForTEH()
-            Else
-                PateintTEHNo = GeneratePatientNoForTEH()
-            End If
-            PatientScreenNo = DGScreeningBook.Rows(IndexGrid).Cells("PatientNo").Value
+        If Me.InvokeRequired Then
+            Me.Invoke(New Action(AddressOf ImportPatientScreeningToTEH))
+        Else
+            Dim checkedRows() As Janus.Windows.GridEX.GridEXRow
+            checkedRows = GridEXScreeningBook.GetRows
+            For I As Integer = 0 To checkedRows.Count - 1
+                PatientTEHNo = 0
+                PatientScreenNo = GridEXScreeningBook.GetRow(I).Cells("PatientNo").Value
 
-            PatientSReferNo = DGScreeningBook.Rows(IndexGrid).Cells("REFERENCE_PATIENNOTE").Value
-            PatientSEngName = DGScreeningBook.Rows(IndexGrid).Cells("NameEng").Value
-            PatientSKhname = DGScreeningBook.Rows(IndexGrid).Cells("NameKhmer").Value
-            PatientSProvince = DGScreeningBook.Rows(IndexGrid).Cells("Province").Value
-            PatientSDistrict = DGScreeningBook.Rows(IndexGrid).Cells("District").Value
-            PatientSCommune = DGScreeningBook.Rows(IndexGrid).Cells("Commune").Value
-            PatientSAddress = DGScreeningBook.Rows(IndexGrid).Cells("Address").Value
-            'PatientSMale = DGScreeningBook.Rows(IndexGrid).Cells("Male").Value
-            'PatientSFemale = DGScreeningBook.Rows(IndexGrid).Cells("Female").Value
-            PatientSSex = DGScreeningBook.Rows(IndexGrid).Cells("Sex").Value
-            PatientSAge = DGScreeningBook.Rows(IndexGrid).Cells("Age").Value
-            ScreeningPlace = DGScreeningBook.Rows(IndexGrid).Cells("SCREEN_PLACE").Value
+                PatientSReferNo = GridEXScreeningBook.GetRow(I).Cells("REFERENCE_PATIENNOTE").Value
+                DateScreeningRegis = GridEXScreeningBook.GetRow(I).Cells("SCREAN_DATE").Value
+                PatientSEngName = GridEXScreeningBook.GetRow(I).Cells("NameEng").Value
+                PatientSKhname = GridEXScreeningBook.GetRow(I).Cells("NameKhmer").Value
+                PatientSProvince = GridEXScreeningBook.GetRow(I).Cells("Province").Value
+                PatientSDistrict = GridEXScreeningBook.GetRow(I).Cells("District").Value
+                PatientSCommune = GridEXScreeningBook.GetRow(I).Cells("Commune").Value
+                PatientSAddress = GridEXScreeningBook.GetRow(I).Cells("Address").Value
+                PatientSMale = IIf(GridEXScreeningBook.GetRow(I).Cells("Sex").Value = "M", "M", Nothing)
+                PatientSFemale = IIf(GridEXScreeningBook.GetRow(I).Cells("Sex").Value = "F", "F", Nothing)
+                'GridEXScreeningBook.GetRow(I).Cells("Female").Value
+                PatientSSex = GridEXScreeningBook.GetRow(I).Cells("Sex").Value
+                PatientSAge = GridEXScreeningBook.GetRow(I).Cells("Age").Value
+                ScreeningPlace = GridEXScreeningBook.GetRow(I).Cells("SCREEN_PLACE").Value
 
+                'CBool(DAScreeningBook.CheckStatusImport(PatientScreenNo)) = False And 
+                If DAPatientTEH.CheckExistingScreeningNo(PatientScreenNo) = 0 Then
+                    Application.DoEvents()
+                    UIMainScreening.StatusUpdateLabel("Importing Patient:" & PatientScreenNo)
+                    If DAPatientTEH.ImportPatientScreeningToTEHSYS(PatientScreenNo, 0, DateScreeningRegis.Date, PatientSProvince, PatientSDistrict, PatientSCommune, PatientSEngName, PatientSKhname, PatientSAge, PatientSMale, PatientSFemale, PatientSSex, PatientSAddress, "", "", "", DateScreeningRegis.Year, False, False, "", "", "", Format(DADateServer.SelectDateSVR, "HH:mm:ss")) = 1 Then
+                        DAScreeningBook.UpateStatusImport(True, PatientScreenNo)
+                        GridEXScreeningBook.GetRow(I).BeginEdit()
+                        GridEXScreeningBook.GetRow(I).Cells("IMPORT_STATUS").Value = True
+                        GridEXScreeningBook.GetRow(I).EndEdit()
+                    End If
 
-            If CBool(DAScreeningBook.CheckStatusImport(PatientScreenNo)) = False And DAPatientTEH.CheckExistingScreeningNo(PatientScreenNo) = 0 Then
-                Application.DoEvents()
-                UIMainScreening.StatusUpdateLabel("Importing Patient:" & PatientScreenNo)
-                If DAPatientTEH.ImportPatientScreeningToTEHSys(PateintTEHNo, DADateServer.SelectDateSVR.Value.Date, PatientSProvince, PatientSDistrict, PatientSCommune, PatientSEngName, PatientSKhname, PatientSAge, PatientSMale, PatientSFemale, PatientSSex, PatientSAddress, "", "", DADateServer.SelectDateSVR.Value.Year, ScreeningPlace, Format(DADateServer.SelectDateSVR, "HH:mm:ss"), PatientScreenNo, True, Now.Date, PatientSReferNo) = 1 Then
-                    DAScreeningBook.UpateStatusImport(True, PatientScreenNo)
-                    DGScreeningBook.Rows(IndexGrid).Cells("IMPORT_STATUS").Value = True
+                Else
+                    Application.DoEvents()
+                    UIMainScreening.StatusUpdateLabel(PatientScreenNo & " Imported")
+                    MessageBox.Show("Patient " & PatientScreenNo & " was imported.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 End If
 
-            Else
+                Threading.Thread.Sleep(10)
                 Application.DoEvents()
-                UIMainScreening.StatusUpdateLabel(PatientScreenNo & " Imported")
-            End If
-
-            Threading.Thread.Sleep(10)
-            Application.DoEvents()
-            ' MessageBox.Show(DGScreeningBook.Rows(IndexGrid).Cells("PatientNo").Value)
-            DGScreeningBook.ClearSelection()
-            'DGScreeningBook.CurrentCell = DGScreeningBook.Rows(IndexGrid).Cells(0)
-            DGScreeningBook.Rows(IndexGrid).Selected = True
-            'DGScreeningBook.BeginEdit(False)
-            'DGScreeningBook.CurrentCell = DGScreeningBook.Rows( '.Item(0, IndexGrid)  'DGScreeningBook.Rows(IndexGrid).Cells(0)
-
-            IndexGrid = IndexGrid + I
-        Next
-    End Sub
-    Function GeneratePatientNoForTEH() As String
-        Dim DateServerTEH As Date = DADateServer.SelectDateSVR
-        Dim Years As Integer = DateServerTEH.Year
-        Dim Month As String = DateServerTEH.Month.ToString
-        If Month.Length = 1 Then
-            Month = "0" & Month
-        Else
-            Month = Month
+                'Dim GridSys As New Janus.Windows.GridEX.GridEXFormatStyle
+                'GridSys.BackColor = Color.AliceBlue
+                GridEXScreeningBook.Row = I 'GridEXScreeningBook.SelectedItems(I).GetRow.Position - 1
+                ' MessageBox.Show(DGScreeningBook.Rows(IndexGrid).Cells("PatientNo").Value)
+                ' DGScreeningBook.ClearSelection()
+                'DGScreeningBook.CurrentCell = DGScreeningBook.Rows(IndexGrid).Cells(0)
+                'DGScreeningBook.Rows(IndexGrid).Selected = True
+                'DGScreeningBook.BeginEdit(False)
+                'DGScreeningBook.CurrentCell = DGScreeningBook.Rows( '.Item(0, IndexGrid)  'DGScreeningBook.Rows(IndexGrid).Cells(0)
+            Next
         End If
-        Dim IDHN As Double
-        Try
-            'MsgBox("SELECT MAX(" & FieldNo & ") FROM " & Table & " Where Years=" & Years & "")
-            IDHN = DAPatientTEH.AutoNoPatient(Years) + 1  'ModGlobleVariable.GENERAL_DAO.SelectDAOAsScalar("SELECT COUNT(" & FieldNo & ") FROM " & Table & " WHERE YEARS=" & years) + 1
-        Catch ex As Exception
-            IDHN = 1
-        End Try
-        Return Years & Month.ToString & IDHN.ToString
-    End Function
+
+        
+
+        'IndexGrid = 0
+        'For I As Integer = 0 To GridEXScreeningBook.SelectedItems.Count - 1 'GRows.Cells.Count - 1
+        '    IndexGrid = I
+        '    PatientTEHNo = 0
+        '    If DAPatientTEH.CheckExistingPatient(GeneratePatientNoForTEH) > 0 Then
+        '        PateintTEHNo = GeneratePatientNoForTEH()
+        '    Else
+        '        PateintTEHNo = GeneratePatientNoForTEH()
+        '    End If
+        '    PatientScreenNo = DGScreeningBook.Rows(IndexGrid).Cells("PatientNo").Value
+
+        '    PatientSReferNo = DGScreeningBook.Rows(IndexGrid).Cells("REFERENCE_PATIENNOTE").Value
+        '    PatientSEngName = DGScreeningBook.Rows(IndexGrid).Cells("NameEng").Value
+        '    PatientSKhname = DGScreeningBook.Rows(IndexGrid).Cells("NameKhmer").Value
+        '    PatientSProvince = DGScreeningBook.Rows(IndexGrid).Cells("Province").Value
+        '    PatientSDistrict = DGScreeningBook.Rows(IndexGrid).Cells("District").Value
+        '    PatientSCommune = DGScreeningBook.Rows(IndexGrid).Cells("Commune").Value
+        '    PatientSAddress = DGScreeningBook.Rows(IndexGrid).Cells("Address").Value
+        '    'PatientSMale = DGScreeningBook.Rows(IndexGrid).Cells("Male").Value
+        '    'PatientSFemale = DGScreeningBook.Rows(IndexGrid).Cells("Female").Value
+        '    PatientSSex = DGScreeningBook.Rows(IndexGrid).Cells("Sex").Value
+        '    PatientSAge = DGScreeningBook.Rows(IndexGrid).Cells("Age").Value
+        '    ScreeningPlace = DGScreeningBook.Rows(IndexGrid).Cells("SCREEN_PLACE").Value
+
+
+        '    If CBool(DAScreeningBook.CheckStatusImport(PatientScreenNo)) = False And DAPatientTEH.CheckExistingScreeningNo(PatientScreenNo) = 0 Then
+        '        Application.DoEvents()
+        '        UIMainScreening.StatusUpdateLabel("Importing Patient:" & PatientScreenNo)
+        '        If DAPatientTEH.ImportPatientScreeningToTEHSys(PateintTEHNo, DADateServer.SelectDateSVR.Value.Date, PatientSProvince, PatientSDistrict, PatientSCommune, PatientSEngName, PatientSKhname, PatientSAge, PatientSMale, PatientSFemale, PatientSSex, PatientSAddress, "", "", DADateServer.SelectDateSVR.Value.Year, ScreeningPlace, Format(DADateServer.SelectDateSVR, "HH:mm:ss"), PatientScreenNo, True, Now.Date, PatientSReferNo) = 1 Then
+        '            DAScreeningBook.UpateStatusImport(True, PatientScreenNo)
+        '            DGScreeningBook.Rows(IndexGrid).Cells("IMPORT_STATUS").Value = True
+        '        End If
+
+        '    Else
+        '        Application.DoEvents()
+        '        UIMainScreening.StatusUpdateLabel(PatientScreenNo & " Imported")
+        '    End If
+
+        '    Threading.Thread.Sleep(10)
+        '    Application.DoEvents()
+        '    ' MessageBox.Show(DGScreeningBook.Rows(IndexGrid).Cells("PatientNo").Value)
+        '    DGScreeningBook.ClearSelection()
+        '    'DGScreeningBook.CurrentCell = DGScreeningBook.Rows(IndexGrid).Cells(0)
+        '    DGScreeningBook.Rows(IndexGrid).Selected = True
+        '    'DGScreeningBook.BeginEdit(False)
+        '    'DGScreeningBook.CurrentCell = DGScreeningBook.Rows( '.Item(0, IndexGrid)  'DGScreeningBook.Rows(IndexGrid).Cells(0)
+
+        '    IndexGrid = IndexGrid + I
+        'Next
+    End Sub
+    'Function GeneratePatientNoForTEH() As String
+    '    Dim DateServerTEH As Date = DADateServer.SelectDateSVR
+    '    Dim Years As Integer = DateServerTEH.Year
+    '    Dim Month As String = DateServerTEH.Month.ToString
+    '    If Month.Length = 1 Then
+    '        Month = "0" & Month
+    '    Else
+    '        Month = Month
+    '    End If
+    '    Dim IDHN As Double
+    '    Try
+    '        'MsgBox("SELECT MAX(" & FieldNo & ") FROM " & Table & " Where Years=" & Years & "")
+    '        IDHN = DAPatientTEH.AutoNoPatient(Years) + 1  'ModGlobleVariable.GENERAL_DAO.SelectDAOAsScalar("SELECT COUNT(" & FieldNo & ") FROM " & Table & " WHERE YEARS=" & years) + 1
+    '    Catch ex As Exception
+    '        IDHN = 1
+    '    End Try
+    '    Return Years & Month.ToString & IDHN.ToString
+    'End Function
 
     Private Sub BGImportToTEH_DoWork(ByVal sender As System.Object, ByVal e As System.ComponentModel.DoWorkEventArgs) Handles BGImportToTEH.DoWork
         ImportPatientScreeningToTEH()
@@ -504,12 +563,9 @@
         MessageBox.Show("Import patients is done!", "Screening", MessageBoxButtons.OK, MessageBoxIcon.Information)
     End Sub
 
-    
 
-  
-    Private Sub DGScreeningBook_ColumnHeaderMouseClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellMouseEventArgs) Handles DGScreeningBook.ColumnHeaderMouseClick
-        CheckBlankDiagnosis(Me.DGScreeningBook)
-    End Sub
+
+
 
     Private Sub TxtPatienNo_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles TxtPatienNo.KeyDown
         If e.KeyCode = Keys.Enter Then
@@ -517,7 +573,15 @@
         End If
     End Sub
 
-    Private Sub NotFillDiagnosis_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles NotFillDiagnosis.Click
-        CheckBlankDiagnosis(Me.DGScreeningBook)
+
+
+    Private Sub GridEXScreeningBook_SelectionChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles GridEXScreeningBook.SelectionChanged
+        Try
+            'If DGScreeningBook.SelectedCells.Count = 0 Then Exit Sub
+            'Dim dgRow As DataGridViewRow = DGScreeningBook.Rows(DGScreeningBook.SelectedCells(0).RowIndex)
+            DisplayUtiliyBookByScreenID(GridEXScreeningBook.GetRow.Cells("SCREEN_BOOKID").Value) '' dgRow.Cells("SCREEN_BOOKID").Value)
+        Catch ex As Exception
+
+        End Try
     End Sub
 End Class
