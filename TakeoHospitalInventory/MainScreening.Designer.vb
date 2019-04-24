@@ -111,7 +111,7 @@ Partial Class MainScreening
         Me.BtnExit.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnExit.ForeColor = System.Drawing.Color.White
         Me.BtnExit.Image = CType(resources.GetObject("BtnExit.Image"), System.Drawing.Image)
-        Me.BtnExit.Location = New System.Drawing.Point(1255, 107)
+        Me.BtnExit.Location = New System.Drawing.Point(1262, 107)
         Me.BtnExit.Name = "BtnExit"
         Me.BtnExit.Size = New System.Drawing.Size(41, 35)
         Me.BtnExit.TabIndex = 15

@@ -145,4 +145,105 @@
         End Try
     End Sub
 
+    Private Sub BtnImpReceipt_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnImpReceipt.Click
+        If MessageBox.Show("Do you want to import receipt?", "Import", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
+            MScreening.StatusLoading(True, "Loading")
+            BGImpOpticalTEH.RunWorkerAsync()
+        End If
+    End Sub
+
+    Private Sub BGImpOpticalTEH_RunWorkerCompleted(ByVal sender As System.Object, ByVal e As System.ComponentModel.RunWorkerCompletedEventArgs) Handles BGImpOpticalTEH.RunWorkerCompleted
+        MScreening.StatusLoading(False, "Loading")
+    End Sub
+    Dim PatientTEHNo As Long = 0
+    Dim S_ReceiptNo As Long = 0
+    Dim DA_TEHReceipScreening As DatasetPatientTEHTableAdapters.IMP_tblPatientReceiptScreeninngTableAdapter
+    Dim ReceiptNo, ReceiptDate, CustomerNo, MedicReal, MedicDolar, EyeGlassesReal, EyeGlassesDolar, TotalReal, TotalDolar, AmountInWords, AmountFigureReal, AmountFigureDolar _
+, IsCurrency, IsDonation, DonationID, PayBySelf, PayByDonation, IsPaid, ReceiptNote, UserID, UserName, CusName, Sex, Age, Occupation, Address, DonationName, ReadyModDolar _
+, ReadyModR, SpectacleDolar, SpectacleR, OtherDolar, OtherR, ReturnReal, ReturnDolar, FundRaisingR, FundRaisingDolar, IncomType, DonateAmount, SupportedAmtDolar, SupportedAmtR, TIME_CREATE As String
+    Private Sub ImportReceipt()
+        If Me.InvokeRequired Then
+            Me.Invoke(New Action(AddressOf ImportReceipt))
+        Else
+            Dim GRows() As Janus.Windows.GridEX.GridEXRow
+            GRows = GridReceipt.GetRows
+            For I As Integer = 0 To GRows.Count - 1
+
+                ReceiptNo = GridReceipt.GetRow(I).Cells("ReceiptNo").Value
+
+                ReceiptDate = GridReceipt.GetRow(I).Cells("ReceiptDate").Value
+                MedicReal = GridReceipt.GetRow(I).Cells("MedicReal").Value
+                MedicDolar = GridReceipt.GetRow(I).Cells("MedicDolar").Value
+                EyeGlassesReal = GridReceipt.GetRow(I).Cells("EyeGlassesReal").Value
+                EyeGlassesDolar = GridReceipt.GetRow(I).Cells("EyeGlassesDolar").Value
+                TotalReal = GridReceipt.GetRow(I).Cells("TotalReal").Value
+                TotalDolar = GridReceipt.GetRow(I).Cells("TotalDolar").Value
+                AmountInWords = GridReceipt.GetRow(I).Cells("AmountInWords").Value
+                AmountFigureReal = GridReceipt.GetRow(I).Cells("AmountFigureReal").Value
+                AmountFigureDolar = GridReceipt.GetRow(I).Cells("AmountFigureDolar").Value
+                IsCurrency = GridReceipt.GetRow(I).Cells("IsCurrency").Value
+                IsDonation = GridReceipt.GetRow(I).Cells("IsDonation").Value
+                DonationID = GridReceipt.GetRow(I).Cells("DonationID").Value
+                PayBySelf = GridReceipt.GetRow(I).Cells("PayBySelf").Value
+
+
+
+                PayByDonation = GridReceipt.GetRow(I).Cells("PayByDonation").Value
+                IsPaid = GridReceipt.GetRow(I).Cells("IsPaid").Value
+                ReceiptNote = GridReceipt.GetRow(I).Cells("ReceiptNote").Value
+                UserID = GridReceipt.GetRow(I).Cells("UserID").Value
+                UserName = GridReceipt.GetRow(I).Cells("UserName").Value
+                CusName = GridReceipt.GetRow(I).Cells("CusName").Value
+                Sex = GridReceipt.GetRow(I).Cells("Sex").Value
+                Age = GridReceipt.GetRow(I).Cells("Age").Value
+                Occupation = GridReceipt.GetRow(I).Cells("Occupation").Value
+                DonationName = GridReceipt.GetRow(I).Cells("DonationName").Value
+                ReadyModDolar = GridReceipt.GetRow(I).Cells("ReadyModDolar").Value
+                ReadyModR = GridReceipt.GetRow(I).Cells("ReadyModR").Value
+                SpectacleDolar = GridReceipt.GetRow(I).Cells("SpectacleDolar").Value
+                SpectacleR = GridReceipt.GetRow(I).Cells("SpectacleR").Value
+
+                OtherDolar = GridReceipt.GetRow(I).Cells("OtherDolar").Value
+                OtherR = GridReceipt.GetRow(I).Cells("OtherR").Value
+                ReturnReal = GridReceipt.GetRow(I).Cells("ReturnReal").Value
+                ReturnDolar = GridReceipt.GetRow(I).Cells("ReturnDolar").Value
+                FundRaisingR = GridReceipt.GetRow(I).Cells("FundRaisingR").Value
+                FundRaisingDolar = GridReceipt.GetRow(I).Cells("FundRaisingDolar").Value
+                IncomType = GridReceipt.GetRow(I).Cells("IncomType").Value
+                SupportedAmtDolar = GridReceipt.GetRow(I).Cells("SupportedAmtDolar").Value
+                SupportedAmtR = GridReceipt.GetRow(I).Cells("SupportedAmtR").Value
+                TIME_CREATE = GridReceipt.GetRow(I).Cells("TIME_CREATE").Value
+                
+
+                'CBool(DAScreeningBook.CheckStatusImport(PatientScreenNo)) = False And 
+                If DA_TEHReceipScreening.CheckExistReceiptNo(ReceiptNo) = 0 Then
+                    Application.DoEvents()
+                    UIMainScreening.StatusUpdateLabel("Importing Patient:" & PatientScreenNo)
+                    'If DA_TEHReceipScreening.ImpReceiptScreening(ReceiptNo, 0, ) = 1 Then
+                    '    DAScreeningBook.UpateStatusImport(True, PatientScreenNo)
+                    '    GridReceipt.GetRow(I).BeginEdit()
+                    '    GridReceipt.GetRow(I).Cells("IMPORT_STATUS").Value = True
+                    '    GridReceipt.GetRow(I).EndEdit()
+                    'End If
+
+                Else
+                    Application.DoEvents()
+                    UIMainScreening.StatusUpdateLabel(PatientScreenNo & " Imported")
+                    MessageBox.Show("Patient " & PatientScreenNo & " was imported.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                End If
+
+                Threading.Thread.Sleep(10)
+                Application.DoEvents()
+                'Dim GridSys As New Janus.Windows.GridEX.GridEXFormatStyle
+                'GridSys.BackColor = Color.AliceBlue
+                GridReceipt.Row = I 'GridReceipt.SelectedItems(I).GetRow.Position - 1
+                ' MessageBox.Show(DGScreeningBook.Rows(IndexGrid).Cells("PatientNo").Value)
+                ' DGScreeningBook.ClearSelection()
+                'DGScreeningBook.CurrentCell = DGScreeningBook.Rows(IndexGrid).Cells(0)
+                'DGScreeningBook.Rows(IndexGrid).Selected = True
+                'DGScreeningBook.BeginEdit(False)
+                'DGScreeningBook.CurrentCell = DGScreeningBook.Rows( '.Item(0, IndexGrid)  'DGScreeningBook.Rows(IndexGrid).Cells(0)
+            Next
+        End If
+    End Sub
 End Class

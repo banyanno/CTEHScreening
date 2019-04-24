@@ -87,10 +87,9 @@ Partial Class MainOpticalShop
         Me.GridReceipt.GridLineStyle = Janus.Windows.GridEX.GridLineStyle.Solid
         Me.GridReceipt.GroupByBoxVisible = False
         Me.GridReceipt.HeaderFormatStyle.Appearance = Janus.Windows.GridEX.Appearance.Flat
-        Me.GridReceipt.HeaderFormatStyle.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(67, Byte), Integer), CType(CType(82, Byte), Integer))
+        Me.GridReceipt.HeaderFormatStyle.BackColor = System.Drawing.Color.Empty
         Me.GridReceipt.HeaderFormatStyle.BackColorGradient = System.Drawing.Color.Red
         Me.GridReceipt.HeaderFormatStyle.FontSize = 12.0!
-        Me.GridReceipt.HeaderFormatStyle.ForeColor = System.Drawing.Color.White
         Me.GridReceipt.HideSelection = Janus.Windows.GridEX.HideSelection.Highlight
         Me.GridReceipt.Hierarchical = True
         Me.GridReceipt.Location = New System.Drawing.Point(0, 94)

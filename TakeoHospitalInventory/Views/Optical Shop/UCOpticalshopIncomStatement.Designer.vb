@@ -23,9 +23,9 @@ Partial Class UCOpticalshopIncomStatement
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(UCOpticalshopIncomStatement))
         Dim GridReceipt_DesignTimeLayout As Janus.Windows.GridEX.GridEXLayout = New Janus.Windows.GridEX.GridEXLayout
         Dim JanusColorScheme1 As Janus.Windows.Common.JanusColorScheme = New Janus.Windows.Common.JanusColorScheme
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(UCOpticalshopIncomStatement))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox
         Me.RadReportNil = New System.Windows.Forms.RadioButton
         Me.RadReceiptNil = New System.Windows.Forms.RadioButton
@@ -40,9 +40,11 @@ Partial Class UCOpticalshopIncomStatement
         Me.Label1 = New System.Windows.Forms.Label
         Me.SplitContainerIncomstatement = New System.Windows.Forms.SplitContainer
         Me.GridReceipt = New Janus.Windows.GridEX.GridEX
+        Me.VSForOpticalshop = New Janus.Windows.Common.VisualStyleManager(Me.components)
         Me.CryViewOpticalshopIncome = New CrystalDecisions.Windows.Forms.CrystalReportViewer
         Me.BgLoadingReport = New System.ComponentModel.BackgroundWorker
-        Me.VSForOpticalshop = New Janus.Windows.Common.VisualStyleManager(Me.components)
+        Me.BtnImpReceipt = New System.Windows.Forms.Button
+        Me.BGImpOpticalTEH = New System.ComponentModel.BackgroundWorker
         Me.GroupBox1.SuspendLayout()
         Me.SplitContainerIncomstatement.Panel1.SuspendLayout()
         Me.SplitContainerIncomstatement.Panel2.SuspendLayout()
@@ -52,6 +54,7 @@ Partial Class UCOpticalshopIncomStatement
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.BtnImpReceipt)
         Me.GroupBox1.Controls.Add(Me.RadReportNil)
         Me.GroupBox1.Controls.Add(Me.RadReceiptNil)
         Me.GroupBox1.Controls.Add(Me.RadReportCancel)
@@ -210,6 +213,7 @@ Partial Class UCOpticalshopIncomStatement
         Me.GridReceipt.DesignTimeLayout = GridReceipt_DesignTimeLayout
         Me.GridReceipt.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GridReceipt.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!)
+        Me.GridReceipt.GridLineStyle = Janus.Windows.GridEX.GridLineStyle.Solid
         Me.GridReceipt.GroupByBoxVisible = False
         Me.GridReceipt.HeaderFormatStyle.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(67, Byte), Integer), CType(CType(82, Byte), Integer))
         Me.GridReceipt.HeaderFormatStyle.ForeColor = System.Drawing.Color.White
@@ -226,27 +230,6 @@ Partial Class UCOpticalshopIncomStatement
         Me.GridReceipt.TabIndex = 4
         Me.GridReceipt.TotalRow = Janus.Windows.GridEX.InheritableBoolean.[True]
         Me.GridReceipt.VisualStyleManager = Me.VSForOpticalshop
-        '
-        'CryViewOpticalshopIncome
-        '
-        Me.CryViewOpticalshopIncome.ActiveViewIndex = -1
-        Me.CryViewOpticalshopIncome.AutoScroll = True
-        Me.CryViewOpticalshopIncome.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.CryViewOpticalshopIncome.DisplayGroupTree = False
-        Me.CryViewOpticalshopIncome.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.CryViewOpticalshopIncome.Location = New System.Drawing.Point(0, 0)
-        Me.CryViewOpticalshopIncome.Name = "CryViewOpticalshopIncome"
-        Me.CryViewOpticalshopIncome.SelectionFormula = ""
-        Me.CryViewOpticalshopIncome.ShowGroupTreeButton = False
-        Me.CryViewOpticalshopIncome.ShowRefreshButton = False
-        Me.CryViewOpticalshopIncome.Size = New System.Drawing.Size(96, 100)
-        Me.CryViewOpticalshopIncome.TabIndex = 0
-        Me.CryViewOpticalshopIncome.ViewTimeSelectionFormula = ""
-        '
-        'BgLoadingReport
-        '
-        Me.BgLoadingReport.WorkerReportsProgress = True
-        Me.BgLoadingReport.WorkerSupportsCancellation = True
         '
         'VSForOpticalshop
         '
@@ -271,6 +254,47 @@ Partial Class UCOpticalshopIncomStatement
         JanusColorScheme1.WindowTextColor = System.Drawing.Color.DarkBlue
         Me.VSForOpticalshop.ColorSchemes.Add(JanusColorScheme1)
         Me.VSForOpticalshop.DefaultColorScheme = "Header"
+        '
+        'CryViewOpticalshopIncome
+        '
+        Me.CryViewOpticalshopIncome.ActiveViewIndex = -1
+        Me.CryViewOpticalshopIncome.AutoScroll = True
+        Me.CryViewOpticalshopIncome.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.CryViewOpticalshopIncome.DisplayGroupTree = False
+        Me.CryViewOpticalshopIncome.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.CryViewOpticalshopIncome.Location = New System.Drawing.Point(0, 0)
+        Me.CryViewOpticalshopIncome.Name = "CryViewOpticalshopIncome"
+        Me.CryViewOpticalshopIncome.SelectionFormula = ""
+        Me.CryViewOpticalshopIncome.ShowGroupTreeButton = False
+        Me.CryViewOpticalshopIncome.ShowRefreshButton = False
+        Me.CryViewOpticalshopIncome.Size = New System.Drawing.Size(96, 100)
+        Me.CryViewOpticalshopIncome.TabIndex = 0
+        Me.CryViewOpticalshopIncome.ViewTimeSelectionFormula = ""
+        '
+        'BgLoadingReport
+        '
+        Me.BgLoadingReport.WorkerReportsProgress = True
+        Me.BgLoadingReport.WorkerSupportsCancellation = True
+        '
+        'BtnImpReceipt
+        '
+        Me.BtnImpReceipt.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
+        Me.BtnImpReceipt.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnImpReceipt.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnImpReceipt.ForeColor = System.Drawing.Color.White
+        Me.BtnImpReceipt.Image = CType(resources.GetObject("BtnImpReceipt.Image"), System.Drawing.Image)
+        Me.BtnImpReceipt.Location = New System.Drawing.Point(793, 16)
+        Me.BtnImpReceipt.Name = "BtnImpReceipt"
+        Me.BtnImpReceipt.Size = New System.Drawing.Size(155, 39)
+        Me.BtnImpReceipt.TabIndex = 6
+        Me.BtnImpReceipt.Text = "Import Receipt"
+        Me.BtnImpReceipt.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.BtnImpReceipt.UseVisualStyleBackColor = False
+        '
+        'BGImpOpticalTEH
+        '
+        Me.BGImpOpticalTEH.WorkerReportsProgress = True
+        Me.BGImpOpticalTEH.WorkerSupportsCancellation = True
         '
         'UCOpticalshopIncomStatement
         '
@@ -306,5 +330,7 @@ Partial Class UCOpticalshopIncomStatement
     Friend WithEvents RadReportNil As System.Windows.Forms.RadioButton
     Friend WithEvents RadReceiptNil As System.Windows.Forms.RadioButton
     Friend WithEvents VSForOpticalshop As Janus.Windows.Common.VisualStyleManager
+    Friend WithEvents BtnImpReceipt As System.Windows.Forms.Button
+    Friend WithEvents BGImpOpticalTEH As System.ComponentModel.BackgroundWorker
 
 End Class

@@ -25,8 +25,8 @@ Partial Class DashboardScreeningRegisBook
         Me.components = New System.ComponentModel.Container
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(DashboardScreeningRegisBook))
         Dim GridEXScreeningBook_DesignTimeLayout As Janus.Windows.GridEX.GridEXLayout = New Janus.Windows.GridEX.GridEXLayout
-        Dim JanusColorScheme1 As Janus.Windows.Common.JanusColorScheme = New Janus.Windows.Common.JanusColorScheme
         Dim GridEXReferral_DesignTimeLayout As Janus.Windows.GridEX.GridEXLayout = New Janus.Windows.GridEX.GridEXLayout
+        Dim JanusColorScheme1 As Janus.Windows.Common.JanusColorScheme = New Janus.Windows.Common.JanusColorScheme
         Me.Panel1 = New System.Windows.Forms.Panel
         Me.NotFillDiagnosis = New System.Windows.Forms.PictureBox
         Me.Panel6 = New System.Windows.Forms.Panel
@@ -39,9 +39,27 @@ Partial Class DashboardScreeningRegisBook
         Me.Label2 = New System.Windows.Forms.Label
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer
         Me.GridEXScreeningBook = New Janus.Windows.GridEX.GridEX
-        Me.VSM = New Janus.Windows.Common.VisualStyleManager(Me.components)
+        Me.CMScreeningBook = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.BtnNewScreeningRegist = New System.Windows.Forms.ToolStripMenuItem
+        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator
+        Me.BtnUpdateScreening = New System.Windows.Forms.ToolStripMenuItem
+        Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripSeparator
+        Me.BtnRefraction = New System.Windows.Forms.ToolStripMenuItem
+        Me.UpdateRefractionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+        Me.NewRefractionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+        Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripSeparator
+        Me.BtnReferral = New System.Windows.Forms.ToolStripMenuItem
+        Me.BtnUpdateReferral = New System.Windows.Forms.ToolStripMenuItem
+        Me.BtnNewReferral = New System.Windows.Forms.ToolStripMenuItem
+        Me.ToolStripMenuItem3 = New System.Windows.Forms.ToolStripSeparator
+        Me.BtnOpticalShop = New System.Windows.Forms.ToolStripMenuItem
+        Me.BtnUpdateOpticalshop = New System.Windows.Forms.ToolStripMenuItem
+        Me.NewOpticalShopToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+        Me.ToolStripMenuItem4 = New System.Windows.Forms.ToolStripSeparator
+        Me.AdvanceSearchToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.TabControl1 = New System.Windows.Forms.TabControl
         Me.ReferralPickup = New System.Windows.Forms.TabPage
+        Me.GridEXReferral = New Janus.Windows.GridEX.GridEX
         Me.DateTo = New System.Windows.Forms.DateTimePicker
         Me.DateFrom = New System.Windows.Forms.DateTimePicker
         Me.Label13 = New System.Windows.Forms.Label
@@ -67,27 +85,9 @@ Partial Class DashboardScreeningRegisBook
         Me.PanelSend = New System.Windows.Forms.Panel
         Me.TxtTotalRegister = New System.Windows.Forms.Label
         Me.Label1 = New System.Windows.Forms.Label
-        Me.CMScreeningBook = New System.Windows.Forms.ContextMenuStrip(Me.components)
-        Me.BtnNewScreeningRegist = New System.Windows.Forms.ToolStripMenuItem
-        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator
-        Me.BtnUpdateScreening = New System.Windows.Forms.ToolStripMenuItem
-        Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripSeparator
-        Me.BtnRefraction = New System.Windows.Forms.ToolStripMenuItem
-        Me.UpdateRefractionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.NewRefractionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripSeparator
-        Me.BtnReferral = New System.Windows.Forms.ToolStripMenuItem
-        Me.BtnUpdateReferral = New System.Windows.Forms.ToolStripMenuItem
-        Me.BtnNewReferral = New System.Windows.Forms.ToolStripMenuItem
-        Me.ToolStripMenuItem3 = New System.Windows.Forms.ToolStripSeparator
-        Me.BtnOpticalShop = New System.Windows.Forms.ToolStripMenuItem
-        Me.BtnUpdateOpticalshop = New System.Windows.Forms.ToolStripMenuItem
-        Me.NewOpticalShopToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.ToolStripMenuItem4 = New System.Windows.Forms.ToolStripSeparator
-        Me.AdvanceSearchToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.BGScreeningBook = New System.ComponentModel.BackgroundWorker
         Me.BGImportToTEH = New System.ComponentModel.BackgroundWorker
-        Me.GridEXReferral = New Janus.Windows.GridEX.GridEX
+        Me.VSForOpticalshop = New Janus.Windows.Common.VisualStyleManager(Me.components)
         Me.Panel1.SuspendLayout()
         CType(Me.NotFillDiagnosis, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel6.SuspendLayout()
@@ -97,8 +97,10 @@ Partial Class DashboardScreeningRegisBook
         Me.SplitContainer1.Panel2.SuspendLayout()
         Me.SplitContainer1.SuspendLayout()
         CType(Me.GridEXScreeningBook, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.CMScreeningBook.SuspendLayout()
         Me.TabControl1.SuspendLayout()
         Me.ReferralPickup.SuspendLayout()
+        CType(Me.GridEXReferral, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PicOpticalShop, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel4.SuspendLayout()
         CType(Me.PicReferral, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -107,8 +109,6 @@ Partial Class DashboardScreeningRegisBook
         Me.Panel3.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.PanelSend.SuspendLayout()
-        Me.CMScreeningBook.SuspendLayout()
-        CType(Me.GridEXReferral, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
@@ -280,24 +280,161 @@ Partial Class DashboardScreeningRegisBook
         Me.GridEXScreeningBook.Font = New System.Drawing.Font("Century Gothic", 12.0!)
         Me.GridEXScreeningBook.GridLineStyle = Janus.Windows.GridEX.GridLineStyle.Solid
         Me.GridEXScreeningBook.GroupByBoxVisible = False
+        Me.GridEXScreeningBook.HeaderFormatStyle.BackColor = System.Drawing.Color.Empty
+        Me.GridEXScreeningBook.HeaderFormatStyle.FontSize = 11.0!
         Me.GridEXScreeningBook.HideSelection = Janus.Windows.GridEX.HideSelection.HighlightInactive
         Me.GridEXScreeningBook.Location = New System.Drawing.Point(0, 0)
         Me.GridEXScreeningBook.Name = "GridEXScreeningBook"
+        Me.GridEXScreeningBook.Office2007ColorScheme = Janus.Windows.GridEX.Office2007ColorScheme.Silver
+        Me.GridEXScreeningBook.Office2007CustomColor = System.Drawing.SystemColors.Control
         Me.GridEXScreeningBook.RecordNavigator = True
         Me.GridEXScreeningBook.RowHeaders = Janus.Windows.GridEX.InheritableBoolean.[True]
         Me.GridEXScreeningBook.Size = New System.Drawing.Size(1297, 400)
         Me.GridEXScreeningBook.TabIndex = 26
         Me.GridEXScreeningBook.ThemedAreas = Janus.Windows.GridEX.ThemedArea.None
-        Me.GridEXScreeningBook.VisualStyleManager = Me.VSM
+        Me.GridEXScreeningBook.VisualStyleManager = Me.VSForOpticalshop
         '
-        'VSM
+        'CMScreeningBook
         '
-        JanusColorScheme1.HighlightTextColor = System.Drawing.SystemColors.HighlightText
-        JanusColorScheme1.Name = "GridFlatStandard"
-        JanusColorScheme1.Office2007CustomColor = System.Drawing.Color.Empty
-        JanusColorScheme1.UseThemes = False
-        JanusColorScheme1.VisualStyle = Janus.Windows.Common.VisualStyle.Standard
-        Me.VSM.ColorSchemes.Add(JanusColorScheme1)
+        Me.CMScreeningBook.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
+        Me.CMScreeningBook.Font = New System.Drawing.Font("Segoe UI", 12.0!)
+        Me.CMScreeningBook.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.CMScreeningBook.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BtnNewScreeningRegist, Me.ToolStripSeparator1, Me.BtnUpdateScreening, Me.ToolStripMenuItem1, Me.BtnRefraction, Me.ToolStripMenuItem2, Me.BtnReferral, Me.ToolStripMenuItem3, Me.BtnOpticalShop, Me.ToolStripMenuItem4, Me.AdvanceSearchToolStripMenuItem})
+        Me.CMScreeningBook.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Table
+        Me.CMScreeningBook.Name = "CMScreeningBook"
+        Me.CMScreeningBook.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional
+        Me.CMScreeningBook.ShowImageMargin = False
+        Me.CMScreeningBook.Size = New System.Drawing.Size(290, 214)
+        '
+        'BtnNewScreeningRegist
+        '
+        Me.BtnNewScreeningRegist.Font = New System.Drawing.Font("Segoe UI", 14.0!)
+        Me.BtnNewScreeningRegist.ForeColor = System.Drawing.Color.White
+        Me.BtnNewScreeningRegist.Name = "BtnNewScreeningRegist"
+        Me.BtnNewScreeningRegist.Size = New System.Drawing.Size(289, 30)
+        Me.BtnNewScreeningRegist.Text = "New Registration Screening"
+        '
+        'ToolStripSeparator1
+        '
+        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(286, 6)
+        '
+        'BtnUpdateScreening
+        '
+        Me.BtnUpdateScreening.Font = New System.Drawing.Font("Segoe UI", 14.0!)
+        Me.BtnUpdateScreening.ForeColor = System.Drawing.Color.White
+        Me.BtnUpdateScreening.Image = CType(resources.GetObject("BtnUpdateScreening.Image"), System.Drawing.Image)
+        Me.BtnUpdateScreening.Name = "BtnUpdateScreening"
+        Me.BtnUpdateScreening.Size = New System.Drawing.Size(289, 30)
+        Me.BtnUpdateScreening.Text = "Update Screening Utility"
+        '
+        'ToolStripMenuItem1
+        '
+        Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
+        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(286, 6)
+        '
+        'BtnRefraction
+        '
+        Me.BtnRefraction.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.UpdateRefractionToolStripMenuItem, Me.NewRefractionToolStripMenuItem})
+        Me.BtnRefraction.ForeColor = System.Drawing.Color.White
+        Me.BtnRefraction.Name = "BtnRefraction"
+        Me.BtnRefraction.Size = New System.Drawing.Size(289, 30)
+        Me.BtnRefraction.Text = "Refraction ..."
+        Me.BtnRefraction.Visible = False
+        '
+        'UpdateRefractionToolStripMenuItem
+        '
+        Me.UpdateRefractionToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
+        Me.UpdateRefractionToolStripMenuItem.ForeColor = System.Drawing.Color.White
+        Me.UpdateRefractionToolStripMenuItem.Name = "UpdateRefractionToolStripMenuItem"
+        Me.UpdateRefractionToolStripMenuItem.Size = New System.Drawing.Size(205, 26)
+        Me.UpdateRefractionToolStripMenuItem.Text = "Update Refraction"
+        '
+        'NewRefractionToolStripMenuItem
+        '
+        Me.NewRefractionToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
+        Me.NewRefractionToolStripMenuItem.ForeColor = System.Drawing.Color.White
+        Me.NewRefractionToolStripMenuItem.Name = "NewRefractionToolStripMenuItem"
+        Me.NewRefractionToolStripMenuItem.Size = New System.Drawing.Size(205, 26)
+        Me.NewRefractionToolStripMenuItem.Text = "New Refraction"
+        '
+        'ToolStripMenuItem2
+        '
+        Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
+        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(286, 6)
+        Me.ToolStripMenuItem2.Visible = False
+        '
+        'BtnReferral
+        '
+        Me.BtnReferral.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BtnUpdateReferral, Me.BtnNewReferral})
+        Me.BtnReferral.ForeColor = System.Drawing.Color.White
+        Me.BtnReferral.Name = "BtnReferral"
+        Me.BtnReferral.Overflow = System.Windows.Forms.ToolStripItemOverflow.Always
+        Me.BtnReferral.Size = New System.Drawing.Size(289, 30)
+        Me.BtnReferral.Text = "Refer ..."
+        Me.BtnReferral.Visible = False
+        '
+        'BtnUpdateReferral
+        '
+        Me.BtnUpdateReferral.AccessibleRole = System.Windows.Forms.AccessibleRole.Cursor
+        Me.BtnUpdateReferral.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
+        Me.BtnUpdateReferral.ForeColor = System.Drawing.Color.White
+        Me.BtnUpdateReferral.Name = "BtnUpdateReferral"
+        Me.BtnUpdateReferral.Size = New System.Drawing.Size(180, 26)
+        Me.BtnUpdateReferral.Text = "Upate Referral"
+        '
+        'BtnNewReferral
+        '
+        Me.BtnNewReferral.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
+        Me.BtnNewReferral.ForeColor = System.Drawing.Color.White
+        Me.BtnNewReferral.Name = "BtnNewReferral"
+        Me.BtnNewReferral.Size = New System.Drawing.Size(180, 26)
+        Me.BtnNewReferral.Text = "New Referral"
+        '
+        'ToolStripMenuItem3
+        '
+        Me.ToolStripMenuItem3.Name = "ToolStripMenuItem3"
+        Me.ToolStripMenuItem3.Size = New System.Drawing.Size(286, 6)
+        Me.ToolStripMenuItem3.Visible = False
+        '
+        'BtnOpticalShop
+        '
+        Me.BtnOpticalShop.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BtnUpdateOpticalshop, Me.NewOpticalShopToolStripMenuItem})
+        Me.BtnOpticalShop.ForeColor = System.Drawing.Color.White
+        Me.BtnOpticalShop.Name = "BtnOpticalShop"
+        Me.BtnOpticalShop.Size = New System.Drawing.Size(289, 30)
+        Me.BtnOpticalShop.Text = "Optical Shop ..."
+        Me.BtnOpticalShop.Visible = False
+        '
+        'BtnUpdateOpticalshop
+        '
+        Me.BtnUpdateOpticalshop.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
+        Me.BtnUpdateOpticalshop.ForeColor = System.Drawing.Color.White
+        Me.BtnUpdateOpticalshop.Name = "BtnUpdateOpticalshop"
+        Me.BtnUpdateOpticalshop.Size = New System.Drawing.Size(223, 26)
+        Me.BtnUpdateOpticalshop.Text = "Update Optical Shop"
+        '
+        'NewOpticalShopToolStripMenuItem
+        '
+        Me.NewOpticalShopToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
+        Me.NewOpticalShopToolStripMenuItem.ForeColor = System.Drawing.Color.White
+        Me.NewOpticalShopToolStripMenuItem.Name = "NewOpticalShopToolStripMenuItem"
+        Me.NewOpticalShopToolStripMenuItem.Size = New System.Drawing.Size(223, 26)
+        Me.NewOpticalShopToolStripMenuItem.Text = "New Optical Shop"
+        '
+        'ToolStripMenuItem4
+        '
+        Me.ToolStripMenuItem4.Name = "ToolStripMenuItem4"
+        Me.ToolStripMenuItem4.Size = New System.Drawing.Size(286, 6)
+        Me.ToolStripMenuItem4.Visible = False
+        '
+        'AdvanceSearchToolStripMenuItem
+        '
+        Me.AdvanceSearchToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 14.0!)
+        Me.AdvanceSearchToolStripMenuItem.ForeColor = System.Drawing.Color.White
+        Me.AdvanceSearchToolStripMenuItem.Name = "AdvanceSearchToolStripMenuItem"
+        Me.AdvanceSearchToolStripMenuItem.Size = New System.Drawing.Size(289, 30)
+        Me.AdvanceSearchToolStripMenuItem.Text = "Advance Search"
         '
         'TabControl1
         '
@@ -326,6 +463,28 @@ Partial Class DashboardScreeningRegisBook
         Me.ReferralPickup.TabIndex = 1
         Me.ReferralPickup.Text = " Refer Pickup  or By Self Book"
         Me.ReferralPickup.UseVisualStyleBackColor = True
+        '
+        'GridEXReferral
+        '
+        Me.GridEXReferral.AllowCardSizing = False
+        Me.GridEXReferral.AllowColumnDrag = False
+        Me.GridEXReferral.AllowEdit = Janus.Windows.GridEX.InheritableBoolean.[False]
+        GridEXReferral_DesignTimeLayout.LayoutString = resources.GetString("GridEXReferral_DesignTimeLayout.LayoutString")
+        Me.GridEXReferral.DesignTimeLayout = GridEXReferral_DesignTimeLayout
+        Me.GridEXReferral.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.GridEXReferral.Font = New System.Drawing.Font("Century Gothic", 12.0!)
+        Me.GridEXReferral.GridLineStyle = Janus.Windows.GridEX.GridLineStyle.Solid
+        Me.GridEXReferral.GroupByBoxVisible = False
+        Me.GridEXReferral.HeaderFormatStyle.BackColor = System.Drawing.Color.Empty
+        Me.GridEXReferral.HeaderFormatStyle.FontSize = 11.0!
+        Me.GridEXReferral.HeaderFormatStyle.ForeColor = System.Drawing.Color.Black
+        Me.GridEXReferral.HideSelection = Janus.Windows.GridEX.HideSelection.HighlightInactive
+        Me.GridEXReferral.Location = New System.Drawing.Point(0, 0)
+        Me.GridEXReferral.Name = "GridEXReferral"
+        Me.GridEXReferral.RecordNavigator = True
+        Me.GridEXReferral.RowHeaders = Janus.Windows.GridEX.InheritableBoolean.[True]
+        Me.GridEXReferral.Size = New System.Drawing.Size(1289, 310)
+        Me.GridEXReferral.TabIndex = 27
         '
         'DateTo
         '
@@ -614,173 +773,35 @@ Partial Class DashboardScreeningRegisBook
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Total Registration"
         '
-        'CMScreeningBook
-        '
-        Me.CMScreeningBook.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
-        Me.CMScreeningBook.Font = New System.Drawing.Font("Segoe UI", 12.0!)
-        Me.CMScreeningBook.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.CMScreeningBook.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BtnNewScreeningRegist, Me.ToolStripSeparator1, Me.BtnUpdateScreening, Me.ToolStripMenuItem1, Me.BtnRefraction, Me.ToolStripMenuItem2, Me.BtnReferral, Me.ToolStripMenuItem3, Me.BtnOpticalShop, Me.ToolStripMenuItem4, Me.AdvanceSearchToolStripMenuItem})
-        Me.CMScreeningBook.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Table
-        Me.CMScreeningBook.Name = "CMScreeningBook"
-        Me.CMScreeningBook.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional
-        Me.CMScreeningBook.ShowImageMargin = False
-        Me.CMScreeningBook.Size = New System.Drawing.Size(290, 214)
-        '
-        'BtnNewScreeningRegist
-        '
-        Me.BtnNewScreeningRegist.Font = New System.Drawing.Font("Segoe UI", 14.0!)
-        Me.BtnNewScreeningRegist.ForeColor = System.Drawing.Color.White
-        Me.BtnNewScreeningRegist.Name = "BtnNewScreeningRegist"
-        Me.BtnNewScreeningRegist.Size = New System.Drawing.Size(289, 30)
-        Me.BtnNewScreeningRegist.Text = "New Registration Screening"
-        '
-        'ToolStripSeparator1
-        '
-        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
-        Me.ToolStripSeparator1.Size = New System.Drawing.Size(286, 6)
-        '
-        'BtnUpdateScreening
-        '
-        Me.BtnUpdateScreening.Font = New System.Drawing.Font("Segoe UI", 14.0!)
-        Me.BtnUpdateScreening.ForeColor = System.Drawing.Color.White
-        Me.BtnUpdateScreening.Image = CType(resources.GetObject("BtnUpdateScreening.Image"), System.Drawing.Image)
-        Me.BtnUpdateScreening.Name = "BtnUpdateScreening"
-        Me.BtnUpdateScreening.Size = New System.Drawing.Size(289, 30)
-        Me.BtnUpdateScreening.Text = "Update Screening Utility"
-        '
-        'ToolStripMenuItem1
-        '
-        Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(286, 6)
-        '
-        'BtnRefraction
-        '
-        Me.BtnRefraction.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.UpdateRefractionToolStripMenuItem, Me.NewRefractionToolStripMenuItem})
-        Me.BtnRefraction.ForeColor = System.Drawing.Color.White
-        Me.BtnRefraction.Name = "BtnRefraction"
-        Me.BtnRefraction.Size = New System.Drawing.Size(289, 30)
-        Me.BtnRefraction.Text = "Refraction ..."
-        Me.BtnRefraction.Visible = False
-        '
-        'UpdateRefractionToolStripMenuItem
-        '
-        Me.UpdateRefractionToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
-        Me.UpdateRefractionToolStripMenuItem.ForeColor = System.Drawing.Color.White
-        Me.UpdateRefractionToolStripMenuItem.Name = "UpdateRefractionToolStripMenuItem"
-        Me.UpdateRefractionToolStripMenuItem.Size = New System.Drawing.Size(205, 26)
-        Me.UpdateRefractionToolStripMenuItem.Text = "Update Refraction"
-        '
-        'NewRefractionToolStripMenuItem
-        '
-        Me.NewRefractionToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
-        Me.NewRefractionToolStripMenuItem.ForeColor = System.Drawing.Color.White
-        Me.NewRefractionToolStripMenuItem.Name = "NewRefractionToolStripMenuItem"
-        Me.NewRefractionToolStripMenuItem.Size = New System.Drawing.Size(205, 26)
-        Me.NewRefractionToolStripMenuItem.Text = "New Refraction"
-        '
-        'ToolStripMenuItem2
-        '
-        Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
-        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(286, 6)
-        Me.ToolStripMenuItem2.Visible = False
-        '
-        'BtnReferral
-        '
-        Me.BtnReferral.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BtnUpdateReferral, Me.BtnNewReferral})
-        Me.BtnReferral.ForeColor = System.Drawing.Color.White
-        Me.BtnReferral.Name = "BtnReferral"
-        Me.BtnReferral.Overflow = System.Windows.Forms.ToolStripItemOverflow.Always
-        Me.BtnReferral.Size = New System.Drawing.Size(289, 30)
-        Me.BtnReferral.Text = "Refer ..."
-        Me.BtnReferral.Visible = False
-        '
-        'BtnUpdateReferral
-        '
-        Me.BtnUpdateReferral.AccessibleRole = System.Windows.Forms.AccessibleRole.Cursor
-        Me.BtnUpdateReferral.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
-        Me.BtnUpdateReferral.ForeColor = System.Drawing.Color.White
-        Me.BtnUpdateReferral.Name = "BtnUpdateReferral"
-        Me.BtnUpdateReferral.Size = New System.Drawing.Size(180, 26)
-        Me.BtnUpdateReferral.Text = "Upate Referral"
-        '
-        'BtnNewReferral
-        '
-        Me.BtnNewReferral.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
-        Me.BtnNewReferral.ForeColor = System.Drawing.Color.White
-        Me.BtnNewReferral.Name = "BtnNewReferral"
-        Me.BtnNewReferral.Size = New System.Drawing.Size(180, 26)
-        Me.BtnNewReferral.Text = "New Referral"
-        '
-        'ToolStripMenuItem3
-        '
-        Me.ToolStripMenuItem3.Name = "ToolStripMenuItem3"
-        Me.ToolStripMenuItem3.Size = New System.Drawing.Size(286, 6)
-        Me.ToolStripMenuItem3.Visible = False
-        '
-        'BtnOpticalShop
-        '
-        Me.BtnOpticalShop.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BtnUpdateOpticalshop, Me.NewOpticalShopToolStripMenuItem})
-        Me.BtnOpticalShop.ForeColor = System.Drawing.Color.White
-        Me.BtnOpticalShop.Name = "BtnOpticalShop"
-        Me.BtnOpticalShop.Size = New System.Drawing.Size(289, 30)
-        Me.BtnOpticalShop.Text = "Optical Shop ..."
-        Me.BtnOpticalShop.Visible = False
-        '
-        'BtnUpdateOpticalshop
-        '
-        Me.BtnUpdateOpticalshop.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
-        Me.BtnUpdateOpticalshop.ForeColor = System.Drawing.Color.White
-        Me.BtnUpdateOpticalshop.Name = "BtnUpdateOpticalshop"
-        Me.BtnUpdateOpticalshop.Size = New System.Drawing.Size(223, 26)
-        Me.BtnUpdateOpticalshop.Text = "Update Optical Shop"
-        '
-        'NewOpticalShopToolStripMenuItem
-        '
-        Me.NewOpticalShopToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(34, Byte), Integer))
-        Me.NewOpticalShopToolStripMenuItem.ForeColor = System.Drawing.Color.White
-        Me.NewOpticalShopToolStripMenuItem.Name = "NewOpticalShopToolStripMenuItem"
-        Me.NewOpticalShopToolStripMenuItem.Size = New System.Drawing.Size(223, 26)
-        Me.NewOpticalShopToolStripMenuItem.Text = "New Optical Shop"
-        '
-        'ToolStripMenuItem4
-        '
-        Me.ToolStripMenuItem4.Name = "ToolStripMenuItem4"
-        Me.ToolStripMenuItem4.Size = New System.Drawing.Size(286, 6)
-        Me.ToolStripMenuItem4.Visible = False
-        '
-        'AdvanceSearchToolStripMenuItem
-        '
-        Me.AdvanceSearchToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 14.0!)
-        Me.AdvanceSearchToolStripMenuItem.ForeColor = System.Drawing.Color.White
-        Me.AdvanceSearchToolStripMenuItem.Name = "AdvanceSearchToolStripMenuItem"
-        Me.AdvanceSearchToolStripMenuItem.Size = New System.Drawing.Size(289, 30)
-        Me.AdvanceSearchToolStripMenuItem.Text = "Advance Search"
-        '
         'BGScreeningBook
         '
         '
         'BGImportToTEH
         '
         '
-        'GridEXReferral
+        'VSForOpticalshop
         '
-        Me.GridEXReferral.AllowCardSizing = False
-        Me.GridEXReferral.AllowColumnDrag = False
-        Me.GridEXReferral.AllowEdit = Janus.Windows.GridEX.InheritableBoolean.[False]
-        GridEXReferral_DesignTimeLayout.LayoutString = resources.GetString("GridEXReferral_DesignTimeLayout.LayoutString")
-        Me.GridEXReferral.DesignTimeLayout = GridEXReferral_DesignTimeLayout
-        Me.GridEXReferral.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GridEXReferral.Font = New System.Drawing.Font("Century Gothic", 12.0!)
-        Me.GridEXReferral.GridLineStyle = Janus.Windows.GridEX.GridLineStyle.Solid
-        Me.GridEXReferral.GroupByBoxVisible = False
-        Me.GridEXReferral.HideSelection = Janus.Windows.GridEX.HideSelection.HighlightInactive
-        Me.GridEXReferral.Location = New System.Drawing.Point(0, 0)
-        Me.GridEXReferral.Name = "GridEXReferral"
-        Me.GridEXReferral.RecordNavigator = True
-        Me.GridEXReferral.RowHeaders = Janus.Windows.GridEX.InheritableBoolean.[True]
-        Me.GridEXReferral.Size = New System.Drawing.Size(1289, 310)
-        Me.GridEXReferral.TabIndex = 27
-        Me.GridEXReferral.VisualStyleManager = Me.VSM
+        JanusColorScheme1.ActiveCaptionColor = System.Drawing.Color.Tomato
+        JanusColorScheme1.ActiveCaptionTextColor = System.Drawing.Color.White
+        JanusColorScheme1.ControlDarkColor = System.Drawing.SystemColors.Control
+        JanusColorScheme1.ControlTextColor = System.Drawing.Color.Black
+        JanusColorScheme1.DisabledColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(150, Byte), Integer), CType(CType(102, Byte), Integer))
+        JanusColorScheme1.GrayTextColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
+        JanusColorScheme1.HighlightColor = System.Drawing.Color.FromArgb(CType(CType(43, Byte), Integer), CType(CType(99, Byte), Integer), CType(CType(67, Byte), Integer))
+        JanusColorScheme1.HighlightTextColor = System.Drawing.Color.WhiteSmoke
+        JanusColorScheme1.InfoColor = System.Drawing.Color.WhiteSmoke
+        JanusColorScheme1.InfoTextColor = System.Drawing.Color.FloralWhite
+        JanusColorScheme1.MenuColor = System.Drawing.SystemColors.ActiveCaption
+        JanusColorScheme1.MenuTextColor = System.Drawing.Color.DimGray
+        JanusColorScheme1.Name = "Header"
+        JanusColorScheme1.Office2007ColorScheme = Janus.Windows.Common.Office2007ColorScheme.Silver
+        JanusColorScheme1.Office2007CustomColor = System.Drawing.SystemColors.Control
+        JanusColorScheme1.UseThemes = False
+        JanusColorScheme1.VisualStyle = Janus.Windows.Common.VisualStyle.Standard
+        JanusColorScheme1.WindowColor = System.Drawing.Color.White
+        JanusColorScheme1.WindowTextColor = System.Drawing.Color.DarkBlue
+        Me.VSForOpticalshop.ColorSchemes.Add(JanusColorScheme1)
+        Me.VSForOpticalshop.DefaultColorScheme = "Header"
         '
         'DashboardScreeningRegisBook
         '
@@ -804,8 +825,10 @@ Partial Class DashboardScreeningRegisBook
         Me.SplitContainer1.Panel2.ResumeLayout(False)
         Me.SplitContainer1.ResumeLayout(False)
         CType(Me.GridEXScreeningBook, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.CMScreeningBook.ResumeLayout(False)
         Me.TabControl1.ResumeLayout(False)
         Me.ReferralPickup.ResumeLayout(False)
+        CType(Me.GridEXReferral, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PicOpticalShop, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel4.ResumeLayout(False)
         Me.Panel4.PerformLayout()
@@ -818,8 +841,6 @@ Partial Class DashboardScreeningRegisBook
         Me.Panel2.PerformLayout()
         Me.PanelSend.ResumeLayout(False)
         Me.PanelSend.PerformLayout()
-        Me.CMScreeningBook.ResumeLayout(False)
-        CType(Me.GridEXReferral, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -882,7 +903,7 @@ Partial Class DashboardScreeningRegisBook
     Friend WithEvents Label9 As System.Windows.Forms.Label
     Friend WithEvents AdvanceSearchToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents GridEXScreeningBook As Janus.Windows.GridEX.GridEX
-    Friend WithEvents VSM As Janus.Windows.Common.VisualStyleManager
     Friend WithEvents GridEXReferral As Janus.Windows.GridEX.GridEX
+    Friend WithEvents VSForOpticalshop As Janus.Windows.Common.VisualStyleManager
 
 End Class
